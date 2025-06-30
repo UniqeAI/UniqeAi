@@ -12,7 +12,7 @@ token = ""  # <-- Buraya kendi token'ını yazmalısın
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"  # 3.1 henüz resmi adlandırmada geçmiyor
 
 # Hugging Face hesabına giriş
-login(token)
+#login(token)
 
 # Tokenizer'ı indir
 tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
