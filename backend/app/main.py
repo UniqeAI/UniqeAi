@@ -13,6 +13,10 @@ def health_check():
     """
     return {"status": "ok"}
 
+# Chat router'ını dahil et
+from backend.app.api.v1 import chat
+app.include_router(chat.router, prefix="/api/v1")
+
 # Gelecekte eklenecek diğer endpoint'ler için router'lar buraya dahil edilecek.
 # from .api.v1 import chat
 # app.include_router(chat.router, prefix="/api/v1") 
