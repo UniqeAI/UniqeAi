@@ -6,7 +6,7 @@ from huggingface_hub import login
 import torch
 
 # Hugging Face erişim token'ını buraya gir
-token = "token"  # <-- Buraya kendi token'ını yazmalısın
+token = ""  # <-- Buraya kendi token'ını yazmalısın
 
 # LLaMA 3.1 Instruct model ID'si (düzgün yazımıyla)
 model_id = "meta-llama/Meta-Llama-3-8B-Instruct"  # 3.1 henüz resmi adlandırmada geçmiyor
