@@ -1,0 +1,52 @@
+[
+  {
+    "instruction": "Kullanıcı bilgilerini getir",
+    "input": "ID'si 12345 olan kullanıcının bilgilerini al",
+    "output": "<tool_code>print(backend_api.get_user_info(12345))</tool_code>"
+  },
+  {
+    "instruction": "Yeni kullanıcı oluştur",
+    "input": "Adı 'Ahmet Yılmaz', email'i 'ahmet@example.com' olan yeni kullanıcı ekle",
+    "output": "<tool_code>print(backend_api.create_user('Ahmet Yılmaz', 'ahmet@example.com'))</tool_code>"
+  },
+  {
+    "instruction": "Ürün listesini getir",
+    "input": "Kategori 'elektronik' olan tüm ürünleri listele",
+    "output": "<tool_code>print(backend_api.get_products_by_category('elektronik'))</tool_code>"
+  },
+  {
+    "instruction": "Ürün fiyatını güncelle",
+    "input": "ID'si 789 olan ürünün fiyatını 299.99 TL yap",
+    "output": "<tool_code>print(backend_api.update_product_price(789, 299.99))</tool_code>"
+  },
+  {
+    "instruction": "Sipariş durumunu kontrol et",
+    "input": "Sipariş numarası 'ORD-2024-001' olan siparişin durumunu öğren",
+    "output": "<tool_code>print(backend_api.get_order_status('ORD-2024-001'))</tool_code>"
+  },
+  {
+    "instruction": "Yeni sipariş oluştur",
+    "input": "Kullanıcı ID'si 12345, ürün ID'si 789, miktar 2 adet sipariş oluştur",
+    "output": "<tool_code>print(backend_api.create_order(12345, 789, 2))</tool_code>"
+  },
+  {
+    "instruction": "Satış raporu oluştur",
+    "input": "2024 yılı Ocak ayı satış raporunu hazırla",
+    "output": "<tool_code>print(backend_api.generate_sales_report('2024-01'))</tool_code>"
+  },
+  {
+    "instruction": "Stok durumunu kontrol et",
+    "input": "Tüm ürünlerin stok durumunu listele",
+    "output": "<tool_code>print(backend_api.get_inventory_status())</tool_code>"
+  },
+  {
+    "instruction": "En çok satan ürünleri bul",
+    "input": "Son 30 günde en çok satan 10 ürünü listele",
+    "output": "<tool_code>print(backend_api.get_top_selling_products(30, 10))</tool_code>"
+  },
+  {
+    "instruction": "Müşteri analizi yap",
+    "input": "En aktif 5 müşteriyi ve toplam alışveriş tutarlarını göster",
+    "output": "<tool_code>print(backend_api.get_top_customers(5))</tool_code>"
+  }
+]
