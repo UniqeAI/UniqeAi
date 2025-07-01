@@ -1,4 +1,16 @@
-# AI Model Sentetik Veri Seti
+# AI Model Sentetik Veri Seti (v0.1)
+
+> ⚠️ **Önemli:** Bu veri seti **geçici sürüm** (v0.1) olup, henüz kesinleşmemiş `backend_api.*` fonksiyon isimlerini kullanır. Backend ekibi API yapısını kesinleştirdiğinde:
+> - `ai_model/scripts/api_mapping.py` dosyasındaki **API_MAP** güncellenerek
+> - Veri seti otomatik olarak **v0.2**'ye yükseltilecektir
+> - Bu sayede manuel güncelleme gerekmeyecektir
+
+## 🔄 Sürüm Geçişi Stratejisi
+
+| Sürüm | Durum | API Durumu | Güncelleme Yöntemi |
+|-------|-------|------------|-------------------|
+| **v0.1** | Mevcut | Geçici isimler | Merkezi API mapping |
+| **v0.2** | Planlanan | Kesinleşmiş API | Sadece mapping güncellemesi |
 
 Bu klasör, Llama-3.1-8B-Instruct modelinin fine-tuning'i için oluşturulan sentetik veri setlerini içermektedir.
 
