@@ -47,6 +47,76 @@ AVAILABLE_PACKAGES = [
     }
 ]
 
+# Mock fatura verileri
+MOCK_INVOICES = {
+    1: {
+        "invoice_id": "INV-2024-001",
+        "amount": 299.99,
+        "due_date": "2024-06-30",
+        "status": "Ödendi"
+    },
+    2: {
+        "invoice_id": "INV-2024-002",
+        "amount": 149.99,
+        "due_date": "2024-06-30",
+        "status": "Beklemede"
+    }
+}
+
+# Mock müşteri bilgileri
+MOCK_CUSTOMERS = {
+    1: {
+        "customer_id": 1,
+        "name": "Ahmet Yılmaz",
+        "address": "İstanbul, Türkiye",
+        "email": "ahmet.yilmaz@email.com"
+    },
+    2: {
+        "customer_id": 2,
+        "name": "Fatma Demir",
+        "address": "Ankara, Türkiye",
+        "email": "fatma.demir@email.com"
+    }
+}
+
+# Mock ödeme geçmişi
+MOCK_PAYMENTS = {
+    1: [
+        {"payment_id": "PAY-001", "amount": 299.99, "date": "2024-05-30", "status": "Başarılı"}
+    ],
+    2: [
+        {"payment_id": "PAY-002", "amount": 149.99, "date": "2024-05-30", "status": "Başarılı"}
+    ]
+}
+
+# Mock abonelik durumu
+MOCK_SUBSCRIPTIONS = {
+    1: {"status": "Aktif", "start_date": "2023-01-01", "end_date": None},
+    2: {"status": "Dondurulmuş", "start_date": "2022-06-01", "end_date": "2024-01-01"}
+}
+
+# Mock teknik destek kayıtları
+MOCK_SUPPORT_TICKETS = {
+    1: [
+        {"ticket_id": "SUP-001", "subject": "İnternet bağlantı sorunu", "status": "Çözüldü"}
+    ],
+    2: [
+        {"ticket_id": "SUP-002", "subject": "Fatura itirazı", "status": "Açık"}
+    ]
+}
+
+# Mock adres bilgisi
+MOCK_ADDRESSES = {
+    1: {"address": "İstanbul, Türkiye"},
+    2: {"address": "Ankara, Türkiye"}
+}
+
+# Mock kampanyalar
+MOCK_CAMPAIGNS = [
+    {"campaign_id": "CMP-001", "name": "Yaz İndirimi", "discount": "%20"},
+    {"campaign_id": "CMP-002", "name": "Yeni Abone Fırsatı", "discount": "%15"}
+]
+
 def getUserInfo(user_id: int) -> Dict[str, Any]:
     """
     Kullanıcı bilgilerini döndürür
@@ -78,4 +148,37 @@ def getAvailablePackages() -> Dict[str, Any]:
     return {
         "success": True,
         "data": AVAILABLE_PACKAGES
-    } 
+    }
+
+def getInvoice(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_INVOICES:
+        return {"error": "Invoice not found", "message": f"Fatura bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_INVOICES[user_id]}
+
+def getCustomerInfo(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_CUSTOMERS:
+        return {"error": "Customer not found", "message": f"Müşteri bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_CUSTOMERS[user_id]}
+
+def getPaymentHistory(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_PAYMENTS:
+        return {"error": "Payment history not found", "message": f"Ödeme geçmişi bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_PAYMENTS[user_id]}
+
+def getSubscriptionStatus(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_SUBSCRIPTIONS:
+        return {"error": "Subscription not found", "message": f"Abonelik durumu bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_SUBSCRIPTIONS[user_id]}
+
+def getSupportTickets(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_SUPPORT_TICKETS:
+        return {"error": "Support tickets not found", "message": f"Destek kaydı bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_SUPPORT_TICKETS[user_id]}
+
+def getAddress(user_id: int) -> Dict[str, Any]:
+    if user_id not in MOCK_ADDRESSES:
+        return {"error": "Address not found", "message": f"Adres bulunamadı: {user_id}"}
+    return {"success": True, "data": MOCK_ADDRESSES[user_id]}
+
+def getCampaigns() -> Dict[str, Any]:
+    return {"success": True, "data": MOCK_CAMPAIGNS} 
