@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 
 app = FastAPI(
     title="Agent-Llama Backend",
@@ -12,6 +12,23 @@ def health_check():
     Servisin ayakta olup olmadığını kontrol eden endpoint.
     """
     return {"status": "ok"}
+
+@app.get("/", tags=["Monitoring"])
+def root():
+    return {"status":"ok"}
+
+# favicon.ico isteğini sessizce yut (dosya olmadan)
+@app.get("/favicon.ico")
+def ignore_favicon():
+    return Response(status_code=204)  # No Content
+
+# Chat router'ını dahil et
+from backend.app.api.v1 import chat
+app.include_router(chat.router, prefix="/api/v1")
+
+# Mock test router'ını dahil et
+from backend.app.api.v1 import mock_test
+app.include_router(mock_test.router, prefix="/api/v1")
 
 # Gelecekte eklenecek diğer endpoint'ler için router'lar buraya dahil edilecek.
 # from .api.v1 import chat
