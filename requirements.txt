@@ -1,24 +1,14 @@
-# Temel Veri İşleme ve Analiz
-pandas
-
-# Makine Öğrenmesi ve NLP için Temel Araçlar
-scikit-learn
-
-# Türkçe Stopwords (Etkisiz Kelimeler) için
-nltk
-
-# Modern Gömme (Embedding) Modelleri için
-sentence-transformers
-torch
-
 # Backend
 fastapi
 uvicorn
-
-# Frontend
-streamlit
+python-dotenv
 
 # AI / ML
+pandas
+scikit-learn
+nltk
+sentence-transformers
+torch
 transformers
 accelerate
 bitsandbytes
@@ -27,5 +17,18 @@ peft
 trl
 zemberek-python
 
-# Development & Formatting
+# LangChain Kütüphaneleri
+langchain-community
+langchain-core
+langchain-openai
+langchain
+langsmith
+
+# Frontend
+streamlit
+
+# Veri Üretimi
+faker
+
+# Geliştirme & Formatlama
 black 
