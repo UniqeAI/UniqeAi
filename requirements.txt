@@ -9,7 +9,7 @@ nltk
 
 # Modern Gömme (Embedding) Modelleri için
 sentence-transformers
-torch
+torch>=2.0.0
 
 # Backend
 fastapi
@@ -18,14 +18,26 @@ uvicorn
 # Frontend
 streamlit
 
-# AI / ML
-transformers
-accelerate
-bitsandbytes
-datasets
-peft
-trl
+# AI / ML - Fine-tuning İçin Gerekli
+transformers>=4.36.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+datasets>=2.15.0
+peft>=0.7.0
+trl>=0.7.0
 zemberek-python
+
+# QLoRA Fine-tuning için gerekli paketler
+flash-attn>=2.3.0  # Flash Attention 2 (RTX 4060 için optimal)
+wandb  # Training logging (opsiyonel)
+
+# QLoRA specific requirements
+accelerate>=0.25.0  # Model parallelization
+psutil  # System monitoring
 
 # Development & Formatting
 black 
+
+# Sistem ve Debugging
+psutil  # Bellek ve CPU monitoring
+py3nvml  # GPU monitoring 
