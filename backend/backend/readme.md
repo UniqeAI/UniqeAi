@@ -1,1 +1,0 @@
-endpointleri test etmek için backend dizini içinde "uvicorn app.main:app" komutu çalıştırarak sunucu başlatınız. Taraycıda {"status":"ok"} sonucunu görmeniz gerekir.
