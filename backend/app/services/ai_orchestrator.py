@@ -86,13 +86,65 @@ class TelekomAracKaydi:
                 "aciklama": "Kullanılabilir paketleri listeler",
                 "parametreler": ["musteri_seviyesi"]
             },
-            "fatura_detaylari_getir": {
-                "aciklama": "Fatura detaylarını getirir",
+            "paket_degisiklik_baslat": {
+                "aciklama": "Paket değişikliği işlemini başlatır",
+                "parametreler": ["musteri_id", "hedef_paket"]
+            },
+            "get_current_bill": {
+                "aciklama": "Detaylı fatura ve döküm",
                 "parametreler": ["musteri_id", "ay"]
             },
             "destek_talep_olustur": {
                 "aciklama": "Destek talebi oluşturur",
                 "parametreler": ["musteri_id", "sorun_kategorisi", "aciklama"]
+            },
+            "get_remaining_quotas": {
+                "aciklama": "Kalan veri, dakika ve SMS kotasını getirir",
+                "parametreler": ["musteri_id"]
+            },
+            "enable_roaming": {
+                "aciklama": "Roaming hizmetini aktifleştirir",
+                "parametreler": ["musteri_id", "ulke_kodu"]
+            },
+            "get_past_bills": {
+                "aciklama": "Geçmiş faturaları getirir",
+                "parametreler": ["musteri_id", "ay_sayisi"]
+            },
+            "pay_bill": {
+                "aciklama": "Fatura ödeme işlemi",
+                "parametreler": ["musteri_id", "fatura_id", "odeme_yontemi"]
+            },
+            "setup_autopay": {
+                "aciklama": "Otomatik ödeme kurulumu",
+                "parametreler": ["musteri_id", "kart_bilgileri"]
+            },
+            "check_network_status": {
+                "aciklama": "Ağ durumu kontrolü",
+                "parametreler": ["musteri_id"]
+            },
+            "get_fault_ticket_status": {
+                "aciklama": "Arıza kaydı durumu sorgulama",
+                "parametreler": ["talep_id"]
+            },
+            "test_internet_speed": {
+                "aciklama": "İnternet hızı testi",
+                "parametreler": ["musteri_id"]
+            },
+            "update_customer_contact": {
+                "aciklama": "Müşteri iletişim bilgilerini günceller",
+                "parametreler": ["musteri_id", "yeni_bilgiler"]
+            },
+            "suspend_line": {
+                "aciklama": "Hattı askıya alır",
+                "parametreler": ["musteri_id", "sebep"]
+            },
+            "reactivate_line": {
+                "aciklama": "Hattı yeniden aktifleştirir",
+                "parametreler": ["musteri_id"]
+            },
+            "check_number_portability": {
+                "aciklama": "Numara taşınabilirlik kontrolü",
+                "parametreler": ["telefon_numarasi"]
             }
         }
     
@@ -328,9 +380,15 @@ class YapayZekaOrkestratori:
             musteri_seviyesi = parametreler.get("musteri_seviyesi", "standart")
             return await self.telekom_api.kullanilabilir_paketler(musteri_seviyesi)
         
-        elif arac_adi == "fatura_detaylari_getir":
-            return await self.telekom_api.fatura_detaylari_getir(
-                parametreler["musteri_id"], 
+        elif arac_adi == "paket_degisiklik_baslat":
+            return await self.telekom_api.paket_degisiklik_baslat(
+                parametreler["musteri_id"],
+                parametreler["hedef_paket"]
+            )
+        
+        elif arac_adi == "get_current_bill":
+            return await self.telekom_api.get_current_bill(
+                parametreler["musteri_id"],
                 parametreler["ay"]
             )
         
@@ -339,6 +397,73 @@ class YapayZekaOrkestratori:
                 parametreler["musteri_id"],
                 parametreler["sorun_kategorisi"],
                 parametreler["aciklama"]
+            )
+        
+        elif arac_adi == "get_remaining_quotas":
+            return await self.telekom_api.get_remaining_quotas(
+                parametreler["musteri_id"]
+            )
+        
+        elif arac_adi == "enable_roaming":
+            return await self.telekom_api.enable_roaming(
+                parametreler["musteri_id"],
+                parametreler["ulke_kodu"]
+            )
+        
+        elif arac_adi == "get_past_bills":
+            return await self.telekom_api.get_past_bills(
+                parametreler["musteri_id"],
+                parametreler["ay_sayisi"]
+            )
+        
+        elif arac_adi == "pay_bill":
+            return await self.telekom_api.pay_bill(
+                parametreler["musteri_id"],
+                parametreler["fatura_id"],
+                parametreler["odeme_yontemi"]
+            )
+        
+        elif arac_adi == "setup_autopay":
+            return await self.telekom_api.setup_autopay(
+                parametreler["musteri_id"],
+                parametreler["kart_bilgileri"]
+            )
+        
+        elif arac_adi == "check_network_status":
+            return await self.telekom_api.check_network_status(
+                parametreler["musteri_id"]
+            )
+        
+        elif arac_adi == "get_fault_ticket_status":
+            return await self.telekom_api.get_fault_ticket_status(
+                parametreler["talep_id"]
+            )
+        
+        elif arac_adi == "test_internet_speed":
+            return await self.telekom_api.test_internet_speed(
+                parametreler["musteri_id"]
+            )
+        
+        elif arac_adi == "update_customer_contact":
+            return await self.telekom_api.update_customer_contact(
+                parametreler["musteri_id"],
+                parametreler["yeni_bilgiler"]
+            )
+        
+        elif arac_adi == "suspend_line":
+            return await self.telekom_api.suspend_line(
+                parametreler["musteri_id"],
+                parametreler["sebep"]
+            )
+        
+        elif arac_adi == "reactivate_line":
+            return await self.telekom_api.reactivate_line(
+                parametreler["musteri_id"]
+            )
+        
+        elif arac_adi == "check_number_portability":
+            return await self.telekom_api.check_number_portability(
+                parametreler["telefon_numarasi"]
             )
         
         else:

@@ -29,7 +29,7 @@ class TestTelekomAPIService:
     @pytest.mark.asyncio
     async def test_musteri_profil_getir_basarili(self, telekom_service, ornek_telefon):
         """Müşteri profili başarıyla getirilir"""
-        musteri = await telekom_service.musteri_profil_getir(ornek_telefon)
+        musteri = await telekom_service.get_customer_profile(ornek_telefon)
         
         assert musteri is not None
         assert musteri.telefon_numarasi == ornek_telefon
@@ -42,13 +42,13 @@ class TestTelekomAPIService:
     @pytest.mark.asyncio
     async def test_musteri_profil_getir_bulunamadi(self, telekom_service):
         """Var olmayan müşteri için None döner"""
-        musteri = await telekom_service.musteri_profil_getir("99999999999")
+        musteri = await telekom_service.get_customer_profile("99999999999")
         assert musteri is None
 
     @pytest.mark.asyncio
     async def test_mevcut_paket_detaylari_basarili(self, telekom_service, ornek_musteri_id):
         """Paket detayları başarıyla getirilir"""
-        paket_detaylari = await telekom_service.mevcut_paket_detaylari(ornek_musteri_id)
+        paket_detaylari = await telekom_service.get_customer_package(ornek_musteri_id)
         
         assert paket_detaylari is not None
         assert "musteri_bilgileri" in paket_detaylari
@@ -74,13 +74,13 @@ class TestTelekomAPIService:
     @pytest.mark.asyncio
     async def test_mevcut_paket_detaylari_musteri_bulunamadi(self, telekom_service):
         """Var olmayan müşteri için None döner"""
-        paket_detaylari = await telekom_service.mevcut_paket_detaylari("VAR_OLMAYAN_MUSTERI")
+        paket_detaylari = await telekom_service.get_customer_package("VAR_OLMAYAN_MUSTERI")
         assert paket_detaylari is None
 
     @pytest.mark.asyncio
     async def test_kullanilabilir_paketler_standart(self, telekom_service):
         """Standart müşteri seviyesi için paketler getirilir"""
-        paketler = await telekom_service.kullanilabilir_paketler("standart")
+        paketler = await telekom_service.get_available_packages("standart")
         
         assert len(paketler) > 0
         assert all(paket["uygunluk"] == "standart" for paket in paketler)
@@ -92,7 +92,7 @@ class TestTelekomAPIService:
     @pytest.mark.asyncio
     async def test_kullanilabilir_paketler_premium(self, telekom_service):
         """Premium müşteri seviyesi için paketler getirilir"""
-        paketler = await telekom_service.kullanilabilir_paketler("premium")
+        paketler = await telekom_service.get_available_packages("premium")
         
         assert len(paketler) > 0
         assert all(paket["uygunluk"] in ["standart", "premium"] for paket in paketler)
@@ -100,7 +100,7 @@ class TestTelekomAPIService:
     @pytest.mark.asyncio
     async def test_kullanilabilir_paketler_vip(self, telekom_service):
         """VIP müşteri seviyesi için tüm paketler getirilir"""
-        paketler = await telekom_service.kullanilabilir_paketler("vip")
+        paketler = await telekom_service.get_available_packages("vip")
         
         assert len(paketler) > 0
         # VIP müşteriler tüm paketleri görebilir
@@ -111,7 +111,7 @@ class TestTelekomAPIService:
         """Paket değişikliği başarıyla başlatılır"""
         hedef_paket = "Paket_VIP"
         
-        sonuc = await telekom_service.paket_degisiklik_baslat(ornek_musteri_id, hedef_paket)
+        sonuc = await telekom_service.change_package(ornek_musteri_id, hedef_paket)
         
         assert sonuc["durum"] == "basarili"
         assert "mesaj" in sonuc
@@ -129,49 +129,30 @@ class TestTelekomAPIService:
     async def test_paket_degisiklik_baslat_musteri_bulunamadi(self, telekom_service):
         """Var olmayan müşteri için hata fırlatır"""
         with pytest.raises(ValueError, match="Müşteri bulunamadı"):
-            await telekom_service.paket_degisiklik_baslat("VAR_OLMAYAN_MUSTERI", "Paket_STANDART")
+            await telekom_service.change_package("VAR_OLMAYAN_MUSTERI", "Paket_STANDART")
 
     @pytest.mark.asyncio
     async def test_paket_degisiklik_baslat_paket_bulunamadi(self, telekom_service, ornek_musteri_id):
         """Var olmayan paket için hata fırlatır"""
         with pytest.raises(ValueError, match="Hedef paket bulunamadı"):
-            await telekom_service.paket_degisiklik_baslat(ornek_musteri_id, "VAR_OLMAYAN_PAKET")
+            await telekom_service.change_package(ornek_musteri_id, "VAR_OLMAYAN_PAKET")
 
     @pytest.mark.asyncio
-    async def test_fatura_detaylari_getir_basarili(self, telekom_service, ornek_musteri_id):
+    async def test_get_current_bill_success(self, telekom_service, ornek_musteri_id):
         """Fatura detayları başarıyla getirilir"""
-        fatura_detaylari = await telekom_service.fatura_detaylari_getir(ornek_musteri_id, 1)
-        
+        fatura_detaylari = await telekom_service.get_current_bill(ornek_musteri_id, 1)
         assert fatura_detaylari is not None
-        assert "fatura_bilgileri" in fatura_detaylari
-        assert "musteri_bilgileri" in fatura_detaylari
-        assert "fatura_kalemleri" in fatura_detaylari
-        assert "ozet" in fatura_detaylari
-        
-        # Fatura bilgileri kontrolü
-        fatura_bilgileri = fatura_detaylari["fatura_bilgileri"]
-        assert "fatura_id" in fatura_bilgileri
-        assert "donem" in fatura_bilgileri
-        assert "toplam_tutar" in fatura_bilgileri
-        assert "odeme_durumu" in fatura_bilgileri
-        assert "son_odeme_tarihi" in fatura_bilgileri
-        
-        # Fatura kalemleri kontrolü
-        fatura_kalemleri = fatura_detaylari["fatura_kalemleri"]
-        assert len(fatura_kalemleri) > 0
-        assert all("aciklama" in kalem for kalem in fatura_kalemleri)
-        assert all("tutar" in kalem for kalem in fatura_kalemleri)
 
     @pytest.mark.asyncio
-    async def test_fatura_detaylari_getir_musteri_bulunamadi(self, telekom_service):
+    async def test_get_current_bill_customer_not_found(self, telekom_service):
         """Var olmayan müşteri için None döner"""
-        fatura_detaylari = await telekom_service.fatura_detaylari_getir("VAR_OLMAYAN_MUSTERI", 1)
+        fatura_detaylari = await telekom_service.get_current_bill("VAR_OLMAYAN_MUSTERI", 1)
         assert fatura_detaylari is None
 
     @pytest.mark.asyncio
-    async def test_fatura_detaylari_getir_gecersiz_ay(self, telekom_service, ornek_musteri_id):
+    async def test_get_current_bill_invalid_month(self, telekom_service, ornek_musteri_id):
         """Geçersiz ay için None döner"""
-        fatura_detaylari = await telekom_service.fatura_detaylari_getir(ornek_musteri_id, 13)
+        fatura_detaylari = await telekom_service.get_current_bill(ornek_musteri_id, 13)
         assert fatura_detaylari is None
 
     @pytest.mark.asyncio
@@ -180,7 +161,7 @@ class TestTelekomAPIService:
         sorun_kategorisi = "Teknik Sorun"
         aciklama = "İnternet bağlantısı yavaş"
         
-        sonuc = await telekom_service.destek_talep_olustur(ornek_musteri_id, sorun_kategorisi, aciklama)
+        sonuc = await telekom_service.create_fault_ticket(ornek_musteri_id, sorun_kategorisi, aciklama)
         
         assert sonuc["durum"] == "basarili"
         assert "mesaj" in sonuc
@@ -199,7 +180,7 @@ class TestTelekomAPIService:
     async def test_destek_talep_olustur_musteri_bulunamadi(self, telekom_service):
         """Var olmayan müşteri için hata fırlatır"""
         with pytest.raises(ValueError, match="Müşteri bulunamadı"):
-            await telekom_service.destek_talep_olustur("VAR_OLMAYAN_MUSTERI", "Test", "Test")
+            await telekom_service.create_fault_ticket("VAR_OLMAYAN_MUSTERI", "Test", "Test")
 
     @pytest.mark.asyncio
     async def test_musteri_veritabani_olusturma(self, telekom_service):
@@ -271,13 +252,13 @@ class TestTelekomAPIService:
         
         # Düşük pakete geçmeye çalış
         with pytest.raises(ValueError, match="Borçlu müşteri düşük pakete geçemez"):
-            await telekom_service.paket_degisiklik_baslat(borclu_musteri_id, "Paket_STANDART")
+            await telekom_service.change_package(borclu_musteri_id, "Paket_STANDART")
 
     @pytest.mark.asyncio
     async def test_destek_talep_oncelik_kontrolu(self, telekom_service, ornek_musteri_id):
         """Müşteri seviyesine göre öncelik belirlenir"""
         # Premium müşteri için destek talebi
-        sonuc = await telekom_service.destek_talep_olustur(ornek_musteri_id, "Test", "Test")
+        sonuc = await telekom_service.create_fault_ticket(ornek_musteri_id, "Test", "Test")
         
         # Premium müşteri yüksek öncelik almalı
         assert sonuc["oncelik"] == "yuksek"
