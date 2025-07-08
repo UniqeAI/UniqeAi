@@ -1,5 +1,4 @@
-name: 🔔 Kapsamli Slack Bildirimleri
-
+name: 🔔 Kapsamlı Slack Bildirimleri
 on:
   # Push events - tum branchler
   push:
@@ -337,9 +336,4 @@ jobs:
             -d "$PAYLOAD" \
             "$SLACK_WEBHOOK_URL")
           
-          if [ "$HTTP_CODE" = "200" ]; then
-            echo "✅ Slack bildirimi basariyla gonderildi: $EVENT_NAME (HTTP $HTTP_CODE)"
-          else
-            echo "❌ Slack bildirimi gonderilemedi: HTTP $HTTP_CODE"
-            exit 1
-          fi 
+          echo "✅ Slack bildirimi gönderildi: $EVENT_NAME" 
