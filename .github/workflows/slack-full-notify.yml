@@ -68,9 +68,8 @@ jobs:
           echo "repo_url=https://github.com/${{ github.repository }}" >> $GITHUB_OUTPUT
           echo "timestamp=$(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_OUTPUT
           
-      - name: 🔔 Slack Mesaji Gonder
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: 📝 Mesaj Olustur
+        id: prepare_message
         run: |
           EVENT_NAME="${{ steps.prepare.outputs.event_name }}"
           ACTOR="${{ steps.prepare.outputs.actor }}"
@@ -79,12 +78,6 @@ jobs:
           SHA_SHORT="${{ steps.prepare.outputs.sha_short }}"
           REPO_URL="${{ steps.prepare.outputs.repo_url }}"
           TIMESTAMP="${{ steps.prepare.outputs.timestamp }}"
-          
-          # URL kontrolu
-          if [ -z "$SLACK_WEBHOOK_URL" ]; then
-            echo "❌ SLACK_WEBHOOK_URL secret tanimlanmamis!"
-            exit 1
-          fi
           
           # Event'e gore mesaj olustur
           case "$EVENT_NAME" in
@@ -304,21 +297,11 @@ jobs:
           EOF
           )
           
-          # Slack'e gonder
-          PAYLOAD_FILE=$(mktemp)
-          echo "$PAYLOAD" > "$PAYLOAD_FILE"
-
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-            -X POST \
-            -H 'Content-type: application/json' \
-            --data-binary "@$PAYLOAD_FILE" \
-            "$SLACK_WEBHOOK_URL")
+          echo "${PAYLOAD}" > payload.json
           
-          rm "$PAYLOAD_FILE"
-          
-          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
-            echo "✅ Slack bildirimi basariyla gonderildi: $EVENT_NAME (HTTP $HTTP_CODE)"
-          else
-            echo "❌ Slack bildirimi gonderilemedi: HTTP $HTTP_CODE"
-            exit 1
-          fi 
+      - name: 🔔 Slack Mesaji Gonder
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload-file-path: "payload.json"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
