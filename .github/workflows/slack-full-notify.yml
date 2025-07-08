@@ -1,4 +1,5 @@
-name: 🔔 Kapsamlı Slack Bildirimleri
+name: 🔔 Kapsamli Slack Bildirimleri
+
 on:
   # Push events - tum branchler
   push:
@@ -43,10 +44,6 @@ on:
   # Wiki events
   gollum:
   
-  # Workflow run events
-  workflow_run:
-    types: [completed, requested]
-  
   # Star events
   watch:
     types: [started]
@@ -58,7 +55,6 @@ jobs:
   slack-notify:
     name: Slack Bildirim Gonder
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     
     steps:
       - name: 📊 Event Bilgilerini Hazirla
@@ -277,27 +273,6 @@ jobs:
               TEXT="📚 **${ACTOR}** Wiki'yi guncelledi\\n🔗 <${REPO_URL}/wiki|Wiki'yi goruntule>"
               ;;
               
-            workflow_run)
-              WORKFLOW_NAME="${{ github.event.workflow_run.name }}"
-              WORKFLOW_CONCLUSION="${{ github.event.workflow_run.conclusion }}"
-              WORKFLOW_URL="${{ github.event.workflow_run.html_url }}"
-              
-              case "$WORKFLOW_CONCLUSION" in
-                success)
-                  TEXT="✅ **Workflow basarili:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-                failure)
-                  TEXT="❌ **Workflow basarisiz:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Hata detaylarini goruntule>"
-                  ;;
-                cancelled)
-                  TEXT="⏹️ **Workflow iptal edildi:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-                *)
-                  TEXT="⚠️ **Workflow tamamlandi:** *${WORKFLOW_NAME}* (${WORKFLOW_CONCLUSION})\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-              esac
-              ;;
-              
             *)
               TEXT="📢 **${ACTOR}** bir etkinlik gerceklestirdi: *${EVENT_NAME}*\\n🔗 <${REPO_URL}|${REPO}>"
               ;;
@@ -336,4 +311,9 @@ jobs:
             -d "$PAYLOAD" \
             "$SLACK_WEBHOOK_URL")
           
-          echo "✅ Slack bildirimi gönderildi: $EVENT_NAME" 
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Slack bildirimi basariyla gonderildi: $EVENT_NAME (HTTP $HTTP_CODE)"
+          else
+            echo "❌ Slack bildirimi gonderilemedi: HTTP $HTTP_CODE"
+            exit 1
+          fi 
