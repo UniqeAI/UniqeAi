@@ -1,5 +1,4 @@
 name: 🔔 Kapsamlı Slack Bildirimleri
-
 on:
   # Push events - tüm branch'lerde
   push:
