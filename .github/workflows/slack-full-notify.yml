@@ -3,7 +3,6 @@ name: 🔔 Kapsamli Slack Bildirimleri
 on:
   # Push events - tum branchler
   push:
-    branches: ['**']
   
   # Branch/Tag olusturma ve silme
   create:
