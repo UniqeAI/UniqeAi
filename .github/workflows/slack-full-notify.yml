@@ -1,4 +1,5 @@
 name: Full Slack Notifications
+main
 
 on:
   push:
@@ -19,10 +20,13 @@ on:
   workflow_run:          # Workflow başarılı / başarısız olduğunda
     types:
       - completed
+ main
 
 jobs:
   notify:
     runs-on: ubuntu-latest
+
+ main
     steps:
       - name: Prepare and Send Slack Message
         env:
@@ -45,6 +49,7 @@ jobs:
           case "$EVENT_TYPE" in
             push)
               TEXT=":inbox_tray: *${ACTOR}*, \`${BRANCH_NAME}\` branch'ine commit attı. Mesaj:\n> ${HEAD_COMMIT_MSG}"
+ main
               ;;
             create)
               TEXT=":seedling: *${ACTOR}*, \`${BRANCH_NAME}\` adında yeni bir branch/tag oluşturdu."
@@ -57,6 +62,7 @@ jobs:
               ;;
             issue_comment)
               TEXT=":speech_balloon: *${ACTOR}*, bir Issue'a yorum yaptı:\n> ${COMMENT_BODY}"
+ main
               ;;
             pull_request_review)
               TEXT=":mag_right: *${ACTOR}*, bir Pull Request'i inceledi."
@@ -72,6 +78,7 @@ jobs:
               ;;
             *)
               TEXT=":grey_question: *${ACTOR}* bir olay gerçekleştirdi: ${EVENT_TYPE}"
+ main
               ;;
           esac
 
