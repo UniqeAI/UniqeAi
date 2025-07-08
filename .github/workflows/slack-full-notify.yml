@@ -1,4 +1,4 @@
-name: Full Slack Notifications
+name: Slack Full Notifications
 
 on:
   push:
@@ -16,13 +16,13 @@ on:
     types: [created, edited, answered, deleted]
   discussion_comment:
     types: [created, edited, deleted]
-  workflow_run:          # Workflow başarılı / başarısız olduğunda
-    types:
-      - completed
+  workflow_run:
+    types: [completed]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
+
     steps:
       - name: Prepare and Send Slack Message
         env:
@@ -31,47 +31,48 @@ jobs:
           ACTOR: ${{ github.actor }}
           REPO: ${{ github.repository }}
           REF: ${{ github.ref }}
-          HEAD_COMMIT_MSG: ${{ github.event.head_commit.message }}
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          DISCUSSION_TITLE: ${{ github.event.discussion.title }}
-          DISCUSSION_COMMENT_BODY: ${{ github.event.comment.body }}
-          STATUS: ${{ github.event.workflow_run.conclusion }}
         run: |
           EVENT_TYPE=$EVENT_NAME
           BRANCH_NAME="${REF##*/}"
+          TEXT=""
 
           case "$EVENT_TYPE" in
             push)
-              TEXT=":inbox_tray: *${ACTOR}*, \`${BRANCH_NAME}\` branch'ine commit attı. Mesaj:\n> ${HEAD_COMMIT_MSG}"
+              COMMIT_MSG="${{ github.event.head_commit.message }}"
+              TEXT=":inbox_tray: *${ACTOR}*, \`${BRANCH_NAME}\` branch'ine commit attı. Mesaj:\n> $COMMIT_MSG"
               ;;
             create)
               TEXT=":seedling: *${ACTOR}*, \`${BRANCH_NAME}\` adında yeni bir branch/tag oluşturdu."
               ;;
             pull_request)
-              TEXT=":twisted_rightwards_arrows: *${ACTOR}*, bir Pull Request oluşturdu veya güncelledi: *${PR_TITLE}*"
+              PR_TITLE="${{ github.event.pull_request.title }}"
+              TEXT=":twisted_rightwards_arrows: *${ACTOR}*, bir Pull Request oluşturdu veya güncelledi: *$PR_TITLE*"
               ;;
             issues)
-              TEXT=":exclamation: *${ACTOR}*, yeni bir Issue açtı veya düzenledi: *${ISSUE_TITLE}*"
+              ISSUE_TITLE="${{ github.event.issue.title }}"
+              TEXT=":exclamation: *${ACTOR}*, yeni bir Issue açtı veya düzenledi: *$ISSUE_TITLE*"
               ;;
             issue_comment)
-              TEXT=":speech_balloon: *${ACTOR}*, bir Issue'a yorum yaptı:\n> ${COMMENT_BODY}"
+              COMMENT_BODY="${{ github.event.comment.body }}"
+              TEXT=":speech_balloon: *${ACTOR}*, bir Issue'a yorum yaptı:\n> $COMMENT_BODY"
               ;;
             pull_request_review)
               TEXT=":mag_right: *${ACTOR}*, bir Pull Request'i inceledi."
               ;;
             discussion)
-              TEXT=":speaking_head: *${ACTOR}*, bir Discussion oluşturdu/düzenledi: *${DISCUSSION_TITLE}*"
+              DISCUSSION_TITLE="${{ github.event.discussion.title }}"
+              TEXT=":speaking_head: *${ACTOR}*, bir Discussion oluşturdu/düzenledi: *$DISCUSSION_TITLE*"
               ;;
             discussion_comment)
-              TEXT=":left_speech_bubble: *${ACTOR}*, bir Discussion'a yorum yaptı:\n> ${DISCUSSION_COMMENT_BODY}"
+              COMMENT_BODY="${{ github.event.comment.body }}"
+              TEXT=":left_speech_bubble: *${ACTOR}*, bir Discussion'a yorum yaptı:\n> $COMMENT_BODY"
               ;;
             workflow_run)
-              TEXT=":gear: Workflow \`${REPO}\` için çalıştırıldı. Durum: *${STATUS}*"
+              STATUS="${{ github.event.workflow_run.conclusion }}"
+              TEXT=":gear: Workflow \`${REPO}\` için çalıştırıldı. Durum: *$STATUS*"
               ;;
             *)
-              TEXT=":grey_question: *${ACTOR}* bir olay gerçekleştirdi: ${EVENT_TYPE}"
+              TEXT=":grey_question: *${ACTOR}* bir olay gerçekleştirdi: $EVENT_TYPE"
               ;;
           esac
 
