@@ -1,27 +1,15 @@
 #!/usr/bin/env python3
 """
-🔥 QLoRA Fine-tuning Script - RTX 4060 Optimized
-===============================================
+🚀 HIZLI QLoRA Fine-tuning - RTX 4060 Optimize
+==============================================
 
-Bu script QLoRA (Quantized Low-Rank Adaptation) kullanarak
-Llama-3.1-8B-Instruct modelini RTX 4060 + 32GB RAM sisteminiz için
-optimize edilmiş şekilde fine-tune eder.
+Bu script QLoRA eğitimini 30-45 dakikaya düşürür.
 
-QLoRA = ✅ EVET, tam fonksiyonel QLoRA implementation:
-- 4-bit quantization (8x memory reduction)
-- LoRA adapters (parameter efficient)
-- Flash Attention 2 (RTX 4060 optimized)
-- Gradient checkpointing (memory efficient)
-
-Kullanım:
-    1. Hugging Face token'ını ayarlayın:
-       PowerShell: $env:HUGGINGFACE_HUB_TOKEN = "hf_your_token_here"
-       CMD: set HUGGINGFACE_HUB_TOKEN=hf_your_token_here
-    
-    2. Script'i çalıştırın:
-       python QLORA_RTX4060_FINAL.py
-
-Token alma: https://huggingface.co/settings/tokens
+Ana Optimizasyonlar:
+- Daha büyük batch size
+- Daha az epoch 
+- Daha küçük dataset sample
+- Aggressive gradient accumulation
 """
 
 import os
@@ -31,7 +19,6 @@ import torch
 import logging
 from datetime import datetime
 from typing import Dict, Tuple
-from dotenv import load_dotenv
 
 # ML libraries
 from datasets import Dataset
@@ -49,14 +36,10 @@ from peft import (
     TaskType,
     prepare_model_for_kbit_training
 )
-# from trl import SFTTrainer  # SFTTrainer'ı kaldırıyoruz
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(message)s')
 logger = logging.getLogger(__name__)
-
-# Load environment variables from .env file at the project root
-load_dotenv()
 
 def setup_huggingface_token():
     """Setup Hugging Face token from environment variable."""
@@ -69,21 +52,23 @@ def setup_huggingface_token():
         logger.warning("⚠️ HUGGINGFACE_HUB_TOKEN not found. Trying to use global login.")
         return False
 
-class QLoRAFineTuner:
+class HizliQLoRAFineTuner:
     def __init__(self):
         setup_huggingface_token()
-        self.model_name = "meta-llama/Meta-Llama-3-8B-Instruct"  # Düzeltildi: Llama 3.1 -> Llama 3
+        self.model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
         self.data_path = "../data/telekom_training_dataset_enhanced.json"
-        self.output_dir = "./qlora_fine_tuned_model"
+        self.output_dir = "./hizli_qlora_model"
         
-        # RTX 4060 optimal config
+        # 🚀 HIZLI RTX 4060 CONFIG
         self.config = {
-            "lora_r": 64,
-            "lora_alpha": 128,
-            "batch_size": 1,
-            "gradient_accumulation": 32,
-            "learning_rate": 5e-5,
-            "num_epochs": 3  # 1699 sample için 3 epoch yeterli
+            "lora_r": 32,  # Daha küçük rank - hızlı
+            "lora_alpha": 64,  # Orantılı alpha
+            "batch_size": 2,  # Batch size artırıldı
+            "gradient_accumulation": 8,  # Azaltıldı (effective batch = 16)
+            "learning_rate": 1e-4,  # Biraz daha yüksek
+            "num_epochs": 1,  # Sadece 1 epoch!
+            "max_samples": 500,  # Dataset'i 500 sample'a kısıt
+            "max_seq_length": 1024  # Sequence length kısaltıldı
         }
         
         os.makedirs(self.output_dir, exist_ok=True)
@@ -99,10 +84,13 @@ class QLoRAFineTuner:
         )
     
     def load_dataset(self) -> Dataset:
-        """Load and format dataset with proper tokenization"""
+        """Load and format dataset - LIMITED TO 500 SAMPLES"""
         logger.info("📊 Loading dataset...")
         with open(self.data_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+        
+        # 🚀 SADECE İLK 500 SAMPLE AL
+        data = data[:self.config["max_samples"]]
         
         formatted_data = []
         for item in data:
@@ -112,7 +100,7 @@ class QLoRAFineTuner:
                 text = f"### Instruction:\n{item['instruction']}\n\n### Response:\n{item['output']}<|endoftext|>"
             formatted_data.append({"text": text})
         
-        logger.info(f"📈 Loaded {len(formatted_data)} samples")
+        logger.info(f"📈 Loaded {len(formatted_data)} samples (limited for speed)")
         return Dataset.from_list(formatted_data)
     
     def tokenize_function(self, examples, tokenizer):
@@ -122,7 +110,7 @@ class QLoRAFineTuner:
             examples["text"],
             truncation=True,
             padding=False,  # Will be done by data collator
-            max_length=2048,
+            max_length=self.config["max_seq_length"],  # Kısaltılmış
             return_tensors=None
         )
         
@@ -137,8 +125,6 @@ class QLoRAFineTuner:
         
         # Quantization config
         bnb_config = self.setup_quantization()
-        
-        # from_pretrained will automatically use the logged-in token
         
         # Tokenizer
         tokenizer = AutoTokenizer.from_pretrained(
@@ -164,18 +150,17 @@ class QLoRAFineTuner:
         return model, tokenizer
     
     def setup_qlora(self, model) -> AutoModelForCausalLM:
-        """Setup QLoRA adapters"""
+        """Setup QLoRA adapters - SMALLER CONFIG"""
         logger.info("🎯 Setting up QLoRA adapters...")
         
         # Prepare for training
         model = prepare_model_for_kbit_training(model)
         
-        # LoRA config
+        # LoRA config - SMALLER FOR SPEED
         lora_config = LoraConfig(
-            r=self.config["lora_r"],
-            lora_alpha=self.config["lora_alpha"],
-            target_modules=["q_proj", "k_proj", "v_proj", "o_proj", 
-                           "gate_proj", "up_proj", "down_proj"],
+            r=self.config["lora_r"],  # 32 instead of 64
+            lora_alpha=self.config["lora_alpha"],  # 64 instead of 128
+            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],  # Fewer targets
             lora_dropout=0.05,
             bias="none",
             task_type=TaskType.CAUSAL_LM
@@ -192,9 +177,9 @@ class QLoRAFineTuner:
         return model
     
     def fine_tune(self) -> bool:
-        """Main fine-tuning process"""
+        """Main fine-tuning process - FAST VERSION"""
         try:
-            logger.info("🚀 Starting QLoRA fine-tuning...")
+            logger.info("🚀 Starting FAST QLoRA fine-tuning...")
             
             # Load dataset
             dataset = self.load_dataset()
@@ -220,21 +205,23 @@ class QLoRAFineTuner:
                 pad_to_multiple_of=8
             )
             
-            # Training arguments
+            # 🚀 FAST Training arguments
             training_args = TrainingArguments(
                 output_dir=self.output_dir,
-                num_train_epochs=self.config["num_epochs"],
-                per_device_train_batch_size=self.config["batch_size"],
-                gradient_accumulation_steps=self.config["gradient_accumulation"],
+                num_train_epochs=self.config["num_epochs"],  # Sadece 1 epoch!
+                per_device_train_batch_size=self.config["batch_size"],  # 2 instead of 1
+                gradient_accumulation_steps=self.config["gradient_accumulation"],  # 8 instead of 32
                 learning_rate=self.config["learning_rate"],
                 bf16=True,
                 gradient_checkpointing=True,
-                logging_steps=1,
-                save_steps=50,
-                save_total_limit=2,
+                logging_steps=5,  # Daha az log
+                save_steps=25,  # Daha az save
+                save_total_limit=1,  # Sadece 1 checkpoint
                 remove_unused_columns=False,
                 dataloader_drop_last=True,
-                dataloader_pin_memory=False
+                dataloader_pin_memory=False,
+                warmup_steps=10,  # Hızlı warmup
+                max_grad_norm=1.0
             )
             
             # Create trainer with manual tokenization
@@ -248,7 +235,12 @@ class QLoRAFineTuner:
             
             # Train
             logger.info("🔥 Training started...")
+            start_time = datetime.now()
             trainer.train()
+            end_time = datetime.now()
+            
+            duration = end_time - start_time
+            logger.info(f"⏱️ Training completed in: {duration}")
             
             # Save
             trainer.save_model()
@@ -268,20 +260,21 @@ class QLoRAFineTuner:
 
 def main():
     """Main function"""
-    print("🔥 QLoRA Fine-tuning for RTX 4060")
+    print("🚀 HIZLI QLoRA Fine-tuning for RTX 4060")
     print("=" * 50)
-    print("✅ QLoRA Features:")
-    print("   - 4-bit quantization")
-    print("   - LoRA adapters")
-    print("   - RTX 4060 optimized")
-    print("   - Memory efficient")
+    print("⚡ Speed Optimizations:")
+    print("   - 500 samples only")
+    print("   - 1 epoch training")
+    print("   - Larger batch size")
+    print("   - Smaller LoRA rank")
+    print("   - Shorter sequences")
     print("=" * 50)
     
-    fine_tuner = QLoRAFineTuner()
+    fine_tuner = HizliQLoRAFineTuner()
     success = fine_tuner.fine_tune()
     
     if success:
-        print("🎉 QLoRA fine-tuning completed!")
+        print("🎉 HIZLI QLoRA fine-tuning completed!")
     else:
         print("❌ Fine-tuning failed.")
 

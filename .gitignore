@@ -1,3 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pt
+*.pth
+
+# Transformers
+pytorch_model.bin
+model.safetensors
+
+# QLoRA Model Files (büyük dosyalar)
+UniqeAi/ai_model/scripts/qlora_fine_tuned_model/
+UniqeAi/ai_model/scripts/hizli_qlora_model/
+# Tüm model klasörleri için genel koruma
+**/qlora_fine_tuned_model/
+**/qlora_*_model/
+**/fine_tuned_model*/
+**/checkpoint-*/
+# PEFT adapter dosyaları
+adapter_config.json
+adapter_model.safetensors
+**/adapter_model.bin
+
+# Hugging Face Cache
+.cache/
+transformers_cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.pyc
@@ -81,3 +130,46 @@ Thumbs.db
 #docs/*
 #PROJEYE_BASLANGIC_REHBERI.md
 #PROJEYE_BASLANGIC_REHBERI.pdf
+
+# ========================================
+# AI/ML Cache Files (sadece cache'ler exclude)
+# ========================================
+
+# Hugging Face Cache
+.cache/
+transformers_cache/
+.huggingface/
+
+# Dataset Cache
+*.arrow
+*.cache
+
+# Training Logs
+training_logs/
+wandb/
+tensorboard_logs/
+
+# Temporary AI Files
+tmp_model/
+temp_model/
+model_checkpoints/
+
+# NOT: Model dosyaları Git LFS ile yönetilecek
+
+# ========================================
+# Büyük Data Dosyaları (GitHub'a atılmayacak)
+# ========================================
+
+# Büyük dataset dosyaları
+**/telekom_dataset_2500.json
+**/telekom_training_dataset_enhanced.json
+**/test_results_*.json
+
+# Optimizer ve training state dosyaları
+optimizer.pt
+scheduler.pt
+**/optimizer.pt
+**/scheduler.pt
+
+# Tokenizer dosyaları (büyük olanlar)
+**/tokenizer.json

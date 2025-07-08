@@ -1,55 +1,66 @@
-# Backend
-fastapi
-uvicorn
-python-dotenv
+# PyTorch ve CUDA (RTX 4060 için)
+# Install with: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
 
-# AI / ML
-pandas
-scikit-learn
-nltk
-sentence-transformers
-torch
+# Transformers ve Hugging Face
+transformers>=4.35.0
+datasets>=2.14.0
+tokenizers>=0.14.0
+huggingface-hub>=0.17.0
+accelerate>=0.25.0
 
-# Backend
-fastapi
-uvicorn
+# Fine-tuning ve LoRA
+peft>=0.6.0
+trl>=0.7.0
+bitsandbytes>=0.41.0
+
+# Model dependencies
+sentencepiece>=0.1.99
+protobuf>=4.24.0
+safetensors>=0.4.0
+
+# Data processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Turkish NLP
+zemberek-python>=0.1.3
+nltk>=3.8.0
+sentence-transformers>=2.2.0
+
+# Backend API
+fastapi>=0.103.0
+uvicorn>=0.23.0
+python-dotenv>=1.0.0
 
 # Frontend
-streamlit
+streamlit>=1.28.0
 
-# AI / ML
-transformers
-accelerate
-bitsandbytes
-datasets
-peft
-trl
-zemberek-python
-
-# QLoRA Fine-tuning için gerekli paketler
+# QLoRA Fine-tuning optimizations
 flash-attn>=2.3.0  # Flash Attention 2 (RTX 4060 için optimal)
-wandb  # Training logging (opsiyonel)
-
-# QLoRA specific requirements
-accelerate>=0.25.0  # Model parallelization
-psutil  # System monitoring
+wandb>=0.15.0  # Training logging (opsiyonel)
 
 # LangChain Kütüphaneleri
-langchain-community
-langchain-core
-langchain-openai
-langchain
-langsmith
+langchain-community>=0.0.20
+langchain-core>=0.1.20
+langchain-openai>=0.0.5
+langchain>=0.1.0
+langsmith>=0.0.60
 
-# Frontend
-streamlit
+# Utilities
+tqdm>=4.65.0
+psutil>=5.9.0  # Sistem monitoring
+py3nvml>=0.2.7  # GPU monitoring
+requests>=2.31.0
 
-# Veri Üretimi
-faker
+# Development
+jupyter>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+faker>=19.0.0  # Veri üretimi
 
 # Geliştirme & Formatlama
-black 
-
-# Sistem ve Debugging
-psutil  # Bellek ve CPU monitoring
-py3nvml  # GPU monitoring 
+black>=23.0.0 
