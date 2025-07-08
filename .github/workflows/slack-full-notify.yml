@@ -305,13 +305,18 @@ jobs:
           )
           
           # Slack'e gonder
+          PAYLOAD_FILE=$(mktemp)
+          echo "$PAYLOAD" > "$PAYLOAD_FILE"
+
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             -X POST \
             -H 'Content-type: application/json' \
-            -d "$PAYLOAD" \
+            --data-binary "@$PAYLOAD_FILE" \
             "$SLACK_WEBHOOK_URL")
           
-          if [ "$HTTP_CODE" = "200" ]; then
+          rm "$PAYLOAD_FILE"
+          
+          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
             echo "✅ Slack bildirimi basariyla gonderildi: $EVENT_NAME (HTTP $HTTP_CODE)"
           else
             echo "❌ Slack bildirimi gonderilemedi: HTTP $HTTP_CODE"
