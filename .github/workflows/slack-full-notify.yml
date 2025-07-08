@@ -1,61 +1,276 @@
-name: Slack Bildirimleri
-
+name: 🔔 Kapsamlı Slack Bildirimleri
 on:
+  # Push events - tüm branch'lerde
   push:
-    branches: ["**"]
-  pull_request:
-    types: [opened, closed, reopened, synchronize]
-  issues:
-    types: [opened, closed, reopened]
+    branches: 
+      - '**'  # Tüm branch'ler
+  
+  # Branch/Tag oluşturma
   create:
+  
+  # Branch/Tag silme
   delete:
+  
+  # Pull Request events
+  pull_request:
+    types: [opened, closed, reopened, edited, synchronize, ready_for_review, converted_to_draft]
+  
+  # Pull Request Review events
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  
+  # Pull Request Review Comment events
+  pull_request_review_comment:
+    types: [created, edited, deleted]
+  
+  # Issue events
+  issues:
+    types: [opened, closed, reopened, edited, deleted, transferred, assigned, unassigned, labeled, unlabeled]
+  
+  # Issue Comment events
+  issue_comment:
+    types: [created, edited, deleted]
+  
+  # Discussion events
+  discussion:
+    types: [created, edited, deleted, transferred, answered, unanswered]
+  
+  # Discussion Comment events
+  discussion_comment:
+    types: [created, edited, deleted]
+  
+  # Release events
+  release:
+    types: [published, edited, deleted, prereleased, released]
+  
+  # Wiki events
+  gollum:
+  
+  # Workflow run events
+  workflow_run:
+    types: [completed, requested]
+  
+  # Star events
+  watch:
+    types: [started]
+  
+  # Fork events
+  fork:
+  
+  # Repository events
+  repository:
+    types: [created, deleted, archived, unarchived, publicized, privatized]
 
 jobs:
   slack-notify:
     runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    
     steps:
-      - name: Slack Bildirim Gönder
+      - name: 📊 GitHub Event Bilgilerini Topla
+        id: event-info
+        run: |
+          echo "EVENT_NAME=${{ github.event_name }}" >> $GITHUB_OUTPUT
+          echo "ACTOR=${{ github.actor }}" >> $GITHUB_OUTPUT
+          echo "REPO=${{ github.repository }}" >> $GITHUB_OUTPUT
+          echo "REF_NAME=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          echo "SHA_SHORT=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+          echo "REPO_URL=https://github.com/${{ github.repository }}" >> $GITHUB_OUTPUT
+          
+      - name: 🔔 Slack Bildirimi Gönder
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: | 
-          EVENT_NAME="${{ github.event_name }}"
-          ACTOR="${{ github.actor }}"
-          REPO="${{ github.repository }}"
-          BRANCH="${{ github.ref_name }}"
+        run: |
+          # Temel bilgiler
+          EVENT_NAME="${{ steps.event-info.outputs.EVENT_NAME }}"
+          ACTOR="${{ steps.event-info.outputs.ACTOR }}"
+          REPO="${{ steps.event-info.outputs.REPO }}"
+          REF_NAME="${{ steps.event-info.outputs.REF_NAME }}"
+          SHA_SHORT="${{ steps.event-info.outputs.SHA_SHORT }}"
+          REPO_URL="${{ steps.event-info.outputs.REPO_URL }}"
           
+          # Event'e göre mesaj oluştur
           case "$EVENT_NAME" in
             push)
-              MESSAGE="🚀 **${ACTOR}** \`${BRANCH}\` branch'ine commit attı"
-              if [ -n "${{ github.event.head_commit.message }}" ]; then
-                MESSAGE="${MESSAGE}: ${{ github.event.head_commit.message }}"
+              COMMIT_MSG="${{ github.event.head_commit.message }}"
+              COMMIT_URL="${{ github.event.head_commit.url }}"
+              COMMITS_COUNT="${{ github.event.commits[0] && length(github.event.commits) || 1 }}"
+              
+              if [[ "$COMMITS_COUNT" -eq 1 ]]; then
+                TEXT="🚀 **${ACTOR}** \`${REF_NAME}\` branch'ine commit attı:\n> 📝 *${COMMIT_MSG}*\n🔗 <${COMMIT_URL}|${SHA_SHORT}>"
+              else
+                TEXT="🚀 **${ACTOR}** \`${REF_NAME}\` branch'ine ${COMMITS_COUNT} commit attı\n🔗 <${REPO_URL}/compare/${REF_NAME}|Değişiklikleri görüntüle>"
               fi
               ;;
-            pull_request)
-              ACTION="${{ github.event.action }}"
-              PR_TITLE="${{ github.event.pull_request.title }}"
-              MESSAGE="📋 **${ACTOR}** Pull Request ${ACTION}: ${PR_TITLE}"
-              ;;
-            issues)
-              ACTION="${{ github.event.action }}"
-              ISSUE_TITLE="${{ github.event.issue.title }}"
-              MESSAGE="🐛 **${ACTOR}** Issue ${ACTION}: ${ISSUE_TITLE}"
-              ;;
+              
             create)
               REF_TYPE="${{ github.event.ref_type }}"
-              REF="${{ github.event.ref }}"
-              MESSAGE="🌿 **${ACTOR}** yeni ${REF_TYPE} oluşturdu: ${REF}"
+              if [[ "$REF_TYPE" == "branch" ]]; then
+                TEXT="🌿 **${ACTOR}** yeni branch oluşturdu: \`${REF_NAME}\`\n🔗 <${REPO_URL}/tree/${REF_NAME}|Branch'i görüntüle>"
+              else
+                TEXT="🏷️ **${ACTOR}** yeni tag oluşturdu: \`${REF_NAME}\`\n🔗 <${REPO_URL}/releases/tag/${REF_NAME}|Tag'i görüntüle>"
+              fi
               ;;
+              
             delete)
               REF_TYPE="${{ github.event.ref_type }}"
               REF="${{ github.event.ref }}"
-              MESSAGE="🗑️ **${ACTOR}** ${REF_TYPE} sildi: ${REF}"
+              if [[ "$REF_TYPE" == "branch" ]]; then
+                TEXT="🗑️ **${ACTOR}** branch sildi: \`${REF}\`"
+              else
+                TEXT="🗑️ **${ACTOR}** tag sildi: \`${REF}\`"
+              fi
               ;;
+              
+            pull_request)
+              PR_TITLE="${{ github.event.pull_request.title }}"
+              PR_URL="${{ github.event.pull_request.html_url }}"
+              PR_NUMBER="${{ github.event.pull_request.number }}"
+              PR_ACTION="${{ github.event.action }}"
+              BASE_BRANCH="${{ github.event.pull_request.base.ref }}"
+              HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
+              
+              case "$PR_ACTION" in
+                opened)
+                  TEXT="📋 **${ACTOR}** yeni Pull Request açtı:\n> 🎯 *${PR_TITLE}*\n📊 \`${HEAD_BRANCH}\` → \`${BASE_BRANCH}\`\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  ;;
+                closed)
+                  if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+                    TEXT="✅ **${ACTOR}** Pull Request'i merge etti:\n> 🎯 *${PR_TITLE}*\n📊 \`${HEAD_BRANCH}\` → \`${BASE_BRANCH}\`\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  else
+                    TEXT="❌ **${ACTOR}** Pull Request'i kapattı:\n> 🎯 *${PR_TITLE}*\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  fi
+                  ;;
+                *)
+                  TEXT="🔄 **${ACTOR}** Pull Request güncelledi ($PR_ACTION):\n> 🎯 *${PR_TITLE}*\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  ;;
+              esac
+              ;;
+              
+            pull_request_review)
+              PR_TITLE="${{ github.event.pull_request.title }}"
+              PR_URL="${{ github.event.pull_request.html_url }}"
+              PR_NUMBER="${{ github.event.pull_request.number }}"
+              REVIEW_STATE="${{ github.event.review.state }}"
+              
+              case "$REVIEW_STATE" in
+                approved)
+                  TEXT="✅ **${ACTOR}** Pull Request'i onayladı:\n> 🎯 *${PR_TITLE}*\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  ;;
+                changes_requested)
+                  TEXT="🔄 **${ACTOR}** Pull Request'te değişiklik istedi:\n> 🎯 *${PR_TITLE}*\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  ;;
+                *)
+                  TEXT="👀 **${ACTOR}** Pull Request'i inceledi:\n> 🎯 *${PR_TITLE}*\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
+                  ;;
+              esac
+              ;;
+              
+            issues)
+              ISSUE_TITLE="${{ github.event.issue.title }}"
+              ISSUE_URL="${{ github.event.issue.html_url }}"
+              ISSUE_NUMBER="${{ github.event.issue.number }}"
+              ISSUE_ACTION="${{ github.event.action }}"
+              
+              case "$ISSUE_ACTION" in
+                opened)
+                  TEXT="🐛 **${ACTOR}** yeni Issue açtı:\n> 📝 *${ISSUE_TITLE}*\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
+                  ;;
+                closed)
+                  TEXT="✅ **${ACTOR}** Issue'yu kapattı:\n> 📝 *${ISSUE_TITLE}*\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
+                  ;;
+                *)
+                  TEXT="🔄 **${ACTOR}** Issue'yu güncelledi ($ISSUE_ACTION):\n> 📝 *${ISSUE_TITLE}*\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
+                  ;;
+              esac
+              ;;
+              
+            issue_comment)
+              ISSUE_TITLE="${{ github.event.issue.title }}"
+              ISSUE_URL="${{ github.event.issue.html_url }}"
+              ISSUE_NUMBER="${{ github.event.issue.number }}"
+              COMMENT_BODY="${{ github.event.comment.body }}"
+              COMMENT_BODY_SHORT=$(echo "$COMMENT_BODY" | head -c 100)
+              
+              TEXT="💬 **${ACTOR}** Issue'ya yorum yaptı:\n> 📝 *${ISSUE_TITLE}*\n> 💭 ${COMMENT_BODY_SHORT}...\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
+              ;;
+              
+            release)
+              RELEASE_NAME="${{ github.event.release.name }}"
+              RELEASE_TAG="${{ github.event.release.tag_name }}"
+              RELEASE_URL="${{ github.event.release.html_url }}"
+              RELEASE_ACTION="${{ github.event.action }}"
+              
+              TEXT="🎉 **${ACTOR}** yeni release yayınladı ($RELEASE_ACTION):\n> 🏷️ *${RELEASE_NAME}* (${RELEASE_TAG})\n🔗 <${RELEASE_URL}|Release'i görüntüle>"
+              ;;
+              
+            watch)
+              TEXT="⭐ **${ACTOR}** repository'yi yıldızladı!\n🔗 <${REPO_URL}|${REPO}>"
+              ;;
+              
+            fork)
+              FORK_URL="${{ github.event.forkee.html_url }}"
+              TEXT="🍴 **${ACTOR}** repository'yi fork'ladı!\n🔗 <${FORK_URL}|Fork'u görüntüle>"
+              ;;
+              
+            gollum)
+              PAGES_COUNT="${{ length(github.event.pages) }}"
+              TEXT="📚 **${ACTOR}** Wiki'yi güncelledi (${PAGES_COUNT} sayfa)\n🔗 <${REPO_URL}/wiki|Wiki'yi görüntüle>"
+              ;;
+              
+            workflow_run)
+              WORKFLOW_NAME="${{ github.event.workflow_run.name }}"
+              WORKFLOW_CONCLUSION="${{ github.event.workflow_run.conclusion }}"
+              WORKFLOW_URL="${{ github.event.workflow_run.html_url }}"
+              
+              case "$WORKFLOW_CONCLUSION" in
+                success)
+                  TEXT="✅ **Workflow başarılı:** *${WORKFLOW_NAME}*\n👤 Tetikleyen: ${ACTOR}\n🔗 <${WORKFLOW_URL}|Workflow'u görüntüle>"
+                  ;;
+                failure)
+                  TEXT="❌ **Workflow başarısız:** *${WORKFLOW_NAME}*\n👤 Tetikleyen: ${ACTOR}\n🔗 <${WORKFLOW_URL}|Hata detaylarını görüntüle>"
+                  ;;
+                *)
+                  TEXT="⚠️ **Workflow tamamlandı:** *${WORKFLOW_NAME}* (${WORKFLOW_CONCLUSION})\n👤 Tetikleyen: ${ACTOR}\n🔗 <${WORKFLOW_URL}|Workflow'u görüntüle>"
+                  ;;
+              esac
+              ;;
+              
             *)
-              MESSAGE="📢 **${ACTOR}** ${EVENT_NAME} eventi gerçekleştirdi"
+              TEXT="📢 **${ACTOR}** bir etkinlik gerçekleştirdi: *${EVENT_NAME}*\n🔗 <${REPO_URL}|${REPO}>"
               ;;
           esac
           
-          # Slack'e basit mesaj gönder
-          curl -X POST -H 'Content-type: application/json' \
-            --data "{\"text\":\"${MESSAGE}\"}" \
-            "$SLACK_WEBHOOK_URL" 
+          # Slack formatında JSON payload oluştur
+          PAYLOAD=$(cat <<EOF
+          {
+            "text": "${TEXT}",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn", 
+                  "text": "${TEXT}"
+                }
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "📅 $(date '+%Y-%m-%d %H:%M:%S UTC') | 🏷️ Event: \`${EVENT_NAME}\` | 📂 <${REPO_URL}|${REPO}>"
+                  }
+                ]
+              }
+            ]
+          }
+          EOF
+          )
+          
+          # Slack'e gönder
+          curl -X POST \
+            -H 'Content-type: application/json' \
+            -d "$PAYLOAD" \
+            "$SLACK_WEBHOOK_URL"
+          
+          echo "✅ Slack bildirimi gönderildi: $EVENT_NAME" 
