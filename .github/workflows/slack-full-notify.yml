@@ -17,7 +17,7 @@ jobs:
       - name: Slack Bildirim Gönder
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: 
+        run: | 
           EVENT_NAME="${{ github.event_name }}"
           ACTOR="${{ github.actor }}"
           REPO="${{ github.repository }}"
