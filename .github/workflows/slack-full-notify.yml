@@ -1,32 +1,12 @@
-name: 🔔 Kapsamlı Slack Bildirimleri
+name: 🔔 Kapsamli Slack Bildirimleri
+
 on:
   # Push events - tum branchler
   push:
-    branches: ['**']
   
   # Branch/Tag olusturma ve silme
   create:
   delete:
-  
-  # Pull Request events
-  pull_request:
-    types: [opened, closed, reopened, edited, synchronize, ready_for_review, converted_to_draft]
-  
-  # Pull Request Review events
-  pull_request_review:
-    types: [submitted, edited, dismissed]
-  
-  # Pull Request Review Comment events
-  pull_request_review_comment:
-    types: [created, edited, deleted]
-  
-  # Issue events
-  issues:
-    types: [opened, closed, reopened, edited, deleted, transferred, assigned, unassigned, labeled, unlabeled]
-  
-  # Issue Comment events
-  issue_comment:
-    types: [created, edited, deleted]
   
   # Discussion events
   discussion:
@@ -43,10 +23,6 @@ on:
   # Wiki events
   gollum:
   
-  # Workflow run events
-  workflow_run:
-    types: [completed, requested]
-  
   # Star events
   watch:
     types: [started]
@@ -58,7 +34,6 @@ jobs:
   slack-notify:
     name: Slack Bildirim Gonder
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     
     steps:
       - name: 📊 Event Bilgilerini Hazirla
@@ -72,9 +47,8 @@ jobs:
           echo "repo_url=https://github.com/${{ github.repository }}" >> $GITHUB_OUTPUT
           echo "timestamp=$(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_OUTPUT
           
-      - name: 🔔 Slack Mesaji Gonder
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: 📝 Mesaj Olustur
+        id: prepare_message
         run: |
           EVENT_NAME="${{ steps.prepare.outputs.event_name }}"
           ACTOR="${{ steps.prepare.outputs.actor }}"
@@ -83,12 +57,6 @@ jobs:
           SHA_SHORT="${{ steps.prepare.outputs.sha_short }}"
           REPO_URL="${{ steps.prepare.outputs.repo_url }}"
           TIMESTAMP="${{ steps.prepare.outputs.timestamp }}"
-          
-          # URL kontrolu
-          if [ -z "$SLACK_WEBHOOK_URL" ]; then
-            echo "❌ SLACK_WEBHOOK_URL secret tanimlanmamis!"
-            exit 1
-          fi
           
           # Event'e gore mesaj olustur
           case "$EVENT_NAME" in
@@ -121,120 +89,6 @@ jobs:
               REF="${{ github.event.ref }}"
               
               TEXT="🗑️ **${ACTOR}** ${REF_TYPE} sildi: \`${REF}\`"
-              ;;
-              
-            pull_request)
-              PR_TITLE="${{ github.event.pull_request.title }}"
-              PR_URL="${{ github.event.pull_request.html_url }}"
-              PR_NUMBER="${{ github.event.pull_request.number }}"
-              PR_ACTION="${{ github.event.action }}"
-              BASE_BRANCH="${{ github.event.pull_request.base.ref }}"
-              HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
-              
-              # PR title'i temizle
-              CLEAN_TITLE=$(echo "$PR_TITLE" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 150)
-              
-              case "$PR_ACTION" in
-                opened)
-                  TEXT="📋 **${ACTOR}** yeni Pull Request acti:\\n> 🎯 *${CLEAN_TITLE}*\\n📊 \`${HEAD_BRANCH}\` → \`${BASE_BRANCH}\`\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                closed)
-                  if [ "${{ github.event.pull_request.merged }}" = "true" ]; then
-                    TEXT="✅ **${ACTOR}** Pull Request'i merge etti:\\n> 🎯 *${CLEAN_TITLE}*\\n📊 \`${HEAD_BRANCH}\` → \`${BASE_BRANCH}\`\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  else
-                    TEXT="❌ **${ACTOR}** Pull Request'i kapatti:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  fi
-                  ;;
-                synchronize)
-                  TEXT="🔄 **${ACTOR}** Pull Request'i guncelledi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                ready_for_review)
-                  TEXT="👀 **${ACTOR}** Pull Request'i incelemeye hazir hale getirdi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                converted_to_draft)
-                  TEXT="📝 **${ACTOR}** Pull Request'i draft'a cevirdi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                *)
-                  TEXT="🔄 **${ACTOR}** Pull Request'te degisiklik yapti (${PR_ACTION}):\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-              esac
-              ;;
-              
-            pull_request_review)
-              PR_TITLE="${{ github.event.pull_request.title }}"
-              PR_URL="${{ github.event.pull_request.html_url }}"
-              PR_NUMBER="${{ github.event.pull_request.number }}"
-              REVIEW_STATE="${{ github.event.review.state }}"
-              
-              CLEAN_TITLE=$(echo "$PR_TITLE" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 150)
-              
-              case "$REVIEW_STATE" in
-                approved)
-                  TEXT="✅ **${ACTOR}** Pull Request'i onayladi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                changes_requested)
-                  TEXT="🔄 **${ACTOR}** Pull Request'te degisiklik istedi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                commented)
-                  TEXT="💬 **${ACTOR}** Pull Request'e yorum yapti:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-                *)
-                  TEXT="👀 **${ACTOR}** Pull Request'i inceledi:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-                  ;;
-              esac
-              ;;
-              
-            pull_request_review_comment)
-              PR_TITLE="${{ github.event.pull_request.title }}"
-              PR_URL="${{ github.event.pull_request.html_url }}"
-              PR_NUMBER="${{ github.event.pull_request.number }}"
-              
-              CLEAN_TITLE=$(echo "$PR_TITLE" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 150)
-              TEXT="💬 **${ACTOR}** Pull Request review'unda yorum yapti:\\n> 🎯 *${CLEAN_TITLE}*\\n🔗 <${PR_URL}|PR #${PR_NUMBER}>"
-              ;;
-              
-            issues)
-              ISSUE_TITLE="${{ github.event.issue.title }}"
-              ISSUE_URL="${{ github.event.issue.html_url }}"
-              ISSUE_NUMBER="${{ github.event.issue.number }}"
-              ISSUE_ACTION="${{ github.event.action }}"
-              
-              CLEAN_TITLE=$(echo "$ISSUE_TITLE" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 150)
-              
-              case "$ISSUE_ACTION" in
-                opened)
-                  TEXT="🐛 **${ACTOR}** yeni Issue acti:\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-                closed)
-                  TEXT="✅ **${ACTOR}** Issue'yu kapatti:\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-                reopened)
-                  TEXT="🔄 **${ACTOR}** Issue'yu yeniden acti:\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-                assigned)
-                  ASSIGNEE="${{ github.event.assignee.login }}"
-                  TEXT="👤 **${ACTOR}** Issue'yu ${ASSIGNEE}'ye atadi:\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-                labeled)
-                  LABEL="${{ github.event.label.name }}"
-                  TEXT="🏷️ **${ACTOR}** Issue'ya \`${LABEL}\` etiketi ekledi:\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-                *)
-                  TEXT="🔄 **${ACTOR}** Issue'yu guncelledi (${ISSUE_ACTION}):\\n> 📝 *${CLEAN_TITLE}*\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
-                  ;;
-              esac
-              ;;
-              
-            issue_comment)
-              ISSUE_TITLE="${{ github.event.issue.title }}"
-              ISSUE_URL="${{ github.event.issue.html_url }}"
-              ISSUE_NUMBER="${{ github.event.issue.number }}"
-              COMMENT_BODY="${{ github.event.comment.body }}"
-              
-              CLEAN_TITLE=$(echo "$ISSUE_TITLE" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 100)
-              CLEAN_COMMENT=$(echo "$COMMENT_BODY" | sed 's/"/\\"/g' | tr '\n' ' ' | head -c 100)
-              
-              TEXT="💬 **${ACTOR}** Issue'ya yorum yapti:\\n> 📝 *${CLEAN_TITLE}*\\n> 💭 ${CLEAN_COMMENT}...\\n🔗 <${ISSUE_URL}|Issue #${ISSUE_NUMBER}>"
               ;;
               
             discussion)
@@ -277,27 +131,6 @@ jobs:
               TEXT="📚 **${ACTOR}** Wiki'yi guncelledi\\n🔗 <${REPO_URL}/wiki|Wiki'yi goruntule>"
               ;;
               
-            workflow_run)
-              WORKFLOW_NAME="${{ github.event.workflow_run.name }}"
-              WORKFLOW_CONCLUSION="${{ github.event.workflow_run.conclusion }}"
-              WORKFLOW_URL="${{ github.event.workflow_run.html_url }}"
-              
-              case "$WORKFLOW_CONCLUSION" in
-                success)
-                  TEXT="✅ **Workflow basarili:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-                failure)
-                  TEXT="❌ **Workflow basarisiz:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Hata detaylarini goruntule>"
-                  ;;
-                cancelled)
-                  TEXT="⏹️ **Workflow iptal edildi:** *${WORKFLOW_NAME}*\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-                *)
-                  TEXT="⚠️ **Workflow tamamlandi:** *${WORKFLOW_NAME}* (${WORKFLOW_CONCLUSION})\\n👤 Tetikleyen: ${ACTOR}\\n🔗 <${WORKFLOW_URL}|Workflow'u goruntule>"
-                  ;;
-              esac
-              ;;
-              
             *)
               TEXT="📢 **${ACTOR}** bir etkinlik gerceklestirdi: *${EVENT_NAME}*\\n🔗 <${REPO_URL}|${REPO}>"
               ;;
@@ -329,11 +162,11 @@ jobs:
           EOF
           )
           
-          # Slack'e gonder
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-            -X POST \
-            -H 'Content-type: application/json' \
-            -d "$PAYLOAD" \
-            "$SLACK_WEBHOOK_URL")
+          echo "${PAYLOAD}" > payload.json
           
-          echo "✅ Slack bildirimi gönderildi: $EVENT_NAME" 
+      - name: 🔔 Slack Mesaji Gonder
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload-file-path: "payload.json"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
