@@ -25,6 +25,8 @@ API_MAP = {
     # --- Teknik Destek ve Arıza Kaydı ---
     "check_network_status": "backend_api.check_network_status",
     "create_fault_ticket": "backend_api.create_fault_ticket",
+    "close_fault_ticket": "backend_api.close_fault_ticket",
+    "get_users_tickets": "backend_api.get_users_tickets",
     "get_fault_ticket_status": "backend_api.get_fault_ticket_status",
     "test_internet_speed": "backend_api.test_internet_speed",
 
@@ -33,7 +35,6 @@ API_MAP = {
     "update_customer_contact": "backend_api.update_customer_contact",
     "suspend_line": "backend_api.suspend_line",
     "reactivate_line": "backend_api.reactivate_line",
-    "check_number_portability": "backend_api.check_number_portability",
 }
 
 # --- Yardımcı Fonksiyonlar ---
