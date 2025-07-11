@@ -207,10 +207,10 @@ class AIEndpointFunctions:
             }
             
         except Exception as e:
-            self.logger.error(f"Fatura getirme hatası: {e}")
+            self.logger.error(f"Mevcut fatura getirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Fatura getirme hatası: {str(e)}"
+                "error": f"Mevcut fatura getirme hatası: {str(e)}"
             }
     
     async def telekom_get_bill_history(self, user_id: int, limit: int = 12) -> Dict[str, Any]:
@@ -219,41 +219,52 @@ class AIEndpointFunctions:
         
         Args:
             user_id: Müşteri ID
-            limit: Getirilecek fatura sayısı
+            limit: Maksimum fatura sayısı
             
         Returns:
-            Geçmiş faturalar
+            Geçmiş faturalar listesi
         """
         try:
             bills = []
             base_amount = 50 + (user_id % 50)
             
             for i in range(min(limit, 12)):
-                bill_amount = base_amount + (i * 5)
-                bills.append({
-                    "bill_id": f"F-2024-{user_id:04d}-{i+1:02d}",
-                    "amount": bill_amount,
-                    "bill_date": f"2024-{i+1:02d}-28",
-                    "status": "paid" if i < 11 else "unpaid",
-                    "paid_date": f"2024-{i+2:02d}-05" if i < 11 else None
-                })
-            
-            total_amount = sum(bill["amount"] for bill in bills if bill["status"] == "paid")
+                bill_month = datetime.now() - timedelta(days=30 * (i + 1))
+                bill_data = {
+                    "bill_id": f"F-{bill_month.year}-{user_id:04d}-{i+1:02d}",
+                    "user_id": user_id,
+                    "amount": base_amount + (i * 5),
+                    "currency": "TRY",
+                    "bill_date": bill_month.strftime("%Y-%m-%d"),
+                    "due_date": (bill_month + timedelta(days=15)).strftime("%Y-%m-%d"),
+                    "status": "paid" if i % 2 == 0 else "unpaid",
+                    "services": [
+                        {
+                            "service_name": "Mega İnternet",
+                            "amount": (base_amount + (i * 5)) * 0.7
+                        },
+                        {
+                            "service_name": "Sesli Arama",
+                            "amount": (base_amount + (i * 5)) * 0.3
+                        }
+                    ]
+                }
+                bills.append(bill_data)
             
             return {
                 "success": True,
                 "data": {
                     "bills": bills,
                     "total_count": len(bills),
-                    "total_amount_paid": total_amount
+                    "user_id": user_id
                 }
             }
             
         except Exception as e:
-            self.logger.error(f"Geçmiş faturalar getirme hatası: {e}")
+            self.logger.error(f"Fatura geçmişi getirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Geçmiş faturalar getirme hatası: {str(e)}"
+                "error": f"Fatura geçmişi getirme hatası: {str(e)}"
             }
     
     async def telekom_pay_bill(self, bill_id: str, method: str) -> Dict[str, Any]:
@@ -268,13 +279,17 @@ class AIEndpointFunctions:
             Ödeme sonucu
         """
         try:
+            # Simüle edilmiş ödeme işlemi
+            await asyncio.sleep(0.5)
+            
             payment_data = {
-                "transaction_id": f"TXN-2024-{bill_id.split('-')[-1]}",
+                "payment_id": f"PAY-{datetime.now().strftime('%Y%m%d%H%M%S')}",
                 "bill_id": bill_id,
-                "amount": 89.50,
+                "amount": 75.50,
                 "method": method,
                 "status": "completed",
-                "timestamp": "2024-03-01T14:30:00Z"
+                "transaction_date": datetime.now().isoformat(),
+                "confirmation_code": f"CONF-{datetime.now().strftime('%Y%m%d%H%M%S')}"
             }
             
             return {
@@ -300,28 +315,27 @@ class AIEndpointFunctions:
             Ödeme geçmişi
         """
         try:
-            base_amount = 50 + (user_id % 50)
-            payment_methods = ["credit_card", "bank_transfer", "mobile_payment", "cash"]
-            
             payments = []
-            for i in range(5):
-                payment_amount = base_amount + (i * 3)
-                payments.append({
-                    "transaction_id": f"TXN-{user_id:04d}-{i+1:03d}",
-                    "amount": payment_amount,
-                    "method": payment_methods[i % len(payment_methods)],
-                    "date": f"2024-{i+1:02d}-05T10:15:00Z",
-                    "bill_id": f"F-2024-{user_id:04d}-{i+1:02d}"
-                })
+            base_amount = 50 + (user_id % 50)
             
-            total_amount = sum(payment["amount"] for payment in payments)
+            for i in range(6):
+                payment_date = datetime.now() - timedelta(days=30 * (i + 1))
+                payment_data = {
+                    "payment_id": f"PAY-{payment_date.strftime('%Y%m%d%H%M%S')}",
+                    "bill_id": f"F-{payment_date.year}-{user_id:04d}-{i+1:02d}",
+                    "amount": base_amount + (i * 5),
+                    "method": "credit_card" if i % 2 == 0 else "bank_transfer",
+                    "status": "completed",
+                    "transaction_date": payment_date.isoformat()
+                }
+                payments.append(payment_data)
             
             return {
                 "success": True,
                 "data": {
                     "payments": payments,
-                    "total_payments": len(payments),
-                    "total_amount": total_amount
+                    "total_count": len(payments),
+                    "user_id": user_id
                 }
             }
             
@@ -334,24 +348,27 @@ class AIEndpointFunctions:
     
     async def telekom_setup_autopay(self, user_id: int, status: bool) -> Dict[str, Any]:
         """
-        Otomatik ödeme ayarla
+        Otomatik ödeme ayarlar
         
         Args:
             user_id: Müşteri ID
             status: Otomatik ödeme durumu
             
         Returns:
-            Otomatik ödeme ayarları
+            Ayar sonucu
         """
         try:
+            autopay_data = {
+                "user_id": user_id,
+                "autopay_enabled": status,
+                "payment_method": "credit_card",
+                "last_updated": datetime.now().isoformat(),
+                "next_payment_date": (datetime.now() + timedelta(days=15)).isoformat()
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "autopay_enabled": status,
-                    "payment_method": "credit_card_ending_1234",
-                    "next_payment_date": "2024-03-15"
-                }
+                "data": autopay_data
             }
             
         except Exception as e:
@@ -396,26 +413,30 @@ class AIEndpointFunctions:
             ]
             
             package = packages[user_id % len(packages)]
-            package.update({
+            
+            package_data = {
+                **package,
+                "user_id": user_id,
                 "activation_date": "2024-01-01",
-                "renewal_date": "2024-04-01"
-            })
+                "renewal_date": "2024-04-01",
+                "status": "active"
+            }
             
             return {
                 "success": True,
-                "data": package
+                "data": package_data
             }
             
         except Exception as e:
-            self.logger.error(f"Paket getirme hatası: {e}")
+            self.logger.error(f"Mevcut paket getirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Paket getirme hatası: {str(e)}"
+                "error": f"Mevcut paket getirme hatası: {str(e)}"
             }
     
     async def telekom_get_remaining_quotas(self, user_id: int) -> Dict[str, Any]:
         """
-        Kalan kotaları getir
+        Müşterinin kalan kotalarını getir
         
         Args:
             user_id: Müşteri ID
@@ -428,7 +449,8 @@ class AIEndpointFunctions:
             base_voice = 1000 - (user_id % 400)  # 600-1000 dakika arası
             base_sms = 500 - (user_id % 200)     # 300-500 SMS arası
             
-            quotas_data = {
+            quota_data = {
+                "user_id": user_id,
                 "internet_remaining_gb": base_internet,
                 "voice_remaining_minutes": base_voice,
                 "sms_remaining": base_sms,
@@ -442,14 +464,14 @@ class AIEndpointFunctions:
             
             return {
                 "success": True,
-                "data": quotas_data
+                "data": quota_data
             }
             
         except Exception as e:
-            self.logger.error(f"Kota getirme hatası: {e}")
+            self.logger.error(f"Kalan kotalar getirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Kota getirme hatası: {str(e)}"
+                "error": f"Kalan kotalar getirme hatası: {str(e)}"
             }
     
     async def telekom_change_package(self, user_id: int, new_package_name: str) -> Dict[str, Any]:
@@ -461,19 +483,22 @@ class AIEndpointFunctions:
             new_package_name: Yeni paket adı
             
         Returns:
-            Paket değişiklik sonucu
+            Paket değişikliği sonucu
         """
         try:
+            change_data = {
+                "change_id": f"CHG-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+                "user_id": user_id,
+                "current_package": "Mega İnternet",
+                "new_package": new_package_name,
+                "status": "pending",
+                "effective_date": (datetime.now() + timedelta(days=7)).isoformat(),
+                "estimated_cost": 89.90
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "change_id": "CHG-2024-001",
-                    "from_package": "Mega İnternet",
-                    "to_package": new_package_name,
-                    "effective_date": "2024-04-01",
-                    "fee_difference": -20.00,
-                    "status": "scheduled"
-                }
+                "data": change_data
             }
             
         except Exception as e:
@@ -485,45 +510,50 @@ class AIEndpointFunctions:
     
     async def telekom_get_available_packages(self) -> Dict[str, Any]:
         """
-        Kullanılabilir paketleri getir
+        Kullanılabilir paketleri listele
         
         Returns:
-            Kullanılabilir paketler
+            Kullanılabilir paketler listesi
         """
         try:
+            packages = [
+                {
+                    "package_name": "Mega İnternet",
+                    "monthly_fee": 69.50,
+                    "features": {"internet_gb": 50, "voice_minutes": 1000, "sms_count": 500, "roaming_enabled": False},
+                    "description": "Hızlı internet ve bol dakika"
+                },
+                {
+                    "package_name": "Öğrenci Dostu Tarife",
+                    "monthly_fee": 49.90,
+                    "features": {"internet_gb": 30, "voice_minutes": 500, "sms_count": 250, "roaming_enabled": False},
+                    "description": "Öğrenciler için özel tarife"
+                },
+                {
+                    "package_name": "Süper Konuşma",
+                    "monthly_fee": 59.90,
+                    "features": {"internet_gb": 25, "voice_minutes": 2000, "sms_count": 1000, "roaming_enabled": True},
+                    "description": "Bol dakika ve SMS"
+                },
+                {
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                    "description": "Premium hizmetler"
+                },
+                {
+                    "package_name": "Aile Paketi",
+                    "monthly_fee": 129.90,
+                    "features": {"internet_gb": 200, "voice_minutes": 5000, "sms_count": 2000, "roaming_enabled": True},
+                    "description": "Aileler için özel paket"
+                }
+            ]
+            
             return {
                 "success": True,
                 "data": {
-                    "packages": [
-                        {
-                            "name": "Öğrenci Dostu Tarife",
-                            "monthly_fee": 49.90,
-                            "features": {
-                                "internet_gb": 30,
-                                "voice_minutes": 500,
-                                "sms_count": 250
-                            },
-                            "target_audience": "students"
-                        },
-                        {
-                            "name": "Mega İnternet",
-                            "monthly_fee": 69.50,
-                            "features": {
-                                "internet_gb": 50,
-                                "voice_minutes": 1000,
-                                "sms_count": 500
-                            }
-                        },
-                        {
-                            "name": "Premium Paket",
-                            "monthly_fee": 89.90,
-                            "features": {
-                                "internet_gb": 100,
-                                "voice_minutes": 3000,
-                                "sms_count": 1000
-                            }
-                        }
-                    ]
+                    "packages": packages,
+                    "total_count": len(packages)
                 }
             }
             
@@ -546,7 +576,7 @@ class AIEndpointFunctions:
         """
         try:
             package_details = {
-                "name": package_name,
+                "package_name": package_name,
                 "monthly_fee": 69.50,
                 "features": {
                     "internet_gb": 50,
@@ -554,9 +584,10 @@ class AIEndpointFunctions:
                     "sms_count": 500,
                     "roaming_enabled": False
                 },
-                "description": f"{package_name} paketi detayları",
-                "activation_fee": 0,
-                "contract_duration": "12 ay"
+                "description": "Hızlı internet ve bol dakika",
+                "contract_duration": "12 ay",
+                "early_termination_fee": 200.00,
+                "activation_fee": 0.00
             }
             
             return {
@@ -580,18 +611,20 @@ class AIEndpointFunctions:
             status: Roaming durumu
             
         Returns:
-            Roaming ayarları
+            Roaming ayar sonucu
         """
         try:
+            roaming_data = {
+                "user_id": user_id,
+                "roaming_enabled": status,
+                "effective_date": datetime.now().isoformat(),
+                "supported_countries": ["EU", "USA", "Canada", "Australia"],
+                "daily_fee": 15.00 if status else 0.00
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "roaming_enabled": status,
-                    "activation_time": "2024-03-01T15:00:00Z",
-                    "daily_fee": 25.00,
-                    "data_package": "1GB/day"
-                }
+                "data": roaming_data
             }
             
         except Exception as e:
@@ -609,125 +642,134 @@ class AIEndpointFunctions:
             region: Bölge
             
         Returns:
-            Ağ durumu
+            Ağ durumu bilgileri
         """
         try:
+            network_status = {
+                "region": region,
+                "status": "operational",
+                "last_updated": datetime.now().isoformat(),
+                "services": {
+                    "voice": "operational",
+                    "data": "operational",
+                    "sms": "operational"
+                },
+                "maintenance_scheduled": False,
+                "outages": []
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "region": region,
-                    "status": "operational",
-                    "coverage_percentage": 95,
-                    "active_outages": [
-                        {
-                            "area": "Diyarbakır Merkez",
-                            "issue": "Planlı bakım",
-                            "start_time": "2024-03-01T02:00:00Z",
-                            "estimated_end": "2024-03-01T06:00:00Z"
-                        }
-                    ],
-                    "last_updated": "2024-03-01T14:30:00Z"
-                }
+                "data": network_status
             }
             
         except Exception as e:
-            self.logger.error(f"Ağ durumu getirme hatası: {e}")
+            self.logger.error(f"Ağ durumu kontrol hatası: {e}")
             return {
                 "success": False,
-                "error": f"Ağ durumu getirme hatası: {str(e)}"
+                "error": f"Ağ durumu kontrol hatası: {str(e)}"
             }
     
-    async def telekom_create_support_ticket(self, user_id: int, issue_description: str, category: str, priority: str) -> Dict[str, Any]:
+    async def telekom_create_support_ticket(self, user_id: int, issue_description: str, category: str = "technical", priority: str = "medium") -> Dict[str, Any]:
         """
-        Arıza talebi oluştur
+        Destek talebi oluştur
         
         Args:
             user_id: Müşteri ID
             issue_description: Sorun açıklaması
             category: Sorun kategorisi
-            priority: Öncelik
+            priority: Öncelik seviyesi
             
         Returns:
-            Arıza talebi sonucu
+            Destek talebi sonucu
         """
         try:
+            ticket_data = {
+                "ticket_id": f"T-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+                "user_id": user_id,
+                "issue_description": issue_description,
+                "category": category,
+                "priority": priority,
+                "status": "open",
+                "created_date": datetime.now().isoformat(),
+                "estimated_resolution": (datetime.now() + timedelta(days=3)).isoformat(),
+                "assigned_to": "Technical Support Team"
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "ticket_id": f"T-2024-{user_id}",
-                    "user_id": user_id,
-                    "issue_description": issue_description,
-                    "category": category,
-                    "priority": priority,
-                    "status": "open",
-                    "created_at": "2024-03-01T14:30:00Z",
-                    "estimated_resolution": "2024-03-02T14:30:00Z"
-                }
+                "data": ticket_data
             }
             
         except Exception as e:
-            self.logger.error(f"Arıza talebi oluşturma hatası: {e}")
+            self.logger.error(f"Destek talebi oluşturma hatası: {e}")
             return {
                 "success": False,
-                "error": f"Arıza talebi oluşturma hatası: {str(e)}"
+                "error": f"Destek talebi oluşturma hatası: {str(e)}"
             }
     
     async def telekom_close_support_ticket(self, ticket_id: str) -> Dict[str, Any]:
         """
-        Arıza talebini kapat
+        Destek talebini kapat
         
         Args:
-            ticket_id: Arıza talebi ID
+            ticket_id: Talep ID
             
         Returns:
             Kapatma sonucu
         """
         try:
+            close_data = {
+                "ticket_id": ticket_id,
+                "status": "closed",
+                "closed_date": datetime.now().isoformat(),
+                "resolution": "Sorun çözüldü",
+                "satisfaction_rating": 5
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "ticket_id": ticket_id,
-                    "status": "closed",
-                    "closed_at": "2024-03-01T15:30:00Z",
-                    "resolution": "Sorun çözüldü"
-                }
+                "data": close_data
             }
             
         except Exception as e:
-            self.logger.error(f"Arıza talebi kapatma hatası: {e}")
+            self.logger.error(f"Destek talebi kapatma hatası: {e}")
             return {
                 "success": False,
-                "error": f"Arıza talebi kapatma hatası: {str(e)}"
+                "error": f"Destek talebi kapatma hatası: {str(e)}"
             }
     
     async def telekom_get_support_ticket_status(self, ticket_id: str) -> Dict[str, Any]:
         """
-        Arıza talebi durumunu getir
+        Destek talebi durumunu getir
         
         Args:
-            ticket_id: Arıza talebi ID
+            ticket_id: Talep ID
             
         Returns:
-            Arıza talebi durumu
+            Talep durumu
         """
         try:
+            status_data = {
+                "ticket_id": ticket_id,
+                "status": "in_progress",
+                "last_updated": datetime.now().isoformat(),
+                "progress": 75,
+                "estimated_completion": (datetime.now() + timedelta(days=1)).isoformat(),
+                "assigned_technician": "Ahmet Yılmaz",
+                "notes": "Teknik ekip sorunu inceliyor"
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "ticket_id": ticket_id,
-                    "status": "in_progress",
-                    "created_at": "2024-03-01T14:30:00Z",
-                    "last_updated": "2024-03-01T16:30:00Z",
-                    "estimated_resolution": "2024-03-02T14:30:00Z",
-                    "progress": "75%"
-                }
+                "data": status_data
             }
             
         except Exception as e:
-            self.logger.error(f"Arıza talebi durumu getirme hatası: {e}")
+            self.logger.error(f"Destek talebi durumu getirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Arıza talebi durumu getirme hatası: {str(e)}"
+                "error": f"Destek talebi durumu getirme hatası: {str(e)}"
             }
     
     async def telekom_test_internet_speed(self, user_id: int) -> Dict[str, Any]:
@@ -738,68 +780,61 @@ class AIEndpointFunctions:
             user_id: Müşteri ID
             
         Returns:
-            Hız testi sonuçları
+            Hız testi sonucu
         """
         try:
-            # User ID'ye göre farklı hız sonuçları
-            base_download = 30 + (user_id % 70)  # 30-100 Mbps arası
-            base_upload = 10 + (user_id % 30)    # 10-40 Mbps arası
-            base_ping = 10 + (user_id % 20)      # 10-30 ms arası
+            # Simüle edilmiş hız testi
+            await asyncio.sleep(2)
             
-            # Kalite değerlendirmesi
-            if base_download > 80:
-                quality = "excellent"
-            elif base_download > 50:
-                quality = "good"
-            elif base_download > 30:
-                quality = "fair"
-            else:
-                quality = "poor"
-            
-            test_servers = ["Istanbul-1", "Ankara-1", "Izmir-1", "Bursa-1", "Antalya-1"]
+            speed_data = {
+                "user_id": user_id,
+                "test_date": datetime.now().isoformat(),
+                "download_speed_mbps": 45.2,
+                "upload_speed_mbps": 12.8,
+                "ping_ms": 15,
+                "jitter_ms": 2,
+                "packet_loss_percent": 0.1,
+                "connection_quality": "excellent",
+                "server_location": "Istanbul"
+            }
             
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "download_speed_mbps": base_download,
-                    "upload_speed_mbps": base_upload,
-                    "ping_ms": base_ping,
-                    "test_timestamp": "2024-03-01T14:30:00Z",
-                    "test_server": test_servers[user_id % len(test_servers)],
-                    "quality_rating": quality
-                }
+                "data": speed_data
             }
             
         except Exception as e:
-            self.logger.error(f"Hız testi hatası: {e}")
+            self.logger.error(f"İnternet hız testi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Hız testi hatası: {str(e)}"
+                "error": f"İnternet hız testi hatası: {str(e)}"
             }
     
     async def telekom_update_customer_contact(self, user_id: int, contact_type: str, new_value: str) -> Dict[str, Any]:
         """
-        Müşteri iletişim bilgisini güncelle
+        Müşteri iletişim bilgilerini güncelle
         
         Args:
             user_id: Müşteri ID
-            contact_type: İletişim türü (email, phone, address)
+            contact_type: İletişim türü (phone, email, address)
             new_value: Yeni değer
             
         Returns:
             Güncelleme sonucu
         """
         try:
+            update_data = {
+                "user_id": user_id,
+                "contact_type": contact_type,
+                "old_value": "eski_değer",
+                "new_value": new_value,
+                "updated_date": datetime.now().isoformat(),
+                "status": "updated"
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "contact_type": contact_type,
-                    "old_value": "eski_değer",
-                    "new_value": new_value,
-                    "updated_at": "2024-03-01T14:30:00Z"
-                }
+                "data": update_data
             }
             
         except Exception as e:
@@ -821,16 +856,18 @@ class AIEndpointFunctions:
             Askıya alma sonucu
         """
         try:
+            suspend_data = {
+                "user_id": user_id,
+                "status": "suspended",
+                "reason": reason,
+                "suspended_date": datetime.now().isoformat(),
+                "reactivation_fee": 25.00,
+                "estimated_reactivation_date": (datetime.now() + timedelta(days=7)).isoformat()
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "line_number": "+905551234567",
-                    "suspension_reason": reason,
-                    "suspended_at": "2024-03-01T14:30:00Z",
-                    "reactivation_fee": 0,
-                    "max_suspension_days": 90
-                }
+                "data": suspend_data
             }
             
         except Exception as e:
@@ -842,219 +879,234 @@ class AIEndpointFunctions:
     
     async def telekom_reactivate_line(self, user_id: int) -> Dict[str, Any]:
         """
-        Hatı yeniden aktifleştir
+        Hatı yeniden etkinleştir
         
         Args:
             user_id: Müşteri ID
             
         Returns:
-            Yeniden aktifleştirme sonucu
+            Yeniden etkinleştirme sonucu
         """
         try:
+            reactivate_data = {
+                "user_id": user_id,
+                "status": "active",
+                "reactivated_date": datetime.now().isoformat(),
+                "reactivation_fee_paid": True,
+                "services_restored": ["voice", "data", "sms"]
+            }
+            
             return {
                 "success": True,
-                "data": {
-                    "user_id": user_id,
-                    "line_number": "+905551234567",
-                    "reactivated_at": "2024-03-01T15:30:00Z",
-                    "status": "active",
-                    "reactivation_fee": 0
-                }
+                "data": reactivate_data
             }
             
         except Exception as e:
-            self.logger.error(f"Hat yeniden aktifleştirme hatası: {e}")
+            self.logger.error(f"Hat yeniden etkinleştirme hatası: {e}")
             return {
                 "success": False,
-                "error": f"Hat yeniden aktifleştirme hatası: {str(e)}"
+                "error": f"Hat yeniden etkinleştirme hatası: {str(e)}"
             }
     
     # ============================================================================
-    # MOCK TEST FONKSİYONLARI
+    # MOCK API FONKSİYONLARI
     # ============================================================================
     
     async def mock_get_user_info(self, user_id: int) -> Dict[str, Any]:
-        """
-        Kullanıcı bilgilerini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Kullanıcı bilgileri
-        """
+        """Mock kullanıcı bilgisi getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getUserInfo(user_id)
+            user_data = {
+                "user_id": user_id,
+                "name": f"Kullanıcı {user_id}",
+                "email": f"user{user_id}@example.com",
+                "phone": f"+90555{user_id:06d}",
+                "status": "active"
+            }
+            
+            return {
+                "success": True,
+                "data": user_data
+            }
             
         except Exception as e:
-            self.logger.error(f"Kullanıcı bilgileri getirme hatası: {e}")
+            self.logger.error(f"Mock kullanıcı bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Kullanıcı bilgileri getirme hatası: {str(e)}"
+                "error": f"Mock kullanıcı bilgisi hatası: {str(e)}"
             }
     
     async def mock_get_available_packages(self) -> Dict[str, Any]:
-        """
-        Mevcut paketleri getir (Mock)
-        
-        Returns:
-            Mevcut paketler
-        """
+        """Mock kullanılabilir paketleri getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getAvailablePackages()
+            packages = [
+                {"name": "Basic", "price": 29.99},
+                {"name": "Premium", "price": 49.99},
+                {"name": "Ultimate", "price": 79.99}
+            ]
+            
+            return {
+                "success": True,
+                "data": {"packages": packages}
+            }
             
         except Exception as e:
-            self.logger.error(f"Mevcut paketler getirme hatası: {e}")
+            self.logger.error(f"Mock paket bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Mevcut paketler getirme hatası: {str(e)}"
+                "error": f"Mock paket bilgisi hatası: {str(e)}"
             }
     
     async def mock_get_invoice(self, user_id: int) -> Dict[str, Any]:
-        """
-        Fatura bilgilerini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Fatura bilgileri
-        """
+        """Mock fatura bilgisi getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getInvoice(user_id)
+            invoice_data = {
+                "invoice_id": f"INV-{user_id:04d}",
+                "user_id": user_id,
+                "amount": 49.99,
+                "due_date": "2024-03-15",
+                "status": "unpaid"
+            }
+            
+            return {
+                "success": True,
+                "data": invoice_data
+            }
             
         except Exception as e:
-            self.logger.error(f"Fatura bilgileri getirme hatası: {e}")
+            self.logger.error(f"Mock fatura bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Fatura bilgileri getirme hatası: {str(e)}"
+                "error": f"Mock fatura bilgisi hatası: {str(e)}"
             }
     
     async def mock_get_customer_info(self, user_id: int) -> Dict[str, Any]:
-        """
-        Müşteri bilgilerini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Müşteri bilgileri
-        """
+        """Mock müşteri bilgisi getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getCustomerInfo(user_id)
+            customer_data = {
+                "user_id": user_id,
+                "name": f"Müşteri {user_id}",
+                "email": f"customer{user_id}@example.com",
+                "phone": f"+90555{user_id:06d}",
+                "address": f"Adres {user_id}"
+            }
+            
+            return {
+                "success": True,
+                "data": customer_data
+            }
             
         except Exception as e:
-            self.logger.error(f"Müşteri bilgileri getirme hatası: {e}")
+            self.logger.error(f"Mock müşteri bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Müşteri bilgileri getirme hatası: {str(e)}"
+                "error": f"Mock müşteri bilgisi hatası: {str(e)}"
             }
     
     async def mock_get_payment_history(self, user_id: int) -> Dict[str, Any]:
-        """
-        Ödeme geçmişini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Ödeme geçmişi
-        """
+        """Mock ödeme geçmişi getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getPaymentHistory(user_id)
+            payments = [
+                {"payment_id": f"PAY-{user_id}-1", "amount": 49.99, "date": "2024-02-15"},
+                {"payment_id": f"PAY-{user_id}-2", "amount": 49.99, "date": "2024-01-15"}
+            ]
+            
+            return {
+                "success": True,
+                "data": {"payments": payments}
+            }
             
         except Exception as e:
-            self.logger.error(f"Ödeme geçmişi getirme hatası: {e}")
+            self.logger.error(f"Mock ödeme geçmişi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Ödeme geçmişi getirme hatası: {str(e)}"
+                "error": f"Mock ödeme geçmişi hatası: {str(e)}"
             }
     
     async def mock_get_subscription_status(self, user_id: int) -> Dict[str, Any]:
-        """
-        Abonelik durumunu getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Abonelik durumu
-        """
+        """Mock abonelik durumu getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getSubscriptionStatus(user_id)
+            subscription_data = {
+                "user_id": user_id,
+                "status": "active",
+                "package": "Premium",
+                "start_date": "2024-01-01",
+                "end_date": "2024-12-31"
+            }
+            
+            return {
+                "success": True,
+                "data": subscription_data
+            }
             
         except Exception as e:
-            self.logger.error(f"Abonelik durumu getirme hatası: {e}")
+            self.logger.error(f"Mock abonelik durumu hatası: {e}")
             return {
                 "success": False,
-                "error": f"Abonelik durumu getirme hatası: {str(e)}"
+                "error": f"Mock abonelik durumu hatası: {str(e)}"
             }
     
     async def mock_get_support_tickets(self, user_id: int) -> Dict[str, Any]:
-        """
-        Destek taleplerini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Destek talepleri
-        """
+        """Mock destek talepleri getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getSupportTickets(user_id)
+            tickets = [
+                {"ticket_id": f"TICKET-{user_id}-1", "status": "open", "subject": "Teknik sorun"},
+                {"ticket_id": f"TICKET-{user_id}-2", "status": "closed", "subject": "Fatura sorunu"}
+            ]
+            
+            return {
+                "success": True,
+                "data": {"tickets": tickets}
+            }
             
         except Exception as e:
-            self.logger.error(f"Destek talepleri getirme hatası: {e}")
+            self.logger.error(f"Mock destek talepleri hatası: {e}")
             return {
                 "success": False,
-                "error": f"Destek talepleri getirme hatası: {str(e)}"
+                "error": f"Mock destek talepleri hatası: {str(e)}"
             }
     
     async def mock_get_address(self, user_id: int) -> Dict[str, Any]:
-        """
-        Adres bilgilerini getir (Mock)
-        
-        Args:
-            user_id: Kullanıcı ID
-            
-        Returns:
-            Adres bilgileri
-        """
+        """Mock adres bilgisi getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getAddress(user_id)
+            address_data = {
+                "user_id": user_id,
+                "street": f"Sokak {user_id}",
+                "city": "Istanbul",
+                "postal_code": f"34000{user_id:02d}",
+                "country": "Turkey"
+            }
+            
+            return {
+                "success": True,
+                "data": address_data
+            }
             
         except Exception as e:
-            self.logger.error(f"Adres bilgileri getirme hatası: {e}")
+            self.logger.error(f"Mock adres bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Adres bilgileri getirme hatası: {str(e)}"
+                "error": f"Mock adres bilgisi hatası: {str(e)}"
             }
     
     async def mock_get_campaigns(self) -> Dict[str, Any]:
-        """
-        Kampanyaları getir (Mock)
-        
-        Returns:
-            Kampanyalar
-        """
+        """Mock kampanya bilgileri getir"""
         try:
-            from backend.app.services import mock_tools
-            return mock_tools.getCampaigns()
+            campaigns = [
+                {"id": 1, "name": "Yaz Kampanyası", "discount": 20},
+                {"id": 2, "name": "Öğrenci İndirimi", "discount": 15}
+            ]
+            
+            return {
+                "success": True,
+                "data": {"campaigns": campaigns}
+            }
             
         except Exception as e:
-            self.logger.error(f"Kampanyalar getirme hatası: {e}")
+            self.logger.error(f"Mock kampanya bilgisi hatası: {e}")
             return {
                 "success": False,
-                "error": f"Kampanyalar getirme hatası: {str(e)}"
+                "error": f"Mock kampanya bilgisi hatası: {str(e)}"
             }
 
-# Global instance
+# Global AI endpoint functions instance
 ai_endpoint_functions = AIEndpointFunctions() 

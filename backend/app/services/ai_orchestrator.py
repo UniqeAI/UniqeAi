@@ -256,7 +256,7 @@ class LlamaInferenceService:
                     parametreler={"user_id": int(user_id)}
                 ))
             elif "değiştir" in mesaj_lower or "change" in mesaj_lower:
-                package_match = re.search(r'["\']([^"\']+)["\']', mesaj)
+                package_match = re.search(r'(Mega|Öğrenci|Süper|Premium)', mesaj)
                 package_name = package_match.group(1) if package_match else "Mega İnternet"
                 arac_cagrilari.append(AracCagrisi(
                     arac_adi="change_package",
@@ -268,7 +268,14 @@ class LlamaInferenceService:
             if "oluştur" in mesaj_lower or "create" in mesaj_lower:
                 arac_cagrilari.append(AracCagrisi(
                     arac_adi="create_fault_ticket",
-                    parametreler={"user_id": int(user_id), "issue_description": mesaj}
+                    parametreler={"user_id": int(user_id), "issue_description": "Teknik sorun"}
+                ))
+            elif "durum" in mesaj_lower or "status" in mesaj_lower:
+                ticket_match = re.search(r'T-\d{4}-\d+', mesaj)
+                ticket_id = ticket_match.group() if ticket_match else f"T-2024-{user_id}"
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="get_fault_ticket_status",
+                    parametreler={"ticket_id": ticket_id}
                 ))
         
         # HESAP YÖNETİMİ
@@ -282,49 +289,48 @@ class LlamaInferenceService:
     
     def _yanit_uret(self, mesaj: str, arac_cagrilari: List[AracCagrisi]) -> str:
         """Temel yanıt üretimi"""
-        if arac_cagrilari:
-            return f"Anlıyorum, {len(arac_cagrilari)} araç çağrısı tespit ettim. Bilgileri getiriyorum..."
-        else:
-            return "Size nasıl yardımcı olabilirim? Müşteri profili, paket bilgileri veya fatura detayları sorgulayabilirim."
+        if not arac_cagrilari:
+            return "Merhaba! Size nasıl yardımcı olabilirim? Fatura, paket, teknik destek konularında yardım edebilirim."
+        
+        arac_isimleri = [arac.arac_adi for arac in arac_cagrilari]
+        return f"Anladım, {', '.join(arac_isimleri)} işlemlerini gerçekleştiriyorum..."
     
     def _arac_sonuclarini_entegre_et(self, temel_yanit: str, arac_sonuclari: List[AracCagrisi]) -> str:
         """Araç sonuçlarını yanıta entegre et"""
         if not arac_sonuclari:
             return temel_yanit
         
-        entegre_yanit = temel_yanit + "\n\n"
+        basarili_sonuclar = [arac for arac in arac_sonuclari if arac.durum == "tamamlandi"]
+        hatali_sonuclar = [arac for arac in arac_sonuclari if arac.durum == "hata"]
         
-        for arac_sonuc in arac_sonuclari:
-            if arac_sonuc.durum == "tamamlandi":
-                entegre_yanit += f"✅ {arac_sonuc.arac_adi}: İşlem başarılı\n"
-                if arac_sonuc.sonuc:
-                    entegre_yanit += f"   Sonuç: {str(arac_sonuc.sonuc)[:100]}...\n"
-            elif arac_sonuc.durum == "hata":
-                entegre_yanit += f"❌ {arac_sonuc.arac_adi}: Hata\n"
+        yanit_parcalari = [temel_yanit]
         
-        return entegre_yanit
+        if basarili_sonuclar:
+            yanit_parcalari.append("İşlemler başarıyla tamamlandı.")
+        
+        if hatali_sonuclar:
+            yanit_parcalari.append("Bazı işlemlerde sorun oluştu, lütfen tekrar deneyin.")
+        
+        return " ".join(yanit_parcalari)
 
 class YapayZekaOrkestratori:
-    """Ana yapay zeka orkestratör sınıfı"""
+    """Ana yapay zeka orkestratörü"""
     
     def __init__(self):
         self.model_hizmeti = LlamaInferenceService()
-        self.arac_kaydi = TelekomAracKaydi()
         self.konusma_yoneticisi = KonusmaYoneticisi()
+        self.arac_kaydi = TelekomAracKaydi()
         self.telekom_api = telekom_api
     
     async def kullanici_mesaj_isle(self, mesaj: str, kullanici_id: str, oturum_id: str) -> Dict[str, Any]:
         """Kullanıcı mesajını işle ve yanıt üret"""
         try:
-            logger.info(f"Kullanıcı mesajı işleniyor: {kullanici_id}")
+            logger.info(f"Kullanıcı mesajı işleniyor: {kullanici_id} - {mesaj[:50]}...")
             
-            # 1. Türkçe doğal dil işleme ile ön işleme
+            # Mesajı ön işle
             islenmis_mesaj = self.turkce_on_isle(mesaj)
             
-            # 2. Konuşma bağlamını getir
-            baglam = await self.konusma_yoneticisi.baglam_getir(oturum_id)
-            
-            # 3. Kullanıcı mesajını kaydet
+            # Kullanıcı mesajını kaydet
             kullanici_mesaji = KonusmaMesaji(
                 mesaj_id=f"MSG_{uuid.uuid4().hex[:8]}",
                 kullanici_id=kullanici_id,
@@ -334,41 +340,55 @@ class YapayZekaOrkestratori:
             )
             await self.konusma_yoneticisi.mesaj_ekle(oturum_id, kullanici_mesaji)
             
-            # 4. AI yanıtı üret
-            ai_yaniti = await self.model_hizmeti.yanit_uret(
-                mesaj=islenmis_mesaj,
-                baglam=baglam,
-                mevcut_araclar=self.arac_kaydi.mevcut_araclari_getir()
-            )
+            # Konuşma bağlamını getir
+            baglam = await self.konusma_yoneticisi.baglam_getir(oturum_id)
             
-            # 5. Araç çağrılarını yürüt
-            arac_sonuclari = await self.arac_cagrilari_yurut(ai_yaniti.arac_cagrilari)
+            # Mevcut araçları getir
+            mevcut_araclar = self.arac_kaydi.mevcut_araclari_getir()
             
-            # 6. Final yanıt üret
-            final_yanit = await self.model_hizmeti.final_yanit_uret(
-                orijinal_yanit=ai_yaniti,
-                arac_sonuclari=arac_sonuclari
-            )
+            # AI yanıtı üret
+            ai_yaniti = await self.model_hizmeti.yanit_uret(islenmis_mesaj, baglam, mevcut_araclar)
             
-            # 7. AI yanıtını kaydet
+            # Araç çağrılarını yürüt
+            if ai_yaniti.arac_cagrilari:
+                logger.info(f"{len(ai_yaniti.arac_cagrilari)} araç çağrısı yürütülüyor...")
+                arac_sonuclari = await self.arac_cagrilari_yurut(ai_yaniti.arac_cagrilari)
+                
+                # Final yanıt üret
+                final_yanit = await self.model_hizmeti.final_yanit_uret(ai_yaniti, arac_sonuclari)
+            else:
+                final_yanit = ai_yaniti.islenmis_yanit
+                arac_sonuclari = []
+            
+            # AI yanıtını kaydet
             ai_mesaji = KonusmaMesaji(
-                mesaj_id=ai_yaniti.yanit_id,
-                kullanici_id="AI_SYSTEM",
+                mesaj_id=f"AI_{uuid.uuid4().hex[:8]}",
+                kullanici_id="AI",
                 icerik=final_yanit,
                 zaman_damgasi=datetime.now().isoformat(),
                 mesaj_tipi="ai"
             )
             await self.konusma_yoneticisi.mesaj_ekle(oturum_id, ai_mesaji)
             
-            # 8. Sonuç döndür
+            # Sonucu hazırla
             sonuc = {
                 "yanit_id": ai_yaniti.yanit_id,
                 "yanit": final_yanit,
                 "guven_puani": ai_yaniti.guven_puani,
-                "arac_cagrilari": len(ai_yaniti.arac_cagrilari),
+                "arac_cagrilari": [
+                    {
+                        "arac_adi": arac.arac_adi,
+                        "durum": arac.durum,
+                        "sonuc": arac.sonuc,
+                        "hata_mesaji": arac.hata_mesaji
+                    }
+                    for arac in arac_sonuclari
+                ],
                 "metadata": {
                     "oturum_id": oturum_id,
-                    "kullanici_id": kullanici_id
+                    "kullanici_id": kullanici_id,
+                    "islenme_zamani": datetime.now().isoformat(),
+                    "baglam_mesaj_sayisi": len(baglam)
                 }
             }
             
@@ -416,6 +436,7 @@ class YapayZekaOrkestratori:
             except Exception as e:
                 logger.error(f"Araç çağrısı hatası: {arac_cagrisi.arac_adi} - {e}")
                 arac_cagrisi.durum = "hata"
+                arac_cagrisi.hata_mesaji = str(e)
             
             sonuclar.append(arac_cagrisi)
         
@@ -467,7 +488,7 @@ class YapayZekaOrkestratori:
             logger.info(f"AI Telekom API yanıtı: {result}")
             
             return result.get("data") if result.get("success") else None
-                
+            
         except Exception as e:
             logger.error(f"AI Telekom araç çağrısı hatası: {e}")
             raise

@@ -198,19 +198,19 @@ async def get_current_bill_test(user_id: int):
         bill_data = {
             "bill_id": f"F-2024-{user_id}",
             "user_id": user_id,
-            "amount": 89.50,
+            "amount": 75.50,
             "currency": "TRY",
             "due_date": "2024-03-15",
             "bill_date": "2024-02-28",
-            "status": "unpaid",
+            "status": "unpaid" if user_id % 3 == 0 else "paid",
             "services": [
                 {
                     "service_name": "Mega İnternet",
-                    "amount": 69.50
+                    "amount": 52.85
                 },
                 {
                     "service_name": "Sesli Arama", 
-                    "amount": 20.00
+                    "amount": 22.65
                 }
             ]
         }
@@ -221,34 +221,25 @@ async def get_current_bill_test(user_id: int):
         }
         
     except Exception as e:
-        logger.error(f"Fatura getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Mevcut fatura getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Mevcut fatura getirme hatası: {str(e)}")
 
 @router.get("/packages/current/{user_id}")
 async def get_customer_package_test(user_id: int):
     """Müşterinin mevcut paketini getir (GET test için)"""
     try:
-        logger.info(f"Müşteri paketi sorgulanıyor: User ID {user_id}")
+        logger.info(f"Mevcut paket sorgulanıyor: User ID {user_id}")
+        
+        package_data = get_mock_package_data(user_id)
         
         return {
             "success": True,
-            "data": {
-                "package_name": "Mega İnternet",
-                "monthly_fee": 69.50,
-                "features": {
-                    "internet_gb": 50,
-                    "voice_minutes": 1000,
-                    "sms_count": 500,
-                    "roaming_enabled": False
-                },
-                "activation_date": "2024-01-01",
-                "renewal_date": "2024-04-01"
-            }
+            "data": package_data
         }
         
     except Exception as e:
-        logger.error(f"Paket getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Mevcut paket getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Mevcut paket getirme hatası: {str(e)}")
 
 @router.get("/customers/profile/{user_id}")
 async def get_customer_profile_test(user_id: int):
@@ -256,31 +247,22 @@ async def get_customer_profile_test(user_id: int):
     try:
         logger.info(f"Müşteri profili sorgulanıyor: User ID {user_id}")
         
+        customer_data = get_mock_customer_data(user_id)
+        
         return {
             "success": True,
             "data": {
                 "user_id": user_id,
-                "name": "Ahmet Yılmaz",
-                "phone_numbers": [
-                    {
-                        "number": "+905551234567",
-                        "type": "mobile",
-                        "status": "active"
-                    }
-                ],
-                "email": "ahmet@example.com",
-                "address": "İstanbul, Kadıköy",
-                "registration_date": "2023-01-15",
-                "customer_tier": "gold"
+                **customer_data
             }
         }
         
     except Exception as e:
         logger.error(f"Müşteri profili getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Müşteri profili getirme hatası: {str(e)}")
 
 # ============================================================================
-# REQUEST/RESPONSE MODELS
+# REQUEST MODELS
 # ============================================================================
 
 class UserIdRequest(BaseModel):
@@ -334,12 +316,11 @@ class LineSuspendRequest(BaseModel):
     reason: str
 
 # ============================================================================
-# FATURA & ÖDEME İŞLEMLERİ
+# BILLING ENDPOINT'LERİ
 # ============================================================================
 
 @router.post("/billing/current")
 async def get_current_bill(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """Mevcut fatura bilgilerini getir"""
     try:
         logger.info(f"Mevcut fatura sorgulanıyor: User ID {request.user_id}")
@@ -352,58 +333,67 @@ async def get_current_bill(request: UserIdRequest):
         }
         
     except Exception as e:
-        logger.error(f"Fatura getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Mevcut fatura getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Mevcut fatura getirme hatası: {str(e)}")
 
 @router.post("/billing/history")
 async def get_past_bills(request: PastBillsRequest):
-    validate_user_id(request.user_id)
     """Geçmiş faturaları getir"""
     try:
-        logger.info(f"Geçmiş faturalar sorgulanıyor: User ID {request.user_id}, Limit {request.limit}")
+        logger.info(f"Fatura geçmişi sorgulanıyor: User ID {request.user_id}, Limit: {request.limit}")
         
-        # Mock veri - user ID'ye göre farklı faturalar
         bills = []
         base_amount = 50 + (request.user_id % 50)
-        for i in range(min(request.limit, 12)):
-            bill_amount = base_amount + (i * 5)  # Her ay biraz artıyor
-            bills.append({
-                "bill_id": f"F-2024-{request.user_id:04d}-{i+1:02d}",
-                "amount": bill_amount,
-                "bill_date": f"2024-{i+1:02d}-28",
-                "status": "paid" if i < 11 else "unpaid",
-                "paid_date": f"2024-{i+2:02d}-05" if i < 11 else None
-            })
         
-        total_amount = sum(bill["amount"] for bill in bills if bill["status"] == "paid")
+        for i in range(min(request.limit, 12)):
+            bill_data = {
+                "bill_id": f"F-2024-{request.user_id:04d}-{i+1:02d}",
+                "user_id": request.user_id,
+                "amount": base_amount + (i * 5),
+                "currency": "TRY",
+                "bill_date": f"2024-{i+1:02d}-28",
+                "due_date": f"2024-{i+2:02d}-15",
+                "status": "paid" if i < 11 else "unpaid",
+                "services": [
+                    {
+                        "service_name": "Mega İnternet",
+                        "amount": (base_amount + (i * 5)) * 0.7
+                    },
+                    {
+                        "service_name": "Sesli Arama",
+                        "amount": (base_amount + (i * 5)) * 0.3
+                    }
+                ]
+            }
+            bills.append(bill_data)
         
         return {
             "success": True,
             "data": {
                 "bills": bills,
                 "total_count": len(bills),
-                "total_amount_paid": total_amount
+                "user_id": request.user_id
             }
         }
         
     except Exception as e:
-        logger.error(f"Geçmiş faturalar getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Fatura geçmişi getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Fatura geçmişi getirme hatası: {str(e)}")
 
 @router.post("/billing/pay")
 async def pay_bill(request: PaymentRequest):
     """Fatura ödemesi yap"""
     try:
-        logger.info(f"Fatura ödemesi: Bill ID {request.bill_id}, Method {request.method}")
+        logger.info(f"Fatura ödemesi yapılıyor: Bill ID {request.bill_id}, Method: {request.method}")
         
-        # Mock ödeme işlemi
         payment_data = {
-            "transaction_id": f"TXN-2024-{request.bill_id.split('-')[-1]}",
+            "payment_id": f"PAY-{request.bill_id}",
             "bill_id": request.bill_id,
-            "amount": 89.50,
+            "amount": 75.50,
             "method": request.method,
             "status": "completed",
-            "timestamp": "2024-03-01T14:30:00Z"
+            "transaction_date": "2024-03-01T14:30:00Z",
+            "confirmation_code": f"CONF-{request.bill_id}"
         }
         
         return {
@@ -413,76 +403,73 @@ async def pay_bill(request: PaymentRequest):
         
     except Exception as e:
         logger.error(f"Fatura ödeme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Fatura ödeme hatası: {str(e)}")
 
 @router.post("/billing/payments")
 async def get_payment_history(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """Ödeme geçmişini getir"""
     try:
         logger.info(f"Ödeme geçmişi sorgulanıyor: User ID {request.user_id}")
         
-        # Mock veri - user ID'ye göre farklı ödemeler
-        base_amount = 50 + (request.user_id % 50)
-        payment_methods = ["credit_card", "bank_transfer", "mobile_payment", "cash"]
-        
         payments = []
-        for i in range(5):
-            payment_amount = base_amount + (i * 3)
-            payments.append({
-                "transaction_id": f"TXN-{request.user_id:04d}-{i+1:03d}",
-                "amount": payment_amount,
-                "method": payment_methods[i % len(payment_methods)],
-                "date": f"2024-{i+1:02d}-05T10:15:00Z",
-                "bill_id": f"F-2024-{request.user_id:04d}-{i+1:02d}"
-            })
+        base_amount = 50 + (request.user_id % 50)
         
-        total_amount = sum(payment["amount"] for payment in payments)
+        for i in range(6):
+            payment_data = {
+                "payment_id": f"PAY-{request.user_id:04d}-{i+1:02d}",
+                "bill_id": f"F-2024-{request.user_id:04d}-{i+1:02d}",
+                "amount": base_amount + (i * 5),
+                "method": "credit_card" if i % 2 == 0 else "bank_transfer",
+                "status": "completed",
+                "transaction_date": f"2024-{i+1:02d}-05T10:15:00Z"
+            }
+            payments.append(payment_data)
         
         return {
             "success": True,
             "data": {
                 "payments": payments,
-                "total_payments": len(payments),
-                "total_amount": total_amount
+                "total_count": len(payments),
+                "user_id": request.user_id
             }
         }
         
     except Exception as e:
         logger.error(f"Ödeme geçmişi getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Ödeme geçmişi getirme hatası: {str(e)}")
 
 @router.post("/billing/autopay")
 async def setup_autopay(request: AutopayRequest):
-    validate_user_id(request.user_id)
-    """Otomatik ödeme ayarla"""
+    """Otomatik ödeme ayarlar"""
     try:
-        logger.info(f"Otomatik ödeme ayarlanıyor: User ID {request.user_id}, Status {request.status}")
+        logger.info(f"Otomatik ödeme ayarlanıyor: User ID {request.user_id}, Status: {request.status}")
+        
+        autopay_data = {
+            "user_id": request.user_id,
+            "autopay_enabled": request.status,
+            "payment_method": "credit_card",
+            "last_updated": "2024-03-01T14:30:00Z",
+            "next_payment_date": "2024-03-15T00:00:00Z"
+        }
         
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "autopay_enabled": request.status,
-                "payment_method": "credit_card_ending_1234",
-                "next_payment_date": "2024-03-15"
-            }
+            "data": autopay_data
         }
         
     except Exception as e:
         logger.error(f"Otomatik ödeme ayarlama hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Otomatik ödeme ayarlama hatası: {str(e)}")
 
 # ============================================================================
-# PAKET & TARİFE YÖNETİMİ
+# PACKAGE ENDPOINT'LERİ
 # ============================================================================
 
 @router.post("/packages/current")
 async def get_customer_package(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """Müşterinin mevcut paketini getir"""
     try:
-        logger.info(f"Müşteri paketi sorgulanıyor: User ID {request.user_id}")
+        logger.info(f"Mevcut paket sorgulanıyor: User ID {request.user_id}")
         
         package_data = get_mock_package_data(request.user_id)
         
@@ -492,282 +479,290 @@ async def get_customer_package(request: UserIdRequest):
         }
         
     except Exception as e:
-        logger.error(f"Paket getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Mevcut paket getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Mevcut paket getirme hatası: {str(e)}")
 
 @router.post("/packages/quotas")
 async def get_remaining_quotas(request: UserIdRequest):
-    validate_user_id(request.user_id)
-    """Kalan kotaları getir"""
+    """Müşterinin kalan kotalarını getir"""
     try:
         logger.info(f"Kalan kotalar sorgulanıyor: User ID {request.user_id}")
         
-        quotas_data = get_mock_quotas_data(request.user_id)
+        quota_data = get_mock_quotas_data(request.user_id)
         
         return {
             "success": True,
-            "data": quotas_data
+            "data": quota_data
         }
         
     except Exception as e:
-        logger.error(f"Kota getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Kalan kotalar getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Kalan kotalar getirme hatası: {str(e)}")
 
 @router.post("/packages/change")
 async def change_package(request: PackageChangeRequest):
-    validate_user_id(request.user_id)
     """Paket değişikliği başlat"""
     try:
-        logger.info(f"Paket değişikliği: User ID {request.user_id}, New Package {request.new_package_name}")
+        logger.info(f"Paket değişikliği başlatılıyor: User ID {request.user_id}, New Package: {request.new_package_name}")
+        
+        change_data = {
+            "change_id": f"CHG-{request.user_id:04d}",
+            "user_id": request.user_id,
+            "current_package": "Mega İnternet",
+            "new_package": request.new_package_name,
+            "status": "pending",
+            "effective_date": "2024-04-01T00:00:00Z",
+            "estimated_cost": 89.90
+        }
         
         return {
             "success": True,
-            "data": {
-                "change_id": "CHG-2024-001",
-                "from_package": "Mega İnternet",
-                "to_package": request.new_package_name,
-                "effective_date": "2024-04-01",
-                "fee_difference": -20.00,
-                "status": "scheduled"
-            }
+            "data": change_data
         }
         
     except Exception as e:
         logger.error(f"Paket değişikliği hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Paket değişikliği hatası: {str(e)}")
 
 @router.post("/packages/available")
 async def get_available_packages():
-    """Kullanılabilir paketleri getir"""
+    """Kullanılabilir paketleri listele"""
     try:
         logger.info("Kullanılabilir paketler sorgulanıyor")
+        
+        packages = [
+            {
+                "package_name": "Mega İnternet",
+                "monthly_fee": 69.50,
+                "features": {"internet_gb": 50, "voice_minutes": 1000, "sms_count": 500, "roaming_enabled": False},
+                "description": "Hızlı internet ve bol dakika"
+            },
+            {
+                "package_name": "Öğrenci Dostu Tarife",
+                "monthly_fee": 49.90,
+                "features": {"internet_gb": 30, "voice_minutes": 500, "sms_count": 250, "roaming_enabled": False},
+                "description": "Öğrenciler için özel tarife"
+            },
+            {
+                "package_name": "Süper Konuşma",
+                "monthly_fee": 59.90,
+                "features": {"internet_gb": 25, "voice_minutes": 2000, "sms_count": 1000, "roaming_enabled": True},
+                "description": "Bol dakika ve SMS"
+            },
+            {
+                "package_name": "Premium Paket",
+                "monthly_fee": 89.90,
+                "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                "description": "Premium hizmetler"
+            }
+        ]
         
         return {
             "success": True,
             "data": {
-                "packages": [
-                    {
-                        "name": "Öğrenci Dostu Tarife",
-                        "monthly_fee": 49.90,
-                        "features": {
-                            "internet_gb": 30,
-                            "voice_minutes": 500,
-                            "sms_count": 250
-                        },
-                        "target_audience": "students"
-                    },
-                    {
-                        "name": "Mega İnternet",
-                        "monthly_fee": 69.50,
-                        "features": {
-                            "internet_gb": 50,
-                            "voice_minutes": 1000,
-                            "sms_count": 500
-                        }
-                    }
-                ]
+                "packages": packages,
+                "total_count": len(packages)
             }
         }
         
     except Exception as e:
         logger.error(f"Kullanılabilir paketler getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Kullanılabilir paketler getirme hatası: {str(e)}")
 
 @router.post("/packages/details")
 async def get_package_details(request: PackageDetailsRequest):
     """Paket detaylarını getir"""
     try:
-        logger.info(f"Paket detayları sorgulanıyor: {request.package_name}")
+        logger.info(f"Paket detayları sorgulanıyor: Package {request.package_name}")
+        
+        package_details = {
+            "package_name": request.package_name,
+            "monthly_fee": 69.50,
+            "features": {
+                "internet_gb": 50,
+                "voice_minutes": 1000,
+                "sms_count": 500,
+                "roaming_enabled": False
+            },
+            "description": "Hızlı internet ve bol dakika",
+            "contract_duration": "12 ay",
+            "early_termination_fee": 200.00,
+            "activation_fee": 0.00
+        }
         
         return {
             "success": True,
-            "data": {
-                "name": request.package_name,
-                "monthly_fee": 59.90,
-                "setup_fee": 0,
-                "features": {
-                    "internet_gb": 25,
-                    "voice_minutes": 2000,
-                    "sms_count": 1000,
-                    "international_minutes": 100
-                },
-                "contract_duration": 24,
-                "cancellation_fee": 50.00
-            }
+            "data": package_details
         }
         
     except Exception as e:
         logger.error(f"Paket detayları getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Paket detayları getirme hatası: {str(e)}")
 
 @router.post("/services/roaming")
 async def enable_roaming(request: RoamingRequest):
-    validate_user_id(request.user_id)
     """Roaming hizmetini etkinleştir/devre dışı bırak"""
     try:
-        logger.info(f"Roaming ayarlanıyor: User ID {request.user_id}, Status {request.status}")
+        logger.info(f"Roaming ayarlanıyor: User ID {request.user_id}, Status: {request.status}")
+        
+        roaming_data = {
+            "user_id": request.user_id,
+            "roaming_enabled": request.status,
+            "effective_date": "2024-03-01T14:30:00Z",
+            "supported_countries": ["EU", "USA", "Canada", "Australia"],
+            "daily_fee": 15.00 if request.status else 0.00
+        }
         
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "roaming_enabled": request.status,
-                "activation_time": "2024-03-01T15:00:00Z",
-                "daily_fee": 25.00,
-                "data_package": "1GB/day"
-            }
+            "data": roaming_data
         }
         
     except Exception as e:
         logger.error(f"Roaming ayarlama hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Roaming ayarlama hatası: {str(e)}")
 
 # ============================================================================
-# TEKNİK DESTEK & ARIZA
+# NETWORK & DIAGNOSTICS ENDPOINT'LERİ
 # ============================================================================
 
 @router.post("/network/status")
 async def check_network_status(request: NetworkStatusRequest):
     """Ağ durumunu kontrol et"""
     try:
-        logger.info(f"Ağ durumu sorgulanıyor: Region {request.region}")
+        logger.info(f"Ağ durumu kontrol ediliyor: Region {request.region}")
+        
+        network_status = {
+            "region": request.region,
+            "status": "operational",
+            "last_updated": "2024-03-01T14:30:00Z",
+            "services": {
+                "voice": "operational",
+                "data": "operational",
+                "sms": "operational"
+            },
+            "maintenance_scheduled": False,
+            "outages": []
+        }
         
         return {
             "success": True,
-            "data": {
-                "region": request.region,
-                "status": "operational",
-                "coverage_percentage": 95,
-                "active_outages": [
-                    {
-                        "area": "Diyarbakır Merkez",
-                        "issue": "Planlı bakım",
-                        "start_time": "2024-03-01T02:00:00Z",
-                        "estimated_end": "2024-03-01T06:00:00Z"
-                    }
-                ],
-                "last_updated": "2024-03-01T14:30:00Z"
-            }
+            "data": network_status
         }
         
     except Exception as e:
-        logger.error(f"Ağ durumu getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Ağ durumu kontrol hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Ağ durumu kontrol hatası: {str(e)}")
 
 @router.post("/support/tickets")
 async def create_fault_ticket(request: FaultTicketRequest):
-    validate_user_id(request.user_id)
-    """Arıza talebi oluştur"""
+    """Destek talebi oluştur"""
     try:
-        logger.info(f"Arıza talebi oluşturuluyor: User ID {request.user_id}")
+        logger.info(f"Destek talebi oluşturuluyor: User ID {request.user_id}")
+        
+        ticket_data = {
+            "ticket_id": f"T-{request.user_id:04d}",
+            "user_id": request.user_id,
+            "issue_description": request.issue_description,
+            "category": request.category,
+            "priority": request.priority,
+            "status": "open",
+            "created_date": "2024-03-01T14:30:00Z",
+            "estimated_resolution": "2024-03-04T14:30:00Z",
+            "assigned_to": "Technical Support Team"
+        }
+        
         return {
             "success": True,
-            "data": {
-                "ticket_id": f"T-2024-{request.user_id}",
-                "user_id": request.user_id,
-                "issue_description": request.issue_description,
-                "category": request.category,
-                "priority": request.priority,
-                "status": "open",
-                "created_at": "2024-03-01T14:30:00Z",
-                "estimated_resolution": "2024-03-02T14:30:00Z"
-            }
+            "data": ticket_data
         }
+        
     except Exception as e:
-        logger.error(f"Arıza talebi oluşturma hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Destek talebi oluşturma hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Destek talebi oluşturma hatası: {str(e)}")
 
 @router.post("/support/tickets/close")
 async def close_fault_ticket(request: TicketStatusRequest):
-    """Arıza talebini kapat"""
-    # ticket_id kontrolü örnek (gerçek uygulamada DB'den kontrol edilir)
-    if not request.ticket_id.startswith("T-2024-"):
-        raise HTTPException(status_code=404, detail=f"Talep ID {request.ticket_id} bulunamadı.")
+    """Destek talebini kapat"""
     try:
-        logger.info(f"Arıza talebi kapatılıyor: Ticket ID {request.ticket_id}")
+        logger.info(f"Destek talebi kapatılıyor: Ticket ID {request.ticket_id}")
+        
+        close_data = {
+            "ticket_id": request.ticket_id,
+            "status": "closed",
+            "closed_date": "2024-03-01T15:30:00Z",
+            "resolution": "Sorun çözüldü",
+            "satisfaction_rating": 5
+        }
+        
         return {
             "success": True,
-            "data": {
-                "ticket_id": request.ticket_id,
-                "status": "closed",
-                "closed_at": "2024-03-01T16:00:00Z",
-                "close_reason": "Kullanıcı isteğiyle kapatıldı"
-            }
+            "data": close_data
         }
+        
     except Exception as e:
-        logger.error(f"Arıza talebi kapatma hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Destek talebi kapatma hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Destek talebi kapatma hatası: {str(e)}")
 
 @router.post("/support/tickets/status")
 async def get_fault_ticket_status(request: TicketStatusRequest):
-    """Arıza talebi durumunu getir"""
+    """Destek talebi durumunu getir"""
     try:
-        logger.info(f"Arıza talebi durumu sorgulanıyor: Ticket ID {request.ticket_id}")
+        logger.info(f"Destek talebi durumu sorgulanıyor: Ticket ID {request.ticket_id}")
+        
+        status_data = {
+            "ticket_id": request.ticket_id,
+            "status": "in_progress",
+            "last_updated": "2024-03-01T16:30:00Z",
+            "progress": 75,
+            "estimated_completion": "2024-03-02T14:30:00Z",
+            "assigned_technician": "Ahmet Yılmaz",
+            "notes": "Teknik ekip sorunu inceliyor"
+        }
         
         return {
             "success": True,
-            "data": {
-                "ticket_id": request.ticket_id,
-                "status": "resolved",
-                "resolution": "Bölgesel sinyal sorunu giderildi",
-                "created_at": "2024-02-28T10:00:00Z",
-                "resolved_at": "2024-03-01T09:15:00Z",
-                "technician_notes": "Antenna ayarlaması yapıldı"
-            }
+            "data": status_data
         }
         
     except Exception as e:
-        logger.error(f"Arıza talebi durumu getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Destek talebi durumu getirme hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"Destek talebi durumu getirme hatası: {str(e)}")
 
 @router.post("/diagnostics/speed-test")
 async def test_internet_speed(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """İnternet hız testi yap"""
     try:
-        logger.info(f"İnternet hız testi: User ID {request.user_id}")
+        logger.info(f"İnternet hız testi yapılıyor: User ID {request.user_id}")
         
-        # User ID'ye göre farklı hız sonuçları
-        base_download = 30 + (request.user_id % 70)  # 30-100 Mbps arası
-        base_upload = 10 + (request.user_id % 30)    # 10-40 Mbps arası
-        base_ping = 10 + (request.user_id % 20)      # 10-30 ms arası
-        
-        # Kalite değerlendirmesi
-        if base_download > 80:
-            quality = "excellent"
-        elif base_download > 50:
-            quality = "good"
-        elif base_download > 30:
-            quality = "fair"
-        else:
-            quality = "poor"
-        
-        test_servers = ["Istanbul-1", "Ankara-1", "Izmir-1", "Bursa-1", "Antalya-1"]
+        # Simüle edilmiş hız testi sonuçları
+        speed_data = {
+            "user_id": request.user_id,
+            "test_date": "2024-03-01T14:30:00Z",
+            "download_speed_mbps": 45.2,
+            "upload_speed_mbps": 12.8,
+            "ping_ms": 15,
+            "jitter_ms": 2,
+            "packet_loss_percent": 0.1,
+            "connection_quality": "excellent",
+            "server_location": "Istanbul"
+        }
         
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "download_speed_mbps": base_download,
-                "upload_speed_mbps": base_upload,
-                "ping_ms": base_ping,
-                "test_timestamp": "2024-03-01T14:30:00Z",
-                "test_server": test_servers[request.user_id % len(test_servers)],
-                "quality_rating": quality
-            }
+            "data": speed_data
         }
         
     except Exception as e:
-        logger.error(f"Hız testi hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"İnternet hız testi hatası: {e}")
+        raise HTTPException(status_code=500, detail=f"İnternet hız testi hatası: {str(e)}")
 
 # ============================================================================
-# HESAP YÖNETİMİ
+# CUSTOMER MANAGEMENT ENDPOINT'LERİ
 # ============================================================================
 
 @router.post("/customers/profile")
 async def get_customer_profile(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """Müşteri profilini getir"""
     try:
         logger.info(f"Müşteri profili sorgulanıyor: User ID {request.user_id}")
@@ -784,84 +779,92 @@ async def get_customer_profile(request: UserIdRequest):
         
     except Exception as e:
         logger.error(f"Müşteri profili getirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Müşteri profili getirme hatası: {str(e)}")
 
 @router.post("/customers/contact")
 async def update_customer_contact(request: ContactUpdateRequest):
-    validate_user_id(request.user_id)
     """Müşteri iletişim bilgilerini güncelle"""
     try:
-        logger.info(f"İletişim bilgisi güncelleniyor: User ID {request.user_id}, Type {request.contact_type}")
+        logger.info(f"İletişim bilgisi güncelleniyor: User ID {request.user_id}, Type: {request.contact_type}")
+        
+        update_data = {
+            "user_id": request.user_id,
+            "contact_type": request.contact_type,
+            "old_value": "eski_değer",
+            "new_value": request.new_value,
+            "updated_date": "2024-03-01T14:30:00Z",
+            "status": "updated"
+        }
         
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "contact_type": request.contact_type,
-                "old_value": "+905551234567",
-                "new_value": request.new_value,
-                "updated_at": "2024-03-01T14:30:00Z",
-                "verification_required": True
-            }
+            "data": update_data
         }
         
     except Exception as e:
         logger.error(f"İletişim bilgisi güncelleme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"İletişim bilgisi güncelleme hatası: {str(e)}")
 
 @router.post("/lines/suspend")
 async def suspend_line(request: LineSuspendRequest):
-    validate_user_id(request.user_id)
     """Hatı askıya al"""
     try:
-        logger.info(f"Hat askıya alınıyor: User ID {request.user_id}, Reason {request.reason}")
+        logger.info(f"Hat askıya alınıyor: User ID {request.user_id}, Reason: {request.reason}")
+        
+        suspend_data = {
+            "user_id": request.user_id,
+            "status": "suspended",
+            "reason": request.reason,
+            "suspended_date": "2024-03-01T14:30:00Z",
+            "reactivation_fee": 25.00,
+            "estimated_reactivation_date": "2024-03-08T14:30:00Z"
+        }
         
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "line_number": "+905551234567",
-                "suspension_reason": request.reason,
-                "suspended_at": "2024-03-01T14:30:00Z",
-                "reactivation_fee": 0,
-                "max_suspension_days": 90
-            }
+            "data": suspend_data
         }
         
     except Exception as e:
         logger.error(f"Hat askıya alma hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=f"Hat askıya alma hatası: {str(e)}")
 
 @router.post("/lines/reactivate")
 async def reactivate_line(request: UserIdRequest):
-    validate_user_id(request.user_id)
     """Hatı yeniden etkinleştir"""
     try:
         logger.info(f"Hat yeniden etkinleştiriliyor: User ID {request.user_id}")
         
+        reactivate_data = {
+            "user_id": request.user_id,
+            "status": "active",
+            "reactivated_date": "2024-03-01T15:30:00Z",
+            "reactivation_fee_paid": True,
+            "services_restored": ["voice", "data", "sms"]
+        }
+        
         return {
             "success": True,
-            "data": {
-                "user_id": request.user_id,
-                "line_number": "+905551234567",
-                "reactivated_at": "2024-03-01T14:30:00Z",
-                "suspension_duration_days": 15,
-                "reactivation_fee": 0
-            }
+            "data": reactivate_data
         }
         
     except Exception as e:
         logger.error(f"Hat yeniden etkinleştirme hatası: {e}")
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=f"Hat yeniden etkinleştirme hatası: {str(e)}")
 
-# Dinamik user_id kontrolü için customers anahtarlarını kullanan fonksiyon
+# ============================================================================
+# UTILITY FUNCTIONS
+# ============================================================================
 
 def get_all_customer_ids() -> set:
+    """Tüm müşteri ID'lerini döner"""
     return set(CUSTOMERS.keys())
 
 def is_valid_user_id(user_id: int) -> bool:
-    return user_id in get_all_customer_ids()
+    """User ID'nin geçerli olup olmadığını kontrol eder"""
+    return user_id in CUSTOMERS
 
 def validate_user_id(user_id: int):
+    """User ID'yi doğrular, geçersizse HTTPException fırlatır"""
     if not is_valid_user_id(user_id):
-        raise HTTPException(status_code=404, detail={"Error": f"Kullanıcı ID {user_id} bulunamadı."}) 
+        raise HTTPException(status_code=404, detail=f"User ID {user_id} bulunamadı") 
