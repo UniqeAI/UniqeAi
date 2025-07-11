@@ -6,6 +6,7 @@ from datetime import datetime
 import uuid
 
 from .telekom_api import telekom_api
+from .ai_endpoint_functions import ai_endpoint_functions
 
 # Loglama ayarları
 logging.basicConfig(level=logging.INFO)
@@ -74,77 +75,88 @@ class TelekomAracKaydi:
     
     def __init__(self):
         self.kayitli_araclar = {
-            "musteri_profil_getir": {
-                "aciklama": "Müşteri profil bilgilerini getirir",
-                "parametreler": ["telefon_numarasi"]
-            },
-            "mevcut_paket_detaylari": {
-                "aciklama": "Müşterinin mevcut paket detaylarını getirir",
-                "parametreler": ["musteri_id"]
-            },
-            "kullanilabilir_paketler": {
-                "aciklama": "Kullanılabilir paketleri listeler",
-                "parametreler": ["musteri_seviyesi"]
-            },
-            "paket_degisiklik_baslat": {
-                "aciklama": "Paket değişikliği işlemini başlatır",
-                "parametreler": ["musteri_id", "hedef_paket"]
-            },
+            # FATURA & ÖDEME İŞLEMLERİ
             "get_current_bill": {
-                "aciklama": "Detaylı fatura ve döküm",
-                "parametreler": ["musteri_id", "ay"]
-            },
-            "destek_talep_olustur": {
-                "aciklama": "Destek talebi oluşturur",
-                "parametreler": ["musteri_id", "sorun_kategorisi", "aciklama"]
-            },
-            "get_remaining_quotas": {
-                "aciklama": "Kalan veri, dakika ve SMS kotasını getirir",
-                "parametreler": ["musteri_id"]
-            },
-            "enable_roaming": {
-                "aciklama": "Roaming hizmetini aktifleştirir",
-                "parametreler": ["musteri_id", "ulke_kodu"]
+                "aciklama": "Müşterinin mevcut fatura bilgilerini getirir",
+                "parametreler": ["user_id"]
             },
             "get_past_bills": {
-                "aciklama": "Geçmiş faturaları getirir",
-                "parametreler": ["musteri_id", "ay_sayisi"]
+                "aciklama": "Müşterinin geçmiş faturalarını getirir",
+                "parametreler": ["user_id", "limit"]
             },
             "pay_bill": {
-                "aciklama": "Fatura ödeme işlemi",
-                "parametreler": ["musteri_id", "fatura_id", "odeme_yontemi"]
+                "aciklama": "Fatura ödemesi yapar",
+                "parametreler": ["bill_id", "method"]
+            },
+            "get_payment_history": {
+                "aciklama": "Müşterinin ödeme geçmişini getirir",
+                "parametreler": ["user_id"]
             },
             "setup_autopay": {
-                "aciklama": "Otomatik ödeme kurulumu",
-                "parametreler": ["musteri_id", "kart_bilgileri"]
+                "aciklama": "Otomatik ödeme ayarlar",
+                "parametreler": ["user_id", "status"]
             },
+            
+            # PAKET & TARİFE YÖNETİMİ
+            "get_customer_package": {
+                "aciklama": "Müşterinin mevcut paketini getirir",
+                "parametreler": ["user_id"]
+            },
+            "get_remaining_quotas": {
+                "aciklama": "Müşterinin kalan kotalarını getirir",
+                "parametreler": ["user_id"]
+            },
+            "change_package": {
+                "aciklama": "Paket değişikliği başlatır",
+                "parametreler": ["user_id", "new_package_name"]
+            },
+            "get_available_packages": {
+                "aciklama": "Kullanılabilir paketleri listeler",
+                "parametreler": []
+            },
+            "get_package_details": {
+                "aciklama": "Paket detaylarını getirir",
+                "parametreler": ["package_name"]
+            },
+            "enable_roaming": {
+                "aciklama": "Roaming hizmetini etkinleştirir/devre dışı bırakır",
+                "parametreler": ["user_id", "status"]
+            },
+            
+            # TEKNİK DESTEK & ARIZA
             "check_network_status": {
-                "aciklama": "Ağ durumu kontrolü",
-                "parametreler": ["musteri_id"]
+                "aciklama": "Ağ durumunu kontrol eder",
+                "parametreler": ["region"]
+            },
+            "create_fault_ticket": {
+                "aciklama": "Arıza talebi oluşturur",
+                "parametreler": ["user_id", "issue_description"]
             },
             "get_fault_ticket_status": {
-                "aciklama": "Arıza kaydı durumu sorgulama",
-                "parametreler": ["talep_id"]
+                "aciklama": "Arıza talebi durumunu getirir",
+                "parametreler": ["ticket_id"]
             },
             "test_internet_speed": {
-                "aciklama": "İnternet hızı testi",
-                "parametreler": ["musteri_id"]
+                "aciklama": "İnternet hız testi yapar",
+                "parametreler": ["user_id"]
+            },
+            
+            # HESAP YÖNETİMİ
+            "get_customer_profile": {
+                "aciklama": "Müşteri profilini getirir",
+                "parametreler": ["user_id"]
             },
             "update_customer_contact": {
                 "aciklama": "Müşteri iletişim bilgilerini günceller",
-                "parametreler": ["musteri_id", "yeni_bilgiler"]
+                "parametreler": ["user_id", "contact_type", "new_value"]
             },
             "suspend_line": {
-                "aciklama": "Hattı askıya alır",
-                "parametreler": ["musteri_id", "sebep"]
+                "aciklama": "Hatı askıya alır",
+                "parametreler": ["user_id", "reason"]
             },
             "reactivate_line": {
-                "aciklama": "Hattı yeniden aktifleştirir",
-                "parametreler": ["musteri_id"]
-            },
-            "check_number_portability": {
-                "aciklama": "Numara taşınabilirlik kontrolü",
-                "parametreler": ["telefon_numarasi"]
+                "aciklama": "Hatı yeniden etkinleştirir",
+                "parametreler": ["user_id"]
             }
         }
     
@@ -205,25 +217,66 @@ class LlamaInferenceService:
         
         # Basit anahtar kelime tabanlı tespit
         mesaj_lower = mesaj.lower()
+        import re
         
-        if "profil" in mesaj_lower:
-            # Telefon numarası tespit et (basit regex)
-            import re
-            telefon_match = re.search(r'0\d{10}', mesaj)
-            if telefon_match:
+        # User ID tespit et (basit regex)
+        user_id_match = re.search(r'\b(\d{4})\b', mesaj)
+        user_id = user_id_match.group(1) if user_id_match else "1234"
+        
+        # FATURA & ÖDEME İŞLEMLERİ
+        if any(word in mesaj_lower for word in ["fatura", "bill", "ödeme", "payment"]):
+            if "mevcut" in mesaj_lower or "current" in mesaj_lower:
                 arac_cagrilari.append(AracCagrisi(
-                    arac_adi="musteri_profil_getir",
-                    parametreler={"telefon_numarasi": telefon_match.group()}
+                    arac_adi="get_current_bill",
+                    parametreler={"user_id": int(user_id)}
+                ))
+            elif "geçmiş" in mesaj_lower or "history" in mesaj_lower:
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="get_past_bills",
+                    parametreler={"user_id": int(user_id), "limit": 12}
+                ))
+            elif "öde" in mesaj_lower or "pay" in mesaj_lower:
+                bill_id_match = re.search(r'F-\d{4}-\d+', mesaj)
+                bill_id = bill_id_match.group() if bill_id_match else f"F-2024-{user_id}"
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="pay_bill",
+                    parametreler={"bill_id": bill_id, "method": "credit_card"}
                 ))
         
-        if "paket" in mesaj_lower:
-            # Müşteri ID tespit et
-            musteri_match = re.search(r'MUSTERI_\d+', mesaj)
-            if musteri_match:
+        # PAKET & TARİFE YÖNETİMİ
+        if any(word in mesaj_lower for word in ["paket", "package", "tarife"]):
+            if "mevcut" in mesaj_lower or "current" in mesaj_lower:
                 arac_cagrilari.append(AracCagrisi(
-                    arac_adi="mevcut_paket_detaylari",
-                    parametreler={"musteri_id": musteri_match.group()}
+                    arac_adi="get_customer_package",
+                    parametreler={"user_id": int(user_id)}
                 ))
+            elif "kalan" in mesaj_lower or "remaining" in mesaj_lower:
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="get_remaining_quotas",
+                    parametreler={"user_id": int(user_id)}
+                ))
+            elif "değiştir" in mesaj_lower or "change" in mesaj_lower:
+                package_match = re.search(r'["\']([^"\']+)["\']', mesaj)
+                package_name = package_match.group(1) if package_match else "Mega İnternet"
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="change_package",
+                    parametreler={"user_id": int(user_id), "new_package_name": package_name}
+                ))
+        
+        # TEKNİK DESTEK & ARIZA
+        if any(word in mesaj_lower for word in ["arıza", "fault", "destek", "support"]):
+            if "oluştur" in mesaj_lower or "create" in mesaj_lower:
+                arac_cagrilari.append(AracCagrisi(
+                    arac_adi="create_fault_ticket",
+                    parametreler={"user_id": int(user_id), "issue_description": mesaj}
+                ))
+        
+        # HESAP YÖNETİMİ
+        if any(word in mesaj_lower for word in ["profil", "profile", "müşteri", "customer"]):
+            arac_cagrilari.append(AracCagrisi(
+                arac_adi="get_customer_profile",
+                parametreler={"user_id": int(user_id)}
+            ))
         
         return arac_cagrilari
     
@@ -369,105 +422,55 @@ class YapayZekaOrkestratori:
         return sonuclar
     
     async def _telekom_arac_cagir(self, arac_adi: str, parametreler: Dict[str, Any]) -> Any:
-        """Telekom API araç çağrısı"""
-        if arac_adi == "musteri_profil_getir":
-            return await self.telekom_api.musteri_profil_getir(parametreler["telefon_numarasi"])
-        
-        elif arac_adi == "mevcut_paket_detaylari":
-            return await self.telekom_api.mevcut_paket_detaylari(parametreler["musteri_id"])
-        
-        elif arac_adi == "kullanilabilir_paketler":
-            musteri_seviyesi = parametreler.get("musteri_seviyesi", "standart")
-            return await self.telekom_api.kullanilabilir_paketler(musteri_seviyesi)
-        
-        elif arac_adi == "paket_degisiklik_baslat":
-            return await self.telekom_api.paket_degisiklik_baslat(
-                parametreler["musteri_id"],
-                parametreler["hedef_paket"]
-            )
-        
-        elif arac_adi == "get_current_bill":
-            return await self.telekom_api.get_current_bill(
-                parametreler["musteri_id"],
-                parametreler["ay"]
-            )
-        
-        elif arac_adi == "destek_talep_olustur":
-            return await self.telekom_api.destek_talep_olustur(
-                parametreler["musteri_id"],
-                parametreler["sorun_kategorisi"],
-                parametreler["aciklama"]
-            )
-        
-        elif arac_adi == "get_remaining_quotas":
-            return await self.telekom_api.get_remaining_quotas(
-                parametreler["musteri_id"]
-            )
-        
-        elif arac_adi == "enable_roaming":
-            return await self.telekom_api.enable_roaming(
-                parametreler["musteri_id"],
-                parametreler["ulke_kodu"]
-            )
-        
-        elif arac_adi == "get_past_bills":
-            return await self.telekom_api.get_past_bills(
-                parametreler["musteri_id"],
-                parametreler["ay_sayisi"]
-            )
-        
-        elif arac_adi == "pay_bill":
-            return await self.telekom_api.pay_bill(
-                parametreler["musteri_id"],
-                parametreler["fatura_id"],
-                parametreler["odeme_yontemi"]
-            )
-        
-        elif arac_adi == "setup_autopay":
-            return await self.telekom_api.setup_autopay(
-                parametreler["musteri_id"],
-                parametreler["kart_bilgileri"]
-            )
-        
-        elif arac_adi == "check_network_status":
-            return await self.telekom_api.check_network_status(
-                parametreler["musteri_id"]
-            )
-        
-        elif arac_adi == "get_fault_ticket_status":
-            return await self.telekom_api.get_fault_ticket_status(
-                parametreler["talep_id"]
-            )
-        
-        elif arac_adi == "test_internet_speed":
-            return await self.telekom_api.test_internet_speed(
-                parametreler["musteri_id"]
-            )
-        
-        elif arac_adi == "update_customer_contact":
-            return await self.telekom_api.update_customer_contact(
-                parametreler["musteri_id"],
-                parametreler["yeni_bilgiler"]
-            )
-        
-        elif arac_adi == "suspend_line":
-            return await self.telekom_api.suspend_line(
-                parametreler["musteri_id"],
-                parametreler["sebep"]
-            )
-        
-        elif arac_adi == "reactivate_line":
-            return await self.telekom_api.reactivate_line(
-                parametreler["musteri_id"]
-            )
-        
-        elif arac_adi == "check_number_portability":
-            return await self.telekom_api.check_number_portability(
-                parametreler["telefon_numarasi"]
-            )
-        
-        else:
-            raise ValueError(f"Bilinmeyen araç: {arac_adi}")
+        """Telekom API araç çağrısı - AI endpoint fonksiyonları kullanarak"""
+        try:
+            logger.info(f"AI Telekom araç çağrısı: {arac_adi} - {parametreler}")
+            
+            # AI endpoint fonksiyonları mapping
+            function_mapping = {
+                # FATURA & ÖDEME İŞLEMLERİ
+                "get_current_bill": ai_endpoint_functions.telekom_get_current_bill,
+                "get_past_bills": ai_endpoint_functions.telekom_get_bill_history,
+                "pay_bill": ai_endpoint_functions.telekom_pay_bill,
+                "get_payment_history": ai_endpoint_functions.telekom_get_payment_history,
+                "setup_autopay": ai_endpoint_functions.telekom_setup_autopay,
+                
+                # PAKET & TARİFE YÖNETİMİ
+                "get_customer_package": ai_endpoint_functions.telekom_get_current_package,
+                "get_remaining_quotas": ai_endpoint_functions.telekom_get_remaining_quotas,
+                "change_package": ai_endpoint_functions.telekom_change_package,
+                "get_available_packages": ai_endpoint_functions.telekom_get_available_packages,
+                "get_package_details": ai_endpoint_functions.telekom_get_package_details,
+                "enable_roaming": ai_endpoint_functions.telekom_enable_roaming,
+                
+                # TEKNİK DESTEK & ARIZA
+                "check_network_status": ai_endpoint_functions.telekom_check_network_status,
+                "create_fault_ticket": ai_endpoint_functions.telekom_create_support_ticket,
+                "get_fault_ticket_status": ai_endpoint_functions.telekom_get_support_ticket_status,
+                "test_internet_speed": ai_endpoint_functions.telekom_test_internet_speed,
+                
+                # HESAP YÖNETİMİ
+                "get_customer_profile": ai_endpoint_functions.telekom_get_customer_profile,
+                "update_customer_contact": ai_endpoint_functions.telekom_update_customer_contact,
+                "suspend_line": ai_endpoint_functions.telekom_suspend_line,
+                "reactivate_line": ai_endpoint_functions.telekom_reactivate_line
+            }
+            
+            if arac_adi not in function_mapping:
+                logger.warning(f"Bilinmeyen araç: {arac_adi}")
+                return None
+            
+            # Fonksiyonu çağır
+            function = function_mapping[arac_adi]
+            result = await function(**parametreler)
+            
+            logger.info(f"AI Telekom API yanıtı: {result}")
+            
+            return result.get("data") if result.get("success") else None
+                
+        except Exception as e:
+            logger.error(f"AI Telekom araç çağrısı hatası: {e}")
+            raise
     
     async def oturum_temizle(self, oturum_id: str):
         """Oturum konuşma geçmişini temizle"""

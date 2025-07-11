@@ -1,268 +1,194 @@
+"""
+Telekom API endpoint'lerini test eden test dosyası
+"""
+
 import pytest
+import httpx
 import asyncio
-from unittest.mock import AsyncMock, patch
-from datetime import datetime, timedelta
+from fastapi.testclient import TestClient
+from backend.app.main import app
 
-from app.services.telekom_api import (
-    TelekomAPIService, 
-    MusteriProfil, 
-    PaketDetay, 
-    FaturaDetay
-)
+# Test client
+client = TestClient(app)
 
-class TestTelekomAPIService:
-    @pytest.fixture
-    def telekom_service(self):
-        """Test için TelekomAPIService örneği"""
-        return TelekomAPIService()
+class TestTelekomAPI:
+    """Telekom API endpoint'lerini test eden sınıf"""
     
-    @pytest.fixture
-    def ornek_musteri_id(self):
-        """Test için örnek müşteri ID"""
-        return "MUSTERI_0001"
-    
-    @pytest.fixture
-    def ornek_telefon(self):
-        """Test için örnek telefon numarası"""
-        return "05321234567"
-
-    @pytest.mark.asyncio
-    async def test_musteri_profil_getir_basarili(self, telekom_service, ornek_telefon):
-        """Müşteri profili başarıyla getirilir"""
-        musteri = await telekom_service.get_customer_profile(ornek_telefon)
-        
-        assert musteri is not None
-        assert musteri.telefon_numarasi == ornek_telefon
-        assert musteri.ad_soyad == "Ahmet Yılmaz"
-        assert musteri.musteri_seviyesi == "premium"
-        assert hasattr(musteri, 'musteri_id')
-        assert hasattr(musteri, 'email')
-        assert hasattr(musteri, 'toplam_borc')
-
-    @pytest.mark.asyncio
-    async def test_musteri_profil_getir_bulunamadi(self, telekom_service):
-        """Var olmayan müşteri için None döner"""
-        musteri = await telekom_service.get_customer_profile("99999999999")
-        assert musteri is None
-
-    @pytest.mark.asyncio
-    async def test_mevcut_paket_detaylari_basarili(self, telekom_service, ornek_musteri_id):
-        """Paket detayları başarıyla getirilir"""
-        paket_detaylari = await telekom_service.get_customer_package(ornek_musteri_id)
-        
-        assert paket_detaylari is not None
-        assert "musteri_bilgileri" in paket_detaylari
-        assert "aktif_paket" in paket_detaylari
-        assert "kullanim_durumu" in paket_detaylari
-        assert "fatura_durumu" in paket_detaylari
-        
-        # Müşteri bilgileri kontrolü
-        musteri_bilgileri = paket_detaylari["musteri_bilgileri"]
-        assert "ad_soyad" in musteri_bilgileri
-        assert "telefon" in musteri_bilgileri
-        assert "musteri_seviyesi" in musteri_bilgileri
-        
-        # Aktif paket kontrolü
-        aktif_paket = paket_detaylari["aktif_paket"]
-        assert "paket_adi" in aktif_paket
-        assert "aylik_ucret" in aktif_paket
-        assert "veri_miktari" in aktif_paket
-        assert "dakika_miktari" in aktif_paket
-        assert "sms_miktari" in aktif_paket
-        assert "ozellikler" in aktif_paket
-
-    @pytest.mark.asyncio
-    async def test_mevcut_paket_detaylari_musteri_bulunamadi(self, telekom_service):
-        """Var olmayan müşteri için None döner"""
-        paket_detaylari = await telekom_service.get_customer_package("VAR_OLMAYAN_MUSTERI")
-        assert paket_detaylari is None
-
-    @pytest.mark.asyncio
-    async def test_kullanilabilir_paketler_standart(self, telekom_service):
-        """Standart müşteri seviyesi için paketler getirilir"""
-        paketler = await telekom_service.get_available_packages("standart")
-        
-        assert len(paketler) > 0
-        assert all(paket["uygunluk"] == "standart" for paket in paketler)
-        
-        # Fiyata göre sıralı olduğunu kontrol et
-        fiyatlar = [paket["aylik_ucret"] for paket in paketler]
-        assert fiyatlar == sorted(fiyatlar)
-
-    @pytest.mark.asyncio
-    async def test_kullanilabilir_paketler_premium(self, telekom_service):
-        """Premium müşteri seviyesi için paketler getirilir"""
-        paketler = await telekom_service.get_available_packages("premium")
-        
-        assert len(paketler) > 0
-        assert all(paket["uygunluk"] in ["standart", "premium"] for paket in paketler)
-
-    @pytest.mark.asyncio
-    async def test_kullanilabilir_paketler_vip(self, telekom_service):
-        """VIP müşteri seviyesi için tüm paketler getirilir"""
-        paketler = await telekom_service.get_available_packages("vip")
-        
-        assert len(paketler) > 0
-        # VIP müşteriler tüm paketleri görebilir
-        assert len(paketler) >= 3  # En az 3 paket olmalı
-
-    @pytest.mark.asyncio
-    async def test_paket_degisiklik_baslat_basarili(self, telekom_service, ornek_musteri_id):
-        """Paket değişikliği başarıyla başlatılır"""
-        hedef_paket = "Paket_VIP"
-        
-        sonuc = await telekom_service.change_package(ornek_musteri_id, hedef_paket)
-        
-        assert sonuc["durum"] == "basarili"
-        assert "mesaj" in sonuc
-        assert "eski_paket" in sonuc
-        assert "yeni_paket" in sonuc
-        assert "yeni_aylik_ucret" in sonuc
-        assert "gecerlilik_tarihi" in sonuc
-        assert "islem_id" in sonuc
-        
-        # Müşterinin paketinin güncellendiğini kontrol et
-        musteri = telekom_service.musteri_veritabani[ornek_musteri_id]
-        assert musteri.aktif_paket == hedef_paket
-
-    @pytest.mark.asyncio
-    async def test_paket_degisiklik_baslat_musteri_bulunamadi(self, telekom_service):
-        """Var olmayan müşteri için hata fırlatır"""
-        with pytest.raises(ValueError, match="Müşteri bulunamadı"):
-            await telekom_service.change_package("VAR_OLMAYAN_MUSTERI", "Paket_STANDART")
-
-    @pytest.mark.asyncio
-    async def test_paket_degisiklik_baslat_paket_bulunamadi(self, telekom_service, ornek_musteri_id):
-        """Var olmayan paket için hata fırlatır"""
-        with pytest.raises(ValueError, match="Hedef paket bulunamadı"):
-            await telekom_service.change_package(ornek_musteri_id, "VAR_OLMAYAN_PAKET")
-
-    @pytest.mark.asyncio
-    async def test_get_current_bill_success(self, telekom_service, ornek_musteri_id):
-        """Fatura detayları başarıyla getirilir"""
-        fatura_detaylari = await telekom_service.get_current_bill(ornek_musteri_id, 1)
-        assert fatura_detaylari is not None
-
-    @pytest.mark.asyncio
-    async def test_get_current_bill_customer_not_found(self, telekom_service):
-        """Var olmayan müşteri için None döner"""
-        fatura_detaylari = await telekom_service.get_current_bill("VAR_OLMAYAN_MUSTERI", 1)
-        assert fatura_detaylari is None
-
-    @pytest.mark.asyncio
-    async def test_get_current_bill_invalid_month(self, telekom_service, ornek_musteri_id):
-        """Geçersiz ay için None döner"""
-        fatura_detaylari = await telekom_service.get_current_bill(ornek_musteri_id, 13)
-        assert fatura_detaylari is None
-
-    @pytest.mark.asyncio
-    async def test_destek_talep_olustur_basarili(self, telekom_service, ornek_musteri_id):
-        """Destek talebi başarıyla oluşturulur"""
-        sorun_kategorisi = "Teknik Sorun"
-        aciklama = "İnternet bağlantısı yavaş"
-        
-        sonuc = await telekom_service.create_fault_ticket(ornek_musteri_id, sorun_kategorisi, aciklama)
-        
-        assert sonuc["durum"] == "basarili"
-        assert "mesaj" in sonuc
-        assert "talep_id" in sonuc
-        assert "tahmini_cozum_suresi" in sonuc
-        assert "oncelik" in sonuc
-        
-        # Destek talebinin listeye eklendiğini kontrol et
-        assert len(telekom_service.destek_talepleri) > 0
-        son_talep = telekom_service.destek_talepleri[-1]
-        assert son_talep["musteri_id"] == ornek_musteri_id
-        assert son_talep["sorun_kategorisi"] == sorun_kategorisi
-        assert son_talep["aciklama"] == aciklama
-
-    @pytest.mark.asyncio
-    async def test_destek_talep_olustur_musteri_bulunamadi(self, telekom_service):
-        """Var olmayan müşteri için hata fırlatır"""
-        with pytest.raises(ValueError, match="Müşteri bulunamadı"):
-            await telekom_service.create_fault_ticket("VAR_OLMAYAN_MUSTERI", "Test", "Test")
-
-    @pytest.mark.asyncio
-    async def test_musteri_veritabani_olusturma(self, telekom_service):
-        """Müşteri veritabanı doğru oluşturulur"""
-        assert len(telekom_service.musteri_veritabani) > 0
-        
-        # İlk müşteriyi kontrol et
-        ilk_musteri_id = list(telekom_service.musteri_veritabani.keys())[0]
-        musteri = telekom_service.musteri_veritabani[ilk_musteri_id]
-        
-        assert isinstance(musteri, MusteriProfil)
-        assert musteri.musteri_id == ilk_musteri_id
-        assert hasattr(musteri, 'telefon_numarasi')
-        assert hasattr(musteri, 'ad_soyad')
-        assert hasattr(musteri, 'email')
-        assert hasattr(musteri, 'musteri_seviyesi')
-
-    @pytest.mark.asyncio
-    async def test_paket_veritabani_olusturma(self, telekom_service):
-        """Paket veritabanı doğru oluşturulur"""
-        assert len(telekom_service.paket_veritabani) > 0
-        
-        # Standart paketi kontrol et
-        standart_paket = telekom_service.paket_veritabani.get("Paket_STANDART")
-        assert standart_paket is not None
-        assert isinstance(standart_paket, PaketDetay)
-        assert standart_paket.paket_adi == "Standart Paket"
-        assert standart_paket.aylik_ucret > 0
-        assert standart_paket.veri_miktari > 0
-
-    @pytest.mark.asyncio
-    async def test_fatura_veritabani_olusturma(self, telekom_service):
-        """Fatura veritabanı doğru oluşturulur"""
-        assert len(telekom_service.fatura_veritabani) > 0
-        
-        # İlk müşterinin faturalarını kontrol et
-        ilk_musteri_id = list(telekom_service.fatura_veritabani.keys())[0]
-        faturalar = telekom_service.fatura_veritabani[ilk_musteri_id]
-        
-        assert len(faturalar) == 12  # 12 ay
-        assert all(isinstance(fatura, FaturaDetay) for fatura in faturalar)
-        
-        # İlk faturayı kontrol et
-        ilk_fatura = faturalar[0]
-        assert "FATURA_" in ilk_fatura.fatura_id
-        assert ilk_fatura.toplam_tutar > 0
-        assert len(ilk_fatura.kalemler) > 0
-
-    @pytest.mark.asyncio
-    async def test_paket_degisiklik_borc_kontrolu(self, telekom_service):
-        """Borçlu müşteri düşük pakete geçemez"""
-        # Borçlu bir müşteri oluştur
-        borclu_musteri_id = "BORCLU_MUSTERI"
-        telekom_service.musteri_veritabani[borclu_musteri_id] = MusteriProfil(
-            musteri_id=borclu_musteri_id,
-            telefon_numarasi="05320000000",
-            ad_soyad="Borçlu Müşteri",
-            email="borclu@test.com",
-            dogum_tarihi="1990-01-01",
-            musteri_seviyesi="premium",
-            kayit_tarihi="2020-01-01",
-            son_odeme_tarihi="2024-01-15",
-            toplam_borc=100.0,  # Borçlu
-            aktif_paket="Paket_PREMIUM",
-            kalan_veri=10.0,
-            kalan_dakika=1000,
-            kalan_sms=1000
+    def test_get_current_bill(self):
+        """Mevcut fatura endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/billing/current",
+            json={"user_id": 5108}
         )
         
-        # Düşük pakete geçmeye çalış
-        with pytest.raises(ValueError, match="Borçlu müşteri düşük pakete geçemez"):
-            await telekom_service.change_package(borclu_musteri_id, "Paket_STANDART")
-
-    @pytest.mark.asyncio
-    async def test_destek_talep_oncelik_kontrolu(self, telekom_service, ornek_musteri_id):
-        """Müşteri seviyesine göre öncelik belirlenir"""
-        # Premium müşteri için destek talebi
-        sonuc = await telekom_service.create_fault_ticket(ornek_musteri_id, "Test", "Test")
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert data["data"]["user_id"] == 5108
+        assert "bill_id" in data["data"]
+        assert "amount" in data["data"]
+    
+    def test_get_past_bills(self):
+        """Geçmiş faturalar endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/billing/history",
+            json={"user_id": 3680, "limit": 12}
+        )
         
-        # Premium müşteri yüksek öncelik almalı
-        assert sonuc["oncelik"] == "yuksek"
-        assert sonuc["tahmini_cozum_suresi"] == "4 saat"
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "bills" in data["data"]
+        assert "total_count" in data["data"]
+    
+    def test_pay_bill(self):
+        """Fatura ödeme endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/billing/pay",
+            json={"bill_id": "F-2024-4306", "method": "credit_card"}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert data["data"]["bill_id"] == "F-2024-4306"
+        assert data["data"]["method"] == "credit_card"
+    
+    def test_get_customer_package(self):
+        """Müşteri paketi endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/packages/current",
+            json={"user_id": 9408}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "package_name" in data["data"]
+        assert "monthly_fee" in data["data"]
+    
+    def test_get_remaining_quotas(self):
+        """Kalan kotalar endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/packages/quotas",
+            json={"user_id": 9408}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "internet_remaining_gb" in data["data"]
+        assert "voice_remaining_minutes" in data["data"]
+    
+    def test_change_package(self):
+        """Paket değişikliği endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/packages/change",
+            json={"user_id": 9509, "new_package_name": "Öğrenci Dostu Tarife"}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert data["data"]["to_package"] == "Öğrenci Dostu Tarife"
+    
+    def test_get_available_packages(self):
+        """Kullanılabilir paketler endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/packages/available",
+            json={}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "packages" in data["data"]
+        assert len(data["data"]["packages"]) > 0
+    
+    def test_create_fault_ticket(self):
+        """Arıza talebi oluşturma endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/support/tickets",
+            json={
+                "user_id": 7477,
+                "issue_description": "Ev internetimin hızı çok yavaşladı"
+            }
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "ticket_id" in data["data"]
+        assert data["data"]["user_id"] == 7477
+    
+    def test_get_customer_profile(self):
+        """Müşteri profili endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/customers/profile",
+            json={"user_id": 2122}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert "name" in data["data"]
+        assert "phone_numbers" in data["data"]
+    
+    def test_check_network_status(self):
+        """Ağ durumu endpoint'ini test et"""
+        response = client.post(
+            "/api/v1/telekom/network/status",
+            json={"region": "Güneydoğu Anadolu"}
+        )
+        
+        assert response.status_code == 200
+        data = response.json()
+        assert data["success"] == True
+        assert "data" in data
+        assert data["data"]["region"] == "Güneydoğu Anadolu"
+        assert "status" in data["data"]
+
+class TestTelekomAPIErrorHandling:
+    """Hata durumlarını test eden sınıf"""
+    
+    def test_invalid_user_id(self):
+        """Geçersiz user_id ile test"""
+        response = client.post(
+            "/api/v1/telekom/billing/current",
+            json={"user_id": "invalid"}
+        )
+        
+        # Pydantic validation hatası bekleniyor
+        assert response.status_code == 422
+    
+    def test_missing_required_fields(self):
+        """Eksik zorunlu alanlarla test"""
+        response = client.post(
+            "/api/v1/telekom/billing/current",
+            json={}  # user_id eksik
+        )
+        
+        assert response.status_code == 422
+    
+    def test_invalid_json(self):
+        """Geçersiz JSON ile test"""
+        response = client.post(
+            "/api/v1/telekom/billing/current",
+            data="invalid json",
+            headers={"Content-Type": "application/json"}
+        )
+        
+        assert response.status_code == 422
 
 if __name__ == "__main__":
-    pytest.main([__file__]) 
+    # Test'leri çalıştır
+    pytest.main([__file__, "-v"]) 
