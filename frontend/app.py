@@ -6,10 +6,10 @@ from components.main_screen import render_main_screen
 from datetime import datetime
 import random
 
-# Sayfa konfigürasyonu
+# Sayfa konfig羹rasyonu
 st.set_page_config(
     page_title="UniqeAi Chat Demo",
-    page_icon="🤖",
+    page_icon="??",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -22,16 +22,16 @@ DEMO_USERS = {
 }
 
 DEMO_RESPONSES = [
-    "Merhaba! Size nasıl yardımcı olabilirim?",
-    "Bu konuda size detaylı bilgi verebilirim.",
-    "Anlıyorum, bu durumu çözmek için birkaç seçeneğiniz var.",
-    "Teknik destek ekibimiz size yardımcı olacaktır.",
-    "Bu işlem için gerekli adımları takip edebilirsiniz.",
-    "Sistemimizde bu bilgiyi buldum, size aktarıyorum.",
-    "Bu konuda uzman ekibimizle görüşebilirsiniz.",
-    "İşleminiz başarıyla tamamlandı.",
-    "Başka bir konuda yardıma ihtiyacınız var mı?",
-    "Size en iyi hizmeti sunmaya devam edeceğiz."
+    "Merhaba! Size nas覺l yard覺mc覺 olabilirim?",
+    "Bu konuda size detayl覺 bilgi verebilirim.",
+    "Anl覺yorum, bu durumu 癟繹zmek i癟in birka癟 se癟ene?iniz var.",
+    "Teknik destek ekibimiz size yard覺mc覺 olacakt覺r.",
+    "Bu i?lem i癟in gerekli ad覺mlar覺 takip edebilirsiniz.",
+    "Sistemimizde bu bilgiyi buldum, size aktar覺yorum.",
+    "Bu konuda uzman ekibimizle g繹r羹?ebilirsiniz.",
+    "襤?leminiz ba?ar覺yla tamamland覺.",
+    "Ba?ka bir konuda yard覺ma ihtiyac覺n覺z var m覺?",
+    "Size en iyi hizmeti sunmaya devam edece?iz."
 ]
 
 # CSS stilleri
@@ -117,13 +117,13 @@ header {visibility: hidden;}
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-/* Responsive tasarım */
+/* Responsive tasar覺m */
 @media (max-width: 768px) {
     .main .block-container {
         padding: 0.5rem;
     }
 }
-/* Koyu tema seçeneği */
+/* Koyu tema se癟ene?i */
 .dark-theme {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
 }
@@ -149,27 +149,17 @@ header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
-def show_demo_banner():
-    """Demo banner'ını göster"""
-    st.markdown("""
-    <div class="demo-banner">
-        🚀 DEMO MODE - UniqeAi Chat Uygulaması
-        <br>
-        <small>Demo kullanıcıları: admin/123, demo/demo123, test/test123</small>
-        <br>
-        <small>🔧 Araç entegrasyonu • 📱 Responsive tasarım • 🧪 Test sistemi</small>
-    </div>
-    """, unsafe_allow_html=True)
+# show_demo_banner fonksiyonu ve 癟a?r覺s覺n覺 kald覺r覺yorum
 
 def get_demo_response():
-    """Demo için rastgele yanıt döndür"""
+    """Demo i癟in rastgele yan覺t d繹nd羹r"""
     return random.choice(DEMO_RESPONSES)
 
 def main():
-    # Demo banner'ını göster
-    show_demo_banner()
+    # Demo banner'覺n覺 g繹ster
+    # show_demo_banner()
     
-    # Session state başlatma
+    # Session state ba?latma
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
     if "current_screen" not in st.session_state:
@@ -183,7 +173,7 @@ def main():
     if "demo_mode" not in st.session_state:
         st.session_state.demo_mode = True
     
-    # Ekran yönlendirmesi
+    # Ekran y繹nlendirmesi
     if st.session_state.logged_in:
         if st.session_state.current_screen == "chat":
             render_chat_screen()
