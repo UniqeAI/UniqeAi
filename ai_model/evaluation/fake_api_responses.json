@@ -1,0 +1,187 @@
+{
+  "get_current_bill": {
+    "success": {
+      "success": true,
+      "data": {
+        "bill_id": "F-2024-SIM-8901",
+        "user_id": 8901,
+        "amount": 125.50,
+        "currency": "TRY",
+        "due_date": "2024-08-20",
+        "status": "unpaid"
+      }
+    },
+    "error": {
+      "NO_BILL": {
+        "success": true,
+        "data": {
+          "message": "Müşteriye ait ödenmemiş fatura bulunmamaktadır."
+        }
+      }
+    }
+  },
+  "pay_bill": {
+    "success": {
+      "success": true,
+      "data": {
+        "transaction_id": "TXN-SIM-99812",
+        "status": "completed",
+        "message": "Fatura ödeme işlemi simülatör tarafından başarıyla tamamlandı."
+      }
+    },
+    "error": {
+      "BILL_NOT_FOUND": {
+        "success": false,
+        "error": {
+          "code": "BILL_NOT_FOUND",
+          "message": "Simülatör yanıtı: Fatura bulunamadı veya daha önce ödenmiş."
+        }
+      }
+    }
+  },
+  "get_remaining_quotas": {
+    "success": {
+      "success": true,
+      "data": {
+        "internet_remaining_gb": 3.2,
+        "voice_remaining_minutes": 850,
+        "sms_remaining": 1000,
+        "usage_percentage": {
+          "internet": 92
+        },
+        "period_end": "2024-09-30"
+      }
+    }
+  },
+  "get_available_packages": {
+    "success": {
+      "success": true,
+      "data": {
+        "packages": [
+          {
+            "name": "Mega İnternet",
+            "monthly_fee": 69.50,
+            "features": {
+              "internet_gb": 50,
+              "voice_minutes": "Sınırsız"
+            }
+          },
+          {
+            "name": "Gamer Pro",
+            "monthly_fee": 99.90,
+            "features": {
+              "internet_gb": 100,
+              "ping_optimization": true
+            }
+          },
+          {
+            "name": "Memur Özel",
+            "monthly_fee": 55.00,
+            "features": {
+              "internet_gb": 20,
+              "eligibility": "devlet memuru"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "get_package_details": {
+    "success": {
+      "success": true,
+      "data": {
+        "package_name": "Gamer Pro",
+        "monthly_fee": 99.90,
+        "features": {
+          "internet_gb": 100,
+          "voice_minutes": 1000,
+          "sms": 1000,
+          "ping_optimization": true,
+          "commitment_period_months": 12
+        },
+        "details": "Oyuncular için özel olarak tasarlanmış, düşük ping ve yüksek hızlı internet paketi."
+      }
+    },
+    "error": {
+      "PACKAGE_NOT_FOUND": {
+        "success": false,
+        "error": {
+          "code": "PACKAGE_NOT_FOUND",
+          "message": "Simülatör yanıtı: Belirtilen paket bulunamadı."
+        }
+      }
+    }
+  },
+  "check_network_status": {
+    "success": {
+      "success": true,
+      "data": {
+        "region": "Güneydoğu Anadolu",
+        "status": "operational",
+        "message": "Bölgede bilinen genel bir arıza bulunmamaktadır. Sorun devam ederse, bireysel bir arıza kaydı oluşturulabilir."
+      }
+    }
+  },
+  "enable_roaming": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8763,
+        "roaming_enabled": true,
+        "daily_fee": 25.00,
+        "message": "Yurt dışı kullanım hizmeti (roaming) başarıyla aktif edildi."
+      }
+    }
+  },
+  "change_package": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 9509,
+        "new_package": "Mega İnternet",
+        "status": "success",
+        "effective_date": "next_billing_cycle"
+      }
+    },
+    "error": {
+      "INELIGIBLE_FOR_PACKAGE": {
+        "success": false,
+        "error": {
+          "code": "INELIGIBLE_FOR_PACKAGE",
+          "message": "Simülatör yanıtı: Kullanıcı bu paket için uygun değil.",
+          "details": "Bu paket sadece belirli kriterleri sağlayan müşteriler içindir."
+        }
+      }
+    }
+  },
+  "create_fault_ticket": {
+    "success": {
+      "success": true,
+      "data": {
+        "ticket_id": "T-SIM-001235",
+        "status": "open",
+        "estimated_resolution_time_hours": 24,
+        "message": "Arıza kaydı simülatör tarafından başarıyla oluşturuldu."
+      }
+    }
+  },
+  "get_ticket_status": {
+    "success": {
+      "success": true,
+      "data": {
+        "ticket_id": "T-SIM-001235",
+        "status": "open",
+        "last_update": "Teknik ekiplerimiz sorunu incelemek üzere yönlendirildi. Henüz bir gelişme yok."
+      }
+    },
+    "error": {
+       "TICKET_NOT_FOUND": {
+        "success": false,
+        "error": {
+          "code": "TICKET_NOT_FOUND",
+          "message": "Simülatör yanıtı: Belirtilen bilet numarası bulunamadı."
+        }
+      }
+    }
+  }
+} 

@@ -35,6 +35,7 @@ UniqeAi/ai_model/scripts/qlora_fine_tuned_model/
 UniqeAi/ai_model/scripts/hizli_qlora_model/
 # Tüm model klasörleri için genel koruma
 **/qlora_fine_tuned_model/
+**/results/
 **/qlora_*_model/
 **/fine_tuned_model*/
 **/checkpoint-*/
