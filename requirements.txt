@@ -28,15 +28,4 @@ trl
 zemberek-python
 
 # Development & Formatting
-black
-
-# Testing
-pytest
-pytest-asyncio
-pytest-cov
-
-# HTTP Client
-httpx
-
-# Data Validation
-pydantic 
+black 
