@@ -105,7 +105,7 @@ Tüm ekiplerin paralel olarak çalışmaya başlaması için ilk 5 günlük gör
 *   **Gün 1:** GitHub üzerinde `UniqueAi` repository'sini oluşturmak ve yarışma gereksinimlerini karşılamak.
     *   Depoyu (Repository) GitHub ayarlarından **Public** olarak ayarlamak.
     *   Oluşturulan `LICENSE` ve `.gitignore` dosyalarını ilk commit ile repoya eklemek.
-    *   `main` ve `develop` branch'lerini yaratıp `main` branch'ini korumalı hale getirmek (Doğrudan commit atılmasını engellemek).
+    *   `main` ve `develop` branch'lerini yaratıp `main` branch'ini korumalı hale getirmek (Doğrudan commit atılmasını engellaemek).
 *   **Gün 2:** Yukarıda tanımlanan `Dizin Yapısı`'nı ana hatlarıyla oluşturup `develop` branch'ine push'lamak. Boş `__init__.py` dosyalarını ekleyerek Python modül yapısını hazırlamak.
 *   **Gün 3:** Temel bir `README.md` ve bu `PROJE_YONETIM_DOKUMANI.md` dosyasını `docs/` dizinine eklemek.
 *   **Gün 4:** Proje için bir `requirements.txt` dosyası oluşturmak ve temel bağımlılıkları (fastapi, uvicorn, streamlit, transformers, torch, zemberek-python) eklemek.
