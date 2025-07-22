@@ -1,399 +1,452 @@
-#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-GRANDMASTER VERİ SETİ OLUŞTURUCU V3 - OLAĞANÜSTÜ MODEL HEDEFİ
-============================================================
+Grandmaster Seviyesi Telekom Veri Seti Üretici - v3 "KAOS MOTORU"
 
-Bu script, 'master' seviyesi script'in üzerine inşa edilmiş olup,
-modele aşağıdaki 'Grandmaster' yeteneklerini kazandırmayı hedefler:
-- Duygusal Zeka ve Ton Ayarlama
-- Derin Koşullu Mantık ve Çoklu Bağımlılıklar
-- Proaktif ve Tahmine Dayalı Asistanlık
+Bu betik, 6 ana stratejiyi ve 5 zenginleştirme tekniğini (Proaktif, Zincirleme, Hata Yönetimi vb.)
+birleştirerek, son derece karmaşık ve gerçekçi diyalog senaryoları üretir.
+
+v3 Yükseltmeleri:
+- Kaotik Kombinasyonlar: Birden fazla alakasız amacı tek bir kullanıcı talebinde birleştirir.
+- Çoklu Kişilik Simülasyonu: Sabırsız, kafası karışık gibi farklı kullanıcı profilleri ekler.
+- Bağlamsal Hafıza: Diyaloglara geçmişe referans veren ifadeler ekler.
+- Veri Kirletme: Gerçek dünya yazım hataları, argo ve kısaltmalarla dili zenginleştirir.
+
+Hedef: Modelin ezberciliğini kırmak, muhakeme yeteneğini en üst düzeye çıkarmak ve
+gerçek dünyanın kaotik koşullarına karşı dayanıklılığını artırmak.
 """
 
 import json
 import random
 import uuid
-from datetime import datetime, timedelta
-from typing import Dict, List, Any, Optional, Union
-from faker import Faker
-from pydantic import BaseModel, ValidationError
-import sys
+from pydantic import ValidationError
 import os
 
-# --- Proje Yolu Yapılandırması ---
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
-sys.path.append(PROJECT_ROOT)
+# Proje içindeki ana API şemalarını ve modellerini içe aktar
+from UniqeAi.ai_model.scripts.telekom_api_schema import (
+    GetRemainingQuotasResponse,
+    GetAvailablePackagesResponse,
+    ChangePackageResponse,
+    GetCurrentBillResponse,
+    TestInternetSpeedResponse,
+    GetFaultTicketStatusResponse,
+    CreateFaultTicketResponse,
+    GetCustomerProfileResponse,
+    UpdateCustomerContactResponse,
+    EnableRoamingResponse
+)
+from UniqeAi.ai_model.scripts.mock_backend_api import MockTelekomBackendAPI
 
-# --- Telekom API Şeması ---
-try:
-    from telekom_api_schema import (
-        PayBillResponse,
-        SetupAutopayResponse,
-        TestInternetSpeedResponse,
-        CreateFaultTicketResponse,
-        GetCurrentBillResponse,
-        ServiceItem,
-        GetRemainingQuotasResponse,
-        UsagePercentage,
-        EnableRoamingResponse,
-        GetAvailablePackagesResponse,
-        AvailablePackageItem,
-        AvailablePackageFeatures,
-        ChangePackageResponse,
-    )
-except ImportError:
-    print("HATA: telekom_api_schema.py bulunamadı. Lütfen dosyanın varlığını kontrol edin.")
-    sys.exit(1)
+def create_validated_json_response(pydantic_model, data: dict) -> str:
+    try:
+        validated_data = pydantic_model(**data)
+        return validated_data.json()
+    except ValidationError as e:
+        print(f"Pydantic Hatası: {e}")
+        raise
 
-# --- Faker Kurulumu ---
-fake = Faker('tr_TR')
-
-class GrandmasterDatasetGenerator:
+class GrandmasterDatasetGeneratorV3:
     """
-    Duygusal zeka, koşullu mantık ve proaktif yeteneklere sahip
-    Grandmaster seviyesi veri seti oluşturucu.
+    Karmaşık, çok adımlı ve çeşitli senaryolar üreten veri seti oluşturucu sınıfı.
     """
-    
     def __init__(self):
-        # API fonksiyonları ve ilgili senaryo üreticileri
-        self.api_functions = {}
-        prefix = '_generate_'
-        suffix = '_scenario'
-        for func_name in dir(self):
-            if func_name.startswith(prefix) and func_name.endswith(suffix):
-                key = func_name[len(prefix):-len(suffix)]
-                self.api_functions[key] = getattr(self, func_name)
+        self.mock_api = MockTelekomBackendAPI()
+        self.scenarios = []
+        self.user_ids = list(self.mock_api.users.keys())
         
-        # GRANDMASTER YETENEKLERİ
-        self.user_emotions = {
-            'annoyed': {
-                "starters": ["Yeter artık, bir sorunum var!", "Sinirlerim bozuldu, yardım edin.", "Neden sürekli aynı sorunla karşılaşıyorum?"],
-                "assistant_tone": {
-                    "opening": "Yaşadığınız olumsuz deneyimden dolayı gerçekten üzgünüm. Konuyu hemen inceliyorum ve size yardımcı olmak için buradayım.",
-                    "closing": "Umarım sunduğum çözümle durumu telafi edebilmişimdir. Başka bir konuda yardımcı olabilir miyim?"
-                }
-            },
-            'neutral': {
-                "starters": ["Merhaba, bilgi alabilir miyim?", "Bir işlem yapmak istiyorum.", "Nasılsınız?"],
-                "assistant_tone": {
-                    "opening": "Elbette, size nasıl yardımcı olabilirim?",
-                    "closing": "İşleminiz tamamlandı. Başka bir konuda yardımcı olabilir miyim?"
-                }
-            },
-            'happy': {
-                "starters": ["Harika bir hizmet!", "Çok memnunum, bir sorum olacak.", "Merhaba, her şey yolunda mı?"],
-                "assistant_tone": {
-                    "opening": "Memnuniyetinizi duyduğuma sevindim! Size nasıl yardımcı olabilirim?",
-                    "closing": "Yardımcı olabildiğime sevindim! İyi günler dilerim."
-                }
-            }
-        }
-        
-        self.proactive_suggestions = {
-            'pay_bill': 'setup_autopay',
-            'suspend_line': 'enable_roaming'
-        }
-        
-        self.error_scenarios = {
-            'INVALID_USER': {'message': 'Kullanıcı bulunamadı', 'details': 'Girilen kullanıcı ID sistemde kayıtlı değil'},
-            'PAYMENT_METHOD_NOT_FOUND': {'message': 'Ödeme yöntemi bulunamadı', 'details': 'Sistemde kayıtlı bir ödeme yönteminiz bulunmuyor'},
-            'LINE_ALREADY_SUSPENDED': {'message': 'Hat zaten dondurulmuş', 'details': 'Bu hat daha önce dondurulduğu için tekrar dondurulamaz.'},
-            'OUTSTANDING_BILL': {'message': 'Ödenmemiş fatura mevcut', 'details': 'İşlem yapabilmek için ödenmemiş faturanızı kapatmanız gerekmektedir.'},
-            'COMMITMENT_EXISTS': {'message': 'Taahhüt bulunmaktadır', 'details': 'Hattınızda aktif bir taahhüt bulunduğu için bu işlem yapılamaz.'},
-            'BILL_NOT_FOUND': {'message': 'Fatura bulunamadı', 'details': 'Belirtilen fatura ID sistemde mevcut değil veya daha önce ödenmiş.'},
-            'INELIGIBLE_FOR_PACKAGE': {'message': 'Kullanıcı bu paket için uygun değil', 'details': 'Bu paket için gerekli kriterleri sağlamıyorsunuz.'}
-        }
-
-        self.chit_chat_dialogs = [
-            [
-                {"rol": "kullanici", "icerik": "Bu faturalar neden hep bu kadar karışık oluyor?"},
-                {"rol": "asistan", "icerik": "Fatura detaylarının bazen kafa karıştırıcı olabildiğinin farkındayım. Genellikle ana hizmet bedeli, vergiler ve ek kullanımlar gibi birden fazla kalem içerdiği için karmaşık görünebilir. Faturanızda anlamadığınız belirli bir kısım varsa, açıklamak için yardımcı olabilirim."}
+        # ADIM 1: Doğal Dil Çeşitliliği için Şablon Motoru
+        self.phrase_templates = {
+            "greet": ["Merhaba.", "Selam.", "Kolay gelsin.", "İyi günler."],
+            "query_quota": [
+                "Kalan kullanımlarım ne kadar?", "Bu ay internetimden ne kadar kalmış?", "Selam, kotamı bi' öğrenir miyim?", "GB'larım ne durumda?",
+                "Kullanıcı ID'm {user_id}, internet kullanım hakkımı söyler misin?", "Paketimdeki kalanları öğrenmek istiyorum.", "Ne kadar internetim kaldı?"
             ],
-            [
-                {"rol": "kullanici", "icerik": "Teşekkür ederim, sorunum çözüldü."},
-                {"rol": "asistan", "icerik": "Rica ederim, yardımcı olabildiğime sevindim! Telekom'u tercih ettiğiniz için teşekkür ederiz. Başka bir konuda yardıma ihtiyacınız olursa çekinmeden tekrar ulaşabilirsiniz. İyi günler dilerim!"}
+            "request_payment": [
+                "{user_id} numaralı hattımın faturasını ödemek istiyorum.", "Faturamı ödeyebilir miyim?", "Bu ayki borcum neyse kapatmak istiyorum.",
+                "Ödeme yapacaktım, yardımcı olur musunuz?"
+            ],
+            "report_slow_internet": [
+                "İnternetim yine çok yavaşladı, bir kontrol eder misiniz?", "İnternet bağlantım çok kötü.", "Neden internetim bu kadar yavaş?",
+                "Bir bakın şuna, internette büyük bir sorun var gibi."
+            ],
+            "request_contact_update": [
+                "Hesabımdaki e-posta adresini değiştirmek istiyorum.", "İletişim bilgilerimi güncelleyecektim.", "Yeni bir telefon numarası kaydetmem gerekiyor.",
+                "Mail adresimi nasıl değiştiririm?"
+            ],
+            "request_roaming_activation": [
+                "Merhaba, yarın yurt dışına çıkıyorum. Hattımı kullanıma açar mısınız?", "Yurt dışı kullanımını aktif hale getirebilir misiniz?",
+                "Hattımı uluslararası dolaşıma açmak istiyorum."
+            ],
+            "request_ambiguous_package": [
+                "Paketimi güncellemek istiyorum.", "Paketimle ilgili bir işlem yapacaktım.", "Mevcut paketimde bir değişiklik yapmak mümkün mü?"
+            ],
+            "clarify_internet_package": [
+                "İnternet paketim.", "İnternet olanı.", "Sadece internet."
+            ],
+            "confirm_positive": [
+                "Evet, lütfen.", "Evet, lütfen listele.", "Harika olur, devam et.", "Evet, yap.", "Tabii, bakalım.", "Evet, istiyorum.", "Onaylıyorum."
+            ],
+            "confirm_negative": [
+                "Hayır, teşekkürler.", "Yok, istemiyorum.", "Gerek yok.", "Kalsın şimdilik.", "Hayır."
+            ],
+            "ask_for_details": [
+                "Onun detaylarını alabilir miyim?", "Biraz daha bilgi verir misin?", "Özellikleri nelerdir?", "Detayları nedir?"
+            ],
+            "thank_and_bye": [
+                "Teşekkür ederim, çok yardımcı oldunuz.", "Harika, teşekkürler.", "Tamamdır, iyi çalışmalar.", "Sağ olun, görüşmek üzere."
+            ],
+            "request_out_of_scope": [
+                "Bana bir fıkra anlatır mısın?", "Hava durumu nasıl olacak?", "En yakın restoran nerede?", "Pizza sipariş etmek istiyorum.",
+                "Bu akşamki maçın skoru ne oldu?"
+            ],
+            # v3 GÜNCELLEMESİ: Hafıza referansları ana şablonlara eklendi
+            "report_recurrent_slow_internet": [
+                "İnternetim yine yavaşladı, geçen hafta da aynı sorunu yaşamıştım, hatırlarsınız.",
+                "Bu yavaş internet sorunu tekrar başladı. Lütfen yine kayıt açalım."
             ]
+        }
+        
+        # v3 GÜNCELLEMESİ: Statik senaryo listesi yerine "Kaos Motoru"nu besleyecek görev havuzu
+        self.task_pool = {
+            "pay_bill": self.build_pay_bill_task,
+            "check_quota": self.build_check_quota_task,
+            "file_ticket": self.build_file_ticket_task,
+            "list_packages": self.build_list_packages_task
+        }
+        
+        # AŞAMA 2: Çoklu Kişilik Simülasyonu için şablonlar
+        self.personality_injects = {
+            "impatient": [
+                "Hadi ama, daha hızlı lütfen.", "Cevap vermen ne kadar uzun sürdü!", "Acelem var, çabuk olur musun?"
+            ],
+            "confused": [
+                "Pardon, ne demiştin, tam anlamadım?", "Bir saniye, kafam karıştı.", "Bu dediğin tam olarak ne anlama geliyor?"
+            ],
+            "topic_switch": [
+                "Aklıma gelmişken, kotalarım ne durumdaydı?", "Dur bir saniye, önce şunu sorayım: yurt dışı paketleri ne oldu?",
+                "Bu arada, fatura ödeme tarihim ne zamandı?"
+            ]
+        }
+        
+        # Ayrı history_references listesi kaldırıldı
+        
+        # Senaryo fonksiyonlarını dinamik jeneratörle değiştir
+        self.scenario_functions = [
+            self.generate_chaotic_combo_scenario,
+            self.generate_graceful_failure_scenario,
+            self.generate_disambiguation_scenario,
+            self.generate_contextual_history_scenario # YENİ SENARYO EKLENDİ
         ]
 
-    # --- SENARYO ÜRETİCİ METODLARI (STRATEJİ 4 & 6 ODAKLI) ---
+        # AŞAMA 4: Veri Kirletme Motoru için kaynaklar
+        self.typo_map = {'a': 's', 's': 'd', 'd': 'f', 'f': 'g', 'g': 'h', 'h': 'j', 'j': 'k', 'k': 'l', 'l': 'i'}
+        self.slang_map = {'merhaba': 'slm', 'internet': 'net', 'sorun': 'sıkıntı', 'yavaşladı': 'gg oldu'}
 
-    def _generate_natural_chit_chat_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """STRATEJİ: Doğal Sohbet - API çağrısı gerektirmeyen durumlar."""
-        selected_dialog = random.choice(self.chit_chat_dialogs)
-        return {"veri_id": f"GM_CHITCHAT_{uuid.uuid4()}", "donguler": selected_dialog}
+    # ADIM 2: Rastgele Cümle Seçen Yardımcı Fonksiyon
+    def get_random_phrase(self, intent, **kwargs):
+        """Verilen bir niyet için rastgele bir cümle şablonu seçer ve formatlar."""
+        phrase_template = random.choice(self.phrase_templates[intent])
+        return phrase_template.format(**kwargs)
 
-    def _generate_change_package_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """STRATEJİ 4: Koşullu Mantık & Hata Yönetimi - Tarife değişikliği."""
-        user_id = self._generate_realistic_user_id()
-        assistant_tone = self.user_emotions[emotion]['assistant_tone']
-        user_starter = random.choice(self.user_emotions['neutral']['starters'])
+    # AŞAMA 4: YENİ FONKSİYON - VERİ KİRLETME MOTORU
+    def perturb_user_phrase(self, phrase):
+        """
+        Bir cümleye rastgele yazım hataları, argo ve diğer "kirleri" enjekte eder.
+        """
+        words = phrase.split(' ')
         
-        # Bu senaryo birden fazla hata durumunu kapsayabilir
-        error_type = random.choice(['COMMITMENT_EXISTS', 'INELIGIBLE_FOR_PACKAGE'])
+        # %30 ihtimalle yazım hatası yap
+        if random.random() < 0.3:
+            word_to_mess_up_index = random.randint(0, len(words) - 1)
+            word = list(words[word_to_mess_up_index])
+            if len(word) > 3:
+                char_to_mess_up_index = random.randint(0, len(word) - 1)
+                char = word[char_to_mess_up_index].lower()
+                if char in self.typo_map:
+                    word[char_to_mess_up_index] = self.typo_map[char]
+            words[word_to_mess_up_index] = "".join(word)
 
-        if scenario_type == 'error_handling':
-            package_name = "Gamer Pro" if error_type == 'COMMITMENT_EXISTS' else "Memur Özel"
-            
-            dialog = [
-                {"rol": "kullanici", "icerik": f"{user_starter} Merhaba, '{package_name}' paketine geçmek istiyorum. ID: {user_id}"},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Elbette, talebinizi hemen kontrol ediyorum."}
-            ]
-            
-            error_response = {"success": False, "error": self.error_scenarios[error_type]}
-            dialog.extend(self._create_tool_call_step("change_package", {"user_id": user_id, "new_package_name": package_name}, error_response))
+        # %20 ihtimalle argo kullan
+        if random.random() < 0.2:
+            for i, word in enumerate(words):
+                clean_word = word.strip(".,?!").lower()
+                if clean_word in self.slang_map:
+                    words[i] = self.slang_map[clean_word]
+                    break # Sadece ilk bulduğunu değiştir
 
-            if error_type == 'COMMITMENT_EXISTS':
-                dialog.append({"rol": "asistan", "icerik": "Yaptığım kontrolde mevcut paketinizde aktif bir taahhüt olduğunu gördüm. Bu nedenle şu anda paket değişikliği yapamıyoruz. Taahhüt detaylarınızı ve ne zaman biteceğini öğrenmek ister misiniz?"})
-            else: # INELIGIBLE_FOR_PACKAGE
-                dialog.append({"rol": "asistan", "icerik": "Anladığım kadarıyla 'Memur Özel' tarifesi, belirli bir meslek grubuna özel olduğu için şu anki aboneliğinizle bu pakete geçiş yapamıyorsunuz. Size özel olarak geçebileceğiniz diğer kampanyalı paketleri listelememi ister misiniz?"})
+        # %50 ihtimalle noktalama ve büyük/küçük harf ihmali
+        if random.random() < 0.5:
+            return " ".join(words).lower().replace("?", "").replace(".", "")
             
-            return {"veri_id": f"GM_ERROR_{error_type}_{uuid.uuid4()}", "donguler": dialog}
-        return None
+        return " ".join(words)
 
-    def _generate_enable_roaming_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """STRATEJİ 6: Proaktif Yardım - Roaming açma ve paket önerme."""
-        user_id = self._generate_realistic_user_id()
-        assistant_tone = self.user_emotions['happy']['assistant_tone']
-
-        if scenario_type == 'proactive_suggestion':
-            dialog = [
-                {"rol": "kullanici", "icerik": f"Selam, haftaya İtalya'ya gidiyorum. Hattımı yurt dışında kullanıma açabilir misiniz? ID: {user_id}"},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Harika bir seyahat sizi bekliyor! Hattınızı hemen yurt dışı kullanımına açıyorum."}
-            ]
-            
-            dialog.extend(self._create_tool_call_step("enable_roaming", {"user_id": user_id}, EnableRoamingResponse(
-                user_id=user_id, roaming_enabled=True, activation_time=datetime.now().isoformat(), daily_fee=25.0, data_package="Standart Roaming"
-            )))
-            
-            dialog.append({
-                "rol": "asistan",
-                "icerik": "Hattınız yurt dışı kullanımına başarıyla açıldı. Standart dolaşım ücretlerinin yüksek olabileceğini hatırlatmak isterim. Seyahatiniz boyunca rahat etmeniz için uygun fiyatlı yurt dışı internet paketlerimiz bulunuyor. İncelemek ister misiniz?"
-            })
-            
-            return {"veri_id": f"GM_PROACTIVE_ROAMING_{uuid.uuid4()}", "donguler": dialog}
-        return None
-
-    def _generate_pay_bill_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """pay_bill için Grandmaster senaryosu oluşturur."""
-        user_id = self._generate_realistic_user_id()
-        bill_id = self._generate_realistic_bill_id()
-        amount = round(random.uniform(80.0, 350.0), 2)
-        assistant_tone = self.user_emotions[emotion]['assistant_tone']
-        user_starter = random.choice(self.user_emotions[emotion]['starters'])
-
-        if scenario_type == 'proactive_suggestion':
-            dialog = [
-                {"rol": "kullanici", "icerik": f"{user_starter} Faturamı ödemek istiyorum. ID: {user_id}, Tutar: {amount} TL."},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Elbette, ödeme işleminizi hemen gerçekleştiriyorum."}
-            ]
-            dialog.extend(self._create_tool_call_step("pay_bill", {"user_id": user_id, "bill_id": bill_id, "amount": amount}, PayBillResponse(
-                transaction_id=f"T-{uuid.uuid4()}", bill_id=bill_id, amount=amount, method="credit_card", status="Ödeme başarılı", timestamp=datetime.now().isoformat()
-            )))
-            dialog.append({"rol": "asistan", "icerik": f"Ödemeniz başarıyla alındı. Tekrarlayan fatura ödemelerinizi kolaylaştırmak için otomatik ödeme talimatı vermek ister misiniz? Bu sayede faturalarınız son ödeme tarihinde otomatik olarak ödenir."})
-            
-            # Tool Chaining adımı geri eklendi
-            dialog.append({"rol": "kullanici", "icerik": "Evet, kulağa harika geliyor. Ayarlayalım lütfen."})
-            dialog.extend(self._create_tool_call_step("setup_autopay", {"user_id": user_id, "payment_method": "credit_card"}, SetupAutopayResponse(
-                user_id=user_id, autopay_enabled=True, payment_method="credit_card", next_payment_date=(datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
-            )))
-            dialog.append({"rol": "asistan", "icerik": "Otomatik ödeme talimatınız başarıyla oluşturuldu. Gelecek ay faturanız otomatik olarak ödenecektir."})
-
-            return {"veri_id": f"GM_PROACTIVE_CHAIN_{uuid.uuid4()}", "donguler": dialog}
-
-        elif scenario_type == 'error_handling': # Hata Yönetimi Senaryosu
-            bill_id_to_pay = f"F-{random.randint(100000, 999999)}"
-            dialog = [
-                 {"rol": "kullanici", "icerik": f"{bill_id_to_pay} numaralı faturamı ödemek istiyorum."},
-                 {"rol": "asistan", "icerik": f"Hemen {bill_id_to_pay} numaralı faturanız için ödeme işlemini başlatıyorum."}
-            ]
-            
-            error_response = {"success": False, "error": self.error_scenarios['BILL_NOT_FOUND']}
-            dialog.extend(self._create_tool_call_step("pay_bill", {"bill_id": bill_id_to_pay, "amount": amount, "user_id": user_id}, error_response))
-            
-            dialog.append({"rol": "asistan", "icerik": "Üzgünüm, belirttiğiniz fatura numarasını sistemde bulamadım ya da bu fatura daha önceden ödenmiş olabilir. Lütfen fatura numarasını kontrol eder misiniz? Dilerseniz müşteri numaranız üzerinden güncel borcunuzu sorgulayabilirim."})
-            
-            return {"veri_id": f"GM_ERROR_BILL_NOT_FOUND_{uuid.uuid4()}", "donguler": dialog}
+    def generate_scenario(self):
+        """
+        Rastgele bir senaryo tipi seçer ve oluşturur. Kaos motoru ana üreteçtir.
+        """
+        # Senaryoların çoğunluğu kaotik kombinasyonlardan oluşsun
+        if random.random() < 0.7:
+            scenario_func = self.generate_chaotic_combo_scenario
+        else:
+            scenario_func = random.choice([
+                self.generate_graceful_failure_scenario, 
+                self.generate_disambiguation_scenario,
+                self.generate_contextual_history_scenario
+            ])
         
-        return None
+        # Her senaryonun başına bir selamlaşma ekle
+        conversation = [self.create_conversation_turn("user", self.get_random_phrase("greet"))]
+        
+        # Ana senaryo gövdesini oluştur
+        scenario_body = scenario_func()
+        
+        # AŞAMA 2: Rastgele kişilik enjeksiyonu
+        if scenario_func == self.generate_chaotic_combo_scenario and random.random() < 0.4: # %40 ihtimalle
+            injection_type = random.choice(list(self.personality_injects.keys()))
+            injection_phrase = random.choice(self.personality_injects[injection_type])
+            
+            # Enjeksiyonu diyaloğun ortasına rastgele bir yere yap
+            injection_point = random.randint(1, len(scenario_body) - 1)
+            scenario_body.insert(injection_point, self.create_conversation_turn("user", injection_phrase))
+            
+        conversation.extend(scenario_body)
+        
+        # Her senaryonun sonuna bir kapanış ifadesi ekle (eğer uygunsa)
+        if scenario_func != self.generate_graceful_failure_scenario:
+             conversation.append(self.create_conversation_turn("user", self.get_random_phrase("thank_and_bye")))
+             conversation.append(self.create_conversation_turn("assistant", "Rica ederim, başka bir konuda yardımcı olabilir miyim?"))
 
-    def _generate_create_fault_ticket_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """create_fault_ticket için Grandmaster senaryosu oluşturur (Problem Tespiti Zinciri)."""
-        user_id = self._generate_realistic_user_id()
-        assistant_tone = self.user_emotions['annoyed']['assistant_tone']
-        user_starter = random.choice(self.user_emotions['annoyed']['starters'])
+        # AŞAMA 4: Tüm kullanıcı cümlelerini "kirlet"
+        for turn in conversation:
+            if turn["role"] == "user":
+                turn["content"] = self.perturb_user_phrase(turn["content"])
 
-        if scenario_type == 'complex_chaining': # Tool Chaining geri eklendi
-            dialog = [
-                {"rol": "kullanici", "icerik": f"{user_starter} İnternetim çok yavaş, neredeyse hiçbir şey açılmıyor! ID: {user_id}"},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Yaşadığınız yavaşlık sorununu anlıyorum ve hemen kontrol sağlıyorum. Öncelikle mevcut internet hızınızı test edelim."}
+        return conversation
+
+    def create_conversation_turn(self, role, content, tool_calls=None):
+        """Yardımcı fonksiyon: Bir konuşma turu oluşturur."""
+        turn = {"role": role, "content": content}
+        if tool_calls:
+            turn["tool_calls"] = tool_calls
+        return turn
+
+    def generate(self, num_samples):
+        """
+        Belirtilen sayıda veri örneği (diyalog) üretir.
+        """
+        for _ in range(num_samples):
+            # Her döngüde yeni bir senaryo üret
+            scenario_conversation = self.generate_scenario()
+            if scenario_conversation:
+                self.scenarios.append({"id": f"gm_v3_{uuid.uuid4()}", "conversation": scenario_conversation})
+        
+        print(f"{len(self.scenarios)} adet Grandmaster v3 senaryo üretildi.")
+        return self.scenarios
+
+    def save_to_json(self, file_path):
+        """
+        Üretilen senaryoları JSON dosyasına kaydeder.
+        Dosyayı, bu betiğin bulunduğu dizine göre kaydeder.
+        """
+        # Bu betiğin bulunduğu dizinin mutlak yolunu al
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Çıktı dosyasının tam yolunu oluştur
+        output_path = os.path.join(script_dir, file_path)
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(self.scenarios, f, ensure_ascii=False, indent=2)
+        print(f"Veri seti başarıyla '{output_path}' dosyasına kaydedildi.")
+
+    # ==============================================================================
+    # AŞAMA 1: KAOS MOTORU VE DİNAMİK SENARYO ÜRETİMİ
+    # ==============================================================================
+
+    def generate_chaotic_combo_scenario(self):
+        """
+        Rastgele 2-3 görevi birleştirir, negatif koşullar ve öncelikler ekler.
+        Bu fonksiyon, modelin ezberlemesini imkansız hale getirir.
+        """
+        user_id = random.choice(self.user_ids)
+        num_tasks = random.randint(2, 3)
+        selected_task_keys = random.sample(list(self.task_pool.keys()), num_tasks)
+        
+        tasks = [self.task_pool[key](user_id) for key in selected_task_keys]
+        
+        # Görevleri birleştirerek kaotik bir kullanıcı talebi oluştur
+        user_request = "Merhaba, birkaç şey soracaktım. "
+        user_request += " ve ".join([task['user_prompt'] for task in tasks]) + "."
+
+        # Rastgele negatif koşul ekle
+        if random.random() < 0.3:
+            user_request += " Ama sakın hız testi yapma."
+
+        conversation = [self.create_conversation_turn("user", user_request)]
+        
+        # Görevleri sırayla gerçekleştirerek diyalog akışını oluştur
+        for task in tasks:
+            conversation.extend(task['dialogue_flow'])
+
+        return conversation
+
+    # --- Kaos Motoru için Görev Yapılandırma Fonksiyonları ---
+
+    def build_pay_bill_task(self, user_id):
+        bill_id = f"F-2024-{user_id}"
+        api_response_bill_data = self.mock_api.get_current_bill(user_id, force_unpaid=True)
+        validated_response_bill = create_validated_json_response(GetCurrentBillResponse, api_response_bill_data['data'])
+        amount = api_response_bill_data["data"]["amount"]
+
+        api_response_pay_data = self.mock_api.pay_bill(bill_id, "credit_card")
+        # Bu basit görevde başarılı olduğunu varsayıyoruz
+        
+        return {
+            "user_prompt": "faturamı ödemek istiyorum",
+            "dialogue_flow": [
+                self.create_conversation_turn("assistant", f"Elbette, {user_id} numaralı hattınız için güncel faturanızı kontrol ediyorum.", 
+                                              tool_calls=[{"name": "get_current_bill", "arguments": {"user_id": user_id}}]),
+                self.create_conversation_turn("tool", validated_response_bill),
+                self.create_conversation_turn("assistant", f"Toplam {amount} TL borcunuz görünüyor. Onaylarsanız ödemeyi gerçekleştiriyorum.",
+                                              tool_calls=[{"name": "pay_bill", "arguments": {"bill_id": bill_id, "method": "credit_card"}}]),
+                self.create_conversation_turn("tool", json.dumps(api_response_pay_data)),
+                self.create_conversation_turn("assistant", "Ödemeniz başarıyla tamamlandı.")
             ]
-            
-            dialog.extend(self._create_tool_call_step("test_internet_speed", {"user_id": user_id}, TestInternetSpeedResponse(
-                user_id=user_id, download_speed_mbps=2.5, upload_speed_mbps=0.8, ping_ms=150, test_timestamp=datetime.now().isoformat(), test_server="Istanbul", quality_rating="Poor"
-            )))
-            
-            dialog.append({"rol": "asistan", "icerik": "Hız testini tamamladım. İndirme hızınız 2.5 Mbps olarak ölçüldü, bu beklenen değerin oldukça altında. Bu durum normal değil. Sizin için hemen bir arıza kaydı oluşturuyorum."})
-            
-            ticket_id = f"TKT-{uuid.uuid4()}"
-            issue_desc = "Kullanıcı internet hızının çok yavaş olduğunu bildirdi. Yapılan testte hız 2.5 Mbps olarak ölçüldü, genel bir yavaşlık mevcut."
-            dialog.extend(self._create_tool_call_step("create_fault_ticket", {"user_id": user_id, "issue_description": issue_desc, "category": "internet_speed"}, CreateFaultTicketResponse(
-                ticket_id=ticket_id, user_id=user_id, issue_description=issue_desc, category="internet_speed", priority="high", status="Açık", created_at=datetime.now().isoformat(), estimated_resolution="24 saat içinde"
-            )))
+        }
 
-            dialog.append({"rol": "asistan", "icerik": f"Arıza kaydınız {ticket_id} numarasıyla oluşturulmuştur. Teknik ekiplerimiz en kısa sürede inceleyip sorunu çözecektir. Tahmini çözüm süresi 24 saattir. Sabrınız için teşekkür ederiz."})
-            
-            return {"veri_id": f"GM_DIAGNOSE_CHAIN_{uuid.uuid4()}", "donguler": dialog}
-            
-        return None
-
-    def _generate_suspend_line_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """suspend_line için Grandmaster senaryosu oluşturur."""
-        user_id = self._generate_realistic_user_id()
-        line_number = fake.msisdn()
-        assistant_tone = self.user_emotions[emotion]['assistant_tone']
-        user_starter = random.choice(self.user_emotions[emotion]['starters'])
-
-        if scenario_type == 'error_handling':
-            dialog = [
-                {"rol": "kullanici", "icerik": f"{user_starter} Hattımı geçici olarak dondurmak istiyorum. Numaram: {line_number}"},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Tabii, talebinizi aldım. Hattınızı dondurmadan önce kontrol etmem gereken bir nokta var."}
+    def build_check_quota_task(self, user_id):
+        api_response_quotas_data = self.mock_api.get_remaining_quotas(user_id)
+        validated_response_quotas = create_validated_json_response(GetRemainingQuotasResponse, api_response_quotas_data['data'])
+        remaining_gb = api_response_quotas_data["data"]["internet_remaining_gb"]
+        
+        return {
+            "user_prompt": "kotalarımı öğrenmek istiyorum",
+            "dialogue_flow": [
+                self.create_conversation_turn("assistant", "Tabii, hemen kalan kullanımlarınızı sorguluyorum.", 
+                                              tool_calls=[{"name": "get_remaining_quotas", "arguments": {"user_id": user_id}}]),
+                self.create_conversation_turn("tool", validated_response_quotas),
+                self.create_conversation_turn("assistant", f"Elbette, internet paketinizden {remaining_gb} GB kalmış görünüyor.")
             ]
-            
-            error_response = {"success": False, "error": self.error_scenarios['OUTSTANDING_BILL']}
-            dialog.extend(self._create_tool_call_step("suspend_line", {"user_id": user_id, "line_number": line_number}, error_response))
+        }
 
-            dialog.append({"rol": "asistan", "icerik": "Kontrollerim sonucunda, sistemde adınıza kayıtlı ödenmemiş bir fatura görünüyor. Mevzuat gereği, hattınızı dondurabilmemiz için öncelikle bu faturayı ödemeniz gerekmektedir. Ödeme sonrası işlemi tekrar deneyebiliriz."})
-            
-            return {"veri_id": f"GM_ERROR_{uuid.uuid4()}", "donguler": dialog}
+    def build_file_ticket_task(self, user_id):
+        api_response_ticket_data = self.mock_api.create_fault_ticket(user_id, "İnternet çok yavaş.")
+        validated_response_ticket = create_validated_json_response(CreateFaultTicketResponse, api_response_ticket_data['data'])
+        ticket_id = api_response_ticket_data["data"]["ticket_id"]
 
-        return None
-
-    # ... (Diğer helper metodlar: _generate_realistic_user_id, _create_api_response vb. master script'inden alınabilir)
-
-    def _generate_get_current_bill_scenario(self, scenario_type: str, emotion: str) -> Optional[Dict]:
-        """get_current_bill için Grandmaster senaryosu oluşturur."""
-        user_id = self._generate_realistic_user_id()
-        assistant_tone = self.user_emotions[emotion]['assistant_tone']
-
-        if scenario_type == 'complex_chaining':
-            user_starter = random.choice(self.user_emotions[emotion]['starters'])
-            
-            dialog = [
-                {"rol": "kullanici", "icerik": f"{user_starter} Faturam çok yüksek geldi, nedenini öğrenebilir miyim? ID: {user_id}"},
-                {"rol": "asistan", "icerik": f"{assistant_tone['opening']} Hemen faturanızı detaylı olarak inceliyorum."}
+        return {
+            "user_prompt": "internetim yavaş diye arıza kaydı açacaktım",
+            "dialogue_flow": [
+                self.create_conversation_turn("assistant", "Anladım, yavaş internet sorununuz için bir arıza kaydı oluşturuyorum.", 
+                                              tool_calls=[{"name": "create_fault_ticket", "arguments": {"user_id": user_id, "issue_description": "İnternet çok yavaş."}}]),
+                self.create_conversation_turn("tool", validated_response_ticket),
+                self.create_conversation_turn("assistant", f"Arıza kaydınız {ticket_id} numarasıyla başarıyla oluşturuldu. Gelişmelerle ilgili sizi bilgilendireceğiz.")
             ]
-            
-            dialog.extend(self._create_tool_call_step("get_current_bill", {"user_id": user_id}, GetCurrentBillResponse(
-                bill_id=self._generate_realistic_bill_id(),
-                user_id=user_id,
-                amount=195.50,
-                currency="TRY",
-                due_date=(datetime.now() + timedelta(days=10)).strftime('%Y-%m-%d'),
-                bill_date=datetime.now().strftime('%Y-%m-%d'),
-                status="unpaid",
-                services=[ServiceItem(service_name="Mega İnternet", amount=95.50), ServiceItem(service_name="Aşım Ücreti", amount=100.00)]
-            )))
-            
-            dialog.append({"rol": "asistan", "icerik": "Faturanızı inceledim, 100 TL'lik bir aşım ücreti görünüyor. Bunun nedenini anlamak için kullanım kotalarınızı kontrol ediyorum."})
-            
-            # Tool Chaining adımı geri eklendi
-            dialog.extend(self._create_tool_call_step("get_remaining_quotas", {"user_id": user_id}, GetRemainingQuotasResponse(
-                internet_remaining_gb=0,
-                voice_remaining_minutes=500,
-                sms_remaining=1000,
-                period_end=(datetime.now() + timedelta(days=15)).strftime('%Y-%m-%d'),
-                usage_percentage=UsagePercentage(internet=100, voice=50, sms=0)
-            )))
+        }
 
-            dialog.append({"rol": "asistan", "icerik": "Teyit ettim, internet kotanız tamamen bittiği için aşım ücreti uygulanmış. Gelecekte bu durumu yaşamamanız için daha yüksek kotalı paketlerimizi listeleyebilirim. İncelemek ister misiniz?"})
-            
-            return {"veri_id": f"GM_CHAIN_ANALYSIS_{uuid.uuid4()}", "donguler": dialog}
+    def build_list_packages_task(self, user_id):
+        api_response_packages_data = self.mock_api.get_available_packages()
+        validated_response_packages = create_validated_json_response(GetAvailablePackagesResponse, api_response_packages_data['data'])
+        package_names = [pkg['name'] for pkg in api_response_packages_data['data']['packages']]
 
-        return None
-        
-    def generate_grandmaster_dataset(self, total_samples: int) -> List[Dict]:
-        """Belirtilen sayıda Grandmaster senaryo üretir."""
-        dataset = []
-        function_list = list(self.api_functions.keys())
-        
-        print(f"🚀 Grandmaster V3 veri seti oluşturuluyor...")
-        print(f"📊 Hedef: {total_samples} örnek")
-        
-        while len(dataset) < total_samples:
-            try:
-                # Rastgele bir fonksiyon ve senaryo tipi seç
-                func_name = random.choice(function_list)
-                generator_func = self.api_functions[func_name]
-                
-                scenario_type = random.choice(['simple_success', 'complex_chaining', 'error_handling', 'proactive_suggestion', 'emotional_response'])
-                emotion = random.choice(list(self.user_emotions.keys()))
-
-                scenario = generator_func(scenario_type=scenario_type, emotion=emotion)
-                
-                if scenario and scenario not in dataset:
-                    dataset.append(scenario)
-                    if len(dataset) % 100 == 0:
-                        print(f"📈 İlerleme: {len(dataset)} / {total_samples} örnek oluşturuldu...")
-
-            except Exception as e:
-                print(f"❌ Üretim sırasında hata: {e}")
-                continue
-        
-        print(f"✅ Toplam {len(dataset)} örnek oluşturuldu!")
-        return dataset
-
-    # Diğer fonksiyonlar için _generate_..._scenario metodları buraya eklenecek.
-    # Bu sadece bir başlangıç ve yapı iskeletidir.
-
-    # Helper metodlar (master script'ten taşınacak)
-    def _generate_realistic_user_id(self) -> int: return random.randint(1000, 9999)
-    def _generate_realistic_bill_id(self) -> str: return f"F-2024-{random.randint(1000, 9999)}"
-    def _create_tool_call_step(self, func_name: str, params: Dict, response_data: Union[BaseModel, Dict]) -> List[Dict]:
-        """Bir araç çağrımı ve cevabı için standart diyalog adımları oluşturur."""
-        response_str = ""
-        try:
-            if isinstance(response_data, BaseModel):
-                validated_response = response_data.model_dump(exclude_none=True)
-                response_str = json.dumps(validated_response, ensure_ascii=False)
-            elif isinstance(response_data, dict):
-                response_str = json.dumps(response_data, ensure_ascii=False)
-            else:
-                raise TypeError("response_data must be a Pydantic model or a dictionary.")
-
-        except (ValidationError, TypeError) as e:
-            print(f"Schema Hatası veya Tip Hatası: {func_name} - {e}")
-            response_str = json.dumps({"success": False, "error": {"code": "GENERATION_ERROR", "message": str(e)}}, ensure_ascii=False)
-            
-        return [
-            {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": func_name, "parametreler": params}]},
-            {"rol": "arac", "icerik": response_str}
-        ]
-
-    def save_dataset(self, dataset: List[Dict], filename: str):
-        """Veri setini dosyaya kaydeder."""
-        output_dir = os.path.join(PROJECT_ROOT, "ai_model", "data")
-        os.makedirs(output_dir, exist_ok=True)
-        filepath = os.path.join(output_dir, filename)
-        
-        with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(dataset, f, ensure_ascii=False, indent=2)
-        print(f"✅ Veri seti kaydedildi: {filepath}")
-
-if __name__ == "__main__":
-    generator = GrandmasterDatasetGenerator()
+        return {
+            "user_prompt": "mevcut paketleri listeler misin",
+            "dialogue_flow": [
+                self.create_conversation_turn("assistant", "Elbette, mevcut tüm paketleri sizin için listeliyorum.", 
+                                              tool_calls=[{"name": "get_available_packages", "arguments": {}}]),
+                self.create_conversation_turn("tool", validated_response_packages),
+                self.create_conversation_turn("assistant", f"Şu anki popüler paketlerimiz: {', '.join(package_names)}. Detaylı bilgi istediğiniz bir paket var mı?")
+            ]
+        }
     
-    # Hedeflenen toplam örnek sayısı
-    TARGET_COUNT = 2500
+    # ESKİ STATİK SENARYOLAR SİLİNDİ
     
-    # Grandmaster veri setini oluştur
-    final_dataset = generator.generate_grandmaster_dataset(TARGET_COUNT)
-    
-    # Dosyaya kaydet
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"grandmaster_dataset_v3_{timestamp}.json"
-    generator.save_dataset(final_dataset, filename)
-    
-    print(f"🎉 Grandmaster V3 veri seti başarıyla oluşturuldu!")
-    print(f"📁 Dosya: {filename}")
-    print(f"📊 Toplam örnek sayısı: {len(final_dataset)}") 
+    def generate_disambiguation_scenario(self):
+        """
+        Kullanıcının belirsiz talebini, asistanın doğru sorularla netleştirdiği bir senaryo.
+        Strateji: Belirsizlik Yönetimi (Disambiguation), Zincirleme Mantık.
+        """
+        user_id = random.choice(self.user_ids)
+        conversation = []
+
+        # 1. Kullanıcı belirsiz bir paket talebinde bulunur.
+        conversation.append(self.create_conversation_turn("user", self.get_random_phrase("request_ambiguous_package")))
+
+        # 2. Asistan, herhangi bir araç çağırmadan önce durumu netleştirmek için soru sorar.
+        clarifying_question = "Elbette, yardımcı olmak isterim. Hangi paketinizle ilgili işlem yapmak istediğinizi öğrenebilir miyim? Örneğin: İnternet paketiniz mi, TV paketiniz mi?"
+        conversation.append(self.create_conversation_turn("assistant", clarifying_question))
+
+        # 3. Kullanıcı, "internet" paketini kastederek belirsizliği giderir.
+        conversation.append(self.create_conversation_turn("user", self.get_random_phrase("clarify_internet_package")))
+
+        # 4. Asistan, artık netleşen talep üzerine doğru aracı çağırır.
+        assistant_response_after_clarification = "Anladım, internet paketinizle ilgili mevcut seçenekleri hemen listeliyorum."
+        tool_call_packages = [{"name": "get_available_packages", "arguments": {}}]
+        conversation.append(self.create_conversation_turn("assistant", assistant_response_after_clarification, tool_calls=tool_call_packages))
+
+        # 5. Sahte API'den yanıt alınır ve doğrulanır.
+        api_response_packages_data = self.mock_api.get_available_packages()
+        validated_response_packages = create_validated_json_response(GetAvailablePackagesResponse, api_response_packages_data['data'])
+        conversation.append(self.create_conversation_turn("tool", validated_response_packages))
+        
+        # 6. Asistan paketleri sunar.
+        package_names = [pkg['name'] for pkg in api_response_packages_data['data']['packages']]
+        final_response = f"Sizin için uygun olabilecek internet paketlerimiz şunlar: {', '.join(package_names)}. Hangisiyle ilgilenirsiniz?"
+        conversation.append(self.create_conversation_turn("assistant", final_response))
+        
+        return conversation
+
+    def generate_graceful_failure_scenario(self):
+        """
+        Modelin yetenekleri dışındaki bir talebi kibarca reddettiği bir senaryo.
+        Strateji: Çözümsüz Senaryo Yönetimi.
+        """
+        conversation = []
+
+        # 1. Kullanıcı, kapsam dışı bir talepte bulunur.
+        conversation.append(self.create_conversation_turn("user", self.get_random_phrase("request_out_of_scope")))
+
+        # 2. Asistan, kibarca yardımcı olamayacağını belirtir ve doğru yere yönlendirir.
+        failure_response = "Üzgünüm, ben size yalnızca telekomünikasyon hizmetlerinizle ilgili konularda yardımcı olmak üzere tasarlanmış bir yapay zeka asistanıyım. Bu isteğinizi maalesef yerine getiremiyorum. Farklı bir konuda size nasıl destek olabilirim?"
+        conversation.append(self.create_conversation_turn("assistant", failure_response))
+        
+        return conversation
+
+    # AŞAMA 3: YENİ SENARYO FONKSİYONU
+    def generate_contextual_history_scenario(self):
+        """
+        Kullanıcının geçmiş bir soruna referans verdiği ve asistanın bunu anladığını
+        göstererek yanıt verdiği bir "hafıza" senaryosu.
+        """
+        user_id = random.choice(self.user_ids)
+        conversation = []
+
+        # 1. Kullanıcı, geçmiş bir soruna referans vererek diyaloğu başlatır.
+        # Artık ana şablon havuzundan çağrılıyor
+        conversation.append(self.create_conversation_turn("user", self.get_random_phrase("report_recurrent_slow_internet")))
+
+        # 2. Asistan, durumu anladığını ve standart prosedürü atlayacağını belirtir.
+        assistant_response = (
+            f"Merhaba, {user_id} numaralı hattınızda bu sorunu tekrar yaşadığınızı anlıyorum ve özür dilerim. "
+            "Bu sefer standart hız testi adımlarını atlayıp, durumun tekrarladığını belirterek sizin için "
+            "doğrudan öncelikli bir arıza kaydı oluşturuyorum."
+        )
+        tool_call = [{"name": "create_fault_ticket", "arguments": {
+            "user_id": user_id, 
+            "issue_description": "Tekrarlayan yavaş internet sorunu. Öncelikli incelenmeli.",
+            "priority": "high" # Varsayımsal parametre
+        }}]
+        conversation.append(self.create_conversation_turn("assistant", assistant_response, tool_calls=tool_call))
+
+        # 3. API yanıtı ve kapanış
+        api_response_ticket_data = self.mock_api.create_fault_ticket(user_id, "Tekrarlayan sorun", priority="high")
+        validated_response_ticket = create_validated_json_response(CreateFaultTicketResponse, api_response_ticket_data['data'])
+        ticket_id = api_response_ticket_data["data"]["ticket_id"]
+        conversation.append(self.create_conversation_turn("tool", validated_response_ticket))
+        conversation.append(self.create_conversation_turn("assistant", f"Kaydınız {ticket_id} numarasıyla en yüksek öncelikte oluşturuldu. Teknik ekibimiz doğrudan sizinle iletişime geçecektir."))
+
+        return conversation
+
+
+if __name__ == '__main__':
+    generator = GrandmasterDatasetGeneratorV3()
+    # Hedef: 10,000 adet son derece karmaşık ve çeşitli senaryo üretmek.
+    grandmaster_data = generator.generate(10000)
+    generator.save_to_json("grandmaster_dataset_10k_v3.json") 
