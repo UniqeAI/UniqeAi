@@ -248,6 +248,19 @@ class ReactivateLineResponse(BaseModel):
     reactivation_fee: float
 
 # ==============================================================================
+# 5. ERROR HANDLING MODELLERİ (backend_api_specification.md'ye tam uyumlu)
+# ==============================================================================
+
+class ErrorDetail(BaseModel):
+    code: str
+    message: str
+    details: Optional[str] = None
+
+class ErrorResponse(BaseModel):
+    success: bool = False
+    error: ErrorDetail
+
+# ==============================================================================
 # API HARİTASI VE YARDIMCI FONKSİYONLAR
 # ==============================================================================
 
