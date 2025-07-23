@@ -47,36 +47,44 @@ adapter_model.safetensors
 # Hugging Face Cache
 .cache/
 transformers_cache/
+.huggingface/
+
+# Dataset Cache
+*.arrow
+*.cache
+
+# Training Logs
+training_logs/
+wandb/
+tensorboard_logs/
+
+# Temporary AI Files
+tmp_model/
+temp_model/
+model_checkpoints/
+
+# NOT: Model dosyaları Git LFS ile yönetilecek
+
+# Büyük Data Dosyaları (GitHub'a atılmayacak)
+# Büyük dataset dosyaları
+**/telekom_dataset_2500.json
+**/telekom_training_dataset_enhanced.json
+**/test_results_*.json
+# Optimizer ve training state dosyaları
+optimizer.pt
+scheduler.pt
+**/optimizer.pt
+**/scheduler.pt
+# Tokenizer dosyaları (büyük olanlar)
+**/tokenizer.json
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
 *.pyc
 *.pyo
 *.pyd
 
 # C extensions
 *.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
 # Virtual Environments
 .venv/
@@ -86,8 +94,6 @@ ENV/
 .env
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -125,52 +131,9 @@ coverage.xml
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
 
 # Documents
 #docs/*
 #PROJEYE_BASLANGIC_REHBERI.md
 #PROJEYE_BASLANGIC_REHBERI.pdf
-
-# ========================================
-# AI/ML Cache Files (sadece cache'ler exclude)
-# ========================================
-
-# Hugging Face Cache
-.cache/
-transformers_cache/
-.huggingface/
-
-# Dataset Cache
-*.arrow
-*.cache
-
-# Training Logs
-training_logs/
-wandb/
-tensorboard_logs/
-
-# Temporary AI Files
-tmp_model/
-temp_model/
-model_checkpoints/
-
-# NOT: Model dosyaları Git LFS ile yönetilecek
-
-# ========================================
-# Büyük Data Dosyaları (GitHub'a atılmayacak)
-# ========================================
-
-# Büyük dataset dosyaları
-**/telekom_dataset_2500.json
-**/telekom_training_dataset_enhanced.json
-**/test_results_*.json
-
-# Optimizer ve training state dosyaları
-optimizer.pt
-scheduler.pt
-**/optimizer.pt
-**/scheduler.pt
-
-# Tokenizer dosyaları (büyük olanlar)
-**/tokenizer.json
