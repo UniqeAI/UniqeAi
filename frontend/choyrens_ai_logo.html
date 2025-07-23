@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choyrens AI Logo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .logo-container {
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(0,255,255,0.1), 
+                        0 0 0 1px rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border: 1px solid rgba(0,255,255,0.2);
+        }
+
+        .logo-symbol {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-core {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
+            border-radius: 50%;
+            position: relative;
+            animation: coreGlow 3s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-core::before {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(0,255,255,0.3);
+            border-radius: 50%;
+            border-top: 2px solid #00ffff;
+            animation: rotate 4s linear infinite;
+        }
+
+        .ai-core::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 50%;
+            border-right: 1px solid #00ffff;
+            animation: rotate 6s linear infinite reverse;
+        }
+
+        .core-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 16px;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            z-index: 2;
+        }
+
+        .neural-nodes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffff;
+            animation: pulse 2s infinite;
+        }
+
+        .node:nth-child(1) { top: 10px; left: 30px; animation-delay: 0s; }
+        .node:nth-child(2) { top: 20px; right: 15px; animation-delay: 0.5s; }
+        .node:nth-child(3) { bottom: 25px; left: 20px; animation-delay: 1s; }
+        .node:nth-child(4) { bottom: 15px; right: 25px; animation-delay: 1.5s; }
+
+        .connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            opacity: 0.6;
+            animation: dataFlow 3s infinite;
+        }
+
+        .connection:nth-child(5) {
+            top: 35px;
+            left: 25px;
+            width: 50px;
+            transform: rotate(15deg);
+        }
+
+        .connection:nth-child(6) {
+            top: 50px;
+            right: 20px;
+            width: 40px;
+            transform: rotate(-30deg);
+            animation-delay: 1s;
+        }
+
+        .connection:nth-child(7) {
+            bottom: 30px;
+            left: 15px;
+            width: 60px;
+            transform: rotate(45deg);
+            animation-delay: 2s;
+        }
+
+        @keyframes coreGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0,255,255,0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0,255,255,0.8); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes dataFlow {
+            0% { opacity: 0; transform: scaleX(0); }
+            50% { opacity: 1; transform: scaleX(1); }
+            100% { opacity: 0; transform: scaleX(0); }
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .choyrens-text {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(0,255,255,0.3);
+        }
+
+        .ai-text {
+            font-size: 28px;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 6px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .variations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .variation {
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .variation h3 {
+            margin-bottom: 25px;
+            color: #00ffff;
+            font-weight: 600;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .light-bg {
+            background: linear-gradient(145deg, #f8f9fa, #ffffff);
+            color: #333;
+        }
+
+        .light-bg h3 {
+            color: #0080ff;
+        }
+
+        .light-bg .choyrens-text {
+            background: linear-gradient(45deg, #0080ff, #8000ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .light-bg .ai-text {
+            color: #333;
+        }
+
+        .monochrome .ai-core {
+            background: linear-gradient(45deg, #666, #999, #ccc);
+        }
+
+        .monochrome .choyrens-text {
+            background: linear-gradient(45deg, #333, #666, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .monochrome .node {
+            background: #666;
+            box-shadow: 0 0 5px #666;
+        }
+
+        .monochrome .connection {
+            background: linear-gradient(90deg, transparent, #666, transparent);
+        }
+
+        .small-logo {
+            transform: scale(0.6);
+        }
+
+        .horizontal-logo {
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .horizontal-logo .logo-text {
+            flex-direction: row;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .horizontal-logo .ai-text {
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,255,255,0.3);
+        }
+
+        .app-icon .core-text {
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 2px solid white;
+            animation: rotate 3s linear infinite;
+        }
+
+        .minimal-version {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .minimal-symbol {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            font-weight: 900;
+            font-size: 16px;
+            color: white;
+        }
+
+        .minimal-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ffff, #8000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tech-pattern {
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(0,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(128,0,255,0.1) 0%, transparent 50%),
+                linear-gradient(45deg, #1a1a1a 25%, transparent 25%),
+                linear-gradient(-45deg, #1a1a1a 25%, transparent 25%);
+            background-size: 60px 60px, 60px 60px, 20px 20px, 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-symbol">
+            <div class="ai-core">
+                <div class="core-text">AI</div>
+            </div>
+            <div class="neural-nodes">
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="node"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+            </div>
+        </div>
+        <div class="logo-text">
+            <div class="choyrens-text">CHOYRENS</div>
+            <div class="ai-text">AI</div>
+        </div>
+    </div>
+
+    <div class="variations">
+        <div class="variation light-bg">
+            <h3>Açık Zemin Versiyonu</h3>
+            <div class="logo-container" style="background: transparent; box-shadow: none; padding: 20px;">
+                <div class="logo-symbol">
+                    <div class="ai-core">
+                        <div class="core-text">AI</div>
+                    </div>
+                    <div class="neural-nodes">
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <div class="choyrens-text">CHOYRENS</div>
+                    <div class="ai-text">AI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variation">
+            <h3>Tek Renk Versiyonu</h3>
+            <div class="logo-container monochrome" style="background: transparent; box-shadow: none; padding: 20px;">
+                <div class="logo-symbol">
+                    <div class="ai-core">
+                        <div class="core-text">AI</div>
+                    </div>
+                    <div class="neural-nodes">
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <div class="choyrens-text">CHOYRENS</div>
+                    <div class="ai-text">AI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variation">
+            <h3>Yatay Düzenleme</h3>
+            <div class="logo-container horizontal-logo" style="background: transparent; box-shadow: none; padding: 20px;">
+                <div class="logo-symbol small-logo">
+                    <div class="ai-core">
+                        <div class="core-text">AI</div>
+                    </div>
+                    <div class="neural-nodes">
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <div class="choyrens-text">CHOYRENS</div>
+                    <div class="ai-text">AI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variation tech-pattern">
+            <h3>Teknolojik Zemin Uyumu</h3>
+            <div class="logo-container" style="background: transparent; box-shadow: none; padding: 20px;">
+                <div class="logo-symbol">
+                    <div class="ai-core">
+                        <div class="core-text">AI</div>
+                    </div>
+                    <div class="neural-nodes">
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="node"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                        <div class="connection"></div>
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <div class="choyrens-text">CHOYRENS</div>
+                    <div class="ai-text">AI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="variation">
+            <h3>Uygulama İkonu</h3>
+            <div class="app-icon">
+                <div class="core-text">C</div>
+            </div>
+        </div>
+
+        <div class="variation">
+            <h3>Minimal Versiyon</h3>
+            <div class="minimal-version">
+                <div class="minimal-symbol">C</div>
+                <div class="minimal-text">CHOYRENS AI</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px; text-align: center; color: #ccc; max-width: 900px;">
+        <h3 style="color: #00ffff; margin-bottom: 25px; font-family: 'Orbitron', monospace;">🤖 Choyrens AI - Tasarım Konsepti</h3>
+        <p><strong>🎨 Renk Paleti:</strong> Futuristik cyan-mavi gradyan (#00ffff → #0080ff → #8000ff) ile teknoloji ve yapay zeka teması</p>
+        <p><strong>🧠 Sembolik Unsurlar:</strong> Merkezi AI çekirdeği, dönen halkalar, sinir ağı bağlantıları ve veri akışı animasyonları</p>
+        <p><strong>⚡ Tipografi:</strong> Orbitron font ailesi ile futuristik görünüm, "CHOYRENS" baskın, "AI" destekleyici</p>
+        <p><strong>🔧 Animasyonlar:</strong> Dönen halkalar, nabız atan düğümler ve akan veri bağlantıları ile canlı AI deneyimi</p>
+        <p><strong>📱 Uyarlanabilirlik:</strong> Koyu/açık zemin, tek renk, yatay düzenleme, app icon ve minimal versiyonlar</p>
+    </div>
+</body>
+</html> 
