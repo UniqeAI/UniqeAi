@@ -13,6 +13,8 @@ v3 Yükseltmeleri:
 
 Hedef: Modelin ezberciliğini kırmak, muhakeme yeteneğini en üst düzeye çıkarmak ve
 gerçek dünyanın kaotik koşullarına karşı dayanıklılığını artırmak.
+=======
+#!/usr/bin/env python3
 """
 
 import json
