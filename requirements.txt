@@ -1,31 +1,17 @@
-# Temel Veri İşleme ve Analiz
-pandas
-
-# Makine Öğrenmesi ve NLP için Temel Araçlar
-scikit-learn
-
-# Türkçe Stopwords (Etkisiz Kelimeler) için
-nltk
-
-# Modern Gömme (Embedding) Modelleri için
-sentence-transformers
-torch
-
-# Backend
+# Backend için gerekli paketler
 fastapi
 uvicorn
+pytest
+httpx
 
-# Frontend
-streamlit
-
-# AI / ML
+# AI/ML paketleri (opsiyonel - gerçek AI için)
 transformers
+torch
 accelerate
 bitsandbytes
 datasets
 peft
 trl
-zemberek-python
 
 # Development & Formatting
 black 
