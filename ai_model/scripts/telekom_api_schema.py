@@ -248,7 +248,56 @@ class ReactivateLineResponse(BaseModel):
     reactivation_fee: float
 
 # ==============================================================================
-# 5. ERROR HANDLING MODELLERİ (backend_api_specification.md'ye tam uyumlu)
+# 5. ACİL DURUM VE GELİŞMİŞ SERVİSLER İÇİN VERİ MODELLERİ
+# ==============================================================================
+
+class ActivateEmergencyServiceResponse(BaseModel):
+    user_id: int
+    emergency_service_activated: bool
+    emergency_type: str
+    activation_time: str
+    call_limit_removed: bool
+    data_limit_removed: bool
+    emergency_contact_priority: bool
+    duration_hours: int
+
+class Check5GCoverageResponse(BaseModel):
+    user_id: int
+    location: str
+    coverage_status: str
+    signal_strength: int
+    download_speed_estimate_mbps: float
+    upload_speed_estimate_mbps: float
+    latency_estimate_ms: int
+    network_quality: str
+    coverage_percentage: int
+
+class CulturalContextResponse(BaseModel):
+    user_id: int
+    cultural_profile: str
+    communication_preferences: Dict[str, Any]
+    service_adaptations: List[str]
+    language_preference: str
+    accessibility_needs: List[str]
+
+class LearningAdaptationResponse(BaseModel):
+    user_id: int
+    learned_preferences: Dict[str, Any]
+    interaction_patterns: Dict[str, int]
+    success_strategies: List[str]
+    personalization_level: str
+    adaptation_confidence: float
+
+class CreativeAnalysisResponse(BaseModel):
+    analysis_id: str
+    problem_description: str
+    creative_solutions: List[str]
+    innovation_score: int
+    feasibility_ratings: Dict[str, int]
+    implementation_suggestions: List[str]
+
+# ==============================================================================
+# 6. ERROR HANDLING MODELLERİ (backend_api_specification.md'ye tam uyumlu)
 # ==============================================================================
 
 class ErrorDetail(BaseModel):
@@ -295,7 +344,14 @@ API_MAP = {
     "update_customer_contact": "backend_api.update_customer_contact",
     "suspend_line": "backend_api.suspend_line",
     "reactivate_line": "backend_api.reactivate_line",
+
+    # --- Acil Durum ve Gelişmiş Servisler ---
+    "activate_emergency_service": "backend_api.activate_emergency_service",
+    "check_5g_coverage": "backend_api.check_5g_coverage",
+    "get_cultural_context": "backend_api.get_cultural_context",
+    "update_learning_adaptation": "backend_api.update_learning_adaptation",
+    "generate_creative_analysis": "backend_api.generate_creative_analysis",
 }
 
-VERSION = "2.0-Pydantic"
+VERSION = "2.1-Enhanced"
 TOTAL_APIS = len(API_MAP)

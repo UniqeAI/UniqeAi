@@ -35,7 +35,7 @@ from UniqeAi.ai_model.scripts.tool_definitions import get_tool_definitions, get_
 
 console = Console()
 
-MODEL_PATH = PROJECT_ROOT / "UniqeAi/ai_model/merged_model_v3"
+MODEL_PATH = PROJECT_ROOT / "UniqeAi/ai_model/merged_model_bf16"
 
 def load_model_and_tokenizer(model_path: Path):
     console.print(f"[yellow]🚀 Model yükleniyor: [cyan]{model_path}[/cyan][/yellow]")
