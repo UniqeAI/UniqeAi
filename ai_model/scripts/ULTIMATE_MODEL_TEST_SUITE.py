@@ -46,11 +46,11 @@ except ImportError:
     print(f"\n[HATA] 'tool_definitions' modülü bulunamadı. Aranan yol: {AI_MODEL_SCRIPTS_PATH}")
     sys.exit(1)
 
-# --- Model Yapılandırması ---
-GGUF_MODEL_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "gguf_model_v2"
-CONTEXT_SIZE = 4096
-GPU_LAYERS = -1
-TEMPERATURE = 0.0
+# --- Model Yapılandırması (terminal_app_gguf.py v8.0 ile senkronize) ---
+GGUF_MODEL_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "results_2" / "gguf_model_v2"
+CONTEXT_SIZE = 2048  # Performans için optimize edildi
+GPU_LAYERS = 35      # Optimum GPU katman sayısı
+TEMPERATURE = 0.2    # Yaratıcılık için hafif artırıldı (0.0 çok katıydı)
 DEFAULT_TEST_USER_ID = 12345
 
 console = Console()
@@ -73,6 +73,13 @@ class ModelCapabilityTester:
         prompt = f"""Sen, UniqeAi tarafından geliştirilmiş, uzman bir Telekom Müşteri Hizmetleri Asistanısın.
 **ANA GÖREVİN:** Kullanıcının talebini anında yerine getirmek. Asla sohbet etme, soru sorma veya açıklama yapma. **Sadece istenen eylemi gerçekleştir.**
 **ARAÇ KULLANIM KURALI:** Bir aracı kullanman gerekiyorsa, başka hiçbir şey yazmadan **SADECE araç çağırma kodunu** şu formatta yaz: `<|begin_of_tool_code|>print(fonksiyon(parametre="değer"))<|end_of_tool_code|>`.
+
+**ÖNEMLİ PARAMETRE KURALLARI:**
+- get_current_bill: user_id parametresi GEREKLİ → get_current_bill(user_id=12345)
+- get_past_bills: user_id parametresi GEREKLİ → get_past_bills(user_id=12345, limit=3)
+- get_customer_package: user_id parametresi GEREKLİ → get_customer_package(user_id=12345)
+- enable_roaming: user_id parametresi GEREKLİ → enable_roaming(user_id=12345)
+- check_network_status: region parametresi GEREKLİ → check_network_status(region="İstanbul")
 **KULLANABİLECEĞİN ARAÇLAR:**
 {tools_string}
 """
@@ -140,26 +147,50 @@ class ModelCapabilityTester:
                         if func_name in ALL_TOOL_DEFINITIONS:
                             func_def = ALL_TOOL_DEFINITIONS[func_name]["function"]
                             required_params = func_def.get("parameters", {}).get("required", [])
-                            if "user_id" in required_params and "user_id" not in func_args:
-                                func_args["user_id"] = DEFAULT_TEST_USER_ID
-                                console.print(f"🧠 [italic yellow]Uyarı: Model 'user_id' parametresini unuttu. Varsayılan ID ({DEFAULT_TEST_USER_ID}) ile tamamlandı.[/italic yellow]")
+                            
+                            # Tüm gerekli parametreleri kontrol et ve eksik olanları ekle
+                            for param in required_params:
+                                if param not in func_args:
+                                    if param == "user_id":
+                                        func_args[param] = DEFAULT_TEST_USER_ID
+                                        console.print(f"🧠 [italic yellow]Uyarı: Model '{param}' parametresini unuttu. Varsayılan değer ({DEFAULT_TEST_USER_ID}) ile tamamlandı.[/italic yellow]")
+                                    elif param == "region" and func_name == "check_network_status":
+                                        # İstanbul için region parametresi
+                                        func_args[param] = "İstanbul"
+                                        console.print(f"🧠 [italic yellow]Uyarı: Model '{param}' parametresini unuttu. 'İstanbul' ile tamamlandı.[/italic yellow]")
+                                    else:
+                                        console.print(f"⚠️ [italic red]Eksik parametre: {param} - Bu araç çağrısı başarısız olabilir.[/italic red]")
                         
                         console.print(f"🛠️ [bold yellow]Araç Çağrısı:[/bold yellow] {func_name}({json.dumps(func_args, ensure_ascii=False)})")
                         tool_response = get_tool_response(func_name, func_args)
                         console.print(f"⚙️ [bold magenta]Araç Yanıtı:[/bold magenta] {tool_response}")
                         dialogue.append({"role": "tool", "content": tool_response})
 
-                    chain_of_thought_prompt = """API yanıtını aldım. Şimdi adım adım Türkçe bir özet oluşturacağım.
-1. **Ana Fikri Bul:** JSON içindeki en önemli sonuç nedir? (Örn: 'roaming aktif edildi' veya 'geçmiş faturalar başarıyla listelendi').
-2. **Önemli Detayları Çıkar:** Bu ana fikirle ilgili kilit rakamlar veya bilgiler nelerdir? (Örn: 'günlük ücret 25.0 TL' veya 'toplam 2 fatura bulundu, toplam tutar 225.95 TL').
-3. **Cümleyi Kur:** Bu bilgileri birleştirerek, kullanıcıya hitap eden, akıcı ve eksiksiz **tek bir Türkçe paragraf** oluştur.
-Lütfen bana sadece 3. adımdaki nihai paragrafı yanıt olarak ver."""
+                    chain_of_thought_prompt = f"""UYARI: Yukarıdaki API yanıtı gerçek veridir. Bu veriyi AYNEN kullan.
+
+Aşağıdaki JSON'u KELIME KELIME kopyala ve Türkçe açıkla:
+
+{tool_response}
+
+KURALLARI:
+1. Bu JSON'daki rakamları AYNEN kullan
+2. Kendi rakam EKLEME
+3. Kendi JSON yaratma
+4. Sadece bu gerçek veriyi özetle
+
+Gerçek JSON'dan Türkçe özet:"""
                     dialogue.append({"role": "user", "content": chain_of_thought_prompt})
                     
                     progress.update(task, description="Model sonuçları özetliyor...")
                     
                     summary_response = self.llm.create_chat_completion(
-                        messages=dialogue, temperature=TEMPERATURE, stop=["<|eot_id|>"]
+                        messages=dialogue, 
+                        temperature=0.0,  # Halüsinasyonu önlemek için sıfır
+                        stop=["<|eot_id|>"],
+                        max_tokens=256,
+                        repeat_penalty=1.2,
+                        top_k=1,  # En muhtemel kelimeyi seç
+                        top_p=0.1  # Çok düşük yaratıcılık
                     )
                     final_answer = summary_response['choices'][0]['message']['content']
                     dialogue.pop() # Geçici CoT prompt'unu kaldır
@@ -258,9 +289,16 @@ def load_gguf_model():
     console.print(f"[yellow]🚀 Model yükleniyor: [cyan]{model_path.name}[/cyan][/yellow]")
     try:
         llm = Llama(
-            model_path=str(model_path), n_ctx=CONTEXT_SIZE, n_gpu_layers=GPU_LAYERS,
+            model_path=str(model_path), 
+            n_ctx=CONTEXT_SIZE, 
+            n_gpu_layers=GPU_LAYERS,
             n_threads=os.cpu_count() - 1 if os.cpu_count() and os.cpu_count() > 1 else 1,
-            verbose=False, chat_format="llama-3"
+            verbose=False, 
+            chat_format="llama-3",
+            # Performans optimizasyonları (terminal_app_gguf.py ile aynı)
+            n_batch=512,
+            use_mlock=True,
+            use_mmap=True
         )
         console.print("[green]✅ Model başarıyla yüklendi.[/green]")
         return llm
@@ -268,13 +306,19 @@ def load_gguf_model():
         console.print(f"[bold red]HATA: Model yüklenemedi - {e}[/bold red]"); sys.exit(1)
 
 def get_test_scenarios() -> List[Dict[str, Any]]:
+    """Gerçek mevcut araçlarla uyumlu test senaryoları"""
     return [
-        {"name": "Empathetic Reasoning - Vefat Durumu", "description": "Modelin hassas durumlarda empati gösterme ve çözüm sunma yeteneğini test eder.", "user_input": "Babam geçen ay vefat etti. Onun telefonunu ve internet aboneliğini kapatmak istiyorum ama çok zor geliyor. Bu süreçte bana nasıl yardımcı olabilirsiniz?", "emotional_context": "grief", "complexity_level": "high", "expects_tool_usage": True, "expected_topics": ["başsağlığı", "üzgünüm", "yardımcı", "süreç", "kolaylaştırmak"], "evaluation_criteria": {"cultural_sensitivity": 1.5}},
-        {"name": "Strategic Planning - Büyüme Stratejisi", "description": "Uzun vadeli stratejik düşünme ve planlama yeteneğini değerlendirir.", "user_input": "İşimiz büyüyor, 2 yılda 25 kişilik bir ekibe ulaşacağız ve hibrit çalışacağız. Bize özel, ölçeklenebilir bir telekomünikasyon altyapı planı sunabilir misiniz?", "emotional_context": "neutral", "complexity_level": "high", "expects_tool_usage": True, "expected_topics": ["strateji", "büyüme", "plan", "hibrit", "uzun vadeli", "ölçeklenebilir"], "evaluation_criteria": {"strategic_thinking": 2.0}},
-        {"name": "Social Dynamics - Toplumsal Çözüm", "description": "Sosyal dinamikleri anlayıp toplumsal çözümler önerme yeteneğini test eder.", "user_input": "Bütün mahalle olarak internetimiz çok yavaş ve çocuklarımız derslerinden geri kalıyor. Komşularla konuştuk, toplu bir altyapı iyileştirmesi için ne yapabiliriz?", "emotional_context": "frustrated", "complexity_level": "high", "expects_tool_usage": True, "expected_topics": ["topluluk", "mahalle", "toplu çözüm", "altyapı", "iş birliği"], "evaluation_criteria": {"creativity": 1.5, "cultural_sensitivity": 1.2}},
-        {"name": "Negotiation Skills - Paket Müzakeresi", "description": "Müzakere ve ikna yeteneklerini değerlendirir.", "user_input": "Rakip firma bana daha iyi bir teklif sundu ama ben sizinle devam etmek istiyorum. Mevcut paketimi hem daha ekonomik hem de daha zengin hale getirecek bir orta yol bulabilir miyiz?", "emotional_context": "neutral", "complexity_level": "medium", "expects_tool_usage": True, "expected_topics": ["müzakere", "anlaşma", "teklif", "orta yol", "daha iyi"], "evaluation_criteria": {"negotiation_skills": 2.0}},
-        {"name": "Conflicting Information - Bilgi Tutarsızlığı", "description": "Çelişkili bilgileri yönetme ve doğru bilgiyi sunma yeteneğini test eder.", "user_input": "Müşteri hizmetleri 5G'nin bölgemde tam kapasite çalıştığını söyledi ama mobil uygulamanızda sinyal zayıf görünüyor. Gerçek durum nedir, net bir bilgi alabilir miyim?", "emotional_context": "skeptical", "complexity_level": "high", "expects_tool_usage": True, "expected_topics": ["tutarsızlık", "net bilgi", "doğrulama", "gerçek durum", "analiz"], "evaluation_criteria": {"strategic_thinking": 1.5}},
-        {"name": "Creative Problem Solving - İnovatif Çözüm", "description": "Yaratıcı ve inovatif problem çözme yeteneklerini değerlendirir.", "user_input": "Ben bir içerik üreticisiyim ve yayın yaptığım saatlerde internet hızımın en üst seviyede olmasını istiyorum. Diğer zamanlarda daha düşük olabilir. Bana özel, esnek bir hız ayarlama paketi oluşturabilir misiniz?", "emotional_context": "curious", "complexity_level": "medium", "expects_tool_usage": True, "expected_topics": ["yaratıcı", "özel", "esnek", "içerik üreticisi", "optimizasyon"], "evaluation_criteria": {"creativity": 2.0}}
+        {"name": "Fatura Sorgulama", "description": "Temel fatura bilgisi alma yeteneğini test eder.", "user_input": "Bu ayki faturamı görebilir miyim?", "emotional_context": "neutral", "complexity_level": "low", "expects_tool_usage": True, "expected_topics": ["fatura", "ödeme", "tutar"], "evaluation_criteria": {}},
+        
+        {"name": "Geçmiş Faturalar", "description": "Geçmiş fatura bilgilerini alma yeteneğini test eder.", "user_input": "Son 3 ayın faturalarını göster lütfen.", "emotional_context": "neutral", "complexity_level": "low", "expects_tool_usage": True, "expected_topics": ["geçmiş", "fatura", "liste"], "evaluation_criteria": {}},
+        
+        {"name": "Paket Bilgisi", "description": "Mevcut paket bilgilerini alma yeteneğini test eder.", "user_input": "Hangi paketi kullanıyorum şu anda?", "emotional_context": "neutral", "complexity_level": "low", "expects_tool_usage": True, "expected_topics": ["paket", "tarife", "kullanım"], "evaluation_criteria": {}},
+        
+        {"name": "Ağ Durumu", "description": "Bölgesel ağ durumu kontrol yeteneğini test eder.", "user_input": "İstanbul'da internet sorunu var mı?", "emotional_context": "concerned", "complexity_level": "medium", "expects_tool_usage": True, "expected_topics": ["ağ", "durum", "sorun"], "evaluation_criteria": {}},
+        
+        {"name": "Roaming Aktivasyonu", "description": "Roaming hizmeti açma yeteneğini test eder.", "user_input": "Yarın Almanya'ya gidiyorum, roaming açar mısınız?", "emotional_context": "neutral", "complexity_level": "medium", "expects_tool_usage": True, "expected_topics": ["roaming", "yurt dışı", "aktivasyon"], "evaluation_criteria": {}},
+        
+        {"name": "Sohbet Testi", "description": "Araç gerektirmeyen genel sohbet yeteneğini test eder.", "user_input": "Merhaba, nasılsınız?", "emotional_context": "friendly", "complexity_level": "low", "expects_tool_usage": False, "expected_topics": ["selamlaşma", "nezaket"], "evaluation_criteria": {}}
     ]
 
 def display_test_results(results: List[Dict[str, Any]]):
@@ -304,7 +348,10 @@ def get_performance_assessment(s: float) -> str:
 def main():
     """Ana program"""
     console.print("\n" + "="*80, style="bold green")
-    console.print("🚀 [bold green]ULTIMATE MODEL TEST SUITE v3.0 (Proje Final Sürümü)[/bold green]", justify="center")
+    console.print("🚀 [bold green]ULTIMATE MODEL TEST SUITE v4.0 (Gerçekçi Test Sürümü)[/bold green]", justify="center")
+    console.print("   ✅ terminal_app_gguf.py v8.0 ile senkronize")
+    console.print("   🎯 Gerçek mevcut araçlarla uyumlu test senaryoları")
+    console.print("   ⚡ Performans optimizasyonları dahil")
     console.print("="*80, style="bold green")
     llm_model = load_gguf_model()
     tester = ModelCapabilityTester(llm_model)

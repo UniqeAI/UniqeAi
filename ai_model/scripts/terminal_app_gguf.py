@@ -44,11 +44,11 @@ except ImportError:
     sys.exit(1)
 
 
-# --- GGUF Model Yapılandırması ---
-GGUF_MODEL_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "gguf_model_v2"
-CONTEXT_SIZE = 4096
-GPU_LAYERS = -1
-TEMPERATURE = 0.1 # Yaratıcılık için hafif bir artış
+# --- GGUF Model Yapılandırması (Performans Optimizasyonu) ---
+GGUF_MODEL_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "results_2" / "gguf_model_v2"
+CONTEXT_SIZE = 2048  # Performans için düşürüldü
+GPU_LAYERS = 35      # Optimum GPU katman sayısı
+TEMPERATURE = 0.1    # Yaratıcılık için hafif bir artış
 DEFAULT_TEST_USER_ID = 12345
 
 console = Console()
@@ -74,11 +74,18 @@ def load_gguf_model():
     console.print(f"[yellow]🚀 GGUF modeli yükleniyor: [cyan]{model_path.name}[/cyan][/yellow]")
     try:
         llm = Llama(
-            model_path=str(model_path), n_ctx=CONTEXT_SIZE, n_gpu_layers=GPU_LAYERS,
+            model_path=str(model_path), 
+            n_ctx=CONTEXT_SIZE, 
+            n_gpu_layers=GPU_LAYERS,
             n_threads=os.cpu_count() - 1 if os.cpu_count() and os.cpu_count() > 1 else 1,
-            verbose=False, chat_format="llama-3"
+            verbose=False, 
+            chat_format="llama-3",
+            # Performans optimizasyonları
+            n_batch=512,        # Batch boyutu
+            use_mlock=True,     # Bellek kilitleme
+            use_mmap=True       # Memory mapping
         )
-        console.print("[green]✅ Model başarıyla GPU'ya yüklendi.[/green]")
+        console.print("[green]✅ Model başarıyla GPU'ya yüklendi (Optimizasyonlu).[/green]")
         return llm
     except Exception as e:
         console.print(f"\n[bold red]HATA: Model yüklenirken kritik bir hata oluştu: {e}[/bold red]"); sys.exit(1)
@@ -210,16 +217,21 @@ class Executor:
             return "Hata: Fatura bilgileri alınırken bir sorun oluştu."
         
     def summarize_tool_result(self, tool_response_content: str) -> str:
-        iron_cage_prompt = f"""Bir API'den aşağıdaki JSON yanıtı alındı:
+        iron_cage_prompt = f"""UYARI: Aşağıdaki JSON gerçek API yanıtıdır. Bu veriyi AYNEN kullan.
+
+GERÇEK JSON:
 ```json
 {tool_response_content}
 ```
-Görevin:
-1. Bu JSON verisinin dışına **ASLA** çıkma.
-2. Kendi kendine bilgi veya rakam **EKLEME**.
-3. **SADECE** bu JSON'daki bilgileri kullanarak, sonucu kullanıcıya **tek bir akıcı Türkçe paragrafta** özetle.
-4. **HİÇBİR ŞEKİLDE** araç çağırma kodu (<|begin_of_tool_code|>) kullanma.
-Yanıtın sadece ve sadece bu paragrafı içersin."""
+
+KURALLARI:
+1. Bu JSON'daki rakamları AYNEN kullan
+2. Kendi rakam EKLEME
+3. Kendi JSON yaratma  
+4. Araç kodu YAZMA
+5. Sadece bu gerçek veriyi Türkçe özetle
+
+Bu gerçek JSON'dan tek paragraf Türkçe özet:"""
         
         # Özetleme için özel sistem mesajı
         summarizer_prompt = """Sen, API yanıtlarını Türkçe özetleyen bir asistansın. 
@@ -234,7 +246,15 @@ KURALLAR:
         dialogue = [{"role": "system", "content": summarizer_prompt}, {"role": "user", "content": iron_cage_prompt}]
         
         console.print("[yellow]... İcracı veriye sadık kalarak özetliyor ...[/yellow]")
-        summary_response = self.llm.create_chat_completion(messages=dialogue, temperature=0.1, stop=["<|eot_id|>"])
+        summary_response = self.llm.create_chat_completion(
+            messages=dialogue, 
+            temperature=0.0,  # Halüsinasyonu önlemek için sıfır
+            stop=["<|eot_id|>"],
+            max_tokens=256,
+            repeat_penalty=1.2,
+            top_k=1,    # En muhtemel kelimeyi seç
+            top_p=0.1   # Çok düşük yaratıcılık
+        )
         raw_summary = summary_response['choices'][0]['message']['content']
         
         # Tool code kalıntılarını temizle
@@ -246,7 +266,15 @@ KURALLAR:
     def run_task(self, user_input: str, context_data: Dict[str, Any] = None) -> Tuple[Optional[str], bool]:
         """Verilen tek bir görevi uçtan uca çalıştırır."""
         dialogue = [{"role": "system", "content": self.system_prompt}, {"role": "user", "content": user_input}]
-        response = self.llm.create_chat_completion(messages=dialogue, temperature=TEMPERATURE, stop=["<|eot_id|>"])
+        response = self.llm.create_chat_completion(
+            messages=dialogue, 
+            temperature=TEMPERATURE, 
+            stop=["<|eot_id|>"],
+            max_tokens=512,  # Hızlı araç çağırma için sınırlı token
+            repeat_penalty=1.1,
+            top_k=40,
+            top_p=0.9
+        )
         assistant_response_text = response['choices'][0]['message']['content']
         
         tool_calls = self.parse_tool_calls(assistant_response_text)
@@ -281,27 +309,56 @@ class ConversationManager:
 
 Görevin, kullanıcıyla sohbet etmek, konuşmanın geçmişini hatırlamak ve bir eylem gerçekleştirilmesi gerektiğinde ilgili aracı çağırmaktır."""
 
+    def _intelligent_decision(self, user_input: str) -> bool:
+        """Yapay zeka tabanlı akıllı karar verme sistemi - Anahtar kelime değil, gerçek anlama dayalı"""
+        decision_prompt = """Sen bir karar verici asistansın. Kullanıcının isteğini analiz et ve şu soruyu yanıtla:
+
+Bu istek için bir araç (API çağrısı) gerekli mi?
+
+ARAÇ GEREKTİREN DURUMLAR:
+- Fatura bilgisi sorgulanıyor (miktarı, son ödeme tarihi, detayları)
+- Paket/tarife değişikliği isteniyor
+- Teknik destek talebi var (internet hızı testi, arıza kaydı)
+- Ödeme işlemi yapılacak
+- Kota/kullanım bilgisi isteniyor
+- Hat işlemleri (askıya alma, aktifleştirme)
+- Roaming aktivasyonu
+
+ARAÇ GEREKTİRMEYEN DURUMLAR:
+- Genel sohbet ve selamlaşma
+- Bilgi alma ve açıklama isteme
+- Şikayetler (araç gerektirmeyen)
+- Genel sorular
+
+SADECE 'EVET' veya 'HAYIR' yanıtla. Başka hiçbir şey yazma."""
+
+        dialogue = [
+            {"role": "system", "content": decision_prompt},
+            {"role": "user", "content": f"Kullanıcı isteği: {user_input}"}
+        ]
+
+        try:
+            response = self.llm.create_chat_completion(
+                messages=dialogue, 
+                temperature=0.1,  # Tutarlı karar için düşük sıcaklık
+                max_tokens=10,    # Sadece EVET/HAYIR için
+                stop=["<|eot_id|>"],
+                repeat_penalty=1.1
+            )
+            decision = response['choices'][0]['message']['content'].strip().upper()
+            console.print(f"[italic grey50]🧠 Karar: {decision}[/italic grey50]")
+            return "EVET" in decision
+        except Exception as e:
+            console.print(f"[red]Karar verme hatası: {e}[/red]")
+            # Hata durumunda güvenli tarafta kal - araç kullanma
+            return False
+
     def handle_user_input(self, user_input: str):
         self.dialogue.append({"role": "user", "content": user_input})
         
-        # 1. Adım: Niyet Analizi (Orkestra Şefi karar verir)
-        console.print("[yellow]... Orkestra Şefi niyeti analiz ediyor ...[/yellow]")
-        # Gelişmiş niyet algılama sistemi
-        tool_keywords = ['fatura', 'paket', 'tarife', 'internet', 'roaming', 'yurt dışı', 'öde', 'iptal', 'kapat', 'sorgula', 'listele']
-        
-        # Fatura ile ilgili sorular için özel algılama
-        bill_inquiry_patterns = [
-            'faturasını öğren', 'faturamı göster', 'fatura bilgi', 'bu ayki fatura', 
-            'güncel fatura', 'fatura sorgula', 'fatura durumu', 'ne kadar borç'
-        ]
-        
-        # Temel anahtar kelime kontrolü
-        has_tool_keyword = any(keyword in user_input.lower() for keyword in tool_keywords)
-        
-        # Fatura sorgusu özel kontrolü
-        is_bill_inquiry = any(pattern in user_input.lower() for pattern in bill_inquiry_patterns)
-        
-        should_execute_tool = has_tool_keyword or is_bill_inquiry
+        # 1. Adım: YAPAY ZEKA TABANLI KARAR VERME (Anahtar kelime sistemi kaldırıldı)
+        console.print("[yellow]... Orkestra Şefi akıllı karar veriyor ...[/yellow]")
+        should_execute_tool = self._intelligent_decision(user_input)
 
         if should_execute_tool:
             # Kullanıcı girdisinden doğrudan fatura ID'si çıkar
@@ -348,7 +405,15 @@ Görevin, kullanıcıyla sohbet etmek, konuşmanın geçmişini hatırlamak ve b
     
     def handle_chat(self, last_input: str):
         # Hafızayı koruyarak normal bir sohbet yanıtı üret
-        response = self.llm.create_chat_completion(messages=self.dialogue, temperature=0.5, stop=["<|eot_id|>"])
+        response = self.llm.create_chat_completion(
+            messages=self.dialogue, 
+            temperature=0.5, 
+            stop=["<|eot_id|>"],
+            max_tokens=512,  # Sohbet için optimize edilmiş token sayısı
+            repeat_penalty=1.1,
+            top_k=40,
+            top_p=0.9
+        )
         chat_response = response['choices'][0]['message']['content']
         self.dialogue.append({"role": "assistant", "content": chat_response})
         console.print(f"🤖 [bold green]Asistan (Orkestra Şefi):[/bold green] ", end="")
@@ -357,11 +422,11 @@ Görevin, kullanıcıyla sohbet etmek, konuşmanın geçmişini hatırlamak ve b
 
 def main_loop(llm: "Llama"):
     console.print("\n" + "="*60, style="bold green")
-    console.print("🤖 [bold green]UniqeAi Telekom Agent v7.0 (Akıllı Davranış Sistemi)[/bold green]")
-    console.print("   🧠 Yeni: Akıllı ödeme - önce fatura kontrol, sonra ödeme!")
-    console.print("   ⚡ Gelişmiş: Fatura sorguları artık direkt araç çağırıyor!")
-    console.print("   🎯 İyileştirme: 'Hesap numaranızı paylaşın' hatası giderildi!")
-    console.print("   Çıkmak için 'quit' veya 'exit' yazabilirsiniz.")
+    console.print("🤖 [bold green]UniqeAi Telekom Agent v8.0 (Akıllı Karar + Performans)[/bold green]")
+    console.print("   🧠 YENİ: Yapay zeka tabanlı karar verme (anahtar kelime sistemi kaldırıldı)")
+    console.print("   ⚡ HIZLI: GPU optimizasyonu + bellek yönetimi iyileştirmesi")
+    console.print("   🎯 AKILLI: Model kendi kararını veriyor, yarışma kurallarına uygun")
+    console.print("   💡 Çıkmak için 'quit' veya 'exit' yazabilirsiniz.")
     console.print("="*60, style="bold green")
     
     manager = ConversationManager(llm)

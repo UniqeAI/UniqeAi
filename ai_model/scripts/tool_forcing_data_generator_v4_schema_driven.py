@@ -37,6 +37,9 @@ sys.path.insert(0, str(SCRIPT_DIR))
 try:
     from telekom_api_schema import API_MAP
     from tool_definitions import get_tool_definitions
+    # Pydantic modelleri import et
+    from telekom_api_schema import *
+    from pydantic import ValidationError
 except ImportError as e:
     print(f"HATA: Gerekli modüller yüklenemedi. 'telekom_api_schema.py' ve 'tool_definitions.py' dosyalarının varlığını kontrol edin.")
     print(f"Arama yolu: {SCRIPT_DIR}")

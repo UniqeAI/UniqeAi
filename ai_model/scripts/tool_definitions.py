@@ -1,19 +1,52 @@
 # -*- coding: utf-8 -*-
 """
-Merkezi Araç Tanımlama Dosyası v2.0 (Schema-Synchronized)
+Merkezi Araç Tanımlama Dosyası v3.0 (Pydantic-Validated)
 
 Bu script, telekom_api_schema.py dosyasını referans alarak LLM'lerin (özellikle Llama-3 serisi)
-anlayacağı standart "araç" (tool) formatını oluşturur. Bu sürüm, `telekom_api_schema.py`
-içindeki `API_MAP` ile tam senkronize edilmiştir.
+anlayacağı standart "araç" (tool) formatını oluşturur. Bu sürüm, Pydantic doğrulaması ile
+tam veri bütünlüğü sağlar.
 
-- Tek ve Doğru Kaynak: API şeması değiştiğinde, önce `telekom_api_schema.py` güncellenmeli,
-  sonra bu dosya onunla senkronize edilmelidir.
-- Tutarlılık: Projenin tüm aşamalarında aynı araç setinin kullanılmasını garanti eder.
+v3.0 Yenilikleri:
+- Pydantic model doğrulaması
+- Otomatik response validation
+- Schema compliance kontrolü
+- Type-safe API responses
 """
 
 import json
 import sys
 from pathlib import Path
+from typing import Dict, Any, Optional
+from pydantic import ValidationError
+
+# Pydantic modelleri import et
+try:
+    from telekom_api_schema import (
+        # Fatura & Ödeme
+        GetCurrentBillResponse, GetPastBillsResponse, PayBillResponse,
+        GetPaymentHistoryResponse, SetupAutopayResponse,
+        # Paket & Tarife
+        GetCustomerPackageResponse, GetAvailablePackagesResponse, 
+        ChangePackageResponse, GetRemainingQuotasResponse, 
+        GetPackageDetailsResponse, EnableRoamingResponse,
+        # Teknik Destek
+        CheckNetworkStatusResponse, CreateFaultTicketResponse,
+        CloseFaultTicketResponse, GetUsersTicketsResponse,
+        GetFaultTicketStatusResponse, TestInternetSpeedResponse,
+        # Hesap Yönetimi
+        GetCustomerProfileResponse, UpdateCustomerContactResponse,
+        SuspendLineResponse, ReactivateLineResponse,
+        # Gelişmiş Servisler
+        ActivateEmergencyServiceResponse, Check5GCoverageResponse,
+        CulturalContextResponse, LearningAdaptationResponse,
+        CreativeAnalysisResponse,
+        # Error Handling
+        ErrorResponse
+    )
+    PYDANTIC_AVAILABLE = True
+except ImportError as e:
+    print(f"⚠️ Pydantic modelleri yüklenemedi: {e}")
+    PYDANTIC_AVAILABLE = False
 
 def get_resource_path(relative_path: str) -> Path:
     """
@@ -27,7 +60,7 @@ def get_resource_path(relative_path: str) -> Path:
         base_path = Path(__file__).resolve().parent.parent
     return base_path / relative_path
 
-FAKE_API_RESPONSES_PATH = get_resource_path("evaluation/fake_api_responses.json")
+FAKE_API_RESPONSES_PATH = get_resource_path("evaluation/fake_api_responses_pydantic.json")
 
 MOCK_DB_RULES = {
     "invalid_user_ids": [9999, 1000],
@@ -35,6 +68,45 @@ MOCK_DB_RULES = {
     "paid_bill_ids": ["F-2025-PAID"],
     "ineligible_users_for_gamer_pro": [7001, 7002]
 }
+
+# API fonksiyonları için Pydantic model mapping'i
+API_RESPONSE_MODELS = {
+    # Fatura & Ödeme İşlemleri
+    "get_current_bill": GetCurrentBillResponse,
+    "get_past_bills": GetPastBillsResponse,
+    "pay_bill": PayBillResponse,
+    "get_payment_history": GetPaymentHistoryResponse,
+    "setup_autopay": SetupAutopayResponse,
+    
+    # Paket & Tarife Yönetimi
+    "get_customer_package": GetCustomerPackageResponse,
+    "get_available_packages": GetAvailablePackagesResponse,
+    "change_package": ChangePackageResponse,
+    "get_remaining_quotas": GetRemainingQuotasResponse,
+    "get_package_details": GetPackageDetailsResponse,
+    "enable_roaming": EnableRoamingResponse,
+    
+    # Teknik Destek & Arıza
+    "check_network_status": CheckNetworkStatusResponse,
+    "create_fault_ticket": CreateFaultTicketResponse,
+    "close_fault_ticket": CloseFaultTicketResponse,
+    "get_users_tickets": GetUsersTicketsResponse,
+    "get_fault_ticket_status": GetFaultTicketStatusResponse,
+    "test_internet_speed": TestInternetSpeedResponse,
+    
+    # Hesap & Hat Yönetimi
+    "get_customer_profile": GetCustomerProfileResponse,
+    "update_customer_contact": UpdateCustomerContactResponse,
+    "suspend_line": SuspendLineResponse,
+    "reactivate_line": ReactivateLineResponse,
+    
+    # Gelişmiş Servisler
+    "activate_emergency_service": ActivateEmergencyServiceResponse,
+    "check_5g_coverage": Check5GCoverageResponse,
+    "get_cultural_context": CulturalContextResponse,
+    "update_learning_adaptation": LearningAdaptationResponse,
+    "generate_creative_analysis": CreativeAnalysisResponse,
+} if PYDANTIC_AVAILABLE else {}
 
 def get_tool_definitions():
     """
@@ -398,29 +470,69 @@ def get_tool_definitions():
         }
     ]
 
+def validate_response_with_pydantic(function_name: str, response_data: Dict[str, Any]) -> Optional[str]:
+    """
+    Pydantic modelleri kullanarak API yanıtını doğrular.
+    
+    Args:
+        function_name: API fonksiyon adı
+        response_data: Doğrulanacak yanıt verisi
+    
+    Returns:
+        Hata mesajı (varsa), yoksa None
+    """
+    if not PYDANTIC_AVAILABLE:
+        return None
+        
+    if function_name not in API_RESPONSE_MODELS:
+        return f"⚠️ {function_name} için Pydantic modeli bulunamadı"
+    
+    try:
+        model_class = API_RESPONSE_MODELS[function_name]
+        if "data" in response_data and response_data.get("success", True):
+            # Başarılı yanıt için data kısmını doğrula
+            validated_model = model_class(**response_data["data"])
+            return None  # Doğrulama başarılı
+        else:
+            # Hata yanıtları için doğrulama yapmayız
+            return None
+    except ValidationError as e:
+        return f"❌ Pydantic Doğrulama Hatası ({function_name}): {str(e)}"
+    except Exception as e:
+        return f"❌ Beklenmeyen doğrulama hatası ({function_name}): {str(e)}"
+
 def get_tool_response(function_name: str, params: dict) -> str:
     """
-    Verilen bir fonksiyon adı ve parametreler için sahte ama akıllı bir yanıt döndürür.
-    Bu, gerçek bir API'ye ihtiyaç duymadan farklı senaryoları test etmemizi sağlar.
-    fake_api_responses.json dosyasını okur ve parametrelere göre mantıklı bir
-    yanıt (başarı veya hata) seçer.
+    Verilen bir fonksiyon adı ve parametreler için Pydantic-doğrulanmış sahte yanıt döndürür.
+    
+    v3.0 Yenilikleri:
+    - Pydantic model doğrulaması
+    - Schema compliance kontrolü
+    - Type-safe responses
+    - Detaylı hata raporlama
     """
     try:
         with open(FAKE_API_RESPONSES_PATH, 'r', encoding='utf-8') as f:
             responses = json.load(f)
 
         if function_name not in responses:
-            return json.dumps({"success": False, "error": f"Bilinmeyen fonksiyon: {function_name}"}, ensure_ascii=False, indent=2)
+            return json.dumps({
+                "success": False, 
+                "error": {
+                    "code": "UNKNOWN_FUNCTION",
+                    "message": f"Bilinmeyen fonksiyon: {function_name}"
+                }
+            }, ensure_ascii=False, indent=2)
 
         response_template = responses[function_name].get("success")
         
+        # Mock DB kurallarını uygula
         user_id = params.get("user_id")
         if function_name == "get_current_bill" and user_id in MOCK_DB_RULES["users_with_no_bill"]:
             response_template = responses[function_name]["error"]["NO_BILL"]
 
         elif function_name == "pay_bill":
             bill_id = params.get("bill_id")
-            # Sadece daha önce ödenmiş faturalar için hata ver
             if bill_id in MOCK_DB_RULES["paid_bill_ids"]:
                 response_template = responses[function_name]["error"]["BILL_NOT_FOUND"]
 
@@ -429,17 +541,43 @@ def get_tool_response(function_name: str, params: dict) -> str:
             if package_name == "Gamer Pro" and user_id in MOCK_DB_RULES["ineligible_users_for_gamer_pro"]:
                  response_template = responses[function_name]["error"]["INELIGIBLE_FOR_PACKAGE"]
 
+        elif function_name == "suspend_line" and user_id in MOCK_DB_RULES["users_with_no_bill"]:
+            # Ödenmemiş faturası olan kullanıcılar hat donduramazlar
+            response_template = responses[function_name]["error"]["OUTSTANDING_BILL"]
+
         if response_template is None:
-             return json.dumps({"success": False, "error": f"{function_name} için uygun yanıt şablonu bulunamadı."}, ensure_ascii=False, indent=2)
+             return json.dumps({
+                "success": False, 
+                "error": {
+                    "code": "NO_RESPONSE_TEMPLATE",
+                    "message": f"{function_name} için uygun yanıt şablonu bulunamadı."
+                }
+            }, ensure_ascii=False, indent=2)
 
         response_data = response_template.copy()
 
+        # Parametreleri yanıta dahil et
         if "data" in response_data and response_data["data"] is not None:
             for key, value in params.items():
                 if key in response_data["data"]:
                     response_data["data"][key] = value
 
+        # 🔥 Pydantic Doğrulaması
+        validation_error = validate_response_with_pydantic(function_name, response_data)
+        if validation_error:
+            print(f"🔴 {validation_error}")
+            # Doğrulama hatası olsa bile yanıtı döndür (geliştirme aşamasında)
+            response_data["_pydantic_validation_error"] = validation_error
+        else:
+            print(f"✅ Pydantic doğrulaması başarılı: {function_name}")
+
         return json.dumps(response_data, ensure_ascii=False, indent=2)
 
     except (FileNotFoundError, json.JSONDecodeError, KeyError) as e:
-        return json.dumps({"success": False, "error": f"API yanıtı işlenirken hata oluştu: {e}"}, ensure_ascii=False, indent=2)
+        return json.dumps({
+            "success": False, 
+            "error": {
+                "code": "API_PROCESSING_ERROR",
+                "message": f"API yanıtı işlenirken hata oluştu: {e}"
+            }
+        }, ensure_ascii=False, indent=2)
