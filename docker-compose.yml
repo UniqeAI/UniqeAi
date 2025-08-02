@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./backend:/app
+    networks:
+      - uniqueai-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - uniqueai-network
+
+networks:
+  uniqueai-network:
+    driver: bridge 
