@@ -1,222 +1,163 @@
-# 🤖 UniqeAi
+# 🤖 UniqueAi Projesi
 
-Modern ve akıllı telekom müşteri hizmetleri AI agent'i. Bu proje, bireysel telekom müşterilerine 7/24 destek sağlayan, duygusal zeka sahibi ve tahmine dayalı mesajlaşma yapabilen gelişmiş bir AI assistant'tır.
-
-## 🎯 Proje Özellikleri
-
-### Core Features
-- 🧠 **Akıllı Sohbet**: Doğal dil işleme ile müşteri sorularını anlama
-- 😊 **Duygu Analizi**: Müşteri duygularını tespit etme ve buna göre yanıt verme
-- 🔮 **Tahmine Dayalı Mesajlaşma**: Gelecek müşteri ihtiyaçlarını öngörme
-- ⚡ **Real-time İşlemler**: Anlık fatura, paket ve destek işlemleri
-- 📊 **Kapsamlı Dashboard**: Yönetici paneli ve analytics
-
-### Telekom İşlemleri
-- 📱 Fatura sorgulama ve ödeme
-- 📦 Paket değişimi ve yönetimi
-- 🔧 Teknik destek ve arıza bildirimi
-- 💰 Kampanya ve promosyon yönetimi
-- 📞 Hat işlemleri ve numarahanı
-- 🌐 İnternet ve Wi-Fi destek
-
-## 🛠 Technology Stack
-
-### Backend
-- **Python 3.11+** - Core backend language
-- **FastAPI** - Modern async web framework
-- **SQLAlchemy** - ORM for database operations
-- **PostgreSQL** - Production database
-- **SQLite** - Development database
-- **Pydantic** - Data validation
-- **Alembic** - Database migrations
-
-### AI & ML
-- **Ollama** - Local LLM inference
-- **Llama 3.1** - Base language model
-- **Transformers** - Hugging Face model library
-- **Sentence-Transformers** - Embedding generation
-- **Scikit-learn** - Traditional ML algorithms
-- **NLTK/spaCy** - Natural language processing
-
-### Frontend
-- **React 18** - UI library
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Query** - Server state management
-- **Zustand** - Client state management
-- **React Hook Form** - Form handling
-
-### DevOps & Deployment
-- **Docker** - Containerization
-- **Docker Compose** - Multi-service orchestration
-- **Railway** - Cloud deployment platform
-- **GitHub Actions** - CI/CD pipeline
-- **Nginx** - Reverse proxy (production)
-- **Redis** - Caching and session storage
-
-## 🏗 Proje Mimarisi
-
-```
-telekom-ai-agent/
-├── backend/                 # Python backend
-│   ├── app/
-│   │   ├── core/           # Core configurations
-│   │   ├── api/            # API routes
-│   │   ├── models/         # Database models
-│   │   ├── services/       # Business logic
-│   │   ├── schemas/        # Pydantic schemas
-│   │   └── utils/          # Utility functions
-│   ├── alembic/            # Database migrations
-│   ├── tests/              # Backend tests
-│   └── requirements.txt    # Python dependencies
-├── frontend/               # React frontend
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom hooks
-│   │   ├── store/          # State management
-│   │   ├── services/       # API services
-│   │   ├── types/          # TypeScript types
-│   │   └── utils/          # Utility functions
-│   ├── public/             # Static files
-│   └── package.json        # Node dependencies
-├── mock-api/               # Mock telekom API
-├── ai-models/              # AI model files
-├── docs/                   # Documentation
-├── scripts/                # Development scripts
-└── docker-compose.yml      # Development environment
-```
+> **Proje Durumu:** ✅ Tam Entegrasyon Tamamlandı  
+> **Backend:** FastAPI + AI Model (Mock/Real)  
+> **Frontend:** Streamlit + API Client  
+> **AI Model:** Mock AI / Hugging Face Model
 
 ## 🚀 Hızlı Başlangıç
 
-### Gereksinimler
-- **Python 3.11+**
-- **Node.js 18+**
-- **Docker & Docker Compose**
-- **Git**
-
-### Kurulum
+### 1. Docker Compose ile Tüm Sistemi Başlat
 ```bash
-# Repository'yi klonla
-git clone <repository-url>
-cd telekom-ai-agent
+# Proje kök dizininde
+# (İlk defa çalıştırıyorsan)
+docker-compose build
+# Servisleri başlat
+docker-compose up
+```
+- Backend: http://localhost:8000
+- Frontend: http://localhost:8501
 
-# Environment variables ayarla
-cp .env.example .env
-
-# Docker ile tüm servisleri başlat
-docker-compose up -d
-
-# Ya da manuel kurulum:
-# Backend kurulum
+### 2. Manuel Başlatma (Geliştiriciler için)
+#### Backend
+```bash
 cd backend
 pip install -r requirements.txt
-uvicorn app.main:app --reload
-
-# Frontend kurulum
+# Mock AI ile (varsayılan)
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+# Gerçek AI ile
+AI_MODEL_TYPE=real uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+#### Frontend
+```bash
 cd frontend
-npm install
-npm run dev
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
-## 👥 Ekip Rolleri ve Odak Alanları
+### 3. Tarayıcıda Aç
+```
+http://localhost:8501
+```
 
-Projenin farklı fazlarında ekip üyeleri çeşitli görevlere odaklanacaktır.
+## 🧑‍💻 Test Kullanıcıları
+- **Müşteri:**
+  - Ad Soyad: Müşteri Müşteri
+  - E-posta: musteri@choyrens.com
+  - Telefon: 01234567890
+  - Şifre: testşifre
+- (Kendi kaydınızı da oluşturabilirsiniz)
 
-1.  **Tech Lead**: Proje mimarisi, fazlar arası koordinasyon ve nihai entegrasyon.
-2.  **AI Specialist 1 (Fine-Tuning & Core Logic)**: Llama 3.1 modelinin senaryolara özel eğitimi, prompt mühendisliği ve temel AI mantığı.
-3.  **AI Specialist 2 (NLP & Advanced Features)**: Zemberek entegrasyonu, duygu analizi ve tahminsel mesajlaşma gibi ileri seviye özellikler.
-4.  **Backend Developer 1 (API & DB)**: FastAPI ile core API geliştirme, PostgreSQL entegrasyonu ve veritabanı yönetimi.
-5.  **Backend Developer 2 (Mock API & Services)**: Ön sunum için mock telekom API'sinin geliştirilmesi ve diğer servis entegrasyonları.
-6.  **Frontend Developer (UI/UX)**: React ile kullanıcı arayüzünün ve yönetici panelinin geliştirilmesi.
-7.  **QA & DevOps Engineer**: Test senaryolarının yazılması, Docker yönetimi, CI/CD pipeline kurulumu ve dokümantasyon.
+## 📋 Özellikler
 
-## 📅 Geliştirme Yol Haritası (6 Hafta)
+### ✅ Tamamlanan Entegrasyonlar
+- **Backend → AI Model**: Hugging Face model entegrasyonu (mock/real)
+- **Frontend → Backend**: API client ile tam entegrasyon
+- **Chat Sistemi**: Gerçek zamanlı AI sohbet
+- **Telekom API**: Fatura, paket, destek işlemleri
+- **Health Checks**: Sistem durumu kontrolü
+- **Çerezli Oturum Yönetimi**: Girişte oturum çerezde saklanır, sayfa yenilense bile oturum açık kalır
 
-### **Faz 1: Ön Sunum MVP'si (Hafta 1-2)**
+### 🤖 AI Entegrasyonu (Gerçek Model)
+1. Gerekli paketleri yükle:
+   ```bash
+   pip install transformers torch accelerate bitsandbytes datasets peft trl
+   ```
+2. `backend/app/services/ai_orchestrator.py` dosyasında şu satırı değiştir:
+   ```python
+   # Mock AI (varsayılan):
+   from .ai_orchestrator_real import MockInferenceService as InferenceService
+   # Gerçek AI için:
+   from .ai_orchestrator_real import HuggingFaceInferenceService as InferenceService
+   InferenceService = HuggingFaceInferenceService
+   ```
+3. Gerekirse model adını ve parametreleri `backend/app/core/config.py`'de ayarla.
+4. Backend'i gerçek AI ile başlat:
+   ```bash
+   AI_MODEL_TYPE=real uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
+5. Chat endpointini test et.
 
-**Hedef:** Jüriye sunulabilecek, temel bir senaryoyu (fatura sorgulama) baştan sona çalıştıran bir prototip oluşturmak. Arayüz bu aşamada `FastAPI`'nin otomatik `/docs` sayfası olacaktır.
+### 💻 Frontend Özellikleri
+- **Modern UI**: Streamlit ile responsive tasarım
+- **Gerçek Zamanlı Chat**: Anlık mesajlaşma
+- **Çerezli Oturum**: Girişte oturum çerezde saklanır, sayfa yenilense bile oturum açık kalır
+- **API Adresi Ayarı**: `frontend/utils/api_client.py` içinde `base_url` ile backend adresini değiştirebilirsin.
 
--   **Hafta 1: Kurulum ve Temel Entegrasyon**
-    -   [ ] Proje iskeletinin ve `docker-compose.yml` dosyasının oluşturulması.
-    -   [ ] `FastAPI` ile temel API endpoint'lerinin ve `Pydantic` şemalarının hazırlanması.
-    -   [ ] Sahte müşteri ve fatura verilerini sunacak `Mock API`'nin geliştirilmesi.
-    -   [ ] `Llama 3.1` modelinin `Transformers` ile yerel olarak çalıştırılıp API'ye bağlanması.
--   **Hafta 2: İlk Senaryo ve Sunum Hazırlığı**
-    -   [ ] **"Fatura Sorgulama" Senaryosu:**
-        -   [ ] Kullanıcı girdisini `Zemberek` ile işleme.
-        -   [ ] Prompt mühendisliği ile kullanıcının "fatura sorma" niyetini tespit etme.
-        -   [ ] AI'ın Mock API'den veri alıp anlamlı bir cevap üretmesini sağlama.
-    -   [ ] Ön sunum için baştan sona testler ve dokümantasyonun hazırlanması.
+### 🏗️ Mimari
+```
+[Streamlit Frontend] ←→ [FastAPI Backend] ←→ [AI Model (Mock/Real)]
+      (HTTP API)              (AI Orchestrator)        (Telekom API)
+```
 
-### **Faz 2: Çekirdek Ürün Geliştirme (Hafta 3-4)**
+## 📁 Proje Yapısı
+```
+UniqeAi-feature-backend-correction/
+├── backend/
+│   ├── app/
+│   │   ├── api/v1/
+│   │   │   ├── chat.py          # Chat endpoints
+│   │   │   ├── telekom.py       # Telekom API
+│   │   │   └── user.py          # User management
+│   │   ├── services/
+│   │   │   ├── ai_orchestrator.py  # AI model entegrasyonu
+│   │   │   ├── telekom_api.py      # Telekom API
+│   │   │   └── user_service.py     # User service
+│   │   └── main.py              # FastAPI app
+│   └── requirements.txt
+├── frontend/
+│   ├── app.py                   # Streamlit app
+│   ├── utils/
+│   │   └── api_client.py        # API client
+│   └── requirements.txt
+├── docker-compose.yml           # Tüm sistemi başlatır
+└── README.md
+```
 
-**Hedef:** Prototipi, tam özellikli bir backend ve çalışan bir frontend ile gerçek bir uygulamaya dönüştürmeye başlamak.
+## 🔧 API Adresi Ayarı (Frontend)
+- `frontend/utils/api_client.py` dosyasında:
+  ```python
+  class TelekomAPIClient:
+      def __init__(self, base_url: str = "http://localhost:8000"):
+          self.base_url = base_url
+  ```
+- Eğer frontend ve backend farklı makinelerde ise, burada backend'in IP adresini girin.
 
--   **Hafta 3: Sağlam Backend ve Veritabanı**
-    -   [ ] `SQLite`'tan `PostgreSQL`'e geçiş, `SQLAlchemy` modellerinin ve `Alembic` ile migration'ların oluşturulması.
-    -   [ ] Gelişmiş API mantığı (kullanıcı yönetimi, daha karmaşık işlemler).
-    -   [ ] `React` ve `TypeScript` ile frontend projesinin temel kurulumu, `Vite` ve `Tailwind CSS` konfigürasyonu.
--   **Hafta 4: Frontend ve Gelişmiş AI Senaryoları**
-    -   [ ] Temel frontend bileşenlerinin (sohbet penceresi, login sayfası) geliştirilmesi.
-    -   [ ] Frontend'in `React Query` ile backend API'sine bağlanması.
-    -   [ ] **"Tarife Değişikliği" Senaryosu:** Bağlam yönetimi gerektiren çok adımlı diyalog akışlarının geliştirilmesi.
-    -   [ ] Duygu analizi için ilk denemelerin yapılması.
+## 🗄️ Kullanıcı Verisi ve Kalıcılık
+- **Şu an:** Kullanıcılar RAM'de tutulur, backend yeniden başlatılırsa silinir.
+- **Kalıcı veri için:** SQLite, PostgreSQL gibi bir veritabanı entegre edilebilir.
+- Geliştirme/test için uygundur, prod ortamda veritabanı önerilir.
 
-### **Faz 3: İleri Seviye Özellikler ve Optimizasyon (Hafta 5-6)**
+## 🧪 Test
 
-**Hedef:** Projeyi jüriyi etkileyecek gelişmiş özelliklerle donatmak, test etmek ve sunuma hazır hale getirmek.
+### Entegrasyon Testi
+```bash
+python test_integration.py
+```
 
--   **Hafta 5: Tam Entegrasyon ve "Wow" Özellikleri**
-    -   [ ] Frontend ve backend'in tam entegrasyonu, UI/UX iyileştirmeleri (`Framer Motion`).
-    -   [ ] Duygu analizi modelinin entegre edilerek ajanın cevaplarının dinamikleştirilmesi.
-    -   [ ] Tahmine dayalı mesajlaşma özelliğinin prototipinin geliştirilmesi.
-    -   [ ] Kapsamlı backend ve frontend testlerinin yazılması.
--   **Hafta 6: Optimizasyon, Dağıtım ve Final Hazırlık**
-    -   [ ] Performans optimizasyonu (API yanıt süreleri, veritabanı sorguları).
-    -   [ ] `GitHub Actions` ile temel bir CI/CD pipeline'ı kurma.
-    -   [ ] `Railway` veya benzeri bir platforma dağıtım denemeleri.
-    -   [ ] Güvenlik kontrolleri ve son rötuşlar.
-    -   [ ] Nihai proje sunumunun ve teknik dokümantasyonun hazırlanması.
+### Manuel Test
+1. Backend'i başlat
+2. Frontend'i başlat
+3. Tarayıcıda chat sayfasına git
+4. Test mesajları gönder:
+   - "Faturamı gösterir misin?"
+   - "Hangi paketi kullanıyorum?"
+   - "İnternetimde sorun var"
 
-## 🧪 Test Edilecek Senaryolar
+## 📞 Destek
+- **Backend Sorunları**: `backend/app/main.py`
+- **Frontend Sorunları**: `frontend/app.py`
+- **AI Model Sorunları**: `backend/app/services/ai_orchestrator.py`
+- **API Sorunları**: `test_integration.py`
 
-### Temel İşlemler
-- Fatura sorgulama ve ödeme
-- Paket değişimi
-- Teknik destek talepleri
-- Arıza bildirimi
-
-### Duygusal Durumlar
-- Müşteri memnuniyetsizliği
-- Acil durum talepleri
-- Şikayet yönetimi
-- Pozitif feedback
-
-### Kompleks Senaryolar
-- Multi-step işlemler
-- Kampanya önerileri
-- Upselling/cross-selling
-- Escalation durumları
-
-## 📈 Success Metrics
-
-- **Response Time**: < 2 saniye
-- **Accuracy**: > 90% doğru yanıt
-- **Customer Satisfaction**: > 8/10
-- **Issue Resolution**: > 85% first contact
-- **Emotion Detection**: > 80% accuracy
-
-## 🔒 Security & Compliance
-
-- End-to-end encryption
-- GDPR compliance
-- Data anonymization
-- Secure API authentication
-- Audit logging
+## 🎯 Gelecek Geliştirmeler
+- [ ] WebSocket ile gerçek zamanlı chat
+- [ ] Kullanıcı kimlik doğrulama
+- [ ] Çoklu dil desteği
+- [ ] Ses tanıma entegrasyonu
+- [ ] Mobil uygulama
+- [ ] Analytics dashboard
 
 ---
 
-**Not**: Bu proje AI assistance ile geliştirilmektedir. Her commit professional standartlarda kod review'dan geçmektedir. 
+**🎉 Entegrasyon Tamamlandı!** Sistem kullanıma hazır. 
