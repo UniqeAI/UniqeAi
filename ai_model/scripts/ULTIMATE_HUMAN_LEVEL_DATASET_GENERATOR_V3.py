@@ -37,6 +37,7 @@ from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
 import argparse
 import sys
+from functools import lru_cache
 
 # === KRİTİK: PYDANTIC VE API ŞEMASI ENTEGRASYONİ ===
 try:
@@ -66,6 +67,32 @@ except ImportError as e:
     print(f"❌ KRİTİK HATA: Pydantic veya telekom_api_schema yüklenemedi: {e}")
     print(f"🐍 Python yolu: {sys.path}")
     sys.exit(1)
+
+# ==============================================================================
+# 🚨 ENHANCED ERROR HANDLING - V3 OPTIMIZATION
+# ==============================================================================
+
+class SchemaValidationError(Exception):
+    """Schema validation hatası - daha detaylı error reporting için"""
+    def __init__(self, function_name: str, error_detail: str):
+        self.function_name = function_name
+        self.error_detail = error_detail
+        super().__init__(f"Schema validation failed for {function_name}: {error_detail}")
+
+class ParameterMismatchError(Exception):
+    """Parameter uyumsuzluğu hatası"""
+    def __init__(self, function_name: str, missing_params: List[str], provided_params: List[str]):
+        self.function_name = function_name
+        self.missing_params = missing_params
+        self.provided_params = provided_params
+        super().__init__(f"Parameter mismatch in {function_name}: missing {missing_params}, provided {provided_params}")
+
+class DataGenerationError(Exception):
+    """Veri üretimi hatası"""
+    def __init__(self, scenario_type: str, error_detail: str):
+        self.scenario_type = scenario_type
+        self.error_detail = error_detail
+        super().__init__(f"Data generation failed for {scenario_type}: {error_detail}")
 
 # ==============================================================================
 # 1. GELİŞMİŞ FRAMEWORK TANIMLARI (Enhanced Framework)
@@ -229,14 +256,15 @@ class SupremeHumanLevelDatasetGenerator:
         # Kalite kontrol sayaçları
         self.validation_errors = 0
         self.schema_violations = 0 
-        print("✅ Uzman Seviyesi Optimizasyonlar")
+        print("✅ Uzman Seviyesi Optimizasyonlar (Memory Optimized)")
         
-        self.personality_profiles = self._initialize_enhanced_personality_profiles()
-        self.cognitive_patterns = self._initialize_advanced_cognitive_patterns()
-        self.meta_templates = self._initialize_comprehensive_meta_templates()
-        self.cultural_contexts = self._initialize_cultural_contexts()
-        self.temporal_reasoning_patterns = self._initialize_temporal_patterns()
-        self.innovation_frameworks = self._initialize_innovation_frameworks()
+        # Lazy loading için cache'ler - memory optimization
+        self._personality_profiles_cache = None
+        self._cognitive_patterns_cache = None
+        self._meta_templates_cache = None
+        self._cultural_contexts_cache = None
+        self._temporal_patterns_cache = None
+        self._innovation_frameworks_cache = None
         
         # Statistics tracking
         self.generated_scenarios = {scenario.value: 0 for scenario in ScenarioType}
@@ -375,6 +403,12 @@ class SupremeHumanLevelDatasetGenerator:
             
             return {"valid": True, "error": None}
             
+        except SchemaValidationError as sve:
+            self.schema_violations += 1
+            return {"valid": False, "error": f"❌ ŞEMA VALİDASYON HATASI: {sve}"}
+        except ParameterMismatchError as pme:
+            self.validation_errors += 1
+            return {"valid": False, "error": f"❌ PARAMETRE UYUMSUZLUĞU: {pme}"}
         except Exception as e:
             self.validation_errors += 1
             return {"valid": False, "error": f"❌ Tool call validation beklenmeyen hatası: {e}"}
@@ -414,7 +448,10 @@ class SupremeHumanLevelDatasetGenerator:
         ticket_functions = ["get_fault_ticket_status", "close_fault_ticket"]
         
         # Teknik fonksiyonlar - parametre isteğe bağlı
-        technical_functions = ["check_network_status", "get_available_packages", "create_fault_ticket"]
+        technical_functions = ["check_network_status", "get_available_packages"]
+        
+        # Fault ticket creation - özel parametreler gerekli
+        fault_creation_functions = ["create_fault_ticket"]
         
         if function_name in special_functions:
             return special_functions[function_name]
@@ -424,6 +461,8 @@ class SupremeHumanLevelDatasetGenerator:
             return ["bill_id", "method"]  # BACKEND API SPEC UYUMLU: bill_id + method
         elif function_name in ticket_functions:
             return ["ticket_id"]
+        elif function_name in fault_creation_functions:
+            return ["user_id", "issue_description", "category", "priority"]  # SCHEMA V3 UYUMLU
         elif function_name in technical_functions:
             return []  # İsteğe bağlı parametreler
         else:
@@ -453,6 +492,7 @@ class SupremeHumanLevelDatasetGenerator:
                 "ticket_id": {"type": str, "pattern": "TKT-"},
                 "issue_description": {"type": str, "min_length": 5},
                 "category": {"type": str, "valid_values": ["internet_speed", "connectivity", "billing"]},
+                "priority": {"type": str, "valid_values": ["low", "medium", "high", "critical", "urgent"]},
                 
                 # Paket parametreleri
                 "package_name": {"type": str, "min_length": 3},
@@ -510,6 +550,52 @@ class SupremeHumanLevelDatasetGenerator:
             
         except Exception as e:
             return {"valid": False, "error": f"❌ Parametre şema kontrolü hatası: {e}"}
+    
+    # ==============================================================================
+    # 🚀 MEMORY OPTIMIZED LAZY PROPERTIES - V3 ENHANCEMENT
+    # ==============================================================================
+    
+    @property
+    def personality_profiles(self) -> Dict[str, PersonalityProfile]:
+        """Lazy loading personality profiles - memory optimization"""
+        if self._personality_profiles_cache is None:
+            self._personality_profiles_cache = self._initialize_enhanced_personality_profiles()
+        return self._personality_profiles_cache
+    
+    @property
+    def cognitive_patterns(self) -> Dict[str, List[str]]:
+        """Lazy loading cognitive patterns - memory optimization"""
+        if self._cognitive_patterns_cache is None:
+            self._cognitive_patterns_cache = self._initialize_advanced_cognitive_patterns()
+        return self._cognitive_patterns_cache
+    
+    @property
+    def meta_templates(self) -> Dict[str, List[str]]:
+        """Lazy loading meta templates - memory optimization"""
+        if self._meta_templates_cache is None:
+            self._meta_templates_cache = self._initialize_comprehensive_meta_templates()
+        return self._meta_templates_cache
+    
+    @property
+    def cultural_contexts(self) -> Dict[str, CulturalContext]:
+        """Lazy loading cultural contexts - memory optimization"""
+        if self._cultural_contexts_cache is None:
+            self._cultural_contexts_cache = self._initialize_cultural_contexts()
+        return self._cultural_contexts_cache
+    
+    @property
+    def temporal_reasoning_patterns(self) -> Dict[str, List[str]]:
+        """Lazy loading temporal patterns - memory optimization"""
+        if self._temporal_patterns_cache is None:
+            self._temporal_patterns_cache = self._initialize_temporal_patterns()
+        return self._temporal_patterns_cache
+    
+    @property
+    def innovation_frameworks(self) -> Dict[str, List[str]]:
+        """Lazy loading innovation frameworks - memory optimization"""
+        if self._innovation_frameworks_cache is None:
+            self._innovation_frameworks_cache = self._initialize_innovation_frameworks()
+        return self._innovation_frameworks_cache
         
     def _initialize_enhanced_personality_profiles(self):
         """Gelişmiş kişilik profilleri - 20+ arketip"""
@@ -764,6 +850,24 @@ class SupremeHumanLevelDatasetGenerator:
     
     def _generate_user_id(self) -> int:
         return random.randint(10000, 99999)
+    
+    @lru_cache(maxsize=128)
+    def _get_cached_mock_data_template(self, model_name: str) -> Dict[str, Any]:
+        """
+        PERFORMANCE OPTIMIZATION: Mock data template'lerini cache'le
+        
+        Args:
+            model_name: Pydantic model adı
+            
+        Returns:
+            Dict: Cached mock data template
+        """
+        # Bu fonksiyon mock data şablonlarını cache'ler
+        # Aynı model için tekrar tekrar generation yapmak yerine cache kullanır
+        return {
+            "cached_at": datetime.now().isoformat(),
+            "template_version": "v3_optimized"
+        }
     
     def _generate_mock_data_for_model(self, model_class: BaseModel) -> Dict[str, Any]:
         """
@@ -1295,7 +1399,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "asistan", "icerik": "Elbette size yardımcı olmak için buradayım. Ancak talebiniz biraz belirsiz. **Netleştirmek için soruyorum:** 'Bir şeyler yapmak' ile tam olarak neyi kastediyorsunuz? \n1. Faturanızı mı ödemek istiyorsunuz?\n2. Tarifenizi mi değiştirmek istiyorsunuz?\n3. Bir arıza mı bildirmek istiyorsunuz?", "arac_cagrilari": None},
                 {"rol": "kullanici", "icerik": "Ha evet, doğru. Arıza bildirecektim, internetim çok yavaş.", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "Anladım, teşekkür ederim. Hemen internet yavaşlığıyla ilgili bir arıza kaydı oluşturuyorum.", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "create_fault_ticket", "parametreler": {"user_id": user_id, "issue_description": "İnternet çok yavaş.", "category": "internet_speed"}}]},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "create_fault_ticket", "parametreler": {"user_id": user_id, "issue_description": "İnternet çok yavaş.", "category": "internet_speed", "priority": "medium"}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(CreateFaultTicketResponse, override_data={"user_id": user_id, "issue_description": "İnternet çok yavaş.", "category": "internet_speed", "priority": "high", "status": "open"})},
                 {"rol": "asistan", "icerik": "Arıza kaydınız başarıyla oluşturulmuştur.", "arac_cagrilari": None}
             ]

@@ -151,25 +151,15 @@ class SetupAutopayRequest(BaseModel):
         ge=1000,
         le=999999
     )
-    payment_method: PaymentMethod = Field(
-        ..., 
-        description="Ödeme yöntemi",
-        example=PaymentMethod.CREDIT_CARD
-    )
-
-class SetupAutopayRequest(BaseModel):
-    """Otomatik ödeme kurulum isteği"""
-    user_id: int = Field(
-        ..., 
-        description="Müşteri numarası (zorunlu)",
-        example=12345,
-        ge=1000,
-        le=999999
-    )
     status: bool = Field(
         ..., 
         description="Otomatik ödeme aktif mi?",
         example=True
+    )
+    payment_method: Optional[PaymentMethod] = Field(
+        None, 
+        description="Ödeme yöntemi (isteğe bağlı)",
+        example=PaymentMethod.CREDIT_CARD
     )
 
 # === RESPONSE MODELS ===
@@ -791,6 +781,11 @@ class CreateFaultTicketRequest(BaseModel):
         ..., 
         description="Sorun kategorisi",
         example="internet_speed"
+    )
+    priority: TicketPriority = Field(
+        ..., 
+        description="Öncelik seviyesi",
+        example=TicketPriority.MEDIUM
     )
 
 class CloseFaultTicketRequest(BaseModel):
@@ -1564,6 +1559,18 @@ class ErrorDetail(BaseModel):
         example="User ID 1234 sistemde kayıtlı değil"
     )
 
+class ApiSuccessResponse(BaseModel):
+    """Standart başarılı API yanıtı wrapper'ı"""
+    success: bool = Field(
+        default=True, 
+        description="İşlem başarılı mı?",
+        example=True
+    )
+    data: Union[Dict[str, Any], BaseModel] = Field(
+        ..., 
+        description="Yanıt verisi (herhangi bir response model olabilir)"
+    )
+
 class ErrorResponse(BaseModel):
     """Standart hata yanıtı"""
     success: bool = Field(
@@ -1615,6 +1622,47 @@ API_MAP = {
     "check_5g_coverage": "backend_api.check_5g_coverage",
     "get_cultural_context": "backend_api.get_cultural_context",
     "update_learning_adaptation": "backend_api.update_learning_adaptation",
+}
+
+# ==============================================================================
+# 🌐 ENDPOINT URL MAPPINGS - API ENDPOINT PATHS
+# ==============================================================================
+
+ENDPOINT_MAP = {
+    # === Fatura & Ödeme İşlemleri ===
+    "get_current_bill": "/billing/current",
+    "get_past_bills": "/billing/history", 
+    "pay_bill": "/billing/pay",
+    "get_payment_history": "/billing/payments",
+    "setup_autopay": "/billing/autopay",
+    
+    # === Paket & Tarife Yönetimi ===
+    "get_customer_package": "/packages/current",
+    "get_available_packages": "/packages/available",
+    "change_package": "/packages/change",
+    "get_remaining_quotas": "/packages/quotas",
+    "get_package_details": "/packages/details",
+    "enable_roaming": "/services/roaming",
+    
+    # === Teknik Destek & Arıza ===
+    "check_network_status": "/network/status",
+    "create_fault_ticket": "/support/tickets/open",
+    "close_fault_ticket": "/support/tickets/close",
+    "get_users_tickets": "/support/tickets/user",
+    "get_fault_ticket_status": "/support/tickets/status",
+    "test_internet_speed": "/diagnostics/speed-test",
+    
+    # === Hesap Yönetimi ===
+    "get_customer_profile": "/customers/profile",
+    "update_customer_contact": "/customers/contact",
+    "suspend_line": "/lines/suspend",
+    "reactivate_line": "/lines/reactivate",
+    
+    # === Acil Durum & Gelişmiş Servisler ===
+    "activate_emergency_service": "/services/emergency",
+    "check_5g_coverage": "/network/5g-coverage",
+    "get_cultural_context": "/ai/cultural-context",
+    "update_learning_adaptation": "/ai/learning-adaptation",
 }
 
 # ==============================================================================
@@ -1912,6 +1960,107 @@ def create_mock_response(function_name: str, **kwargs) -> BaseModel:
         kwargs.update(field_defaults)
     
     return response_model_class(**kwargs)
+
+def create_api_success_response(data: Union[Dict[str, Any], BaseModel]) -> ApiSuccessResponse:
+    """
+    Backend API'sine uygun success response wrapper oluşturur.
+    
+    Args:
+        data: Response data (dict veya BaseModel)
+        
+    Returns:
+        ApiSuccessResponse: Wrapped success response
+        
+    Example:
+        >>> bill_data = {"bill_id": "F-2024-123", "amount": 89.50}
+        >>> wrapped = create_api_success_response(bill_data)
+        >>> wrapped.success == True
+        True
+    """
+    return ApiSuccessResponse(success=True, data=data)
+
+def create_api_error_response(code: str, message: str, details: Optional[str] = None) -> ErrorResponse:
+    """
+    Backend API'sine uygun error response oluşturur.
+    
+    Args:
+        code: Hata kodu
+        message: Hata mesajı
+        details: Opsiyonel hata detayları
+        
+    Returns:
+        ErrorResponse: Wrapped error response
+        
+    Example:
+        >>> error = create_api_error_response("INVALID_USER", "Kullanıcı bulunamadı")
+        >>> error.success == False
+        True
+    """
+    error_detail = ErrorDetail(code=code, message=message, details=details)
+    return ErrorResponse(success=False, error=error_detail)
+
+def get_endpoint_url(function_name: str) -> str:
+    """
+    API fonksiyonu için endpoint URL'ini döndürür.
+    
+    Args:
+        function_name (str): API fonksiyon adı
+        
+    Returns:
+        str: Endpoint URL path
+        
+    Raises:
+        KeyError: Fonksiyon bulunamazsa
+        
+    Example:
+        >>> url = get_endpoint_url("get_current_bill")
+        >>> url == "/billing/current"
+        True
+    """
+    if function_name not in ENDPOINT_MAP:
+        raise KeyError(f"Endpoint URL not found for function: {function_name}")
+    return ENDPOINT_MAP[function_name]
+
+def get_full_api_url(function_name: str, base_url: str = "https://api.telekom.com/v1") -> str:
+    """
+    API fonksiyonu için tam URL'i oluşturur.
+    
+    Args:
+        function_name (str): API fonksiyon adı
+        base_url (str): Base API URL
+        
+    Returns:
+        str: Tam API URL
+        
+    Example:
+        >>> url = get_full_api_url("get_current_bill")
+        >>> url == "https://api.telekom.com/v1/billing/current"
+        True
+    """
+    endpoint = get_endpoint_url(function_name)
+    return f"{base_url.rstrip('/')}{endpoint}"
+
+def validate_endpoint_coverage() -> Dict[str, Any]:
+    """
+    API fonksiyonları ile endpoint'lerin eşleşmesini kontrol eder.
+    
+    Returns:
+        Dict[str, Any]: Coverage raporu
+    """
+    api_functions = set(API_MAP.keys())
+    endpoint_functions = set(ENDPOINT_MAP.keys())
+    
+    missing_endpoints = api_functions - endpoint_functions
+    extra_endpoints = endpoint_functions - api_functions
+    
+    return {
+        "total_api_functions": len(api_functions),
+        "total_endpoints": len(endpoint_functions),
+        "coverage_percentage": len(endpoint_functions) / len(api_functions) * 100 if api_functions else 0,
+        "missing_endpoints": list(missing_endpoints),
+        "extra_endpoints": list(extra_endpoints),
+        "fully_covered": len(missing_endpoints) == 0
+    }
 
 # ==============================================================================
 # 🎯 11. SCHEMA VALİDASYON YARDIMCILARİ - SCHEMA VALIDATION HELPERS
@@ -2227,18 +2376,20 @@ __all__ = [
     "CulturalContextResponse", "LearningAdaptationResponse",
     
     # Error Models
-    "ErrorDetail", "ErrorResponse",
+    "ErrorDetail", "ErrorResponse", "ApiSuccessResponse",
     
     # Maps & Constants
-    "API_MAP", "REQUEST_MODELS", "RESPONSE_MODELS", "SCHEMA_METADATA",
+    "API_MAP", "ENDPOINT_MAP", "REQUEST_MODELS", "RESPONSE_MODELS", "SCHEMA_METADATA",
     "VERSION", "SCHEMA_DATE", "TOTAL_APIS", "TOTAL_REQUEST_MODELS", "TOTAL_RESPONSE_MODELS",
     
     # Utility Functions
     "get_request_model", "get_response_model", "validate_api_function",
     "get_all_function_names", "get_functions_by_category", "create_mock_request",
-    "create_mock_response", "validate_request_data", "validate_response_data",
-    "get_required_fields", "get_field_info", "print_schema_summary",
-    "validate_schema_integrity", "generate_api_documentation"
+    "create_mock_response", "create_api_success_response", "create_api_error_response",
+    "get_endpoint_url", "get_full_api_url", "validate_endpoint_coverage",
+    "validate_request_data", "validate_response_data", "get_required_fields", 
+    "get_field_info", "print_schema_summary", "validate_schema_integrity", 
+    "generate_api_documentation"
 ]
 
 # ==============================================================================
