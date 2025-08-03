@@ -315,6 +315,7 @@ class SupremeHumanLevelDatasetGenerator:
 
         }
 
+
     def _validate_tool_call(self, function_name: str, parameters: Dict[str, Any]) -> Dict[str, Any]:
         """
         SUPREME V3 + ENTERPRISE SCHEMA INTEGRATION: GELİŞMİŞ TOOL CALL VALİDASYONU
@@ -2173,7 +2174,7 @@ def main():
     parser.add_argument(
         "--num-samples", 
         type=int, 
-        default=25000, 
+        default=10000, 
         help="Üretilecek toplam veri örneği sayısı."
     )
     parser.add_argument(
