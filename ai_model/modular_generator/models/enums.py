@@ -8,6 +8,7 @@ Bu modül, SupremeHumanLevelDatasetGenerator için tüm enum tanımlarını içe
 
 from enum import Enum
 
+
 class ScenarioType(Enum):
     # Mevcut senaryolar
     STANDARD = "standard"
@@ -99,4 +100,4 @@ class EmotionalContext(Enum):
     PROTECTIVE = "protective"        # Koruyucu
     AMBITIOUS = "ambitious"          # Hırslı
     CONTEMPLATIVE = "contemplative"  # Düşünceli
-    RESILIENT = "resilient"         # Dirençli 
+    RESILIENT = "resilient"         # Dirençli

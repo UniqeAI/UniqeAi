@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-📊 DATACLASS MODELLERİ
-======================
+📊 VERİ MODELLERİ - DATACLASS TANIMLARI
+=======================================
 
-Bu modül, SupremeHumanLevelDatasetGenerator için tüm dataclass tanımlarını içerir.
+Bu modül, SupremeHumanLevelDatasetGenerator için tüm veri modellerini içerir.
+Pydantic BaseModel'ler ile uyumlu dataclass tanımları.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Dict, Any
-
+from typing import Dict, List, Any, Optional
 
 @dataclass
 class PersonalityProfile:

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Exceptions Module
-================
+🚨 ÖZEL HATA SINIFLARI - MODÜL GİRİŞİ
+=====================================
 
-Bu modül, SupremeHumanLevelDatasetGenerator için özel hata sınıflarını içerir.
+Bu modül, SupremeHumanLevelDatasetGenerator için tüm özel hata sınıflarını içerir.
 """
 
 from .custom_exceptions import (
@@ -16,7 +16,7 @@ from .custom_exceptions import (
 
 __all__ = [
     'SchemaValidationError',
-    'ParameterMismatchError', 
+    'ParameterMismatchError',
     'DataGenerationError',
     'ValidationError',
     'APIResponseError'

@@ -922,7 +922,7 @@ class SupremeHumanLevelDatasetGenerator:
             
             # Diğer temel tipler
             mock_data[field_name] = self._generate_basic_type_data(field_type, field_name)
-            
+ 
         return mock_data
 
     def _generate_basic_type_data(self, field_type: Any, field_name: str = "") -> Any:

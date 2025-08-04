@@ -10,11 +10,13 @@ import argparse
 import sys
 from datetime import datetime
 
+import os
+
 from .core_generator import SupremeHumanLevelDatasetGenerator
 
 def main():
     """SUPREME V3: Ana çalıştırma fonksiyonu - Gelişmiş hata yönetimi ile"""
-    parser = argparse.ArgumentParser(description="🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3 - MODULAR EDITION")
+    parser = argparse.ArgumentParser(description="🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3")
     parser.add_argument(
         "--num-samples", 
         type=int, 
@@ -24,25 +26,24 @@ def main():
     parser.add_argument(
         "--output-file", 
         type=str, 
-        default=f"ultimate_human_level_dataset_v3_modular_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+        default=f"ultimate_human_level_dataset_v2_enhanced_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
         help="Çıktı JSON dosyasının adı."
     )
     args = parser.parse_args()
 
-    print("🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3 - MODULAR EDITION")
-    print("✅ %100 ŞEMA UYUMLU - MODÜLER YAPI")
+    print("🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3 - %100 ŞEMA UYUMLU")
     print("=" * 70)
     
     try:
-        # Generator'ı başlat
+    # Generator'ı başlat
         print("🔧 Generator başlatılıyor...")
         generator = SupremeHumanLevelDatasetGenerator()
     
-        # Dataset üret
+    # Dataset üret
         print(f"📊 {args.num_samples} adet senaryo üretiliyor...")
         dataset = generator.generate_supreme_dataset(num_samples=args.num_samples)
     
-        # Kaydet
+    # Kaydet
         print("💾 Dataset kaydediliyor...")
         generator.save_dataset(dataset, args.output_file)
     
@@ -50,7 +51,6 @@ def main():
         print("✅ %100 şema uyumlu dataset üretildi")
         print("✅ Tüm API yanıtları Pydantic doğrulamasından geçti")
         print("✅ Sıfır tolerans politikası uygulandı")
-        print("✅ Modüler yapı başarıyla çalıştı")
         print("✅ Olağanüstü model eğitimi için hazır!")
         
         print(f"\n📊 Dataset İstatistikleri:")

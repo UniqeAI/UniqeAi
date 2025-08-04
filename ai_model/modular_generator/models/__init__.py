@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Models Module
-============
+📊 VERİ MODELLERİ - MODÜL GİRİŞİ
+================================
 
 Bu modül, SupremeHumanLevelDatasetGenerator için tüm veri modellerini içerir.
 """
@@ -22,7 +22,7 @@ from .dataclasses import (
 __all__ = [
     # Enums
     'ScenarioType',
-    'CognitiveState', 
+    'CognitiveState',
     'EmotionalContext',
     
     # Dataclasses

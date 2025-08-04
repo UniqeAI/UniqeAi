@@ -1,0 +1,193 @@
+[
+  {
+    "id": "collaborative_scenario_94d8652b",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "collaborative",
+    "emotional_context": "collaborative_mood",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Benzer profildeki kullanıcılar hangi paketleri tercih ediyor? Onların deneyimlerinden yararlanabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Collaborative Intelligence Active! 🤝**\n\nBenzer profildeki kullanıcıların tercihlerini analiz ediyorum:\n\n👥 **Similar User Profile Analysis:**\n• %67'si Pro Business paketini tercih ediyor\n• %45'i international calling ekliyor\n• Ortalama memnuniyet: 4.2/5\n\n💡 **Community Recommendations:**\n• Gaming boost %78 satisfaction\n• Family sharing %89 approval\n\nSize özel recommendation matrix oluşturayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_f472b905",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babam geçen ay vefat etti. Onun telefonunu ve internet aboneliğini kapatmak istiyorum ama çok zor geliyor. Bu süreçte bana nasıl yardımcı olabilirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**💐 Başsağlığı diliyorum...** Babanızı kaybetmenizin ne kadar zor olduğunu anlıyorum. Bu tür işlemler acı bir dönemde ek yük oluşturmamalı. Size en hassas ve kolay yolu sunmak istiyorum.\n\n**Duygusal Destek Protokolü:** Bu süreçte sadece teknik değil, duygusal destek de sağlayacağım. Acele etmeyin, her adımı birlikte atacağız.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 97397
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":97397,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-591-98-80\",\"type\":\"5G teknolojisi\",\"status\":\"pending\"},{\"number\":\"0540-441-63-26\",\"type\":\"Uygun fiyat\",\"status\":\"suspended\"}],\"email\":\"mehmet.demir477@outlook.com\",\"address\":\"Çankaya, İstanbul\",\"registration_date\":\"2025-07-20T17:30:37.429399\",\"customer_tier\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Görüyorum ki babanız 6 yıllık değerli müşterimizmiş...** 💙 Bu uzun süreçte ailenizle birlikte olduğumuz için minnettarız.\n\n**Nazik Geçiş Süreci:**\n\n🕊️ **Acil Şefkatli İşlemler:**\n• Faturalandırma: Bugünden itibaren durdurulabilir\n• Acil durumu kayda alınıyor - özel işlem önceliği\n• Hiçbir ek ücret veya ceza yok\n• Süreç tamamen sizin temponuzda ilerleyecek\n\n📱 **Anı Koruma Seçenekleri:**\n• Telefon numarası: 6 ay 'anı olarak' saklayabiliriz\n• Mesaj geçmişi: USB'ye yedekleme hizmeti (ücretsiz)\n• Fotoğraf/videolar: Cloud transfer yardımı\n• Özel hatıralar: Kopyalama teknisyeni desteği\n\n💝 **Aile Geçiş Desteği:**\n• Eğer başka aile üyesi kullanmak isterse: isim transfer\n• Anı paketi: Özel indirimli tarife seçenekleri\n• Duygusal destek: Süreç boyunca aynı temsilci (ben)\n\n**Hiç acele etmeyin:** Bu işlemleri yapmaya hazır hissettiğinizde yaparız. Şimdilik sadece faturalandırmayı durduralım mı? Gerisini zamanla, adım adım hallederiz.\n\nBu süreçte yanınızdayım. Babanızın anısına saygıyla... 🤲",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_9389d20d",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem sık sık farklı ülkelerden beni arıyor ve en iyi arama/veri planlarını anlamam gerekiyor. Ama aynı zamanda iletişim yaklaşımımda yerel geleneklere de saygı göstermek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kültürlerarası karşılama! 🌍** Topluluğumuzda uluslararası bir araştırmacının olması ne kadar harika! Kültürel duyarlılık yaklaşımınızı derinden takdir ediyorum. Hem küresel bağlantı ihtiyaçlarınızı hem de Türk misafirperverliği değerlerini onurlandıran bir çözüm tasarlamama izin verin.\n\n**Kültürel bir köprü kuruyorum:** Türk kültüründe aile bağları kutsaldır - biz buna 'aile bağı' deriz. Sık sık ailenizi aramanız aslında değerlerimizle mükemmel bir şekilde örtüşüyor. İhtiyaçlarınızı hem teknik verimlilik hem de kültürel sıcaklıkla analiz etmeme izin verin.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 70792
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":70792,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":6},\"service_adaptations\":[\"Fiber altyapı\",\"Fiber altyapı\"],\"language_preference\":\"5G teknolojisi\",\"accessibility_needs\":[\"5G teknolojisi\",\"5G teknolojisi\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kültürlerarası Profil Analizi Tamamlandı! 🤝**\n\n**Uygulanan Kültürel Zeka:**\nProfiliniz harika kültürel köprü kurma eğilimleri gösteriyor. Türkçede biz 'misafirperverlik' deriz. Siz sadece bir müşteri değilsiniz, Türkiye'nin bilgi ekosistemine katkıda bulunan akademik misafirimizsiniz.\n\n**Küresel Düzeyde Optimize Edilmiş Çözüm:**\n\n🌍 **'Akademik Küresel Köprü' Paketi:**\n• **Araştırma Önceliği:** Sınırsız akademik veritabanları/VPN erişimi\n• **Aile Bağlantısı:** 500 uluslararası dakika (tüm ülkeler)\n• **Kültürel Entegrasyon:** Yerel arkadaşlıklar için sınırsız WhatsApp\n• **Zaman Dilimi Dostu:** 7/24 İngilizce destek\n\n📞 **Aile Arama Stratejisi:**\n• **WhatsApp Aramaları:** Wi-Fi üzerinden ücretsiz (günlük aramalar için önerilir)\n• **Geleneksel Aramalar:** Yaşlı aile üyeleri için yedek\n• **Görüntülü Aramalar:** Aile toplantıları için yüksek kalite\n\n🎓 **Akademik Araştırma Optimizasyonu:**\n• Araştırma saatleri için öncelikli bant genişliği (9:00 - 23:00)\n• Konferans araması kalite garantisi\n• Uluslararası işbirlikleri için bulut depolama entegrasyonu\n\n**Kültürel İpucu:** Türk aileleri de sık sık her gün arar! İletişim tarzınız burada çok doğal karşılanacaktır.\n\nFaturalandırmayı her iki para biriminde de açıklamamı ister misiniz? Ve ailenizin üyeleri hangi ülkelerde yaşıyor? Bu bilgi ile daha fazla optimize edebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu çok düşünceli! Ailem Almanya, Kanada ve Japonya'da. Ayrıca çeşitli Avrupa ülkelerinde meslektaşlarım var. Akademik araştırma önceliği kulağa harika geliyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Küresel Akademik Ağ Tespit Edildi! 🎓🌍**\n\n**Çok Kıt'alı Aile Analizi:**\n\n🇩🇪 **Almanya Bağlantısı:**\n• Zaman Farkı: 2 saatlik fark - kolay arama\n• Türk-Alman teknolojisi: AB roaming avantajları\n• WhatsApp hakimiyeti: Günlük kontroller için mükemmel\n\n🇨🇦 **Kanada Bağlantısı:**\n• Zaman Zorluğu: 8 saatlik fark - stratejik zamanlama gerekli\n• Görüntülü arama optimizasyonu: Türkiye'de akşam = Kanada'da öğleden sonra\n• Ses kalitesi önceliği: Aile sohbetleri netlik gerektirir\n\n🇯🇵 **Japonya Bağlantısı:**\n• Karmaşık zaman dilimi: 6 saat ileride - sabah erken/akşam geç aramalar\n• Kültürel paralellik: Japonya da aile saygısı ve hiyerarşisine değer verir\n• Teknoloji uyumu: Japonya'nın yüksek teknoloji yaklaşımı 5G'mizle eşleşiyor\n\n**Akademik Avrupa Ağı:**\n• Konferans aramaları: Çok ülkeli, yüksek kalite gereksinimleri\n• Araştırma işbirliği: Büyük dosya transferleri\n• Yayın son tarihleri: Teslim dönemlerinde öncelikli bant genişliği\n\n**Kültürlerarası Optimizasyon Planı:**\n\n📅 **Zaman Dilimine Akıllı Zamanlama:**\n• Sabah aramaları (8-10): Japonya aile zamanı\n• Öğleden sonra çalışma (14-18): Avrupalı meslektaşlar\n• Akşam aramaları (19-21): Almanya & Kanada ailesi\n\n💡 **Kültürel Uyum Özellikleri:**\n• 'Sabbath Modu': Hafta sonu aile zamanı için indirimli ücretler\n• 'Akademik Yoğunluk': Uluslararası konferans sezonlarında öncelik\n• 'Ramazan Özel': Kültürel dönemlerde ayarlanmış arama düzenleri\n\n**Aylık Yatırım:** 145 TL (~15 USD)\n**Değer Getirisi:** Sınırsız aile sevgisi + akademik verimlilik = Paha biçilmez! 💝\n\nBu, üç kıt'ayı Türk misafirperverliği köprüsüyle birleştiren kişisel 'Küresel Köy'ünüzü yaratır. Bu kültürlerarası iletişim şaheserini aktive edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_5eec1397",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İş modelimiz değişiyor. Önümüzdeki 2 yıl içinde ekibi 3 kişiden 25 kişiye çıkaracağız. Hem remote hem office hybrid çalışma olacak. Uzun vadeli telecom stratejisi nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Strategic Planning Mode Activated! 📊** Mükemmel bir büyüme hikayesi! 8x büyüme + hybrid model = kompleks ama heyecan verici bir strategic planning challenge. Predictive modeling ile 2-yıllık roadmap tasarlayalım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 57965
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71711,\"learned_preferences\":{\"key\":\"value\",\"example\":29},\"interaction_patterns\":{\"daily_interactions\":23,\"response_time\":4,\"satisfaction_score\":2},\"success_strategies\":[\"Fiber altyapı\",\"Fiber altyapı\"],\"personalization_level\":\"strategic_growth\",\"adaptation_confidence\":0.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Stratejik Yol Haritası Oluşturuldu! 🎯**\n\n**2-Yıllık Büyüme Stratejisi Çerçevesi:**\n\n```\n📈 Ölçeklendirme Zaman Çizelgesi:\nÇ1-Ç2 2024: 3→8 kişi (Temel Aşama)\nÇ3-Ç4 2024: 8→15 kişi (Büyüme Aşaması)  \nÇ1-Ç2 2025: 15→20 kişi (Maturity Phase)\nQ3-Q4 2025: 20→25 kişi (Optimization Phase)\n```\n\n**Phase-Gate Telecom Architecture:**\n\n🏗️ **Foundation Phase (Q1-Q2):**\n• Base Infrastructure: 500 GB business pool\n• Hybrid Setup: Office fiber + remote LTE backup\n• Cost: 850 TL/ay (kişi başı 106 TL)\n• KPI: <2ms office latency, >50 Mbps remote\n\n📊 **Growth Phase (Q3-Q4):**\n• Scaling Infrastructure: 1.2 TB adaptive pool\n• Smart Allocation: AI-driven bandwidth management\n• Cost: 1,650 TL/ay (kişi başı 110 TL) - efficiency gain\n• KPI: 99.5% uptime, predictive scaling accuracy\n\n🚀 **Maturity + Optimization (2025):**\n• Enterprise Infrastructure: Unlimited strategic pool\n• Advanced Analytics: Performance prediction models\n• Cost: 2,200 TL/ay (kişi başı 88 TL) - scale economies\n• KPI: Proactive issue resolution, 360° connectivity\n\n**Strategic Innovation Elements:**\n• **Predictive Scaling:** Hiring prediction → automatic capacity increase\n• **Hybrid Optimization:** AI learns office/remote patterns\n• **Cost Intelligence:** Dynamic pricing based on actual usage\n• **Future-Proofing:** 6G readiness, IoT integration capability\n\n**ROI Projections:**\n• Traditional approach: 3,500 TL/ay by 2025\n• Strategic approach: 2,200 TL/ay by 2025\n• Net savings: 15,600 TL/year + 40% productivity boost\n\nHangi phase'den başlayalım? Detailed implementation plan oluşturalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "change_package_scenario_fdea1811",
+    "scenario_type": "change_package",
+    "personality_profile": "tech_savvy_millennial",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, mevcut paketimi 'Mega İnternet Paketi' ile değiştirmek istiyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tabii ki. 'Mega İnternet Paketi' için geçiş işlemlerinizi başlatıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 96706,
+              "new_package_name": "Mega İnternet Paketi"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-10D16831\",\"from_package\":\"7/24 müşteri desteği\",\"to_package\":\"Mega İnternet Paketi\",\"effective_date\":\"2025-07-17T17:30:37.429697\",\"fee_difference\":839.83,\"status\":\"pending_activation\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişikliği talebiniz alınmıştır. Yeni paketiniz önümüzdeki fatura döneminde aktif olacaktır."
+      }
+    ]
+  }
+]

@@ -25,7 +25,7 @@ try:
         from telekom_api_schema import *
         print(f"✅ telekom_api_schema başarıyla yüklendi (local import)")
     except ImportError:
-        from UniqeAi.ai_model.scripts.telekom_api_schema import *
+        from telekom_api_schema import *
         print(f"✅ telekom_api_schema başarıyla yüklendi (full path import)")
     
     print("✅ Pydantic ve telekom_api_schema başarıyla yüklendi")
@@ -98,37 +98,37 @@ SCENARIO_WEIGHTS = {
 # Bu mapping, API fonksiyonlarını response modellerine eşleştirir
 API_RESPONSE_MAPPING = {
     # Fatura ve Ödeme İşlemleri
-    "get_current_bill": "GetCurrentBillResponse",
-    "get_past_bills": "GetPastBillsResponse",
-    "pay_bill": "PayBillResponse",
-    "get_payment_history": "GetPaymentHistoryResponse",
-    "setup_autopay": "SetupAutopayResponse",
+    "get_current_bill": GetCurrentBillResponse,
+    "get_past_bills": GetPastBillsResponse,
+    "pay_bill": PayBillResponse,
+    "get_payment_history": GetPaymentHistoryResponse,
+    "setup_autopay": SetupAutopayResponse,
     
     # Paket ve Tarife Yönetimi
-    "get_customer_package": "GetCustomerPackageResponse",
-    "get_available_packages": "GetAvailablePackagesResponse",
-    "change_package": "ChangePackageResponse",
-    "get_remaining_quotas": "GetRemainingQuotasResponse",
-    "get_package_details": "GetPackageDetailsResponse",
-    "enable_roaming": "EnableRoamingResponse",
+    "get_customer_package": GetCustomerPackageResponse,
+    "get_available_packages": GetAvailablePackagesResponse,
+    "change_package": ChangePackageResponse,
+    "get_remaining_quotas": GetRemainingQuotasResponse,
+    "get_package_details": GetPackageDetailsResponse,
+    "enable_roaming": EnableRoamingResponse,
     
     # Teknik Destek ve Arıza
-    "check_network_status": "CheckNetworkStatusResponse",
-    "create_fault_ticket": "CreateFaultTicketResponse",
-    "close_fault_ticket": "CloseFaultTicketResponse",
-    "get_users_tickets": "GetUsersTicketsResponse",
-    "get_fault_ticket_status": "GetFaultTicketStatusResponse",
-    "test_internet_speed": "TestInternetSpeedResponse",
+    "check_network_status": CheckNetworkStatusResponse,
+    "create_fault_ticket": CreateFaultTicketResponse,
+    "close_fault_ticket": CloseFaultTicketResponse,
+    "get_users_tickets": GetUsersTicketsResponse,
+    "get_fault_ticket_status": GetFaultTicketStatusResponse,
+    "test_internet_speed": TestInternetSpeedResponse,
     
     # Hesap Yönetimi
-    "get_customer_profile": "GetCustomerProfileResponse",
-    "update_customer_contact": "UpdateCustomerContactResponse",
-    "suspend_line": "SuspendLineResponse",
-    "reactivate_line": "ReactivateLineResponse",
+    "get_customer_profile": GetCustomerProfileResponse,
+    "update_customer_contact": UpdateCustomerContactResponse,
+    "suspend_line": SuspendLineResponse,
+    "reactivate_line": ReactivateLineResponse,
     
     # Acil Durum ve Gelişmiş Servisler
-    "activate_emergency_service": "ActivateEmergencyServiceResponse",
-    "check_5g_coverage": "Check5GCoverageResponse",
-    "get_cultural_context": "CulturalContextResponse",
-    "update_learning_adaptation": "LearningAdaptationResponse",
+    "activate_emergency_service": ActivateEmergencyServiceResponse,
+    "check_5g_coverage": Check5GCoverageResponse,
+    "get_cultural_context": CulturalContextResponse,
+    "update_learning_adaptation": LearningAdaptationResponse,
 } 

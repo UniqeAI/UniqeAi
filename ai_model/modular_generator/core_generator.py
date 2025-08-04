@@ -13,6 +13,7 @@ import uuid
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from pathlib import Path
+from .models import CulturalContext, PersonalityProfile
 
 # Modüler importlar
 from .models import ScenarioType, CognitiveState, EmotionalContext
@@ -39,7 +40,45 @@ from .generators import (
     generate_teaching_mentoring_scenario,
     generate_innovation_thinking_scenario,
     generate_temporal_reasoning_scenario,
-    generate_cross_cultural_communication_scenario
+    generate_cross_cultural_communication_scenario,
+    generate_advanced_error_recovery_scenario,
+    generate_social_dynamics_scenario,
+    generate_conflicting_information_scenario,
+    generate_strategic_planning_scenario,
+    generate_empathetic_reasoning_scenario,
+    generate_adaptive_communication_scenario,
+    generate_predictive_analytics_scenario,
+    generate_resource_optimization_scenario,
+    generate_collaborative_filtering_scenario,
+    generate_payment_history_scenario,
+    generate_setup_autopay_scenario,
+    generate_change_package_scenario,
+    generate_suspend_line_scenario,
+    generate_error_response_scenario,
+    generate_package_details_scenario,
+    generate_enable_roaming_scenario,
+    generate_get_user_tickets_scenario,
+    generate_get_ticket_status_scenario,
+    generate_test_internet_speed_scenario
+)
+
+# Lazy loading ve initialize metodları için import
+from .lazy_loading import (
+    personality_profiles_property,
+    cognitive_patterns_property,
+    meta_templates_property,
+    cultural_contexts_property,
+    temporal_reasoning_patterns_property,
+    innovation_frameworks_property
+)
+
+from .initializers import (
+    initialize_enhanced_personality_profiles,
+    initialize_advanced_cognitive_patterns,
+    initialize_comprehensive_meta_templates,
+    initialize_cultural_contexts,
+    initialize_temporal_patterns,
+    initialize_innovation_frameworks
 )
 
 class SupremeHumanLevelDatasetGenerator:
@@ -85,11 +124,24 @@ class SupremeHumanLevelDatasetGenerator:
         """
         return API_RESPONSE_MAPPING
 
+    def _generate_mock_data_for_model(self, model_class) -> Dict[str, Any]:
+        """
+        Model sınıfı için mock data üretir
+        """
+        return generate_mock_data_for_model(model_class)
+
     def _create_validated_response(self, model_class, override_data: Optional[Dict] = None) -> str:
         """
         SUPREME V3 + ENTERPRISE SCHEMA INTEGRATION - %100 PYDANTİC DOĞRULAMA GÜVENCESİ
+        
         Yeni telekom_api_schema v3.0-SUPREME utility fonksiyonlarını kullanarak
         enterprise-grade mock response oluşturur.
+        
+        🚀 YENİ ÖZELLİKLER v3.0:
+        - Schema v3.0 entegrasyonu
+        - Enterprise-grade mock data generation
+        - Gelişmiş validation with detailed error reporting
+        - 100% schema compliance guarantee
         """
         try:
             # Schema v3.0 ile gelişmiş mock data üretimi
@@ -109,13 +161,27 @@ class SupremeHumanLevelDatasetGenerator:
                         mock_data[key] = fixed_usage
                     else:
                         mock_data[key] = value
+            
             # Enterprise-grade Pydantic doğrulama
             validated = model_class(**mock_data)
+            
             # JSON serileştirme kontrolü
             json_result = validated.model_dump_json(indent=None)
+            
             # JSON'ın parse edilebilir olduğunu kontrol et
             json.loads(json_result)
+            
             return json_result
+            
+        except ValidationError as e:
+            print(f"❌ KRİTİK HATA - Pydantic Validation: {model_class.__name__}")
+            print(f"   Hatalı veri: {mock_data}")
+            print(f"   Hata detayı: {e}")
+            raise ValueError(f"API şeması uyumsuzluğu: {model_class.__name__} - {e}")
+        except json.JSONDecodeError as e:
+            print(f"❌ KRİTİK HATA - JSON Serialization: {model_class.__name__}")
+            print(f"   JSON hatası: {e}")
+            raise ValueError(f"JSON serileştirme hatası: {model_class.__name__}")
         except Exception as e:
             print(f"❌ KRİTİK HATA - Beklenmeyen: {model_class.__name__}")
             print(f"   Hata: {e}")
@@ -126,18 +192,78 @@ class SupremeHumanLevelDatasetGenerator:
         Senaryo üreticilerini döndürür
         """
         return {
+
+            # Yeni entegre edilen temel senaryolar
             ScenarioType.STANDARD.value: generate_standard_scenario,
             ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
             ScenarioType.PROACTIVE.value: generate_proactive_scenario,
             ScenarioType.DISAMBIGUATION.value: generate_disambiguation_scenario,
             ScenarioType.MULTI_INTENT.value: generate_multi_intent_scenario,
             ScenarioType.ETHICAL_DILEMMA.value: generate_ethical_dilemma_scenario,
+            
+            # Mevcut gelişmiş senaryolar
             ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
             ScenarioType.TEACHING_MENTORING.value: generate_teaching_mentoring_scenario,
             ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
             ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
             ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
+            ScenarioType.ADVANCED_ERROR_RECOVERY.value: generate_advanced_error_recovery_scenario,
+            ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
+            ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
+            ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
+            ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
+            ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
+            ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
+            ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
+            ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
+
+            # --- UZMAN SEVİYE EKLEME: EKSİK API'LERİN ENTEGRASYONU ---
+            ScenarioType.PAYMENT_HISTORY.value: generate_payment_history_scenario,
+            ScenarioType.SETUP_AUTOPAY.value: generate_setup_autopay_scenario,
+            ScenarioType.CHANGE_PACKAGE.value: generate_change_package_scenario,
+            ScenarioType.SUSPEND_LINE.value: generate_suspend_line_scenario,
+            ScenarioType.ERROR_RESPONSE.value: generate_error_response_scenario,
+            ScenarioType.PACKAGE_DETAILS.value: generate_package_details_scenario,
+            ScenarioType.ENABLE_ROAMING.value: generate_enable_roaming_scenario,
+            ScenarioType.GET_USER_TICKETS.value: generate_get_user_tickets_scenario,
+            ScenarioType.GET_TICKET_STATUS.value: generate_get_ticket_status_scenario,
+            ScenarioType.TEST_INTERNET_SPEED.value: generate_test_internet_speed_scenario,
+  
         }
+
+    # ==============================================================================
+    # 🚀 MEMORY OPTIMIZED LAZY PROPERTIES - V3 ENHANCEMENT
+    # ==============================================================================
+    
+    @property
+    def personality_profiles(self) -> Dict[str, 'PersonalityProfile']:
+        """Lazy loading personality profiles - memory optimization"""
+        return personality_profiles_property(self)
+    
+    @property
+    def cognitive_patterns(self) -> Dict[str, List[str]]:
+        """Lazy loading cognitive patterns - memory optimization"""
+        return cognitive_patterns_property(self)
+    
+    @property
+    def meta_templates(self) -> Dict[str, List[str]]:
+        """Lazy loading meta templates - memory optimization"""
+        return meta_templates_property(self)
+    
+    @property
+    def cultural_contexts(self) -> Dict[str, 'CulturalContext']:
+        """Lazy loading cultural contexts - memory optimization"""
+        return cultural_contexts_property(self)
+    
+    @property
+    def temporal_reasoning_patterns(self) -> Dict[str, List[str]]:
+        """Lazy loading temporal patterns - memory optimization"""
+        return temporal_reasoning_patterns_property(self)
+    
+    @property
+    def innovation_frameworks(self) -> Dict[str, List[str]]:
+        """Lazy loading innovation frameworks - memory optimization"""
+        return innovation_frameworks_property(self)
 
     def generate_supreme_dataset(self, num_samples: int = 100) -> List[Dict[str, Any]]:
         """
@@ -168,6 +294,7 @@ class SupremeHumanLevelDatasetGenerator:
                 f"Senaryo metodları ({len(scenario_types)}) ve ağırlıklar ({len(weights)}) "
                 "listelerinin uzunlukları eşleşmiyor. Lütfen kontrol edin."
             )
+
 
         # UZMAN SEVİYE KALİTE KONTROL DEĞİŞKENLERİ
         validation_errors = 0
@@ -205,6 +332,10 @@ class SupremeHumanLevelDatasetGenerator:
                 if (i + 1) % 10 == 0:
                     print(f"📊 İlerleme: {i + 1}/{num_samples} (%{(i+1)/num_samples*100:.1f}) - ✅ {pydantic_validations} Pydantic doğrulama")
                     
+            except ValidationError as e:
+                print(f"❌ Pydantic validasyon hatası: {e}")
+                validation_errors += 1
+                continue
             except Exception as e:
                 import traceback
                 print(f"❌ Beklenmeyen hata: {e}")
@@ -262,11 +393,11 @@ class SupremeHumanLevelDatasetGenerator:
 
     def save_dataset(self, dataset: List[Dict[str, Any]], filename: str):
         """Dataset'i JSON dosyasına kaydet"""
-        output_path = DEFAULT_OUTPUT_DIR / filename
+        output_path = PROJECT_ROOT / f"UniqeAi/ai_model/data/{filename}"
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(dataset, f, ensure_ascii=False, indent=2)
         
         print(f"✅ Dataset kaydedildi: {output_path}")
-        print(f"📁 Dosya boyutu: {output_path.stat().st_size / 1024 / 1024:.2f} MB") 
+        print(f"📁 Dosya boyutu: {output_path.stat().st_size / 1024 / 1024:.2f} MB")
