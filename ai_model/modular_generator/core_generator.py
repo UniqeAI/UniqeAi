@@ -190,10 +190,7 @@ class SupremeHumanLevelDatasetGenerator:
     def _get_scenario_generators(self) -> Dict[str, callable]:
         """
         Senaryo üreticilerini döndürür
-        """
-        return {
-
-            # Yeni entegre edilen temel senaryolar
+                    # Yeni entegre edilen temel senaryolar
             ScenarioType.STANDARD.value: generate_standard_scenario,
             ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
             ScenarioType.PROACTIVE.value: generate_proactive_scenario,
@@ -229,6 +226,11 @@ class SupremeHumanLevelDatasetGenerator:
             ScenarioType.GET_TICKET_STATUS.value: generate_get_ticket_status_scenario,
             ScenarioType.TEST_INTERNET_SPEED.value: generate_test_internet_speed_scenario,
   
+        """
+        return {
+            ScenarioType.CHANGE_PACKAGE.value: generate_change_package_scenario,
+
+
         }
 
     # ==============================================================================

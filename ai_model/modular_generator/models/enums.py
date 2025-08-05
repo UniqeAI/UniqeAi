@@ -69,6 +69,7 @@ class CognitiveState(Enum):
     NEGOTIATIVE = "negotiative"      # YENİ
     EDUCATIONAL = "educational"      # YENİ
     PREDICTIVE = "predictive"       # YENİ
+    TRADITIONAL = "traditional"      # YENİ
 
 class EmotionalContext(Enum):
     # Mevcut duygusal durumlar
