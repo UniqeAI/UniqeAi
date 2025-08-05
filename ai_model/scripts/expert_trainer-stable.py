@@ -53,7 +53,7 @@ class ModelAndDataConfig:
     model_name: str = field(default="meta-llama/Meta-Llama-3-8B-Instruct", metadata={"help": "Hugging Face model adı."})
     data_paths: List[str] = field(
         default_factory=lambda: [
-            "UniqeAi/ai_model/data/ultimate_human_level_dataset_v2_enhanced_20250729_171909.json"
+            "UniqeAi/ai_model/data/ultimate_human_level_dataset_v2_enhanced_20250805_210650.json"
         ],
         metadata={"help": "Eğitim için kullanılacak NİHAİ ve tek veri dosyası."}
     )
@@ -74,7 +74,7 @@ class ModelAndDataConfig:
 
 @dataclass
 class TrainingArguments(HfTrainingArguments):
-    output_dir: str = "UniqeAi/ai_model/final-model_v3_bf16" # Son model ve checkpoint'ler için yeni klasör
+    output_dir: str = "UniqeAi/ai_model/final-model_v5_bf16" # Son model ve checkpoint'ler için yeni klasör
     num_train_epochs: int = 3
     # UZMAN SEVİYESİ OPTİMİZASYON: A100 (40GB) OOM hatasını çözmek için anlık yığın boyutu mutlak minimuma (1) indirildi.
     per_device_train_batch_size: int = 1
