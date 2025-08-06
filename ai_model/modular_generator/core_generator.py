@@ -151,12 +151,41 @@ class SupremeHumanLevelDatasetGenerator:
 
     def _get_scenario_generators(self) -> Dict[str, callable]:
         """
-        Senaryo üreticilerini döndürür
+        Tüm senaryo üreticilerini ve onlara karşılık gelen senaryo tiplerini döndürür.
+        Bu, ana `generate_supreme_dataset` fonksiyonunun ağırlıklara göre
+        dinamik olarak senaryo seçmesini sağlar.
         """
         return {
-            # ... diğer senaryolar ...
+            ScenarioType.STANDARD.value: generate_standard_scenario,
+            ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
+            ScenarioType.PROACTIVE_ASSISTANCE.value: generate_proactive_scenario,
+            ScenarioType.DISAMBIGUATION.value: generate_disambiguation_scenario,
+            ScenarioType.MULTI_INTENT.value: generate_multi_intent_scenario,
+            ScenarioType.ETHICAL_DILEMMA.value: generate_ethical_dilemma_scenario,
+            ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
+            ScenarioType.TEACHING_MENTORING.value: generate_teaching_mentoring_scenario,
+            ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
+            ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
+            ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
+            ScenarioType.ADVANCED_ERROR_RECOVERY.value: generate_advanced_error_recovery_scenario,
+            ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
+            ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
+            ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
+            ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
             ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
-            # ... diğer senaryolar ...
+            ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
+            ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
+            ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
+            ScenarioType.PAYMENT_HISTORY.value: generate_payment_history_scenario,
+            ScenarioType.SETUP_AUTOPAY.value: generate_setup_autopay_scenario,
+            ScenarioType.CHANGE_PACKAGE.value: generate_change_package_scenario,
+            ScenarioType.SUSPEND_LINE.value: generate_suspend_line_scenario,
+            ScenarioType.ERROR_RESPONSE.value: generate_error_response_scenario,
+            ScenarioType.PACKAGE_DETAILS.value: generate_package_details_scenario,
+            ScenarioType.ENABLE_ROAMING.value: generate_enable_roaming_scenario,
+            ScenarioType.GET_USER_TICKETS.value: generate_get_user_tickets_scenario,
+            ScenarioType.GET_TICKET_STATUS.value: generate_get_ticket_status_scenario,
+            ScenarioType.TEST_INTERNET_SPEED.value: generate_test_internet_speed_scenario
         }
 
     @property
