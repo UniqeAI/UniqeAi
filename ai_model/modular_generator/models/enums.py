@@ -72,6 +72,7 @@ class CognitiveState(Enum):
 
 class EmotionalContext(Enum):
     # Mevcut duygusal durumlar
+    HOPEFUL = "hopeful"
     CALM = "calm"
     FRUSTRATED = "frustrated"
     EXCITED = "excited"

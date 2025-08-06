@@ -284,6 +284,13 @@ def create_validated_response(model_class, override_data=None):
         json.loads(json_result)
         return json_result
     except Exception as e:
-        print(f"❌ KRİTİK HATA - Beklenmeyen: {model_class.__name__}")
-        print(f"   Hata: {e}")
+        import traceback
+        print(f"❌ KRİTİK HATA - create_validated_response: {model_class.__name__}")
+        print(f"   Hata türü: {type(e).__name__}")
+        print(f"   Hata mesajı: {str(e)}")
+        print(f"   Model sınıfı: {model_class}")
+        print(f"   Override data: {override_data}")
+        print(f"   Mock data: {mock_data}")
+        print(f"   Tam traceback:")
+        traceback.print_exc()
         raise 
