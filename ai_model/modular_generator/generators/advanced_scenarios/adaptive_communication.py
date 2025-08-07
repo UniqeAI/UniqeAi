@@ -76,7 +76,7 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
             {"rol": "kullanici", "icerik": "Paketimde ne kadar internet kaldığını tam olarak GB ve MB cinsinden öğrenmek istiyorum. Bana yuvarlak rakamlar vermeyin.", "arac_cagrilari": None},
             {"rol": "asistan", "icerik": "*Detaylı Bilgi Modu Aktif!* 🔍 Tabii ki, kalan kullanım haklarınızı en ince ayrıntısına kadar iletiyorum.", "arac_cagrilari": None},
             {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
-            {"rol": "arac", "icerik": create_validated_response(GetRemainingQuotasResponse, {"internet_remaining_gb": internet_gb, "voice_remaining_minutes": voice_minutes, "sms_remaining": sms_count})},
+            {"rol": "arac", "icerik": create_validated_response(GetRemainingQuotasResponse, {"internet_remaining_gb": internet_gb, "voice_remaining_minutes": voice_minutes, "sms_remaining": sms_count, "usage_percentage": {"internet": random.randint(0, 100), "voice": random.randint(0, 100), "sms": random.randint(0, 100)}})},
             {"rol": "asistan", "icerik": f"Kalan kullanım haklarınız tam olarak: {internet_gb} GB (yani {internet_mb:.1f} MB) internet, {voice_minutes} dakika konuşma ve {sms_count} SMS. Bu veriler anlıktır.", "arac_cagrilari": None}
         ]
     })
@@ -122,7 +122,7 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "donguler": [
             {"rol": "kullanici", "icerik": "Taahhüdüm bitmek üzere. Bana daha uygun bir paket sunmazsanız hattımı taşıyacağım.", "arac_cagrilari": None},
             {"rol": "asistan", "icerik": "*Fırsat Modu Aktif!* 🏷️ Sizi kaybetmek istemeyiz! Mevcut paketinize ek olarak, size özel tanımlayabileceğimiz indirimli ve daha bol içerikli 'Vazgeçilmez' paketimizi incelemek ister misiniz?", "arac_cagrilari": [{"fonksiyon": "get_package_details", "parametreler": {"package_name": "Vazgeçilmez"}}]},
-            {"rol": "arac", "icerik": create_validated_response(GetPackageDetailsResponse, {"monthly_fee": package_fee, "features": {"internet_gb": internet_gb_offer}})},
+            {"rol": "arac", "icerik": create_validated_response(GetPackageDetailsResponse, {"monthly_fee": package_fee, "features": {"internet_gb": internet_gb_offer, "voice_minutes": random.randint(100, 1000), "sms_count": random.randint(50, 500), "international_minutes": random.randint(10, 100)}})},
             {"rol": "asistan", "icerik": f"Vazgeçilmez paketimiz aylık {package_fee} TL'ye {internet_gb_offer} GB internet ve bolca dakika/SMS içeriyor. Üstelik 12 ay taahhütle ilk 3 ay %20 indirimli. Hemen geçiş yapalım mı?", "arac_cagrilari": None}
         ]
     })
@@ -470,7 +470,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.EMPATHETIC.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Mer... ha... ba... Pa... ke... tim... ney... di?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Sabırlı Mod Aktif!* 🐢 Merhabalar. Paketinizin ne olduğunu öğrenmek istiyorsunuz. Şimdi kontrol ediyorum...", "arac_cagrilari": [{"fonksiyon": "get_customer_package", "parametreler": {"user_id": user_id_pool[19]}}]}
+            {"rol": "asistan", "icerik": "*Sabırlı Mod Aktif!* 🐢 Merhabalar. Paketinizin ne olduğunu öğrenmek istiyorsunuz. Şimdi kontrol ediyorum...", "arac_cagrilari": [{"fonksiyon": "get_customer_package", "parametreler": {"user_id": user_id_pool[19]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCustomerPackageResponse, {"package_name": "Süper Paket", "monthly_fee": random.randint(50, 150), "features": {"internet_gb": random.randint(10, 50), "voice_minutes": random.randint(500, 2000), "sms_count": random.randint(100, 1000), "international_minutes": random.randint(50, 200)}})},
+            {"rol": "asistan", "icerik": "Paketiniz 'Süper Paket'. Aylık ücretiniz ve özellikleriniz yukarıda görüldüğü gibi. Başka bir konuda yardımcı olabilir miyim?", "arac_cagrilari": None}
         ]
     })
 
@@ -525,7 +527,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CURIOUS.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Bakalım ne kadar akıllısın. Şu anki konumumda 5G var mı, söyle.", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Hemen kontrol ediyorum! 5G kapsama alanımızı sorguluyorum.", "arac_cagrilari": [{"fonksiyon": "check_5g_coverage", "parametreler": {"user_id": user_id_pool[20], "location": "current_location"}}]}
+            {"rol": "asistan", "icerik": "Hemen kontrol ediyorum! 5G kapsama alanımızı sorguluyorum.", "arac_cagrilari": [{"fonksiyon": "check_5g_coverage", "parametreler": {"user_id": user_id_pool[20], "location": "current_location"}}]},
+            {"rol": "arac", "icerik": create_validated_response(Check5GCoverageResponse, {"coverage_available": True, "signal_strength": random.randint(70, 100), "network_speed_estimate": f"{random.randint(200, 800)} Mbps"})},
+            {"rol": "asistan", "icerik": "Harika haber! Bulunduğunuz konumda 5G kapsama alanımız mevcut. Sinyal gücü çok iyi ve hızlı internet deneyimi yaşayabilirsiniz.", "arac_cagrilari": None}
         ]
     })
 
@@ -560,7 +564,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.STRATEGIC.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Eğer hattımı şimdi iptal ettirirsem ne kadar cayma bedeli öderim?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Taahhüt bilgilerinizi ve cayma bedelinizi hesaplamak için mevcut paketinizi kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_customer_package", "parametreler": {"user_id": user_id_pool[23]}}]}
+            {"rol": "asistan", "icerik": "Taahhüt bilgilerinizi ve cayma bedelinizi hesaplamak için mevcut paketinizi kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_customer_package", "parametreler": {"user_id": user_id_pool[23]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCustomerPackageResponse, {"package_name": "Premium Paket", "monthly_fee": random.randint(80, 200), "features": {"internet_gb": random.randint(20, 100), "voice_minutes": random.randint(1000, 3000), "sms_count": random.randint(500, 2000), "international_minutes": random.randint(100, 500)}})},
+            {"rol": "asistan", "icerik": "Paketiniz Premium Paket ve taahhütlü. Cayma bedeli hesaplaması için taahhüt sürenizi kontrol etmem gerekiyor. Genellikle kalan ay sayısı × aylık ücret şeklinde hesaplanır.", "arac_cagrilari": None}
         ]
     })
     

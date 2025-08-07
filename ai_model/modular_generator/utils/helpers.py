@@ -158,6 +158,9 @@ def generate_basic_type_data(field_type: Any, field_name: str = "") -> Any:
         elif "duration" in field_lower:
             return random.randint(12, 60)   # Contract duration max 60 months
         else:
+            # Eğer percentage alanındaysak, 100'den küçük değer üret
+            if "percentage" in field_name.lower():
+                return random.randint(0, 100)
             return random.randint(1, 1000)
     elif field_type == float:
         field_lower = field_name.lower()
