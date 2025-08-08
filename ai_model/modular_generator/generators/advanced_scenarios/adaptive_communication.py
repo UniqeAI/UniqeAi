@@ -692,4 +692,4 @@ def generate_adaptive_communication_scenario() -> Dict[str, Any]:
     all_scenarios = generate_adaptive_communication_scenarios()
     if not all_scenarios:
         return {} 
-    return random.choice(all_scenarios)
+    return all_scenarios

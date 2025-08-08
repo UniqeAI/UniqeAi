@@ -178,9 +178,10 @@ def get_tool_definitions():
                     "type": "object",
                     "properties": {
                         "user_id": {"type": "integer", "description": "Otomatik ödeme ayarlanacak kullanıcının numerik ID'si."},
-                        "payment_method": {"type": "string", "description": "Otomatik ödeme için kullanılacak kart veya hesap bilgisi."}
+                        "status": {"type": "boolean", "description": "Otomatik ödeme aktif mi?"},
+                        "payment_method": {"type": "string", "description": "Otomatik ödeme için tercih edilen yöntem.", "enum": ["credit_card", "bank_transfer"]}
                     },
-                    "required": ["user_id", "payment_method"]
+                    "required": ["user_id", "status"]
                 }
             }
         },
@@ -251,8 +252,11 @@ def get_tool_definitions():
                 "description": "Kullanıcının hattı için yurt dışı kullanımını (roaming) aktif eder.",
                 "parameters": {
                     "type": "object",
-                    "properties": {"user_id": {"type": "integer", "description": "Roaming açılacak kullanıcının numerik ID'si."}},
-                    "required": ["user_id"]
+                    "properties": {
+                        "user_id": {"type": "integer", "description": "Roaming açılacak kullanıcının numerik ID'si."},
+                        "status": {"type": "boolean", "description": "Roaming aktif mi?"}
+                    },
+                    "required": ["user_id", "status"]
                 }
             }
         },
@@ -373,10 +377,9 @@ def get_tool_definitions():
                     "type": "object",
                     "properties": {
                         "user_id": {"type": "integer", "description": "Hattı askıya alınacak kullanıcının numerik ID'si."},
-                        "line_number": {"type": "string", "description": "Askıya alınacak telefon hattı numarası."},
                         "reason": {"type": "string", "description": "Hattın askıya alınma sebebi."}
                     },
-                    "required": ["user_id", "line_number", "reason"]
+                    "required": ["user_id", "reason"]
                 }
             }
         },

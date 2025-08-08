@@ -1323,7 +1323,7 @@ class SupremeHumanLevelDatasetGenerator:
             "donguler": [
                 {"rol": "kullanici", "icerik": f"{user_id} numaralı hattımın kalan internet kotasını öğrenebilir miyim?", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "Elbette, hemen kontrol ediyorum.", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
+                {"rol": "asistan", "icerik": "", "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetRemainingQuotasResponse, override_data={
                     "internet_remaining_gb": round(random.uniform(1, 50), 2),
                     "usage_percentage": {
@@ -1376,7 +1376,7 @@ class SupremeHumanLevelDatasetGenerator:
             "donguler": [
                 {"rol": "kullanici", "icerik": f"Yine internetim bitmek üzere, bu ay ne kadar kalmış?", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "Hemen kontrol ediyorum...", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
+                {"rol": "asistan", "icerik": "", "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetRemainingQuotasResponse, override_data={"internet_remaining_gb": 1.5, "usage_percentage": {"internet": 98, "voice": 50, "sms": 75}})},
                 {"rol": "asistan", "icerik": "Sadece 1.5 GB internetiniz kalmış ve dönem sonuna 3 gün var. Ay sonunu getirmekte zorlanabilirsiniz. **Proaktif Öneri:** Size özel, sadece bu aya mahsus 10 GB'lık ek paketi %50 indirimle tanımlayabilirim. İster misiniz?", "arac_cagrilari": None},
                 {"rol": "kullanici", "icerik": "Harika olur, lütfen tanımlayın!", "arac_cagrilari": None},
@@ -1428,7 +1428,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "pay_bill", "parametreler": {"bill_id": bill_id, "method": PaymentMethod.CREDIT_CARD.value}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(PayBillResponse, override_data={"bill_id": bill_id, "amount": amount, "status": "Ödeme başarılı"})},
                 {"rol": "asistan", "icerik": "Ödemeniz tamamlandı. Şimdi yurt dışı paketlerini listeliyorum.", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]},
+                {"rol": "asistan", "icerik": "", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetAvailablePackagesResponse)},
                 {"rol": "asistan", "icerik": "Şu anda 'Haftalık Roaming Paketi' mevcut. 5 GB internet içeriyor. Aktif edelim mi?", "arac_cagrilari": None}
             ]
@@ -1473,7 +1473,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "asistan", "icerik": "**Müzakere yaklaşımı devrede:** Öncelikle 3 yıllık sadakatiniz için çok teşekkür ederim! Değerli bir müşterimiz olarak, sizin için en iyi çözümü bulalım. Mevcut paketinizi ve kullanım alışkanlıklarınızı inceleyerek, hem bütçenize uygun hem de ihtiyaçlarınızı karşılayacak seçenekler sunabilirim.", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_customer_package", "parametreler": {"user_id": user_id}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetCustomerPackageResponse, override_data={"monthly_fee": current_fee})},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
+                {"rol": "asistan", "icerik": "", "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetRemainingQuotasResponse, override_data={"usage_percentage": {"internet": 80, "voice": 40, "sms": 20}})},
                 {"rol": "asistan", "icerik": "**Win-win çözüm analizi:** Kullanım paternlerinizi incelediğimde çok ilginç bir durum görüyorum! İnternetinizin %80'ini kullanırken, konuşma ve SMS'leriniz oldukça düşük. Bu durumda size üç alternatif sunabilirim:\n\n💡 **Seçenek 1:** 'Akıllı İnternet' paketine geçiş (74.90 TL) - Internet kotanızı korur, konuşma/SMS'i azaltır\n💡 **Seçenek 2:** Mevcut paketinizde sadakat indirimi (%15) - 76.08 TL\n💡 **Seçenek 3:** Hibrit çözüm - 69.90 TL'ye özel paket tasarımı\n\n**Müzakere mantığım:** 3 yıllık sadakatinizi ve kullanım profilinizi değerlendirerek, rakip teklifleri de geçen bir çözüm sunmak istiyorum. Hangi yaklaşım size daha uygun?", "arac_cagrilari": None},
                 {"rol": "kullanici", "icerik": "69.90 TL özel paket seçeneği ilgimi çekti. Nasıl bir paket bu?", "arac_cagrilari": None},
@@ -1495,7 +1495,7 @@ class SupremeHumanLevelDatasetGenerator:
             "donguler": [
                 {"rol": "kullanici", "icerik": "Teknoloji konusunda pek iyi değilim. Bu 'internet kotası' dediğiniz şey nedir? Nasıl kontrol ederim? Sürekli yetmiyor gibi hissediyorum.", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "**Öğretim modu aktif:** Çok güzel bir soru sordunuz! İnternet kotasını en basit şekilde anlatayım ve birlikte öğrenelim. Teknoloji herkesi korkutabilir, ama adım adım gittiğimizde çok kolay hale gelir.\n\n**Benzetme ile açıklayayım:** İnternet kotası, cep telefonu dakikası gibi düşünün. Eskiden 'kaç dakika konuştum?' diye merak ederdiniz, değil mi? İnternet kotası da aynı mantık - sadece konuşma yerine 'veri kullanımı' ölçüyoruz.", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
+                {"rol": "asistan", "icerik": "", "arac_cagrilari": [{"fonksiyon": "get_remaining_quotas", "parametreler": {"user_id": user_id}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(GetRemainingQuotasResponse, override_data={"usage_percentage": {"internet": 75, "voice": 10, "sms": 5}})},
                 {"rol": "asistan", "icerik": "**Öğrenme hikayeniz:** Bakın, şu anda durumunuz çok iyi! Size öğretici bir analiz yapayım:\n\n📚 **Ders 1 - Mevcut Durumunuz:**\n• 50 GB kotanızın 37.5 GB'ını kullanmışsınız (%75)\n• Geriye 12.5 GB kaldı (ayın sonuna 10 gün var)\n• Günde ortalama 1.25 GB kullanabilirsiniz\n\n📚 **Ders 2 - Bu Ne Demek:**\n• WhatsApp mesajları: günde yüzlerce (çok az veri)\n• Fotoğraf göndermek: 1 MB (orta)\n• Video izlemek: saatte 1 GB (en çok veri)\n\n**Öğretici soru:** Video izlemeyi çok kullanıyor musunuz? Youtube, Netflix, Instagram videoları?", "arac_cagrilari": None},
                 {"rol": "kullanici", "icerik": "Evet, torunlarımın videolarını WhatsApp'ta izliyorum. Bir de akşamları haber izliyorum internetten. Bu çok mu veri harcar?", "arac_cagrilari": None},
@@ -1519,8 +1519,8 @@ class SupremeHumanLevelDatasetGenerator:
             "donguler": [
                 {"rol": "kullanici", "icerik": "Startup'ım için çok hızlı internet gerekiyor ama ofisimizde 20 kişi var ve herkes farklı ihtiyaçlara sahip. Geleneksel paketler yetersiz kalıyor. Daha yaratıcı bir çözüm var mı?", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "**İnovasyon laboratuvarı açılıyor!** 🚀 Startup deneyiminiz harika bir inovasyon fırsatı! Geleneksel 'herkes aynı paket' mantığını tamamen yıkıp, disruptive bir yaklaşım tasarlayalım.\n\n**Design Thinking başlıyor:** Önce kullanıcı deneyimini derin analiz edelim. 20 kişilik ekibinizin dijital DNA'sını çıkarıp, hyper-personalized bir altyapı kurabiliriz.", "arac_cagrilari": None},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_cultural_context", "parametreler": {"user_id": self._generate_user_id()}}]},
-                {"rol": "arac", "icerik": self._create_validated_response(CulturalContextResponse, override_data={"user_id": self._generate_user_id(), "cultural_profile": "innovation_oriented_startup"})},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_cultural_context", "parametreler": {"user_id": user_id}}]},
+                {"rol": "arac", "icerik": self._create_validated_response(CulturalContextResponse, override_data={"user_id": user_id, "cultural_profile": "innovation_oriented_startup"})},
                 {"rol": "asistan", "icerik": "**İnovasyon sonuçları muhteşem!** 🎯 Analiz sistemimiz %95 inovasyon skoruyla 4 disruptive çözüm önerdi:\n\n🚀 **Çözüm 1: AI-Powered Smart Allocation**\n• Her çalışanın gerçek zamanlı ihtiyacına göre bandwidth dağıtımı\n• Developer compile işlemi → otomatik yüksek hız\n• Designer Figma upload → otomatik görsel optimizasyon\n• PM video meeting → otomatik latency minimizasyonu\n\n🚀 **Çözüm 2: Role-Based Network Layers**\n• Dev Layer: Ultra-hızlı (GitHub, AWS, deployment araçları)\n• Creative Layer: Görsel optimized (Adobe, Sketch, video tools)\n• Communication Layer: Meeting optimized (Zoom, Slack, video calls)\n• Research Layer: Balanced (web browsing, research, sosyal medya)\n\n💡 **Innovation Lab Tasarımı:**\n• 5G + Fiber hibrit altyapı\n• Edge computing integration\n• Real-time analytics dashboard\n• Collaborative bandwidth pooling\n\nHangi inovasyon daha çok ilginizi çekiyor? Detayına inelim!", "arac_cagrilari": None},
                 {"rol": "kullanici", "icerik": "AI-powered allocation çok ilginç! Nasıl çalışır? Maliyeti nasıl olur?", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "**Yapay Zeka İnovasyon Derin Dalış! 🤖**\n\n**Sistem Mimarisi:**\n```\nKullanıcı Davranış Yapay Zeka Motoru\n├── Desen Tanıma (kullanım alışkanlıkları)\n├── Tahmine Dayalı Dağıtım (sonraki 30 dakika ihtiyaçları)\n├── Öncelik Matrisi (acilline vs. task importance)\n└── Dynamic Rebalancing (real-time optimization)\n```\n\n**Çalışma Prensibi:**\n🧠 **Machine Learning Layer:**\n• Her kullanıcının kod commit patterns'ini öğrenir\n• Meeting schedule'ları ile bandwidth ihtiyacını predict eder\n• Sprint deadline'larında otomatik priority boost\n• İş saatleri vs. break times için farklı algoritmalar\n\n⚡ **Real-time Decision Engine:**\n• Sarah video call başlatıyor → otomatik 50 Mbps allocation\n• Mehmet Docker build yapıyor → 100 Mbps temporary boost\n• Team lunch time → power user'lara extra bandwidth\n• Demo hazırlığı → presentation layer'a priority\n\n💰 **Disruptive Pricing Model:**\n• **Base:** 150 GB pool (20 kişi için)\n• **AI Premium:** +%40 efficiency = 210 GB effective\n• **Maliyet:** 1,200 TL/ay (kişi başı 60 TL)\n• **ROI:** Geleneksel 20x bireysel paket: 1,800 TL\n• **Tasarruf:** 600 TL/ay + %40 productivity boost\n\n**MVP Implementation (2 hafta):**\n1. Team usage audit (1 hafta)\n2. AI model training (3 gün)\n3. Soft deployment (4 gün)\n\nPilot testi başlatalım mı? 🚀", "arac_cagrilari": None}
@@ -1586,7 +1586,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "kullanici", "icerik": "Üç kez fatura ödemeye çalıştım ama sistem hata veriyor. Çok sinirli olmaya başladım!", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "**Hata Kurtarma Protokolü başlatılıyor! 🔧** Anlıyorum, üç kez denemenize rağmen sistem hatası almak gerçekten sinir bozucu! Teknik sorunları çözmek benim uzmanlık alanım. Sistematik bir yaklaşımla sorunu çözelim.", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id}}]},
-                {"rol": "arac", "icerik": "{'error': {'code': 'ODEME_GECIDI_HATASI', 'message': 'Ödeme geçidi geçici olarak kullanılamıyor', 'details': 'Geçit 30 saniye sonra zaman aşımına uğradı'}}", "arac_cagrilari": None},
+                {"rol": "arac", "icerik": "{\"success\": false, \"error\": {\"code\": \"ODEME_GECIDI_HATASI\", \"message\": \"Ödeme geçidi geçici olarak kullanılamıyor\", \"details\": \"Geçit 30 saniye sonra zaman aşımına uğradı\"}}"},
                 {"rol": "asistan", "icerik": "**Root Cause Analysis tamamlandı! ✅** Sorun sizde değil, sistemde! Ödeme gateway'inde geçici teknik problem var. İyi haber şu ki: bu tür sorunlar için çoklu backup sistemimiz var.\n\n**Advanced Recovery Strategy:**\n\n🔧 **Immediate Workaround:**\n• Alternatif ödeme yöntemi aktif ediliyor\n• 24 saat geçmişe dönük ödeme koruması\n• Manuel işlem öncelik kuyruğu\n\n🛡️ **Resilience Guarantee:**\n• Gateway hatası durumunda otomatik 48 saat ek süre\n• Geç ödeme faizi iptal\n• Sistem hatası tazminatı\n\n**Şimdi ne yapıyorum:**\n1. Alternatif sistem üzerinden manuel ödeme işlemi\n2. Hesabınıza 'sistem hatası' notu ekliyorum\n3. Önümüzdeki ödemeler için öncelik hesabı aktif ediyorum\n\nFaturanızı şimdi güvenli sistemden ödemek ister misiniz?", "arac_cagrilari": None}
             ]
         }
@@ -1706,7 +1706,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "kullanici", "icerik": "Faturalarımı sürekli unutuyorum, otomatik ödeme talimatı vermek istiyorum."},
                 {"rol": "asistan", "icerik": "Harika bir fikir! Kayıtlı kredi kartınızla otomatik ödeme talimatı oluşturuyorum, onaylıyor musunuz?"},
                 {"rol": "kullanici", "icerik": "Evet, onaylıyorum."},
-                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "setup_autopay", "parametreler": {"user_id": user_id, "status": True}}]},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "setup_autopay", "parametreler": {"user_id": user_id, "status": True, "payment_method": "credit_card"}}]},
                 {"rol": "arac", "icerik": self._create_validated_response(SetupAutopayResponse, override_data={"user_id": user_id, "autopay_enabled": True})},
                 {"rol": "asistan", "icerik": "Otomatik ödeme talimatınız başarıyla oluşturulmuştur. Artık faturalarınız son ödeme tarihinde kartınızdan otomatik olarak çekilecektir."}
             ]
@@ -1860,6 +1860,64 @@ class SupremeHumanLevelDatasetGenerator:
             ]
         }
 
+    def generate_emergency_service_scenario(self) -> Dict[str, Any]:
+        """Acil durum servisi aktivasyonu senaryosu"""
+        user_id = self._generate_user_id()
+        emergency_type = "medical"
+        return {
+            "id": f"emergency_service_{uuid.uuid4().hex[:8]}",
+            "scenario_type": ScenarioType.EMERGENCY_SERVICE.value,
+            "personality_profile": "busy_working_parent",
+            "cognitive_state": CognitiveState.SYSTEMATIC.value,
+            "emotional_context": EmotionalContext.URGENT.value,
+            "cultural_context": "modern_urban_turkish",
+            "donguler": [
+                {"rol": "kullanici", "icerik": "Acil bir durumdayım, hattım için sınırsız kullanım ve öncelik istiyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": "Hemen acil durum servisini aktive ediyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "activate_emergency_service", "parametreler": {"user_id": user_id, "emergency_type": emergency_type}}]},
+                {"rol": "arac", "icerik": self._create_validated_response(ActivateEmergencyServiceResponse, override_data={"user_id": user_id, "emergency_service_activated": True, "emergency_type": emergency_type})},
+                {"rol": "asistan", "icerik": "Acil durum servisi aktif. Arama ve veri limitleriniz geçici olarak kaldırıldı ve iletişim önceliğiniz artırıldı.", "arac_cagrilari": None}
+            ]
+        }
+
+    def generate_update_contact_scenario(self) -> Dict[str, Any]:
+        """İletişim bilgisi güncelleme senaryosu"""
+        user_id = self._generate_user_id()
+        return {
+            "id": f"update_contact_{uuid.uuid4().hex[:8]}",
+            "scenario_type": ScenarioType.UPDATE_CONTACT.value,
+            "personality_profile": "tech_savvy_millennial",
+            "cognitive_state": CognitiveState.SYSTEMATIC.value,
+            "emotional_context": EmotionalContext.CALM.value,
+            "cultural_context": "modern_urban_turkish",
+            "donguler": [
+                {"rol": "kullanici", "icerik": "E-posta adresimi güncellemek istiyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": "Elbette, yeni e-posta adresinizi sisteme işliyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "update_customer_contact", "parametreler": {"user_id": user_id, "contact_type": "email", "new_value": "yeni.mail@example.com"}}]},
+                {"rol": "arac", "icerik": self._create_validated_response(UpdateCustomerContactResponse, override_data={"user_id": user_id, "contact_type": "email", "old_value": "eski.mail@example.com", "new_value": "yeni.mail@example.com"})},
+                {"rol": "asistan", "icerik": "E-posta adresiniz başarıyla güncellendi. Güvenlik için size bir doğrulama maili gönderdim.", "arac_cagrilari": None}
+            ]
+        }
+
+    def generate_reactivate_line_scenario(self) -> Dict[str, Any]:
+        """Askıdan hat aktifleştirme senaryosu"""
+        user_id = self._generate_user_id()
+        return {
+            "id": f"reactivate_line_{uuid.uuid4().hex[:8]}",
+            "scenario_type": ScenarioType.REACTIVATE_LINE.value,
+            "personality_profile": "cautious_senior",
+            "cognitive_state": CognitiveState.SYSTEMATIC.value,
+            "emotional_context": EmotionalContext.CALM.value,
+            "cultural_context": "traditional_turkish",
+            "donguler": [
+                {"rol": "kullanici", "icerik": "Hattımı dondurmuştum, yeniden aktifleştirmek istiyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": "Hemen hattınızı aktif ediyorum.", "arac_cagrilari": None},
+                {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "reactivate_line", "parametreler": {"user_id": user_id}}]},
+                {"rol": "arac", "icerik": self._create_validated_response(ReactivateLineResponse, override_data={"user_id": user_id, "line_number": "+905551234567"})},
+                {"rol": "asistan", "icerik": "Hattınız tekrar aktif. Şu andan itibaren arama ve veri kullanımınız açıldı.", "arac_cagrilari": None}
+            ]
+        }
+
     # ==============================================================================
     # 6. ENHANCED MAIN GENERATOR METODİ
     # ==============================================================================
@@ -1894,7 +1952,7 @@ class SupremeHumanLevelDatasetGenerator:
                 {"rol": "kullanici", "icerik": "Veri tüketim trendlerimi analiz ederek gelecek ay ne kadar kullanacağımı tahmin edebilir misiniz?", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": "**Öngörüsel Analitik Motoru Başlatılıyor! 📈**\n\nMakine öğrenmesi modelleriyle gelecek tahmini yapabilirim. Önce geçmiş verilerinizi analiz edeyim...", "arac_cagrilari": None},
                 {"rol": "asistan", "icerik": None, "arac_cagrilari": [{"fonksiyon": "get_past_bills", "parametreler": {"user_id": user_id, "limit": 12}}]},
-                {"rol": "arac", "icerik": self._create_validated_response(GetPastBillsResponse), "arac_cagrilari": None},
+                {"rol": "arac", "icerik": self._create_validated_response(GetPastBillsResponse)},
                 {"rol": "asistan", "icerik": "**Öngörüsel Model Sonuçları! 🎯**\n\n```\n📊 6-Aylık Trend Analizi:\nGelecek ay tahmini: 52 GB (±8 GB)\nGüven aralığı: %85\nTrend: ↗️ %12 artış\n```\n\nBu tahmine göre paket önerisi yapalım mı?", "arac_cagrilari": None}
             ]
         }
@@ -1931,8 +1989,8 @@ class SupremeHumanLevelDatasetGenerator:
             ]
         }
 
-    def generate_advanced_error_recovery_scenario(self) -> Dict[str, Any]:
-        """Sistem hatalarından kurtarma ve çözüm senaryosu."""
+    def generate_advanced_error_recovery_scenario_v2(self) -> Dict[str, Any]:
+        """Sistem hatalarından kurtarma ve çözüm senaryosu (v2)."""
         user_id = self._generate_user_id()
         return {
             "id": f"advanced_error_recovery_{uuid.uuid4().hex[:8]}",
@@ -2005,6 +2063,9 @@ class SupremeHumanLevelDatasetGenerator:
             ScenarioType.GET_USER_TICKETS: self.generate_get_user_tickets_scenario,
             ScenarioType.GET_TICKET_STATUS: self.generate_get_ticket_status_scenario,
             ScenarioType.TEST_INTERNET_SPEED: self.generate_test_internet_speed_scenario,
+            ScenarioType.EMERGENCY_SERVICE: self.generate_emergency_service_scenario,
+            ScenarioType.UPDATE_CONTACT: self.generate_update_contact_scenario,
+            ScenarioType.REACTIVATE_LINE: self.generate_reactivate_line_scenario,
         }
         
         # UZMAN SEVİYESİ İYİLEŞTİRME: Senaryo Ağırlıklandırma
@@ -2048,6 +2109,9 @@ class SupremeHumanLevelDatasetGenerator:
             2.0, # GET_USER_TICKETS
             2.0, # GET_TICKET_STATUS
             2.0, # TEST_INTERNET_SPEED
+            1.5, # EMERGENCY_SERVICE
+            1.5, # UPDATE_CONTACT
+            1.5, # REACTIVATE_LINE
         ]
         
         # UZMAN SEVİYESİ KONTROL: Ağırlık ve metod listelerinin uzunlukları eşleşmelidir.
