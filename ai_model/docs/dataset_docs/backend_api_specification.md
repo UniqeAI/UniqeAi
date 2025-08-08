@@ -682,7 +682,7 @@
 
 ### Kritik Kararlar:
 - [ ] Authentication token format
-- [ ] Rate limiting rules  
+- [ ] Rate limiting rules  ⚠️ Bilinmeyen parametre: method (fonksiyon: pay_bill)
 - [ ] Database choice (PostgreSQL öneriyoruz)
 - [ ] Deployment environment
 

@@ -8,7 +8,18 @@
         "amount": 125.50,
         "currency": "TRY",
         "due_date": "2024-08-20",
-        "status": "unpaid"
+        "bill_date": "2024-07-20",
+        "status": "unpaid",
+        "services": [
+          {
+            "service_name": "Premium Internet",
+            "amount": 89.90
+          },
+          {
+            "service_name": "Voice Package", 
+            "amount": 35.60
+          }
+        ]
       }
     },
     "error": {
@@ -181,6 +192,164 @@
           "code": "TICKET_NOT_FOUND",
           "message": "Simülatör yanıtı: Belirtilen bilet numarası bulunamadı."
         }
+      }
+    }
+  },
+  "get_past_bills": {
+    "success": {
+      "success": true,
+      "data": {
+        "bills": [
+          {
+            "bill_id": "F-2024-07-001",
+            "amount": 98.75,
+            "currency": "TRY",
+            "billing_date": "2024-07-01",
+            "due_date": "2024-07-20",
+            "status": "paid"
+          },
+          {
+            "bill_id": "F-2024-06-001",
+            "amount": 102.30,
+            "currency": "TRY",
+            "billing_date": "2024-06-01",
+            "due_date": "2024-06-20",
+            "status": "paid"
+          },
+          {
+            "bill_id": "F-2024-05-001",
+            "amount": 95.60,
+            "currency": "TRY",
+            "billing_date": "2024-05-01",
+            "due_date": "2024-05-20",
+            "status": "paid"
+          }
+        ],
+        "total_bills": 3,
+        "total_amount": 296.65
+      }
+    }
+  },
+  "get_customer_package": {
+    "success": {
+      "success": true,
+      "data": {
+        "package_name": "Premium Unlimited",
+        "monthly_fee": 125.50,
+        "features": {
+          "internet_gb": 100,
+          "voice_minutes": 2000,
+          "sms_count": 1000,
+          "roaming_enabled": true,
+          "international_minutes": 60
+        },
+        "activation_date": "2024-01-15",
+        "renewal_date": "2024-08-15"
+      }
+    }
+  },
+  "check_network_status": {
+    "success": {
+      "success": true,
+      "data": {
+        "region": "İstanbul",
+        "status": "operational",
+        "coverage_percentage": 98,
+        "active_outages": [],
+        "last_updated": "2024-08-01T14:30:00Z"
+      }
+    }
+  },
+  "enable_roaming": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "roaming_enabled": true,
+        "activation_time": "2024-08-01T14:30:00Z",
+        "daily_fee": 25.0,
+        "data_package": "International Roaming"
+      }
+    }
+  },
+  "get_cultural_context": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "cultural_profile": "turkish_urban",
+        "communication_preferences": {
+          "language": "turkish",
+          "formality": "respectful",
+          "pace": "moderate"
+        },
+        "service_adaptations": [
+          "turkish_holiday_awareness",
+          "local_business_hours"
+        ],
+        "language_preference": "turkish",
+        "accessibility_needs": [
+          "clear_explanations"
+        ]
+      }
+    }
+  },
+  "generate_creative_analysis": {
+    "success": {
+      "success": true,
+      "data": {
+        "analysis_id": "ANALYSIS-2024-001",
+        "problem_description": "Müşteri memnuniyetsizliği",
+        "creative_solutions": [
+          "Kişiselleştirilmiş paket önerileri",
+          "Proaktif teknik destek"
+        ],
+        "innovation_score": 85,
+        "feasibility_ratings": {
+          "technical": 8,
+          "cost": 7,
+          "timeline": 6
+        },
+        "implementation_suggestions": [
+          "Pilot program başlatma",
+          "A/B testing ile doğrulama"
+        ]
+      }
+    }
+  },
+  "check_5g_coverage": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "location": "İstanbul, Kadıköy",
+        "coverage_status": "excellent",
+        "signal_strength": 95,
+        "download_speed_estimate_mbps": 450.0,
+        "upload_speed_estimate_mbps": 85.0,
+        "latency_estimate_ms": 12,
+        "network_quality": "5G+",
+        "coverage_percentage": 98
+      }
+    }
+  },
+  "get_customer_profile": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "name": "Ahmet Yılmaz",
+        "phone_numbers": [
+          {
+            "number": "+905551234567",
+            "type": "mobile",
+            "status": "active"
+          }
+        ],
+        "email": "ahmet.yilmaz@example.com",
+        "address": "İstanbul, Kadıköy",
+        "registration_date": "2024-01-15",
+        "customer_tier": "premium"
       }
     }
   }
