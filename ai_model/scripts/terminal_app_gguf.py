@@ -50,9 +50,12 @@ CONTEXT_SIZE = 2048  # Performans için düşürüldü
 GPU_LAYERS = 35      # Optimum GPU katman sayısı
 TEMPERATURE = 0.1    # Yaratıcılık için hafif bir artış
 DEFAULT_TEST_USER_ID = 12345
+MAX_TOOL_STEPS = 5   # Çok-adımlı zincirlerde üst sınır
 
 console = Console()
-ALL_TOOL_DEFINITIONS = {tool['function']['name']: tool for tool in get_tool_definitions()}
+# Araç tanımlarını hem liste hem de isim->tanım haritası olarak hazırla
+TOOL_DEFINITIONS_LIST = list(get_tool_definitions())
+ALL_TOOL_DEFINITIONS = {tool['function']['name']: tool for tool in TOOL_DEFINITIONS_LIST}
 
 
 def find_latest_gguf_model(model_dir: Path) -> Optional[Path]:
@@ -100,23 +103,19 @@ class Executor:
 
     def _create_system_prompt(self) -> str:
         tools_string = "\n".join([f"  - `{name}`: {d['function']['description']}" for name, d in ALL_TOOL_DEFINITIONS.items()])
-        return f"""Sen, Türkçe konuşan bir AI motorusun. Görevin, sana verilen kullanıcı komutunu analiz edip ilgili aracı çağırmaktır. 
+        return f"""Sen, Türkçe konuşan bir AI motorusun. Görevin, sana verilen kullanıcı komutunu analiz edip uygun ARACI çağırmaktır.
 
-**KRİTİK KURAL: ASLA SOHBET ETME, SADECE ARAÇ ÇAĞIR!**
+KRİTİK KURALLAR:
+- ASLA açıklama veya sohbet yapma; uygun olduğunda doğrudan araç çağır.
+- Native tool-calling kullan (function calling). KOD BLOĞU üretme.
+- 'user_id' istenirse varsayılan {DEFAULT_TEST_USER_ID} kullanılabilir.
 
-**ÖRNEKLER:**
-- "faturamı öğrenebilir miyim" → HEMEN `get_current_bill` çağır
-- "hesabımın faturası" → HEMEN `get_current_bill` çağır  
-- "internet hızım" → HEMEN `test_internet_speed` çağır
-- "faturamı öde" → HEMEN `pay_bill` çağır
+ÖRNEK EŞLEŞTİRMELER:
+- "faturamı öğrenebilir miyim" → get_current_bill
+- "internet hızım" → test_internet_speed
+- "faturamı öde" → pay_bill
 
-**YAPMA:**
-- Hesap numarası sorma (zaten user_id=12345 var)
-- "Tabii ki yardımcı olabilirim" gibi sohbet
-- Açıklama yapma
-
-**ARAÇ KULLANIM KURALI:** `<|begin_of_tool_code|>print(fonksiyon(parametre="değer"))<|end_of_tool_code|>`
-**KULLANABİLECEĞİN ARAÇLAR:**
+KULLANABİLECEĞİN ARAÇLAR:
 {tools_string}"""
 
     def parse_tool_calls(self, text: str) -> Optional[List[Dict[str, Any]]]:
@@ -159,6 +158,10 @@ class Executor:
                 elif expected_param == "method" and "payment_method" in func_args:
                     corrected_args["method"] = func_args["payment_method"]
                     console.print(f"🔧 [italic yellow]İcracı: 'payment_method' parametresi 'method' olarak düzeltildi.[/italic yellow]")
+                elif func_name == "setup_autopay" and expected_param == "payment_method" and "status" in func_args and "payment_method" not in func_args:
+                    # Eğitim verisindeki 'status' alanını varsayılan ödeme yöntemiyle eşle
+                    corrected_args["payment_method"] = "credit_card"
+                    console.print(f"🔧 [italic yellow]İcracı: 'status' parametresi 'payment_method'='credit_card' olarak dönüştürüldü.[/italic yellow]")
                 elif expected_param in func_args:
                     corrected_args[expected_param] = func_args[expected_param]
             
@@ -166,6 +169,12 @@ class Executor:
             if "user_id" in required_params and "user_id" not in corrected_args:
                 corrected_args["user_id"] = DEFAULT_TEST_USER_ID
                 console.print(f"🧠 [italic yellow]İcracı: 'user_id' parametresi varsayılan ID ({DEFAULT_TEST_USER_ID}) ile tamamlandı.[/italic yellow]")
+            if "payment_method" in required_params and "payment_method" not in corrected_args and func_name == "setup_autopay":
+                corrected_args["payment_method"] = "credit_card"
+                console.print(f"🧠 [italic yellow]İcracı: 'payment_method' varsayılan 'credit_card' ile tamamlandı.[/italic yellow]")
+            if "line_number" in required_params and "line_number" not in corrected_args and func_name == "suspend_line":
+                corrected_args["line_number"] = "0530-000-0000"
+                console.print(f"🧠 [italic yellow]İcracı: 'line_number' varsayılan '0530-000-0000' ile tamamlandı.[/italic yellow]")
             
             func_args = corrected_args
         
@@ -264,26 +273,64 @@ KURALLAR:
         return clean_summary if clean_summary else raw_summary
 
     def run_task(self, user_input: str, context_data: Dict[str, Any] = None) -> Tuple[Optional[str], bool]:
-        """Verilen tek bir görevi uçtan uca çalıştırır."""
-        dialogue = [{"role": "system", "content": self.system_prompt}, {"role": "user", "content": user_input}]
-        response = self.llm.create_chat_completion(
-            messages=dialogue, 
-            temperature=TEMPERATURE, 
-            stop=["<|eot_id|>"],
-            max_tokens=512,  # Hızlı araç çağırma için sınırlı token
-            repeat_penalty=1.1,
-            top_k=40,
-            top_p=0.9
-        )
-        assistant_response_text = response['choices'][0]['message']['content']
-        
-        tool_calls = self.parse_tool_calls(assistant_response_text)
-        if tool_calls:
-            tool_response = self.execute_tool(tool_calls[0], context_data)
-            final_summary = self.summarize_tool_result(tool_response)
-            return final_summary, True
-        
-        return assistant_response_text, False
+        """Verilen tek bir görevi çok-adımlı tool-calling döngüsüyle çalıştırır."""
+        conversation: List[Dict[str, Any]] = [
+            {"role": "system", "content": self.system_prompt},
+            {"role": "user", "content": user_input}
+        ]
+
+        executed_any_tool = False
+        last_assistant_text: Optional[str] = None
+
+        for _ in range(MAX_TOOL_STEPS):
+            response = self.llm.create_chat_completion(
+                messages=conversation,
+                temperature=TEMPERATURE,
+                stop=["<|eot_id|>"],
+                max_tokens=512,
+                repeat_penalty=1.1,
+                top_k=40,
+                top_p=0.9,
+                tools=TOOL_DEFINITIONS_LIST,
+                tool_choice="auto"
+            )
+
+            msg = response['choices'][0]['message']
+            assistant_response_text = msg.get('content') or ""
+            last_assistant_text = assistant_response_text
+            conversation.append({"role": "assistant", "content": assistant_response_text})
+
+            raw_tool_calls = msg.get('tool_calls')
+            parsed_calls: List[Dict[str, Any]] = []
+            if raw_tool_calls:
+                for call in raw_tool_calls:
+                    try:
+                        fn_name = call.get('function', {}).get('name')
+                        raw_args = call.get('function', {}).get('arguments') or "{}"
+                        args = json.loads(raw_args) if isinstance(raw_args, str) else (raw_args or {})
+                        parsed_calls.append({"name": fn_name, "arguments": args, "id": call.get('id')})
+                    except Exception:
+                        continue
+
+            if not parsed_calls:
+                fallback_calls = self.parse_tool_calls(assistant_response_text)
+                if fallback_calls:
+                    parsed_calls = [{"name": c["name"], "arguments": c["arguments"], "id": None} for c in fallback_calls]
+
+            if not parsed_calls:
+                break
+
+            for call in parsed_calls:
+                executed_any_tool = True
+                console.print(f"🛠️  [bold yellow]İcracı Araç Çağrısı:[/bold yellow] [green]{call['name']}({call['arguments']})[/green]")
+                tool_resp = self.execute_tool({"name": call['name'], "arguments": call['arguments']}, context_data)
+                tool_message = {"role": "tool", "content": tool_resp}
+                if call.get('id'):
+                    tool_message["tool_call_id"] = call['id']
+                    tool_message["name"] = call['name']
+                conversation.append(tool_message)
+
+        return (last_assistant_text or ""), executed_any_tool
 
 # --- Katman 1: Orkestra Şefi (ConversationManager) ---
 class ConversationManager:
@@ -400,7 +447,7 @@ SADECE 'EVET' veya 'HAYIR' yanıtla. Başka hiçbir şey yazma."""
     def _extract_bill_id_from_user_input(self, user_input: str) -> Optional[str]:
         """Kullanıcı girdisinden fatura ID'sini çıkarır."""
         import re
-        bill_id_match = re.search(r'F-\d{4,}-[A-Z0-9]+-\d+|F-\d{7,}', user_input)
+        bill_id_match = re.search(r'F-\d{4}-[A-Z0-9]+-\d+|F-\d{4}-\d+|F-\d{7,}', user_input)
         return bill_id_match.group(0) if bill_id_match else None
     
     def handle_chat(self, last_input: str):

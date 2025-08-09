@@ -52,10 +52,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 class ModelAndDataConfig:
     model_name: str = field(default="meta-llama/Meta-Llama-3-8B-Instruct", metadata={"help": "Hugging Face model adı."})
     data_paths: List[str] = field(
-        default_factory=lambda: [
-            "UniqeAi/ai_model/data/ultimate_human_level_dataset_v2_enhanced_20250729_171909.json"
-        ],
-        metadata={"help": "Eğitim için kullanılacak NİHAİ ve tek veri dosyası."}
+        default_factory=lambda: ["ultimate_human_level_dataset_v2_enhanced_20250809_033446.json"],
+        metadata={"help": "Eğitim için kullanılacak veri dosyaları listesi (bir veya birden çok JSON yolu)."}
     )
     test_size: float = field(default=0.1, metadata={"help": "Değerlendirme seti yüzdesi."})
     lora_r: int = field(default=16, metadata={"help": "LoRA rank."})
@@ -65,7 +63,7 @@ class ModelAndDataConfig:
         default_factory=lambda: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
         metadata={"help": "LoRA uygulanacak modüller."}
     )
-    wandb_project: str = field(default="ChoyrensAI-Telekom-Agent-v3-BF16", metadata={"help": "Weights & Biases proje adı."})
+    wandb_project: str = field(default="ChoyrensAI-Telekom-Agent-v6-BF16", metadata={"help": "Weights & Biases proje adı."})
     use_wandb: bool = field(default="WANDB_API_KEY" in os.environ, metadata={"help": "W&B entegrasyonunu etkinleştir."})
     use_bf16_training: bool = field(
         default=True, 
@@ -74,7 +72,7 @@ class ModelAndDataConfig:
 
 @dataclass
 class TrainingArguments(HfTrainingArguments):
-    output_dir: str = "UniqeAi/ai_model/final-model_v3_bf16" # Son model ve checkpoint'ler için yeni klasör
+    output_dir: str = "UniqeAi/ai_model/final-model_v6_bf16" # Son model ve checkpoint'ler için yeni klasör
     num_train_epochs: int = 3
     # UZMAN SEVİYESİ OPTİMİZASYON: A100 (40GB) OOM hatasını çözmek için anlık yığın boyutu mutlak minimuma (1) indirildi.
     per_device_train_batch_size: int = 1
@@ -86,7 +84,10 @@ class TrainingArguments(HfTrainingArguments):
         default_factory=lambda: {"use_reentrant": False},
         metadata={"help": "torch.utils.checkpoint için kwargs, UserWarning'i bastırmak için."}
     )
-    learning_rate: float = 2e-5
+    learning_rate: float = 1e-4
+    warmup_ratio: float = 0.05
+    weight_decay: float = 0.05
+    max_grad_norm: float = 0.3
     logging_strategy: str = "steps"
     logging_steps: int = 100 # Büyük veri seti için optimize edildi (önceki: 10)
     save_strategy: str = "steps"
@@ -102,7 +103,7 @@ class TrainingArguments(HfTrainingArguments):
     report_to: str = "wandb" if "WANDB_API_KEY" in os.environ else "none"
     max_seq_length: int = 2048
     dataset_text_field: str = "text"
-    packing: bool = True
+    packing: bool = False
 
 def setup_huggingface_token():
     dotenv_path = PROJECT_ROOT / ".env"
@@ -196,8 +197,8 @@ class ExpertTrainer:
         Bu, modelin araç çağırmayı kavramsal olarak öğrenmesi için en doğru yaklaşımdır.
         """
         dialogue = []
-        # Bir asistan dönüşündeki araç çağrı ID'lerini bir sonraki araç yanıtı için sakla
-        pending_tool_call_ids = []
+        # Bir asistan dönüşündeki araç çağrı ID'lerini ve isimlerini bir sonraki araç yanıtı için sakla
+        pending_tool_calls = []  # list of dicts: {"id": str, "name": str}
 
         for turn in item["donguler"]:
             role = turn["rol"]
@@ -212,11 +213,11 @@ class ExpertTrainer:
                 
                 if tool_calls_data:
                     tool_calls = []
-                    current_turn_ids = []
+                    current_turn_calls = []
                     for call in tool_calls_data:
                         # Her araç çağrısı için benzersiz bir ID oluştur
                         tool_call_id = f"call_{uuid.uuid4().hex[:8]}"
-                        current_turn_ids.append(tool_call_id)
+                        current_turn_calls.append({"id": tool_call_id, "name": call["fonksiyon"]})
                         tool_calls.append({
                             "id": tool_call_id,
                             "type": "function",
@@ -226,24 +227,23 @@ class ExpertTrainer:
                                 "arguments": json.dumps(call.get("parametreler", {}), ensure_ascii=False),
                             },
                         })
-                    
+
                     assistant_message["tool_calls"] = tool_calls
-                    # Bu ID'leri bir sonraki 'arac' dönüşü için sakla
-                    pending_tool_call_ids = current_turn_ids
+                    # Bu ID+isimleri bir sonraki 'arac' dönüşü için sıraya ekle
+                    pending_tool_calls.extend(current_turn_calls)
                 
                 dialogue.append(assistant_message)
 
             elif role == "arac":
-                # Eğer bekleyen bir araç ID'si varsa, onu bu yanıta ata
-                if pending_tool_call_ids:
-                    # Genellikle bir önceki asistan dönüşünde tek bir çağrı olur,
-                    # bu yüzden ilk ID'yi kullanmak çoğu senaryo için yeterlidir.
-                    # Çoklu çağrı durumlarında bu mantığın genişletilmesi gerekebilir.
-                    tool_call_id = pending_tool_call_ids.pop(0)
+                # Eğer bekleyen bir araç çağrısı varsa, onu bu yanıta ata
+                if pending_tool_calls:
+                    # FIFO: İlk bekleyen çağrıyı eşleştir
+                    rec = pending_tool_calls.pop(0)
                     dialogue.append({
                         "role": "tool",
                         "content": content or "",
-                        "tool_call_id": tool_call_id,
+                        "tool_call_id": rec["id"],
+                        "name": rec["name"],
                     })
                 else:
                     # Bu durum, veri setinde bir tutarsızlık olduğunu gösterir (yanıtsız çağrı)
@@ -260,6 +260,10 @@ class ExpertTrainer:
     def _load_and_prepare_dataset(self, tokenizer: AutoTokenizer) -> Dataset:
         logger.info(f"💾 Veri setleri yükleniyor: {self.config.data_paths}")
         all_data = []
+        if not self.config.data_paths:
+            raise ValueError("Eğitim verisi bulunamadı. Lütfen 'data_paths' listesini doldurun.")
+
+        logger.info(f"🔎 Kullanılacak veri dosyaları: {self.config.data_paths}")
         for path in self.config.data_paths:
             full_path = PROJECT_ROOT / path
             with open(full_path, 'r', encoding='utf-8') as f:
@@ -283,8 +287,8 @@ class ExpertTrainer:
             dialogue = self._format_dialogue(normalized_item)
             try:
                 formatted_text = tokenizer.apply_chat_template(
-                    dialogue, 
-                    tokenize=False, 
+                    dialogue,
+                    tokenize=False,
                     add_generation_prompt=False
                 )
                 formatted_texts.append({"text": formatted_text})
@@ -397,7 +401,7 @@ def main():
     model_config, training_args = parser.parse_args_into_dataclasses()
 
     if model_config.use_wandb:
-        run_name = f"core-engine-v3-bf16-{datetime.now().strftime('%Y%m%d-%H%M')}"
+        run_name = f"core-engine-v6-bf16-{datetime.now().strftime('%Y%m%d-%H%M')}"
         training_args.run_name = run_name
         os.environ["WANDB_PROJECT"] = model_config.wandb_project
 
