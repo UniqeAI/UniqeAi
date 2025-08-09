@@ -52,7 +52,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[3]
 class ModelAndDataConfig:
     model_name: str = field(default="meta-llama/Meta-Llama-3-8B-Instruct", metadata={"help": "Hugging Face model adı."})
     data_paths: List[str] = field(
-        default_factory=lambda: [],
+        default_factory=lambda: ["ultimate_human_level_dataset_v2_enhanced_20250809_033446.json"],
         metadata={"help": "Eğitim için kullanılacak veri dosyaları listesi (bir veya birden çok JSON yolu)."}
     )
     test_size: float = field(default=0.1, metadata={"help": "Değerlendirme seti yüzdesi."})
@@ -63,7 +63,7 @@ class ModelAndDataConfig:
         default_factory=lambda: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
         metadata={"help": "LoRA uygulanacak modüller."}
     )
-    wandb_project: str = field(default="ChoyrensAI-Telekom-Agent-v3-BF16", metadata={"help": "Weights & Biases proje adı."})
+    wandb_project: str = field(default="ChoyrensAI-Telekom-Agent-v6-BF16", metadata={"help": "Weights & Biases proje adı."})
     use_wandb: bool = field(default="WANDB_API_KEY" in os.environ, metadata={"help": "W&B entegrasyonunu etkinleştir."})
     use_bf16_training: bool = field(
         default=True, 
@@ -72,7 +72,7 @@ class ModelAndDataConfig:
 
 @dataclass
 class TrainingArguments(HfTrainingArguments):
-    output_dir: str = "UniqeAi/ai_model/final-model_v3_bf16" # Son model ve checkpoint'ler için yeni klasör
+    output_dir: str = "UniqeAi/ai_model/final-model_v6_bf16" # Son model ve checkpoint'ler için yeni klasör
     num_train_epochs: int = 3
     # UZMAN SEVİYESİ OPTİMİZASYON: A100 (40GB) OOM hatasını çözmek için anlık yığın boyutu mutlak minimuma (1) indirildi.
     per_device_train_batch_size: int = 1
@@ -401,7 +401,7 @@ def main():
     model_config, training_args = parser.parse_args_into_dataclasses()
 
     if model_config.use_wandb:
-        run_name = f"core-engine-v3-bf16-{datetime.now().strftime('%Y%m%d-%H%M')}"
+        run_name = f"core-engine-v6-bf16-{datetime.now().strftime('%Y%m%d-%H%M')}"
         training_args.run_name = run_name
         os.environ["WANDB_PROJECT"] = model_config.wandb_project
 

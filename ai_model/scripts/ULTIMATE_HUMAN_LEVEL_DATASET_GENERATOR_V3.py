@@ -38,6 +38,7 @@ from pathlib import Path
 import argparse
 import sys
 from functools import lru_cache
+from collections import defaultdict
 
 # === KRİTİK: PYDANTIC VE API ŞEMASI ENTEGRASYONİ ===
 try:
@@ -67,6 +68,10 @@ except ImportError as e:
     print(f"❌ KRİTİK HATA: Pydantic veya telekom_api_schema yüklenemedi: {e}")
     print(f"🐍 Python yolu: {sys.path}")
     sys.exit(1)
+
+# === RAPORLAMA & SIKILIK AYARLARI ===
+STRICT_UNKNOWN_PARAMS_AS_ERROR = True  # Bilinmeyen parametreleri hata say
+MAX_ERROR_SAMPLES = 20                # Raporlarken gösterilecek maksimum örnek sayısı
 
 # ==============================================================================
 # 🚨 ENHANCED ERROR HANDLING - V3 OPTIMIZATION
@@ -135,7 +140,7 @@ class ScenarioType(Enum):
     PACKAGE_DETAILS = "package_details"
     ENABLE_ROAMING = "enable_roaming"
     CLOSE_TICKET = "close_ticket"
-    GET_USER_TICKETS = "get_user_tickets"
+    GET_USER_TICKETS = "get_users_tickets"
     GET_TICKET_STATUS = "get_ticket_status"
     UPDATE_CONTACT = "update_contact"
     SUSPEND_LINE = "suspend_line"
@@ -268,6 +273,9 @@ class SupremeHumanLevelDatasetGenerator:
         
         # Statistics tracking
         self.generated_scenarios = {scenario.value: 0 for scenario in ScenarioType}
+        self.skipped_scenarios_by_reason = defaultdict(int)
+        self.validation_errors_by_reason = defaultdict(int)
+        self.samples_by_reason = defaultdict(list)
         self.total_generated = 0
         
         print(f"📊 {len(self.api_response_map)} API fonksiyonu eşleştirildi")
@@ -400,6 +408,13 @@ class SupremeHumanLevelDatasetGenerator:
             # 6. LEGACY PARAMETRE ŞEMA UYUMLULUĞU KONTROL (Backward Compatibility)
             schema_validation = self._validate_parameter_schema_compliance(function_name, parameters)
             if not schema_validation["valid"]:
+                # Ayrıntılı sebep logla
+                self.validation_errors_by_reason[schema_validation["error"][:80]] += 1
+                if len(self.samples_by_reason[schema_validation["error"][:80]]) < MAX_ERROR_SAMPLES:
+                    self.samples_by_reason[schema_validation["error"][:80]].append({
+                        "function": function_name,
+                        "params": parameters
+                    })
                 return schema_validation
             
             return {"valid": True, "error": None}
@@ -442,7 +457,9 @@ class SupremeHumanLevelDatasetGenerator:
         special_functions = {
             "get_past_bills": ["user_id", "limit"],
             "setup_autopay": ["user_id", "status"], 
-            "enable_roaming": ["user_id", "status"]
+            "enable_roaming": ["user_id", "status"],
+            "update_customer_contact": ["user_id", "contact_type", "new_value"],
+            "activate_emergency_service": ["user_id", "emergency_type"],
         }
         
         # Ticket fonksiyonları için ticket_id gerekli
@@ -508,7 +525,14 @@ class SupremeHumanLevelDatasetGenerator:
                 "payment_method": {"type": str, "valid_values": ["credit_card", "bank_transfer", "digital_wallet"]},
                 "method": {"type": str, "valid_values": ["credit_card", "bank_transfer", "digital_wallet"]},
                 "status": {"type": bool},
-                "reason": {"type": str, "min_length": 5}
+                "reason": {"type": str, "min_length": 5},
+
+                # İletişim güncelleme parametreleri (şema uyumlu)
+                "contact_type": {"type": str, "valid_values": ["phone", "email", "address"]},
+                "new_value": {"type": str, "min_length": 1, "max_length": 200},
+
+                # Acil durum servis aktivasyon parametreleri
+                "emergency_type": {"type": str, "min_length": 3, "max_length": 50},
             }
             
             suspicious_params = []
@@ -1177,6 +1201,9 @@ class SupremeHumanLevelDatasetGenerator:
         try:
             # 1. AŞAMA: Tool call'ları topla ve doğrula (Enterprise Schema v3.0)
             for turn in scenario["donguler"]:
+                # Normalize: asistan tool çağrısında icerik null ise boş stringe çevir
+                if turn.get("rol") == "asistan" and turn.get("arac_cagrilari") and turn.get("icerik") is None:
+                    turn["icerik"] = ""
                 if turn.get("arac_cagrilari"):
                     for call in turn["arac_cagrilari"]:
                         function_name = call.get("fonksiyon")
@@ -2171,6 +2198,14 @@ class SupremeHumanLevelDatasetGenerator:
                 traceback.print_exc()
                 print("="*50)
                 skipped_scenarios += 1
+                # Sebep takibi
+                reason_key = f"Exception:{type(e).__name__}"
+                self.skipped_scenarios_by_reason[reason_key] += 1
+                if len(self.samples_by_reason[reason_key]) < MAX_ERROR_SAMPLES:
+                    self.samples_by_reason[reason_key].append({
+                        "scenario_type": scenario_type.value if hasattr(scenario_type, "value") else str(scenario_type),
+                        "error": str(e)
+                    })
                 continue
         
         print("\n🎊 DATASET GENERATİON TAMAMLANDI!")
@@ -2181,6 +2216,28 @@ class SupremeHumanLevelDatasetGenerator:
         print(f"   ⚠️ Atlanan senaryolar: {skipped_scenarios}")
         print(f"   🔍 Toplam Pydantic doğrulama: {pydantic_validations}")
         print(f"   📈 Başarı oranı: %{len(dataset)/(len(dataset)+validation_errors+skipped_scenarios)*100:.1f}")
+
+        # Detaylı sebep raporu
+        if self.validation_errors_by_reason:
+            print("\n🔎 Validasyon hata nedenleri:")
+            for reason, count in sorted(self.validation_errors_by_reason.items(), key=lambda x: -x[1]):
+                print(f"   • {count}x → {reason}")
+        if self.skipped_scenarios_by_reason:
+            print("\n🔎 Atlanan senaryo nedenleri:")
+            for reason, count in sorted(self.skipped_scenarios_by_reason.items(), key=lambda x: -x[1]):
+                print(f"   • {count}x → {reason}")
+        # Örnekler (limitli)
+        if self.samples_by_reason:
+            print("\n🧪 Örnek kayıtlar (limitli):")
+            shown = 0
+            for reason, samples in self.samples_by_reason.items():
+                for sample in samples[:3]:
+                    print(f"   • [{reason}] sample={sample}")
+                    shown += 1
+                    if shown >= 12:
+                        break
+                if shown >= 12:
+                    break
         
         print("\n📊 Senaryo Dağılımı:")
         for scenario_type, count in self.generated_scenarios.items():
@@ -2238,7 +2295,7 @@ def main():
     parser.add_argument(
         "--num-samples", 
         type=int, 
-        default=10000, 
+        default=20000, 
         help="Üretilecek toplam veri örneği sayısı."
     )
     parser.add_argument(
