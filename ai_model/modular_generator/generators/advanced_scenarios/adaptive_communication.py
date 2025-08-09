@@ -14,7 +14,18 @@ from datetime import datetime, timedelta
 
 from ...models.enums import ScenarioType, CognitiveState, EmotionalContext
 from ...utils.helpers import generate_user_id, create_validated_response
-from ...telekom_api_schema import *
+try:
+    from ...telekom_api_schema import *
+except (ImportError, ValueError):
+    # Relative import çalışmazsa absolute import dene
+    try:
+        from ai_model.modular_generator.telekom_api_schema import *
+    except ImportError:
+        # Son çare olarak sys.path manipülasyonu
+        import sys
+        import os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
+        from telekom_api_schema import *
 def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
     """
     50 adet uzman seviyesi, elle hazırlanmış ve şema uyumlu adaptif iletişim senaryosu üretir.
@@ -236,6 +247,8 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
     })
 
     # 14. Kısıtlı Bütçeli Öğrenci
+    student_fee = 80.0
+    student_gb = 20
     scenarios.append({
         "id": f"adaptive_comm_scenario_{uuid.uuid4().hex[:8]}",
         "scenario_type": ScenarioType.ADAPTIVE_COMMUNICATION.value,
@@ -244,7 +257,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "emotional_context": EmotionalContext.HOPEFUL.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Öğrenciyim ve en ucuz internet paketiniz hangisi acaba?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Öğrenci Dostu Mod Aktif!* 🎓 Merhaba! 'Genç Paket' aylık sadece 80 TL. Detaylarını görmek ister misin?", "arac_cagrilari": [{"fonksiyon": "get_package_details", "parametreler": {"package_name": "Genç Paket"}}]}
+            {"rol": "asistan", "icerik": "*Öğrenci Dostu Mod Aktif!* 🎓 Merhaba! 'Genç Paket' aylık sadece 80 TL. Detaylarını görmek ister misin?", "arac_cagrilari": [{"fonksiyon": "get_package_details", "parametreler": {"package_name": "Genç Paket"}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetPackageDetailsResponse, {"monthly_fee": student_fee, "features": {"internet_gb": student_gb, "voice_minutes": 500, "sms_count": 100, "international_minutes": 0}})},
+            {"rol": "asistan", "icerik": f"Genç Paket tam sana göre! Aylık {student_fee} TL'ye {student_gb} GB internet, 500 dakika konuşma ve 100 SMS. Öğrenci olduğunu belgeleyebilirsen ilk 6 ay %25 indirim de var. Nasıl, hemen başlatmak ister misin? 😊", "arac_cagrilari": None}
         ]
     })
     
@@ -257,7 +272,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "emotional_context": EmotionalContext.WORRIED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Sürekli video yüklüyorum ve upload kotam bitiyor. Sınırsız upload paketi var mı?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*İçerik Üretici Modu Aktif!* 🚀 Sizi anlıyorum. 'Profesyonel Fiber' paketimiz 50 Mbps upload hızı sunuyor. Mevcut paketleri listeleyebilirim.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]}
+            {"rol": "asistan", "icerik": "*İçerik Üretici Modu Aktif!* 🚀 Sizi anlıyorum. 'Profesyonel Fiber' paketimiz 50 Mbps upload hızı sunuyor. Mevcut paketleri listeleyebilirim.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetAvailablePackagesResponse, {"packages": [{"name": "Profesyonel Fiber", "monthly_fee": 199.90, "features": {"internet_gb": 100, "voice_minutes": 2000, "sms_count": 1000}, "target_audience": "content_creators"}]})},
+            {"rol": "asistan", "icerik": "İşte size uygun paketlerimiz! Profesyonel Fiber paketimiz aylık 199.90 TL'ye sınırsız upload ve 100 GB veri sunuyor. İçerik üreticiler için ideal. Hemen geçiş yapalım mı? 🚀", "arac_cagrilari": None}
         ]
     })
 
@@ -270,7 +287,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "emotional_context": EmotionalContext.SKEPTICAL.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Hakkımda hangi verileri topluyorsunuz?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Şeffaflık Modu Aktif!* 📄 Sadece hizmet kalitesi ve faturalandırma için gerekli verileri topluyoruz. Detaylı bilgi için profilinizi getirebilirim.", "arac_cagrilari": [{"fonksiyon": "get_customer_profile", "parametreler": {"user_id": user_id_pool[9]}}]}
+            {"rol": "asistan", "icerik": "*Şeffaflık Modu Aktif!* 📄 Sadece hizmet kalitesi ve faturalandırma için gerekli verileri topluyoruz. Detaylı bilgi için profilinizi getirebilirim.", "arac_cagrilari": [{"fonksiyon": "get_customer_profile", "parametreler": {"user_id": user_id_pool[9]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCustomerProfileResponse, {"user_id": user_id_pool[9], "name": "Ali Güvenli", "phone_numbers": [{"number": "+905551234567", "type": "mobile", "status": "active"}], "email": "ali@example.com", "address": "İstanbul, Beşiktaş", "registration_date": "2020-03-15", "customer_tier": "silver"})},
+            {"rol": "asistan", "icerik": "İşte profilinizde sakladığımız bilgiler: Ad-soyad, telefon, e-posta ve adres. Kullanım verileriniz sadece hizmet kalitesi için analiz edilir, üçüncü şahıslarla asla paylaşılmaz. KVKK kapsamında tüm haklarınız korunmaktadır. 🔒", "arac_cagrilari": None}
         ]
     })
 
@@ -283,7 +302,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Yeni adrese taşındım, internetimi nasıl buraya aldırabilirim? Adresim: Yeni Mahalle, Umut Sokak", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Nakil Asistanı Modu Aktif!* 🚚 Hoş geldiniz! Yeni adresinizdeki altyapıyı kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Yeni Mahalle"}}]}
+            {"rol": "asistan", "icerik": "*Nakil Asistanı Modu Aktif!* 🚚 Hoş geldiniz! Yeni adresinizdeki altyapıyı kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Yeni Mahalle"}}]},
+            {"rol": "arac", "icerik": create_validated_response(CheckNetworkStatusResponse, {"region": "Yeni Mahalle", "status": "operational", "coverage_percentage": 98, "active_outages": [], "last_updated": "2024-03-01T14:30:00Z"})},
+            {"rol": "asistan", "icerik": "Harika haber! Yeni Mahalle'de altyapımız %98 kapsama ile mükemmel durumda. Nakil işleminizi hemen başlatabiliriz. Genelde 2-3 iş günü içinde internetiniz yeni adresinizde hazır olacak. İşlemi başlatmamı ister misiniz? 🏠", "arac_cagrilari": None}
         ]
     })
 
@@ -296,7 +317,10 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "emotional_context": EmotionalContext.FRUSTRATED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Hello, my internet... no work. Bill... problem?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Uluslararası Destek Modu Aktif!* 🌐 Hello! I will help you. One moment, I am checking your internet and bill.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[10]}}, {"fonksiyon": "test_internet_speed", "parametreler": {"user_id": user_id_pool[10]}}]}
+            {"rol": "asistan", "icerik": "*Uluslararası Destek Modu Aktif!* 🌐 Hello! I will help you. One moment, I am checking your internet and bill.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[10]}}, {"fonksiyon": "test_internet_speed", "parametreler": {"user_id": user_id_pool[10]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCurrentBillResponse, {"user_id": user_id_pool[10], "bill_id": "F-2024-789456", "amount": 125.50, "due_date": "2024-03-20", "status": "unpaid", "services": [{"service_name": "International Package", "amount": 125.50}]})},
+            {"rol": "arac", "icerik": create_validated_response(TestInternetSpeedResponse, {"user_id": user_id_pool[10], "download_speed_mbps": 35.2, "upload_speed_mbps": 8.7, "ping_ms": 28, "test_timestamp": "2024-03-01T14:30:00Z", "test_server": "Istanbul-1", "quality_rating": "good"})},
+            {"rol": "asistan", "icerik": "Good news! Your internet is working fine: 35.2 Mbps download, 8.7 upload, 28ms ping. Your bill is 125.50 TL, due March 20th. The bill is not paid yet - would you like to pay now? Everything looks normal! 👍", "arac_cagrilari": None}
         ]
     })
 
@@ -346,7 +370,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Rakip firma aynı paraya iki katı hız veriyor. Teklifinizi iyileştirmezseniz geçeceğim.", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Rekabetçi Mod Aktif!* 🥊 Teklifleri değerlendirdiğinizi anlıyorum. Size özel teklifleri görebilmek için mevcut paketleri listeliyorum.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]}
+            {"rol": "asistan", "icerik": "*Rekabetçi Mod Aktif!* 🥊 Teklifleri değerlendirdiğinizi anlıyorum. Size özel teklifleri görebilmek için mevcut paketleri listeliyorum.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetAvailablePackagesResponse, {"packages": [{"name": "Rekabet Karşısı Süper", "monthly_fee": 149.90, "features": {"internet_gb": 75, "voice_minutes": 3000, "sms_count": 2000}, "target_audience": "competitive_users"}, {"name": "Hız Canavarı Plus", "monthly_fee": 179.90, "features": {"internet_gb": 100, "voice_minutes": 4000, "sms_count": 3000}, "target_audience": "speed_lovers"}]})},
+            {"rol": "asistan", "icerik": "Rakiplerimizle yarışabilecek özel tekliflerimiz hazır! 'Rekabet Karşısı Süper' 149.90 TL'ye 75 GB + bolca dakika, 'Hız Canavarı Plus' 179.90 TL'ye 100 GB + sınırsız konuşma. İlk 6 ay %30 indirimli! Rakibin teklifini geçiyoruz! 💪", "arac_cagrilari": None}
         ]
     })
 
@@ -370,7 +396,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CONFUSED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Bu faturadaki vergiler ne anlama geliyor?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Mali Müşavir Modu Aktif!* 🧾 Tabii ki. Geçen ayki faturanız üzerinden kalemleri göstereyim.", "arac_cagrilari": [{"fonksiyon": "get_past_bills", "parametreler": {"user_id": user_id_pool[12], "limit": 1}}]}
+            {"rol": "asistan", "icerik": "*Mali Müşavir Modu Aktif!* 🧾 Tabii ki. Geçen ayki faturanız üzerinden kalemleri göstereyim.", "arac_cagrilari": [{"fonksiyon": "get_past_bills", "parametreler": {"user_id": user_id_pool[12], "limit": 1}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetPastBillsResponse, {"bills": [{"bill_id": "F-2024-002345", "amount": 147.85, "bill_date": "2024-02-28", "status": "paid", "paid_date": "2024-03-05"}], "total_count": 12, "total_amount_paid": 1574.20})},
+            {"rol": "asistan", "icerik": "Geçen ayki faturanız 147.85 TL idi ve 5 Mart'ta ödenmişti. Faturadaki vergiler: KDV (%18), ÖTV ve BTK payları dahildir. Bu yasal yükümlülüklerimizdir. Son 12 ayda toplam 1.574,20 TL ödeme yaptınız. Detaylı açıklama ister misiniz? 📋", "arac_cagrilari": None}
         ]
     })
 
@@ -394,7 +422,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Paket değişikliği talebim vardı, TKT-75671, ne durumda?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Yardımsever Mod Aktif!* 🤝 Hemen kontrol ediyorum...", "arac_cagrilari": [{"fonksiyon": "get_fault_ticket_status", "parametreler": {"ticket_id": "TKT-75671"}}]}
+            {"rol": "asistan", "icerik": "*Yardımsever Mod Aktif!* 🤝 Hemen kontrol ediyorum...", "arac_cagrilari": [{"fonksiyon": "get_fault_ticket_status", "parametreler": {"ticket_id": "TKT-75671"}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetFaultTicketStatusResponse, {"ticket_id": "TKT-75671", "status": "resolved", "resolution": "Paket değişikliği başarıyla tamamlandı", "created_at": "2024-02-25T10:00:00Z", "resolved_at": "2024-02-28T16:30:00Z", "technician_notes": "Yeni paket aktif edildi, test edildi"})},
+            {"rol": "asistan", "icerik": "Harika haber! TKT-75671 numaralı paket değişikliği talebiniz 28 Şubat'ta başarıyla tamamlanmış. Yeni paketiniz aktif ve test edilmiş. Herhangi bir sorun yaşıyor musunuz? 🎉", "arac_cagrilari": None}
         ]
     })
 
@@ -422,7 +452,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
             {"rol": "kullanici", "icerik": "Paketimi yükseltsem mi?", "arac_cagrilari": None},
             {"rol": "asistan", "icerik": "'Süper Paket'e geçmek ister misiniz?", "arac_cagrilari": None},
             {"rol": "kullanici", "icerik": "Olabilir...", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Onaylama Modu Aktif!* 🤔 Aylık 150 TL olan 'Süper Paket'e geçişi onaylıyor musunuz?", "arac_cagrilari": [{"fonksiyon": "change_package", "parametreler": {"user_id": user_id_pool[15], "new_package_name": "Süper Paket"}}]}
+            {"rol": "asistan", "icerik": "*Onaylama Modu Aktif!* 🤔 Aylık 150 TL olan 'Süper Paket'e geçişi onaylıyor musunuz?", "arac_cagrilari": [{"fonksiyon": "change_package", "parametreler": {"user_id": user_id_pool[15], "new_package_name": "Süper Paket"}}]},
+            {"rol": "arac", "icerik": create_validated_response(ChangePackageResponse, {"change_id": "CHG-2024-005678", "from_package": "Temel Paket", "to_package": "Süper Paket", "effective_date": "2024-04-01", "fee_difference": 70.00, "status": "scheduled"})},
+            {"rol": "asistan", "icerik": "Mükemmel! Paket değişikliğiniz onaylandı. CHG-2024-005678 numaralı işleminiz 1 Nisan'da yürürlüğe girecek. Aylık fark 70 TL olacak. İlk faturanızda bu fark gösterilecek. Hoş geldiniz Süper Paket ailesine! 🎉", "arac_cagrilari": None}
         ]
     })
 
@@ -433,7 +465,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Hattımdaki SNR ve CRC hata oranlarını öğrenebilir miyim?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Teknik Mod Aktif!* 💻 Bu detaylı veriler için doğrudan bir aracım yok, ancak genel hat sağlığınızı kontrol için bir hız testi yapabilirim.", "arac_cagrilari": [{"fonksiyon": "test_internet_speed", "parametreler": {"user_id": user_id_pool[16]}}]}
+            {"rol": "asistan", "icerik": "*Teknik Mod Aktif!* 💻 Bu detaylı veriler için doğrudan bir aracım yok, ancak genel hat sağlığınızı kontrol için bir hız testi yapabilirim.", "arac_cagrilari": [{"fonksiyon": "test_internet_speed", "parametreler": {"user_id": user_id_pool[16]}}]},
+            {"rol": "arac", "icerik": create_validated_response(TestInternetSpeedResponse, {"user_id": user_id_pool[16], "download_speed_mbps": 78.3, "upload_speed_mbps": 15.7, "ping_ms": 12, "test_timestamp": "2024-03-01T14:30:00Z", "test_server": "Istanbul-1", "quality_rating": "excellent"})},
+            {"rol": "asistan", "icerik": "Teknik verileriniz: Download 78.3 Mbps, Upload 15.7 Mbps, RTT 12ms. Line quality excellent. SNR ve CRC detayları için sistem log'larına erişim gerekir - bu veri merkezi seviyesinde tutulur. DSLAM/MSAN performans metrikleri için teknik destek hattımızla iletişime geçebilirsiniz. 🔧", "arac_cagrilari": None}
         ]
     })
 
@@ -444,7 +478,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.INTUITIVE.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "/fatura", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Komut Algılama Modu Aktif!* 🤖 Fatura bilgilerinizi sorguluyorum.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[17]}}]}
+            {"rol": "asistan", "icerik": "*Komut Algılama Modu Aktif!* 🤖 Fatura bilgilerinizi sorguluyorum.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[17]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCurrentBillResponse, {"user_id": user_id_pool[17], "bill_id": "F-2024-654321", "amount": 189.75, "due_date": "2024-03-18", "status": "unpaid", "services": [{"service_name": "Süper Paket", "amount": 150.00}, {"service_name": "Ek Hizmetler", "amount": 39.75}]})},
+            {"rol": "asistan", "icerik": "🧾 **FATURA SORGUSU TAMAMLANDI** 🧾\n• Fatura No: F-2024-654321\n• Tutar: 189.75 TL\n• Son Ödeme: 18 Mart 2024\n• Durum: ÖDENMEMİŞ\n• Süper Paket: 150 TL + Ek Hizmetler: 39.75 TL", "arac_cagrilari": None}
         ]
     })
 
@@ -483,7 +519,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.FRUSTRATED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Evin içinde telefon çekmiyor, bu nasıl iş!", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Anlıyorum, ev içinde sinyal sorunları yaşamanız çok can sıkıcı. Bölgenizdeki baz istasyonlarının durumunu kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Beşiktaş"}}]}
+            {"rol": "asistan", "icerik": "Anlıyorum, ev içinde sinyal sorunları yaşamanız çok can sıkıcı. Bölgenizdeki baz istasyonlarının durumunu kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Beşiktaş"}}]},
+            {"rol": "arac", "icerik": create_validated_response(CheckNetworkStatusResponse, {"region": "Beşiktaş", "status": "degraded", "coverage_percentage": 85, "active_outages": [{"area": "Beşiktaş Merkez", "issue": "Baz istasyonu bakımda", "start_time": "2024-03-01T08:00:00Z", "estimated_end": "2024-03-01T18:00:00Z"}], "last_updated": "2024-03-01T14:30:00Z"})},
+            {"rol": "asistan", "icerik": "Maalesef Beşiktaş bölgesinde bir baz istasyonumuz bakımda olduğu için sinyal kalitesi %85 seviyesinde. Bu akşam 18:00'e kadar sürecek. Geçici çözüm olarak Wi-Fi araması açabilir veya size sinyal güçlendirici cihaz gönderebiliriz. 📶", "arac_cagrilari": None}
         ]
     })
 
@@ -494,7 +532,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.SYSTEMATIC.value, "emotional_context": EmotionalContext.WORRIED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Acil arama yapmam lazım ama hattım kapalı! Neden? Fatura numaram F-2024-111222", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Hemen kontrol ediyorum. Ödenmemiş faturanızdan dolayı hattınız kapatılmış. Dilerseniz şimdi ödeme yapabiliriz.", "arac_cagrilari": [{"fonksiyon": "pay_bill", "parametreler": {"bill_id": "F-2024-111222", "method": "credit_card"}}]}
+            {"rol": "asistan", "icerik": "Hemen kontrol ediyorum. Ödenmemiş faturanızdan dolayı hattınız kapatılmış. Dilerseniz şimdi ödeme yapabiliriz.", "arac_cagrilari": [{"fonksiyon": "pay_bill", "parametreler": {"bill_id": "F-2024-111222", "method": "credit_card"}}]},
+            {"rol": "arac", "icerik": create_validated_response(PayBillResponse, {"transaction_id": "TXN-2024-AC7891", "bill_id": "F-2024-111222", "amount": 245.60, "method": "credit_card", "status": "completed", "timestamp": "2024-03-01T14:45:00Z"})},
+            {"rol": "asistan", "icerik": "🎉 Ödemeniz başarıyla tamamlandı! İşlem No: TXN-2024-AC7891. 245.60 TL tutarındaki faturanız kredi kartınızdan tahsil edildi. Hattınız 5-10 dakika içinde otomatik olarak açılacak. Acil arama yapabilirsiniz artık! 📞", "arac_cagrilari": None}
         ]
     })
 
@@ -505,7 +545,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Faturama itiraz etmiştim, TKT-121212 numaralı kaydım ne durumda?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Elbette, TKT-121212 numaralı itiraz kaydınızın durumunu kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_fault_ticket_status", "parametreler": {"ticket_id": "TKT-121212"}}]}
+            {"rol": "asistan", "icerik": "Elbette, TKT-121212 numaralı itiraz kaydınızın durumunu kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_fault_ticket_status", "parametreler": {"ticket_id": "TKT-121212"}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetFaultTicketStatusResponse, {"ticket_id": "TKT-121212", "status": "in_progress", "resolution": None, "created_at": "2024-02-20T09:30:00Z", "resolved_at": None, "technician_notes": "Fatura detayları inceleniyor, mali departman değerlendirmesi devam ediyor"})},
+            {"rol": "asistan", "icerik": "TKT-121212 numaralı fatura itirazınız halen değerlendirme aşamasında. Mali departmanımız fatura detaylarınızı inceliyor. Ortalama süreç 5-7 iş günü sürer, gerekirse size dönüş yapacağız. Sabırlı olmanızı rica ederim. 📋", "arac_cagrilari": None}
         ]
     })
 
@@ -516,7 +558,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.HOPEFUL.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Faturama ek telefon alabiliyor muyum? Kampanyalarınız var mı?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Evet, kampanyalarımız mevcut. Genellikle belirli paketlerle birlikte sunuluyor. Mevcut paketleri listeleyerek size uygun olanları gösterebilirim.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]}
+            {"rol": "asistan", "icerik": "Evet, kampanyalarımız mevcut. Genellikle belirli paketlerle birlikte sunuluyor. Mevcut paketleri listeleyerek size uygun olanları gösterebilirim.", "arac_cagrilari": [{"fonksiyon": "get_available_packages", "parametreler": {}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetAvailablePackagesResponse, {"packages": [{"name": "Cep Telefonu Dahil Paket", "monthly_fee": 299.90, "features": {"internet_gb": 50, "voice_minutes": 2500, "sms_count": 1500}, "target_audience": "device_seekers"}, {"name": "Akıllı Telefon Plus", "monthly_fee": 399.90, "features": {"internet_gb": 75, "voice_minutes": 3000, "sms_count": 2000}, "target_audience": "smartphone_users"}]})},
+            {"rol": "asistan", "icerik": "Harika kampanyalarımız var! 'Cep Telefonu Dahil Paket' 299.90 TL'ye orta segment telefon + 50 GB, 'Akıllı Telefon Plus' 399.90 TL'ye premium telefon + 75 GB dahil. 24 ay taahhütle telefonlar 0 TL! Hangi telefon modelleri ilginizi çekiyor? 📱", "arac_cagrilari": None}
         ]
     })
 
@@ -540,7 +584,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Yeni telefona nano SIM kart gerekiyor. Nasıl değiştirebilirim?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "SIM kart değişikliği için size en yakın mağazamıza başvurmanız yeterlidir. Bu arada yeni telefon numaranızı sisteme kaydetmek ister misiniz?", "arac_cagrilari": [{"fonksiyon": "update_customer_contact", "parametreler": {"user_id": user_id_pool[21], "contact_type": "phone", "new_value": "0555-Yeni-Numara"}}]}
+            {"rol": "asistan", "icerik": "SIM kart değişikliği için size en yakın mağazamıza başvurmanız yeterlidir. Bu arada yeni telefon numaranızı sisteme kaydetmek ister misiniz?", "arac_cagrilari": [{"fonksiyon": "update_customer_contact", "parametreler": {"user_id": user_id_pool[21], "contact_type": "phone", "new_value": "0555-Yeni-Numara"}}]},
+            {"rol": "arac", "icerik": create_validated_response(UpdateCustomerContactResponse, {"user_id": user_id_pool[21], "contact_type": "phone", "old_value": "+905551234567", "new_value": "0555-Yeni-Numara", "updated_at": "2024-03-01T14:30:00Z", "verification_required": True})},
+            {"rol": "asistan", "icerik": "Yeni telefon numaranız sisteme kaydedildi! Eski numara: +905551234567 → Yeni numara: 0555-Yeni-Numara. Güvenlik için bu numaraya doğrulama SMS'i göndereceğiz. SIM kartınızı almak için en yakın mağazamızın adresini paylaşayım mı? 📱", "arac_cagrilari": None}
         ]
     })
 
@@ -588,7 +634,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.HOPEFUL.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Bizim köyde hiç telefon çekmiyor. Buraya bir baz istasyonu kurulması için ne yapabiliriz?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Anlıyorum. Sinyal kalitesini artırmak amacıyla bölgeniz için bir baz istasyonu talebi oluşturmadan önce mevcut durumu kontrol edelim.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Umutlu Köyü"}}]}
+            {"rol": "asistan", "icerik": "Anlıyorum. Sinyal kalitesini artırmak amacıyla bölgeniz için bir baz istasyonu talebi oluşturmadan önce mevcut durumu kontrol edelim.", "arac_cagrilari": [{"fonksiyon": "check_network_status", "parametreler": {"region": "Umutlu Köyü"}}]},
+            {"rol": "arac", "icerik": create_validated_response(CheckNetworkStatusResponse, {"region": "Umutlu Köyü", "status": "outage", "coverage_percentage": 15, "active_outages": [{"area": "Umutlu Köyü", "issue": "Kapsama alanı dışında", "start_time": "2024-01-01T00:00:00Z", "estimated_end": "2024-12-31T23:59:59Z"}], "last_updated": "2024-03-01T14:30:00Z"})},
+            {"rol": "asistan", "icerik": "Maalesef Umutlu Köyü'nde kapsama oranımız sadece %15. Bu bölge için baz istasyonu talebi oluşturabilirim. Teknik ekiplerimiz fizibilite çalışması yapacak. Genelde 20+ haneli yerleşim yerlerinde ekonomik olabiliyor. Köyünüzde kaç hane var? 🏘️", "arac_cagrilari": None}
         ]
     })
 
@@ -602,7 +650,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
             {"rol": "kullanici", "icerik": "hmm...", "arac_cagrilari": None},
             {"rol": "asistan", "icerik": "*Açık Uçlu Soru Modu Aktif!* 🤔 Faturanızla ilgili bir sorunuz mu var, yoksa paketinizle ilgili bilgi mi almak istiyorsunuz?", "arac_cagrilari": None},
             {"rol": "kullanici", "icerik": "fatura evet.", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Anladım, hemen son faturanızı kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[24]}}]}
+            {"rol": "asistan", "icerik": "Anladım, hemen son faturanızı kontrol ediyorum.", "arac_cagrilari": [{"fonksiyon": "get_current_bill", "parametreler": {"user_id": user_id_pool[24]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetCurrentBillResponse, {"user_id": user_id_pool[24], "bill_id": "F-2024-998877", "amount": 112.30, "due_date": "2024-03-22", "status": "unpaid", "services": [{"service_name": "Temel Paket", "amount": 89.90}, {"service_name": "Ek SMS", "amount": 22.40}]})},
+            {"rol": "asistan", "icerik": "Faturanız: 112.30 TL (Temel Paket 89.90 TL + Ek SMS 22.40 TL). Son ödeme: 22 Mart. Henüz ödenmemiş. Ödeme yapmak ister misiniz? 💳", "arac_cagrilari": None}
         ]
     })
 
@@ -613,7 +663,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.FRUSTRATED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Bankanın sitesinden faturamı ödeyemiyorum, 'borç bulunamadı' diyor. Fatura ID: F-2024-333444", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Anlıyorum, bu durum bazen anlık bir sorundan kaynaklanabiliyor. Dilerseniz ödemeyi buradan birlikte yapabiliriz.", "arac_cagrilari": [{"fonksiyon": "pay_bill", "parametreler": {"bill_id": "F-2024-333444", "method": "digital_wallet"}}]}
+            {"rol": "asistan", "icerik": "Anlıyorum, bu durum bazen anlık bir sorundan kaynaklanabiliyor. Dilerseniz ödemeyi buradan birlikte yapabiliriz.", "arac_cagrilari": [{"fonksiyon": "pay_bill", "parametreler": {"bill_id": "F-2024-333444", "method": "digital_wallet"}}]},
+            {"rol": "arac", "icerik": create_validated_response(PayBillResponse, {"transaction_id": "TXN-2024-DW9876", "bill_id": "F-2024-333444", "amount": 167.25, "method": "digital_wallet", "status": "completed", "timestamp": "2024-03-01T14:35:00Z"})},
+            {"rol": "asistan", "icerik": "Harika! Ödemeniz başarıyla tamamlandı. İşlem No: TXN-2024-DW9876. 167.25 TL tutarındaki faturanız dijital cüzdan ile ödenmiştir. Bankanın sisteminde güncelleme biraz zaman alabilir, yarın tekrar kontrol edebilirsiniz. 👍", "arac_cagrilari": None}
         ]
     })
 
@@ -624,7 +676,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.INTUITIVE.value, "emotional_context": EmotionalContext.OVERWHELMED.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Benim bir arıza kaydım vardı, bir saniye... Evet, ne oldu o?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Tabii, adınıza kayıtlı tüm destek taleplerinizi listeliyorum.", "arac_cagrilari": [{"fonksiyon": "get_users_tickets", "parametreler": {"user_id": user_id_pool[25]}}]}
+            {"rol": "asistan", "icerik": "Tabii, adınıza kayıtlı tüm destek taleplerinizi listeliyorum.", "arac_cagrilari": [{"fonksiyon": "get_users_tickets", "parametreler": {"user_id": user_id_pool[25]}}]},
+            {"rol": "arac", "icerik": create_validated_response(GetUsersTicketsResponse, {"user_id": user_id_pool[25], "tickets": [{"ticket_id": "TKT-2024-567890", "issue_description": "İnternet hızı düşük", "category": "internet_speed", "priority": "medium", "status": "in_progress", "created_at": "2024-02-28T11:15:00Z", "estimated_resolution": "2024-03-02T17:00:00Z"}]})},
+            {"rol": "asistan", "icerik": "Bir adet aktif arıza kaydınız var: TKT-2024-567890 - İnternet hızı sorunu. Durum: İncelemede. Tahmini çözüm: 2 Mart akşamı. Bu mu demek istediğiniz yoksa başka bir konu var mı? 🔍", "arac_cagrilari": None}
         ]
     })
 
@@ -635,7 +689,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.EMPATHETIC.value, "emotional_context": EmotionalContext.CURIOUS.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "İnternet o kadar hızlı ki, Nasreddin Hoca'nın kazanı gibi maşallah.", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Bu güzel benzetme ve geri bildirim için teşekkür ederiz! 😊 Memnuniyetinize sevindik. 'Kazan'ınızın hep böyle hızlı 'doğurması' dileğiyle!", "arac_cagrilari": [{"fonksiyon": "get_cultural_context", "parametreler": {"user_id": user_id_pool[26]}}]}
+            {"rol": "asistan", "icerik": "Bu güzel benzetme ve geri bildirim için teşekkür ederiz! 😊 Memnuniyetinize sevindik. 'Kazan'ınızın hep böyle hızlı 'doğurması' dileğiyle!", "arac_cagrilari": [{"fonksiyon": "get_cultural_context", "parametreler": {"user_id": user_id_pool[26]}}]},
+            {"rol": "arac", "icerik": create_validated_response(CulturalContextResponse, {"user_id": user_id_pool[26], "cultural_profile": "traditional_turkish", "communication_preferences": {"humor_style": "folk_references", "politeness_level": "formal", "storytelling": "appreciated"}, "service_adaptations": ["Cultural metaphors usage", "Traditional greeting styles", "Folk wisdom integration"], "language_preference": "tr", "accessibility_needs": []})},
+            {"rol": "asistan", "icerik": "Nasreddin Hoca hikayelerini sevdiğinizi not ettim! 📚 Bundan sonra size daha çok geleneksel Türk kültürüne uygun benzetmeler ve hikayelerle açıklama yapacağım. Böylece hizmetimiz size daha samimi gelecek. Madem internet 'kazanı' güzel kaynıyor, başka bir ihtiyacınız var mı? ☕", "arac_cagrilari": None}
         ]
     })
 
@@ -646,7 +702,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.ANALYTICAL.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Mevcut aboneliğime ilişkin tarife detaylarının tarafıma e-posta yoluyla iletilmesini talep ediyorum. E-posta: yeni@adres.com", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Sayın Müşterimiz, talebiniz alınmıştır. Öncelikle e-posta adresinizi sisteme kaydediyorum.", "arac_cagrilari": [{"fonksiyon": "update_customer_contact", "parametreler": {"user_id": user_id_pool[27], "contact_type": "email", "new_value": "yeni@adres.com"}}]}
+            {"rol": "asistan", "icerik": "Sayın Müşterimiz, talebiniz alınmıştır. Öncelikle e-posta adresinizi sisteme kaydediyorum.", "arac_cagrilari": [{"fonksiyon": "update_customer_contact", "parametreler": {"user_id": user_id_pool[27], "contact_type": "email", "new_value": "yeni@adres.com"}}]},
+            {"rol": "arac", "icerik": create_validated_response(UpdateCustomerContactResponse, {"user_id": user_id_pool[27], "contact_type": "email", "old_value": "eski@example.com", "new_value": "yeni@adres.com", "updated_at": "2024-03-01T14:40:00Z", "verification_required": True})},
+            {"rol": "asistan", "icerik": "E-posta adresiniz başarıyla güncellenmiştir. Eski adres: eski@example.com → Yeni adres: yeni@adres.com. Güvenlik doğrulaması için yeni adresinize bir onay e-postası gönderilmiştir. Tarife detaylarınız da bu adrese iletilecektir. Başka bir talebiniz var mı, Sayın Müşterimiz? 📧", "arac_cagrilari": None}
         ]
     })
 
@@ -657,7 +715,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.EMPATHETIC.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Merhaba, geçen ay hattımı dondurmuştum, şimdi açtırabilir miyim?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Proaktif Kontrol Modu Aktif!* ✅ Merhaba, hoş geldiniz! Elbette, hemen hattınızı yeniden aktif ediyorum.", "arac_cagrilari": [{"fonksiyon": "reactivate_line", "parametreler": {"user_id": user_id_pool[28]}}]}
+            {"rol": "asistan", "icerik": "*Proaktif Kontrol Modu Aktif!* ✅ Merhaba, hoş geldiniz! Elbette, hemen hattınızı yeniden aktif ediyorum.", "arac_cagrilari": [{"fonksiyon": "reactivate_line", "parametreler": {"user_id": user_id_pool[28]}}]},
+            {"rol": "arac", "icerik": create_validated_response(ReactivateLineResponse, {"user_id": user_id_pool[28], "line_number": "+905551234567", "reactivated_at": "2024-03-01T14:45:00Z", "suspension_duration_days": 28, "reactivation_fee": 0.00})},
+            {"rol": "asistan", "icerik": "Hoş geldiniz! 🎉 Hattınız (+905551234567) başarıyla aktifleştirildi. 28 gün dondurulmuş olan hattınız şimdi tamamen çalışır durumda. Reaktivasyon ücreti alınmadı. İyi günlerde kullanın! Başka bir ihtiyacınız var mı?", "arac_cagrilari": None}
         ]
     })
 
@@ -668,7 +728,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.EMPATHETIC.value, "emotional_context": EmotionalContext.CALM.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Nasılsın bakalım bugün?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "*Sosyal Mod Aktif!* 😊 Teşekkür ederim, ben bir yapay zekayım ama size yardımcı olmaya her zaman hazırım! Size daha iyi hizmet verebilmek için tercihlerinizi öğreniyorum.", "arac_cagrilari": [{"fonksiyon": "update_learning_adaptation", "parametreler": {"user_id": user_id_pool[29]}}]}
+            {"rol": "asistan", "icerik": "*Sosyal Mod Aktif!* 😊 Teşekkür ederim, ben bir yapay zekayım ama size yardımcı olmaya her zaman hazırım! Size daha iyi hizmet verebilmek için tercihlerinizi öğreniyorum.", "arac_cagrilari": [{"fonksiyon": "update_learning_adaptation", "parametreler": {"user_id": user_id_pool[29]}}]},
+            {"rol": "arac", "icerik": create_validated_response(LearningAdaptationResponse, {"adaptation_updated": True, "learning_progress": {"social_interaction": 85, "preference_accuracy": 92}})},
+            {"rol": "asistan", "icerik": "Bu güzel sohbet tarzınızı kaydettim! Gelecekte size daha samimi ve dostça yaklaşacağım. Bugün size nasıl yardımcı olabilirim? Bir şeyiniz var mı? 😊", "arac_cagrilari": None}
         ]
     })
 
@@ -679,7 +741,9 @@ def generate_adaptive_communication_scenarios() -> List[Dict[str, Any]]:
         "cognitive_state": CognitiveState.FOCUSED.value, "emotional_context": EmotionalContext.HOPEFUL.value,
         "donguler": [
             {"rol": "kullanici", "icerik": "Elimde bir hediye acil durum paketi kodu var, bunu nasıl kullanabilirim?", "arac_cagrilari": None},
-            {"rol": "asistan", "icerik": "Harika! Acil durum paketinizi hemen aktif edebiliriz. Bu, doğal afet gibi durumlarda size kesintisiz iletişim sağlar.", "arac_cagrilari": [{"fonksiyon": "activate_emergency_service", "parametreler": {"user_id": user_id_pool[30], "emergency_type": "natural_disaster_pack"}}]}
+            {"rol": "asistan", "icerik": "Harika! Acil durum paketinizi hemen aktif edebiliriz. Bu, doğal afet gibi durumlarda size kesintisiz iletişim sağlar.", "arac_cagrilari": [{"fonksiyon": "activate_emergency_service", "parametreler": {"user_id": user_id_pool[30], "emergency_type": "natural_disaster_pack"}}]},
+            {"rol": "arac", "icerik": create_validated_response(ActivateEmergencyServiceResponse, {"user_id": user_id_pool[30], "emergency_service_activated": True, "emergency_type": "natural_disaster_pack", "activation_time": "2024-03-01T14:50:00Z", "call_limit_removed": True, "data_limit_removed": True, "emergency_contact_priority": True, "duration_hours": 168})},
+            {"rol": "asistan", "icerik": "🚨 Acil Durum Paketi Aktif! 🚨 Doğal afet paketi başarıyla devreye girdi. 7 gün (168 saat) boyunca sınırsız arama ve internet kullanabilirsiniz. Acil servislerle iletişiminiz öncelikli olacak. Güvenlikte kalın! 🛡️", "arac_cagrilari": None}
         ]
     })
 
@@ -691,5 +755,5 @@ def generate_adaptive_communication_scenario() -> Dict[str, Any]:
     """
     all_scenarios = generate_adaptive_communication_scenarios()
     if not all_scenarios:
-        return {} 
-    return random.choice(all_scenarios)
+        return []
+    return all_scenarios
