@@ -63,6 +63,11 @@ tmp_model/
 temp_model/
 model_checkpoints/
 
+# model files
+
+**/results
+**/results_2
+
 # NOT: Model dosyaları Git LFS ile yönetilecek
 
 # Büyük Data Dosyaları (GitHub'a atılmayacak)
