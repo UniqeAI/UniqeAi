@@ -1,0 +1,154 @@
+[
+  {
+    "id": "adaptive_comm_scenario_649cae6e",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "creative_artist_freelancer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ben görsel öğrenim tipiyim. Teknik şeyleri anlatırken görsel kullanabilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Visual Communication Mode Activated! 🎨**\n\nTabii ki! Sizin öğrenme stilinize uygun görsel açıklamalar yapacağım:\n\n📊 **İnternet Kotası Visualized:**\n```\n🟦🟦🟦🟦🟦🟦🟦⬜⬜⬜  (70% kullanıldı)\n|------ 35 GB ------|  |10GB|\n     Kullanılan         Kalan\n```\n\n🎯 Bu şekilde devam edelim mi? Hangi konuyu görsel olarak açıklamamı istersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_62c5de18",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babam geçen ay vefat etti. Onun telefonunu ve internet aboneliğini kapatmak istiyorum ama çok zor geliyor. Bu süreçte bana nasıl yardımcı olabilirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**💐 Başsağlığı diliyorum...** Babanızı kaybetmenizin ne kadar zor olduğunu anlıyorum. Bu tür işlemler acı bir dönemde ek yük oluşturmamalı. Size en hassas ve kolay yolu sunmak istiyorum.\n\n**Duygusal Destek Protokolü:** Bu süreçte sadece teknik değil, duygusal destek de sağlayacağım. Acele etmeyin, her adımı birlikte atacağız.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 55469
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":55469,\"name\":\"Mehmet Demir\",\"phone_numbers\":[{\"number\":\"0535-124-26-90\",\"type\":\"Fiber altyapı\",\"status\":\"active\"},{\"number\":\"0532-183-41-32\",\"type\":\"7/24 müşteri desteği\",\"status\":\"suspended\"}],\"email\":\"ayse.kaya105@gmail.com\",\"address\":\"Beşiktaş, Bursa\",\"registration_date\":\"2025-07-12T18:34:42.868099\",\"customer_tier\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Görüyorum ki babanız 6 yıllık değerli müşterimizmiş...** 💙 Bu uzun süreçte ailenizle birlikte olduğumuz için minnettarız.\n\n**Nazik Geçiş Süreci:**\n\n🕊️ **Acil Şefkatli İşlemler:**\n• Faturalandırma: Bugünden itibaren durdurulabilir\n• Acil durumu kayda alınıyor - özel işlem önceliği\n• Hiçbir ek ücret veya ceza yok\n• Süreç tamamen sizin temponuzda ilerleyecek\n\n📱 **Anı Koruma Seçenekleri:**\n• Telefon numarası: 6 ay 'anı olarak' saklayabiliriz\n• Mesaj geçmişi: USB'ye yedekleme hizmeti (ücretsiz)\n• Fotoğraf/videolar: Cloud transfer yardımı\n• Özel hatıralar: Kopyalama teknisyeni desteği\n\n💝 **Aile Geçiş Desteği:**\n• Eğer başka aile üyesi kullanmak isterse: isim transfer\n• Anı paketi: Özel indirimli tarife seçenekleri\n• Duygusal destek: Süreç boyunca aynı temsilci (ben)\n\n**Hiç acele etmeyin:** Bu işlemleri yapmaya hazır hissettiğinizde yaparız. Şimdilik sadece faturalandırmayı durduralım mı? Gerisini zamanla, adım adım hallederiz.\n\nBu süreçte yanınızdayım. Babanızın anısına saygıyla... 🤲",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_history_scenario_f91064c7",
+    "scenario_type": "payment_history",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Son 3 ay içerisindeki ödeme geçmişimi kontrol edebilir miyim?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, hemen ödeme geçmişinizi kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 64571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-6DC49FA10E4E\",\"amount\":508.77,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T18:34:42.869702\",\"bill_id\":\"F-2024-447616\"},{\"transaction_id\":\"TXN-052A21FF4CF1\",\"amount\":584.31,\"method\":\"digital_wallet\",\"date\":\"2025-07-16T18:34:42.869726\",\"bill_id\":\"F-2024-302835\"}],\"total_payments\":563,\"total_amount\":678.97}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 3 ayda toplam 3 adet ödeme yapmışsınız. Detayları listeliyorum..."
+      }
+    ]
+  },
+  {
+    "id": "disambiguation_scenario_addc795d",
+    "scenario_type": "disambiguation",
+    "personality_profile": "cautious_senior",
+    "cognitive_state": "analytical",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Hattımla ilgili bir sorun var, bir şeyler yapmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette size yardımcı olmak için buradayım. Ancak talebiniz biraz belirsiz. **Netleştirmek için soruyorum:** 'Bir şeyler yapmak' ile tam olarak neyi kastediyorsunuz? \n1. Faturanızı mı ödemek istiyorsunuz?\n2. Tarifenizi mi değiştirmek istiyorsunuz?\n3. Bir arıza mı bildirmek istiyorsunuz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Ha evet, doğru. Arıza bildirecektim, internetim çok yavaş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anladım, teşekkür ederim. Hemen internet yavaşlığıyla ilgili bir arıza kaydı oluşturuyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 59318,
+              "issue_description": "İnternet çok yavaş.",
+              "category": "internet_speed",
+              "priority": "medium"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-92772\",\"user_id\":59318,\"issue_description\":\"İnternet çok yavaş.\",\"category\":\"internet_speed\",\"priority\":\"high\",\"status\":\"open\",\"created_at\":\"5G teknolojisi\",\"estimated_resolution\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Arıza kaydınız başarıyla oluşturulmuştur.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

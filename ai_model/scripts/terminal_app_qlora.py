@@ -46,7 +46,7 @@ console = Console()
 # --- YENİ: Model Yapılandırması ---
 # Yerel modeli mi (True) yoksa Hugging Face Hub'daki modeli mi (False) kullanacağınızı seçin.
 # ŞİMDİLİK YEREL TEST İÇİN AYARLANDI.
-USE_LOCAL_MODEL = True
+USE_LOCAL_MODEL = False
 
 if USE_LOCAL_MODEL:
     # merge_lora.py'nin oluşturduğu yerel birleştirilmiş modelin yolu

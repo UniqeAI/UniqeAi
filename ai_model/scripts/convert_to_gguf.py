@@ -37,13 +37,13 @@ except NameError:
     PROJECT_ROOT = Path.cwd()
 
 # Dönüştürülecek modelin Hugging Face Hub adresi
-MODEL_ID = "Choyrens/ChoyrensAI-Telekom-Agent-v1-merged"
+MODEL_ID = "Choyrens/ChoyrensAI-Telekom-Agent-v5-merged"
 
 # llama.cpp'nin klonlanacağı dizin
 LLAMA_CPP_DIR = PROJECT_ROOT / "UniqeAi" / "llama.cpp"
 
 # GGUF modelinin kaydedileceği dizin
-OUTPUT_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "gguf_model"
+OUTPUT_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "gguf_model_v5"
 
 # GGUF niceleme (quantization) formatı.
 # Q8_0, kalite ve dosya boyutu arasında harika bir denge sunar.

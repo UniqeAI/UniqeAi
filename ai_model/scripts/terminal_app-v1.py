@@ -58,7 +58,7 @@ else:
 # --- YENİ: Konuşma Geçmişi Limiti ---
 # Modelin "odaklanacağı" en son kaç mesajın (kullanıcı + asistan) seçileceğini belirler.
 # Bu, "context" sorununu (kafa karışıklığını) çözerken uzun hafızayı korur.
-FOCUSED_HISTORY_TURNS = 10
+FOCUSED_HISTORY_TURNS = 4
 
 def load_huggingface_token():
     """Token'ı .env dosyasından okur ve doğrular."""
