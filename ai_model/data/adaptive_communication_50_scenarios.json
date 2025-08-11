@@ -1,0 +1,2152 @@
+[
+  {
+    "id": "AC-001",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Elif Özkan",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. User ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, teknik destek için buradayım. kalan kotamı öğrenmek istiyorum için teknik analiz başlatıyorum. User ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 22222
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Query executed. Teknik detayları anladınız mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Additional technical information required?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka teknik sorunuz var mı? Technical assistance session ended."
+      }
+    ]
+  },
+  {
+    "id": "AC-002",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, internet sorunum var. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. internet sorunum var konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-11111\", \"user_id\": 11111, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.455532\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi adım adım tamamladım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Rahat olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-003",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. Müşteri numaram 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi detaylıca gerçekleştirdim. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "kota durumunuzu kontrol ettim. Acele etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom'u tercih ettiğiniz için teşekkür ederiz. Sabırla beklediğiniz için de ayrıca teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-004",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, iletişim bilgilerimi güncellemek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. iletişim bilgilerimi güncellemek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 11111, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunuzu sabırla sonuçlandırdım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Rahat olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-005",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, faturamı öğrenmek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. faturamı öğrenmek istiyorum sorununu çözeceğiz, merak etmeyin. 33333 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-33333\", \"user_id\": 33333, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura sorgunuzu tamamladım. Mevcut faturanız 89.5 TL olarak görünmektedir, merak etmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Merak etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom'u tercih ettiğiniz için teşekkür ederiz. Endişelenmeyin, size her zaman yardım ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-006",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, faturamı öğrenmek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. faturamı öğrenmek istiyorum konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-11111\", \"user_id\": 11111, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura sorgunuzu sabırla tamamladım. Mevcut faturanız 89.5 TL olarak görünmektedir. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Rahat olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom'u tercih ettiğiniz için teşekkür ederiz. Sabırla beklediğiniz için de ayrıca teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-007",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, kalan kotamı öğrenmek istiyorum. Kullanıcı ID'm: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? kalan kotamı öğrenmek istiyorum konusunda size yardımcı olacağım. Hemen 12345 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi gerçekleştirdim. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-008",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Hey! kalan kotamı öğrenmek istiyorum 🎯 Kullanıcı no: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 kalan kotamı öğrenmek istiyorum konusunda destek olayım! ✨ 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunu sonuçlandırdım! 🎯 Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir şey lazım mı? 🎯"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom'u seçtiğin için teşekkürler! 😊"
+      }
+    ]
+  },
+  {
+    "id": "AC-009",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, faturamı öğrenmek istiyorum. Kullanıcı ID'm: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. faturamı öğrenmek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-11111\", \"user_id\": 11111, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura detaylarınızı detaylıca inceledim. Güncel tutar 89.5 TL'dir. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-010",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba! iletişim bilgilerimi güncellemek istiyorum ✨ Hesap: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 iletişim bilgilerimi güncellemek istiyorum konusunda destek olayım! ✨ 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 67890, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşlemini gerçekleştirdim! ✨ Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir şey lazım mı? 🎯"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom'u seçtiğin için teşekkürler! 😊"
+      }
+    ]
+  },
+  {
+    "id": "AC-011",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunuzu sonuçlandırdım, merak etmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sakin olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Hizmetinizden memnun kaldığınızı umarız. Merak etmeyin, destek ekibimiz her zaman burada."
+      }
+    ]
+  },
+  {
+    "id": "AC-012",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Hey! internet sorunum var 🎯 Kullanıcı no: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 internet sorunum var konusunda yardım edeyim! 😊 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-67890\", \"user_id\": 67890, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.455816\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğini tamamladım! 😊 Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka konuda yardım edeyim mi? ✨"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom'u seçtiğin için teşekkürler! 😊"
+      }
+    ]
+  },
+  {
+    "id": "AC-013",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selam! paket değiştirmek istiyorum 😊 ID: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 paket değiştirmek istiyorum için buradayım! 🎯 67890 numaralı hesabını incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket seçeneklerini kontrol ettim! 🎯 İki güzel alternatif var. Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "hangi paketi tercih edersiniz? 😊"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom ailesine katıldığın için teşekkürler! ✨"
+      }
+    ]
+  },
+  {
+    "id": "AC-014",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. Müşteri numaram 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi detaylıca gerçekleştirdim. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom'u tercih ettiğiniz için teşekkür ederiz. Sabırla beklediğiniz için de ayrıca teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-015",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Elif Özkan",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selam, internet sorunum var. Account: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, teknik destek için buradayım. internet sorunum var için veri sorgusu başlatıyorum. ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 22222
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-22222\", \"user_id\": 22222, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.455892\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Query executed. Teknik detayları anladınız mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Other technical assistance needed?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka teknik sorunuz var mı? Telekom technical support completed."
+      }
+    ]
+  },
+  {
+    "id": "AC-016",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, paket değiştirmek istiyorum. Kullanıcı ID'm: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. paket değiştirmek istiyorum konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket seçeneklerinizi detaylıca inceledim. Size uygun alternatiflerimiz mevcuttur. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom'u tercih ettiğiniz için teşekkür ederiz. Sabırla beklediğiniz için de ayrıca teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-017",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, internet sorunum var. Kullanıcı ID'm: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? internet sorunum var konusunda detaylı bilgi verebilirim. 12345 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-12345\", \"user_id\": 12345, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.455948\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi tamamladım. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-018",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Hey! paket değiştirmek istiyorum 🎯 Kullanıcı no: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 paket değiştirmek istiyorum konusunda destek olayım! ✨ 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket seçeneklerini kontrol ettim! 🎯 İki güzel alternatif var. Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "hangi paketi tercih edersiniz? 😊"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom ailesine katıldığın için teşekkürler! ✨"
+      }
+    ]
+  },
+  {
+    "id": "AC-019",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, paket değiştirmek istiyorum. Müşteri numaram 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? paket değiştirmek istiyorum konusunda size yardımcı olacağım. Hemen 12345 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Size uygun paketlerimizi listeledim. 'Mega İnternet' ve 'Öğrenci Dostu' seçeneklerimiz mevcut. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "hangi paketi tercih edersiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Telekom ailesine katıldığınız için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-020",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, kalan kotamı öğrenmek istiyorum. Kullanıcı ID'm: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? kalan kotamı öğrenmek istiyorum konusunda size yardımcı olacağım. Hemen 12345 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi gerçekleştirdim. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Telekom'u tercih ettiğiniz için teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-021",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, internet sorunum var. Kullanıcı ID'm: 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. internet sorunum var konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-33333\", \"user_id\": 33333, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.456537\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi gerçekleştirdim, sakin olun. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "sorunu detaylandırabilir misiniz? Endişelenmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Hizmetinizden memnun kaldığınızı umarız. Merak etmeyin, destek ekibimiz her zaman burada."
+      }
+    ]
+  },
+  {
+    "id": "AC-022",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. Müşteri numaram 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum konusunda size yardım edeceğim. Rahat olun, 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi adım adım tamamladım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-023",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Elif Özkan",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, iletişim bilgilerimi güncellemek istiyorum. User ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, teknik destek için buradayım. iletişim bilgilerimi güncellemek istiyorum için veri sorgusu başlatıyorum. ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 22222
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 22222, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Operation completed. Teknik detayları anladınız mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Other technical assistance needed?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka teknik sorunuz var mı? Telekom technical support completed."
+      }
+    ]
+  },
+  {
+    "id": "AC-024",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, internet sorunum var. Hesap bilgilerim: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? internet sorunum var konusunda size yardımcı olacağım. Hemen 12345 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-12345\", \"user_id\": 12345, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.456613\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunuzu sonuçlandırdım. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Telekom'u tercih ettiğiniz için teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-025",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, faturamı öğrenmek istiyorum. Hesap bilgilerim: 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. faturamı öğrenmek istiyorum sorununu çözeceğiz, merak etmeyin. 33333 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-33333\", \"user_id\": 33333, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura sorgunuzu tamamladım. Mevcut faturanız 89.5 TL olarak görünmektedir, merak etmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Merak etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Hizmetinizden memnun kaldığınızı umarız. Merak etmeyin, destek ekibimiz her zaman burada."
+      }
+    ]
+  },
+  {
+    "id": "AC-026",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, kalan kotamı öğrenmek istiyorum. Kullanıcı ID'm: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunuzu sabırla sonuçlandırdım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-027",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, paket değiştirmek istiyorum. Hesap bilgilerim: 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. paket değiştirmek istiyorum konusunda sakin olun, size destek olacağım. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketlerinizi kontrol ettim. İki farklı seçeneğimiz bulunmaktadır, merak etmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sakin olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom ailesine katıldığınız için teşekkürler. Sakin olun, size her zaman destek oluruz."
+      }
+    ]
+  },
+  {
+    "id": "AC-028",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, paket değiştirmek istiyorum. Kullanıcı ID'm: 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. paket değiştirmek istiyorum konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket seçeneklerinizi inceledim. Size uygun alternatiflerimiz mevcuttur, sakin olun. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sakin olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom'u tercih ettiğiniz için teşekkür ederiz. Endişelenmeyin, size her zaman yardım ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-029",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, iletişim bilgilerimi güncellemek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. iletişim bilgilerimi güncellemek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 11111, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi adım adım tamamladım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "hangi bilginizi güncellemek istiyorsunuz? Acele etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Hizmetinizden memnun kaldığınızı umarız. Acele etmediğiniz için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-030",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, internet sorunum var. Hesap bilgilerim: 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. internet sorunum var konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-33333\", \"user_id\": 33333, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.456770\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi gerçekleştirdim, sakin olun. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sakin olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom ailesine katıldığınız için teşekkürler. Sakin olun, size her zaman destek oluruz."
+      }
+    ]
+  },
+  {
+    "id": "AC-031",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, internet sorunum var. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. internet sorunum var talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-11111\", \"user_id\": 11111, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.456792\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi adım adım tamamladım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "sorunu detaylandırabilir misiniz? Acele etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Hizmetinizden memnun kaldığınızı umarız. Acele etmediğiniz için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-032",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, faturamı öğrenmek istiyorum. Kullanıcı ID'm: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? faturamı öğrenmek istiyorum talebinizi anlıyorum. 12345 numaralı hesabınız için gerekli işlemleri başlatıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-12345\", \"user_id\": 12345, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura sorgunuzu tamamladım. Mevcut faturanız 89.5 TL olarak görünmektedir. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-033",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, faturamı öğrenmek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. faturamı öğrenmek istiyorum konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-33333\", \"user_id\": 33333, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura bilgilerinizi güvenle kontrol ettim. Güncel faturanız 89.5 TL tutarındadır, endişelenmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "fatura detaylarını görmek ister misiniz? Endişelenmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Hizmetinizden memnun kaldığınızı umarız. Merak etmeyin, destek ekibimiz her zaman burada."
+      }
+    ]
+  },
+  {
+    "id": "AC-034",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, faturamı öğrenmek istiyorum. Hesap bilgilerim: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? faturamı öğrenmek istiyorum talebinizi anlıyorum. 12345 numaralı hesabınız için gerekli işlemleri başlatıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-12345\", \"user_id\": 12345, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura detaylarınızı inceledim. Güncel tutar 89.5 TL'dir. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-035",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, iletişim bilgilerimi güncellemek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. iletişim bilgilerimi güncellemek istiyorum konusunda sakin olun, size destek olacağım. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 33333, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sorgunuzu sonuçlandırdım, merak etmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz? Merak etmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom'u tercih ettiğiniz için teşekkür ederiz. Endişelenmeyin, size her zaman yardım ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-036",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, faturamı öğrenmek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. faturamı öğrenmek istiyorum konusunda endişelenmeyin, size yardım edeceğim. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-33333\", \"user_id\": 33333, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura bilgilerinizi güvenle kontrol ettim. Güncel faturanız 89.5 TL tutarındadır, endişelenmeyin. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sakin olun."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Hizmetinizden memnun kaldığınızı umarız. Merak etmeyin, destek ekibimiz her zaman burada."
+      }
+    ]
+  },
+  {
+    "id": "AC-037",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, internet sorunum var. Hesap bilgilerim: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? internet sorunum var konusunda detaylı bilgi verebilirim. 12345 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-12345\", \"user_id\": 12345, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.456958\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi tamamladım. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Telekom'u tercih ettiğiniz için teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-038",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, faturamı öğrenmek istiyorum. Hesap bilgilerim: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? faturamı öğrenmek istiyorum konusunda detaylı bilgi verebilirim. 12345 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-12345\", \"user_id\": 12345, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura detaylarınızı inceledim. Güncel tutar 89.5 TL'dir. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Bu konuda başka bir bilgi almak ister misiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Telekom'u tercih ettiğiniz için teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-039",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba! kalan kotamı öğrenmek istiyorum ✨ Hesap: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 kalan kotamı öğrenmek istiyorum konusunda yardım edeyim! 😊 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğini tamamladım! 😊 Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka konuda yardım edeyim mi? ✨"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Hizmetimizden memnun kaldığını umarım! 🎯"
+      }
+    ]
+  },
+  {
+    "id": "AC-040",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, kalan kotamı öğrenmek istiyorum. Kullanıcı ID'm: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi detaylıca gerçekleştirdim. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  },
+  {
+    "id": "AC-041",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Hey! internet sorunum var 🎯 Kullanıcı no: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 internet sorunum var konusunda destek olayım! ✨ 67890 numaralı hesabını kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-67890\", \"user_id\": 67890, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.457056\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşlemini gerçekleştirdim! ✨ Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "sorunu detaylandırabilir misiniz? 😊"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Telekom ailesine katıldığın için teşekkürler! ✨"
+      }
+    ]
+  },
+  {
+    "id": "AC-042",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, iletişim bilgilerimi güncellemek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. iletişim bilgilerimi güncellemek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 11111, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi detaylıca gerçekleştirdim. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Hizmetinizden memnun kaldığınızı umarız. Acele etmediğiniz için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-043",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Zeynep Kaya",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selam! faturamı öğrenmek istiyorum 😊 ID: 67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Selam! Ne yapalım? 😊 faturamı öğrenmek istiyorum için buradayım! 🎯 67890 numaralı hesabını incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 67890
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-67890\", \"user_id\": 67890, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_67890"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanı kontrol ettim! 😊 89.5 TL tutarında. Anladın mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka konuda yardım edeyim mi? ✨"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir şey lazım mı? 👋 Hizmetimizden memnun kaldığını umarım! 🎯"
+      }
+    ]
+  },
+  {
+    "id": "AC-044",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, faturamı öğrenmek istiyorum. Kullanıcı ID'm: 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? faturamı öğrenmek istiyorum konusunda detaylı bilgi verebilirim. 12345 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-12345\", \"user_id\": 12345, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura detaylarınızı inceledim. Güncel tutar 89.5 TL'dir. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "fatura detaylarını görmek ister misiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-045",
+    "senaryo": "Adaptive Communication - Paket Değişikliği - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, paket değiştirmek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. paket değiştirmek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"packages\": [{\"name\": \"Mega İnternet\", \"monthly_fee\": 69.5, \"features\": {\"internet_gb\": 50, \"voice_minutes\": 1000, \"sms_count\": 500}}, {\"name\": \"Öğrenci Dostu\", \"monthly_fee\": 49.9, \"features\": {\"internet_gb\": 30, \"voice_minutes\": 500, \"sms_count\": 250}}]}}",
+        "arac_cagrisi_kimligi": "get_available_packages_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket seçeneklerinizi detaylıca inceledim. Size uygun alternatiflerimiz mevcuttur. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Hizmetinizden memnun kaldığınızı umarız. Acele etmediğiniz için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-046",
+    "senaryo": "Adaptive Communication - Arıza Bildirimi - Elif Özkan",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, internet sorunum var. User ID: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, teknik destek için buradayım. internet sorunum var konusunda sistem kontrolü yapıyorum. Account: 22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "create_fault_ticket",
+            "parametreler": {
+              "user_id": 22222
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"ticket_id\": \"TKT-2024-22222\", \"user_id\": 22222, \"status\": \"open\", \"created_at\": \"2025-08-05T21:39:38.457185\"}}",
+        "arac_cagrisi_kimligi": "create_fault_ticket_22222"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Operation completed. Teknik detayları anladınız mı?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "sorunu detaylandırabilir misiniz?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka teknik sorunuz var mı? Technical assistance session ended."
+      }
+    ]
+  },
+  {
+    "id": "AC-047",
+    "senaryo": "Adaptive Communication - Profil Güncelleme - Fatma Şahin",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, iletişim bilgilerimi güncellemek istiyorum. Müşteri numaram 33333."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, endişelenmeyin. Size yardım edeceğim. iletişim bilgilerimi güncellemek istiyorum konusunda sakin olun, size destek olacağım. 33333 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 33333
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"user_id\": 33333, \"name\": \"Test User\", \"email\": \"test@example.com\", \"phone_numbers\": [{\"number\": \"+905551234567\", \"type\": \"mobile\"}]}}",
+        "arac_cagrisi_kimligi": "get_customer_profile_33333"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşleminizi gerçekleştirdim, sakin olun. Anladınız mı? Endişelenmeyin."
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "hangi bilginizi güncellemek istiyorsunuz? Endişelenmeyin."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka endişeniz var mı? Size yardım ederim. Telekom ailesine katıldığınız için teşekkürler. Sakin olun, size her zaman destek oluruz."
+      }
+    ]
+  },
+  {
+    "id": "AC-048",
+    "senaryo": "Adaptive Communication - Fatura Sorgulama - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Selamlar, faturamı öğrenmek istiyorum. Hesap bilgilerim: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. faturamı öğrenmek istiyorum talebinizi anlıyorum. Acele etmeyin, 11111 numaralı hesabınızı incelemeye başlıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"bill_id\": \"F-2024-11111\", \"user_id\": 11111, \"amount\": 89.5, \"currency\": \"TRY\", \"due_date\": \"2024-03-15\", \"status\": \"unpaid\"}}",
+        "arac_cagrisi_kimligi": "get_current_bill_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura bilgilerinizi adım adım kontrol ettim. Güncel faturanız 89.5 TL tutarındadır. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Hizmetinizden memnun kaldığınızı umarız. Acele etmediğiniz için teşekkürler."
+      }
+    ]
+  },
+  {
+    "id": "AC-049",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Ahmet Yılmaz",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merhaba, kalan kotamı öğrenmek istiyorum. Müşteri numaram 12345."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, size nasıl yardımcı olabilirim? kalan kotamı öğrenmek istiyorum talebinizi anlıyorum. 12345 numaralı hesabınız için gerekli işlemleri başlatıyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 12345
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_12345"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi tamamladım. Anladığım kadarıyla, doğru mu?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı?"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka bir konuda yardımcı olabilir miyim? Hizmetinizden memnun kaldığınızı umarız."
+      }
+    ]
+  },
+  {
+    "id": "AC-050",
+    "senaryo": "Adaptive Communication - Kota Kontrolü - Mehmet Demir",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İyi günler, kalan kotamı öğrenmek istiyorum. Kullanıcı ID'm: 11111."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Merhaba, rahat olun. Size yardım edeceğim. kalan kotamı öğrenmek istiyorum konusunda detaylı açıklama yapacağım. 11111 numaralı hesabınızı kontrol ediyorum."
+      },
+      {
+        "rol": "asistan",
+        "icerik": null,
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 11111
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"success\": true, \"data\": {\"internet_remaining_gb\": 15.5, \"voice_remaining_minutes\": 750, \"sms_remaining\": 450, \"period_end\": \"2024-03-31\"}}",
+        "arac_cagrisi_kimligi": "get_remaining_quotas_11111"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İsteğinizi adım adım tamamladım. Anladınız mı? Tekrar edeyim mi?"
+      },
+      {
+        "rol": "kullanici",
+        "icerik": "Başka bir konuda yardıma ihtiyacınız var mı? Sabırla beklerim."
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başka sorunuz var mı? Acele etmeyin. Telekom ailesine katıldığınız için teşekkürler. Sabırınız için de ayrıca teşekkür ederiz."
+      }
+    ]
+  }
+]

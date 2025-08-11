@@ -1,0 +1,526 @@
+{
+  "get_current_bill": {
+    "success": {
+      "success": true,
+      "data": {
+        "bill_id": "F-2024-8901",
+        "user_id": 8901,
+        "amount": 125.50,
+        "currency": "TRY",
+        "due_date": "2024-08-20",
+        "bill_date": "2024-07-20",
+        "status": "unpaid",
+        "services": [
+          {
+            "service_name": "Premium Internet",
+            "amount": 89.90
+          },
+          {
+            "service_name": "Voice Package",
+            "amount": 35.60
+          }
+        ]
+      }
+    },
+    "error": {
+      "NO_BILL": {
+        "success": false,
+        "error": {
+          "code": "NO_BILL",
+          "message": "Müşteriye ait ödenmemiş fatura bulunmamaktadır."
+        }
+      }
+    }
+  },
+  "get_past_bills": {
+    "success": {
+      "success": true,
+      "data": {
+        "bills": [
+          {
+            "bill_id": "F-2024-06-8901",
+            "amount": 102.30,
+            "bill_date": "2024-06-20",
+            "status": "paid",
+            "paid_date": "2024-06-18"
+          },
+          {
+            "bill_id": "F-2024-05-8901",
+            "amount": 95.60,
+            "bill_date": "2024-05-20",
+            "status": "paid",
+            "paid_date": "2024-05-19"
+          }
+        ],
+        "total_count": 2,
+        "total_amount_paid": 197.90
+      }
+    }
+  },
+  "pay_bill": {
+    "success": {
+      "success": true,
+      "data": {
+        "transaction_id": "TXN-2024-001234",
+        "bill_id": "F-2024-8901",
+        "amount": 125.50,
+        "method": "credit_card",
+        "status": "Ödeme başarılı",
+        "timestamp": "2024-08-01T14:30:00Z"
+      }
+    },
+    "error": {
+      "BILL_NOT_FOUND": {
+        "success": false,
+        "error": {
+          "code": "BILL_NOT_FOUND",
+          "message": "Fatura bulunamadı veya daha önce ödenmiş."
+        }
+      }
+    }
+  },
+  "get_payment_history": {
+    "success": {
+      "success": true,
+      "data": {
+        "payments": [
+          {
+            "transaction_id": "TXN-2024-001233",
+            "amount": 102.30,
+            "method": "credit_card",
+            "date": "2024-06-18",
+            "bill_id": "F-2024-06-8901"
+          },
+          {
+            "transaction_id": "TXN-2024-001232",
+            "amount": 95.60,
+            "method": "bank_transfer",
+            "date": "2024-05-19",
+            "bill_id": "F-2024-05-8901"
+          }
+        ],
+        "total_payments": 2,
+        "total_amount": 197.90
+      }
+    }
+  },
+  "setup_autopay": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "autopay_enabled": true,
+        "payment_method": "credit_card",
+        "next_payment_date": "2024-08-20"
+      }
+    }
+  },
+  "get_customer_package": {
+    "success": {
+      "success": true,
+      "data": {
+        "package_name": "Premium Unlimited",
+        "monthly_fee": 125.50,
+        "features": {
+          "internet_gb": 100,
+          "voice_minutes": 2000,
+          "sms_count": 1000,
+          "roaming_enabled": true,
+          "international_minutes": 60
+        },
+        "activation_date": "2024-01-15",
+        "renewal_date": "2024-08-15"
+      }
+    }
+  },
+  "get_available_packages": {
+    "success": {
+      "success": true,
+      "data": {
+        "packages": [
+          {
+            "name": "Basic Internet",
+            "monthly_fee": 49.90,
+            "features": {
+              "internet_gb": 20,
+              "voice_minutes": 500,
+              "sms_count": 200
+            },
+            "target_audience": "light_users"
+          },
+          {
+            "name": "Premium Unlimited",
+            "monthly_fee": 125.50,
+            "features": {
+              "internet_gb": 100,
+              "voice_minutes": 2000,
+              "sms_count": 1000
+            },
+            "target_audience": "heavy_users"
+          },
+          {
+            "name": "Gamer Pro",
+            "monthly_fee": 199.90,
+            "features": {
+              "internet_gb": 200,
+              "voice_minutes": 3000,
+              "sms_count": 2000
+            },
+            "target_audience": "gamers"
+          }
+        ]
+      }
+    }
+  },
+  "change_package": {
+    "success": {
+      "success": true,
+      "data": {
+        "change_id": "CHG-2024-001",
+        "from_package": "Basic Internet",
+        "to_package": "Premium Unlimited",
+        "effective_date": "2024-08-15",
+        "fee_difference": 75.60,
+        "status": "scheduled"
+      }
+    },
+    "error": {
+      "INELIGIBLE_FOR_PACKAGE": {
+        "success": false,
+        "error": {
+          "code": "INELIGIBLE_FOR_PACKAGE",
+          "message": "Bu paket için gerekli kriterleri sağlamıyorsunuz."
+        }
+      }
+    }
+  },
+  "get_remaining_quotas": {
+    "success": {
+      "success": true,
+      "data": {
+        "internet_remaining_gb": 15.5,
+        "voice_remaining_minutes": 850,
+        "sms_remaining": 450,
+        "period_end": "2024-08-15",
+        "usage_percentage": {
+          "internet": 85,
+          "voice": 57,
+          "sms": 55
+        }
+      }
+    }
+  },
+  "get_package_details": {
+    "success": {
+      "success": true,
+      "data": {
+        "name": "Premium Unlimited",
+        "monthly_fee": 125.50,
+        "setup_fee": 0.0,
+        "features": {
+          "internet_gb": 100,
+          "voice_minutes": 2000,
+          "sms_count": 1000,
+          "international_minutes": 60
+        },
+        "contract_duration": 24,
+        "cancellation_fee": 50.0
+      }
+    }
+  },
+  "enable_roaming": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "roaming_enabled": true,
+        "activation_time": "2024-08-01T14:30:00Z",
+        "daily_fee": 25.0,
+        "data_package": "International Roaming"
+      }
+    }
+  },
+  "check_network_status": {
+    "success": {
+      "success": true,
+      "data": {
+        "region": "İstanbul",
+        "status": "operational",
+        "coverage_percentage": 98,
+        "active_outages": [
+          {
+            "area": "Kadıköy",
+            "issue": "Planlı bakım",
+            "start_time": "2024-08-01T02:00:00Z",
+            "estimated_end": "2024-08-01T06:00:00Z"
+          }
+        ],
+        "last_updated": "2024-08-01T14:30:00Z"
+      }
+    }
+  },
+  "create_fault_ticket": {
+    "success": {
+      "success": true,
+      "data": {
+        "ticket_id": "TKT-2024-001234",
+        "user_id": 8901,
+        "issue_description": "İnternet bağlantısı yavaş",
+        "category": "internet_speed",
+        "priority": "medium",
+        "status": "open",
+        "created_at": "2024-08-01T14:30:00Z",
+        "estimated_resolution": "24 saat içinde"
+      }
+    }
+  },
+  "close_fault_ticket": {
+    "success": {
+      "success": true,
+      "data": {
+        "ticket_id": "TKT-2024-001234",
+        "user_id": 8901,
+        "issue_description": "İnternet bağlantısı yavaş",
+        "category": "internet_speed",
+        "priority": "medium",
+        "status": "resolved",
+        "created_at": "2024-08-01T14:30:00Z",
+        "estimated_resolution": "24 saat içinde"
+      }
+    }
+  },
+  "get_users_tickets": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "tickets": [
+          {
+            "ticket_id": "TKT-2024-001234",
+            "issue_description": "İnternet bağlantısı yavaş",
+            "category": "internet_speed",
+            "priority": "medium",
+            "status": "open",
+            "created_at": "2024-08-01T14:30:00Z",
+            "estimated_resolution": "24 saat içinde"
+          },
+          {
+            "ticket_id": "TKT-2024-001233",
+            "issue_description": "Sinyal problemi",
+            "category": "signal_quality",
+            "priority": "high",
+            "status": "resolved",
+            "created_at": "2024-07-28T10:15:00Z",
+            "estimated_resolution": "12 saat içinde"
+          }
+        ]
+      }
+    }
+  },
+  "get_fault_ticket_status": {
+    "success": {
+      "success": true,
+      "data": {
+        "ticket_id": "TKT-2024-001234",
+        "status": "in_progress",
+        "resolution": null,
+        "created_at": "2024-08-01T14:30:00Z",
+        "resolved_at": null,
+        "technician_notes": "Bölgesel sinyal analizi yapılıyor"
+      }
+    }
+  },
+  "test_internet_speed": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "download_speed_mbps": 85.4,
+        "upload_speed_mbps": 25.2,
+        "ping_ms": 18,
+        "test_timestamp": "2024-08-01T14:30:00Z",
+        "test_server": "Istanbul-1",
+        "quality_rating": "excellent"
+      }
+    }
+  },
+  "get_customer_profile": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "name": "Ahmet Yılmaz",
+        "phone_numbers": [
+          {
+            "number": "+905551234567",
+            "type": "mobile",
+            "status": "active"
+          },
+          {
+            "number": "+902165551234",
+            "type": "landline",
+            "status": "active"
+          }
+        ],
+        "email": "ahmet.yilmaz@example.com",
+        "address": "İstanbul, Kadıköy",
+        "registration_date": "2024-01-15",
+        "customer_tier": "premium"
+      }
+    }
+  },
+  "update_customer_contact": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "contact_type": "email",
+        "old_value": "ahmet.yilmaz@example.com",
+        "new_value": "ahmet.yilmaz@newmail.com",
+        "updated_at": "2024-08-01T14:30:00Z",
+        "verification_required": true
+      }
+    }
+  },
+  "suspend_line": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "line_number": "+905551234567",
+        "suspension_reason": "customer_request",
+        "suspended_at": "2024-08-01T14:30:00Z",
+        "reactivation_fee": 25.0,
+        "max_suspension_days": 90
+      }
+    },
+    "error": {
+      "OUTSTANDING_BILL": {
+        "success": false,
+        "error": {
+          "code": "OUTSTANDING_BILL",
+          "message": "Ödenmemiş fatura mevcut. Önce faturayı ödeyin."
+        }
+      }
+    }
+  },
+  "reactivate_line": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "line_number": "+905551234567",
+        "reactivated_at": "2024-08-01T14:30:00Z",
+        "suspension_duration_days": 15,
+        "reactivation_fee": 25.0
+      }
+    }
+  },
+  "activate_emergency_service": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "emergency_service_activated": true,
+        "emergency_type": "natural_disaster",
+        "activation_time": "2024-08-01T14:30:00Z",
+        "call_limit_removed": true,
+        "data_limit_removed": true,
+        "emergency_contact_priority": true,
+        "duration_hours": 72
+      }
+    }
+  },
+  "check_5g_coverage": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "location": "İstanbul, Kadıköy",
+        "coverage_status": "excellent",
+        "signal_strength": 95,
+        "download_speed_estimate_mbps": 450.0,
+        "upload_speed_estimate_mbps": 85.0,
+        "latency_estimate_ms": 12,
+        "network_quality": "5G+",
+        "coverage_percentage": 98
+      }
+    }
+  },
+  "get_cultural_context": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "cultural_profile": "turkish_urban",
+        "communication_preferences": {
+          "language": "turkish",
+          "formality": "respectful",
+          "pace": "moderate",
+          "tone": "friendly"
+        },
+        "service_adaptations": [
+          "turkish_holiday_awareness",
+          "local_business_hours",
+          "cultural_sensitivity"
+        ],
+        "language_preference": "turkish",
+        "accessibility_needs": [
+          "clear_explanations",
+          "patient_support"
+        ]
+      }
+    }
+  },
+  "update_learning_adaptation": {
+    "success": {
+      "success": true,
+      "data": {
+        "user_id": 8901,
+        "learned_preferences": {
+          "preferred_contact_time": "evening",
+          "communication_style": "detailed",
+          "service_priority": "internet_focused"
+        },
+        "interaction_patterns": {
+          "total_interactions": 25,
+          "successful_resolutions": 23,
+          "preferred_channels": 2
+        },
+        "success_strategies": [
+          "detailed_explanations",
+          "step_by_step_guidance",
+          "proactive_notifications"
+        ],
+        "personalization_level": "high",
+        "adaptation_confidence": 0.92
+      }
+    }
+  },
+  "generate_creative_analysis": {
+    "success": {
+      "success": true,
+      "data": {
+        "analysis_id": "ANALYSIS-2024-001",
+        "problem_description": "Müşteri memnuniyetsizliği ve churn riski",
+        "creative_solutions": [
+          "Kişiselleştirilmiş paket önerileri",
+          "Proaktif teknik destek",
+          "Loyalty program entegrasyonu",
+          "AI-destekli müşteri deneyimi"
+        ],
+        "innovation_score": 85,
+        "feasibility_ratings": {
+          "technical": 8,
+          "cost": 7,
+          "timeline": 6
+        },
+        "implementation_suggestions": [
+          "Pilot program başlatma",
+          "A/B testing ile doğrulama",
+          "Aşamalı rollout stratejisi"
+        ]
+      }
+    }
+  }
+}

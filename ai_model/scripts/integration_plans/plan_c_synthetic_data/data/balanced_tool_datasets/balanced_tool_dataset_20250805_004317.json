@@ -1,0 +1,3341 @@
+[
+  {
+    "id": 1,
+    "question": "güncel fatura sorgulama ayarlarını nasıl değiştirebilirim?",
+    "answer": "güncel fatura sorgulama işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.889,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "586320755",
+        "bill_period": "2023-08"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 2,
+    "question": "güncel fatura sorgulama için ne yapmam gerekiyor?",
+    "answer": "güncel fatura sorgulama sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8921,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "787112118",
+        "bill_period": "2024-07"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 3,
+    "question": "güncel fatura sorgulama nasıl kullanılır?",
+    "answer": "güncel fatura sorgulama işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8946,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "831377511",
+        "bill_period": "2024-05"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 4,
+    "question": "güncel fatura sorgulama işlemi hakkında detay verir misiniz?",
+    "answer": "güncel fatura sorgulama işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9035,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "926943907",
+        "bill_period": "2024-01"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 5,
+    "question": "güncel fatura sorgulama nasıl yapılır?",
+    "answer": "güncel fatura sorgulama sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9461,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "598300997",
+        "bill_period": "2024-08"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 6,
+    "question": "güncel fatura sorgulama nasıl çalışır?",
+    "answer": "güncel fatura sorgulama işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9173,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "197671786",
+        "bill_period": "2024-08"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 7,
+    "question": "güncel fatura sorgulama durumunu nasıl kontrol edebilirim?",
+    "answer": "güncel fatura sorgulama hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8683,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "289732095",
+        "bill_period": "2024-09"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 8,
+    "question": "güncel fatura sorgulama hakkında bilgi alabilir miyim?",
+    "answer": "güncel fatura sorgulama konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_current_bill",
+    "category": "billing",
+    "turkish_function": "güncel fatura sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9212,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_current_bill",
+      "parameters": {
+        "customer_id": "675893549",
+        "bill_period": "2023-09"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 9,
+    "question": "geçmiş faturalar durumunu nasıl kontrol edebilirim?",
+    "answer": "geçmiş faturalar işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9184,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "314409586",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 10,
+    "question": "geçmiş faturalar konusunda destek alabilir miyim?",
+    "answer": "geçmiş faturalar işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8667,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "739713766",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 11,
+    "question": "geçmiş faturalar nasıl yapılır?",
+    "answer": "geçmiş faturalar işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9747,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "737037592",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 12,
+    "question": "geçmiş faturalar için ne yapmam gerekiyor?",
+    "answer": "geçmiş faturalar işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8641,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "962456986",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 13,
+    "question": "geçmiş faturalar konusunda yardım alabilir miyim?",
+    "answer": "geçmiş faturalar işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8826,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "352771334",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 14,
+    "question": "geçmiş faturalar ayarlarını nasıl değiştirebilirim?",
+    "answer": "geçmiş faturalar konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9552,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "805615395",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 15,
+    "question": "geçmiş faturalar işlemi hakkında detay verir misiniz?",
+    "answer": "geçmiş faturalar için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_past_bills",
+    "category": "billing",
+    "turkish_function": "geçmiş faturalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9162,
+    "created_at": "2025-08-05T00:43:17.339428",
+    "tool_call": {
+      "tool_name": "get_past_bills",
+      "parameters": {
+        "customer_id": "225019792",
+        "start_date": "default_value",
+        "end_date": "default_value"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 16,
+    "question": "fatura ödeme durumunu nasıl kontrol edebilirim?",
+    "answer": "fatura ödeme için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8947,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "352829084",
+        "bill_id": "BILL1974",
+        "amount": 435.47,
+        "payment_method": "bank_transfer"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 17,
+    "question": "fatura ödeme nasıl yapılır?",
+    "answer": "fatura ödeme sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8824,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "109442061",
+        "bill_id": "BILL2328",
+        "amount": 305.9,
+        "payment_method": "credit_card"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 18,
+    "question": "fatura ödeme işlemini gerçekleştirmek istiyorum",
+    "answer": "fatura ödeme sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9091,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "150054600",
+        "bill_id": "BILL8379",
+        "amount": 146.97,
+        "payment_method": "cash"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 19,
+    "question": "fatura ödeme işlemini nasıl gerçekleştirebilirim?",
+    "answer": "fatura ödeme sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9417,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "866351083",
+        "bill_id": "BILL9232",
+        "amount": 206.41,
+        "payment_method": "credit_card"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 20,
+    "question": "fatura ödeme konusunda yardım alabilir miyim?",
+    "answer": "fatura ödeme için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9359,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "373255615",
+        "bill_id": "BILL6231",
+        "amount": 234.98,
+        "payment_method": "mobile_payment"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 21,
+    "question": "fatura ödeme için ne yapmam gerekiyor?",
+    "answer": "fatura ödeme konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9717,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "322974524",
+        "bill_id": "BILL3638",
+        "amount": 492.75,
+        "payment_method": "bank_transfer"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 22,
+    "question": "fatura ödeme nasıl çalışır?",
+    "answer": "fatura ödeme işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9447,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "652008811",
+        "bill_id": "BILL8934",
+        "amount": 488.94,
+        "payment_method": "bank_transfer"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 23,
+    "question": "fatura ödeme nasıl kullanılır?",
+    "answer": "fatura ödeme işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9276,
+    "created_at": "2025-08-05T00:43:17.340827",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "190824831",
+        "bill_id": "BILL3590",
+        "amount": 115.62,
+        "payment_method": "credit_card"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 24,
+    "question": "fatura ödeme işlemi hakkında detay verir misiniz?",
+    "answer": "fatura ödeme için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "pay_bill",
+    "category": "billing",
+    "turkish_function": "fatura ödeme",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8561,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "pay_bill",
+      "parameters": {
+        "customer_id": "839663518",
+        "bill_id": "BILL3296",
+        "amount": 174.84,
+        "payment_method": "cash"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 25,
+    "question": "otomatik ödeme kurulumu için ne yapmam gerekiyor?",
+    "answer": "otomatik ödeme kurulumu konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9657,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "773358274",
+        "payment_method": "mobile_payment",
+        "auto_pay_amount": 230.08
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 26,
+    "question": "otomatik ödeme kurulumu işlemi hakkında detay verir misiniz?",
+    "answer": "otomatik ödeme kurulumu sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.919,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "146418190",
+        "payment_method": "cash",
+        "auto_pay_amount": 180.54
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 27,
+    "question": "otomatik ödeme kurulumu hakkında bilgi alabilir miyim?",
+    "answer": "otomatik ödeme kurulumu sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.867,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "922664086",
+        "payment_method": "mobile_payment",
+        "auto_pay_amount": 299.83
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 28,
+    "question": "otomatik ödeme kurulumu konusunda destek alabilir miyim?",
+    "answer": "otomatik ödeme kurulumu konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9391,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "478914676",
+        "payment_method": "cash",
+        "auto_pay_amount": 218.62
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 29,
+    "question": "otomatik ödeme kurulumu nasıl yapılır?",
+    "answer": "otomatik ödeme kurulumu hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8672,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "141562621",
+        "payment_method": "credit_card",
+        "auto_pay_amount": 229.74
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 30,
+    "question": "otomatik ödeme kurulumu durumunu nasıl kontrol edebilirim?",
+    "answer": "otomatik ödeme kurulumu için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8693,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "789678620",
+        "payment_method": "credit_card",
+        "auto_pay_amount": 185.06
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 31,
+    "question": "otomatik ödeme kurulumu nasıl kullanılır?",
+    "answer": "otomatik ödeme kurulumu işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8548,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "323324923",
+        "payment_method": "bank_transfer",
+        "auto_pay_amount": 297.73
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 32,
+    "question": "otomatik ödeme kurulumu işlemini nasıl gerçekleştirebilirim?",
+    "answer": "otomatik ödeme kurulumu konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "setup_autopay",
+    "category": "billing",
+    "turkish_function": "otomatik ödeme kurulumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9598,
+    "created_at": "2025-08-05T00:43:17.341440",
+    "tool_call": {
+      "tool_name": "setup_autopay",
+      "parameters": {
+        "customer_id": "109842801",
+        "payment_method": "mobile_payment",
+        "auto_pay_amount": 165.16
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 33,
+    "question": "ağ durumu kontrolü işlemi hakkında detay verir misiniz?",
+    "answer": "ağ durumu kontrolü sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9851,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "343931309",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 34,
+    "question": "ağ durumu kontrolü hakkında bilgi alabilir miyim?",
+    "answer": "ağ durumu kontrolü sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9131,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "872133686",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 35,
+    "question": "ağ durumu kontrolü işlemini nasıl gerçekleştirebilirim?",
+    "answer": "ağ durumu kontrolü işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9356,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "865931547",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 36,
+    "question": "ağ durumu kontrolü nasıl çalışır?",
+    "answer": "ağ durumu kontrolü sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "916381473",
+        "service_type": "landline"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 37,
+    "question": "ağ durumu kontrolü durumunu nasıl kontrol edebilirim?",
+    "answer": "ağ durumu kontrolü konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9553,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "813798524",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 38,
+    "question": "ağ durumu kontrolü ayarlarını nasıl değiştirebilirim?",
+    "answer": "ağ durumu kontrolü konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9593,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "494053541",
+        "service_type": "mobile_data"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 39,
+    "question": "ağ durumu kontrolü konusunda destek alabilir miyim?",
+    "answer": "ağ durumu kontrolü sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8768,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "137839459",
+        "service_type": "internet"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 40,
+    "question": "ağ durumu kontrolü nasıl yapılır?",
+    "answer": "ağ durumu kontrolü için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "check_network_status",
+    "category": "support",
+    "turkish_function": "ağ durumu kontrolü",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9053,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "check_network_status",
+      "parameters": {
+        "customer_id": "259365643",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 41,
+    "question": "internet hız testi konusunda destek alabilir miyim?",
+    "answer": "internet hız testi sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9111,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "107288570",
+        "test_type": "latency"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 42,
+    "question": "internet hız testi işlemini gerçekleştirmek istiyorum",
+    "answer": "internet hız testi işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8776,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "505598078",
+        "test_type": "download_upload"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 43,
+    "question": "internet hız testi ayarlarını nasıl değiştirebilirim?",
+    "answer": "internet hız testi konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9168,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "436898071",
+        "test_type": "latency"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 44,
+    "question": "internet hız testi konusunda yardım alabilir miyim?",
+    "answer": "internet hız testi sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9208,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "529393729",
+        "test_type": "latency"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 45,
+    "question": "internet hız testi nasıl çalışır?",
+    "answer": "internet hız testi konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8602,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "436883330",
+        "test_type": "bandwidth"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 46,
+    "question": "internet hız testi için ne yapmam gerekiyor?",
+    "answer": "internet hız testi sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "test_internet_speed",
+    "category": "support",
+    "turkish_function": "internet hız testi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9178,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "test_internet_speed",
+      "parameters": {
+        "customer_id": "917686682",
+        "test_type": "download_upload"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 47,
+    "question": "arıza kaydı durumu konusunda yardım alabilir miyim?",
+    "answer": "arıza kaydı durumu konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8738,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET5287",
+        "customer_id": "775185440"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 48,
+    "question": "arıza kaydı durumu nasıl yapılır?",
+    "answer": "arıza kaydı durumu için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9327,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET2478",
+        "customer_id": "685144428"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 49,
+    "question": "arıza kaydı durumu işlemini gerçekleştirmek istiyorum",
+    "answer": "arıza kaydı durumu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9479,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET9807",
+        "customer_id": "248829920"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 50,
+    "question": "arıza kaydı durumu nasıl kullanılır?",
+    "answer": "arıza kaydı durumu işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9615,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET8291",
+        "customer_id": "177582834"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 51,
+    "question": "arıza kaydı durumu hakkında bilgi alabilir miyim?",
+    "answer": "arıza kaydı durumu konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8674,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET4344",
+        "customer_id": "820238498"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 52,
+    "question": "arıza kaydı durumu ayarlarını nasıl değiştirebilirim?",
+    "answer": "arıza kaydı durumu konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8613,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET8912",
+        "customer_id": "505336310"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 53,
+    "question": "arıza kaydı durumu işlemini nasıl gerçekleştirebilirim?",
+    "answer": "arıza kaydı durumu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8555,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET1742",
+        "customer_id": "287235766"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 54,
+    "question": "arıza kaydı durumu işlemi hakkında detay verir misiniz?",
+    "answer": "arıza kaydı durumu hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8954,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET9785",
+        "customer_id": "315172343"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 55,
+    "question": "arıza kaydı durumu durumunu nasıl kontrol edebilirim?",
+    "answer": "arıza kaydı durumu için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_fault_ticket_status",
+    "category": "support",
+    "turkish_function": "arıza kaydı durumu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9281,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_fault_ticket_status",
+      "parameters": {
+        "ticket_id": "TICKET1576",
+        "customer_id": "850868326"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 56,
+    "question": "arıza kaydı oluşturma hakkında bilgi alabilir miyim?",
+    "answer": "arıza kaydı oluşturma konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8573,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "485735381",
+        "issue_type": "internet_outage",
+        "description": "Mobil hat sorunu",
+        "priority": "medium"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 57,
+    "question": "arıza kaydı oluşturma nasıl kullanılır?",
+    "answer": "arıza kaydı oluşturma işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8671,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "912647782",
+        "issue_type": "slow_speed",
+        "description": "Ağ kesintisi yaşanıyor",
+        "priority": "urgent"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 58,
+    "question": "arıza kaydı oluşturma işlemi hakkında detay verir misiniz?",
+    "answer": "arıza kaydı oluşturma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8691,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "604803936",
+        "issue_type": "internet_outage",
+        "description": "Mobil hat sorunu",
+        "priority": "urgent"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 59,
+    "question": "arıza kaydı oluşturma konusunda destek alabilir miyim?",
+    "answer": "arıza kaydı oluşturma işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9816,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "277481073",
+        "issue_type": "billing_issue",
+        "description": "İnternet bağlantısı kesildi",
+        "priority": "medium"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 60,
+    "question": "arıza kaydı oluşturma nasıl çalışır?",
+    "answer": "arıza kaydı oluşturma için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9436,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "174874993",
+        "issue_type": "coverage_issue",
+        "description": "Bağlantı sorunu var",
+        "priority": "urgent"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 61,
+    "question": "arıza kaydı oluşturma nasıl yapılır?",
+    "answer": "arıza kaydı oluşturma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8905,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "255282309",
+        "issue_type": "slow_speed",
+        "description": "Bağlantı sorunu var",
+        "priority": "high"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 62,
+    "question": "arıza kaydı oluşturma ayarlarını nasıl değiştirebilirim?",
+    "answer": "arıza kaydı oluşturma işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8935,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "708601351",
+        "issue_type": "coverage_issue",
+        "description": "5G kapsama sorunu",
+        "priority": "medium"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 63,
+    "question": "arıza kaydı oluşturma işlemini gerçekleştirmek istiyorum",
+    "answer": "arıza kaydı oluşturma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8726,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "997529485",
+        "issue_type": "billing_issue",
+        "description": "Fatura ödeme sorunu",
+        "priority": "urgent"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 64,
+    "question": "arıza kaydı oluşturma konusunda yardım alabilir miyim?",
+    "answer": "arıza kaydı oluşturma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9369,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "682146974",
+        "issue_type": "slow_speed",
+        "description": "Ağ kesintisi yaşanıyor",
+        "priority": "low"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 65,
+    "question": "arıza kaydı oluşturma için ne yapmam gerekiyor?",
+    "answer": "arıza kaydı oluşturma için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "create_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı oluşturma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9431,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "create_fault_ticket",
+      "parameters": {
+        "customer_id": "113775818",
+        "issue_type": "mobile_problem",
+        "description": "Ağ kesintisi yaşanıyor",
+        "priority": "high"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 66,
+    "question": "arıza kaydı kapatma nasıl yapılır?",
+    "answer": "arıza kaydı kapatma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9575,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET8630",
+        "resolution_notes": "Sistem güncellemesi tamamlandı"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 67,
+    "question": "arıza kaydı kapatma işlemi hakkında detay verir misiniz?",
+    "answer": "arıza kaydı kapatma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9458,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET6729",
+        "resolution_notes": "Sorun çözüldü"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 68,
+    "question": "arıza kaydı kapatma nasıl kullanılır?",
+    "answer": "arıza kaydı kapatma sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.912,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET9897",
+        "resolution_notes": "Teknik ekip müdahale etti"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 69,
+    "question": "arıza kaydı kapatma işlemini gerçekleştirmek istiyorum",
+    "answer": "arıza kaydı kapatma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9401,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET9869",
+        "resolution_notes": "Müşteri bilgilendirildi"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 70,
+    "question": "arıza kaydı kapatma durumunu nasıl kontrol edebilirim?",
+    "answer": "arıza kaydı kapatma işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9863,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET9554",
+        "resolution_notes": "Yeniden yapılandırma yapıldı"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 71,
+    "question": "arıza kaydı kapatma nasıl çalışır?",
+    "answer": "arıza kaydı kapatma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9784,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET8974",
+        "resolution_notes": "Sorun çözüldü"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 72,
+    "question": "arıza kaydı kapatma konusunda destek alabilir miyim?",
+    "answer": "arıza kaydı kapatma işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9414,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET2405",
+        "resolution_notes": "Müşteri bilgilendirildi"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 73,
+    "question": "arıza kaydı kapatma ayarlarını nasıl değiştirebilirim?",
+    "answer": "arıza kaydı kapatma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9361,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET8990",
+        "resolution_notes": "Sorun çözüldü"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 74,
+    "question": "arıza kaydı kapatma işlemini nasıl gerçekleştirebilirim?",
+    "answer": "arıza kaydı kapatma işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "close_fault_ticket",
+    "category": "support",
+    "turkish_function": "arıza kaydı kapatma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8876,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "close_fault_ticket",
+      "parameters": {
+        "ticket_id": "TICKET1800",
+        "resolution_notes": "Müşteri bilgilendirildi"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 75,
+    "question": "hat askıya alma için ne yapmam gerekiyor?",
+    "answer": "hat askıya alma konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9142,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "985232684",
+        "service_type": "landline",
+        "suspension_reason": "payment_overdue"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 76,
+    "question": "hat askıya alma işlemini gerçekleştirmek istiyorum",
+    "answer": "hat askıya alma işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9829,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "639128012",
+        "service_type": "mobile",
+        "suspension_reason": "service_abuse"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 77,
+    "question": "hat askıya alma nasıl çalışır?",
+    "answer": "hat askıya alma konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9577,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "163463050",
+        "service_type": "tv",
+        "suspension_reason": "payment_overdue"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 78,
+    "question": "hat askıya alma konusunda destek alabilir miyim?",
+    "answer": "hat askıya alma işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9038,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "610924634",
+        "service_type": "mobile",
+        "suspension_reason": "fraud_detection"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 79,
+    "question": "hat askıya alma işlemi hakkında detay verir misiniz?",
+    "answer": "hat askıya alma için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8555,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "178466435",
+        "service_type": "tv",
+        "suspension_reason": "fraud_detection"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 80,
+    "question": "hat askıya alma konusunda yardım alabilir miyim?",
+    "answer": "hat askıya alma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.922,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "717425772",
+        "service_type": "mobile",
+        "suspension_reason": "service_abuse"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 81,
+    "question": "hat askıya alma hakkında bilgi alabilir miyim?",
+    "answer": "hat askıya alma için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9439,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "740406402",
+        "service_type": "mobile_data",
+        "suspension_reason": "service_abuse"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 82,
+    "question": "hat askıya alma durumunu nasıl kontrol edebilirim?",
+    "answer": "hat askıya alma hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8749,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "409838958",
+        "service_type": "mobile",
+        "suspension_reason": "customer_request"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 83,
+    "question": "hat askıya alma nasıl yapılır?",
+    "answer": "hat askıya alma sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "suspend_line",
+    "category": "account",
+    "turkish_function": "hat askıya alma",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8919,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "suspend_line",
+      "parameters": {
+        "customer_id": "710239895",
+        "service_type": "tv",
+        "suspension_reason": "payment_overdue"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 84,
+    "question": "hat yeniden aktivasyonu için ne yapmam gerekiyor?",
+    "answer": "hat yeniden aktivasyonu hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9171,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "653453094",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 85,
+    "question": "hat yeniden aktivasyonu işlemi hakkında detay verir misiniz?",
+    "answer": "hat yeniden aktivasyonu sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9397,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "751542198",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 86,
+    "question": "hat yeniden aktivasyonu nasıl çalışır?",
+    "answer": "hat yeniden aktivasyonu hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9424,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "884247718",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 87,
+    "question": "hat yeniden aktivasyonu işlemini gerçekleştirmek istiyorum",
+    "answer": "hat yeniden aktivasyonu işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9024,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "344428146",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 88,
+    "question": "hat yeniden aktivasyonu hakkında bilgi alabilir miyim?",
+    "answer": "hat yeniden aktivasyonu işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9522,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "514002208",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 89,
+    "question": "hat yeniden aktivasyonu nasıl kullanılır?",
+    "answer": "hat yeniden aktivasyonu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "reactivate_line",
+    "category": "account",
+    "turkish_function": "hat yeniden aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8564,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "reactivate_line",
+      "parameters": {
+        "customer_id": "509405901",
+        "service_type": "internet"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 90,
+    "question": "müşteri paket bilgisi işlemini nasıl gerçekleştirebilirim?",
+    "answer": "müşteri paket bilgisi konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8916,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "291892630"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 91,
+    "question": "müşteri paket bilgisi nasıl yapılır?",
+    "answer": "müşteri paket bilgisi konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8801,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "303843007"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 92,
+    "question": "müşteri paket bilgisi konusunda destek alabilir miyim?",
+    "answer": "müşteri paket bilgisi sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9879,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "890321586"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 93,
+    "question": "müşteri paket bilgisi nasıl çalışır?",
+    "answer": "müşteri paket bilgisi işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9406,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "910407743"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 94,
+    "question": "müşteri paket bilgisi hakkında bilgi alabilir miyim?",
+    "answer": "müşteri paket bilgisi için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9231,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "962954336"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 95,
+    "question": "müşteri paket bilgisi işlemini gerçekleştirmek istiyorum",
+    "answer": "müşteri paket bilgisi işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8602,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "521523995"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 96,
+    "question": "müşteri paket bilgisi durumunu nasıl kontrol edebilirim?",
+    "answer": "müşteri paket bilgisi hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9598,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "365054971"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 97,
+    "question": "müşteri paket bilgisi ayarlarını nasıl değiştirebilirim?",
+    "answer": "müşteri paket bilgisi için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_customer_package",
+    "category": "packages",
+    "turkish_function": "müşteri paket bilgisi",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.883,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_customer_package",
+      "parameters": {
+        "customer_id": "385579764"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 98,
+    "question": "kalan kotalar nasıl çalışır?",
+    "answer": "kalan kotalar konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9302,
+    "created_at": "2025-08-05T00:43:17.343451",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "980364045",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 99,
+    "question": "kalan kotalar işlemi hakkında detay verir misiniz?",
+    "answer": "kalan kotalar işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9389,
+    "created_at": "2025-08-05T00:43:17.347347",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "730371077",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 100,
+    "question": "kalan kotalar işlemini nasıl gerçekleştirebilirim?",
+    "answer": "kalan kotalar işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9364,
+    "created_at": "2025-08-05T00:43:17.348379",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "487903931",
+        "service_type": "landline"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 101,
+    "question": "kalan kotalar ayarlarını nasıl değiştirebilirim?",
+    "answer": "kalan kotalar sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9019,
+    "created_at": "2025-08-05T00:43:17.348379",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "399045332",
+        "service_type": "mobile_data"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 102,
+    "question": "kalan kotalar için ne yapmam gerekiyor?",
+    "answer": "kalan kotalar için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8752,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "408493147",
+        "service_type": "mobile"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 103,
+    "question": "kalan kotalar nasıl yapılır?",
+    "answer": "kalan kotalar için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9253,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "718906691",
+        "service_type": "tv"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 104,
+    "question": "kalan kotalar nasıl kullanılır?",
+    "answer": "kalan kotalar işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8734,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "891615695",
+        "service_type": "landline"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 105,
+    "question": "kalan kotalar konusunda yardım alabilir miyim?",
+    "answer": "kalan kotalar hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "get_remaining_quotas",
+    "category": "packages",
+    "turkish_function": "kalan kotalar",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9727,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_remaining_quotas",
+      "parameters": {
+        "customer_id": "778984272",
+        "service_type": "internet"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 106,
+    "question": "5G kapsama sorgulama için ne yapmam gerekiyor?",
+    "answer": "5G kapsama sorgulama konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9598,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "Konya",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 107,
+    "question": "5G kapsama sorgulama nasıl yapılır?",
+    "answer": "5G kapsama sorgulama hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8547,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "İzmir",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 108,
+    "question": "5G kapsama sorgulama işlemini nasıl gerçekleştirebilirim?",
+    "answer": "5G kapsama sorgulama konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9635,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "Bursa",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 109,
+    "question": "5G kapsama sorgulama ayarlarını nasıl değiştirebilirim?",
+    "answer": "5G kapsama sorgulama hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9649,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "Antalya",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 110,
+    "question": "5G kapsama sorgulama işlemi hakkında detay verir misiniz?",
+    "answer": "5G kapsama sorgulama için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8529,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "Bursa",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 111,
+    "question": "5G kapsama sorgulama hakkında bilgi alabilir miyim?",
+    "answer": "5G kapsama sorgulama işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9157,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "Ankara",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 112,
+    "question": "5G kapsama sorgulama konusunda yardım alabilir miyim?",
+    "answer": "5G kapsama sorgulama sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9678,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "İzmir",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 113,
+    "question": "5G kapsama sorgulama nasıl kullanılır?",
+    "answer": "5G kapsama sorgulama işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "check_5g_coverage",
+    "category": "advanced",
+    "turkish_function": "5G kapsama sorgulama",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9632,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "check_5g_coverage",
+      "parameters": {
+        "location": "İstanbul",
+        "coordinates": {}
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 114,
+    "question": "acil durum servisi aktivasyonu işlemi hakkında detay verir misiniz?",
+    "answer": "acil durum servisi aktivasyonu işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9636,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "755248762",
+        "emergency_type": "security_breach",
+        "location": "Bursa"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 115,
+    "question": "acil durum servisi aktivasyonu için ne yapmam gerekiyor?",
+    "answer": "acil durum servisi aktivasyonu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9138,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "695660636",
+        "emergency_type": "service_disruption",
+        "location": "Gaziantep"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 116,
+    "question": "acil durum servisi aktivasyonu ayarlarını nasıl değiştirebilirim?",
+    "answer": "acil durum servisi aktivasyonu için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9706,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "202946159",
+        "emergency_type": "network_outage",
+        "location": "İzmir"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 117,
+    "question": "acil durum servisi aktivasyonu konusunda destek alabilir miyim?",
+    "answer": "acil durum servisi aktivasyonu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9141,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "570820576",
+        "emergency_type": "security_breach",
+        "location": "Adana"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 118,
+    "question": "acil durum servisi aktivasyonu nasıl kullanılır?",
+    "answer": "acil durum servisi aktivasyonu konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9564,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "575391148",
+        "emergency_type": "security_breach",
+        "location": "Adana"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 119,
+    "question": "acil durum servisi aktivasyonu işlemini nasıl gerçekleştirebilirim?",
+    "answer": "acil durum servisi aktivasyonu hakkında detaylı bilgi almak için müşteri hizmetlerimizi arayabilirsiniz.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9235,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "632848143",
+        "emergency_type": "system_failure",
+        "location": "Konya"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 120,
+    "question": "acil durum servisi aktivasyonu nasıl yapılır?",
+    "answer": "acil durum servisi aktivasyonu sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9702,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "168808627",
+        "emergency_type": "service_disruption",
+        "location": "Gaziantep"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 121,
+    "question": "acil durum servisi aktivasyonu durumunu nasıl kontrol edebilirim?",
+    "answer": "acil durum servisi aktivasyonu işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8838,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "684632503",
+        "emergency_type": "network_outage",
+        "location": "Adana"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 122,
+    "question": "acil durum servisi aktivasyonu hakkında bilgi alabilir miyim?",
+    "answer": "acil durum servisi aktivasyonu işlemi için sistemimizi kullanabilirsiniz. Gerekli bilgileri girdikten sonra işlem tamamlanacaktır.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9761,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "923213979",
+        "emergency_type": "service_disruption",
+        "location": "Bursa"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 123,
+    "question": "acil durum servisi aktivasyonu nasıl çalışır?",
+    "answer": "acil durum servisi aktivasyonu konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "activate_emergency_service",
+    "category": "advanced",
+    "turkish_function": "acil durum servisi aktivasyonu",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9109,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "activate_emergency_service",
+      "parameters": {
+        "customer_id": "770087513",
+        "emergency_type": "security_breach",
+        "location": "Antalya"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 124,
+    "question": "müşteri arıza kayıtları nasıl kullanılır?",
+    "answer": "müşteri arıza kayıtları işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9371,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "218421597",
+        "status": "in_progress"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 125,
+    "question": "müşteri arıza kayıtları konusunda destek alabilir miyim?",
+    "answer": "müşteri arıza kayıtları konusunda size yardımcı olabilirim. Bu işlem için gerekli bilgileri sağlamanız gerekiyor.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9872,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "704459365",
+        "status": "open"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 126,
+    "question": "müşteri arıza kayıtları durumunu nasıl kontrol edebilirim?",
+    "answer": "müşteri arıza kayıtları sorununuzu çözmek için: Teknik destek ekibimizle iletişime geçebilir veya online destek sistemimizi kullanabilirsiniz.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9472,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "519860997",
+        "status": "pending"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 127,
+    "question": "müşteri arıza kayıtları konusunda yardım alabilir miyim?",
+    "answer": "müşteri arıza kayıtları işlemi başarıyla tamamlandı. Sonuçları size bildireceğiz.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9372,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "132808943",
+        "status": "closed"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 128,
+    "question": "müşteri arıza kayıtları için ne yapmam gerekiyor?",
+    "answer": "müşteri arıza kayıtları konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9153,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "507610549",
+        "status": "open"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 129,
+    "question": "müşteri arıza kayıtları işlemini gerçekleştirmek istiyorum",
+    "answer": "müşteri arıza kayıtları konusunda size destek sağlayabilirim. İşlem detaylarını kontrol edip size bilgi vereceğim.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.8925,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "291446738",
+        "status": "pending"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 130,
+    "question": "müşteri arıza kayıtları nasıl yapılır?",
+    "answer": "müşteri arıza kayıtları için gerekli adımları takip edebilirsiniz. Herhangi bir sorun yaşarsanız bize ulaşın.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9546,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "270827264",
+        "status": "closed"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  },
+  {
+    "id": 131,
+    "question": "müşteri arıza kayıtları işlemini nasıl gerçekleştirebilirim?",
+    "answer": "müşteri arıza kayıtları işlemini gerçekleştirmek için: Önce kimlik doğrulaması yapın, sonra işlem detaylarını girin ve onaylayın.",
+    "api_function": "get_users_tickets",
+    "category": "support",
+    "turkish_function": "müşteri arıza kayıtları",
+    "language": "tr",
+    "source": "synthetic",
+    "quality_score": 0.9783,
+    "created_at": "2025-08-05T00:43:17.349397",
+    "tool_call": {
+      "tool_name": "get_users_tickets",
+      "parameters": {
+        "customer_id": "961000215",
+        "status": "closed"
+      }
+    },
+    "metadata": {
+      "template_used": "balanced_tool_call",
+      "api_compatible": true,
+      "validation_passed": true,
+      "has_tool_call": true
+    }
+  }
+]
