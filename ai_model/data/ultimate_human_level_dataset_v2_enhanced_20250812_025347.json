@@ -1,0 +1,3403 @@
+[
+  {
+    "id": "data_quota_exceeded_15cc2d03_310ca1e3",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "heavy_data_user",
+    "cognitive_state": "focused",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim bitti! Çok önemli bir toplantıya girecektim, hemen ek paket lazım!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durumu anlıyorum! Hemen ek paket seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Acil 5GB Paketi\",\"monthly_fee\":19.9,\"features\":{\"internet_gb\":5,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null},{\"name\":\"Süper 15GB Paketi\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":15,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Acil Ek Paket Seçenekleri** ⚡\n\n🚀 **Acil 5GB:** 19.90 TL\n• Anında aktivasyon\n• Toplantı için yeterli\n• SMS onayı ile aktif\n\n💪 **Süper 15GB:** 39.90 TL\n• Bol kullanım\n• Ay sonuna kadar yeter\n• Daha ekonomik (GB başına)\n\n**Aktivasyon Süreci:**\n⚡ SMS onayı → 30 saniye\n📱 Otomatik aktivasyon\n✅ Hemen kullanıma hazır\n\nHangisini tercih edersiniz? Toplantınız için 5GB yeterli olacaktır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_3a493b17",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_01450b1e",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_5b2b63b0",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "family_control_cd5298fc_90010e54",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aile paketimizde 3 hat var, çocuklarım sürekli oyun oynuyor ve internet bitiriyor. Kontrol edebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile internet yönetimi önemli. Kullanım durumunu kontrol edip aile kontrol seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10013
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":5.2,\"voice_remaining_minutes\":2500,\"sms_remaining\":800,\"period_end\":\"2025-08-20\",\"usage_percentage\":{\"internet\":89,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Aile Paketi Durumu** 👨‍👩‍👧‍👦\n\n📊 **İnternet:** %89 kullanılmış (5.2 GB kaldı)\n📞 **Konuşma:** %15 (2500 dk kaldı)\n📅 **8 gün** kaldı\n\n**Aile Kontrol Seçenekleri:**\n👶 Her hat için ayrı limit\n⏰ Gece 22:00-07:00 kısıtlama\n🎮 Oyun sitelerini engelleme\n📱 TikTok/YouTube sınırlama\n\n**Önerim:** Çocuklar için günlük 2GB limit\n💡 Eğitim siteleri sınırsız\n\nAile kontrol aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "5g_coverage_issue_e2721dd4_d1fd912a",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "tech_enthusiast_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "confused",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni iPhone 15 aldım, 5G özelliği var ama hiç 5G çekmiyor. Hep 4G görünüyor. Bölgemde 5G var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yeni telefonunuz için 5G deneyimi önemli! Hemen kapsama durumunu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 10010,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10010,\"location\":\"İstanbul Beşiktaş\",\"coverage_status\":\"available\",\"signal_strength\":78,\"download_speed_estimate_mbps\":450.0,\"upload_speed_estimate_mbps\":85.0,\"latency_estimate_ms\":8,\"network_quality\":\"excellent\",\"coverage_percentage\":85}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**5G Kapsama Durumu** 📶\n\n✅ **Bölgenizde 5G var!** %85 kapsama\n📊 **Beklenen Hızlar:**\n• İndirme: 450 Mbps\n• Yükleme: 85 Mbps\n• Gecikme: 8 ms\n\n**Telefon Ayarları:**\n📱 Ayarlar > Hücresel > 5G Açık\n🔄 Ağ ayarlarını sıfırlayın\n📍 Konum servislerini açın\n\n5G aktif olduktan sonra test edelim!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "international_charges_0dca95a4_e3d264b6",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frequent_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İngiltere'de 1 hafta kaldım, sadece birkaç arama yaptım ama fatura 800 TL geldi! Bu normal mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "800 TL gerçekten yüksek! Hemen fatura detaylarını inceleyelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10012
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-901113\",\"user_id\":10012,\"amount\":823.75,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Uluslararası Arama\",\"amount\":645.5},{\"service_name\":\"Roaming İnternet\",\"amount\":178.25}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Yüksek Fatura Analizi** 💸\n\n📊 **Toplam:** 823.75 TL\n☎️ **Uluslararası:** 645.50 TL\n📱 **Roaming:** 178.25 TL\n\n**Sorun:** Roaming paketi yokmuş\n💰 **Dakika başı:** 15 TL ücret\n\n**Çözüm:**\n🎯 Roaming paketi retroaktif uygulayabilirim\n💳 ~350 TL'ye düşebilir\n🔄 3 taksit seçeneği\n\nİndirim işlemini başlatayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "slow_internet_3c968f60_ba05e443",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "streaming_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim çok yavaş! Netflix izlerken sürekli duraksıyor, Zoom toplantılarında ses gidiyor geliyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Streaming ve video konferans için hız çok önemli. Hemen internet hızınızı test edip sorunu çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 10001
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10001,\"download_speed_mbps\":8.5,\"upload_speed_mbps\":2.1,\"ping_ms\":45,\"test_timestamp\":\"2025-08-12T02:53:47Z\",\"test_server\":\"Istanbul-1\",\"quality_rating\":\"poor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Hız Testi Sonuçları** 📊\n\n📉 **İndirme:** 8.5 Mbps (düşük)\n📤 **Yükleme:** 2.1 Mbps\n⏱️ **Gecikme:** 45 ms\n📍 **Test Sunucu:** İstanbul-1\n\n**Sorun Analizi:**\n⚠️ Streaming için minimum 25 Mbps gerekli\n📺 Netflix 4K için 25+ Mbps öneriliyor\n💻 Zoom HD için 10+ Mbps ideal\n\n**Çözüm Önerileri:**\n🔄 **Modem Reset:** Fişten çekip 30 saniye bekleyin\n📡 **WiFi Optimizasyonu:** 5GHz bandına geçin\n📈 **Hız Yükseltme:** Daha yüksek paket seçenekleri\n🎯 **Teknik Destek:** Saha ekibi gönderebiliriz\n\nHangi çözümle başlayalım?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "international_charges_0dca95a4_a21f4008",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frequent_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İngiltere'de 1 hafta kaldım, sadece birkaç arama yaptım ama fatura 800 TL geldi! Bu normal mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "800 TL gerçekten yüksek! Hemen fatura detaylarını inceleyelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10012
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-901113\",\"user_id\":10012,\"amount\":823.75,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Uluslararası Arama\",\"amount\":645.5},{\"service_name\":\"Roaming İnternet\",\"amount\":178.25}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Yüksek Fatura Analizi** 💸\n\n📊 **Toplam:** 823.75 TL\n☎️ **Uluslararası:** 645.50 TL\n📱 **Roaming:** 178.25 TL\n\n**Sorun:** Roaming paketi yokmuş\n💰 **Dakika başı:** 15 TL ücret\n\n**Çözüm:**\n🎯 Roaming paketi retroaktif uygulayabilirim\n💳 ~350 TL'ye düşebilir\n🔄 3 taksit seçeneği\n\nİndirim işlemini başlatayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_issue_531809cf_0f6f5473",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "busy_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kredi kartımla ödeme yapmaya çalışıyorum ama sürekli reddediliyor! Kartımda sorun yok, başka yerlerde çalışıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sorunu yaşamanız çok can sıkıcı. Hemen faturanızı kontrol edip alternatif ödeme seçenekleri sunayım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10000
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-411170\",\"user_id\":10000,\"amount\":125.5,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":125.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Ödeme Sorunu Çözümü** 💳\n\n💰 **Faturanız:** 125.50 TL (10 gün vadeli)\n⚠️ **Sorun:** Ödeme ağ geçidi geçici arızası\n\n**Alternatif Ödeme Yöntemleri:**\n🏦 **Havale/EFT:** Anında yansır\n📱 **Dijital Cüzdan:** PayPal, Apple Pay\n🏪 **Bayiiler:** En yakın bayi ile ödeme\n💳 **Farklı Kart:** Başka kredi kartı deneyin\n\n**Hızlı Çözüm:** Dijital cüzdan ile ödemeyi deneyebiliriz. Hangi yöntemi tercih edersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_a54b9788",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_72e547b9",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_c9dda00b",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_0234b136",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_350115af",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_7513b41e",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "5g_coverage_issue_e2721dd4_a48afe8a",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "tech_enthusiast_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "confused",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni iPhone 15 aldım, 5G özelliği var ama hiç 5G çekmiyor. Hep 4G görünüyor. Bölgemde 5G var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yeni telefonunuz için 5G deneyimi önemli! Hemen kapsama durumunu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 10010,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10010,\"location\":\"İstanbul Beşiktaş\",\"coverage_status\":\"available\",\"signal_strength\":78,\"download_speed_estimate_mbps\":450.0,\"upload_speed_estimate_mbps\":85.0,\"latency_estimate_ms\":8,\"network_quality\":\"excellent\",\"coverage_percentage\":85}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**5G Kapsama Durumu** 📶\n\n✅ **Bölgenizde 5G var!** %85 kapsama\n📊 **Beklenen Hızlar:**\n• İndirme: 450 Mbps\n• Yükleme: 85 Mbps\n• Gecikme: 8 ms\n\n**Telefon Ayarları:**\n📱 Ayarlar > Hücresel > 5G Açık\n🔄 Ağ ayarlarını sıfırlayın\n📍 Konum servislerini açın\n\n5G aktif olduktan sonra test edelim!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_4981e103",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_7288bbca",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "package_change_d17fbe42_adba942d",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_conscious_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mevcut paketim çok pahalı geliyor, daha ucuz bir seçenek var mı? Kullanımımı analiz edip öneri verebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bütçe planlaması önemli! Önce kullanım alışkanlıklarınızı analiz edip size en uygun paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10002
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":18.5,\"voice_remaining_minutes\":650,\"sms_remaining\":180,\"period_end\":\"2025-08-24\",\"usage_percentage\":{\"internet\":25,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kullanım Analizi** 📊\n\n📱 **İnternet:** %25 kullanılmış (18.5 GB kaldı)\n📞 **Konuşma:** %30 kullanılmış (650 dk kaldı)\n💬 **SMS:** %15 kullanılmış (180 adet kaldı)\n📅 **Dönem:** 12 gün kaldı\n\n**Sonuç:** Paketinizi tam kullanmıyorsunuz!\n\n**Daha Ekonomik Seçenekler:**\n💰 **Ekonomik Paket:** 79.90 TL (15 GB + 500 dk)\n🎯 **Temel Paket:** 59.90 TL (10 GB + 300 dk)\n📱 **Sadece İnternet:** 49.90 TL (12 GB)\n\n**Tahmini Tasarruf:** Aylık 40-50 TL\nHangisi size daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_dff3ed84",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "family_control_cd5298fc_f22dc0a9",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aile paketimizde 3 hat var, çocuklarım sürekli oyun oynuyor ve internet bitiriyor. Kontrol edebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile internet yönetimi önemli. Kullanım durumunu kontrol edip aile kontrol seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10013
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":5.2,\"voice_remaining_minutes\":2500,\"sms_remaining\":800,\"period_end\":\"2025-08-20\",\"usage_percentage\":{\"internet\":89,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Aile Paketi Durumu** 👨‍👩‍👧‍👦\n\n📊 **İnternet:** %89 kullanılmış (5.2 GB kaldı)\n📞 **Konuşma:** %15 (2500 dk kaldı)\n📅 **8 gün** kaldı\n\n**Aile Kontrol Seçenekleri:**\n👶 Her hat için ayrı limit\n⏰ Gece 22:00-07:00 kısıtlama\n🎮 Oyun sitelerini engelleme\n📱 TikTok/YouTube sınırlama\n\n**Önerim:** Çocuklar için günlük 2GB limit\n💡 Eğitim siteleri sınırsız\n\nAile kontrol aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "package_change_d17fbe42_9889abf3",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_conscious_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mevcut paketim çok pahalı geliyor, daha ucuz bir seçenek var mı? Kullanımımı analiz edip öneri verebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bütçe planlaması önemli! Önce kullanım alışkanlıklarınızı analiz edip size en uygun paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10002
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":18.5,\"voice_remaining_minutes\":650,\"sms_remaining\":180,\"period_end\":\"2025-08-24\",\"usage_percentage\":{\"internet\":25,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kullanım Analizi** 📊\n\n📱 **İnternet:** %25 kullanılmış (18.5 GB kaldı)\n📞 **Konuşma:** %30 kullanılmış (650 dk kaldı)\n💬 **SMS:** %15 kullanılmış (180 adet kaldı)\n📅 **Dönem:** 12 gün kaldı\n\n**Sonuç:** Paketinizi tam kullanmıyorsunuz!\n\n**Daha Ekonomik Seçenekler:**\n💰 **Ekonomik Paket:** 79.90 TL (15 GB + 500 dk)\n🎯 **Temel Paket:** 59.90 TL (10 GB + 300 dk)\n📱 **Sadece İnternet:** 49.90 TL (12 GB)\n\n**Tahmini Tasarruf:** Aylık 40-50 TL\nHangisi size daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "line_not_working_32dc671b_ca9c9116",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frustrated_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonum hiç çalışmıyor! Ne arama yapabiliyor ne alabiliyorum. Acil durumum var!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durum! Hemen hat durumunu kontrol edip çözelim. Panik yapmayın.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10018,\"name\":\"Acil Durum Müşterisi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"suspended\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2021-03-10\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Sorun Bulundu!** ⚠️\n\n🚫 **Hat askıya alınmış**\n📱 +905551234567\n⏰ **Neden:** Ödeme gecikmesi\n\n**Hızlı Çözüm:**\n1️⃣ Fatura ödemesi\n2️⃣ 15 dakikada aktif\n3️⃣ Test arama\n\n**Geçici:**\n📞 112, 155, 156 çalışıyor\n📱 WiFi ile WhatsApp\n\nFatura durumunu kontrol edeyim:",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-137370\",\"user_id\":10018,\"amount\":89.9,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-07\",\"bill_date\":\"2025-07-13\",\"status\":\"overdue\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":89.9}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Geciken Fatura** 💡\n\n💳 89.90 TL (5 gün geçmiş)\n📅 Vade dolmuş\n\n**Hızlı Çözüm:**\n⚡ Şimdi öderseniz 15 dakikada açılır\n💳 Kredi kartı/havale kabul\n📱 Ödeme sonrası test\n\nÖdemeyi yapalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "package_change_d17fbe42_a8c8130a",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_conscious_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mevcut paketim çok pahalı geliyor, daha ucuz bir seçenek var mı? Kullanımımı analiz edip öneri verebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bütçe planlaması önemli! Önce kullanım alışkanlıklarınızı analiz edip size en uygun paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10002
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":18.5,\"voice_remaining_minutes\":650,\"sms_remaining\":180,\"period_end\":\"2025-08-24\",\"usage_percentage\":{\"internet\":25,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kullanım Analizi** 📊\n\n📱 **İnternet:** %25 kullanılmış (18.5 GB kaldı)\n📞 **Konuşma:** %30 kullanılmış (650 dk kaldı)\n💬 **SMS:** %15 kullanılmış (180 adet kaldı)\n📅 **Dönem:** 12 gün kaldı\n\n**Sonuç:** Paketinizi tam kullanmıyorsunuz!\n\n**Daha Ekonomik Seçenekler:**\n💰 **Ekonomik Paket:** 79.90 TL (15 GB + 500 dk)\n🎯 **Temel Paket:** 59.90 TL (10 GB + 300 dk)\n📱 **Sadece İnternet:** 49.90 TL (12 GB)\n\n**Tahmini Tasarruf:** Aylık 40-50 TL\nHangisi size daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_e54d86fa",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_53564e6c",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_ba888efb",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "5g_coverage_issue_e2721dd4_06f6da47",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "tech_enthusiast_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "confused",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni iPhone 15 aldım, 5G özelliği var ama hiç 5G çekmiyor. Hep 4G görünüyor. Bölgemde 5G var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yeni telefonunuz için 5G deneyimi önemli! Hemen kapsama durumunu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 10010,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10010,\"location\":\"İstanbul Beşiktaş\",\"coverage_status\":\"available\",\"signal_strength\":78,\"download_speed_estimate_mbps\":450.0,\"upload_speed_estimate_mbps\":85.0,\"latency_estimate_ms\":8,\"network_quality\":\"excellent\",\"coverage_percentage\":85}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**5G Kapsama Durumu** 📶\n\n✅ **Bölgenizde 5G var!** %85 kapsama\n📊 **Beklenen Hızlar:**\n• İndirme: 450 Mbps\n• Yükleme: 85 Mbps\n• Gecikme: 8 ms\n\n**Telefon Ayarları:**\n📱 Ayarlar > Hücresel > 5G Açık\n🔄 Ağ ayarlarını sıfırlayın\n📍 Konum servislerini açın\n\n5G aktif olduktan sonra test edelim!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_44648ce2",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_2d624b07",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_0ec6e1e9",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_4725db9a",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_46c36353",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_b02637da",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "couple_shared_plan_17cfa22a_361915fe",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "married_couple",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Eşimle beraber paket kullanmak istiyoruz. İkimizin de ayrı hattı var ama ortak olsun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çift paketi harika seçenek! Hem tasarruf edersiniz hem paylaşırsınız.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 10017,
+              "new_package_name": "Çift Paketi"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHG-3456\",\"from_package\":\"Bireysel\",\"to_package\":\"Çift Paketi\",\"effective_date\":\"2025-08-13\",\"fee_difference\":-35.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Çift Paketi Aktif!** 💑\n\n💕 **İki hat, tek paket**\n📊 60 GB + 1500 dk + 500 SMS\n💰 159.90 TL (35 TL tasarruf!)\n🔄 Otomatik paylaşım\n\n**Avantajlar:**\n📱 Esnek kullanım\n💬 Aranızda sınırsız\n📧 Tek fatura\n🎁 Özel gün hediyesi\n\nYarından aktif! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_fc679ae5",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "line_not_working_32dc671b_519846b3",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frustrated_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonum hiç çalışmıyor! Ne arama yapabiliyor ne alabiliyorum. Acil durumum var!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durum! Hemen hat durumunu kontrol edip çözelim. Panik yapmayın.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10018,\"name\":\"Acil Durum Müşterisi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"suspended\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2021-03-10\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Sorun Bulundu!** ⚠️\n\n🚫 **Hat askıya alınmış**\n📱 +905551234567\n⏰ **Neden:** Ödeme gecikmesi\n\n**Hızlı Çözüm:**\n1️⃣ Fatura ödemesi\n2️⃣ 15 dakikada aktif\n3️⃣ Test arama\n\n**Geçici:**\n📞 112, 155, 156 çalışıyor\n📱 WiFi ile WhatsApp\n\nFatura durumunu kontrol edeyim:",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-137370\",\"user_id\":10018,\"amount\":89.9,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-07\",\"bill_date\":\"2025-07-13\",\"status\":\"overdue\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":89.9}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Geciken Fatura** 💡\n\n💳 89.90 TL (5 gün geçmiş)\n📅 Vade dolmuş\n\n**Hızlı Çözüm:**\n⚡ Şimdi öderseniz 15 dakikada açılır\n💳 Kredi kartı/havale kabul\n📱 Ödeme sonrası test\n\nÖdemeyi yapalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "family_control_cd5298fc_fb1079f1",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aile paketimizde 3 hat var, çocuklarım sürekli oyun oynuyor ve internet bitiriyor. Kontrol edebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile internet yönetimi önemli. Kullanım durumunu kontrol edip aile kontrol seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10013
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":5.2,\"voice_remaining_minutes\":2500,\"sms_remaining\":800,\"period_end\":\"2025-08-20\",\"usage_percentage\":{\"internet\":89,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Aile Paketi Durumu** 👨‍👩‍👧‍👦\n\n📊 **İnternet:** %89 kullanılmış (5.2 GB kaldı)\n📞 **Konuşma:** %15 (2500 dk kaldı)\n📅 **8 gün** kaldı\n\n**Aile Kontrol Seçenekleri:**\n👶 Her hat için ayrı limit\n⏰ Gece 22:00-07:00 kısıtlama\n🎮 Oyun sitelerini engelleme\n📱 TikTok/YouTube sınırlama\n\n**Önerim:** Çocuklar için günlük 2GB limit\n💡 Eğitim siteleri sınırsız\n\nAile kontrol aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_d8b77f7e",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_294f7afd",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_24413024",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_1694fc5b",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "line_not_working_32dc671b_8aec3f50",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frustrated_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonum hiç çalışmıyor! Ne arama yapabiliyor ne alabiliyorum. Acil durumum var!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durum! Hemen hat durumunu kontrol edip çözelim. Panik yapmayın.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10018,\"name\":\"Acil Durum Müşterisi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"suspended\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2021-03-10\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Sorun Bulundu!** ⚠️\n\n🚫 **Hat askıya alınmış**\n📱 +905551234567\n⏰ **Neden:** Ödeme gecikmesi\n\n**Hızlı Çözüm:**\n1️⃣ Fatura ödemesi\n2️⃣ 15 dakikada aktif\n3️⃣ Test arama\n\n**Geçici:**\n📞 112, 155, 156 çalışıyor\n📱 WiFi ile WhatsApp\n\nFatura durumunu kontrol edeyim:",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10018
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-137370\",\"user_id\":10018,\"amount\":89.9,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-07\",\"bill_date\":\"2025-07-13\",\"status\":\"overdue\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":89.9}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Geciken Fatura** 💡\n\n💳 89.90 TL (5 gün geçmiş)\n📅 Vade dolmuş\n\n**Hızlı Çözüm:**\n⚡ Şimdi öderseniz 15 dakikada açılır\n💳 Kredi kartı/havale kabul\n📱 Ödeme sonrası test\n\nÖdemeyi yapalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "family_control_cd5298fc_95170292",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aile paketimizde 3 hat var, çocuklarım sürekli oyun oynuyor ve internet bitiriyor. Kontrol edebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile internet yönetimi önemli. Kullanım durumunu kontrol edip aile kontrol seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10013
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":5.2,\"voice_remaining_minutes\":2500,\"sms_remaining\":800,\"period_end\":\"2025-08-20\",\"usage_percentage\":{\"internet\":89,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Aile Paketi Durumu** 👨‍👩‍👧‍👦\n\n📊 **İnternet:** %89 kullanılmış (5.2 GB kaldı)\n📞 **Konuşma:** %15 (2500 dk kaldı)\n📅 **8 gün** kaldı\n\n**Aile Kontrol Seçenekleri:**\n👶 Her hat için ayrı limit\n⏰ Gece 22:00-07:00 kısıtlama\n🎮 Oyun sitelerini engelleme\n📱 TikTok/YouTube sınırlama\n\n**Önerim:** Çocuklar için günlük 2GB limit\n💡 Eğitim siteleri sınırsız\n\nAile kontrol aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_cb5cc46b",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_97951068",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "couple_shared_plan_17cfa22a_12b193ba",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "married_couple",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Eşimle beraber paket kullanmak istiyoruz. İkimizin de ayrı hattı var ama ortak olsun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çift paketi harika seçenek! Hem tasarruf edersiniz hem paylaşırsınız.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 10017,
+              "new_package_name": "Çift Paketi"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHG-3456\",\"from_package\":\"Bireysel\",\"to_package\":\"Çift Paketi\",\"effective_date\":\"2025-08-13\",\"fee_difference\":-35.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Çift Paketi Aktif!** 💑\n\n💕 **İki hat, tek paket**\n📊 60 GB + 1500 dk + 500 SMS\n💰 159.90 TL (35 TL tasarruf!)\n🔄 Otomatik paylaşım\n\n**Avantajlar:**\n📱 Esnek kullanım\n💬 Aranızda sınırsız\n📧 Tek fatura\n🎁 Özel gün hediyesi\n\nYarından aktif! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_32018312",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_06cca19a",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_882cf412",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_8d1c480c",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_cdf32590",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_bc321013",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "data_quota_exceeded_15cc2d03_f6344814",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "heavy_data_user",
+    "cognitive_state": "focused",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim bitti! Çok önemli bir toplantıya girecektim, hemen ek paket lazım!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durumu anlıyorum! Hemen ek paket seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Acil 5GB Paketi\",\"monthly_fee\":19.9,\"features\":{\"internet_gb\":5,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null},{\"name\":\"Süper 15GB Paketi\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":15,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Acil Ek Paket Seçenekleri** ⚡\n\n🚀 **Acil 5GB:** 19.90 TL\n• Anında aktivasyon\n• Toplantı için yeterli\n• SMS onayı ile aktif\n\n💪 **Süper 15GB:** 39.90 TL\n• Bol kullanım\n• Ay sonuna kadar yeter\n• Daha ekonomik (GB başına)\n\n**Aktivasyon Süreci:**\n⚡ SMS onayı → 30 saniye\n📱 Otomatik aktivasyon\n✅ Hemen kullanıma hazır\n\nHangisini tercih edersiniz? Toplantınız için 5GB yeterli olacaktır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_624fc928",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_f6a54f44",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_02e4c976",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_issue_531809cf_3c366728",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "busy_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kredi kartımla ödeme yapmaya çalışıyorum ama sürekli reddediliyor! Kartımda sorun yok, başka yerlerde çalışıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sorunu yaşamanız çok can sıkıcı. Hemen faturanızı kontrol edip alternatif ödeme seçenekleri sunayım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10000
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-411170\",\"user_id\":10000,\"amount\":125.5,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":125.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Ödeme Sorunu Çözümü** 💳\n\n💰 **Faturanız:** 125.50 TL (10 gün vadeli)\n⚠️ **Sorun:** Ödeme ağ geçidi geçici arızası\n\n**Alternatif Ödeme Yöntemleri:**\n🏦 **Havale/EFT:** Anında yansır\n📱 **Dijital Cüzdan:** PayPal, Apple Pay\n🏪 **Bayiiler:** En yakın bayi ile ödeme\n💳 **Farklı Kart:** Başka kredi kartı deneyin\n\n**Hızlı Çözüm:** Dijital cüzdan ile ödemeyi deneyebiliriz. Hangi yöntemi tercih edersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_5c41301b",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_77dcd329",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_7d28f08b",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "business_multiple_lines_c93b8cfa_0cb83a2f",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "ambitious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İşletmem büyüyor, 5 çalışanım için ayrı hatlar lazım. Kurumsal paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşletme büyümesi harika! Kurumsal çözümlerimizle tam ihtiyacınıza uygun paket hazırlayabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10016
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10016,\"name\":\"İşletme Sahibi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"business\",\"status\":\"active\"}],\"email\":\"isletme@example.com\",\"address\":\"İstanbul\",\"registration_date\":\"2020-08-15\",\"customer_tier\":\"business\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kurumsal Profil** 🏢\n\n👨‍💼 **İşletme Sahibi**\n📍 İstanbul\n🏆 Kurumsal müşteri\n\n**5 Hatlık Paket:**\n💼 **Toplam:** 399 TL/ay\n📊 **Her Hat:** 25 GB + 750 dk\n📞 **Dahili:** Ücretsiz konuşma\n📧 **Tek Fatura**\n\n**Avantajlar:**\n📈 CRM entegrasyonu\n☁️ 100 GB bulut depolama\n🎧 7/24 öncelikli destek\n\nKurulumu başlatalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "couple_shared_plan_17cfa22a_26e5b6d2",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "married_couple",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Eşimle beraber paket kullanmak istiyoruz. İkimizin de ayrı hattı var ama ortak olsun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çift paketi harika seçenek! Hem tasarruf edersiniz hem paylaşırsınız.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 10017,
+              "new_package_name": "Çift Paketi"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHG-3456\",\"from_package\":\"Bireysel\",\"to_package\":\"Çift Paketi\",\"effective_date\":\"2025-08-13\",\"fee_difference\":-35.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Çift Paketi Aktif!** 💑\n\n💕 **İki hat, tek paket**\n📊 60 GB + 1500 dk + 500 SMS\n💰 159.90 TL (35 TL tasarruf!)\n🔄 Otomatik paylaşım\n\n**Avantajlar:**\n📱 Esnek kullanım\n💬 Aranızda sınırsız\n📧 Tek fatura\n🎁 Özel gün hediyesi\n\nYarından aktif! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_02785961",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_issue_531809cf_6d6c00f7",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "busy_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kredi kartımla ödeme yapmaya çalışıyorum ama sürekli reddediliyor! Kartımda sorun yok, başka yerlerde çalışıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sorunu yaşamanız çok can sıkıcı. Hemen faturanızı kontrol edip alternatif ödeme seçenekleri sunayım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10000
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-411170\",\"user_id\":10000,\"amount\":125.5,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":125.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Ödeme Sorunu Çözümü** 💳\n\n💰 **Faturanız:** 125.50 TL (10 gün vadeli)\n⚠️ **Sorun:** Ödeme ağ geçidi geçici arızası\n\n**Alternatif Ödeme Yöntemleri:**\n🏦 **Havale/EFT:** Anında yansır\n📱 **Dijital Cüzdan:** PayPal, Apple Pay\n🏪 **Bayiiler:** En yakın bayi ile ödeme\n💳 **Farklı Kart:** Başka kredi kartı deneyin\n\n**Hızlı Çözüm:** Dijital cüzdan ile ödemeyi deneyebiliriz. Hangi yöntemi tercih edersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "package_change_d17fbe42_72c4dc9c",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_conscious_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mevcut paketim çok pahalı geliyor, daha ucuz bir seçenek var mı? Kullanımımı analiz edip öneri verebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bütçe planlaması önemli! Önce kullanım alışkanlıklarınızı analiz edip size en uygun paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10002
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":18.5,\"voice_remaining_minutes\":650,\"sms_remaining\":180,\"period_end\":\"2025-08-24\",\"usage_percentage\":{\"internet\":25,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kullanım Analizi** 📊\n\n📱 **İnternet:** %25 kullanılmış (18.5 GB kaldı)\n📞 **Konuşma:** %30 kullanılmış (650 dk kaldı)\n💬 **SMS:** %15 kullanılmış (180 adet kaldı)\n📅 **Dönem:** 12 gün kaldı\n\n**Sonuç:** Paketinizi tam kullanmıyorsunuz!\n\n**Daha Ekonomik Seçenekler:**\n💰 **Ekonomik Paket:** 79.90 TL (15 GB + 500 dk)\n🎯 **Temel Paket:** 59.90 TL (10 GB + 300 dk)\n📱 **Sadece İnternet:** 49.90 TL (12 GB)\n\n**Tahmini Tasarruf:** Aylık 40-50 TL\nHangisi size daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "business_multiple_lines_c93b8cfa_f2fe77b5",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "ambitious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İşletmem büyüyor, 5 çalışanım için ayrı hatlar lazım. Kurumsal paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşletme büyümesi harika! Kurumsal çözümlerimizle tam ihtiyacınıza uygun paket hazırlayabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10016
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10016,\"name\":\"İşletme Sahibi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"business\",\"status\":\"active\"}],\"email\":\"isletme@example.com\",\"address\":\"İstanbul\",\"registration_date\":\"2020-08-15\",\"customer_tier\":\"business\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kurumsal Profil** 🏢\n\n👨‍💼 **İşletme Sahibi**\n📍 İstanbul\n🏆 Kurumsal müşteri\n\n**5 Hatlık Paket:**\n💼 **Toplam:** 399 TL/ay\n📊 **Her Hat:** 25 GB + 750 dk\n📞 **Dahili:** Ücretsiz konuşma\n📧 **Tek Fatura**\n\n**Avantajlar:**\n📈 CRM entegrasyonu\n☁️ 100 GB bulut depolama\n🎧 7/24 öncelikli destek\n\nKurulumu başlatalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_cc3c2d74",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_9e665f7c",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_73ef355f",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "business_multiple_lines_c93b8cfa_9cc18282",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "ambitious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İşletmem büyüyor, 5 çalışanım için ayrı hatlar lazım. Kurumsal paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşletme büyümesi harika! Kurumsal çözümlerimizle tam ihtiyacınıza uygun paket hazırlayabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10016
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10016,\"name\":\"İşletme Sahibi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"business\",\"status\":\"active\"}],\"email\":\"isletme@example.com\",\"address\":\"İstanbul\",\"registration_date\":\"2020-08-15\",\"customer_tier\":\"business\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kurumsal Profil** 🏢\n\n👨‍💼 **İşletme Sahibi**\n📍 İstanbul\n🏆 Kurumsal müşteri\n\n**5 Hatlık Paket:**\n💼 **Toplam:** 399 TL/ay\n📊 **Her Hat:** 25 GB + 750 dk\n📞 **Dahili:** Ücretsiz konuşma\n📧 **Tek Fatura**\n\n**Avantajlar:**\n📈 CRM entegrasyonu\n☁️ 100 GB bulut depolama\n🎧 7/24 öncelikli destek\n\nKurulumu başlatalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_issue_531809cf_af8df39d",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "busy_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kredi kartımla ödeme yapmaya çalışıyorum ama sürekli reddediliyor! Kartımda sorun yok, başka yerlerde çalışıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sorunu yaşamanız çok can sıkıcı. Hemen faturanızı kontrol edip alternatif ödeme seçenekleri sunayım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10000
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-411170\",\"user_id\":10000,\"amount\":125.5,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":125.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Ödeme Sorunu Çözümü** 💳\n\n💰 **Faturanız:** 125.50 TL (10 gün vadeli)\n⚠️ **Sorun:** Ödeme ağ geçidi geçici arızası\n\n**Alternatif Ödeme Yöntemleri:**\n🏦 **Havale/EFT:** Anında yansır\n📱 **Dijital Cüzdan:** PayPal, Apple Pay\n🏪 **Bayiiler:** En yakın bayi ile ödeme\n💳 **Farklı Kart:** Başka kredi kartı deneyin\n\n**Hızlı Çözüm:** Dijital cüzdan ile ödemeyi deneyebiliriz. Hangi yöntemi tercih edersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "international_charges_0dca95a4_1a262d07",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frequent_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İngiltere'de 1 hafta kaldım, sadece birkaç arama yaptım ama fatura 800 TL geldi! Bu normal mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "800 TL gerçekten yüksek! Hemen fatura detaylarını inceleyelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10012
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-901113\",\"user_id\":10012,\"amount\":823.75,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Uluslararası Arama\",\"amount\":645.5},{\"service_name\":\"Roaming İnternet\",\"amount\":178.25}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Yüksek Fatura Analizi** 💸\n\n📊 **Toplam:** 823.75 TL\n☎️ **Uluslararası:** 645.50 TL\n📱 **Roaming:** 178.25 TL\n\n**Sorun:** Roaming paketi yokmuş\n💰 **Dakika başı:** 15 TL ücret\n\n**Çözüm:**\n🎯 Roaming paketi retroaktif uygulayabilirim\n💳 ~350 TL'ye düşebilir\n🔄 3 taksit seçeneği\n\nİndirim işlemini başlatayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "bill_history_tax_b5a2ced2_32d06e17",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Vergi beyannamem için 2023 yılının tüm fatura geçmişine ihtiyacım var. Muhasebecim istiyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Vergi beyannamesi için fatura geçmişi önemli. Hemen 2023 faturalarınızı getireyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 10011,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2023-001\",\"amount\":125.5,\"bill_date\":\"2023-01-31\",\"status\":\"paid\",\"paid_date\":\"2023-02-05\"},{\"bill_id\":\"F-2023-012\",\"amount\":125.5,\"bill_date\":\"2023-12-31\",\"status\":\"paid\",\"paid_date\":\"2024-01-02\"}],\"total_count\":12,\"total_amount_paid\":1506.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**2023 Fatura Özeti** 📊\n\n📄 **Toplam:** 12 fatura\n💰 **Tutar:** 1,506.00 TL\n✅ **Durum:** Tümü ödenmiş\n\n**Vergi İçin:**\n📧 PDF dökümü e-postanıza geliyor\n📝 KDV ayrıştırılmış\n🏢 İşletme gideri olarak gösterebilirsiniz\n\n5 dakika içinde e-postanızda!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_cdd06cee",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "elderly_simple_phone_a8d18e62_182468ef",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "elderly_customer",
+    "cognitive_state": "intuitive",
+    "emotional_context": "overwhelmed",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu akıllı telefon çok karışık. Sadece arama yapabileceğim basit telefon istiyorum. 75 yaşındayım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi çok iyi anlıyorum. Basit çözümler daha iyi. Size uygun paketleri bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Yaşlı Dostu Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":2,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":null},{\"name\":\"Sadece Konuşma\",\"monthly_fee\":29.9,\"features\":{\"internet_gb\":0,\"voice_minutes\":1000,\"sms_count\":50},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Basit Paketler** 📞\n\n👴 **Yaşlı Dostu:** 39.90 TL\n• 500 dakika konuşma\n• 100 SMS\n• Büyük tuşlu telefon hediye\n\n📞 **Sadece Konuşma:** 29.90 TL\n• 1000 dakika\n• SOS butonu\n• Karışıklık yok\n\n**Özel Hizmetler:**\n🏥 Tek tuşla ambulans\n👨‍⚕️ Ücretsiz doktor danışma\n🔊 İşitme dostu yüksek ses\n\nHangisi daha uygun?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "payment_issue_531809cf_09fca20f",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "busy_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kredi kartımla ödeme yapmaya çalışıyorum ama sürekli reddediliyor! Kartımda sorun yok, başka yerlerde çalışıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sorunu yaşamanız çok can sıkıcı. Hemen faturanızı kontrol edip alternatif ödeme seçenekleri sunayım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10000
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-411170\",\"user_id\":10000,\"amount\":125.5,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Aylık Paket\",\"amount\":125.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Ödeme Sorunu Çözümü** 💳\n\n💰 **Faturanız:** 125.50 TL (10 gün vadeli)\n⚠️ **Sorun:** Ödeme ağ geçidi geçici arızası\n\n**Alternatif Ödeme Yöntemleri:**\n🏦 **Havale/EFT:** Anında yansır\n📱 **Dijital Cüzdan:** PayPal, Apple Pay\n🏪 **Bayiiler:** En yakın bayi ile ödeme\n💳 **Farklı Kart:** Başka kredi kartı deneyin\n\n**Hızlı Çözüm:** Dijital cüzdan ile ödemeyi deneyebiliriz. Hangi yöntemi tercih edersiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_457184ad",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "data_quota_exceeded_15cc2d03_bf6bfee1",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "heavy_data_user",
+    "cognitive_state": "focused",
+    "emotional_context": "urgent",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim bitti! Çok önemli bir toplantıya girecektim, hemen ek paket lazım!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Acil durumu anlıyorum! Hemen ek paket seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Acil 5GB Paketi\",\"monthly_fee\":19.9,\"features\":{\"internet_gb\":5,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null},{\"name\":\"Süper 15GB Paketi\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":15,\"voice_minutes\":0,\"sms_count\":0},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Acil Ek Paket Seçenekleri** ⚡\n\n🚀 **Acil 5GB:** 19.90 TL\n• Anında aktivasyon\n• Toplantı için yeterli\n• SMS onayı ile aktif\n\n💪 **Süper 15GB:** 39.90 TL\n• Bol kullanım\n• Ay sonuna kadar yeter\n• Daha ekonomik (GB başına)\n\n**Aktivasyon Süreci:**\n⚡ SMS onayı → 30 saniye\n📱 Otomatik aktivasyon\n✅ Hemen kullanıma hazır\n\nHangisini tercih edersiniz? Toplantınız için 5GB yeterli olacaktır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "phone_update_fbb58d53_70005154",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "detail_oriented_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon numaramı değiştirdim, sistemdeki bilgileri güncelleyebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İletişim bilgilerini güncellemek önemli. Önce mevcut profilinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10007
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10007,\"name\":\"Detaycı Müşteri\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"mobile\",\"status\":\"active\"}],\"email\":\"musteri@example.com\",\"address\":\"Ankara\",\"registration_date\":\"2020-03-15\",\"customer_tier\":\"standard\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Profil Güncelleme** 📝\n\n👤 **Mevcut:** +905551234567\n📧 **E-posta:** musteri@example.com\n🏠 **Adres:** Ankara\n\n**Güncelleme Süreci:**\n1️⃣ Yeni numara söyleyin\n2️⃣ SMS doğrulama\n3️⃣ Anında aktif\n\n**Güvenlik:** Çift doğrulama\nYeni numaranızı söyleyebilir misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "student_budget_7a408362_057d0c76",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "budget_student",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Üniversite öğrencisiyim, çok kısıtlı bütçem var. En ucuz ama yeterli paketiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öğrenci bütçesi önemli. Size özel öğrenci paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Öğrenci Ekonomik\",\"monthly_fee\":49.9,\"features\":{\"internet_gb\":20,\"voice_minutes\":300,\"sms_count\":200},\"target_audience\":null},{\"name\":\"Kampüs Özel\",\"monthly_fee\":69.9,\"features\":{\"internet_gb\":35,\"voice_minutes\":500,\"sms_count\":300},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Öğrenci Paketleri** 🎓\n\n💰 **Ekonomik:** 49.90 TL\n• 20 GB (dersler için yeterli)\n• 300 dakika\n• Öğrenci belgesi ile %20 indirim\n\n📚 **Kampüs Özel:** 69.90 TL\n• 35 GB\n• WiFi entegrasyonu\n\n**Avantajlar:**\n🎯 Eğitim siteleri sınırsız\n📖 Online kütüphane sayılmaz\n🎁 İlk ay ücretsiz\n\nÖğrenci belgeniz var mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_a5db1815",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "5g_coverage_issue_e2721dd4_0358e449",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "tech_enthusiast_customer",
+    "cognitive_state": "analytical",
+    "emotional_context": "confused",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni iPhone 15 aldım, 5G özelliği var ama hiç 5G çekmiyor. Hep 4G görünüyor. Bölgemde 5G var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yeni telefonunuz için 5G deneyimi önemli! Hemen kapsama durumunu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 10010,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10010,\"location\":\"İstanbul Beşiktaş\",\"coverage_status\":\"available\",\"signal_strength\":78,\"download_speed_estimate_mbps\":450.0,\"upload_speed_estimate_mbps\":85.0,\"latency_estimate_ms\":8,\"network_quality\":\"excellent\",\"coverage_percentage\":85}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**5G Kapsama Durumu** 📶\n\n✅ **Bölgenizde 5G var!** %85 kapsama\n📊 **Beklenen Hızlar:**\n• İndirme: 450 Mbps\n• Yükleme: 85 Mbps\n• Gecikme: 8 ms\n\n**Telefon Ayarları:**\n📱 Ayarlar > Hücresel > 5G Açık\n🔄 Ağ ayarlarını sıfırlayın\n📍 Konum servislerini açın\n\n5G aktif olduktan sonra test edelim!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "autopay_setup_ba0be6d2_f7ff16ee",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "forgetful_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürekli fatura ödemeyi unutuyorum, otomatik ödeme kurabilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme harika çözüm! Fatura stresini ortadan kaldırır.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 10006,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10006,\"autopay_enabled\":true,\"payment_method\":\"credit_card_ending_1234\",\"next_payment_date\":\"2025-08-27\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Otomatik Ödeme Aktif!** 💳\n\n✅ **Durum:** Hazır\n💳 **Kart:** ****1234\n📅 **İlk Ödeme:** 15 gün sonra\n💰 **İndirim:** %5 otomatik ödeme\n\n**Avantajlar:**\n⏰ Hiç unutmayacaksınız\n📧 3 gün önceden hatırlatma\n🛡️ Güvenli işlem\n\nArtık fatura stresi yok! 🎉",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_2cd0c6f0",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_41e204ec",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "regional_outage_ab5057ee_b1ee3761",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_resident",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim 3 saattir çalışmıyor, komşular da aynı sorunu yaşıyor. Bölgesel arıza var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel arıza şüphenizi anlıyorum. Hemen durumu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Istanbul"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Istanbul\",\"status\":\"degraded\",\"coverage_percentage\":75,\"active_outages\":[{\"area\":\"Beşiktaş-Şişli\",\"issue\":\"Fiber kablo kesintisi\",\"start_time\":\"2025-08-12T02:53:47Z\",\"estimated_end\":\"2025-08-12T04:53:47Z\"}],\"last_updated\":\"2025-08-12T02:53:47Z\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Bölgesel Arıza Doğrulandı** ⚠️\n\n🗺️ **Etkilenen:** Beşiktaş-Şişli\n🔧 **Sorun:** Fiber kablo kesintisi\n⏰ **Süre:** 3 saat\n🎯 **Çözüm:** 2 saat içinde\n\n**Geçici Çözümler:**\n📱 5GB hotspot kredisi\n💰 Kesinti tazminatı\n📞 SMS güncellemeleri\n\nHotspot kredisini aktif edeyim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "business_multiple_lines_c93b8cfa_b1771287",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "business_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "ambitious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İşletmem büyüyor, 5 çalışanım için ayrı hatlar lazım. Kurumsal paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İşletme büyümesi harika! Kurumsal çözümlerimizle tam ihtiyacınıza uygun paket hazırlayabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 10016
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10016,\"name\":\"İşletme Sahibi\",\"phone_numbers\":[{\"number\":\"+905551234567\",\"type\":\"business\",\"status\":\"active\"}],\"email\":\"isletme@example.com\",\"address\":\"İstanbul\",\"registration_date\":\"2020-08-15\",\"customer_tier\":\"business\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Kurumsal Profil** 🏢\n\n👨‍💼 **İşletme Sahibi**\n📍 İstanbul\n🏆 Kurumsal müşteri\n\n**5 Hatlık Paket:**\n💼 **Toplam:** 399 TL/ay\n📊 **Her Hat:** 25 GB + 750 dk\n📞 **Dahili:** Ücretsiz konuşma\n📧 **Tek Fatura**\n\n**Avantajlar:**\n📈 CRM entegrasyonu\n☁️ 100 GB bulut depolama\n🎧 7/24 öncelikli destek\n\nKurulumu başlatalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "retiree_budget_d4afef1a_20d90a5e",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "retiree_customer",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekliyim, maaşım 5000 TL. Telefon faturası çok yüksek, daha ekonomik paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emekli bütçesi önemli. Size en uygun ekonomik paketi bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10019
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Standart Paket\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":750,\"sms_count\":300,\"roaming_enabled\":false,\"international_minutes\":0},\"activation_date\":\"2020-05-15\",\"renewal_date\":\"2024-05-15\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Mevcut Paket Analizi** 💰\n\n📦 **Standart:** 129.90 TL/ay\n📊 30 GB + 750 dk + 300 SMS\n💸 Maaşınızın %2.6'sı\n\n**Emekli Alternatifleri:**\n👴 **Emekli Özel:** 59.90 TL\n• 15 GB + 500 dk\n• %25 emekli indirimi\n\n📞 **Sadece Konuşma:** 39.90 TL\n• 1000 dk + 50 SMS\n\n**Avantajlar:**\n🏥 Ücretsiz doktor hattı\n📱 Büyük tuşlu telefon\n🆘 Acil buton\n\n**Tasarruf:** 70 TL/ay!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "roaming_issue_58f511ab_34798720",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "international_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Almanya'ya geldim ama internetim çalışmıyor! Roaming aktif mi kontrol edebilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yurt dışında internet sorunu çok can sıkıcı. Hemen durumunuzu kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Mevcut Paket"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Standart Paket\",\"monthly_fee\":99.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":20,\"voice_minutes\":750,\"sms_count\":300,\"international_minutes\":50},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Roaming Durumu** 🌍\n\n❌ **Sorun:** Paketinizde roaming yok\n📍 **Konum:** Almanya (AB)\n📦 **Mevcut:** Standart Paket (sadece Türkiye)\n\n**Hızlı Çözüm:**\n🇪🇺 **AB Roaming:** 7 gün - 89 TL\n• 5 GB internet + 100 dakika\n• 15 dakikada aktif\n• WhatsApp/Telegram sınırsız\n\n⚡ **Aktivasyon:**\n• SMS: *123*1# çevirin\n• Otomatik başlama\n• Kullanım takibi\n\nHemen aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "family_control_cd5298fc_cbf86a0f",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "concerned_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aile paketimizde 3 hat var, çocuklarım sürekli oyun oynuyor ve internet bitiriyor. Kontrol edebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile internet yönetimi önemli. Kullanım durumunu kontrol edip aile kontrol seçeneklerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10013
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":5.2,\"voice_remaining_minutes\":2500,\"sms_remaining\":800,\"period_end\":\"2025-08-20\",\"usage_percentage\":{\"internet\":89,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Aile Paketi Durumu** 👨‍👩‍👧‍👦\n\n📊 **İnternet:** %89 kullanılmış (5.2 GB kaldı)\n📞 **Konuşma:** %15 (2500 dk kaldı)\n📅 **8 gün** kaldı\n\n**Aile Kontrol Seçenekleri:**\n👶 Her hat için ayrı limit\n⏰ Gece 22:00-07:00 kısıtlama\n🎮 Oyun sitelerini engelleme\n📱 TikTok/YouTube sınırlama\n\n**Önerim:** Çocuklar için günlük 2GB limit\n💡 Eğitim siteleri sınırsız\n\nAile kontrol aktif edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "slow_internet_3c968f60_c019dc78",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "streaming_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim çok yavaş! Netflix izlerken sürekli duraksıyor, Zoom toplantılarında ses gidiyor geliyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Streaming ve video konferans için hız çok önemli. Hemen internet hızınızı test edip sorunu çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 10001
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10001,\"download_speed_mbps\":8.5,\"upload_speed_mbps\":2.1,\"ping_ms\":45,\"test_timestamp\":\"2025-08-12T02:53:47Z\",\"test_server\":\"Istanbul-1\",\"quality_rating\":\"poor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Hız Testi Sonuçları** 📊\n\n📉 **İndirme:** 8.5 Mbps (düşük)\n📤 **Yükleme:** 2.1 Mbps\n⏱️ **Gecikme:** 45 ms\n📍 **Test Sunucu:** İstanbul-1\n\n**Sorun Analizi:**\n⚠️ Streaming için minimum 25 Mbps gerekli\n📺 Netflix 4K için 25+ Mbps öneriliyor\n💻 Zoom HD için 10+ Mbps ideal\n\n**Çözüm Önerileri:**\n🔄 **Modem Reset:** Fişten çekip 30 saniye bekleyin\n📡 **WiFi Optimizasyonu:** 5GHz bandına geçin\n📈 **Hız Yükseltme:** Daha yüksek paket seçenekleri\n🎯 **Teknik Destek:** Saha ekibi gönderebiliriz\n\nHangi çözümle başlayalım?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "international_charges_0dca95a4_de908a60",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frequent_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İngiltere'de 1 hafta kaldım, sadece birkaç arama yaptım ama fatura 800 TL geldi! Bu normal mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "800 TL gerçekten yüksek! Hemen fatura detaylarını inceleyelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10012
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-901113\",\"user_id\":10012,\"amount\":823.75,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Uluslararası Arama\",\"amount\":645.5},{\"service_name\":\"Roaming İnternet\",\"amount\":178.25}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Yüksek Fatura Analizi** 💸\n\n📊 **Toplam:** 823.75 TL\n☎️ **Uluslararası:** 645.50 TL\n📱 **Roaming:** 178.25 TL\n\n**Sorun:** Roaming paketi yokmuş\n💰 **Dakika başı:** 15 TL ücret\n\n**Çözüm:**\n🎯 Roaming paketi retroaktif uygulayabilirim\n💳 ~350 TL'ye düşebilir\n🔄 3 taksit seçeneği\n\nİndirim işlemini başlatayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "slow_internet_3c968f60_bedb3b43",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "streaming_user",
+    "cognitive_state": "analytical",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İnternetim çok yavaş! Netflix izlerken sürekli duraksıyor, Zoom toplantılarında ses gidiyor geliyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Streaming ve video konferans için hız çok önemli. Hemen internet hızınızı test edip sorunu çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 10001
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":10001,\"download_speed_mbps\":8.5,\"upload_speed_mbps\":2.1,\"ping_ms\":45,\"test_timestamp\":\"2025-08-12T02:53:47Z\",\"test_server\":\"Istanbul-1\",\"quality_rating\":\"poor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Hız Testi Sonuçları** 📊\n\n📉 **İndirme:** 8.5 Mbps (düşük)\n📤 **Yükleme:** 2.1 Mbps\n⏱️ **Gecikme:** 45 ms\n📍 **Test Sunucu:** İstanbul-1\n\n**Sorun Analizi:**\n⚠️ Streaming için minimum 25 Mbps gerekli\n📺 Netflix 4K için 25+ Mbps öneriliyor\n💻 Zoom HD için 10+ Mbps ideal\n\n**Çözüm Önerileri:**\n🔄 **Modem Reset:** Fişten çekip 30 saniye bekleyin\n📡 **WiFi Optimizasyonu:** 5GHz bandına geçin\n📈 **Hız Yükseltme:** Daha yüksek paket seçenekleri\n🎯 **Teknik Destek:** Saha ekibi gönderebiliriz\n\nHangi çözümle başlayalım?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "international_charges_0dca95a4_d3ee6ce9",
+    "scenario_type": "advanced_error_recovery",
+    "personality_profile": "frequent_traveler",
+    "cognitive_state": "empathetic",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "İngiltere'de 1 hafta kaldım, sadece birkaç arama yaptım ama fatura 800 TL geldi! Bu normal mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "800 TL gerçekten yüksek! Hemen fatura detaylarını inceleyelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10012
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-901113\",\"user_id\":10012,\"amount\":823.75,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-22\",\"bill_date\":\"2025-08-12\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Uluslararası Arama\",\"amount\":645.5},{\"service_name\":\"Roaming İnternet\",\"amount\":178.25}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "**Yüksek Fatura Analizi** 💸\n\n📊 **Toplam:** 823.75 TL\n☎️ **Uluslararası:** 645.50 TL\n📱 **Roaming:** 178.25 TL\n\n**Sorun:** Roaming paketi yokmuş\n💰 **Dakika başı:** 15 TL ücret\n\n**Çözüm:**\n🎯 Roaming paketi retroaktif uygulayabilirim\n💳 ~350 TL'ye düşebilir\n🔄 3 taksit seçeneği\n\nİndirim işlemini başlatayım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

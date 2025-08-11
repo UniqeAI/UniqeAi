@@ -228,8 +228,8 @@ class SupremeHumanLevelDatasetGenerator:
   
         """
         return {
-            ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
-
+            #ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
+            ScenarioType.ADVANCED_ERROR_RECOVERY.value: generate_advanced_error_recovery_scenario,
 
         }
 

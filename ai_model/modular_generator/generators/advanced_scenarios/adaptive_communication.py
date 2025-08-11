@@ -755,9 +755,5 @@ def generate_adaptive_communication_scenario() -> Dict[str, Any]:
     """
     all_scenarios = generate_adaptive_communication_scenarios()
     if not all_scenarios:
-<<<<<<< HEAD
         return []
-=======
-        return {} 
->>>>>>> 172c9d4f6ddaa42c27b2438aa6b965f00f955f43
     return all_scenarios

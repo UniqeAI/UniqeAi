@@ -22,8 +22,8 @@ def generate_resource_optimization_scenario1() -> Dict[str, Any]:
         "id": f"resource_optimization_scenario_{uuid.uuid4().hex[:8]}",
         "scenario_type": ScenarioType.RESOURCE_OPTIMIZATION.value,
         "personality_profile": "efficiency_conscious_manager",
-        "cognitive_state": CognitiveState.OPTIMIZING.value,
-        "emotional_context": EmotionalContext.FOCUSED.value,
+        "cognitive_state": CognitiveState.SYSTEMATIC.value,
+        "emotional_context": EmotionalContext.AMBITIOUS.value,
         "cultural_context": "modern_urban_turkish",
         "donguler": [
             {"rol": "kullanici", "icerik": "Mevcut paketimdeki kaynakları daha verimli kullanmak istiyorum. Nasıl optimize edebilirim?", "arac_cagrilari": None},
