@@ -40,6 +40,7 @@ except NameError:
 MODEL_ID = "Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf"
 LOCAL_MODEL_PATH = PROJECT_ROOT / "UniqeAi" / "ai_model" / "merged_model_fp16_v5"
 
+
 # llama.cpp'nin klonlanacağı dizin
 LLAMA_CPP_DIR = PROJECT_ROOT / "UniqeAi" / "llama.cpp"
 

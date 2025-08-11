@@ -30,7 +30,7 @@ except NameError:
 
 # Model ve adaptör yolları
 BASE_MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
-ADAPTER_MODEL_PATH = PROJECT_ROOT / "UniqeAi/ai_model/results/final_model_bf16_v5"
+ADAPTER_MODEL_PATH = PROJECT_ROOT / "UniqeAi/ai_model/results/final_model_bf16"
 MERGED_MODEL_OUTPUT_PATH = PROJECT_ROOT / "UniqeAi/ai_model/merged_model_fp16_v5"
 OFFLOAD_DIR = PROJECT_ROOT / "temp_offload" # Geçici dosyalar için klasör
 
