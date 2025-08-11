@@ -3,11 +3,37 @@ Kullanıcı yönetimi endpoint'leri
 """
 
 from fastapi import APIRouter, HTTPException
-from backend.app.schemas.user import UserLogin, UserResponse, UserUpdateRequest
-from backend.app.services.user_service import user_service
+from app.schemas.user import UserLogin, UserResponse, UserUpdateRequest, UserRegister
+from app.services.user_service import user_service
 from typing import Dict, Any
 
 router = APIRouter(prefix="/user", tags=["User"])
+
+@router.post("/register", response_model=UserResponse)
+async def register_user(user_register: UserRegister):
+    """
+    Kullanıcı kayıt endpoint'i - yeni kullanıcı oluşturur
+    
+    Args:
+        user_register: Kullanıcı kayıt bilgileri
+        
+    Returns:
+        Kullanıcı bilgileri ve kayıt durumu
+    """
+    try:
+        user_info = await user_service.register_user(user_register)
+        
+        return UserResponse(
+            success=True,
+            message="Kullanıcı başarıyla kayıt oldu",
+            data=user_info
+        )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Kullanıcı kayıt işlemi sırasında hata oluştu: {str(e)}"
+        )
 
 @router.post("/login", response_model=UserResponse)
 async def login_user(user_login: UserLogin):
@@ -21,7 +47,7 @@ async def login_user(user_login: UserLogin):
         Kullanıcı bilgileri ve giriş durumu
     """
     try:
-        user_info = await user_service.set_current_user(user_login)
+        user_info = await user_service.login_user(user_login)
         
         return UserResponse(
             success=True,
@@ -29,6 +55,11 @@ async def login_user(user_login: UserLogin):
             data=user_info
         )
         
+    except ValueError as ve:
+        raise HTTPException(
+            status_code=401,
+            detail=f"Kullanıcı kaydı yok veya şifre hatalı: {str(ve)}"
+        )
     except Exception as e:
         raise HTTPException(
             status_code=500,
@@ -63,6 +94,36 @@ async def get_current_user():
         raise HTTPException(
             status_code=500,
             detail=f"Kullanıcı bilgilerini getirme sırasında hata oluştu: {str(e)}"
+        )
+
+@router.get("/profile", response_model=UserResponse)
+async def get_user_profile():
+    """
+    Geçerli kullanıcı profilini getirir - Frontend için alias
+    
+    Returns:
+        Geçerli kullanıcı bilgileri
+    """
+    try:
+        user_info = await user_service.get_current_user()
+        
+        if not user_info:
+            return UserResponse(
+                success=False,
+                message="Aktif kullanıcı bulunamadı",
+                data=None
+            )
+        
+        return UserResponse(
+            success=True,
+            message="Kullanıcı profili başarıyla getirildi",
+            data=user_info
+        )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Kullanıcı profili getirme sırasında hata oluştu: {str(e)}"
         )
 
 @router.get("/by-id/{user_id}", response_model=UserResponse)

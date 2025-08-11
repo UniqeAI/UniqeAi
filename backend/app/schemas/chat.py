@@ -56,4 +56,4 @@ class OturumTemizlemeYanit(BaseModel):
     """Oturum temizleme yanıt şeması"""
     success: bool = Field(..., description="İşlem başarı durumu")
     message: str = Field(..., description="Yanıt mesajı")
-    session_id: str = Field(..., description="Temizlenen oturum ID'si")
+    session_id: str = Field(..., description="Temizlenen oturum ID'si") 

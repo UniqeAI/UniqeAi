@@ -2,7 +2,7 @@
 Kullanıcı endpoint'i için Pydantic şemaları
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, EmailStr
 from typing import Optional, Dict, Any
 from datetime import datetime
 
@@ -18,14 +18,21 @@ class UserInfo(BaseModel):
     is_active: bool = Field(True, description="Aktif durumu")
     metadata: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Ek bilgiler")
 
+class UserRegister(BaseModel):
+    """Kullanıcı kayıt şeması"""
+    username: str = Field(..., description="Kullanıcı adı", min_length=3)
+    email: str = Field(..., description="E-posta adresi")
+    password: str = Field(..., description="Şifre", min_length=6)
+    full_name: str = Field(..., description="Tam ad")
+    phone: str = Field(..., description="Telefon numarası")
+    birth_date: Optional[str] = Field(None, description="Doğum tarihi")
+    gender: Optional[str] = Field(None, description="Cinsiyet")
+    preferences: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Kullanıcı tercihleri")
+
 class UserLogin(BaseModel):
     """Kullanıcı giriş şeması"""
-    user_id: str = Field(..., description="Kullanıcı ID'si")
-    username: Optional[str] = Field(None, description="Kullanıcı adı")
-    email: Optional[str] = Field(None, description="E-posta adresi")
-    full_name: Optional[str] = Field(None, description="Tam ad")
-    phone: Optional[str] = Field(None, description="Telefon numarası")
-    preferences: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Kullanıcı tercihleri")
+    email: str = Field(..., description="E-posta adresi")
+    password: str = Field(..., description="Şifre")
 
 class UserResponse(BaseModel):
     """Kullanıcı yanıt şeması"""

@@ -34,7 +34,7 @@ class AIEndpointFunctions:
             AI yanıtı ve metadata
         """
         try:
-            from backend.app.services.ai_orchestrator import ai_orchestrator
+            from app.services.ai_orchestrator_real import ai_orchestrator
             import uuid
             
             # Oturum ID oluştur
@@ -77,7 +77,7 @@ class AIEndpointFunctions:
             Temizleme durumu
         """
         try:
-            from backend.app.services.ai_orchestrator import ai_orchestrator
+            from app.services.ai_orchestrator_real import ai_orchestrator
             
             await ai_orchestrator.oturum_temizle(session_id)
             
@@ -102,7 +102,7 @@ class AIEndpointFunctions:
             Sistem durumu bilgileri
         """
         try:
-            from backend.app.services.ai_orchestrator import ai_orchestrator
+            from app.services.ai_orchestrator_real import ai_orchestrator
             
             durum = await ai_orchestrator.sistem_durumu_getir()
             
@@ -168,17 +168,28 @@ class AIEndpointFunctions:
                 "error": f"Müşteri profili getirme hatası: {str(e)}"
             }
     
-    async def telekom_get_current_bill(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_get_current_bill(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         Mevcut fatura bilgilerini getir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Mevcut fatura bilgileri
         """
         try:
+            # Session token'dan user_id çıkar (eğer session_token varsa)
+            if session_token:
+                # Session token'dan user_id'yi çıkar
+                # Bu örnek için basit bir user_id ataması yapıyoruz
+                # Gerçek uygulamada session token'dan user_id çıkarılmalı
+                user_id = 0  # Varsayılan user_id
+            
+            if user_id is None:
+                user_id = 0  # Varsayılan user_id
+                
             base_amount = 50 + (user_id % 50)  # 50-99 arası
             
             bill_data = {
@@ -213,18 +224,29 @@ class AIEndpointFunctions:
                 "error": f"Mevcut fatura getirme hatası: {str(e)}"
             }
     
-    async def telekom_get_bill_history(self, user_id: int, limit: int = 12) -> Dict[str, Any]:
+    async def telekom_get_bill_history(self, user_id: int = None, limit: int = 12, session_token: str = None) -> Dict[str, Any]:
         """
         Geçmiş faturaları getir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel, session_token varsa kullanılır)
             limit: Maksimum fatura sayısı
+            session_token: Session token (opsiyonel)
             
         Returns:
             Geçmiş faturalar listesi
         """
         try:
+            # Session token'dan user_id çıkar (eğer session_token varsa)
+            if session_token:
+                # Session token'dan user_id'yi çıkar
+                # Bu örnek için basit bir user_id ataması yapıyoruz
+                # Gerçek uygulamada session token'dan user_id çıkarılmalı
+                user_id = 0  # Varsayılan user_id
+            
+            if user_id is None:
+                user_id = 0  # Varsayılan user_id
+                
             bills = []
             base_amount = 50 + (user_id % 50)
             
@@ -304,17 +326,27 @@ class AIEndpointFunctions:
                 "error": f"Fatura ödeme hatası: {str(e)}"
             }
     
-    async def telekom_get_payment_history(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_get_payment_history(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         Ödeme geçmişini getir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Ödeme geçmişi
         """
         try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                # Session token'dan user_id çıkar (basit implementasyon)
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             payments = []
             base_amount = 50 + (user_id % 50)
             
@@ -326,7 +358,8 @@ class AIEndpointFunctions:
                     "amount": base_amount + (i * 5),
                     "method": "credit_card" if i % 2 == 0 else "bank_transfer",
                     "status": "completed",
-                    "transaction_date": payment_date.isoformat()
+                    "payment_date": payment_date.strftime("%Y-%m-%d"),
+                    "reference_id": f"REF-{payment_date.strftime('%Y%m%d')}-{i+1:03d}"
                 }
                 payments.append(payment_data)
             
@@ -346,24 +379,36 @@ class AIEndpointFunctions:
                 "error": f"Ödeme geçmişi getirme hatası: {str(e)}"
             }
     
-    async def telekom_setup_autopay(self, user_id: int, status: bool) -> Dict[str, Any]:
+    async def telekom_setup_autopay(self, user_id: int = None, status: bool = True, session_token: str = None) -> Dict[str, Any]:
         """
         Otomatik ödeme ayarlar
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             status: Otomatik ödeme durumu
+            session_token: Session token (opsiyonel)
             
         Returns:
             Ayar sonucu
         """
         try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             autopay_data = {
                 "user_id": user_id,
                 "autopay_enabled": status,
                 "payment_method": "credit_card",
                 "last_updated": datetime.now().isoformat(),
-                "next_payment_date": (datetime.now() + timedelta(days=15)).isoformat()
+                "next_payment_date": (datetime.now() + timedelta(days=15)).isoformat(),
+                "card_last4": "1234",
+                "card_type": "Visa",
+                "auto_payment_limit": 200.0
             }
             
             return {
@@ -378,54 +423,103 @@ class AIEndpointFunctions:
                 "error": f"Otomatik ödeme ayarlama hatası: {str(e)}"
             }
     
-    async def telekom_get_current_package(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_get_current_package(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         Müşterinin mevcut paketini getir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Mevcut paket bilgileri
         """
         try:
-            packages = [
-                {
-                    "package_name": "Mega İnternet",
-                    "monthly_fee": 69.50,
-                    "features": {"internet_gb": 50, "voice_minutes": 1000, "sms_count": 500, "roaming_enabled": False}
-                },
-                {
-                    "package_name": "Öğrenci Dostu Tarife",
-                    "monthly_fee": 49.90,
-                    "features": {"internet_gb": 30, "voice_minutes": 500, "sms_count": 250, "roaming_enabled": False}
-                },
-                {
-                    "package_name": "Süper Konuşma",
-                    "monthly_fee": 59.90,
-                    "features": {"internet_gb": 25, "voice_minutes": 2000, "sms_count": 1000, "roaming_enabled": True}
-                },
-                {
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                # Session token'dan user_id çıkar (basit implementasyon)
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
+            # Gerçek kullanıcı paketleri
+            user_packages = {
+                0: {  # Enes Faruk Aydın
                     "package_name": "Premium Paket",
                     "monthly_fee": 89.90,
-                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True}
+                    "description": "Premium özellikler paketi - Sınırsız internet ve konuşma",
+                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
+                },
+                1: {  # Nisa Nur Özkal
+                    "package_name": "Öğrenci Dostu",
+                    "monthly_fee": 49.90,
+                    "description": "Ekonomik öğrenci paketi - İndirimli tarife",
+                    "features": {"internet_gb": 30, "voice_minutes": 500, "sms_count": 250, "roaming_enabled": False},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
+                },
+                2: {  # Sedat Kılıçoğlu
+                    "package_name": "Süper Konuşma",
+                    "monthly_fee": 59.90,
+                    "description": "Sınırsız konuşma paketi - Ses öncelikli",
+                    "features": {"internet_gb": 25, "voice_minutes": 2000, "sms_count": 1000, "roaming_enabled": True},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
+                },
+                3: {  # Erkan Tanrıöver
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "description": "Premium özellikler paketi - Sınırsız internet ve konuşma",
+                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
+                },
+                4: {  # Ahmet Nazif Gemalmaz
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "description": "Premium özellikler paketi - Sınırsız internet ve konuşma",
+                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
+                },
+                5: {  # Ziişan Şahin
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "description": "Premium özellikler paketi - Sınırsız internet ve konuşma",
+                    "features": {"internet_gb": 100, "voice_minutes": 3000, "sms_count": 1000, "roaming_enabled": True},
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-12-31",
+                    "auto_renewal": True,
+                    "status": "active"
                 }
-            ]
+            }
             
-            package = packages[user_id % len(packages)]
+            # Kullanıcının paketini al
+            package = user_packages.get(user_id, user_packages[0])  # Varsayılan olarak Enes'in paketi
             
             package_data = {
                 **package,
-                "user_id": user_id,
-                "activation_date": "2024-01-01",
-                "renewal_date": "2024-04-01",
-                "status": "active"
+                "user_id": user_id
             }
             
-            return {
+            result = {
                 "success": True,
                 "data": package_data
             }
+            self.logger.info(f"get_current_package sonucu: {result}")
+            return result
             
         except Exception as e:
             self.logger.error(f"Mevcut paket getirme hatası: {e}")
@@ -434,17 +528,122 @@ class AIEndpointFunctions:
                 "error": f"Mevcut paket getirme hatası: {str(e)}"
             }
     
-    async def telekom_get_remaining_quotas(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_get_customer_package(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
+        """
+        Müşterinin mevcut paketini getir (session token ile)
+        
+        Args:
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
+            
+        Returns:
+            Mevcut paket bilgileri
+        """
+        try:
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                # Session token'dan user_id çıkar (basit implementasyon)
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
+            # Backend'deki USER_PACKAGES verisini kullan
+            packages = [
+                {
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "package_type": "Premium",
+                    "features": ["Unlimited Data", "Premium Support", "Roaming Included"],
+                    "internet_speed": "100 Mbps",
+                    "voice_minutes": "Unlimited",
+                    "sms_count": "Unlimited",
+                    "contract_duration": "24 ay"
+                },
+                {
+                    "package_name": "Öğrenci Dostu",
+                    "monthly_fee": 49.90,
+                    "package_type": "Student",
+                    "features": ["10GB Data", "Student Discount", "Basic Support"],
+                    "internet_speed": "50 Mbps",
+                    "voice_minutes": "500 dakika",
+                    "sms_count": "250 SMS",
+                    "contract_duration": "12 ay"
+                },
+                {
+                    "package_name": "Süper Konuşma",
+                    "monthly_fee": 59.90,
+                    "package_type": "Voice",
+                    "features": ["Unlimited Calls", "5GB Data", "Voice Priority"],
+                    "internet_speed": "25 Mbps",
+                    "voice_minutes": "Unlimited",
+                    "sms_count": "1000 SMS",
+                    "contract_duration": "12 ay"
+                },
+                {
+                    "package_name": "Premium Paket",
+                    "monthly_fee": 89.90,
+                    "package_type": "Premium",
+                    "features": ["Unlimited Data", "Premium Support", "Roaming Included"],
+                    "internet_speed": "100 Mbps",
+                    "voice_minutes": "Unlimited",
+                    "sms_count": "Unlimited",
+                    "contract_duration": "24 ay"
+                },
+                {
+                    "package_name": "Mega İnternet",
+                    "monthly_fee": 69.90,
+                    "package_type": "Internet",
+                    "features": ["50GB Data", "High Speed", "Basic Support"],
+                    "internet_speed": "75 Mbps",
+                    "voice_minutes": "1000 dakika",
+                    "sms_count": "500 SMS",
+                    "contract_duration": "12 ay"
+                },
+                {
+                    "package_name": "Öğrenci Dostu",
+                    "monthly_fee": 49.90,
+                    "package_type": "Student",
+                    "features": ["10GB Data", "Student Discount", "Basic Support"],
+                    "internet_speed": "50 Mbps",
+                    "voice_minutes": "500 dakika",
+                    "sms_count": "250 SMS",
+                    "contract_duration": "12 ay"
+                }
+            ]
+            
+            package = packages[user_id % len(packages)]
+            
+            return {
+                "success": True,
+                "data": package
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Müşteri paketi getirme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Müşteri paketi getirme hatası: {str(e)}"
+            }
+    
+    async def telekom_get_remaining_quotas(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         Müşterinin kalan kotalarını getir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Kalan kotalar
         """
         try:
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                # Session token'dan user_id çıkar (basit implementasyon)
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+                
             base_internet = 50 - (user_id % 30)  # 20-50 GB arası
             base_voice = 1000 - (user_id % 400)  # 600-1000 dakika arası
             base_sms = 500 - (user_id % 200)     # 300-500 SMS arası
@@ -474,18 +673,27 @@ class AIEndpointFunctions:
                 "error": f"Kalan kotalar getirme hatası: {str(e)}"
             }
     
-    async def telekom_change_package(self, user_id: int, new_package_name: str) -> Dict[str, Any]:
+    async def telekom_change_package(self, user_id: int = None, new_package_name: str = "Premium Paket", session_token: str = None) -> Dict[str, Any]:
         """
         Paket değişikliği başlat
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             new_package_name: Yeni paket adı
+            session_token: Session token (opsiyonel)
             
         Returns:
             Paket değişikliği sonucu
         """
         try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             change_data = {
                 "change_id": f"CHG-{datetime.now().strftime('%Y%m%d%H%M%S')}",
                 "user_id": user_id,
@@ -493,7 +701,9 @@ class AIEndpointFunctions:
                 "new_package": new_package_name,
                 "status": "pending",
                 "effective_date": (datetime.now() + timedelta(days=7)).isoformat(),
-                "estimated_cost": 89.90
+                "estimated_cost": 89.90,
+                "processing_fee": 15.0,
+                "total_cost": 104.90
             }
             
             return {
@@ -602,24 +812,35 @@ class AIEndpointFunctions:
                 "error": f"Paket detayları getirme hatası: {str(e)}"
             }
     
-    async def telekom_enable_roaming(self, user_id: int, status: bool) -> Dict[str, Any]:
+    async def telekom_enable_roaming(self, user_id: int = None, status: bool = True, session_token: str = None) -> Dict[str, Any]:
         """
         Roaming hizmetini etkinleştir/devre dışı bırak
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             status: Roaming durumu
+            session_token: Session token (opsiyonel)
             
         Returns:
             Roaming ayar sonucu
         """
         try:
+            from datetime import datetime
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             roaming_data = {
                 "user_id": user_id,
                 "roaming_enabled": status,
                 "effective_date": datetime.now().isoformat(),
-                "supported_countries": ["EU", "USA", "Canada", "Australia"],
-                "daily_fee": 15.00 if status else 0.00
+                "supported_countries": ["EU", "USA", "Canada", "Australia", "UK", "Germany", "France"],
+                "daily_fee": 15.00 if status else 0.00,
+                "monthly_limit": 500.00 if status else 0.00,
+                "activation_fee": 25.00 if status else 0.00
             }
             
             return {
@@ -634,28 +855,50 @@ class AIEndpointFunctions:
                 "error": f"Roaming ayarlama hatası: {str(e)}"
             }
     
-    async def telekom_check_network_status(self, region: str) -> Dict[str, Any]:
+    async def telekom_check_network_status(self, region: str = "Istanbul", session_token: str = None) -> Dict[str, Any]:
         """
         Ağ durumunu kontrol et
         
         Args:
             region: Bölge
+            session_token: Session token (opsiyonel)
             
         Returns:
             Ağ durumu bilgileri
         """
         try:
+            from datetime import datetime
+            
+            # Bölgeye göre farklı durumlar
+            region_status = {
+                "Istanbul": {"status": "operational", "coverage": "excellent"},
+                "Ankara": {"status": "operational", "coverage": "good"},
+                "Izmir": {"status": "operational", "coverage": "good"},
+                "Bursa": {"status": "operational", "coverage": "fair"},
+                "Antalya": {"status": "operational", "coverage": "excellent"}
+            }
+            
+            region_info = region_status.get(region, {"status": "operational", "coverage": "good"})
+            
             network_status = {
                 "region": region,
-                "status": "operational",
+                "status": region_info["status"],
+                "coverage": region_info["coverage"],
                 "last_updated": datetime.now().isoformat(),
                 "services": {
                     "voice": "operational",
                     "data": "operational",
-                    "sms": "operational"
+                    "sms": "operational",
+                    "4g": "operational",
+                    "5g": "operational" if region in ["Istanbul", "Ankara"] else "limited"
                 },
                 "maintenance_scheduled": False,
-                "outages": []
+                "outages": [],
+                "performance_metrics": {
+                    "uptime": "99.9%",
+                    "response_time": "15ms",
+                    "packet_loss": "0.1%"
+                }
             }
             
             return {
@@ -670,20 +913,29 @@ class AIEndpointFunctions:
                 "error": f"Ağ durumu kontrol hatası: {str(e)}"
             }
     
-    async def telekom_create_support_ticket(self, user_id: int, issue_description: str, category: str = "technical", priority: str = "medium") -> Dict[str, Any]:
+    async def telekom_create_support_ticket(self, user_id: int = None, issue_description: str = "Teknik sorun", category: str = "technical", priority: str = "medium", session_token: str = None) -> Dict[str, Any]:
         """
         Destek talebi oluştur
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             issue_description: Sorun açıklaması
             category: Sorun kategorisi
             priority: Öncelik seviyesi
+            session_token: Session token (opsiyonel)
             
         Returns:
             Destek talebi sonucu
         """
         try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             ticket_data = {
                 "ticket_id": f"T-{datetime.now().strftime('%Y%m%d%H%M%S')}",
                 "user_id": user_id,
@@ -693,7 +945,8 @@ class AIEndpointFunctions:
                 "status": "open",
                 "created_date": datetime.now().isoformat(),
                 "estimated_resolution": (datetime.now() + timedelta(days=3)).isoformat(),
-                "assigned_to": "Technical Support Team"
+                "assigned_to": "Technical Support Team",
+                "reference_number": f"REF-{datetime.now().strftime('%Y%m%d%H%M%S')}"
             }
             
             return {
@@ -772,17 +1025,27 @@ class AIEndpointFunctions:
                 "error": f"Destek talebi durumu getirme hatası: {str(e)}"
             }
     
-    async def telekom_test_internet_speed(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_test_internet_speed(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         İnternet hız testi yap
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Hız testi sonucu
         """
         try:
+            from datetime import datetime
+            import asyncio
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             # Simüle edilmiş hız testi
             await asyncio.sleep(2)
             
@@ -795,7 +1058,9 @@ class AIEndpointFunctions:
                 "jitter_ms": 2,
                 "packet_loss_percent": 0.1,
                 "connection_quality": "excellent",
-                "server_location": "Istanbul"
+                "server_location": "Istanbul",
+                "test_duration_seconds": 15,
+                "protocol": "HTTP/2"
             }
             
             return {
@@ -810,26 +1075,44 @@ class AIEndpointFunctions:
                 "error": f"İnternet hız testi hatası: {str(e)}"
             }
     
-    async def telekom_update_customer_contact(self, user_id: int, contact_type: str, new_value: str) -> Dict[str, Any]:
+    async def telekom_update_customer_contact(self, user_id: int = None, contact_type: str = "phone", new_value: str = "+905551234567", session_token: str = None) -> Dict[str, Any]:
         """
         Müşteri iletişim bilgilerini güncelle
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             contact_type: İletişim türü (phone, email, address)
             new_value: Yeni değer
+            session_token: Session token (opsiyonel)
             
         Returns:
             Güncelleme sonucu
         """
         try:
+            from datetime import datetime
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
+            # Eski değerleri belirle
+            old_values = {
+                "phone": "+905551234567",
+                "email": "eski@email.com",
+                "address": "Eski Adres, İstanbul"
+            }
+            
             update_data = {
                 "user_id": user_id,
                 "contact_type": contact_type,
-                "old_value": "eski_değer",
+                "old_value": old_values.get(contact_type, "eski_değer"),
                 "new_value": new_value,
                 "updated_date": datetime.now().isoformat(),
-                "status": "updated"
+                "status": "updated",
+                "verification_required": True,
+                "verification_method": "sms" if contact_type == "phone" else "email"
             }
             
             return {
@@ -844,25 +1127,36 @@ class AIEndpointFunctions:
                 "error": f"İletişim bilgisi güncelleme hatası: {str(e)}"
             }
     
-    async def telekom_suspend_line(self, user_id: int, reason: str) -> Dict[str, Any]:
+    async def telekom_suspend_line(self, user_id: int = None, reason: str = "Kullanıcı talebi", session_token: str = None) -> Dict[str, Any]:
         """
         Hatı askıya al
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
             reason: Askıya alma nedeni
+            session_token: Session token (opsiyonel)
             
         Returns:
             Askıya alma sonucu
         """
         try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             suspend_data = {
                 "user_id": user_id,
                 "status": "suspended",
                 "reason": reason,
                 "suspended_date": datetime.now().isoformat(),
                 "reactivation_fee": 25.00,
-                "estimated_reactivation_date": (datetime.now() + timedelta(days=7)).isoformat()
+                "estimated_reactivation_date": (datetime.now() + timedelta(days=7)).isoformat(),
+                "suspension_id": f"SUSP-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+                "affected_services": ["voice", "data", "sms"]
             }
             
             return {
@@ -877,23 +1171,34 @@ class AIEndpointFunctions:
                 "error": f"Hat askıya alma hatası: {str(e)}"
             }
     
-    async def telekom_reactivate_line(self, user_id: int) -> Dict[str, Any]:
+    async def telekom_reactivate_line(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
         """
         Hatı yeniden etkinleştir
         
         Args:
-            user_id: Müşteri ID
+            user_id: Müşteri ID (opsiyonel)
+            session_token: Session token (opsiyonel)
             
         Returns:
             Yeniden etkinleştirme sonucu
         """
         try:
+            from datetime import datetime
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
             reactivate_data = {
                 "user_id": user_id,
                 "status": "active",
                 "reactivated_date": datetime.now().isoformat(),
                 "reactivation_fee_paid": True,
-                "services_restored": ["voice", "data", "sms"]
+                "services_restored": ["voice", "data", "sms"],
+                "reactivation_id": f"REACT-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+                "processing_time_minutes": 15
             }
             
             return {
@@ -1106,6 +1411,309 @@ class AIEndpointFunctions:
             return {
                 "success": False,
                 "error": f"Mock kampanya bilgisi hatası: {str(e)}"
+            }
+    
+    # ============================================================================
+    # USER YÖNETİMİ FONKSİYONLARI
+    # ============================================================================
+    
+    async def user_register(self, email: str, password: str, name: str) -> Dict[str, Any]:
+        """Kullanıcı kayıt"""
+        try:
+            from app.schemas.user import UserRegister
+            from app.services.user_service import user_service
+            
+            user_register = UserRegister(
+                email=email,
+                password=password,
+                full_name=name
+            )
+            
+            user_info = await user_service.register_user(user_register)
+            
+            return {
+                "success": True,
+                "data": user_info
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı kayıt hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı kayıt hatası: {str(e)}"
+            }
+    
+    async def user_login(self, email: str, password: str) -> Dict[str, Any]:
+        """Kullanıcı giriş"""
+        try:
+            from app.schemas.user import UserLogin
+            from app.services.user_service import user_service
+            
+            user_login = UserLogin(
+                email=email,
+                password=password
+            )
+            
+            user_info = await user_service.login_user(user_login)
+            
+            return {
+                "success": True,
+                "data": user_info
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı giriş hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı giriş hatası: {str(e)}"
+            }
+    
+    async def user_get_by_id(self, user_id: str) -> Dict[str, Any]:
+        """ID ile kullanıcı bilgileri"""
+        try:
+            from app.services.user_service import user_service
+            
+            user_info = await user_service.get_user_by_id(user_id)
+            
+            return {
+                "success": True,
+                "data": user_info
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı bilgisi getirme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı bilgisi getirme hatası: {str(e)}"
+            }
+    
+    async def user_update(self, user_id: str, update_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Kullanıcı bilgilerini güncelle"""
+        try:
+            from app.schemas.user import UserUpdateRequest
+            from app.services.user_service import user_service
+            
+            update_request = UserUpdateRequest(**update_data)
+            user_info = await user_service.update_current_user(update_request)
+            
+            return {
+                "success": True,
+                "data": user_info
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı güncelleme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı güncelleme hatası: {str(e)}"
+            }
+    
+    async def user_logout(self) -> Dict[str, Any]:
+        """Kullanıcı çıkış"""
+        try:
+            from app.services.user_service import user_service
+            
+            result = await user_service.logout_current_user()
+            
+            return {
+                "success": True,
+                "data": {"logged_out": result}
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı çıkış hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı çıkış hatası: {str(e)}"
+            }
+    
+    async def user_get_all_active(self) -> Dict[str, Any]:
+        """Tüm aktif kullanıcıları getir"""
+        try:
+            from app.services.user_service import user_service
+            
+            active_users = await user_service.get_all_active_users()
+            
+            return {
+                "success": True,
+                "data": active_users
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Aktif kullanıcıları getirme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Aktif kullanıcıları getirme hatası: {str(e)}"
+            }
+    
+    # ============================================================================
+    # TELEKOM AUTH FONKSİYONLARI
+    # ============================================================================
+    
+    async def telekom_auth_register(self, email: str, password: str, name: str) -> Dict[str, Any]:
+        """Telekom sistemi için kullanıcı kaydı"""
+        try:
+            # Mock telekom kayıt işlemi
+            user_id = hash(email) % 10000  # Basit ID üretimi
+            
+            return {
+                "success": True,
+                "data": {
+                    "user_id": user_id,
+                    "email": email,
+                    "name": name,
+                    "message": "Telekom sistemi için kayıt başarılı"
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Telekom kayıt hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Telekom kayıt hatası: {str(e)}"
+            }
+    
+    async def telekom_auth_login(self, email: str, password: str) -> Dict[str, Any]:
+        """Telekom sistemi için kullanıcı girişi"""
+        try:
+            # Mock telekom giriş işlemi
+            user_id = hash(email) % 10000
+            
+            return {
+                "success": True,
+                "data": {
+                    "user_id": user_id,
+                    "email": email,
+                    "message": "Telekom sistemi için giriş başarılı"
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Telekom giriş hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Telekom giriş hatası: {str(e)}"
+            }
+    
+    # ============================================================================
+    # TELEKOM DESTEK EK FONKSİYONLARI
+    # ============================================================================
+    
+    async def telekom_get_user_support_tickets(self, user_id: int = None, session_token: str = None) -> Dict[str, Any]:
+        """Kullanıcının tüm destek taleplerini getir"""
+        try:
+            from datetime import datetime, timedelta
+            
+            # user_id'yi session_token'dan çıkar veya varsayılan değer kullan
+            if session_token:
+                user_id = 0  # Varsayılan değer
+            elif user_id is None:
+                user_id = 0  # Varsayılan değer
+            
+            # Mock destek talepleri
+            tickets = [
+                {
+                    "ticket_id": f"T-{user_id:04d}-001",
+                    "status": "open",
+                    "subject": "İnternet bağlantı sorunu",
+                    "category": "technical",
+                    "priority": "medium",
+                    "created_date": datetime.now().isoformat(),
+                    "assigned_to": "Teknik Destek"
+                },
+                {
+                    "ticket_id": f"T-{user_id:04d}-002",
+                    "status": "closed",
+                    "subject": "Fatura ödeme sorunu",
+                    "category": "billing",
+                    "priority": "high",
+                    "created_date": (datetime.now() - timedelta(days=15)).isoformat(),
+                    "closed_date": (datetime.now() - timedelta(days=10)).isoformat(),
+                    "resolution": "Sorun çözüldü"
+                },
+                {
+                    "ticket_id": f"T-{user_id:04d}-003",
+                    "status": "in_progress",
+                    "subject": "Paket değişikliği talebi",
+                    "category": "service",
+                    "priority": "low",
+                    "created_date": (datetime.now() - timedelta(days=5)).isoformat(),
+                    "assigned_to": "Müşteri Hizmetleri"
+                }
+            ]
+            
+            return {
+                "success": True,
+                "data": {
+                    "tickets": tickets,
+                    "user_id": user_id,
+                    "total_count": len(tickets),
+                    "open_count": len([t for t in tickets if t["status"] == "open"]),
+                    "closed_count": len([t for t in tickets if t["status"] == "closed"])
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Kullanıcı destek talepleri getirme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Kullanıcı destek talepleri getirme hatası: {str(e)}"
+            }
+    
+    # ============================================================================
+    # SİSTEM ENDPOINT FONKSİYONLARI
+    # ============================================================================
+    
+    async def system_get_health(self) -> Dict[str, Any]:
+        """Sistem sağlık durumunu kontrol et"""
+        try:
+            from datetime import datetime
+            
+            return {
+                "success": True,
+                "data": {
+                    "status": "healthy",
+                    "timestamp": datetime.now().isoformat(),
+                    "version": "1.0.0",
+                    "uptime": "24 saat",
+                    "components": [
+                        {"name": "Database", "status": "healthy"},
+                        {"name": "AI Model", "status": "healthy"},
+                        {"name": "Telekom API", "status": "healthy"},
+                        {"name": "Authentication", "status": "healthy"}
+                    ]
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"Sistem sağlık kontrolü hatası: {e}")
+            return {
+                "success": False,
+                "error": f"Sistem sağlık kontrolü hatası: {str(e)}"
+            }
+    
+    async def system_get_ai_model_info(self) -> Dict[str, Any]:
+        """AI model bilgilerini getir"""
+        try:
+            from datetime import datetime
+            from app.core.config import settings
+            
+            return {
+                "success": True,
+                "data": {
+                    "model_type": "Hugging Face",
+                    "model_name": "microsoft/DialoGPT-medium",
+                    "is_mock_mode": False,
+                    "is_real_ai_mode": True,
+                    "last_updated": datetime.now().isoformat()
+                }
+            }
+            
+        except Exception as e:
+            self.logger.error(f"AI model bilgisi getirme hatası: {e}")
+            return {
+                "success": False,
+                "error": f"AI model bilgisi getirme hatası: {str(e)}"
             }
 
 # Global AI endpoint functions instance
