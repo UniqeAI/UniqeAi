@@ -69,7 +69,7 @@ model_checkpoints/
 
 **/results
 **/results_2
-
+**/models
 # NOT: Model dosyaları Git LFS ile yönetilecek
 
 # Büyük Data Dosyaları (GitHub'a atılmayacak)

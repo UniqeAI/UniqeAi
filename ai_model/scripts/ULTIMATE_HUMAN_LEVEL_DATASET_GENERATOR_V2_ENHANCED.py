@@ -1813,7 +1813,7 @@ class SupremeHumanLevelDatasetGenerator:
         validation_errors = 0
         skipped_scenarios = 0
         pydantic_validations = 0
-
+        
         for i in range(num_samples):
             # UZMAN SEVİYESİ İYİLEŞTİRME: Ağırlıklı rastgele seçim
             scenario_type = random.choices(scenario_types, weights=weights, k=1)[0]
