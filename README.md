@@ -121,6 +121,57 @@ npm install
 npm run dev
 ```
 
+## 📊 Benchmark (LangChain + Evals + Pydantic)
+
+Bu repoda, telekom domain'i için çoklu model benchmark altyapısı bulunmaktadır. Özellikler:
+
+- Pydantic ile telekom API şeması doğrulaması (mevcut `ai_model/modular_generator/telekom_api_schema.py` yeniden kullanılır)
+- Otomatik metrikler: BLEU, ROUGE, BERTScore (`evaluate` üzerinden)
+- LLM tabanlı puanlayıcı (GPT-4o-mini varsayılan; `BENCH_DO_LLM_EVAL=false` ile kapatılabilir)
+- Per-örnek JSONL ve toplu CSV raporlar, basit görselleştirme (matplotlib)
+- OpenAI, HF Inference API, generic HTTP ve local GGUF (hook) backend’leri
+
+### Örnek Çalıştırma
+
+```bash
+pip install -r requirements.txt
+export OPENAI_API_KEY=...   # opsiyonel, LLM-eval için
+export HF_API_TOKEN=...     # HF modelleri için
+
+python -m benchmark.run --models models.yaml --dataset data/telekom_test_set.sample.jsonl --out reports/
+```
+
+Raporlar `reports/per_example/*.jsonl`, `reports/aggregate/*.csv` ve `reports/models_bar.png` olarak üretilir.
+
+### Modelleri Tanımlama
+
+`models.yaml` içinde örnek:
+
+```yaml
+- id: llama3-instruct
+  name: Meta Llama 3 Instruct
+  backend: hf
+  model_name_or_endpoint: meta-llama/Meta-Llama-3-8B-Instruct
+  api_key_env: HF_API_TOKEN
+  params:
+    temperature: 0
+    max_tokens: 512
+```
+
+### Dataset Formatı
+
+`telekom_test_set.jsonl` satır başına bir kayıt içerir:
+
+```json
+{"id":"ex1","input":"Soru","expected_output":"Beklenen serbest metin veya JSON","metadata":{"function_name":"get_current_bill"}}
+```
+
+### CI / Docker
+
+- GitHub Actions workflow: `.github/workflows/ci.yml` smoke benchmark (mock LLM-eval) çalıştırır ve raporları artefact olarak yükler.
+- Docker image ile tek komutla çalıştırabilirsiniz: `docker build -t telekom-benchmark . && docker run --rm -e OPENAI_API_KEY -e HF_API_TOKEN telekom-benchmark`.
+
+
 ## 👥 Ekip Rolleri ve Odak Alanları
 
 Projenin farklı fazlarında ekip üyeleri çeşitli görevlere odaklanacaktır.

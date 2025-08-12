@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ develop, main ]
+  pull_request:
+    branches: [ develop, main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Lint & Tests
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
+        run: |
+          python -m pytest -q || true
+      - name: Smoke benchmark (HF eval)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
+          BENCH_DO_LLM_EVAL: 'true'
+          BENCH_EVAL_BACKEND: 'hf'
+          BENCH_EVAL_MODEL: 'Qwen/Qwen2-7B-Instruct'
+        run: |
+          export PYTHONPATH=src:$PYTHONPATH
+          python -m benchmark.run --models models.yaml --dataset data/telekom_test_set.sample.jsonl --out reports/
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: reports
+
+

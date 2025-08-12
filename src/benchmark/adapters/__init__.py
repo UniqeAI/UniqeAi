@@ -1,0 +1,3 @@
+# Adapter paket başlangıcı
+
+

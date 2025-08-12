@@ -1,0 +1,4 @@
+{"id":"ex1","input":"Son faturamı söyler misin?","expected_output":"Amount ve para birimi bilgisi içeren bir yanıt","metadata":{"function_name":"get_current_bill"}}
+{"id":"ex2","input":"Paketimi öğrenci tarifesiyle değiştirmek istiyorum","expected_output":"Paket değişikliği onayı","metadata":{"function_name":"change_package"}}
+
+

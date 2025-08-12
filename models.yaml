@@ -1,0 +1,53 @@
+- id: llama3-instruct
+  name: Meta Llama 3 Instruct
+  backend: hf
+  model_name_or_endpoint: meta-llama/Meta-Llama-3-8B-Instruct
+  api_key_env: HF_API_TOKEN
+  params:
+    temperature: 0
+    max_tokens: 512
+
+- id: choyrens-v4
+  name: Choyrens v4
+  backend: http
+  model_name_or_endpoint: http://localhost:8084/predict
+  params:
+    temperature: 0
+    repo: Choyrens/ChoyrensAI-Telekom-Agent-v4-gguf
+
+- id: choyrens-v5
+  name: Choyrens v5
+  backend: http
+  model_name_or_endpoint: http://localhost:8085/predict
+  params:
+    temperature: 0
+    repo: Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf
+
+- id: choyrens-v6
+  name: Choyrens v6
+  backend: http
+  model_name_or_endpoint: http://localhost:8086/predict
+  params:
+    temperature: 0
+    repo: Choyrens/ChoyrensAI-Telekom-Agent-v6-gguf
+
+- id: mock-echo
+  name: Mock Echo
+  backend: http
+  model_name_or_endpoint: mock://echo
+  params:
+    temperature: 0
+
+- id: choyrens-v1
+  name: Choyrens v1 merged
+  backend: hf
+  model_name_or_endpoint: Choyrens/ChoyrensAI-Telekom-Agent-v1-merged
+  api_key_env: HF_API_TOKEN
+  params:
+    temperature: 0
+    max_tokens: 512
+    repo: Choyrens/ChoyrensAI-Telekom-Agent-v1-merged
+
+# HF gguf yolları örnek olarak listede tutulmuyor; yerel/servis uçlarıyla çağrılır.
+
+

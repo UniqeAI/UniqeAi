@@ -1,0 +1,3 @@
+id,schema_valid,bleu,rouge,bertscore,llm_score
+ex1,False,0.0,0.0,0.0,0.0
+ex2,False,0.0,0.0,0.0,0.0
