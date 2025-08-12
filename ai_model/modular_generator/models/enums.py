@@ -59,8 +59,6 @@ class ScenarioType(Enum):
 
 class CognitiveState(Enum):
     FOCUSED = "focused"
-    
-    #
     ANALYTICAL = "analytical"
     EMPATHETIC = "empathetic"
     CREATIVE = "creative"

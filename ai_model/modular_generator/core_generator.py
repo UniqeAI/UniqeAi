@@ -354,8 +354,10 @@ class SupremeHumanLevelDatasetGenerator:
                 pydantic_check = verify_pydantic_compliance(selected_scenario)
                 if not pydantic_check["valid"]:
                     print(f"❌ Pydantic uyumsuzluğu: {selected_scenario.get('scenario_type', 'unknown')} - {pydantic_check['error']}")
-                    validation_errors += 1
-                    continue
+                pydantic_check = verify_pydantic_compliance(scenario)
+                if not pydantic_check["valid"]:
+                    print(f"❌ Pydantic uyumsuzluğu: {scenario_type} - {pydantic_check['error']}")
+
                 
                 pydantic_validations += pydantic_check["validated_count"]
                 dataset.append(selected_scenario)
@@ -376,11 +378,7 @@ class SupremeHumanLevelDatasetGenerator:
                 print(f"❌ Beklenmeyen hata: {e}")
                 print(f"🔍 Hata türü: {type(e).__name__}")
                 print(f"🔍 Senaryo türü: {selected_scenario.get('scenario_type', 'unknown')}")
-                print(f"🔍 Detaylı traceback:")
-                traceback.print_exc()
-                print("="*50)
-                skipped_scenarios += 1
-                continue
+                print(f"🔍 Senaryo türü: {scenario_type}")
         
         print("\n🎊 DATASET GENERATİON TAMAMLANDI!")
         print("="*60)
