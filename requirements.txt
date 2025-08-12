@@ -1,31 +1,48 @@
-# Temel Veri İşleme ve Analiz
-pandas
+# AI/ML Model Training dependencies
+torch==2.2.0+cu121
+torchvision==0.17.0+cu121
+torchaudio==2.2.0+cu121
+transformers==4.38.2
+datasets==2.18.0
+tokenizers==0.15.2
+huggingface-hub==0.21.4
+accelerate==0.27.2
+peft==0.8.2
+trl==0.7.11
+bitsandbytes==0.42.0
+sentencepiece==0.2.0
+protobuf==4.25.3
+safetensors==0.4.2
 
-# Makine Öğrenmesi ve NLP için Temel Araçlar
-scikit-learn
+# Data processing
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.1
 
-# Türkçe Stopwords (Etkisiz Kelimeler) için
-nltk
+# Turkish NLP
+zemberek-python==0.22.0
+nltk==3.8.1
+sentence-transformers==2.5.1
 
-# Modern Gömme (Embedding) Modelleri için
-sentence-transformers
-torch
+# LangChain
+langchain-community==0.0.27
+langchain-core==0.2.11
+langchain-openai==0.1.8
+langchain==0.2.11
+langsmith==0.2.11
 
-# Backend
-fastapi
-uvicorn
+# Utilities
+tqdm==4.66.2
+psutil==5.9.8
+py3nvml==0.2.7
+requests==2.32.3
 
-# Frontend
-streamlit
+# Development
+jupyter==1.0.0
+matplotlib==3.8.3
+seaborn==0.13.2
+faker==24.2.0
+black==24.2.0
 
-# AI / ML
-transformers
-accelerate
-bitsandbytes
-datasets
-peft
-trl
-zemberek-python
-
-# Development & Formatting
-black 
+# GGUF Model Support
+ctransformers==0.2.27 

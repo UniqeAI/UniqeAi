@@ -1,0 +1,670 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CayrosAI Renk Paleti ve Animasyonlar - Çoklu Tema Desteği */
+:root {
+  --primary-blue: #3b82f6;
+  --secondary-blue: #2563eb;
+  --light-blue: #60a5fa;
+  --dark-blue: #1d4ed8;
+  --primary-black: #000000;
+  --secondary-black: #111827;
+  --light-black: #1f2937;
+  --dark-black: #0f0f0f;
+  --primary-navy: #1e3a8a;
+  --secondary-navy: #1e40af;
+  --light-navy: #3b82f6;
+  --dark-navy: #1e1b4b;
+  --lavender: #f3f4f6;
+  --light-lavender: #e5e7eb;
+  --dark-lavender: #d1d5db;
+  --white: #ffffff;
+  --off-white: #fafafa;
+  
+  /* Dark mode colors - Mavi Siyah Lacivert */
+  --dark-bg-primary: #000000;
+  --dark-bg-secondary: #0a0a0a;
+  --dark-bg-card: #1a1a1a;
+  --dark-text-primary: #ffffff;
+  --dark-text-secondary: #e2e8f0;
+  --dark-border: #374151;
+  --dark-accent: #3b82f6;
+  --dark-glow: rgba(59, 130, 246, 0.5);
+  
+  /* Mavi Siyah Lacivert renk paleti */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --blue-950: #172554;
+  
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+  
+  /* Red/Burgundy colors */
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+  --red-950: #450a0a;
+  
+  /* Purple colors */
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+  --purple-950: #3b0764;
+  
+  /* Emerald colors */
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+  
+  /* Violet colors */
+  --violet-50: #f5f3ff;
+  --violet-100: #ede9fe;
+  --violet-200: #ddd6fe;
+  --violet-300: #c4b5fd;
+  --violet-400: #a78bfa;
+  --violet-500: #8b5cf6;
+  --violet-600: #7c3aed;
+  --violet-700: #6d28d9;
+  --violet-800: #5b21b6;
+  --violet-900: #4c1d95;
+  --violet-950: #2e1065;
+  
+  /* Fuchsia colors */
+  --fuchsia-50: #fdf4ff;
+  --fuchsia-100: #fae8ff;
+  --fuchsia-200: #f5d0fe;
+  --fuchsia-300: #f0abfc;
+  --fuchsia-400: #e879f9;
+  --fuchsia-500: #d946ef;
+  --fuchsia-600: #c026d3;
+  --fuchsia-700: #a21caf;
+  --fuchsia-800: #86198f;
+  --fuchsia-900: #701a75;
+  --fuchsia-950: #4a044e;
+}
+
+/* Tema Renkleri - Güncellenmiş */
+[data-theme="blue"] {
+  --primary-color: #3b82f6;
+  --secondary-color: #2563eb;
+  --accent-color: #1d4ed8;
+  --primary-light: #60a5fa;
+  --primary-dark: #1e3a8a;
+  --gradient-start: #eff6ff;
+  --gradient-middle: #f3f4f6;
+  --gradient-end: #f1f5f9;
+  --dark-gradient-start: #000000;
+  --dark-gradient-middle: #111827;
+  --dark-gradient-end: #172554;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(59, 130, 246, 0.15);
+  --input-border: rgba(59, 130, 246, 0.3);
+  --button-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+  --message-user-bg: linear-gradient(to-r, #1e3a8a, #1e40af, #1d4ed8);
+  --message-bot-bg: rgba(255, 255, 255, 0.9);
+  --message-bot-dark-bg: linear-gradient(to-br, #1f2937, #111827, #0f172a);
+}
+
+[data-theme="burgundy"] {
+  --primary-color: #dc2626;
+  --secondary-color: #b91c1c;
+  --accent-color: #991b1b;
+  --primary-light: #ef4444;
+  --primary-dark: #7f1d1d;
+  --gradient-start: #fef2f2;
+  --gradient-middle: #f3f4f6;
+  --gradient-end: #eff6ff;
+  --dark-gradient-start: #000000;
+  --dark-gradient-middle: #111827;
+  --dark-gradient-end: #172554;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(220, 38, 38, 0.15);
+  --input-border: rgba(220, 38, 38, 0.3);
+  --button-gradient: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+  --message-user-bg: linear-gradient(to-r, #7f1d1d, #991b1b, #b91c1c);
+  --message-bot-bg: rgba(255, 255, 255, 0.9);
+  --message-bot-dark-bg: linear-gradient(to-br, #1f2937, #111827, #0f172a);
+}
+
+[data-theme="purple"] {
+  --primary-color: #8b5cf6;
+  --secondary-color: #7c3aed;
+  --accent-color: #6d28d9;
+  --primary-light: #a78bfa;
+  --primary-dark: #5b21b6;
+  --gradient-start: #f5f3ff;
+  --gradient-middle: #faf5ff;
+  --gradient-end: #fdf4ff;
+  --dark-gradient-start: #000000;
+  --dark-gradient-middle: #111827;
+  --dark-gradient-end: #4c1d95;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(139, 92, 246, 0.15);
+  --input-border: rgba(139, 92, 246, 0.3);
+  --button-gradient: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  --message-user-bg: linear-gradient(to-r, #5b21b6, #6d28d9, #7c3aed);
+  --message-bot-bg: rgba(255, 255, 255, 0.9);
+  --message-bot-dark-bg: linear-gradient(to-br, #1f2937, #111827, #0f172a);
+}
+
+[data-theme="emerald"] {
+  --primary-color: #10b981;
+  --secondary-color: #059669;
+  --accent-color: #047857;
+  --primary-light: #34d399;
+  --primary-dark: #065f46;
+  --gradient-start: #ecfdf5;
+  --gradient-middle: #eff6ff;
+  --gradient-end: #f5f3ff;
+  --dark-gradient-start: #000000;
+  --dark-gradient-middle: #111827;
+  --dark-gradient-end: #064e3b;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(16, 185, 129, 0.15);
+  --input-border: rgba(16, 185, 129, 0.3);
+  --button-gradient: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  --message-user-bg: linear-gradient(to-r, #065f46, #047857, #059669);
+  --message-bot-bg: rgba(255, 255, 255, 0.9);
+  --message-bot-dark-bg: linear-gradient(to-br, #1f2937, #111827, #0f172a);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
+  min-height: 100vh;
+  color: var(--gray-900);
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode body styles */
+html.dark body {
+  background: linear-gradient(135deg, var(--dark-gradient-start) 0%, var(--dark-gradient-middle) 50%, var(--dark-gradient-end) 100%);
+  color: var(--dark-text-primary);
+}
+
+/* Animasyonlu Arka Plan */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(15, 23, 42, 0.05) 0%, transparent 50%);
+  animation: background-shift 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Dark mode background elements */
+html.dark body::before {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(15, 23, 42, 0.08) 0%, transparent 50%);
+}
+
+/* Genel Container Stilleri */
+.container {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px var(--card-border),
+    0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+/* Buton Stilleri */
+.btn {
+  background: var(--button-gradient);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 20px rgba(59, 130, 246, 0.3),
+    0 0 0 1px var(--primary-color);
+}
+
+/* Dark mode button styles */
+html.dark .btn {
+  background: var(--button-gradient);
+  box-shadow: 0 0 20px var(--dark-glow);
+}
+
+html.dark .btn:hover {
+  box-shadow: 
+    0 10px 30px var(--dark-glow),
+    0 0 0 1px var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Kart Stilleri */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.15),
+    0 0 0 1px var(--card-border);
+}
+
+/* Dark mode card styles */
+html.dark .card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text-primary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-color);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px var(--primary-color),
+    0 0 30px var(--dark-glow);
+  transform: translateY(-5px);
+}
+
+/* Input Stilleri */
+.input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: var(--gray-900);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Dark mode input styles */
+html.dark .input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text-primary);
+  backdrop-filter: blur(10px);
+}
+
+html.dark .input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--dark-glow);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .input::placeholder {
+  color: var(--dark-text-secondary);
+}
+
+/* Başlık Stilleri */
+.title {
+  background: linear-gradient(135deg, var(--gray-900) 0%, var(--primary-dark) 50%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+/* Dark mode title styles */
+html.dark .title {
+  background: linear-gradient(135deg, var(--dark-text-primary) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px var(--dark-glow);
+}
+
+/* Dark mode specific text styles */
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: var(--dark-text-primary);
+}
+
+html.dark p, html.dark span, html.dark label {
+  color: var(--dark-text-secondary);
+}
+
+/* Dark mode link styles */
+html.dark a {
+  color: var(--primary-light);
+  text-shadow: 0 0 10px var(--dark-glow);
+}
+
+html.dark a:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 15px var(--dark-glow);
+}
+
+/* Konuşma Balonları Stilleri */
+.message-user {
+  background: var(--message-user-bg);
+  border: 1px solid var(--primary-color);
+  color: white;
+}
+
+.message-bot {
+  background: var(--message-bot-bg);
+  border: 1px solid var(--card-border);
+  color: var(--gray-900);
+}
+
+html.dark .message-bot {
+  background: var(--message-bot-dark-bg);
+  border: 1px solid var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+/* Tema özel renkler */
+[data-theme="blue"] .message-user {
+  background: linear-gradient(to-r, #1e3a8a, #1e40af, #1d4ed8);
+  border-color: #3b82f6;
+}
+
+[data-theme="burgundy"] .message-user {
+  background: linear-gradient(to-r, #7f1d1d, #991b1b, #b91c1c);
+  border-color: #dc2626;
+}
+
+[data-theme="purple"] .message-user {
+  background: linear-gradient(to-r, #5b21b6, #6d28d9, #7c3aed);
+  border-color: #8b5cf6;
+}
+
+[data-theme="emerald"] .message-user {
+  background: linear-gradient(to-r, #065f46, #047857, #059669);
+  border-color: #10b981;
+}
+
+/* Animasyonlar */
+@keyframes background-shift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  75% {
+    transform: translateX(-5px) translateY(10px);
+  }
+}
+
+@keyframes title-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background: var(--button-gradient);
+  }
+  25% {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+  }
+  75% {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--secondary-color) 100%);
+  }
+  100% {
+    background: var(--button-gradient);
+  }
+}
+
+/* Dark mode gradient animation */
+html.dark .gradient-animation {
+  animation: dark-gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes dark-gradient-shift {
+  0% {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  }
+  25% {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-light) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+  }
+  75% {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  }
+}
+
+/* Özel Efektler */
+.glow-effect {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.gradient-animation {
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+/* Dark mode glow effect */
+html.dark .glow-effect {
+  animation: dark-pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes dark-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--dark-glow);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--dark-glow), 0 0 60px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Renk Körü Dostu Özellikler */
+.colorblind-friendly {
+  /* Yüksek kontrast */
+  filter: contrast(1.2);
+}
+
+/* Renk körü dostu tema göstergeleri */
+.theme-indicator {
+  position: relative;
+}
+
+.theme-indicator::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid;
+  opacity: 0.8;
+}
+
+/* Renk körü dostu mesaj balonları */
+.message-user .colorblind-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+} 
+
+/* Dark mode dropdown text override */
+html.dark .theme-menu-container span {
+  color: #000000 !important;
+} 
