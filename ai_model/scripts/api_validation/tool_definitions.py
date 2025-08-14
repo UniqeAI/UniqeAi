@@ -39,7 +39,7 @@ try:
         # Gelişmiş Servisler
         ActivateEmergencyServiceResponse, Check5GCoverageResponse,
         CulturalContextResponse, LearningAdaptationResponse,
-        CreativeAnalysisResponse,
+        
         # Error Handling
         ErrorResponse
     )
@@ -105,7 +105,7 @@ API_RESPONSE_MODELS = {
     "check_5g_coverage": Check5GCoverageResponse,
     "get_cultural_context": CulturalContextResponse,
     "update_learning_adaptation": LearningAdaptationResponse,
-    "generate_creative_analysis": CreativeAnalysisResponse,
+    #"generate_creative_analysis": CreativeAnalysisResponse,
 } if PYDANTIC_AVAILABLE else {}
 
 def get_tool_definitions():

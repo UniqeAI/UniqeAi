@@ -21,7 +21,7 @@ from pydantic import ValidationError
 from datetime import timedelta
 
 # === GÜVENLİK ADIMI: ANA SÖZLEŞMEYİ (Pydantic Modelleri) İÇE AKTAR ===
-from telekom_api_schema import (
+from  api_validation.telekom_api_schema import (
     GetCurrentBillResponse, ServiceItem,
     CreateFaultTicketResponse,
     GetRemainingQuotasResponse, UsagePercentage,
