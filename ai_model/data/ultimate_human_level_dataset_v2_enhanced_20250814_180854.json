@@ -1,0 +1,3357 @@
+[
+  {
+    "id": "social_dynamics_scenario_549f35e1_9ce18397",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_31b3ee51",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_72982166",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_509c5185",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_449e7c8f",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_d84eca84",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_027ef994",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_54c29684",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_7f57ba9c",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_dd5fe74e",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_8794dc56",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_bae0a641",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_f314ea77",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_4e8dff13",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_3b96b87b",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_565a21ab",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_a9ac5522",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_2b692dec",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_e5f5911f",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_ebacf775",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_7e1591c3",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_e9e21dec",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_edebe24f",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_6f0b0bea",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_e57060b1",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_c7464943",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_e384aa16",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_e36dbf40",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_5b4042ca",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_5eebc133",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_2225433c",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_7ecae796",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_01d74fff",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_9f3aa9aa",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_c1806127",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_79e22c22",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_274a37db",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_a9971718",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_85b98c3d",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_0952d589",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_20d7cd65",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_77fb5dd3",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_54b8b1e2",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_160fa6fe",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_122e2fbc",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_5802ad6f",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_dcabf575",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_b3c6e466",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_b95d5c86",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_b7a57f52",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_c5a1ca44",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_67d0bcb8",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_a73c59fd",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_082b44ad",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_9e0642af",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_d844b7b5",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_369fd194",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_7af117ed",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_57de9628",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_45a2875a",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_9bace8d1",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_f41dcccc",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_ddf08564",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_9314e59d",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_2f9a8bb1",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_e2c6a509",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_0eddbbd0",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_24ad2c4e",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_51ae65cc",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_dff5e823",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_d961a6f6",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_54c800fd",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_637ed6dc",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_9e1f9dd5",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_549f35e1_c9a835d9",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "bargain_hunter_group",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallece daha uygun bir toplu paket var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Toplu kullanım için uygun paketleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Community Fiber 100\",\"monthly_fee\":159.9,\"features\":{\"internet_gb\":100,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Community Fiber 100 toplu sözleşmede ek %20 indirim destekler.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_f1ec50de",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_f8c8f5db",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_05f9ba8d",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_f06441aa",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_f6571977",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_0291d16f_ce0f3e6f",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "coworking_admin",
+    "cognitive_state": "analytical",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ortak alanda video aramalar sık kopuyor; topluluk için çözüm?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi yapıp eşiklere göre öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27951
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27951,\"download_speed_mbps\":40.9,\"upload_speed_mbps\":614.12,\"ping_ms\":44,\"test_timestamp\":\"2025-08-07T18:08:54.294277\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "AP konumlandırması ve QoS ile toplulukta kaliteyi stabilize ederiz; yoğun saatlerde 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_f4007491_d07b48bd",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "apartment_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sitemizdeki aktif destek kayıtlarını tek ekranda görebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Site kullanıcıları adına kayıtları listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 15811
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":15811,\"tickets\":[{\"ticket_id\":\"TKT-95611\",\"issue_description\":\"WiFi sinyal gücü zayıf\",\"category\":\"5G teknolojisi\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"7/24 müşteri desteği\",\"estimated_resolution\":\"7/24 müşteri desteği\"},{\"ticket_id\":\"TKT-14871\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"in_progress\",\"created_at\":\"Uygun fiyat\",\"estimated_resolution\":\"Uygun fiyat\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aktif kayıtlarınızı tek panelden takip edebilirsiniz; ortak iletişimle çözüm hızlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_1e6a035e",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_1c05d399",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_24c23087_6c2dba1a",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "student_union_rep",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurtta ders saatlerinde internet zorlanıyor. Çözüm öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol ediyor ve ders saatleri için plan öneriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üniversite Kampüsü A"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üniversite Kampüsü A\",\"status\":\"degraded\",\"coverage_percentage\":71,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T18:08:54.292281\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-09T18:08:54.292281\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "09:00-17:00 arası yoğunluk var. Çalışma salonlarına ek erişim noktası ve QoS ayarı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_1191ea38_bcb3370e",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_center_treasurer",
+    "cognitive_state": "systematic",
+    "emotional_context": "skeptical",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Topluluk merkezinin faturası bu ay çok artmış. Neden?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı karşılaştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 23556
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 23556,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-554436\",\"user_id\":23556,\"amount\":521.13,\"currency\":\"Uygun fiyat\",\"due_date\":\"2025-09-05T18:08:54.294277\",\"bill_date\":\"2025-08-06T18:08:54.294277\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":274.18},{\"service_name\":\"Mehmet Demir\",\"amount\":795.32},{\"service_name\":\"Fatma Şahin\",\"amount\":203.5}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-399559\",\"amount\":74.03,\"bill_date\":\"2025-07-21T18:08:54.294277\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-274758\",\"amount\":586.43,\"bill_date\":\"2025-07-22T18:08:54.294277\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":123,\"total_amount_paid\":564.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek hizmetler ve veri tüketimi artmış. Grup içi kullanım kuralları ve kota yönetimi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_1d4b00f7",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_475fe316_fdb1aea6",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_event_organizer",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahalle festivalinde canlı yayın için ek kapasite lazım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Etkinlik paketi detayına bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Event Pack"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Event Pack\",\"monthly_fee\":0.0,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":0,\"sms_count\":0,\"international_minutes\":0},\"contract_duration\":1,\"cancellation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Event Pack ile yayın için yeterli bant genişliği sağlanır. Kurulum ücretsiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_97d16298_921d82bc",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "community_volunteer",
+    "cognitive_state": "collaborative",
+    "emotional_context": "hopeful",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yaşlı komşular için uygun ve basit bir paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yaşlı kullanıcılar için basit içerikli paket detayına bakıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Simple Care"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Simple Care\",\"monthly_fee\":79.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":10,\"voice_minutes\":500,\"sms_count\":200,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":15.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Simple Care yaşlı komşular için idealdir: düşük maliyet, basit kullanım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_d335ec81_e6cd5280",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "neighborhood_leader",
+    "cognitive_state": "systematic",
+    "emotional_context": "anticipation",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Geçen hafta açılan mahalle kaydımızın durumu ne?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-NEIGH-001"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-NEIGH-001\",\"status\":\"in_progress\",\"resolution\":null,\"created_at\":\"Hızlı ve güvenilir hizmet\",\"resolved_at\":\"İsteğe bağlı metin\",\"technician_notes\":\"Bölgesel kapasite artırımı planlanıyor\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt incelemede. Kapasite artırımı planı teknik ekipte. Gelişmeleri sizinle paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "social_dynamics_scenario_e35d6a88_9f712728",
+    "scenario_type": "social_dynamics",
+    "personality_profile": "busy_working_parent",
+    "cognitive_state": "empathetic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ev internetimiz hep yavaş; komşular da aynı. Toplu çözüm var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölge ağ durumunu kontrol edip toplu çözüm önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy Merkez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy Merkez\",\"status\":\"degraded\",\"coverage_percentage\":15,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"Fiber altyapı\"},{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-16T18:08:54.291277\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"5G teknolojisi\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-26T18:08:54.291277\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-16T18:08:54.291277\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk tespit edildi. Komşularla birlikte 'Neighborhood Alliance' planı öneriyorum: toplu başvuruda indirim ve kapasite artırımı.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

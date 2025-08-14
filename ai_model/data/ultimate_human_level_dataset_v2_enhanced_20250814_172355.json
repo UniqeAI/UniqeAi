@@ -1,0 +1,3912 @@
+[
+  {
+    "id": "predictive_analytics_scenario_64bef44e_5abcc939",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_204b7849",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_ecfeec34",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_f72d2069",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_619afd17_cfc355ca",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Fatura gününde internet yoğun olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız ölçümü ile birlikte tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27602
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27602,\"download_speed_mbps\":29.8,\"upload_speed_mbps\":424.84,\"ping_ms\":75,\"test_timestamp\":\"2025-07-26T17:23:55.904643\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gün ortasında hafif yoğunluk beklenir; 19:00 sonrası normale döner.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_56092dcd",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_619afd17_2f404fb1",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Fatura gününde internet yoğun olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız ölçümü ile birlikte tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27602
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27602,\"download_speed_mbps\":29.8,\"upload_speed_mbps\":424.84,\"ping_ms\":75,\"test_timestamp\":\"2025-07-26T17:23:55.904643\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gün ortasında hafif yoğunluk beklenir; 19:00 sonrası normale döner.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_865eb761",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_feae8e36",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_82ef4311",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_1555c4be",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_93d57d9d",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_ce8fad16",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_cbb91618",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_276ac03e_5f4d738f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Haftaya bütçe ve kota hedefi koymak istiyorum; nasıl planlayalım?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ve mevcut durumunuza bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 84078,
+              "limit": 3
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 84078
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-772533\",\"amount\":417.64,\"bill_date\":\"2025-07-20T17:23:55.904643\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":791,\"total_amount_paid\":289.47}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":81.5,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":50,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedef: 20 GB; akşamları video yerine düşük veri modunu öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_f07cf303",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_b45cc895",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_540dfb38",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_e9b60772",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_0db94613",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_56ed62e0",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_3d5f2445",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_4679cf91",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_cd37dac5",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_276ac03e_ce0281d7",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Haftaya bütçe ve kota hedefi koymak istiyorum; nasıl planlayalım?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ve mevcut durumunuza bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 84078,
+              "limit": 3
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 84078
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-772533\",\"amount\":417.64,\"bill_date\":\"2025-07-20T17:23:55.904643\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":791,\"total_amount_paid\":289.47}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":81.5,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":50,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedef: 20 GB; akşamları video yerine düşük veri modunu öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_17100a23",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_1319d54c",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_0cb5ed97",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_2fbeed0e",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_f6d49886",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_afe7f340",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_9d2d2db3",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_e290081b",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_c7402ec1",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_283569c0",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_c1410620",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_276ac03e_6fbff51b",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Haftaya bütçe ve kota hedefi koymak istiyorum; nasıl planlayalım?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ve mevcut durumunuza bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 84078,
+              "limit": 3
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 84078
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-772533\",\"amount\":417.64,\"bill_date\":\"2025-07-20T17:23:55.904643\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":791,\"total_amount_paid\":289.47}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":81.5,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":50,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedef: 20 GB; akşamları video yerine düşük veri modunu öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_075d52bc",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_b40dac89",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_d20694e1",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_68caee96",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_e8070c62",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_619afd17_1738b5d1",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Fatura gününde internet yoğun olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız ölçümü ile birlikte tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27602
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27602,\"download_speed_mbps\":29.8,\"upload_speed_mbps\":424.84,\"ping_ms\":75,\"test_timestamp\":\"2025-07-26T17:23:55.904643\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gün ortasında hafif yoğunluk beklenir; 19:00 sonrası normale döner.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_0b555e67",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_665651d6",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_b7286fdd",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_7060a1ce",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_370a1c96",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_a882fa78",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_c18483ed",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_e177f3ca",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_760d951f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_6c448c7e",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_b6ec1171",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_88da9b4f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_580cbcaf",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_695be066",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_97ccee7c",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_80e1df78",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_c525ce4f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_276ac03e_48567697",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Haftaya bütçe ve kota hedefi koymak istiyorum; nasıl planlayalım?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ve mevcut durumunuza bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 84078,
+              "limit": 3
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 84078
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-772533\",\"amount\":417.64,\"bill_date\":\"2025-07-20T17:23:55.904643\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":791,\"total_amount_paid\":289.47}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":81.5,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":50,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedef: 20 GB; akşamları video yerine düşük veri modunu öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_22e42499",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_2df71cfb",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_03b601fd",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_5f5d6f5b",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_b1df4593",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_237a82c7",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_843810ae",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_619afd17_db734551",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Fatura gününde internet yoğun olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız ölçümü ile birlikte tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27602
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27602,\"download_speed_mbps\":29.8,\"upload_speed_mbps\":424.84,\"ping_ms\":75,\"test_timestamp\":\"2025-07-26T17:23:55.904643\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gün ortasında hafif yoğunluk beklenir; 19:00 sonrası normale döner.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_276ac03e_443f5537",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Haftaya bütçe ve kota hedefi koymak istiyorum; nasıl planlayalım?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ve mevcut durumunuza bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 84078,
+              "limit": 3
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 84078
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-772533\",\"amount\":417.64,\"bill_date\":\"2025-07-20T17:23:55.904643\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":791,\"total_amount_paid\":289.47}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":81.5,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":50,\"voice\":15,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedef: 20 GB; akşamları video yerine düşük veri modunu öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_43f3931b",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_4c4f5168",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_dbddad99",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_404f93aa",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_de2a0f22",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_452c1535",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_d4bcd295",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_0c0ed689",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_31d03bfa",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_87fe01d9",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_41f4fd64",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_63222b38",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_01548314",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_a83d814d_46b2289e",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yoğunluk nedeniyle kesinti olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol edip tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"operational\",\"coverage_percentage\":18,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-13T17:23:55.904643\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-30T17:23:55.904643\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-08T17:23:55.904643\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Önümüzdeki hafta bakım planı yok; akşam saatlerinde orta düzey yoğunluk bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_1247fb05",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_49f41cc8",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_d51bca2e",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_38cf4db0",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_84e07f9f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_91d9aa7f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_3aaeb55f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_f756bce0_02e7048f",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Bu ayki faturam yaklaşık ne kadar olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 88529
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 88529,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-766336\",\"user_id\":88529,\"amount\":495.23,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-19T17:23:55.902666\",\"bill_date\":\"2025-07-30T17:23:55.902666\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":810.13},{\"service_name\":\"Mehmet Demir\",\"amount\":249.56}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-569239\",\"amount\":288.17,\"bill_date\":\"2025-07-16T17:23:55.902666\",\"status\":\"overdue\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-324864\",\"amount\":462.95,\"bill_date\":\"2025-08-10T17:23:55.902666\",\"status\":\"cancelled\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-891767\",\"amount\":106.52,\"bill_date\":\"2025-08-04T17:23:55.902666\",\"status\":\"unpaid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":383,\"total_amount_paid\":231.75}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş ortalaması ve bu ayki kullanımınıza göre ~185 TL bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_619afd17_e7e7139e",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Fatura gününde internet yoğun olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız ölçümü ile birlikte tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 27602
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":27602,\"download_speed_mbps\":29.8,\"upload_speed_mbps\":424.84,\"ping_ms\":75,\"test_timestamp\":\"2025-07-26T17:23:55.904643\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gün ortasında hafif yoğunluk beklenir; 19:00 sonrası normale döner.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_167d0eb9_54ea2aa4",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ek ücret riski var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı ve kullanım trendinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 93296
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":1.28,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":70,\"voice\":25,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ek ücret riski düşüktür; %20 güvenli marj ile yeterli görünmektedir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_1349f1f7",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_3bcc6b99_f1504e28",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam saatlerinde ping yükseliyor; tahmininiz nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Şimdi ölçüm yapıp bölge durumunu kontrol edeceğim ve tahmin paylaşacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 94154
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":94154,\"download_speed_mbps\":30.0,\"upload_speed_mbps\":787.65,\"ping_ms\":54,\"test_timestamp\":\"2025-07-24T17:23:55.903641\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":86,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-08-09T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-10T17:23:55.903641\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-31T17:23:55.903641\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunlukta ping 40-80ms aralığına çıkabilir. Zamanlama/rota önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_377d1e47_71e3dac7",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "planning",
+    "cognitive_state": "predictive",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay faturamı geciktirme riskim var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme geçmişinizi analiz ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 54673
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-161E284214EB\",\"amount\":574.02,\"method\":\"cash\",\"date\":\"2025-07-22T17:23:55.901647\",\"bill_id\":\"F-2024-604225\"},{\"transaction_id\":\"TXN-7368ED18CEFE\",\"amount\":806.63,\"method\":\"digital_wallet\",\"date\":\"2025-07-21T17:23:55.901647\",\"bill_id\":\"F-2024-548031\"}],\"total_payments\":636,\"total_amount\":176.13}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Son 6 ayda iki kez gecikme var. Otomatik ödeme öneririm; risk %70'ten %15'e düşer.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_480a17cf_f4a928a5",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Gelecek ay toplam veri tüketimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçmiş faturalarınızı analiz ederek tahmin çıkaracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 55854,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-293241\",\"amount\":728.1,\"bill_date\":\"2025-07-20T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"},{\"bill_id\":\"F-2024-864414\",\"amount\":639.69,\"bill_date\":\"2025-07-21T17:23:55.900643\",\"status\":\"processing\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":254,\"total_amount_paid\":64.72}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Trend artışına göre gelecek ay 80-95 GB arası tüketim bekleniyor. 100 GB paket yeterli olur.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_55a05ac9_e611f0b0",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "predictive",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay sonuna kadar kotam yeter mi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyor ve tahmin modeli çalıştırıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39927
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":53.3,\"voice_remaining_minutes\":1000,\"sms_remaining\":2000,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":55,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut hızla giderse kota %85 olasılıkla yetecek; yoğun günlerde ek 5 GB öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "predictive_analytics_scenario_64bef44e_e9bb592b",
+    "scenario_type": "predictive_analytics",
+    "personality_profile": "content_creator",
+    "cognitive_state": "predictive",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki hafta video yüklemeleri için bant genişliği gereksinimim ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kota ve önceki haftalara bakarak tahmin oluşturacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 19757
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":13.75,\"voice_remaining_minutes\":2000,\"sms_remaining\":500,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":65,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video yükleme için ek 20 GB tavsiye ederim; upload saatlerini yoğun olmayan dilimlere alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

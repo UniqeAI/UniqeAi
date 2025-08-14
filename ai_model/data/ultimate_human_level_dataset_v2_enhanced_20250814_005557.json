@@ -1,0 +1,3859 @@
+[
+  {
+    "id": "conflicting_info_scenario_b2e10de7_7912f3ca",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_c5a2e259",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_97f103c4",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_433df811",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_7eb429f6",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_b77002e8",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_137778b2",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_24ae5f6f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_b8ec4c8c",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_7723304a",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_36c7d227",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_fb90e5d0",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_98518eff",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_5838ae0e",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_9a985daf",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_2cfb397a",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_a6eb5437",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_140c4085",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_d0e8c270",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_00b2f563",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_f98959c9",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_61b7f10d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_b0b62dd7",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_87bd4ca5",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_23f1057f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_30344af1",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_516a3cc8",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_1a40774d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_56141ff8",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_d890111b",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_097e89af",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_9533329c",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_d0078aa3",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_0e2a123c",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_5bb61067",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_3c0f2607",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_c49d5625",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_b08fcf41",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_3ca5609d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_ecac6b08",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_e3cfce49",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_4dc06a8a",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_baffc210",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_93f4b7f4",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_344b20a0",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_43391d44",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_a551ee1a",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_dc26e34f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_6d5b1878",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_a0d6cf7d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_a63543fd",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_e8aba6ac",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_c0175e8f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_d91680ee",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_95c465b4",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_b1b0f6e0",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_bce7cc85",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_c81dccc9",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_ab3d4996",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_a179571f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_405f2137",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_4a770e84",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_a994a479",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_994320fd",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_f9fec974",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_4a31de3c",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_c02e2e49",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_fabe005b",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_b9275b4d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_317e3124",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_5f2f8853",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_16396bc9",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_cc46f6ab",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_da1dd969",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_ba60a760",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_27d80628",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_66019a6c",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_b9808ba5",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_5ef02056",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_31ec51bf",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_9a00e7a2",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_61f1f19f_4232c7b2",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "sarcastic_ironic",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'e göre arıza kapandı ama uygulama 'in_progress' diyor. Kaydım: TKT-224563",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kaydın güncel durumunu doğruluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_fault_ticket_status",
+            "parametreler": {
+              "ticket_id": "TKT-224563"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"ticket_id\":\"TKT-224563\",\"status\":\"in_progress\",\"resolution\":\"İsteğe bağlı metin\",\"created_at\":\"5G teknolojisi\",\"resolved_at\":null,\"technician_notes\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıt halen ilerleme aşamasında. SMS, otomatik kapanış taslağı olabilir; teknik ekip işlemi tamamlayınca kapanacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_06d07d63",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_5e5da40b",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_2cfb9044",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9677462e_211ed2dd",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Banka ekstresinde ödeme görünüyor, sisteminiz 'unpaid' diyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura ve son ödemeleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 86717
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 86717
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-879137\",\"user_id\":86717,\"amount\":603.17,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-31T00:55:57.435475\",\"bill_date\":\"2025-07-18T00:55:57.435475\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Fatma Şahin\",\"amount\":351.06},{\"service_name\":\"Mehmet Demir\",\"amount\":844.04}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":297,\"total_amount\":654.17}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ödeme sistemimize düşmemiş. Banka-provizyon gecikmesi olabilir; 24 saat içinde senkron olur, olmazsa dekontla kayıt açalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_23043872",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_320a8f5e_a1488214",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "security_paranoid_executive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Müşteri hizmetleri 5G var diyor, uygulama sınırlı gösteriyor, web sitesi farklı. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tutarsızlığı netleştirmek için canlı kapsama verisini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_5g_coverage",
+            "parametreler": {
+              "user_id": 19256,
+              "location": "current_location"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":19256,\"location\":\"Fiber altyapı\",\"coverage_status\":\"partial\",\"signal_strength\":82,\"download_speed_estimate_mbps\":718.98,\"upload_speed_estimate_mbps\":353.91,\"latency_estimate_ms\":15,\"network_quality\":\"7/24 müşteri desteği\",\"coverage_percentage\":78}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Gerçek zamanlı veriye göre kapsama kısmen mevcut: bina içi orta, dış mekanda iyi. Farkın nedeni metriklerin farklı olmasıdır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e1f6b834_8be82401",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS 5GB kaldı diyor, uygulama 2GB. Hangisi doğru?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık kota verinizi sorguluyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 80751
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":2.0,\"voice_remaining_minutes\":2000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":68,\"voice\":26,\"sms\":19}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygulamadaki anlık veri doğrudur. SMS gecikmeli gönderilmiş olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_50f00dac",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_1031738e",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_a8cfeacb_b09c950d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "gamer_latency_sensitive",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Destek 'her şey normal' dedi ama hızım çok düşük.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem hız testini hem de ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 67737
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":67737,\"download_speed_mbps\":12.7,\"upload_speed_mbps\":458.62,\"ping_ms\":112,\"test_timestamp\":\"2025-08-01T00:55:57.437476\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":82,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-18T00:55:57.437476\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-08-01T00:55:57.437476\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ 'degraded' durumda; ölçüm: 12.7 Mbps, ping 112 ms. 2 saatlik bakım sonrası normale dönmesi beklenir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_b2e10de7_37f95fa9",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "SMS'de 189 TL yazıyor, uygulama 205 TL gösteriyor. Hangisi geçerli?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem güncel faturayı hem de son ödemeleri kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 73772
+            }
+          },
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 73772
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-487826\",\"user_id\":73772,\"amount\":205.0,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-09-06T00:55:57.432614\",\"bill_date\":\"2025-08-14T00:55:57.432614\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":364.46}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":720,\"total_amount\":58.49}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçerli tutar 205 TL. SMS, ara indirim öncesi/otomatik güncellenmemiş olabilir. Güncel sistem verisi esas alınır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_e64a9c9a_db4fae31",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sesli yanıtta kayıtlarım var dendi ama uygulama boş.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hesabınızdaki talepleri listeliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_users_tickets",
+            "parametreler": {
+              "user_id": 25496
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":25496,\"tickets\":[{\"ticket_id\":\"TKT-41738\",\"issue_description\":\"Mobil veri açılmıyor\",\"category\":\"Fiber altyapı\",\"priority\":\"high\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Fiber altyapı\"},{\"ticket_id\":\"TKT-64675\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"Uygun fiyat\",\"priority\":\"medium\",\"status\":\"cancelled\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"5G teknolojisi\"},{\"ticket_id\":\"TKT-52560\",\"issue_description\":\"İnternet bağlantısı çok yavaş\",\"category\":\"7/24 müşteri desteği\",\"priority\":\"low\",\"status\":\"open\",\"created_at\":\"Hızlı ve güvenilir hizmet\",\"estimated_resolution\":\"Hızlı ve güvenilir hizmet\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kayıtlar sistemde mevcut; mobil uygulama önbelleği nedeniyle görünmüyor olabilir. Önbelleği temizleyip tekrar deneyin.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_5c9551c4",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_0ae07600",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_12131844",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_773cb868_cebc82c3",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Merkez 'kesinti yok' dedi ama mahallede herkesin neti yok.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"outage\",\"coverage_percentage\":40,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-22T00:55:57.434472\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-17T00:55:57.434472\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-08-08T00:55:57.434472\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgenizde geçici kesinti var. Çağrı merkezi ulusal tabloya bakmış olabilir; yerel planlı bakım aktif.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_9835fe67_996f216d",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Roaming SMS ile açık görünüyor ama uygulamada kapalı yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming durumunu netleştirip gerekiyorsa aktif ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 11417,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":11417,\"roaming_enabled\":true,\"activation_time\":\"2025-08-12T00:55:57.436475\",\"daily_fee\":730.93,\"data_package\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming şu an aktif. Uygulamadaki görünüm gecikmeli olabilir; cihazınızı yeniden başlatınca eşitlenecektir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "conflicting_info_scenario_edd5de7a_0f20a69f",
+    "scenario_type": "conflicting_information",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mağaza 'Vazgeçilmez' pakette 2000 dk dedi, sitede 1500 yazıyor.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Vazgeçilmez"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Vazgeçilmez\",\"monthly_fee\":678.0,\"setup_fee\":570.74,\"features\":{\"internet_gb\":30,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":48,\"cancellation_fee\":142.28}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Resmi dokümana göre 1500 dakika. Mağaza bilgi kartı güncellenmemiş olabilir; web/doküman geçerlidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]
