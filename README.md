@@ -1,15 +1,296 @@
-# 🤖 UniqeAi
+## UniqeAi – Telekom Akıllı Asistan (ChoyrensAi)
 
-Modern ve akıllı telekom müşteri hizmetleri AI agent'i. Bu proje, bireysel telekom müşterilerine 7/24 destek sağlayan, duygusal zeka sahibi ve tahmine dayalı mesajlaşma yapabilen gelişmiş bir AI assistant'tır.
+ChoyrensAi takımı tarafından geliştirilen, uçtan uca veri üretimi → model eğitimi → servis (backend) → arayüz (frontend) → değerlendirme (benchmark) akışını tek depoda sunan referans uygulama.
+
+- BilisimVadisi2025
+- Türkiye Açık Kaynak Platformu
+
+### İçindekiler
+- Proje Özeti
+- Depo Yapısı
+- Bağımlılıklar (Eksiksiz Liste)
+- Kurulum ve Çalıştırma Adımları
+- Veri Seti (Herkese Açık Bağlantı ve Alternatif Üretim)
+- Model Eğitimi (QLoRA/BF16)
+- Backend (API)
+- Frontend (Web Arayüz)
+- Benchmark ve Raporlama
+- Testler
+- Etiketler ve Duyurular
+ - Kod Referansı
+
+### Proje Özeti
+- Eğitim scripti: `ai_model/scripts/training/expert_trainer-stable.py`
+- Veri üretimi: `ai_model/modular_generator/` (modüler veri üretici)
+- Ana veri seti dosyası: `ultimate_human_level_dataset_v2_enhanced_20250809_033446.json`
+- Testler ve değerlendirme: `src/benchmark/`
+- Frontend: `frontend/`
+- Backend: `backend/`
+
+## Depo Yapısı
+- `ai_model/modular_generator/`: Üst düzey modüler veri üreteci (senaryolar, şema doğrulama, yardımcılar)
+- `ai_model/scripts/training/expert_trainer-stable.py`: Llama-3 için QLoRA/BF16 uzman seviye eğitim scripti
+- `backend/`: FastAPI tabanlı REST servisleri ve Telekom mock/örnek uçları
+- `frontend/`: Vite + Vue tabanlı web arayüzü
+- `src/benchmark/`: Model değerlendirme, metrikler, LLM tabanlı otomatik puanlama
+- `reports/`: Benchmark çıktı ve özetleri
+
+## Bağımlılıklar (Eksiksiz Liste)
+
+### Sistem Gereksinimleri
+- Python 3.10+
+- Node.js 18+ (frontend için)
+- (İsteğe bağlı) NVIDIA GPU + CUDA 12.x (model eğitimi için önerilir)
+
+### Python (Backend)
+- Kurulum: `pip install -r backend/requirements.txt`
+
+Başlıca paketler:
+- fastapi, uvicorn, pydantic (v2), httpx, python-dotenv
+
+### Python (Model Eğitimi)
+Eğitim ortamı için önerilen paketler:
+```
+pip install --upgrade torch transformers datasets accelerate peft trl bitsandbytes pydantic python-dotenv
+```
+
+### Python (Benchmark)
+Benchmark ve metrikler için önerilen paketler:
+```
+pip install --upgrade click pandas numpy matplotlib httpx pyyaml sacrebleu rouge-score bert-score
+```
+
+Not: `bert-score` ilk çalıştırmada model indirebilir; internet erişimi gerektirir.
+
+### Frontend (Web)
+- Node paketleri: `npm install` (veya `pnpm install`)
+- Vite, Vue 3, Tailwind (stil dosyaları repo içinde)
+
+## Kurulum ve Çalıştırma Adımları
+
+### 1) Depoyu kopyalayın
+```
+git clone <repo-url> && cd UniqeAi
+```
+
+### 2) Ortam değişkenleri
+Kök dizinde `.env` oluşturun ve en azından aşağıdaki anahtarları tanımlayın:
+```
+HUGGINGFACE_HUB_TOKEN=...
+WANDB_API_KEY=...          # (opsiyonel) eğitim logları için
+```
+
+### 3) Veri seti
+- Seçenek A – İndir (herkese açık bağlantı): Aşağıdaki bölümdeki bağlantıyı kullanın ve dosyayı proje köküne kaydedin.
+- Seçenek B – Üret (modüler üreteç):
+```
+cd ai_model
+python -m modular_generator.main --num-samples 10000 --output-file ultimate_human_level_dataset_v2_enhanced_20250809_033446.json
+cd ..
+```
+
+### 4) Backend’i çalıştırın
+```
+pip install -r backend/requirements.txt
+uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### 5) Frontend’i çalıştırın
+```
+cd frontend
+npm install
+npm run dev
+```
+
+### 6) Benchmark çalıştırın (opsiyonel)
+Örnek bir `models.yaml` oluşturun (mock veya gerçek model tanımları ile):
+```yaml
+models:
+  - id: mock
+    name: Mock Echo
+    backend: mock
+    model_name_or_endpoint: mock
+```
+
+Ardından değerlendirmeyi çalıştırın:
+```
+python -m src.benchmark.run --models models.yaml \
+  --dataset ultimate_human_level_dataset_v2_enhanced_20250809_033446.json \
+  --out reports --llm-eval
+```
+
+## Veri Seti (Herkese Açık Bağlantı)
+
+- Dosya adı: `ultimate_human_level_dataset_v2_enhanced_20250809_033446.json`
+- Herkese açık indirme bağlantısı (örnek, Release varlıkları üzerinden):
+
+```
+https://github.com/REPO_OWNER/REPO_NAME/releases/latest/download/ultimate_human_level_dataset_v2_enhanced_20250809_033446.json
+```
+
+Alternatif barındırma seçenekleri:
+- GitHub Releases (önerilir)
+- Hugging Face Datasets
+- Bulut depolama (örn. Google Drive, S3) – paylaşımı “genel/anyone with the link” yapınız
+
+Not: Lütfen yukarıdaki URL’de `REPO_OWNER/REPO_NAME` kısmını kendi deponuza göre güncelleyiniz.
+
+## Model Eğitimi (QLoRA/BF16)
+
+Eğitim scripti: `ai_model/scripts/training/expert_trainer-stable.py`
+
+Temel kullanım:
+```
+python ai_model/scripts/training/expert_trainer-stable.py \
+  --model_name "meta-llama/Meta-Llama-3-8B-Instruct" \
+  --data_paths ultimate_human_level_dataset_v2_enhanced_20250809_033446.json \
+  --output_dir UniqeAi/ai_model/final-model_v6_bf16 \
+  --num_train_epochs 3 --gradient_accumulation_steps 16 --bf16 True
+```
+
+Notlar:
+- `.env` içindeki `HUGGINGFACE_HUB_TOKEN` otomatik yüklenir.
+- `use_bf16_training=True` ise BF16; aksi halde 4-bit QLoRA kullanılır.
+- W&B entegrasyonu için `WANDB_API_KEY` sağlayabilirsiniz.
+
+### Eğitilmiş Modeller
+
+Hugging Face'te yayınlanan modellerimiz:
+
+- [ChoyrensAI-Telekom-Agent-v6-gguf](https://huggingface.co/Choyrens/ChoyrensAI-Telekom-Agent-v6-gguf) - En güncel GGUF formatı (5-bit Q5_K_M, 5.73 GB)
+- [ChoyrensAI-Telekom-Agent-v5-gguf](https://huggingface.co/Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf) - 8-bit Q8_0 formatı (8.54 GB)
+- [ChoyrensAI-Telekom-Agent-v4-gguf](https://huggingface.co/Choyrens/ChoyrensAI-Telekom-Agent-v4-gguf) - Önceki versiyon GGUF
+- [ChoyrensAI-Telekom-Agent-v1-merged](https://huggingface.co/Choyrens/ChoyrensAI-Telekom-Agent-v1-merged) - İlk merged model (Safetensors, BF16)
+
+## Backend (API)
+Çalıştırma:
+```
+uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Örnek uçlar:
+- `GET /api/v1/health`
+- `POST /api/v1/telekom/billing/current`
+- `POST /api/v1/telekom/packages/quotas`
+- `POST /api/v1/telekom/support/tickets`
+
+Detaylar için `backend/app/api/v1/` ve `backend/app/services/` dizinlerine bakınız.
+
+## Frontend (Web Arayüz)
+Geliştirme modu:
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Öntanımlı API adresi `http://localhost:8000` olup, UI bileşenleri `frontend/src/` altındadır.
+
+## Benchmark ve Raporlama
+- Çalıştırma: `python -m src.benchmark.run --models models.yaml --dataset <json> --out reports`
+- Toplu rapor birleştirme: `python -m src.benchmark.compare --reports reports/aggregate --out reports/combined.csv`
+- Metrikler: BLEU, ROUGE, BERTScore + (opsiyonel) LLM tabanlı değerlendirme
+
+## Testler
+```
+pytest -q
+```
+Başlıca testler:
+- Backend: `backend/tests/test_telekom_api.py`
+- Benchmark: `tests/test_runner_with_mock_model.py`, `tests/test_metrics.py`
+
+## Etiketler ve Duyurular
+- GitHub konuları (Topics) bölümüne aşağıdaki etiketleri ekleyiniz:
+  - `BilisimVadisi2025`
+  - `Turkiye-Acik-Kaynak-Platformu`
+
+GitHub CLI ile eklemek için (opsiyonel):
+```
+gh repo edit --add-topic BilisimVadisi2025 --add-topic Turkiye-Acik-Kaynak-Platformu
+```
+
+Paylaşımlarda ve duyurularda “Türkiye Açık Kaynak Platformu”nu etiketlemeyi unutmayınız.
+
+---
+
+ChoyrensAi • 2025
+
+## Kod Referansı
+
+Bu bölüm, repodaki ana bileşenleri ve önemli fonksiyon/sınıfları yüksek seviyede açıklar.
+
+### ai_model
+
+- `ai_model/scripts/training/expert_trainer-stable.py`
+  - `ModelAndDataConfig`, `TrainingArguments`: Eğitim ve veri ayarları.
+  - `setup_huggingface_token()`: `.env` → HF token yükleme.
+  - `ExpertTrainer`
+    - `_normalize_dialogue_item()`: Farklı formatlardan standart `donguler` şemasına dönüştürme.
+    - `_format_dialogue()`: Llama-3 chat template’iyle %100 uyumlu tool-calling yapı üretimi.
+    - `_load_and_prepare_dataset()`: JSON → `datasets.Dataset` dönüşümü, `tokenizer.apply_chat_template` kullanımı.
+    - `run()`: BF16/QLoRA seçimi, LoRA kurulumu (`peft`), `trl.SFTTrainer` ile eğitim ve kayıt.
+
+- `ai_model/modular_generator/`
+  - `core_generator.py` – `SupremeHumanLevelDatasetGenerator`
+    - `_build_api_response_mapping()`, `_create_validated_response()`
+    - `generate_supreme_dataset()`, `save_dataset()`
+    - Lazy özellikler: `personality_profiles`, `cognitive_patterns`, `meta_templates`, `cultural_contexts`, `temporal_reasoning_patterns`, `innovation_frameworks` (bkz. `lazy_loading.py`, `initializers.py`).
+  - `config/settings.py`
+    - `SCENARIO_WEIGHTS`: Senaryo ağırlıkları
+    - `API_RESPONSE_MAPPING`: Fonksiyon → Pydantic response modeli eşlemesi
+    - `telekom_api_schema.py` import ve şema özetleri
+  - `generators/`
+    - `basic_scenarios/` ve `advanced_scenarios/`: `generate_*_scenario` fonksiyonları (ör. `generate_change_package_scenario`, `generate_adaptive_communication_scenarios`).
+  - `validators/api_validators.py`
+    - `validate_tool_call`, `validate_scenario_quality`, `verify_pydantic_compliance`.
+  - `utils/helpers.py`
+    - `generate_user_id`, `generate_mock_data_for_model`, `create_validated_response`.
+  - `telekom_api_schema.py`
+    - Telekom alanına özel tüm `Request`/`Response` Pydantic modelleri ve yardımcı fonksiyonlar.
+
+### backend
+
+- `backend/app/main.py`: Uygulama ana girişi, `/api/v1/health`.
+- `backend/app/api/v1/telekom.py`: Telekom işlemleri
+  - Faturalama: `/billing/current`, `/billing/history`, `/billing/pay`, `/billing/payments`, `/billing/autopay`
+  - Paketler: `/packages/current`, `/packages/quotas`, `/packages/change`, `/packages/available`, `/packages/details`
+  - Servisler/Ağ: `/services/roaming`, `/network/status`
+  - Destek: `/support/tickets`, `/support/tickets/close`, `/support/tickets/status`, `/support/tickets/list`
+  - Müşteri: `/customers/profile`, `/customers/contact`, `/lines/suspend`, `/lines/reactivate`
+  - Kimlik: `/auth/register`, `/auth/login`
+- `backend/app/api/v1/chat.py`: Chat endpoint’leri (yeni/legacy), `ChatRequest`/`ChatResponseNew` şemaları.
+- `backend/app/services/ai_orchestrator*.py`: Gerçek/sade orkestratör; araç çağrıları ve final yanıt üretimi.
+- `backend/app/services/ai_endpoint_functions.py`: Telekom uçları için istemci yardımcıları (facade).
+- Testler: `backend/tests/test_telekom_api.py`.
+
+### frontend
+
+- Vite + Vue 3 yapısı (`frontend/src/`).
+- API istemcisi: `frontend/src/services/api.js` (telekom uçlarına sarmalayıcı fonksiyonlar).
+- Sayfalar/Bileşenler: `frontend/src/pages/*`, `frontend/src/components/*`.
+
+### benchmark
+
+- `src/benchmark/adapters/`: `openai_adapter.py`, `hf_adapter.py`, `http_adapter.py`, `gguf_adapter.py`, `mock_adapter.py` – ortak `InferenceResult` tipi (`adapters/types.py`).
+- `src/benchmark/metrics.py`: BLEU, ROUGE, BERTScore ve `compute_all_metrics`.
+- `src/benchmark/llm_eval.py`: OpenAI/HF/Mock LLM değerlendirme fonksiyonları.
+- `src/benchmark/pydantic_validator.py`: Model çıktısının telekom şemalarına doğrulanması.
+- `src/benchmark/runner.py`: Dataset üzerinde model çalıştırma ve sonuçların kaydı.
+- `src/benchmark/compare.py`: Aggregate CSV’leri birleştirme.
+
+### raporlar
+
+- `reports/aggregate/*.csv`: Modellerin toplu sonuçları.
 
 ## 🎯 Proje Özellikleri
 
+Bu proje, uçtan uca veri üretimi → model eğitimi → servis (backend) → arayüz (frontend) → değerlendirme (benchmark) akışını tek depoda sunan referans uygulamadır.
+
 ### Core Features
 - 🧠 **Akıllı Sohbet**: Doğal dil işleme ile müşteri sorularını anlama
-- 😊 **Duygu Analizi**: Müşteri duygularını tespit etme ve buna göre yanıt verme
-- 🔮 **Tahmine Dayalı Mesajlaşma**: Gelecek müşteri ihtiyaçlarını öngörme
+- 📊 **Modüler Veri Üretimi**: 20+ kişilik profili, 7 bilişsel kalıp, 3 kültürel bağlam
 - ⚡ **Real-time İşlemler**: Anlık fatura, paket ve destek işlemleri
-- 📊 **Kapsamlı Dashboard**: Yönetici paneli ve analytics
+- 🔧 **Kapsamlı Test Sistemi**: BLEU, ROUGE, BERTScore + LLM tabanlı değerlendirme
 
 ### Telekom İşlemleri
 - 📱 Fatura sorgulama ve ödeme
@@ -21,253 +302,43 @@ Modern ve akıllı telekom müşteri hizmetleri AI agent'i. Bu proje, bireysel t
 
 ## 🛠 Technology Stack
 
-### Backend
-- **Python 3.11+** - Core backend language
-- **FastAPI** - Modern async web framework
-- **SQLAlchemy** - ORM for database operations
-- **PostgreSQL** - Production database
-- **SQLite** - Development database
-- **Pydantic** - Data validation
-- **Alembic** - Database migrations
-
 ### AI & ML
-- **Ollama** - Local LLM inference
-- **Llama 3.1** - Base language model
+- **Llama 3** - Base language model (Meta-Llama-3-8B-Instruct)
 - **Transformers** - Hugging Face model library
-- **Sentence-Transformers** - Embedding generation
-- **Scikit-learn** - Traditional ML algorithms
-- **NLTK/spaCy** - Natural language processing
+- **QLoRA/BF16** - Efficient training techniques
+- **Peft & TRL** - Parameter-efficient fine-tuning
+
+### Backend
+- **Python 3.10+** - Core backend language
+- **FastAPI** - Modern async web framework
+- **Pydantic** - Data validation and schema enforcement
+- **Uvicorn** - ASGI server
 
 ### Frontend
-- **React 18** - UI library
-- **TypeScript** - Type-safe JavaScript
+- **Vue 3** - Progressive framework
 - **Vite** - Build tool and dev server
 - **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Query** - Server state management
-- **Zustand** - Client state management
-- **React Hook Form** - Form handling
+
+### Evaluation & Benchmarking
+- **BLEU, ROUGE, BERTScore** - Automatic metrics
+- **LLM-based evaluation** - GPT-4o-mini scoring
+- **Pydantic validation** - Schema compliance checking
 
 ### DevOps & Deployment
-- **Docker** - Containerization
-- **Docker Compose** - Multi-service orchestration
-- **Railway** - Cloud deployment platform
 - **GitHub Actions** - CI/CD pipeline
-- **Nginx** - Reverse proxy (production)
-- **Redis** - Caching and session storage
+- **Docker** - Containerization support
 
-## 🏗 Proje Mimarisi
+## 📈 Performance Metrics
 
-```
-telekom-ai-agent/
-├── backend/                 # Python backend
-│   ├── app/
-│   │   ├── core/           # Core configurations
-│   │   ├── api/            # API routes
-│   │   ├── models/         # Database models
-│   │   ├── services/       # Business logic
-│   │   ├── schemas/        # Pydantic schemas
-│   │   └── utils/          # Utility functions
-│   ├── alembic/            # Database migrations
-│   ├── tests/              # Backend tests
-│   └── requirements.txt    # Python dependencies
-├── frontend/               # React frontend
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom hooks
-│   │   ├── store/          # State management
-│   │   ├── services/       # API services
-│   │   ├── types/          # TypeScript types
-│   │   └── utils/          # Utility functions
-│   ├── public/             # Static files
-│   └── package.json        # Node dependencies
-├── mock-api/               # Mock telekom API
-├── ai-models/              # AI model files
-├── docs/                   # Documentation
-├── scripts/                # Development scripts
-└── docker-compose.yml      # Development environment
-```
+- **Model Size**: 8.03B parameters (Llama-3 based)
+- **Training**: QLoRA/BF16 optimized for efficiency
+- **Validation**: %100 Pydantic compliance
+- **Benchmark**: Multi-metric evaluation system
+- **Dataset**: 10,000+ high-quality scenarios
 
-## 🚀 Hızlı Başlangıç
+## 🔒 Compliance & Standards
 
-### Gereksinimler
-- **Python 3.11+**
-- **Node.js 18+**
-- **Docker & Docker Compose**
-- **Git**
-
-### Kurulum
-```bash
-# Repository'yi klonla
-git clone <repository-url>
-cd telekom-ai-agent
-
-# Environment variables ayarla
-cp .env.example .env
-
-# Docker ile tüm servisleri başlat
-docker-compose up -d
-
-# Ya da manuel kurulum:
-# Backend kurulum
-cd backend
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-
-# Frontend kurulum
-cd frontend
-npm install
-npm run dev
-```
-
-## 📊 Benchmark (LangChain + Evals + Pydantic)
-
-Bu repoda, telekom domain'i için çoklu model benchmark altyapısı bulunmaktadır. Özellikler:
-
-- Pydantic ile telekom API şeması doğrulaması (mevcut `ai_model/modular_generator/telekom_api_schema.py` yeniden kullanılır)
-- Otomatik metrikler: BLEU, ROUGE, BERTScore (`evaluate` üzerinden)
-- LLM tabanlı puanlayıcı (GPT-4o-mini varsayılan; `BENCH_DO_LLM_EVAL=false` ile kapatılabilir)
-- Per-örnek JSONL ve toplu CSV raporlar, basit görselleştirme (matplotlib)
-- OpenAI, HF Inference API, generic HTTP ve local GGUF (hook) backend’leri
-
-### Örnek Çalıştırma
-
-```bash
-pip install -r requirements.txt
-export OPENAI_API_KEY=...   # opsiyonel, LLM-eval için
-export HF_API_TOKEN=...     # HF modelleri için
-
-python -m benchmark.run --models models.yaml --dataset data/telekom_test_set.sample.jsonl --out reports/
-```
-
-Raporlar `reports/per_example/*.jsonl`, `reports/aggregate/*.csv` ve `reports/models_bar.png` olarak üretilir.
-
-### Modelleri Tanımlama
-
-`models.yaml` içinde örnek:
-
-```yaml
-- id: llama3-instruct
-  name: Meta Llama 3 Instruct
-  backend: hf
-  model_name_or_endpoint: meta-llama/Meta-Llama-3-8B-Instruct
-  api_key_env: HF_API_TOKEN
-  params:
-    temperature: 0
-    max_tokens: 512
-```
-
-### Dataset Formatı
-
-`telekom_test_set.jsonl` satır başına bir kayıt içerir:
-
-```json
-{"id":"ex1","input":"Soru","expected_output":"Beklenen serbest metin veya JSON","metadata":{"function_name":"get_current_bill"}}
-```
-
-### CI / Docker
-
-- GitHub Actions workflow: `.github/workflows/ci.yml` smoke benchmark (mock LLM-eval) çalıştırır ve raporları artefact olarak yükler.
-- Docker image ile tek komutla çalıştırabilirsiniz: `docker build -t telekom-benchmark . && docker run --rm -e OPENAI_API_KEY -e HF_API_TOKEN telekom-benchmark`.
-
-
-## 👥 Ekip Rolleri ve Odak Alanları
-
-Projenin farklı fazlarında ekip üyeleri çeşitli görevlere odaklanacaktır.
-
-1.  **Tech Lead**: Proje mimarisi, fazlar arası koordinasyon ve nihai entegrasyon.
-2.  **AI Specialist 1 (Fine-Tuning & Core Logic)**: Llama 3.1 modelinin senaryolara özel eğitimi, prompt mühendisliği ve temel AI mantığı.
-3.  **AI Specialist 2 (NLP & Advanced Features)**: Zemberek entegrasyonu, duygu analizi ve tahminsel mesajlaşma gibi ileri seviye özellikler.
-4.  **Backend Developer 1 (API & DB)**: FastAPI ile core API geliştirme, PostgreSQL entegrasyonu ve veritabanı yönetimi.
-5.  **Backend Developer 2 (Mock API & Services)**: Ön sunum için mock telekom API'sinin geliştirilmesi ve diğer servis entegrasyonları.
-6.  **Frontend Developer (UI/UX)**: React ile kullanıcı arayüzünün ve yönetici panelinin geliştirilmesi.
-7.  **QA & DevOps Engineer**: Test senaryolarının yazılması, Docker yönetimi, CI/CD pipeline kurulumu ve dokümantasyon.
-
-## 📅 Geliştirme Yol Haritası (6 Hafta)
-
-### **Faz 1: Ön Sunum MVP'si (Hafta 1-2)**
-
-**Hedef:** Jüriye sunulabilecek, temel bir senaryoyu (fatura sorgulama) baştan sona çalıştıran bir prototip oluşturmak. Arayüz bu aşamada `FastAPI`'nin otomatik `/docs` sayfası olacaktır.
-
--   **Hafta 1: Kurulum ve Temel Entegrasyon**
-    -   [ ] Proje iskeletinin ve `docker-compose.yml` dosyasının oluşturulması.
-    -   [ ] `FastAPI` ile temel API endpoint'lerinin ve `Pydantic` şemalarının hazırlanması.
-    -   [ ] Sahte müşteri ve fatura verilerini sunacak `Mock API`'nin geliştirilmesi.
-    -   [ ] `Llama 3.1` modelinin `Transformers` ile yerel olarak çalıştırılıp API'ye bağlanması.
--   **Hafta 2: İlk Senaryo ve Sunum Hazırlığı**
-    -   [ ] **"Fatura Sorgulama" Senaryosu:**
-        -   [ ] Kullanıcı girdisini `Zemberek` ile işleme.
-        -   [ ] Prompt mühendisliği ile kullanıcının "fatura sorma" niyetini tespit etme.
-        -   [ ] AI'ın Mock API'den veri alıp anlamlı bir cevap üretmesini sağlama.
-    -   [ ] Ön sunum için baştan sona testler ve dokümantasyonun hazırlanması.
-
-### **Faz 2: Çekirdek Ürün Geliştirme (Hafta 3-4)**
-
-**Hedef:** Prototipi, tam özellikli bir backend ve çalışan bir frontend ile gerçek bir uygulamaya dönüştürmeye başlamak.
-
--   **Hafta 3: Sağlam Backend ve Veritabanı**
-    -   [ ] `SQLite`'tan `PostgreSQL`'e geçiş, `SQLAlchemy` modellerinin ve `Alembic` ile migration'ların oluşturulması.
-    -   [ ] Gelişmiş API mantığı (kullanıcı yönetimi, daha karmaşık işlemler).
-    -   [ ] `React` ve `TypeScript` ile frontend projesinin temel kurulumu, `Vite` ve `Tailwind CSS` konfigürasyonu.
--   **Hafta 4: Frontend ve Gelişmiş AI Senaryoları**
-    -   [ ] Temel frontend bileşenlerinin (sohbet penceresi, login sayfası) geliştirilmesi.
-    -   [ ] Frontend'in `React Query` ile backend API'sine bağlanması.
-    -   [ ] **"Tarife Değişikliği" Senaryosu:** Bağlam yönetimi gerektiren çok adımlı diyalog akışlarının geliştirilmesi.
-    -   [ ] Duygu analizi için ilk denemelerin yapılması.
-
-### **Faz 3: İleri Seviye Özellikler ve Optimizasyon (Hafta 5-6)**
-
-**Hedef:** Projeyi jüriyi etkileyecek gelişmiş özelliklerle donatmak, test etmek ve sunuma hazır hale getirmek.
-
--   **Hafta 5: Tam Entegrasyon ve "Wow" Özellikleri**
-    -   [ ] Frontend ve backend'in tam entegrasyonu, UI/UX iyileştirmeleri (`Framer Motion`).
-    -   [ ] Duygu analizi modelinin entegre edilerek ajanın cevaplarının dinamikleştirilmesi.
-    -   [ ] Tahmine dayalı mesajlaşma özelliğinin prototipinin geliştirilmesi.
-    -   [ ] Kapsamlı backend ve frontend testlerinin yazılması.
--   **Hafta 6: Optimizasyon, Dağıtım ve Final Hazırlık**
-    -   [ ] Performans optimizasyonu (API yanıt süreleri, veritabanı sorguları).
-    -   [ ] `GitHub Actions` ile temel bir CI/CD pipeline'ı kurma.
-    -   [ ] `Railway` veya benzeri bir platforma dağıtım denemeleri.
-    -   [ ] Güvenlik kontrolleri ve son rötuşlar.
-    -   [ ] Nihai proje sunumunun ve teknik dokümantasyonun hazırlanması.
-
-## 🧪 Test Edilecek Senaryolar
-
-### Temel İşlemler
-- Fatura sorgulama ve ödeme
-- Paket değişimi
-- Teknik destek talepleri
-- Arıza bildirimi
-
-### Duygusal Durumlar
-- Müşteri memnuniyetsizliği
-- Acil durum talepleri
-- Şikayet yönetimi
-- Pozitif feedback
-
-### Kompleks Senaryolar
-- Multi-step işlemler
-- Kampanya önerileri
-- Upselling/cross-selling
-- Escalation durumları
-
-## 📈 Success Metrics
-
-- **Response Time**: < 2 saniye
-- **Accuracy**: > 90% doğru yanıt
-- **Customer Satisfaction**: > 8/10
-- **Issue Resolution**: > 85% first contact
-- **Emotion Detection**: > 80% accuracy
-
-## 🔒 Security & Compliance
-
-- End-to-end encryption
-- GDPR compliance
-- Data anonymization
-- Secure API authentication
-- Audit logging
-
----
-
-**Not**: Bu proje AI assistance ile geliştirilmektedir. Her commit professional standartlarda kod review'dan geçmektedir. 
+- **BilisimVadisi2025** compliance
+- **Türkiye Açık Kaynak Platformu** standards
+- Data validation with Pydantic v2
+- Professional code review standards 

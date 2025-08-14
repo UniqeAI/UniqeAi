@@ -1,0 +1,498 @@
+# -*- coding: utf-8 -*-
+"""
+🤖 UniqeAi Telekom Agent - GGUF Terminal Uygulaması v6.0 (Orkestra Şefi Mimarisi)
+=================================================================================
+
+Bu, projenin son ve en gelişmiş sürümüdür. "Orkestra Şefi ve İcracı"
+mimarisini uygulayarak hem hafıza (bağlam) sorunlarını hem de modelin
+güvenilirlik (halüsinasyon) problemlerini kökten çözer.
+
+--- MİMARİ AÇIKLAMASI ---
+- **ConversationManager (Orkestra Şefi):** Kullanıcıyla olan tüm sohbeti
+  yönetir, geçmişi tutar ve bağlamı korur. Bir sonraki adımın ne olacağına
+  (araç çağırma mı, sohbet mi) karar verir.
+- **Executor (İcracı):** "Orkestra Şefi"nden bir görev aldığında, hafızasız
+  ve hatasız bir şekilde o tekil görevi yerine getirir (araç çağırır ve
+  API verisine sadık kalarak özetler).
+- **Sonuç:** Sistem, hem uzun sohbetleri hatırlayabilen (hafıza) hem de
+  araç kullanırken asla hata yapmayan (güvenilirlik) bir yapıya kavuşur.
+"""
+
+import os
+import json
+import re
+import sys
+from pathlib import Path
+from rich.console import Console
+from rich.markdown import Markdown
+from typing import Optional, List, Dict, Any, Tuple
+
+# --- Proje Kök Dizini ve Modül Yolu ---
+try:
+    PROJECT_ROOT = Path(__file__).resolve().parents[3]
+except (NameError, IndexError):
+    PROJECT_ROOT = Path.cwd()
+
+AI_MODEL_SCRIPTS_PATH = PROJECT_ROOT / "UniqeAi" / "ai_model" / "scripts"
+if str(AI_MODEL_SCRIPTS_PATH) not in sys.path:
+    sys.path.insert(0, str(AI_MODEL_SCRIPTS_PATH))
+
+try:
+    from tool_definitions import get_tool_definitions, get_tool_response
+except ImportError:
+    print(f"\n[HATA] Gerekli 'tool_definitions' modülü bulunamadı. Aranan yol: {AI_MODEL_SCRIPTS_PATH}")
+    sys.exit(1)
+
+
+# --- GGUF Model Yapılandırması (Performans Optimizasyonu) ---
+GGUF_MODEL_DIR = PROJECT_ROOT / "UniqeAi" / "ai_model" / "results_2" / "gguf_model_v2"
+CONTEXT_SIZE = 2048  # Performans için düşürüldü
+GPU_LAYERS = 35      # Optimum GPU katman sayısı
+TEMPERATURE = 0.1    # Yaratıcılık için hafif bir artış
+DEFAULT_TEST_USER_ID = 12345
+MAX_TOOL_STEPS = 5   # Çok-adımlı zincirlerde üst sınır
+
+console = Console()
+# Araç tanımlarını hem liste hem de isim->tanım haritası olarak hazırla
+TOOL_DEFINITIONS_LIST = list(get_tool_definitions())
+ALL_TOOL_DEFINITIONS = {tool['function']['name']: tool for tool in TOOL_DEFINITIONS_LIST}
+
+
+def find_latest_gguf_model(model_dir: Path) -> Optional[Path]:
+    console.print(f"[yellow]🤖 Model aranıyor: [cyan]{model_dir}[/cyan][/yellow]")
+    if not model_dir.exists():
+        console.print(f"[bold red]HATA: Model klasörü bulunamadı![/bold red]"); return None
+    gguf_files = list(model_dir.glob("*.gguf"))
+    if not gguf_files:
+        console.print(f"[bold red]HATA: '{model_dir}' içinde hiç .gguf dosyası bulunamadı.[/bold red]"); return None
+    latest_model_path = max(gguf_files, key=lambda p: p.stat().st_mtime)
+    console.print(f"[green]✅ En yeni model bulundu: [bold cyan]{latest_model_path.name}[/bold cyan][/green]")
+    return latest_model_path
+
+def load_gguf_model():
+    try: from llama_cpp import Llama
+    except ImportError: console.print("[bold red]HATA: `llama-cpp-python` kütüphanesi kurulu değil.[/bold red]"); sys.exit(1)
+    model_path = find_latest_gguf_model(GGUF_MODEL_DIR)
+    if not model_path: sys.exit(1)
+    console.print(f"[yellow]🚀 GGUF modeli yükleniyor: [cyan]{model_path.name}[/cyan][/yellow]")
+    try:
+        llm = Llama(
+            model_path=str(model_path), 
+            n_ctx=CONTEXT_SIZE, 
+            n_gpu_layers=GPU_LAYERS,
+            n_threads=os.cpu_count() - 1 if os.cpu_count() and os.cpu_count() > 1 else 1,
+            verbose=False, 
+            chat_format="llama-3",
+            # Performans optimizasyonları
+            n_batch=512,        # Batch boyutu
+            use_mlock=True,     # Bellek kilitleme
+            use_mmap=True       # Memory mapping
+        )
+        console.print("[green]✅ Model başarıyla GPU'ya yüklendi (Optimizasyonlu).[/green]")
+        return llm
+    except Exception as e:
+        console.print(f"\n[bold red]HATA: Model yüklenirken kritik bir hata oluştu: {e}[/bold red]"); sys.exit(1)
+
+# --- Katman 2: İcracı (Executor) ---
+class Executor:
+    """Tekil görevleri hafızasız ve hatasız bir şekilde yerine getiren katman."""
+
+    def __init__(self, llm_model):
+        self.llm = llm_model
+        self.system_prompt = self._create_system_prompt()
+
+    def _create_system_prompt(self) -> str:
+        tools_string = "\n".join([f"  - `{name}`: {d['function']['description']}" for name, d in ALL_TOOL_DEFINITIONS.items()])
+        return f"""Sen, Türkçe konuşan bir AI motorusun. Görevin, sana verilen kullanıcı komutunu analiz edip uygun ARACI çağırmaktır.
+
+KRİTİK KURALLAR:
+- ASLA açıklama veya sohbet yapma; uygun olduğunda doğrudan araç çağır.
+- Native tool-calling kullan (function calling). KOD BLOĞU üretme.
+- 'user_id' istenirse varsayılan {DEFAULT_TEST_USER_ID} kullanılabilir.
+
+ÖRNEK EŞLEŞTİRMELER:
+- "faturamı öğrenebilir miyim" → get_current_bill
+- "internet hızım" → test_internet_speed
+- "faturamı öde" → pay_bill
+
+KULLANABİLECEĞİN ARAÇLAR:
+{tools_string}"""
+
+    def parse_tool_calls(self, text: str) -> Optional[List[Dict[str, Any]]]:
+        pattern_with_print = r"<\|begin_of_tool_code\|>\s*print\((\w+)\((.*?)\)\)\s*<\|end_of_tool_code\|>"
+        pattern_without_print = r"<\|begin_of_tool_code\|>\s*(\w+)\((.*?)\)\s*<\|end_of_tool_code\|>"
+        match = re.search(pattern_with_print, text, re.DOTALL) or re.search(pattern_without_print, text, re.DOTALL)
+        if not match: return None
+        
+        function_name, args_str = match.group(1), match.group(2)
+        params = {}
+        if args_str:
+            arg_pattern = re.compile(r"(\w+)\s*=\s*((?:\"(?:\\\"|[^\"])*\")|(?:'(?:\\'|[^'])*')|[\w.-]+)")
+            for p_match in arg_pattern.finditer(args_str):
+                key, raw_value = p_match.group(1), p_match.group(2)
+                try: value = json.loads(raw_value)
+                except (json.JSONDecodeError, TypeError): value = str(raw_value).strip("'\"")
+                params[key] = value
+        return [{"name": function_name, "arguments": params}]
+
+    def execute_tool(self, tool_call: Dict[str, Any], context_data: Dict[str, Any] = None) -> str:
+        func_name, func_args = tool_call["name"], tool_call["arguments"]
+        
+        # AKILLI ARA KATMAN: pay_bill için önce fatura kontrolü yap
+        if func_name == "pay_bill":
+            return self._handle_smart_payment(func_args, context_data)
+        
+        if func_name in ALL_TOOL_DEFINITIONS:
+            func_def = ALL_TOOL_DEFINITIONS[func_name]["function"]
+            required_params = func_def.get("parameters", {}).get("required", [])
+            expected_params = func_def.get("parameters", {}).get("properties", {})
+            
+            # PARAMETRE DÜZELTMESİ VE TAMAMLAMA
+            corrected_args = {}
+            
+            for expected_param, param_info in expected_params.items():
+                # Yanlış parametre isimlerini düzelt
+                if expected_param == "bill_id" and "fatura_id" in func_args:
+                    corrected_args["bill_id"] = func_args["fatura_id"]
+                    console.print(f"🔧 [italic yellow]İcracı: 'fatura_id' parametresi 'bill_id' olarak düzeltildi.[/italic yellow]")
+                elif expected_param == "method" and "payment_method" in func_args:
+                    corrected_args["method"] = func_args["payment_method"]
+                    console.print(f"🔧 [italic yellow]İcracı: 'payment_method' parametresi 'method' olarak düzeltildi.[/italic yellow]")
+                elif func_name == "setup_autopay" and expected_param == "payment_method" and "status" in func_args and "payment_method" not in func_args:
+                    # Eğitim verisindeki 'status' alanını varsayılan ödeme yöntemiyle eşle
+                    corrected_args["payment_method"] = "credit_card"
+                    console.print(f"🔧 [italic yellow]İcracı: 'status' parametresi 'payment_method'='credit_card' olarak dönüştürüldü.[/italic yellow]")
+                elif expected_param in func_args:
+                    corrected_args[expected_param] = func_args[expected_param]
+            
+            # Eksik parametreleri tamamla
+            if "user_id" in required_params and "user_id" not in corrected_args:
+                corrected_args["user_id"] = DEFAULT_TEST_USER_ID
+                console.print(f"🧠 [italic yellow]İcracı: 'user_id' parametresi varsayılan ID ({DEFAULT_TEST_USER_ID}) ile tamamlandı.[/italic yellow]")
+            if "payment_method" in required_params and "payment_method" not in corrected_args and func_name == "setup_autopay":
+                corrected_args["payment_method"] = "credit_card"
+                console.print(f"🧠 [italic yellow]İcracı: 'payment_method' varsayılan 'credit_card' ile tamamlandı.[/italic yellow]")
+            if "line_number" in required_params and "line_number" not in corrected_args and func_name == "suspend_line":
+                corrected_args["line_number"] = "0530-000-0000"
+                console.print(f"🧠 [italic yellow]İcracı: 'line_number' varsayılan '0530-000-0000' ile tamamlandı.[/italic yellow]")
+            
+            func_args = corrected_args
+        
+        console.print(f"🛠️  [bold yellow]İcracı Araç Çağrısı (Düzeltilmiş):[/bold yellow] [green]{func_name}({func_args})[/green]")
+        response = get_tool_response(func_name, func_args)
+        console.print(f"⚙️  [bold magenta]İcracı Araç Yanıtı:[/bold magenta] {response}")
+        return response
+        
+    def _handle_smart_payment(self, func_args: Dict[str, Any], context_data: Dict[str, Any] = None) -> str:
+        """Akıllı ödeme işlemi: Önce fatura kontrol et, sonra öde"""
+        console.print("🧠 [bold cyan]İcracı: Akıllı ödeme modu - önce fatura kontrol ediliyor...[/bold cyan]")
+        
+        # 1. Adım: Önce mevcut faturayı kontrol et
+        user_id = func_args.get("user_id", DEFAULT_TEST_USER_ID)
+        bill_check_response = get_tool_response("get_current_bill", {"user_id": user_id})
+        console.print(f"🔍 [bold blue]Fatura Kontrol Sonucu:[/bold blue] {bill_check_response}")
+        
+        # 2. Adım: Fatura var mı kontrol et
+        try:
+            bill_data = json.loads(bill_check_response)
+            if not bill_data.get("success", False):
+                return "Hata: Ödenmemiş faturanız bulunmamaktadır."
+            
+            # Fatura bilgilerini al
+            current_bill_id = bill_data["data"]["bill_id"]
+            amount = bill_data["data"]["amount"]
+            
+            # 3. Adım: Eğer kullanıcı belirli bir fatura ID'si verdiyse kontrol et
+            requested_bill_id = func_args.get("bill_id")
+            if requested_bill_id and requested_bill_id != current_bill_id:
+                console.print(f"⚠️ [italic red]İcracı: İstenen fatura ID ({requested_bill_id}) mevcut fatura ID ({current_bill_id}) ile eşleşmiyor![/italic red]")
+                return f"Hata: {requested_bill_id} numaralı fatura bulunamadı. Mevcut faturanız: {current_bill_id}"
+            
+            # 4. Adım: Ödeme işlemini gerçekleştir
+            payment_args = {
+                "bill_id": current_bill_id,
+                "method": func_args.get("method", "credit_card"),
+                "user_id": user_id
+            }
+            
+            console.print(f"💳 [bold green]İcracı: {current_bill_id} numaralı fatura ({amount} TL) ödeme işlemi başlatılıyor...[/bold green]")
+            payment_response = get_tool_response("pay_bill", payment_args)
+            console.print(f"⚙️  [bold magenta]Ödeme Sonucu:[/bold magenta] {payment_response}")
+            
+            return payment_response
+            
+        except (json.JSONDecodeError, KeyError) as e:
+            console.print(f"⚠️ [italic red]İcracı: Fatura kontrol edilirken hata oluştu: {e}[/italic red]")
+            return "Hata: Fatura bilgileri alınırken bir sorun oluştu."
+        
+    def summarize_tool_result(self, tool_response_content: str) -> str:
+        iron_cage_prompt = f"""UYARI: Aşağıdaki JSON gerçek API yanıtıdır. Bu veriyi AYNEN kullan.
+
+GERÇEK JSON:
+```json
+{tool_response_content}
+```
+
+KURALLARI:
+1. Bu JSON'daki rakamları AYNEN kullan
+2. Kendi rakam EKLEME
+3. Kendi JSON yaratma  
+4. Araç kodu YAZMA
+5. Sadece bu gerçek veriyi Türkçe özetle
+
+Bu gerçek JSON'dan tek paragraf Türkçe özet:"""
+        
+        # Özetleme için özel sistem mesajı
+        summarizer_prompt = """Sen, API yanıtlarını Türkçe özetleyen bir asistansın. 
+
+KURALLAR:
+- Sadece verilen JSON verisini kullan
+- Kullanıcıya direkt hitap et ("Sizin için...", "Talebiniz...")
+- ASLA üçüncü şahıs konuşması yapma ("kullanıcının", "müşterinin")
+- HİÇBİR ZAMAN araç çağırma kodu kullanma
+- Samimi ve kişisel bir ton kullan"""
+        
+        dialogue = [{"role": "system", "content": summarizer_prompt}, {"role": "user", "content": iron_cage_prompt}]
+        
+        console.print("[yellow]... İcracı veriye sadık kalarak özetliyor ...[/yellow]")
+        summary_response = self.llm.create_chat_completion(
+            messages=dialogue, 
+            temperature=0.0,  # Halüsinasyonu önlemek için sıfır
+            stop=["<|eot_id|>"],
+            max_tokens=256,
+            repeat_penalty=1.2,
+            top_k=1,    # En muhtemel kelimeyi seç
+            top_p=0.1   # Çok düşük yaratıcılık
+        )
+        raw_summary = summary_response['choices'][0]['message']['content']
+        
+        # Tool code kalıntılarını temizle
+        clean_summary = re.sub(r'<\|begin_of_tool_code\|>.*?<\|end_of_tool_code\|>', '', raw_summary, flags=re.DOTALL).strip()
+        clean_summary = re.sub(r'print\(.*?\)', '', clean_summary).strip()
+        
+        return clean_summary if clean_summary else raw_summary
+
+    def run_task(self, user_input: str, context_data: Dict[str, Any] = None) -> Tuple[Optional[str], bool]:
+        """Verilen tek bir görevi çok-adımlı tool-calling döngüsüyle çalıştırır."""
+        conversation: List[Dict[str, Any]] = [
+            {"role": "system", "content": self.system_prompt},
+            {"role": "user", "content": user_input}
+        ]
+
+        executed_any_tool = False
+        last_assistant_text: Optional[str] = None
+
+        for _ in range(MAX_TOOL_STEPS):
+            response = self.llm.create_chat_completion(
+                messages=conversation,
+                temperature=TEMPERATURE,
+                stop=["<|eot_id|>"],
+                max_tokens=512,
+                repeat_penalty=1.1,
+                top_k=40,
+                top_p=0.9,
+                tools=TOOL_DEFINITIONS_LIST,
+                tool_choice="auto"
+            )
+
+            msg = response['choices'][0]['message']
+            assistant_response_text = msg.get('content') or ""
+            last_assistant_text = assistant_response_text
+            conversation.append({"role": "assistant", "content": assistant_response_text})
+
+            raw_tool_calls = msg.get('tool_calls')
+            parsed_calls: List[Dict[str, Any]] = []
+            if raw_tool_calls:
+                for call in raw_tool_calls:
+                    try:
+                        fn_name = call.get('function', {}).get('name')
+                        raw_args = call.get('function', {}).get('arguments') or "{}"
+                        args = json.loads(raw_args) if isinstance(raw_args, str) else (raw_args or {})
+                        parsed_calls.append({"name": fn_name, "arguments": args, "id": call.get('id')})
+                    except Exception:
+                        continue
+
+            if not parsed_calls:
+                fallback_calls = self.parse_tool_calls(assistant_response_text)
+                if fallback_calls:
+                    parsed_calls = [{"name": c["name"], "arguments": c["arguments"], "id": None} for c in fallback_calls]
+
+            if not parsed_calls:
+                break
+
+            for call in parsed_calls:
+                executed_any_tool = True
+                console.print(f"🛠️  [bold yellow]İcracı Araç Çağrısı:[/bold yellow] [green]{call['name']}({call['arguments']})[/green]")
+                tool_resp = self.execute_tool({"name": call['name'], "arguments": call['arguments']}, context_data)
+                tool_message = {"role": "tool", "content": tool_resp}
+                if call.get('id'):
+                    tool_message["tool_call_id"] = call['id']
+                    tool_message["name"] = call['name']
+                conversation.append(tool_message)
+
+        return (last_assistant_text or ""), executed_any_tool
+
+# --- Katman 1: Orkestra Şefi (ConversationManager) ---
+class ConversationManager:
+    """Sohbeti yöneten, hafızayı tutan ve Executor'ı tetikleyen katman."""
+
+    def __init__(self, llm_model):
+        self.llm = llm_model
+        self.executor = Executor(llm_model)
+        self.dialogue = [
+            {"role": "system", "content": self._create_system_prompt()}
+        ]
+        # Bağlamsal bilgi deposu
+        self.context_data = {}
+
+    def _create_system_prompt(self) -> str:
+        return """Sen, UniqeAi tarafından geliştirilmiş, nazik, yardımsever ve Türkçe konuşan bir Telekom Müşteri Hizmetleri Asistanısın. 
+
+ÖNEMLI KONUŞMA KURALLARI:
+- Her zaman kullanıcıya direkt hitap et ("Sizin faturanız...", "Size yardımcı olabilirim...")
+- ASLA üçüncü şahıs konuşması yapma ("müşterimize", "kullanıcının" gibi)
+- Sıcak, samimi ve kişisel bir ton kullan
+- Kullanıcının sorularını anla ve uygun eylemi gerçekleştir
+
+Görevin, kullanıcıyla sohbet etmek, konuşmanın geçmişini hatırlamak ve bir eylem gerçekleştirilmesi gerektiğinde ilgili aracı çağırmaktır."""
+
+    def _intelligent_decision(self, user_input: str) -> bool:
+        """Yapay zeka tabanlı akıllı karar verme sistemi - Anahtar kelime değil, gerçek anlama dayalı"""
+        decision_prompt = """Sen bir karar verici asistansın. Kullanıcının isteğini analiz et ve şu soruyu yanıtla:
+
+Bu istek için bir araç (API çağrısı) gerekli mi?
+
+ARAÇ GEREKTİREN DURUMLAR:
+- Fatura bilgisi sorgulanıyor (miktarı, son ödeme tarihi, detayları)
+- Paket/tarife değişikliği isteniyor
+- Teknik destek talebi var (internet hızı testi, arıza kaydı)
+- Ödeme işlemi yapılacak
+- Kota/kullanım bilgisi isteniyor
+- Hat işlemleri (askıya alma, aktifleştirme)
+- Roaming aktivasyonu
+
+ARAÇ GEREKTİRMEYEN DURUMLAR:
+- Genel sohbet ve selamlaşma
+- Bilgi alma ve açıklama isteme
+- Şikayetler (araç gerektirmeyen)
+- Genel sorular
+
+SADECE 'EVET' veya 'HAYIR' yanıtla. Başka hiçbir şey yazma."""
+
+        dialogue = [
+            {"role": "system", "content": decision_prompt},
+            {"role": "user", "content": f"Kullanıcı isteği: {user_input}"}
+        ]
+
+        try:
+            response = self.llm.create_chat_completion(
+                messages=dialogue, 
+                temperature=0.1,  # Tutarlı karar için düşük sıcaklık
+                max_tokens=10,    # Sadece EVET/HAYIR için
+                stop=["<|eot_id|>"],
+                repeat_penalty=1.1
+            )
+            decision = response['choices'][0]['message']['content'].strip().upper()
+            console.print(f"[italic grey50]🧠 Karar: {decision}[/italic grey50]")
+            return "EVET" in decision
+        except Exception as e:
+            console.print(f"[red]Karar verme hatası: {e}[/red]")
+            # Hata durumunda güvenli tarafta kal - araç kullanma
+            return False
+
+    def handle_user_input(self, user_input: str):
+        self.dialogue.append({"role": "user", "content": user_input})
+        
+        # 1. Adım: YAPAY ZEKA TABANLI KARAR VERME (Anahtar kelime sistemi kaldırıldı)
+        console.print("[yellow]... Orkestra Şefi akıllı karar veriyor ...[/yellow]")
+        should_execute_tool = self._intelligent_decision(user_input)
+
+        if should_execute_tool:
+            # Kullanıcı girdisinden doğrudan fatura ID'si çıkar
+            user_specified_bill_id = self._extract_bill_id_from_user_input(user_input)
+            if user_specified_bill_id:
+                self.context_data['last_bill_id'] = user_specified_bill_id
+                console.print(f"🧠 [italic blue]Orkestra Şefi: Kullanıcının belirttiği fatura ID ({user_specified_bill_id}) hafızaya kaydedildi.[/italic blue]")
+            
+            # 2. Adım: Görevi İcracı'ya devret
+            console.print("[cyan]Orkestra Şefi: Eylem gerektiren bir komut algılandı. Görev İcracı'ya devrediliyor...[/cyan]")
+            summary, executed = self.executor.run_task(user_input, self.context_data)
+            
+            if executed:
+                # 3. Adım: İcracı'dan gelen sonucu hafızaya ekle ve sun
+                self.dialogue.append({"role": "assistant", "content": summary})
+                
+                # Bağlamsal bilgileri güncelle (fatura bilgilerini çıkar)
+                self._extract_context_from_response(summary)
+                
+                console.print(f"🤖 [bold green]Asistan (Orkestra Şefi):[/bold green] ", end="")
+                console.print(Markdown(summary))
+            else:
+                # İcracı araç bulamadı, normal sohbet olarak devam et
+                self.handle_chat(summary)
+        else:
+            # 2. Adım (Alternatif): Normal sohbet et
+            console.print("[cyan]Orkestra Şefi: Normal sohbet olarak devam ediliyor...[/cyan]")
+            self.handle_chat(user_input)
+    
+    def _extract_context_from_response(self, response: str):
+        """Yanıttan bağlamsal bilgileri çıkarır ve depolar."""
+        # Fatura ID'sini yakala (F-2024-SIM-8901 formatında)
+        import re
+        bill_id_match = re.search(r'F-\d{4}-[A-Z]+-\d+', response)
+        if bill_id_match:
+            self.context_data['last_bill_id'] = bill_id_match.group(0)
+            console.print(f"🧠 [italic blue]Orkestra Şefi: Fatura ID ({bill_id_match.group(0)}) hafızaya kaydedildi.[/italic blue]")
+    
+    def _extract_bill_id_from_user_input(self, user_input: str) -> Optional[str]:
+        """Kullanıcı girdisinden fatura ID'sini çıkarır."""
+        import re
+        bill_id_match = re.search(r'F-\d{4}-[A-Z0-9]+-\d+|F-\d{4}-\d+|F-\d{7,}', user_input)
+        return bill_id_match.group(0) if bill_id_match else None
+    
+    def handle_chat(self, last_input: str):
+        # Hafızayı koruyarak normal bir sohbet yanıtı üret
+        response = self.llm.create_chat_completion(
+            messages=self.dialogue, 
+            temperature=0.5, 
+            stop=["<|eot_id|>"],
+            max_tokens=512,  # Sohbet için optimize edilmiş token sayısı
+            repeat_penalty=1.1,
+            top_k=40,
+            top_p=0.9
+        )
+        chat_response = response['choices'][0]['message']['content']
+        self.dialogue.append({"role": "assistant", "content": chat_response})
+        console.print(f"🤖 [bold green]Asistan (Orkestra Şefi):[/bold green] ", end="")
+        console.print(Markdown(chat_response))
+
+
+def main_loop(llm: "Llama"):
+    console.print("\n" + "="*60, style="bold green")
+    console.print("🤖 [bold green]UniqeAi Telekom Agent v8.0 (Akıllı Karar + Performans)[/bold green]")
+    console.print("   🧠 YENİ: Yapay zeka tabanlı karar verme (anahtar kelime sistemi kaldırıldı)")
+    console.print("   ⚡ HIZLI: GPU optimizasyonu + bellek yönetimi iyileştirmesi")
+    console.print("   🎯 AKILLI: Model kendi kararını veriyor, yarışma kurallarına uygun")
+    console.print("   💡 Çıkmak için 'quit' veya 'exit' yazabilirsiniz.")
+    console.print("="*60, style="bold green")
+    
+    manager = ConversationManager(llm)
+
+    while True:
+        try:
+            user_input = console.input("\n[bold blue]👤 Siz:[/bold blue] ")
+            if user_input.lower() in ["quit", "exit"]: break
+            if user_input.lower() == "new":
+                console.print("[bold yellow]Yeni bir sohbet oturumu başlatılıyor...[/bold yellow]")
+                manager = ConversationManager(llm)
+                continue
+        except (KeyboardInterrupt, EOFError): break
+        
+        manager.handle_user_input(user_input)
+
+    console.print("\n[bold red]Görüşmek üzere![/bold red]")
+
+if __name__ == "__main__":
+    llm_model = load_gguf_model()
+    if llm_model:
+        main_loop(llm_model)
