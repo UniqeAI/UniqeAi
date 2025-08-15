@@ -96,6 +96,8 @@ def setup_huggingface_token():
 
 def format_dialogue(item: Dict[str, Any]) -> List[Dict[str, Any]]:
     dialogue = []
+
+
     for turn in item["donguler"]:
         role = turn["rol"]
         content = turn.get("icerik")

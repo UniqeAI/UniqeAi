@@ -37,7 +37,7 @@ const isListening = ref(false)
 const transcript = ref('')
 const recognition = ref(null)
 
-const emit = defineEmits(['voiceInput'])
+const emit = defineEmits(['voice-result'])
 
 onMounted(() => {
   // Web Speech API desteği kontrolü
@@ -58,15 +58,25 @@ onMounted(() => {
     
     recognition.value.onresult = (event) => {
       let finalTranscript = ''
+      let interimTranscript = ''
+      
       for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
           finalTranscript += event.results[i][0].transcript
+        } else {
+          interimTranscript += event.results[i][0].transcript
         }
       }
       
+      // Show interim results as user speaks
+      transcript.value = finalTranscript || interimTranscript
+      
       if (finalTranscript) {
-        transcript.value = finalTranscript
-        emit('voiceInput', finalTranscript)
+        emit('voice-result', finalTranscript)
+        // Clear transcript after sending
+        setTimeout(() => {
+          transcript.value = ''
+        }, 500)
       }
     }
     

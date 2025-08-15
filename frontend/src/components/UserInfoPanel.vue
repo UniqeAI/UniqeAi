@@ -1,5 +1,5 @@
 <template>
-  <div class="user-info-panel">
+  <div v-if="isVisible" class="user-info-panel fixed top-16 left-4 z-40">
     <div class="panel-header">
       <h3 class="panel-title">Kullanıcı Bilgileri</h3>
       <button @click="togglePanel" class="toggle-btn">
@@ -70,9 +70,17 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { userAPI, telekomAPI } from '../services/api.js'
 
+// Props tanımlama
+const props = defineProps({
+  isVisible: {
+    type: Boolean,
+    default: false
+  }
+})
+
 const router = useRouter()
 
-const isExpanded = ref(false)
+const isExpanded = ref(true)
 const userInfo = ref({
   name: '',
   email: '',

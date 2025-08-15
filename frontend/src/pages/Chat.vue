@@ -472,14 +472,11 @@
             <!-- Bot Message Actions -->
             <BotMessageActions
               v-if="message.sender !== 'user'"
+              :message="message.text"
               :messageId="message.id"
-              :messageText="message.text"
-              :darkMode="darkMode"
-              :currentTheme="currentTheme"
-              :feedback="message.feedback || {}"
-              :userQuestion="message.userQuestion || ''"
-              :userId="userId || ''"
-              @feedback-changed="handleFeedbackChanged"
+              @like="handleFeedbackChanged"
+              @dislike="handleFeedbackChanged"
+              @speak="handleSpeakMessage"
             />
           </div>
         </div>
@@ -1109,14 +1106,21 @@ export default {
     },
     handleVoiceResult(voiceText) {
       // Set the voice text to message input
-      this.message = voiceText
+      this.message = voiceText.trim()
+      
+      // Focus on input field to show the text
+      this.$nextTick(() => {
+        if (this.$refs.messageInput) {
+          this.$refs.messageInput.focus()
+        }
+      })
       
       // Auto-send the message after a short delay for better UX
       setTimeout(() => {
         if (this.message.trim()) {
           this.sendMessage()
         }
-      }, 1000)
+      }, 1500)
     },
     handleFeedbackChanged(feedbackData) {
       // Handle feedback changes from bot message actions
@@ -1130,6 +1134,13 @@ export default {
       
       // You can add analytics or send feedback to backend here
       // For example: analytics.track('bot_message_feedback', feedbackData)
+    },
+    handleSpeakMessage(speakData) {
+      // Handle speak action from bot message actions
+      console.log('Message spoken:', speakData)
+      
+      // You can add analytics or other actions here
+      // For example: analytics.track('bot_message_spoken', speakData)
     },
     handleInputKeydown(event) {
       // Handle Enter key specifically for input field
