@@ -125,7 +125,7 @@ python -m src.benchmark.run --models models.yaml \
 - Herkese açık indirme bağlantısı (örnek, Release varlıkları üzerinden):
 
 ```
-https://github.com/REPO_OWNER/REPO_NAME/releases/latest/download/ultimate_human_level_dataset_v2_enhanced_20250809_033446.json
+https://github.com/UniqeAI/UniqeAi/releases/latest/download/ultimate_human_level_dataset_v2_enhanced_20250809_033446.json
 ```
 
 Alternatif barındırma seçenekleri:
