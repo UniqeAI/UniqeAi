@@ -10,7 +10,13 @@ class Settings:
     # Hugging Face Model Ayarları
     HUGGING_FACE_MODEL_NAME: str = os.getenv(
         "HUGGING_FACE_MODEL_NAME", 
-        "Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf"
+        "Choyrens/ChoyrensAI-Telekom-Agent-v6-gguf"
+    )
+    
+    # Yerel Model Yolu
+    LOCAL_MODEL_PATH: str = os.getenv(
+        "LOCAL_MODEL_PATH",
+        r"C:\Users\erkan\Desktop\ChoyrensAi-models\choyrens_model_v4_gguf"
     )
     
     # Backend Ayarları
@@ -25,20 +31,28 @@ class Settings:
         "http://127.0.0.1:3000",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "http://[::1]:5173",
         "http://localhost:5174",
         "http://127.0.0.1:5174",
+        "http://[::1]:5174",
         "http://localhost:5175",
         "http://127.0.0.1:5175",
+        "http://[::1]:5175",
         "http://localhost:5176",
         "http://127.0.0.1:5176",
+        "http://[::1]:5176",
         "http://localhost:5177",
         "http://127.0.0.1:5177",
+        "http://[::1]:5177",
         "http://localhost:5178",
         "http://127.0.0.1:5178",
+        "http://[::1]:5178",
         "http://localhost:5179",
         "http://127.0.0.1:5179",
+        "http://[::1]:5179",
         "http://localhost:5180",
-        "http://127.0.0.1:5180"
+        "http://127.0.0.1:5180",
+        "http://[::1]:5180"
     ]
     
     # Logging Ayarları
@@ -51,7 +65,7 @@ class Settings:
     def get_ai_orchestrator_class(cls) -> str:
         """AI orchestrator sınıfını döndür"""
         if cls.AI_MODEL_TYPE == "real":
-            return "ai_orchestrator_real"
+            return "ai_orchestrator_v4"  # Yeni v4 orkestratörü kullan
         else:
             return "ai_orchestrator"
     

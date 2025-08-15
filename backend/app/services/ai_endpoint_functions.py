@@ -102,7 +102,7 @@ class AIEndpointFunctions:
             Sistem durumu bilgileri
         """
         try:
-            from app.services.ai_orchestrator_real import ai_orchestrator
+            from app.services.ai_orchestrator_v4 import ai_orchestrator_v4 as ai_orchestrator
             
             durum = await ai_orchestrator.sistem_durumu_getir()
             

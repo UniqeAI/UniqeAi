@@ -21,7 +21,7 @@ except ImportError:
 
 # LangChain entegrasyonu
 try:
-    from langchain_community.llms import HuggingFacePipeline
+    from langchain.llms import HuggingFacePipeline
     from langchain.prompts import PromptTemplate
     from langchain.chains import LLMChain
     LANGCHAIN_AVAILABLE = True
@@ -54,8 +54,11 @@ class YapayZekaOrkestratori:
         self.langchain_chain = None
         self._model_loaded = False
         
-        # Model adı - GGUF Telekom AI modeli (v5 eklendi)
-        self.model_name = "Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf"
+        # Model adı - GGUF Telekom AI modeli
+        self.model_name = "Choyrens/ChoyrensAI-Telekom-Agent-v4-gguf"
+        
+        # Yeni model yolu
+        self.local_model_path = r"C:\Users\erkan\Desktop\ChoyrensAi-models\choyrens_model_v4_gguf"
         
         # Türkçe NLP için Zemberek
         try:
@@ -81,36 +84,18 @@ class YapayZekaOrkestratori:
                 
                 logger.info("GGUF Telekom AI modeli llama-cpp-python ile yükleniyor...")
                 
-                # Model yolu - v5 için dinamik yükleme
-                import os
-                from huggingface_hub import snapshot_download
-                
-                # Model'i Hugging Face'den indir
-                model_path = snapshot_download(
-                    repo_id=self.model_name,
-                    local_dir="./models"
-                )
-                
-                # GGUF dosyasını bul
-                gguf_files = [f for f in os.listdir(model_path) if f.endswith('.gguf')]
-                if gguf_files:
-                    model_file = os.path.join(model_path, gguf_files[0])
-                else:
-                    raise FileNotFoundError(f"GGUF dosyası bulunamadı: {model_path}")
+                # Yeni model yolu ile yükle
+                model_path = self.local_model_path
                 
                 logger.info(f"Model dosyası: {model_path}")
                 
-                # GGUF model yükleme - llama-cpp-python ile (v5 için optimize edildi)
+                # GGUF model yükleme - llama-cpp-python ile
                 self.model = Llama(
-                    model_path=model_file,
-                    n_ctx=8192,  # Context length artırıldı (v5 için maksimum)
-                    n_threads=16,  # Thread sayısını artır
-                    n_batch=32,  # Batch size artır
-                    n_gpu_layers=0,  # CPU kullan
-                    verbose=False,  # Verbose kapalı
-                    use_mlock=True,  # Memory locking
-                    use_mmap=True,  # Memory mapping
-                    seed=42  # Deterministic results
+                    model_path=model_path,
+                    n_ctx=2048,  # Context length
+                    n_threads=4,  # Thread sayısı
+                    n_batch=1,  # Batch size
+                    verbose=False  # Verbose kapalı
                 )
                 
                 # Tokenizer için basit bir wrapper
@@ -166,8 +151,16 @@ class YapayZekaOrkestratori:
             # LangChain LLM wrapper
             llm = HuggingFacePipeline(pipeline=pipe)
             
-            # Prompt template - AI'ya mantıklı yönlendirme
-            template = """Sen bir Telekom AI asistanısın. Kullanıcının sorununu mantıklı bir şekilde anla ve uygun çözüm öner.
+            # Prompt template
+            template = """Sen bir Telekom AI asistanısın. Kullanıcının sorununu anla ve uygun aracı seç.
+
+Mevcut araçlar:
+- get_past_bills: Geçmiş faturalar
+- get_current_bill: Mevcut fatura
+- get_available_packages: Kullanılabilir paketler
+- get_remaining_quotas: Kalan kotas
+- check_network_status: Ağ durumu
+- test_internet_speed: İnternet hızı testi
 
 Kullanıcı: {user_input}
 Yanıt:"""
@@ -189,28 +182,45 @@ Yanıt:"""
             return text.lower()
         
         try:
-            # Zemberek ile lemmatization - güncellenmiş API kullanımı
+            # Zemberek ile lemmatization
             analysis = self.morphology.analyze(text)
             lemmas = []
             for result in analysis:
-                # Zemberek API'sinin farklı versiyonları için uyumluluk
-                if hasattr(result, 'analysis') and result.analysis:
+                if result.analysis:
                     lemmas.append(result.analysis[0].dictionary_item.lemma)
-                elif hasattr(result, 'dictionary_item') and result.dictionary_item:
-                    lemmas.append(result.dictionary_item.lemma)
-                elif hasattr(result, 'lemma'):
-                    lemmas.append(result.lemma)
-                else:
-                    # Eğer hiçbiri çalışmazsa, orijinal kelimeyi kullan
-                    continue
             
             return " ".join(lemmas).lower() if lemmas else text.lower()
         except Exception as e:
             logger.warning(f"Türkçe ön işleme hatası: {e}")
             return text.lower()
     
+    def _create_system_prompt(self, mevcut_araclar: Dict[str, Any]) -> str:
+        """Gelişmiş sistem promptu oluştur"""
+        
+        return f"""Sen bir Telekom AI asistanısın. Kullanıcının sorununu anla ve uygun aracı seç.
+
+Mevcut araçlar:
+- get_past_bills: Geçmiş faturalar (geçmiş faturalarım, önceki faturalar)
+- get_current_bill: Mevcut fatura (şu anki fatura, güncel fatura)
+- get_available_packages: Kullanılabilir paketler (paketler, tarifeler)
+- get_remaining_quotas: Kalan kotas (kota, kullanım)
+- check_network_status: Ağ durumu (ağ, bağlantı)
+- test_internet_speed: İnternet hızı testi (hız testi, speed test)
+
+Kurallar:
+- Sadece tek bir araç seç
+- Liste yapma, açıklama yapma
+- Sadece araç adını yaz
+
+Örnekler:
+- "geçmiş faturalarım" → get_past_bills
+- "ağ durumu" → check_network_status
+- "paketler" → get_available_packages
+
+Kullanıcı sorusu: """
+    
     async def _generate_response(self, dialogue: List[Dict[str, str]]) -> str:
-        """AI yanıt üretimi - AI'ya mantıklı yönlendirme"""
+        """Gelişmiş AI yanıt üretimi"""
         try:
             # Son kullanıcı mesajını al
             user_message = ""
@@ -221,95 +231,79 @@ Yanıt:"""
             
             logger.info(f"AI modeli yanıt üretiyor: {user_message}")
             
+            # AI düşünce süreci başlıyor
+            logger.info("🤔 AI DÜŞÜNCE SÜRECİ BAŞLIYOR...")
+            logger.info(f"📝 Gelen mesaj: '{user_message}'")
+            
+            # Türkçe ön işleme
+            processed_message = self._turkish_preprocessing(user_message)
+            logger.info(f"🔧 İşlenmiş mesaj: '{processed_message}'")
+            
+            # AI analiz süreci
+            logger.info("🔍 AI MESAJ ANALİZİ:")
+            if "konya" in processed_message.lower():
+                logger.info("   📍 Konum tespit edildi: Konya")
+            if "telefon" in processed_message.lower() or "çekmiyor" in processed_message.lower():
+                logger.info("   📱 Telefon/ağ sorunu tespit edildi")
+            if "fatura" in processed_message.lower() or "ödeme" in processed_message.lower():
+                logger.info("   💰 Fatura/ödeme konusu tespit edildi")
+            if "paket" in processed_message.lower():
+                logger.info("   📦 Paket konusu tespit edildi")
+            if "kota" in processed_message.lower():
+                logger.info("   📊 Kota konusu tespit edildi")
+            
             # GGUF modeli kullan (eğer yüklüyse)
             if self._model_loaded and self.model:
                 try:
                     logger.info("GGUF modeli yanıt üretiyor...")
                     
-                    # AI'ya mantıklı yönlendirme veren prompt
-                    prompt = f"""<|im_start|>system
-Sen Choyrens AI, Telekom müşteri hizmetleri asistanısın. Kullanıcıyla mantıklı ve tutarlı bir konuşma yap.
+                    # GGUF modeli ile yanıt üret
+                    response = self.model(
+                        f"""Sen bir Telekom müşteri hizmetleri asistanısın. Kullanıcının mesajını analiz et ve düşünce sürecini göster.
 
-KİŞİLİĞİN:
-- Samimi ve yardımsever ol
-- Telekom hizmetleri konusunda uzman ol
-- Mantıklı ve tutarlı yanıtlar ver
-- Kullanıcının sorununu anla ve çözüm öner
-- Gereksiz teknik terimler kullanma
-- Doğal Türkçe konuş
+DÜŞÜNCE SÜRECİ:
+1. Kullanıcının konumunu ve durumunu analiz et
+2. Hangi Telekom hizmeti ile ilgili olduğunu belirle
+3. Uygun aracı seç ve nedenini açıkla
+4. Doğal bir yanıt ver
 
-YANIT TARZIN:
-- "Merhaba! Size nasıl yardımcı olabilirim?" gibi samimi
-- "Anlıyorum, bu durum gerçekten zor olabilir" gibi empatik
-- "Hemen kontrol edeyim" gibi yardımsever
-- "Size en uygun çözümü bulacağım" gibi güven verici
-
-MANTIKLI YÖNLENDİRME:
-- Kullanıcının sorununu anla
-- Uygun Telekom hizmetini öner
-- Gerektiğinde araç çağır
-- Tutarlı ve anlaşılır yanıtlar ver
-- Konu dışına çıkma
-
-ARAÇ ÇAĞRISI: Gerektiğinde araç çağır. Format: [arac_adi]
+Örnek düşünce süreci:
+- "konya yolundayım telefonum çekmiyor" 
+  → Kullanıcı Konya'da, telefon çekmiyor
+  → Ağ durumu sorunu var
+  → check_network_status aracını kullanmalıyım
+  → "Konya'da telefon çekme sorunu yaşıyorsunuz. Ağ durumunu kontrol ediyorum. [check_network_status]"
 
 Telekom araçları:
-- get_current_package: Mevcut paket bilgisi
-- get_past_bills: Geçmiş faturalar
-- get_current_bill: Mevcut fatura
-- check_network_status: Ağ durumu
-- test_internet_speed: İnternet hızı testi
-- get_remaining_quotas: Kalan kotas
-- get_available_packages: Kullanılabilir paketler
-- get_customer_profile: Müşteri profili
-- create_support_ticket: Destek talebi oluşturma
-- pay_bill: Fatura ödeme
-- setup_autopay: Otomatik ödeme
-- get_payment_history: Ödeme geçmişi
-- change_package: Paket değiştirme
-- get_package_details: Paket detayları
-- update_customer_contact: İletişim bilgisi güncelleme
-- enable_roaming: Yurtdışı hizmetleri
-- suspend_line: Hat askıya alma
-- reactivate_line: Hat aktifleştirme
-- close_support_ticket: Destek talebi kapatma
-- get_support_ticket_status: Destek talebi durumu
-- get_user_support_tickets: Destek talepleri listesi
-- auth_register: Kayıt olma
-- auth_login: Giriş yapma
+- get_past_bills: Geçmiş faturalar, önceki faturalar, fatura geçmişi
+- get_current_bill: Mevcut fatura, şu anki fatura, güncel fatura
+- get_available_packages: Kullanılabilir paketler, tarifeler, paket seçenekleri
+- get_remaining_quotas: Kalan kota, kullanım durumu, data kullanımı
+- check_network_status: Ağ durumu, bağlantı durumu, sinyal
+- test_internet_speed: İnternet hızı testi, speed test
 
-ÖNEMLİ: Mantıklı ve tutarlı yanıtlar ver, Telekom odaklı kal.
-<|im_end|>
-<|im_start|>user
-{user_message}
-<|im_end|>
-<|im_start|>assistant
-"""
-                    
-                    # Model çağrısı - mantıklı yönlendirme için optimize edildi
-                    response = self.model(
-                        prompt,
-                        max_tokens=2048,
-                        temperature=0.7,  # Daha tutarlı
-                        top_p=0.9,  # Daha odaklı
-                        repeat_penalty=1.1,  # Tekrarı azalt
-                        stop=["<|im_end|>", "<|im_start|>"]
+Kullanıcı: {processed_message}
+Asistan:""",
+                        max_tokens=100,
+                        temperature=0.3,
+                        stop=["Kullanıcı:", "\n\n"]
                     )
                     
-                    # Response parsing
-                    if hasattr(response, 'choices') and response.choices:
-                        ai_response = response.choices[0].text.strip()
-                    elif hasattr(response, 'text'):
-                        ai_response = response.text.strip()
-                    elif isinstance(response, dict) and 'choices' in response:
-                        ai_response = response['choices'][0]['text'].strip()
-                    else:
-                        ai_response = str(response).strip()
-                    
-                    # Response temizleme
-                    ai_response = ai_response.replace('<|im_start|>', '').replace('<|im_end|>', '').strip()
+                    ai_response = response['choices'][0]['text'].strip()
                     logger.info(f"🤖 GGUF YANITI: '{ai_response}'")
                     
+                    # AI düşünce süreci analizi
+                    logger.info("🧠 AI DÜŞÜNCE ANALİZİ:")
+                    if "check_network_status" in ai_response.lower():
+                        logger.info("   ✅ Ağ durumu aracı seçildi")
+                    if "get_past_bills" in ai_response.lower():
+                        logger.info("   ✅ Geçmiş faturalar aracı seçildi")
+                    if "get_available_packages" in ai_response.lower():
+                        logger.info("   ✅ Kullanılabilir paketler aracı seçildi")
+                    if "get_remaining_quotas" in ai_response.lower():
+                        logger.info("   ✅ Kalan kotalar aracı seçildi")
+                    
+                    logger.info("🎯 AI DÜŞÜNCE SÜRECİ TAMAMLANDI")
                     return ai_response
                     
                 except Exception as e:
@@ -322,8 +316,8 @@ Telekom araçları:
                     # Timeout ile invoke kullan
                     loop = asyncio.get_event_loop()
                     response = await asyncio.wait_for(
-                        loop.run_in_executor(None, self.langchain_chain.invoke, {"user_input": user_message}),
-                        timeout=30.0
+                        loop.run_in_executor(None, self.langchain_chain.invoke, {"user_input": processed_message}),
+                        timeout=30.0  # 30 saniye timeout (artırıldı)
                     )
                     logger.info(f"LangChain yanıtı: {response}")
                     return str(response).strip()
@@ -332,47 +326,66 @@ Telekom araçları:
                 except Exception as e:
                     logger.warning(f"LangChain hatası, AI doğal yanıt veriyor: {e}")
             
-            # AI'nin mantıklı yanıtı
-            logger.info("AI mantıklı yanıt veriyor...")
-            return "Merhaba! Ben Choyrens AI, Telekom müşteri hizmetleri asistanınızım. Size nasıl yardımcı olabilirim? Fatura, paket, teknik destek veya başka bir konuda sorularınızı yanıtlayabilirim. 😊"
+            # AI'nin kendi karar vermesi - gelişmiş keyword detection
+            logger.info("AI kendi kararını veriyor...")
+            
+            # AI sadece LangChain ile karar verir, keyword detection yok
+            # Eğer LangChain timeout olursa, AI doğal yanıt verir
+            return "Anlıyorum. Size en uygun hizmeti bulmak için düşünüyorum. Hangi konuda yardım istiyorsunuz?"
             
         except Exception as e:
             logger.error(f"AI yanıt üretme hatası: {e}")
-            return "Üzgünüm, şu anda bir sorun yaşıyorum. Lütfen bir dakika sonra tekrar deneyin! 😅"
+            return "AI şu anda düşünüyor, lütfen tekrar deneyin."
     
     async def _parse_tool_calls(self, text: str, session_token: str = None) -> List[AracCagrisi]:
-        """AI yanıtından araç çağrılarını parse et - minimum müdahale"""
+        """AI yanıtından araç çağrılarını parse et"""
         arac_cagrilari = []
         
         try:
             # AI yanıtını temizle
-            cleaned_text = text.strip()
+            cleaned_text = text.strip().lower()
             logger.info(f"Parse edilecek metin: {cleaned_text}")
             
-            # Sadece açık araç çağrılarını bul - AI'nin kendi kararını vermesine izin ver
-            import re
+            # AI sadece LangChain yanıtını parse eder
+            # Keyword detection yok - AI kendi kararını verir
             
-            # Regex ile araç çağrılarını bul - sadece açık format
-            tool_pattern = r'\[([a-zA-Z_]+)\]'
-            tool_matches = re.findall(tool_pattern, text)
-            
-            for tool_name in tool_matches:
-                # Basit araç mapping - AI'nin kendi kararını vermesine izin ver
-                valid_tools = [
-                    "get_current_package", "get_past_bills", "get_current_bill", 
-                    "check_network_status", "test_internet_speed", "get_remaining_quotas",
-                    "get_available_packages", "get_customer_profile", "create_support_ticket",
-                    "pay_bill", "setup_autopay", "get_payment_history", "change_package",
-                    "get_package_details", "update_customer_contact", "enable_roaming",
-                    "suspend_line", "reactivate_line", "close_support_ticket",
-                    "get_support_ticket_status", "get_user_support_tickets",
-                    "auth_register", "auth_login"
-                ]
+            # Eğer AI araç adı döndürdüyse, onu kullan
+            # Format: "Açıklama. [get_past_bills]" veya sadece "get_past_bills"
+            if "get_past_bills" in cleaned_text:
+                arac_adi = "get_past_bills"
+                parametreler = {"session_token": session_token} if session_token else {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
                 
-                if tool_name in valid_tools:
-                    parametreler = {"session_token": session_token} if session_token else {}
-                    arac_cagrilari.append(AracCagrisi(tool_name, parametreler))
-                    logger.info(f"AI araç seçti: {tool_name}")
+            elif "get_current_bill" in cleaned_text:
+                arac_adi = "get_current_bill"
+                parametreler = {"session_token": session_token} if session_token else {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
+                
+            elif "get_available_packages" in cleaned_text:
+                arac_adi = "get_available_packages"
+                parametreler = {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
+                
+            elif "get_remaining_quotas" in cleaned_text:
+                arac_adi = "get_remaining_quotas"
+                parametreler = {"session_token": session_token} if session_token else {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
+                
+            elif "check_network_status" in cleaned_text:
+                arac_adi = "check_network_status"
+                parametreler = {"session_token": session_token} if session_token else {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
+                
+            elif "test_internet_speed" in cleaned_text:
+                arac_adi = "test_internet_speed"
+                parametreler = {}
+                arac_cagrilari.append(AracCagrisi(arac_adi, parametreler))
+                logger.info(f"AI araç seçti: {arac_adi}")
             
             logger.info(f"AI toplam {len(arac_cagrilari)} araç seçti")
             
@@ -382,22 +395,37 @@ Telekom araçları:
         return arac_cagrilari
     
     async def kullanici_mesaj_isle(self, mesaj: str, kullanici_id: str, oturum_id: str, session_token: str = None) -> Dict[str, Any]:
-        """Ana mesaj işleme fonksiyonu - AI'ya minimum müdahale"""
+        """Ana mesaj işleme fonksiyonu"""
         logger.info(f"AI Orchestrator'a iletilen session_token: {session_token}")
         
         try:
             logger.info(f"Kullanıcı mesajı işleniyor: {kullanici_id} - {mesaj[:50]}...")
             
-            # Konuşma bağlamını hazırla - AI'nin doğal akışını bozma
-            dialogue = [{"role": "user", "content": mesaj}]
+            # Mesajı ön işle
+            islenmis_mesaj = self._turkish_preprocessing(mesaj)
+            logger.info(f"İşlenmiş mesaj: {islenmis_mesaj}")
+            
+            # Konuşma bağlamını hazırla
+            dialogue = [{"role": "user", "content": islenmis_mesaj}]
             logger.info(f"Bağlam mesaj sayısı: {len(dialogue)}")
             
-            # AI yanıtı üret - minimum müdahale
+            # Mevcut araçları hazırla
+            mevcut_araclar = {
+                "get_past_bills": "Geçmiş faturalar",
+                "get_current_bill": "Mevcut fatura",
+                "get_available_packages": "Kullanılabilir paketler",
+                "get_remaining_quotas": "Kalan kotas",
+                "check_network_status": "Ağ durumu",
+                "test_internet_speed": "İnternet hızı testi"
+            }
+            logger.info(f"Mevcut araç sayısı: {len(mevcut_araclar)}")
+            
+            # AI yanıtı üret (model yüklenmese bile)
             logger.info("AI yanıtı üretiliyor...")
             ai_response = await self._generate_response(dialogue)
             logger.info(f"AI yanıtı üretildi: {ai_response[:100]}...")
             
-            # Araç çağrılarını parse et - sadece açık çağrılar
+            # Araç çağrılarını parse et
             logger.info("🔧 ARAÇ PARSE SÜRECİ:")
             arac_cagrilari = await self._parse_tool_calls(ai_response, session_token)
             logger.info(f"📊 Araç çağrısı sayısı: {len(arac_cagrilari)}")
@@ -406,7 +434,7 @@ Telekom araçları:
                 logger.info(f"   🛠️ Araç {i+1}: {arac.arac_adi}")
                 logger.info(f"   📋 Parametreler: {arac.parametreler}")
             
-            # Araç çağrılarını yürüt - AI'nin kararını destekle
+            # Araç çağrılarını yürüt
             if arac_cagrilari:
                 logger.info(f"🚀 {len(arac_cagrilari)} ARAÇ YÜRÜTME SÜRECİ:")
                 for i, arac in enumerate(arac_cagrilari):
@@ -424,9 +452,10 @@ Telekom araçları:
                         arac.durum = "hata"
                         arac.hata_mesaji = str(e)
             
-            # Final yanıt - AI'nin yanıtını koru
-            logger.info("Final yanıt hazırlanıyor...")
-            final_yanit = ai_response  # AI'nin yanıtını olduğu gibi kullan
+            # Final yanıt üret
+            logger.info("Final yanıt üretiliyor...")
+            final_yanit = self._arac_sonuclarini_entegre_et(ai_response, arac_cagrilari)
+            logger.info(f"Final yanıt: {final_yanit[:100]}...")
             
             # Sonucu hazırla
             sonuc = {
@@ -532,40 +561,12 @@ Telekom araçları:
             from .ai_endpoint_functions import ai_endpoint_functions
             
             function_mapping = {
-                # Fatura İşlemleri
                 "get_current_bill": ai_endpoint_functions.telekom_get_current_bill,
                 "get_past_bills": ai_endpoint_functions.telekom_get_bill_history,
-                "pay_bill": ai_endpoint_functions.telekom_pay_bill,
-                "get_payment_history": ai_endpoint_functions.telekom_get_payment_history,
-                "setup_autopay": ai_endpoint_functions.telekom_setup_autopay,
-                
-                # Paket İşlemleri
-                "get_current_package": ai_endpoint_functions.telekom_get_current_package,
                 "get_available_packages": ai_endpoint_functions.telekom_get_available_packages,
-                "change_package": ai_endpoint_functions.telekom_change_package,
-                "get_package_details": ai_endpoint_functions.telekom_get_package_details,
                 "get_remaining_quotas": ai_endpoint_functions.telekom_get_remaining_quotas,
-                
-                # Müşteri İşlemleri
-                "get_customer_profile": ai_endpoint_functions.telekom_get_customer_profile,
-                "update_customer_contact": ai_endpoint_functions.telekom_update_customer_contact,
-                "enable_roaming": ai_endpoint_functions.telekom_enable_roaming,
-                
-                # Ağ ve Teknik İşlemler
                 "check_network_status": ai_endpoint_functions.telekom_check_network_status,
                 "test_internet_speed": ai_endpoint_functions.telekom_test_internet_speed,
-                "suspend_line": ai_endpoint_functions.telekom_suspend_line,
-                "reactivate_line": ai_endpoint_functions.telekom_reactivate_line,
-                
-                # Destek İşlemleri
-                "create_support_ticket": ai_endpoint_functions.telekom_create_support_ticket,
-                "close_support_ticket": ai_endpoint_functions.telekom_close_support_ticket,
-                "get_support_ticket_status": ai_endpoint_functions.telekom_get_support_ticket_status,
-                "get_user_support_tickets": ai_endpoint_functions.telekom_get_user_support_tickets,
-                
-                # Kimlik Doğrulama
-                "auth_register": ai_endpoint_functions.telekom_auth_register,
-                "auth_login": ai_endpoint_functions.telekom_auth_login,
             }
             
             if arac_adi not in function_mapping:
@@ -578,12 +579,24 @@ Telekom araçları:
             result = await function(**parametreler)
             
             logger.info(f"AI Telekom API yanıtı: {result}")
-            logger.info(f"Araç {arac_adi} sonucu başarılı: {result.get('success', False)}")
             return result
             
         except Exception as e:
             logger.error(f"AI Telekom araç çağrısı hatası: {e}")
             raise
+    
+    def _arac_sonuclarini_entegre_et(self, temel_yanit: str, arac_sonuclari: List[AracCagrisi]) -> str:
+        """Araç sonuçlarını yanıta entegre et"""
+        if not arac_sonuclari:
+            return temel_yanit
+        
+        # Basit entegrasyon
+        basarili_sonuclar = [arac for arac in arac_sonuclari if arac.durum == "tamamlandi"]
+        
+        if basarili_sonuclar:
+            return f"İşleminiz tamamlandı. {len(basarili_sonuclar)} araç başarıyla çalıştırıldı."
+        else:
+            return "Üzgünüm, işleminiz sırasında bir hata oluştu."
     
     async def sistem_durumu_getir(self) -> Dict[str, Any]:
         """Sistem durumu bilgilerini getir"""
@@ -594,8 +607,7 @@ Telekom araçları:
             "turkish_nlp": ZEMBEREK_AVAILABLE,
             "langchain_available": LANGCHAIN_AVAILABLE,
             "timestamp": datetime.now().isoformat(),
-            "version": "2.2.0",
-            "ai_guidance_level": "logical"  # AI'nin mantıklı yönlendirme seviyesi
+            "version": "2.0.0"
         }
 
 # Global orkestratör örneği

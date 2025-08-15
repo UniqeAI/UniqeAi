@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex flex-col" :class="{ 'dark-mode': darkMode }">
-    <!-- Static Background -->
-    <div class="absolute inset-0" :class="currentTheme === 'monochrome' && darkMode ? 'bg-gray-100' : (darkMode ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' : 'bg-gradient-to-br from-blue-50 via-gray-50 to-slate-50')"></div>
-
-    <!-- Chat Container -->
-    <div class="relative z-10 flex-1 flex flex-col max-w-3xl mx-auto w-full min-h-screen">
+  <div class="flex flex-col h-screen" :class="{ 'dark-mode': darkMode }">
+    <!-- Single unified background for entire chat -->
+    <div class="fixed inset-0" :class="`bg-gradient-to-br ${currentBackground}`"></div>
+    
+    <!-- Chat Container with transparent background -->
+    <div class="relative flex flex-col h-full max-w-3xl mx-auto w-full z-10">
       <!-- Chat Header -->
       <div class="p-4 bg-transparent flex items-center justify-between relative z-10">
         <div class="flex items-center">
@@ -31,10 +31,27 @@
             <div class="w-2 h-2 rounded-full" :class="isConnected ? 'bg-green-500' : 'bg-red-500'"></div>
             {{ isConnected ? 'Bağlı' : 'Bağlantı Yok' }}
           </div>
+          
+
         </div>
       </div>
 
-      <!-- Theme Controls - Fixed Position -->
+      <!-- User Info - Fixed Position Top Left -->
+      <div class="fixed top-4 left-4 z-30 flex items-center gap-3">
+        <!-- User Profile Button -->
+        <button 
+          @click="toggleUserPanel"
+          class="btn p-3 rounded-full backdrop-blur-sm border transition-all duration-300 shadow-lg"
+          :class="currentTheme === 'monochrome' ? 'border-black/30 hover:bg-black/20 text-white' : 'border-blue-500/30 hover:bg-blue-600/20 text-blue-400'"
+          title="Kullanıcı Profili"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Theme Controls - Fixed Position Top Right -->
       <div class="fixed top-4 right-4 z-30 flex items-center gap-3">
         <!-- Theme Color Toggle with Dropdown -->
         <div class="relative theme-menu-container">
@@ -92,17 +109,17 @@
           class="btn p-3 rounded-full backdrop-blur-sm border transition-all duration-300 shadow-lg"
           :class="currentTheme === 'monochrome' ? 'border-black/30 hover:bg-black/20' : 'border-blue-500/30 hover:bg-blue-600/20'"
         >
-          <svg v-if="darkMode" class="w-5 h-5 flex items-center justify-center" :class="currentTheme === 'monochrome' ? 'text-white' : 'text-yellow-400'" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-          </svg>
-          <svg v-else class="w-5 h-5 flex items-center justify-center" :class="currentTheme === 'monochrome' ? 'text-white' : 'text-yellow-400'" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-        </button>
+        <svg v-if="darkMode" class="w-5 h-5 flex items-center justify-center" :class="currentTheme === 'monochrome' ? 'text-white' : 'text-yellow-400'" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+        </svg>
+        <svg v-else class="w-5 h-5 flex items-center justify-center" :class="currentTheme === 'monochrome' ? 'text-white' : 'text-yellow-400'" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+      </button>
       </div>
       
-      <!-- Messages Area -->
-      <div ref="messagesContainer" class="flex-1 overflow-y-auto p-4 space-y-4 bg-transparent scroll-smooth scrollbar-hide">
+      <!-- Messages Area - Flexible, Scrollable -->
+      <div ref="messagesContainer" class="flex-1 overflow-y-auto p-4 space-y-4 bg-transparent scroll-smooth scrollbar-hide flex flex-col">
         <div 
           v-for="message in messages" 
           :key="message.id"
@@ -182,11 +199,7 @@
                   </div>
                   
                   <!-- Mevcut paket sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'get_current_package' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <!-- Debug: Araç sonucunu kontrol et -->
-                    <div v-if="false" class="text-xs text-gray-500">
-                      Debug: {{ JSON.stringify(tool.sonuc) }}
-                    </div>
+                  <div v-if="tool.arac_adi === 'get_current_package' && tool.sonuc && tool.sonuc.success" class="space-y-2">
                     <div class="text-sm font-medium text-gray-800 mb-2">
                       📄 Mevcut Paketiniz
                     </div>
@@ -254,7 +267,7 @@
                   </div>
                   
                   <!-- Paket sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'get_available_packages' && tool.sonuc && tool.sonuc.success" class="space-y-2">
+                  <div v-if="tool.arac_adi === 'get_available_packages' && tool.sonuc && tool.sonuc.success" class="space-y-2">
                     <div class="text-sm font-medium text-gray-800 mb-2">
                       📦 Mevcut Paketler ({{ tool.sonuc.data.packages.length }} adet)
                     </div>
@@ -420,568 +433,8 @@
                     </div>
                   </div>
                   
-                  <!-- Fatura ödeme sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'pay_bill' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      💳 Fatura Ödeme Başarılı
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Ödeme ID:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.payment_id }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Fatura ID:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.bill_id }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Tutar:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.amount }} {{ tool.sonuc.data.method }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ tool.sonuc.data.status === 'completed' ? 'Tamamlandı' : tool.sonuc.data.status }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Onay Kodu:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.confirmation_code }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Ödeme geçmişi sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'get_payment_history' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      📊 Ödeme Geçmişi ({{ tool.sonuc.data.payments.length }} adet)
-                    </div>
-                    <div class="max-h-60 overflow-y-auto space-y-2">
-                      <div v-for="(payment, paymentIndex) in tool.sonuc.data.payments.slice(0, 5)" :key="paymentIndex" 
-                           class="bg-white border border-gray-200 rounded p-3">
-                        <div class="flex justify-between items-start mb-2">
-                          <div class="text-sm font-medium text-gray-800">
-                            Ödeme #{{ payment.payment_id }}
-                          </div>
-                          <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ payment.status === 'completed' ? 'Tamamlandı' : payment.status }}
-                          </span>
-                        </div>
-                        <div class="text-sm text-gray-600">
-                          <div>Tarih: {{ formatDate(payment.transaction_date) }}</div>
-                          <div>Yöntem: {{ payment.method }}</div>
-                          <div class="font-medium text-gray-800 mt-1">
-                            Tutar: {{ payment.amount }} {{ payment.currency }}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div v-if="tool.sonuc.data.payments.length > 5" class="text-xs text-gray-500 text-center mt-2">
-                      ... ve {{ tool.sonuc.data.payments.length - 5 }} ödeme daha
-                    </div>
-                  </div>
-
-                  <!-- Otomatik ödeme sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'setup_autopay' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      🔄 Otomatik Ödeme Ayarları
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span :class="[
-                            'px-2 py-1 rounded text-xs font-medium',
-                            tool.sonuc.data.status ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                          ]">
-                            {{ tool.sonuc.data.status ? 'Aktif' : 'Pasif' }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Kart Son 4 Hanesi:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.card_last4 || '****' }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Son İşlem:</span>
-                          <span class="text-gray-800">{{ formatDate(tool.sonuc.data.last_processed) }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paket değiştirme sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'change_package' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      🔄 Paket Değiştirme
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Eski Paket:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.old_package }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Yeni Paket:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.new_package }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Geçiş Tarihi:</span>
-                          <span class="text-gray-800">{{ formatDate(tool.sonuc.data.effective_date) }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ tool.sonuc.data.status }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Paket detayları sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'get_package_details' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      📋 Paket Detayları
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="flex justify-between items-start mb-4">
-                        <div class="text-xl font-bold text-gray-800">
-                          {{ tool.sonuc.data.package_name }}
-                        </div>
-                        <div class="text-3xl font-bold text-blue-600">
-                          {{ tool.sonuc.data.monthly_fee }}₺
-                        </div>
-                      </div>
-                      <div class="text-sm text-gray-600 mb-4">
-                        {{ tool.sonuc.data.description }}
-                      </div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="space-y-2">
-                          <div class="flex items-center text-sm">
-                            <span class="text-blue-500 mr-2">🌐</span>
-                            <span class="text-gray-700">{{ tool.sonuc.data.features.internet_gb }} GB İnternet</span>
-                          </div>
-                          <div class="flex items-center text-sm">
-                            <span class="text-green-500 mr-2">📞</span>
-                            <span class="text-gray-700">{{ tool.sonuc.data.features.voice_minutes }} Dakika</span>
-                          </div>
-                          <div class="flex items-center text-sm">
-                            <span class="text-purple-500 mr-2">💬</span>
-                            <span class="text-gray-700">{{ tool.sonuc.data.features.sms_count }} SMS</span>
-                          </div>
-                        </div>
-                        <div class="space-y-2">
-                          <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-600">Sözleşme Süresi:</span>
-                            <span class="text-gray-800">{{ tool.sonuc.data.contract_duration }} Ay</span>
-                          </div>
-                          <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-600">Kurulum Ücreti:</span>
-                            <span class="text-gray-800">{{ tool.sonuc.data.setup_fee }}₺</span>
-                          </div>
-                          <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-600">Yurtdışı Dahil:</span>
-                            <span :class="[
-                              'px-2 py-1 rounded text-xs font-medium',
-                              tool.sonuc.data.features.roaming_enabled ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                            ]">
-                              {{ tool.sonuc.data.features.roaming_enabled ? 'Evet' : 'Hayır' }}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Müşteri profili sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'get_customer_profile' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      👤 Müşteri Profili
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Ad Soyad:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.full_name }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">E-posta:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.email }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Telefon:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.phone }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Adres:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.address }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Müşteri Tipi:</span>
-                          <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ tool.sonuc.data.customer_type }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Yurtdışı hizmetleri sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'enable_roaming' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      🌍 Yurtdışı Hizmetleri
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span :class="[
-                            'px-2 py-1 rounded text-xs font-medium',
-                            tool.sonuc.data.status ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                          ]">
-                            {{ tool.sonuc.data.status ? 'Aktif' : 'Pasif' }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Paket:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.roaming_package }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Aylık Ücret:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.monthly_fee }}₺</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Kapsanan Ülkeler:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.covered_countries }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Hat askıya alma sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'suspend_line' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      ⏸️ Hat Askıya Alma
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ tool.sonuc.data.status }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Sebep:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.reason }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Başlangıç Tarihi:</span>
-                          <span class="text-gray-800">{{ formatDate(tool.sonuc.data.suspend_date) }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Tahmini Süre:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.duration }} gün</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Hat aktifleştirme sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'reactivate_line' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      ▶️ Hat Aktifleştirme
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Durum:</span>
-                          <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                            {{ tool.sonuc.data.status }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Aktifleştirme Tarihi:</span>
-                          <span class="text-gray-800">{{ formatDate(tool.sonuc.data.reactivation_date) }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">İşlem Süresi:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.processing_time }} dakika</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Destek talebi oluşturma sonuçları -->
-                  <div v-else-if="tool.arac_adi === 'create_support_ticket' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                    <div class="text-sm font-medium text-gray-800 mb-2">
-                      🆘 Destek Talebi Oluşturuldu
-                    </div>
-                    <div class="bg-white border border-gray-200 rounded-lg p-4">
-                      <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Talep ID:</span>
-                          <span class="text-gray-800 font-medium">{{ tool.sonuc.data.ticket_id }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Konu:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.subject }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Kategori:</span>
-                          <span class="text-gray-800">{{ tool.sonuc.data.category }}</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Öncelik:</span>
-                          <span :class="[
-                            'px-2 py-1 rounded text-xs font-medium',
-                            tool.sonuc.data.priority === 'high' ? 'bg-red-100 text-red-800' : 
-                            tool.sonuc.data.priority === 'medium' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
-                          ]">
-                            {{ tool.sonuc.data.priority === 'high' ? 'Yüksek' : 
-                               tool.sonuc.data.priority === 'medium' ? 'Orta' : 'Düşük' }}
-                          </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                          <span class="text-gray-600">Oluşturma Tarihi:</span>
-                          <span class="text-gray-800">{{ formatDate(tool.sonuc.data.created_date) }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                                     <!-- Destek talepleri listesi sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'get_user_support_tickets' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       📋 Destek Talepleriniz ({{ tool.sonuc.data.tickets.length }} adet)
-                     </div>
-                     
-                     <!-- Talep yoksa -->
-                     <div v-if="tool.sonuc.data.tickets.length === 0" class="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
-                       <div class="text-green-800 font-medium mb-2">🎉 Harika!</div>
-                       <div class="text-green-700 text-sm">Aktif destek talebiniz bulunmuyor. Herhangi bir sorun yaşarsanız yeni bir destek talebi oluşturabiliriz.</div>
-                     </div>
-                     
-                     <!-- Talepler varsa -->
-                     <div v-else class="max-h-60 overflow-y-auto space-y-2">
-                       <div v-for="(ticket, ticketIndex) in tool.sonuc.data.tickets.slice(0, 5)" :key="ticketIndex" 
-                            class="bg-white border border-gray-200 rounded p-3 hover:bg-gray-50 cursor-pointer"
-                            @click="selectTicket(ticket.ticket_id)">
-                         <div class="flex justify-between items-start mb-2">
-                           <div class="text-sm font-medium text-gray-800">
-                             Talep #{{ ticket.ticket_id }}
-                           </div>
-                           <span :class="[
-                             'px-2 py-1 rounded text-xs font-medium',
-                             ticket.status === 'closed' ? 'bg-green-100 text-green-800' : 
-                             ticket.status === 'in_progress' ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'
-                           ]">
-                             {{ ticket.status === 'closed' ? 'Kapalı' : 
-                                ticket.status === 'in_progress' ? 'İşlemde' : 'Açık' }}
-                           </span>
-                         </div>
-                         <div class="text-sm text-gray-600">
-                           <div>Konu: {{ ticket.subject }}</div>
-                           <div>Kategori: {{ ticket.category }}</div>
-                           <div>Tarih: {{ formatDate(ticket.created_date) }}</div>
-                         </div>
-                         <div class="flex justify-between items-center mt-2">
-                           <div class="text-xs text-blue-600">
-                             👆 Detayları görmek için tıklayın
-                           </div>
-                           <button 
-                             @click.stop="closeTicket(ticket.ticket_id)"
-                             class="text-xs bg-red-100 text-red-700 px-2 py-1 rounded hover:bg-red-200 transition-colors"
-                           >
-                             ❌ Kapat
-                           </button>
-                         </div>
-                       </div>
-                     </div>
-                     
-                     <div v-if="tool.sonuc.data.tickets.length > 5" class="text-xs text-gray-500 text-center mt-2">
-                       ... ve {{ tool.sonuc.data.tickets.length - 5 }} talep daha
-                     </div>
-                     <div v-if="tool.sonuc.data.tickets.length > 0" class="text-xs text-gray-500 text-center mt-2">
-                       💡 Bir talebi seçmek için üzerine tıklayın
-                     </div>
-                   </div>
-
-                   <!-- Destek talebi kapatma sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'close_support_ticket' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       ✅ Destek Talebi Kapatıldı
-                     </div>
-                     <div class="bg-white border border-gray-200 rounded-lg p-4">
-                       <div class="space-y-3">
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Talep ID:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.ticket_id }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Durum:</span>
-                           <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                             {{ tool.sonuc.data.status }}
-                           </span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Kapatma Tarihi:</span>
-                           <span class="text-gray-800">{{ formatDate(tool.sonuc.data.closed_date) }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Çözüm:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.resolution || 'Müşteri talebi ile kapatıldı' }}</span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <!-- Destek talebi durumu sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'get_support_ticket_status' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       📋 Destek Talebi Durumu
-                     </div>
-                     <div class="bg-white border border-gray-200 rounded-lg p-4">
-                       <div class="space-y-3">
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Talep ID:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.ticket_id }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Durum:</span>
-                           <span :class="[
-                             'px-2 py-1 rounded text-xs font-medium',
-                             tool.sonuc.data.status === 'closed' ? 'bg-green-100 text-green-800' : 
-                             tool.sonuc.data.status === 'in_progress' ? 'bg-yellow-100 text-yellow-800' : 'bg-blue-100 text-blue-800'
-                           ]">
-                             {{ tool.sonuc.data.status === 'closed' ? 'Kapalı' : 
-                                tool.sonuc.data.status === 'in_progress' ? 'İşlemde' : 'Açık' }}
-                           </span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Öncelik:</span>
-                           <span :class="[
-                             'px-2 py-1 rounded text-xs font-medium',
-                             tool.sonuc.data.priority === 'high' ? 'bg-red-100 text-red-800' : 
-                             tool.sonuc.data.priority === 'medium' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
-                           ]">
-                             {{ tool.sonuc.data.priority === 'high' ? 'Yüksek' : 
-                                tool.sonuc.data.priority === 'medium' ? 'Orta' : 'Düşük' }}
-                           </span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Son Güncelleme:</span>
-                           <span class="text-gray-800">{{ formatDate(tool.sonuc.data.last_updated) }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Tahmini Çözüm:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.estimated_resolution || 'Belirtilmemiş' }}</span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <!-- İletişim bilgisi güncelleme sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'update_customer_contact' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       📞 İletişim Bilgisi Güncellendi
-                     </div>
-                     <div class="bg-white border border-gray-200 rounded-lg p-4">
-                       <div class="space-y-3">
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Güncellenen Alan:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.contact_type }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Eski Değer:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.old_value }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Yeni Değer:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.new_value }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Güncelleme Tarihi:</span>
-                           <span class="text-gray-800">{{ formatDate(tool.sonuc.data.updated_date) }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Durum:</span>
-                           <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                             {{ tool.sonuc.data.status }}
-                           </span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <!-- Kimlik doğrulama sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'auth_register' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       📝 Kayıt İşlemi Başarılı
-                     </div>
-                     <div class="bg-white border border-gray-200 rounded-lg p-4">
-                       <div class="space-y-3">
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Kullanıcı ID:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.user_id }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">E-posta:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.email }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Ad Soyad:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.name }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Kayıt Tarihi:</span>
-                           <span class="text-gray-800">{{ formatDate(tool.sonuc.data.registration_date) }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Durum:</span>
-                           <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                             {{ tool.sonuc.data.status }}
-                           </span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <!-- Giriş yapma sonuçları -->
-                   <div v-else-if="tool.arac_adi === 'auth_login' && tool.sonuc && tool.sonuc.success" class="space-y-2">
-                     <div class="text-sm font-medium text-gray-800 mb-2">
-                       🔑 Giriş İşlemi Başarılı
-                     </div>
-                     <div class="bg-white border border-gray-200 rounded-lg p-4">
-                       <div class="space-y-3">
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Kullanıcı ID:</span>
-                           <span class="text-gray-800 font-medium">{{ tool.sonuc.data.user_id }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">E-posta:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.email }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Ad Soyad:</span>
-                           <span class="text-gray-800">{{ tool.sonuc.data.name }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Giriş Tarihi:</span>
-                           <span class="text-gray-800">{{ formatDate(tool.sonuc.data.login_date) }}</span>
-                         </div>
-                         <div class="flex items-center justify-between">
-                           <span class="text-gray-600">Session Token:</span>
-                           <span class="text-gray-800 font-mono text-xs">{{ tool.sonuc.data.session_token?.substring(0, 20) }}...</span>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-
-                   <!-- Genel JSON görünümü (sadece tanımlanmamış araçlar için) -->
-                   <div v-else-if="tool.sonuc && !['get_past_bills', 'get_current_bill', 'get_current_package', 'get_available_packages', 'get_remaining_quotas', 'check_network_status', 'test_internet_speed', 'pay_bill', 'get_payment_history', 'setup_autopay', 'change_package', 'get_package_details', 'get_customer_profile', 'enable_roaming', 'suspend_line', 'reactivate_line', 'create_support_ticket', 'get_user_support_tickets', 'close_support_ticket', 'get_support_ticket_status', 'update_customer_contact', 'auth_register', 'auth_login'].includes(tool.arac_adi)" class="text-sm text-gray-700">
+                  <!-- Genel JSON görünümü (sadece tanımlanmamış araçlar için) -->
+                  <div v-else-if="tool.sonuc && !['get_past_bills', 'get_current_bill', 'get_current_package', 'get_available_packages', 'get_remaining_quotas', 'check_network_status', 'test_internet_speed'].includes(tool.arac_adi)" class="text-sm text-gray-700">
                     <div class="bg-gray-50 border border-gray-200 rounded-lg p-3">
                       <div class="text-xs text-gray-500 mb-2">Ham Veri:</div>
                       <pre class="bg-gray-100 p-2 rounded text-xs overflow-x-auto">{{ JSON.stringify(tool.sonuc, null, 2) }}</pre>
@@ -1015,6 +468,19 @@
                 {{ formatTime(message.timestamp) }}
               </span>
             </div>
+
+            <!-- Bot Message Actions -->
+            <BotMessageActions
+              v-if="message.sender !== 'user'"
+              :messageId="message.id"
+              :messageText="message.text"
+              :darkMode="darkMode"
+              :currentTheme="currentTheme"
+              :feedback="message.feedback || {}"
+              :userQuestion="message.userQuestion || ''"
+              :userId="userId || ''"
+              @feedback-changed="handleFeedbackChanged"
+            />
           </div>
         </div>
         
@@ -1042,17 +508,54 @@
         </div>
       </div>
       
-      <!-- Input Area -->
-      <div class="p-4 bg-transparent relative z-20 border-t border-blue-500/20 flex-shrink-0">
+      <!-- Input Area - Transparent Seamless Footer -->
+      <div class="composer p-4 relative z-20 flex-shrink-0 sticky bottom-0">
         <form @submit.prevent="sendMessage" class="flex items-center gap-4 max-w-2xl mx-auto">
+          <!-- Model Selector -->
+          <div class="relative">
+            <button type="button"
+                    @click="toggleModelMenu"
+                    class="px-3 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2"
+                    :class="currentTheme === 'monochrome' ? 'bg-black text-white' : 'bg-white text-gray-800 border border-gray-200'">
+              <span class="text-xs font-semibold">{{ selectedModelLabel }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.08 1.04l-4.25 4.25a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <div v-if="showModelMenu" class="absolute left-0 bottom-full mb-2 w-56 rounded-xl shadow-2xl border z-50"
+                 :class="currentTheme === 'monochrome' ? 'bg-black border-gray-700' : 'bg-white border-gray-200'">
+              <div v-for="m in aiModels" :key="m.id"
+                   @click="selectModel(m)"
+                   class="px-4 py-3 cursor-pointer flex items-center justify-between hover:bg-gray-50"
+                   :class="{ 'bg-blue-50': selectedModel === m.id }">
+                <div class="flex items-center gap-2">
+                  <div>
+                    <div class="text-sm font-semibold">{{ m.label }}</div>
+                    <div class="text-xs text-gray-500">{{ m.desc }}</div>
+                  </div>
+                </div>
+                <span v-if="selectedModel === m.id">✓</span>
+              </div>
+            </div>
+          </div>
+
           <input
+            ref="messageInput"
             v-model="message"
             type="text"
-            placeholder="Mesajınızı yazın..."
-            class="input flex-1 p-4 rounded-xl text-base font-sans shadow-lg hover:shadow-xl"
-            :class="currentTheme === 'monochrome' ? 'text-black placeholder-black/50' : (darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50')"
-            :style="`border-color: ${currentTheme === 'monochrome' ? '#000000' : getThemeColor()};`"
+            placeholder="Mesajınızı yazın veya sesli komut kullanın..."
+            class="input flex-1 p-4 rounded-xl text-base font-sans shadow-lg hover:shadow-xl transition-all duration-300"
+            :class="getInputClasses"
+            @keydown="handleInputKeydown"
           />
+          
+          <!-- Voice Command Button -->
+          <VoiceCommand
+            :darkMode="darkMode"
+            :currentTheme="currentTheme"
+            @voice-result="handleVoiceResult"
+          />
+          
           <button
             type="submit"
             class="p-4 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:opacity-30 text-white font-semibold"
@@ -1064,16 +567,35 @@
         </form>
       </div>
     </div>
+
+    <!-- User Info Panel -->
+    <UserInfoPanel
+      :isVisible="showUserPanel"
+      :darkMode="darkMode"
+      :currentTheme="currentTheme"
+      :userInfo="userInfo"
+      @update:userInfo="userInfo = { ...userInfo, ...$event }"
+      @close="closeUserPanel"
+      @toggle-dark-mode="toggleDarkMode"
+      @logout="handleLogout"
+      @edit-profile="handleEditProfile"
+    />
   </div>
 </template>
 
 <script>
 import LogoHeader from '../components/LogoHeader.vue'
+import VoiceCommand from '../components/VoiceCommand.vue'
+import BotMessageActions from '../components/BotMessageActions.vue'
+import UserInfoPanel from '../components/UserInfoPanel.vue'
 import { chatAPI } from '../services/api.js'
 
 export default {
   components: {
-    LogoHeader
+    LogoHeader,
+    VoiceCommand,
+    BotMessageActions,
+    UserInfoPanel
   },
   data() {
     return {
@@ -1085,12 +607,26 @@ export default {
       userId: null,
       isConnected: false,
       connectionTimer: null,
+      showUserPanel: false,
+      userInfo: {
+        name: 'Enes Faruk Aydın',
+        email: 'enes.faruk.aydin@email.com',
+        avatar: null
+      },
+      // Model seçimi
+      showModelMenu: false,
+      selectedModel: 'default',
+      aiModels: [
+        { id: 'default', label: 'Varsayılan', desc: 'Otomatik seçim' },
+        { id: 'telekom-v6', label: 'Choyrens v6', desc: 'GGUF 8B q5_k_m' },
+        { id: 'telekom-v5', label: 'Choyrens v5', desc: 'q8_0 gguf' }
+      ],
       messages: [
         {
           id: 1,
           sender: 'bot',
-          text: 'Merhaba! Ben Choyrens AI. Size nasıl yardımcı olabilirim?',
-          timestamp: new Date('2024-01-01T03:34:00')
+          text: 'Merhaba! Ben Choyrens AI, size nasıl yardımcı olabilirim?',
+          timestamp: new Date()
         }
       ],
       themes: [
@@ -1101,7 +637,9 @@ export default {
             primary: '#1e3a8a', 
             secondary: '#1e40af', 
             accent: '#1d4ed8' 
-          } 
+          },
+          darkBackground: 'from-black via-blue-950 via-blue-900 to-blue-800',
+          lightBackground: 'from-blue-50 via-blue-100 to-blue-200'
         },
         { 
           name: 'burgundy', 
@@ -1110,7 +648,9 @@ export default {
             primary: '#7f1d1d', 
             secondary: '#991b1b', 
             accent: '#b91c1c' 
-          } 
+          },
+          darkBackground: 'from-black via-red-950 via-red-900 to-red-800',
+          lightBackground: 'from-red-50 via-red-100 to-red-200'
         },
         { 
           name: 'purple', 
@@ -1119,7 +659,9 @@ export default {
             primary: '#5b21b6', 
             secondary: '#6d28d9', 
             accent: '#7c3aed' 
-          } 
+          },
+          darkBackground: 'from-black via-purple-950 via-purple-900 to-purple-800',
+          lightBackground: 'from-purple-50 via-purple-100 to-purple-200'
         },
         { 
           name: 'emerald', 
@@ -1128,7 +670,9 @@ export default {
             primary: '#065f46', 
             secondary: '#047857', 
             accent: '#059669' 
-          } 
+          },
+          darkBackground: 'from-black via-emerald-950 via-emerald-900 to-emerald-800',
+          lightBackground: 'from-emerald-50 via-emerald-100 to-emerald-200'
         },
         { 
           name: 'monochrome', 
@@ -1137,7 +681,9 @@ export default {
             primary: '#000000', 
             secondary: '#000000', 
             accent: '#000000' 
-          } 
+          },
+          darkBackground: 'from-black via-gray-900 via-gray-800 to-gray-700',
+          lightBackground: 'from-gray-50 via-gray-100 to-gray-200'
         }
       ],
       showThemeMenu: false
@@ -1147,6 +693,50 @@ export default {
     currentThemeIcon() {
       const theme = this.themes.find(t => t.name === this.currentTheme)
       return theme ? theme.icon : '🔵'
+    },
+    currentBackground() {
+      const theme = this.themes.find(t => t.name === this.currentTheme)
+      if (!theme) return this.darkMode ? 'from-black via-gray-900 to-blue-950' : 'from-blue-50 via-gray-50 to-slate-50'
+      
+      return this.darkMode ? theme.darkBackground : theme.lightBackground
+    },
+
+    getInputClasses() {
+      const theme = this.themes.find(t => t.name === this.currentTheme)
+      
+      if (this.currentTheme === 'monochrome') {
+        return this.darkMode 
+          ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20 focus:border-white/40 focus:bg-white/10' 
+          : 'bg-black/6 backdrop-blur-sm text-black placeholder-gray-600/70 border-black/20 focus:border-black/40 focus:bg-black/10'
+      }
+      
+      if (!theme) return this.darkMode 
+        ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20' 
+        : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-600/70 border-black/20'
+      
+      // Tema rengine göre ultra hafif şeffaf input stilleri
+      const themeInputs = {
+        'blue': this.darkMode 
+          ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20 focus:border-white/40 focus:bg-white/10' 
+          : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-700/70 border-black/20 focus:border-black/40 focus:bg-black/10',
+        'burgundy': this.darkMode 
+          ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20 focus:border-white/40 focus:bg-white/10' 
+          : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-700/70 border-black/20 focus:border-black/40 focus:bg-black/10',
+        'purple': this.darkMode 
+          ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20 focus:border-white/40 focus:bg-white/10' 
+          : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-700/70 border-black/20 focus:border-black/40 focus:bg-black/10',
+        'emerald': this.darkMode 
+          ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20 focus:border-white/40 focus:bg-white/10' 
+          : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-700/70 border-black/20 focus:border-black/40 focus:bg-black/10'
+      }
+      
+      return themeInputs[this.currentTheme] || (this.darkMode 
+        ? 'bg-white/6 backdrop-blur-sm text-white placeholder-white/50 border-white/20' 
+        : 'bg-black/6 backdrop-blur-sm text-gray-900 placeholder-gray-600/70 border-black/20')
+    },
+    selectedModelLabel() {
+      const found = this.aiModels.find(m => m.id === this.selectedModel)
+      return found ? found.label : 'Model'
     }
   },
   methods: {
@@ -1290,7 +880,7 @@ export default {
         console.log('AI yanıtı bekleniyor...')
         console.log('API URL:', import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000')
         console.log('Session ID:', this.sessionId)
-        const response = await chatAPI.sendMessage(userMessage, this.userId, this.sessionId)
+        const response = await chatAPI.sendMessage(userMessage, this.userId, this.sessionId, this.selectedModel)
         
         // Hide typing indicator
         this.isTyping = false
@@ -1302,7 +892,13 @@ export default {
             sender: 'bot',
             text: response.response,
             timestamp: new Date(),
-            toolResults: response.tool_calls || []
+            toolResults: response.tool_calls || [],
+            userQuestion: userMessage,
+            feedback: {
+              liked: false,
+              disliked: false,
+              emotion: response.emotion || '😊' // Backend'den gelen emoji veya varsayılan
+            }
           })
           
           // Session ID'yi güncelle
@@ -1322,7 +918,13 @@ export default {
             id: Date.now() + 1,
             sender: 'bot',
             text: 'Üzgünüm, şu anda yanıt veremiyorum. Lütfen daha sonra tekrar deneyin.',
-            timestamp: new Date()
+            timestamp: new Date(),
+            userQuestion: userMessage,
+            feedback: {
+              liked: false,
+              disliked: false,
+              emotion: '😕' // Hata durumunda üzgün emoji
+            }
           })
         }
       } catch (error) {
@@ -1336,7 +938,13 @@ export default {
           id: Date.now() + 1,
           sender: 'bot',
           text: `Bağlantı hatası: ${error.message}`,
-          timestamp: new Date()
+          timestamp: new Date(),
+          userQuestion: userMessage,
+          feedback: {
+            liked: false,
+            disliked: false,
+            emotion: '😡' // Bağlantı hatası durumunda kızgın emoji
+          }
         })
         
         this.isConnected = false
@@ -1365,7 +973,12 @@ export default {
         id: Date.now(),
         sender: 'bot',
         text: text,
-        timestamp: new Date()
+        timestamp: new Date(),
+        feedback: {
+          liked: false,
+          disliked: false,
+          emotion: '😊' // Varsayılan emoji
+        }
       })
       
       // Scroll to bottom after bot message
@@ -1395,6 +1008,8 @@ export default {
     async mounted() {
       // Sayfa yüklendiğinde backend bağlantısını kontrol et
       await this.checkConnection()
+      
+
       
       // Her 5 saniyede bir bağlantıyı kontrol et
       this.connectionTimer = setInterval(async () => {
@@ -1428,9 +1043,8 @@ export default {
       const container = this.$refs.messagesContainer
       if (container) {
         // Force scroll to bottom with smooth behavior
-        container.scrollTo({
-          top: container.scrollHeight,
-          behavior: 'smooth'
+        this.$nextTick(() => {
+          container.scrollTop = container.scrollHeight
         })
       }
     },
@@ -1459,58 +1073,22 @@ export default {
        }
        return themeNames[name] || name
      },
-     handleClickOutside(event) {
-       // Close theme menu if clicking outside
-       if (this.showThemeMenu && !event.target.closest('.theme-menu-container')) {
-         this.showThemeMenu = false
+         handleClickOutside(event) {
+      // Close theme menu if clicking outside
+      if (this.showThemeMenu && !event.target.closest('.theme-menu-container')) {
+        this.showThemeMenu = false
       }
     },
     getToolDisplayName(toolName) {
       const toolNames = {
-        // Fatura İşlemleri
-        'get_current_bill': '📄 Mevcut Fatura',
         'get_past_bills': '📋 Geçmiş Faturalar',
-        'pay_bill': '💳 Fatura Ödeme',
-        'get_payment_history': '📊 Ödeme Geçmişi',
-        'setup_autopay': '🔄 Otomatik Ödeme',
-        
-        // Paket İşlemleri
-        'get_current_package': '📦 Mevcut Paket',
-        'get_available_packages': '📦 Kullanılabilir Paketler',
-        'change_package': '🔄 Paket Değiştirme',
-        'get_package_details': '📋 Paket Detayları',
+        'get_current_bill': '📄 Mevcut Fatura',
+        'get_available_packages': '📦 Paketler',
         'get_remaining_quotas': '📊 Kalan Kota',
-        
-        // Müşteri İşlemleri
-        'get_customer_profile': '👤 Müşteri Profili',
-        'update_customer_contact': '📞 İletişim Güncelleme',
-        'enable_roaming': '🌍 Yurtdışı Hizmetleri',
-        
-        // Ağ ve Teknik İşlemler
         'check_network_status': '📡 Ağ Durumu',
-        'test_internet_speed': '⚡ Hız Testi',
-        'suspend_line': '⏸️ Hat Askıya Alma',
-        'reactivate_line': '▶️ Hat Aktifleştirme',
-        
-        // Destek İşlemleri
-        'create_support_ticket': '🆘 Destek Talebi',
-        'close_support_ticket': '✅ Destek Talebi Kapatma',
-        'get_support_ticket_status': '📋 Destek Talebi Durumu',
-        'get_user_support_tickets': '📋 Destek Talepleri',
-        
-        // Kimlik Doğrulama
-        'auth_register': '📝 Kayıt Olma',
-        'auth_login': '🔑 Giriş Yapma'
+        'test_internet_speed': '⚡ Hız Testi'
       }
       return toolNames[toolName] || toolName
-    },
-    selectTicket(ticketId) {
-      // Seçilen talebi AI'ya sor
-      this.sendMessage(`Talep #${ticketId} detaylarını göster`)
-    },
-    closeTicket(ticketId) {
-      // Talebi kapatmak için AI'ya sor
-      this.sendMessage(`Talep #${ticketId} kapat`)
     },
     getToolStatus(status) {
       const statusMap = {
@@ -1528,6 +1106,104 @@ export default {
         month: 'short',
         day: 'numeric'
       })
+    },
+    handleVoiceResult(voiceText) {
+      // Set the voice text to message input
+      this.message = voiceText
+      
+      // Auto-send the message after a short delay for better UX
+      setTimeout(() => {
+        if (this.message.trim()) {
+          this.sendMessage()
+        }
+      }, 1000)
+    },
+    handleFeedbackChanged(feedbackData) {
+      // Handle feedback changes from bot message actions
+      console.log('Feedback received:', feedbackData)
+      
+      // Update the message feedback in the messages array
+      const messageIndex = this.messages.findIndex(msg => msg.id === feedbackData.messageId)
+      if (messageIndex !== -1) {
+        this.$set(this.messages[messageIndex], 'feedback', feedbackData.feedback)
+      }
+      
+      // You can add analytics or send feedback to backend here
+      // For example: analytics.track('bot_message_feedback', feedbackData)
+    },
+    handleInputKeydown(event) {
+      // Handle Enter key specifically for input field
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault() // Prevent form submit
+        event.stopPropagation() // Stop event from bubbling
+        
+        // Only send if there's a message
+        if (this.message.trim()) {
+          this.sendMessage()
+        }
+      }
+      // Allow Shift+Enter for new lines (if input becomes textarea later)
+    },
+    handleFormEnter(event) {
+      // Backup method - Only handle enter if it's coming from the input field
+      if (event.target === this.$refs.messageInput) {
+        event.preventDefault()
+        this.sendMessage()
+      }
+    },
+
+    // User Panel Methods
+    toggleUserPanel() {
+      this.showUserPanel = !this.showUserPanel
+    },
+
+    closeUserPanel() {
+      this.showUserPanel = false
+    },
+
+    handleLogout() {
+      // Clear user data
+      localStorage.removeItem('userToken')
+      localStorage.removeItem('userData')
+      
+      // Redirect to login or home
+      this.$router.push('/')
+      
+      // Show notification
+      const notification = document.createElement('div')
+      notification.className = 'fixed top-4 right-4 bg-red-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 font-semibold text-sm'
+      notification.textContent = '👋 Çıkış yapıldı'
+      document.body.appendChild(notification)
+      
+      setTimeout(() => {
+        notification.style.transform = 'translateY(-100%)'
+        notification.style.opacity = '0'
+        setTimeout(() => document.body.removeChild(notification), 300)
+      }, 2000)
+    },
+
+    handleEditProfile() {
+      // Bu alanı geliştirme için işaretleyelim
+      console.log('Profil düzenleme özelliği yakında eklenecek')
+      
+      // Geçici bildirim
+      const notification = document.createElement('div')
+      notification.className = 'fixed top-4 right-4 bg-blue-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 font-semibold text-sm'
+      notification.textContent = '✏️ Profil düzenleme özelliği yakında eklenecek'
+      document.body.appendChild(notification)
+      
+      setTimeout(() => {
+        notification.style.transform = 'translateY(-100%)'
+        notification.style.opacity = '0'
+        setTimeout(() => document.body.removeChild(notification), 300)
+      }, 2000)
+    },
+    toggleModelMenu() {
+      this.showModelMenu = !this.showModelMenu
+    },
+    selectModel(model) {
+      this.selectedModel = model.id
+      this.showModelMenu = false
     }
   },
   mounted() {
@@ -1555,6 +1231,12 @@ export default {
     
     // Add click outside listener for theme menu
     document.addEventListener('click', this.handleClickOutside)
+    
+    // Check backend connection initially and on interval
+    this.checkConnection()
+    this.connectionTimer = setInterval(() => {
+      this.checkConnection()
+    }, 5000)
     
     // Initial scroll to bottom
     this.$nextTick(() => {
@@ -1597,5 +1279,54 @@ export default {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* WhatsApp-style chat layout */
+.chat-container {
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+}
+
+/* Messages area smooth scrolling */
+.messages-area {
+  scroll-behavior: smooth;
+}
+
+/* Mobile viewport adjustments */
+@supports (height: 100dvh) {
+  .chat-container {
+    height: 100dvh;
+  }
+}
+
+/* iOS safe area support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .input-area {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Unified fullscreen background system */
+
+/* Composer - completely transparent */
+.composer {
+  background: transparent !important;
+  border: none !important;
+  border-top: none !important;
+}
+
+/* Ultra-light input styling */
+.composer input {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+/* Enhanced focus state */
+.composer input:focus {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 </style>

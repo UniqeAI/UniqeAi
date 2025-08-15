@@ -41,7 +41,7 @@ try:
     sys.path.insert(0, str(PROJECT_ROOT))
     
     # telekom_api_schema.py'den TÜM modelleri import et
-    from UniqeAi.ai_model.scripts.telekom_api_schema import *
+    from scripts.api_validation.telekom_api_schema import *
     
     print("✅ Pydantic ve telekom_api_schema başarıyla yüklendi")
     print(f"✅ API Fonksiyon Sayısı: {TOTAL_APIS}")
