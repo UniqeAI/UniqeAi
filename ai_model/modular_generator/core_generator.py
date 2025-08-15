@@ -227,19 +227,20 @@ class SupremeHumanLevelDatasetGenerator:
   
         """
         return {
-            #ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
-            ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
-            #ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
+            ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
+            #ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
+            #ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
+            ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
             #ScenarioType.TEACHING_MENTORING.value: generate_teaching_mentoring_scenario,
-            #ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
-            #ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
-            #ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
-            #ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
-            #ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
-            #ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
-            # ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
-            #ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
-            #ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
+            ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
+            ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
+            ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
+            ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
+            ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
+            ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
+            ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
+            ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
+            ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
         }
 
     # ==============================================================================

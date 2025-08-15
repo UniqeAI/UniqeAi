@@ -12,17 +12,7 @@ from typing import Dict, Any
 
 from ...models import ScenarioType, CognitiveState, EmotionalContext
 from ...utils.helpers import generate_user_id, create_validated_response
-from ...telekom_api_schema import (
-    GetPastBillsResponse,
-    GetCurrentBillResponse,
-    GetRemainingQuotasResponse,
-    TestInternetSpeedResponse,
-    CheckNetworkStatusResponse,
-    GetAvailablePackagesResponse,
-    GetPackageDetailsResponse,
-    EnableRoamingResponse,
-    LearningAdaptationResponse,
-)
+from ...telekom_api_schema import GetPastBillsResponse
 
 
 def generate_temporal_reasoning_scenario() -> Dict[str, Any]:
