@@ -4,7 +4,6 @@ import Chat from './pages/Chat.vue'
 import Login from './pages/Login.vue'
 import Register from './pages/Register.vue'
 import LogoDemo from './pages/LogoDemo.vue'
-import TelekomServices from './pages/TelekomServices.vue'
 
 const routes = [
   {
@@ -31,11 +30,6 @@ const routes = [
     path: '/logo-demo',
     name: 'LogoDemo',
     component: LogoDemo
-  },
-  {
-    path: '/telekom-services',
-    name: 'TelekomServices',
-    component: TelekomServices
   },
   {
     path: '/:pathMatch(.*)*',

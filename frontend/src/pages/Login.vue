@@ -1,7 +1,19 @@
 <template>
   <div class="min-h-screen flex items-center justify-center relative overflow-hidden" :class="{ 'dark-mode': darkMode }">
-    <!-- Static Background -->
-    <div class="absolute inset-0" :class="darkMode ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' : 'bg-gradient-to-br from-blue-50 via-gray-50 to-slate-50'"></div>
+    <!-- Dynamic Background based on Theme -->
+    <div class="absolute inset-0" :class="`bg-gradient-to-br ${currentBackground}`"></div>
+
+    <!-- Back to Home Button - Fixed Position Left Top -->
+    <div class="fixed top-4 left-4 z-30">
+      <router-link 
+        to="/" 
+        class="btn p-3 rounded-full backdrop-blur-sm border border-blue-500/30 hover:bg-blue-600/20 transition-all duration-300 shadow-lg"
+        :class="darkMode ? 'text-white' : 'text-gray-900'"
+      >
+        <span class="text-lg">🏠</span>
+        <span class="ml-2 text-sm font-medium">Ana Sayfa</span>
+      </router-link>
+    </div>
 
     <!-- Theme Controls - Fixed Position -->
     <div class="fixed top-4 right-4 z-30 flex items-center gap-3">
@@ -78,21 +90,6 @@
         <p class="text-sm" :class="darkMode ? 'text-white/70' : 'text-gray-700/70'">
           Hesabınıza giriş yapın
         </p>
-        
-        <!-- Demo Kullanıcı Bilgileri -->
-        <div class="mt-4 p-4 bg-blue-50 rounded-lg" :class="darkMode ? 'bg-blue-900/20' : 'bg-blue-50'">
-          <h3 class="text-sm font-semibold mb-2" :class="darkMode ? 'text-blue-300' : 'text-blue-700'">
-            Demo Kullanıcılar:
-          </h3>
-          <div class="space-y-1 text-xs" :class="darkMode ? 'text-blue-200' : 'text-blue-600'">
-            <div><strong>Enes:</strong> enes.faruk.aydin@email.com / enes123</div>
-            <div><strong>Nisa:</strong> nisa.nur.ozkal@email.com / nisa123</div>
-            <div><strong>Sedat:</strong> sedat.kilicoglu@email.com / sedat123</div>
-            <div><strong>Erkan:</strong> erkan.tanriover@email.com / erkan123</div>
-            <div><strong>Ahmet:</strong> ahmet.nazif.gemalmaz@email.com / ahmet123</div>
-            <div><strong>Ziişan:</strong> ziisan.sahin@email.com / ziisan123</div>
-          </div>
-        </div>
       </div>
 
       <!-- Login Form -->
@@ -109,8 +106,8 @@
               type="email"
               required
               placeholder="ornek@email.com"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -182,7 +179,6 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import LogoHeader from '../components/LogoHeader.vue'
-import { userAPI } from '../services/api'
 
 const router = useRouter()
 const darkMode = ref(false)
@@ -192,7 +188,7 @@ const email = ref('')
 const password = ref('')
 const rememberMe = ref(false)
 
-// Available themes
+// Available themes with dynamic dark mode background colors
 const themes = [
   { 
     name: 'blue', 
@@ -201,7 +197,9 @@ const themes = [
       primary: '#1e3a8a', 
       secondary: '#1e40af', 
       accent: '#1d4ed8' 
-    } 
+    },
+    darkBackground: 'from-black via-blue-950 via-blue-900 to-blue-800',
+    lightBackground: 'from-blue-50 via-blue-100 to-blue-200'
   },
   { 
     name: 'burgundy', 
@@ -210,7 +208,9 @@ const themes = [
       primary: '#7f1d1d', 
       secondary: '#991b1b', 
       accent: '#b91c1c' 
-    } 
+    },
+    darkBackground: 'from-black via-red-950 via-red-900 to-red-800',
+    lightBackground: 'from-red-50 via-red-100 to-red-200'
   },
   { 
     name: 'purple', 
@@ -219,7 +219,9 @@ const themes = [
       primary: '#5b21b6', 
       secondary: '#6d28d9', 
       accent: '#7c3aed' 
-    } 
+    },
+    darkBackground: 'from-black via-purple-950 via-purple-900 to-purple-800',
+    lightBackground: 'from-purple-50 via-purple-100 to-purple-200'
   },
   { 
     name: 'emerald', 
@@ -228,7 +230,9 @@ const themes = [
       primary: '#065f46', 
       secondary: '#047857', 
       accent: '#059669' 
-    } 
+    },
+    darkBackground: 'from-black via-emerald-950 via-emerald-900 to-emerald-800',
+    lightBackground: 'from-emerald-50 via-emerald-100 to-emerald-200'
   },
   { 
     name: 'monochrome', 
@@ -237,13 +241,56 @@ const themes = [
       primary: '#000000', 
       secondary: '#000000', 
       accent: '#000000' 
-    } 
+    },
+    darkBackground: 'from-black via-gray-900 via-gray-800 to-gray-700',
+    lightBackground: 'from-gray-50 via-gray-100 to-gray-200'
   }
 ]
 
 const currentThemeIcon = computed(() => {
   const theme = themes.find(t => t.name === currentTheme.value)
   return theme ? theme.icon : '🔵'
+})
+
+const currentBackground = computed(() => {
+  const theme = themes.find(t => t.name === currentTheme.value)
+  if (!theme) return darkMode.value ? 'from-black via-gray-900 to-blue-950' : 'from-blue-50 via-gray-50 to-slate-50'
+  
+  return darkMode.value ? theme.darkBackground : theme.lightBackground
+})
+
+const getInputClasses = computed(() => {
+  const theme = themes.find(t => t.name === currentTheme.value)
+  
+  if (currentTheme.value === 'monochrome') {
+    return darkMode.value 
+      ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600 focus:border-gray-500' 
+      : 'bg-white text-black placeholder-gray-500 border-gray-300 focus:border-gray-400'
+  }
+  
+  if (!theme) return darkMode.value 
+    ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600' 
+    : 'bg-white text-gray-900 placeholder-gray-500 border-gray-300'
+  
+  // Tema rengine göre input stilleri
+  const themeInputs = {
+    'blue': darkMode.value 
+      ? 'bg-blue-900/50 text-white placeholder-blue-200/60 border-blue-700 focus:border-blue-500' 
+      : 'bg-white text-blue-900 placeholder-blue-600/60 border-blue-300 focus:border-blue-500',
+    'burgundy': darkMode.value 
+      ? 'bg-red-900/50 text-white placeholder-red-200/60 border-red-700 focus:border-red-500' 
+      : 'bg-white text-red-900 placeholder-red-600/60 border-red-300 focus:border-red-500',
+    'purple': darkMode.value 
+      ? 'bg-purple-900/50 text-white placeholder-purple-200/60 border-purple-700 focus:border-purple-500' 
+      : 'bg-white text-purple-900 placeholder-purple-600/60 border-purple-300 focus:border-purple-500',
+    'emerald': darkMode.value 
+      ? 'bg-emerald-900/50 text-white placeholder-emerald-200/60 border-emerald-700 focus:border-emerald-500' 
+      : 'bg-white text-emerald-900 placeholder-emerald-600/60 border-emerald-300 focus:border-emerald-500'
+  }
+  
+  return themeInputs[currentTheme.value] || (darkMode.value 
+    ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600' 
+    : 'bg-white text-gray-900 placeholder-gray-500 border-gray-300')
 })
 
 const toggleDarkMode = () => {
@@ -339,39 +386,95 @@ const showThemeNotification = () => {
   }, 3000)
 }
 
+import { userAPI, telekomAPI } from '../services/api.js'
+
 const handleLogin = async () => {
   try {
-    console.log('Login attempt:', { email: email.value, password: password.value, rememberMe: rememberMe.value })
+    let loginResult = null
     
-    // Eski session token'ı temizle
-    localStorage.removeItem('session_token')
-    
-    // API ile giriş yap
-    const response = await userAPI.login({
-      email: email.value,
-      password: password.value
-    })
-    
-    console.log('Login successful:', response)
-    
-    // Session token'ı kaydet
-    if (response.data && response.data.session_token) {
-      localStorage.setItem('session_token', response.data.session_token)
+    // Try User API first
+    try {
+      const userCredentials = {
+        email: email.value,
+        password: password.value
+      }
+      loginResult = await userAPI.login(userCredentials)
+      
+      if (loginResult?.success && loginResult.data) {
+        // Store session data from User API
+        if (loginResult.data.session_token) {
+          localStorage.setItem('session_token', loginResult.data.session_token)
+          localStorage.setItem('user_id', String(loginResult.data.user_id || ''))
+          localStorage.setItem('user_name', loginResult.data.name || '')
+        }
+        
+        showNotification('Giriş başarılı!', 'success')
+      } else {
+        throw new Error('User API login failed')
+      }
+    } catch (userError) {
+      // If User API fails, try Telekom API
+      try {
+        const telekomResult = await telekomAPI.login(email.value, password.value)
+        if (telekomResult?.success && telekomResult.session_token) {
+          // Store session data from Telekom API
+          localStorage.setItem('session_token', telekomResult.session_token)
+          localStorage.setItem('user_id', String(telekomResult.user_id || ''))
+          localStorage.setItem('user_name', telekomResult.user_name || '')
+          
+          loginResult = telekomResult
+          showNotification('Giriş başarılı!', 'success')
+        } else {
+          throw new Error(telekomResult?.message || 'Telekom API login failed')
+        }
+      } catch (telekomError) {
+        throw new Error('Her iki giriş sistemi de başarısız oldu: ' + telekomError.message)
+      }
     }
     
-    // Başarılı giriş sonrası chat sayfasına yönlendir
-    router.push('/chat')
+    // Optional remember me
+    if (rememberMe.value) {
+      localStorage.setItem('remember_email', email.value)
+    } else {
+      localStorage.removeItem('remember_email')
+    }
+
+    // Navigate to chat
+    setTimeout(() => {
+      router.push('/chat')
+    }, 1000)
     
-  } catch (error) {
-    console.error('Login error:', error)
-    alert('Giriş başarısız: ' + (error.message || 'Bilinmeyen hata'))
+  } catch (err) {
+    console.error('Login failed:', err)
+    showNotification('Giriş başarısız: ' + (err.message || 'Bilinmeyen hata'), 'error')
   }
 }
 
-onMounted(() => {
-  // Eski session token'ı temizle
-  localStorage.removeItem('session_token')
+const showNotification = (message, type = 'info') => {
+  const notification = document.createElement('div')
+  const bgColor = type === 'success' ? 'bg-green-600' : type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+  notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 font-semibold text-sm`
+  notification.textContent = message
+  notification.style.transform = 'translateY(-100%)'
+  notification.style.opacity = '0'
   
+  document.body.appendChild(notification)
+  
+  setTimeout(() => {
+    notification.style.transform = 'translateY(0)'
+    notification.style.opacity = '1'
+  }, 10)
+  
+  setTimeout(() => {
+    notification.style.transform = 'translateY(-100%)'
+    notification.style.opacity = '0'
+    setTimeout(() => {
+      notification.remove()
+    }, 300)
+  }, 3000)
+}
+
+onMounted(() => {
   // Check for saved dark mode preference
   const savedDarkMode = localStorage.getItem('darkMode')
   if (savedDarkMode === 'true') {

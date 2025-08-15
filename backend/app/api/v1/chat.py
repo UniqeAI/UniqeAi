@@ -9,7 +9,7 @@ import uuid
 import logging
 
 from app.schemas.chat import ChatMessage, ChatResponse
-from app.services.ai_orchestrator_real import ai_orchestrator
+from app.services.ai_orchestrator_v4 import ai_orchestrator_v4 as ai_orchestrator
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/chat", tags=["Chat"])
@@ -43,14 +43,17 @@ async def chat_endpoint(request: ChatRequest):
         AI yanıtı
     """
     try:
-        logger.info(f"GELEN SESSION TOKEN: {request.session_token}")
+        # 1/4: Mesaj alındı
+        oturum_id = request.session_id or f"SESSION_{uuid.uuid4().hex[:8]}"
+        logger.info(f"[1/4] Mesaj alındı | session_id={oturum_id} user_id={request.user_id} text_len={len(request.message)}")
+        
         # Özel "Backend nerede" kontrolü
         if "backend" in request.message.lower() or "nerede" in request.message.lower():
             return ChatResponseNew(
                 success=True,
                 response="Buradayım! Backend sistemi aktif ve çalışıyor. Size nasıl yardımcı olabilirim?",
                 user_id=request.user_id,
-                session_id=request.session_id or f"SESSION_{uuid.uuid4().hex[:8]}",
+                session_id=oturum_id,
                 confidence=0.95,
                 tool_calls=[],
                 metadata={
@@ -61,10 +64,8 @@ async def chat_endpoint(request: ChatRequest):
                 }
             )
         
-        # Oturum ID oluştur (gerçek uygulamada kullanıcı oturumundan alınır)
-        oturum_id = request.session_id or f"SESSION_{uuid.uuid4().hex[:8]}"
-        
-        # AI orkestratör ile mesajı işle - timeout ile
+        # 2/4: Orkestrasyon başlıyor
+        logger.info("[2/4] Orkestrasyon başlıyor")
         try:
             import asyncio
             ai_sonuc = await asyncio.wait_for(
@@ -77,7 +78,7 @@ async def chat_endpoint(request: ChatRequest):
                 timeout=120.0  # 120 saniye timeout (2 dakika)
             )
         except asyncio.TimeoutError:
-            logger.error("AI model timeout'a düştü")
+            logger.error("[HATA] Orkestrasyon zaman aşımı")
             return ChatResponseNew(
                 success=False,
                 response="AI modeli şu anda meşgul. Lütfen daha sonra tekrar deneyin.",
@@ -93,19 +94,13 @@ async def chat_endpoint(request: ChatRequest):
                 }
             )
         
-        # Debug: AI sonucunu logla
-        logger.info(f"AI SONUC: {ai_sonuc}")
-        if ai_sonuc.get("arac_cagrilari"):
-            for i, arac in enumerate(ai_sonuc.get("arac_cagrilari", [])):
-                logger.info(f"ARAC {i}: {arac}")
-                logger.info(f"ARAC {i} PARAMETRELER: {arac.get('parametreler', {})}")
-                logger.info(f"ARAC {i} TYPE: {type(arac)}")
-                if hasattr(arac, 'parametreler'):
-                    logger.info(f"ARAC {i} HASATTR parametreler: {arac.parametreler}")
-                else:
-                    logger.info(f"ARAC {i} NO HASATTR parametreler")
+        # 3/4: Orkestrasyon tamamlandı
+        tool_count = len(ai_sonuc.get("arac_cagrilari", [])) if isinstance(ai_sonuc, dict) else 0
+        logger.info(f"[3/4] Orkestrasyon tamamlandı | tool_sayisi={tool_count} yanit_id={ai_sonuc.get('yanit_id') if isinstance(ai_sonuc, dict) else 'N/A'}")
         
+        # 4/4: Yanıt gönderiliyor
         if ai_sonuc.get("yanit"):
+            logger.info("[4/4] Yanıt gönderiliyor")
             return ChatResponseNew(
                 success=True,
                 response=ai_sonuc["yanit"],

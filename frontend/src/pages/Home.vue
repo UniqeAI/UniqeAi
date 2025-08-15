@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen relative overflow-hidden" :class="{ 'dark-mode': darkMode }">
-    <!-- Static Background -->
-    <div class="absolute inset-0" :class="darkMode ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' : 'bg-gradient-to-br from-blue-50 via-gray-50 to-slate-50'"></div>
+    <!-- Dynamic Background based on Theme -->
+    <div class="absolute inset-0" :class="`bg-gradient-to-br ${currentBackground}`"></div>
 
     <!-- Header with Logo -->
     <header class="relative z-20 py-6 px-8">
@@ -80,13 +80,7 @@
     <!-- Hero Section -->
     <section class="text-center py-12 relative z-10">
       <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-xl font-semibold mb-2 font-sans" :class="darkMode ? 'text-blue-200' : 'text-gray-900'">
-          Akıllı Telekom Asistanınız
-        </h2>
-        
-        <p class="text-base max-w-2xl mx-auto mb-6 leading-relaxed font-sans" :class="darkMode ? 'text-white/80' : 'text-gray-700/80'">
-          Her an, her yerde, sorularınıza anında çözüm. Yapay zeka destekli akıllı asistanınız.
-        </p>
+        <!-- Boş hero section - başlangıç mesajları kaldırıldı -->
       </div>
     </section>
     
@@ -107,7 +101,7 @@
              <div class="text-center">
                
                <h3 class="text-lg font-bold mb-2" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-100' : 'text-gray-900')">7/24 Hizmet</h3>
-               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-200' : 'text-gray-700')">Her zaman yanınızdayız. Gece gündüz, sorularınızı yanıtlıyoruz.</p>
+               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-200' : 'text-gray-700')"></p>
              </div>
            </div>
            
@@ -124,7 +118,7 @@
              <div class="text-center">
                
                <h3 class="text-lg font-bold mb-2" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-100' : 'text-gray-900')">Akıllı Asistan</h3>
-               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-200' : 'text-gray-700')">Yapay zeka destekli hızlı çözümler. Anında ve doğru yanıtlar.</p>
+               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-gray-200' : 'text-gray-700')"></p>
              </div>
            </div>
            
@@ -141,7 +135,7 @@
              <div class="text-center">
                
                <h3 class="text-lg font-bold mb-2" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-slate-100' : 'text-slate-900')">Kolay Kullanım</h3>
-               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-slate-200' : 'text-slate-700')">Basit ve kullanıcı dostu arayüz. Tek tıkla başlayın.</p>
+               <p class="text-sm" :class="currentTheme === 'monochrome' ? 'text-black' : (darkMode ? 'text-slate-200' : 'text-slate-700')"></p>
              </div>
            </div>
          </div>
@@ -152,54 +146,38 @@
     <section class="py-8 px-4 relative z-10">
       <div class="max-w-md mx-auto text-center">
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <router-link 
-            to="/chat"
-            class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-white"
-            :style="currentTheme === 'monochrome' 
-              ? 'background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%); color: #ffffff;' 
-              : currentTheme === 'burgundy'
-                ? 'background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%); color: #ffffff;'
-                : currentTheme === 'purple'
-                  ? 'background: linear-gradient(135deg, #5b21b6 0%, #6d28d9 50%, #7c3aed 100%); color: #ffffff;'
-                  : currentTheme === 'emerald'
-                    ? 'background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%); color: #ffffff;'
-                  : 'background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%); color: #ffffff;'"
-          >
-            Hemen Başla
-          </router-link>
+                     <router-link 
+             to="/chat"
+             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-white"
+             :style="currentTheme === 'monochrome' 
+               ? 'background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%); color: #ffffff;' 
+               : currentTheme === 'burgundy'
+                 ? 'background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%); color: #ffffff;'
+                 : currentTheme === 'purple'
+                   ? 'background: linear-gradient(135deg, #5b21b6 0%, #6d28d9 50%, #7c3aed 100%); color: #ffffff;'
+                   : currentTheme === 'emerald'
+                     ? 'background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%); color: #ffffff;'
+                   : 'background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%); color: #ffffff;'"
+           >
+             Chat'e Git
+           </router-link>
           
-          <router-link 
-            to="/telekom-services"
-            class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 text-white"
-            :style="currentTheme === 'monochrome' 
-              ? 'background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%); color: #ffffff;' 
-              : currentTheme === 'burgundy'
-                ? 'background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%); color: #ffffff;'
-                : currentTheme === 'purple'
-                  ? 'background: linear-gradient(135deg, #5b21b6 0%, #6d28d9 50%, #7c3aed 100%); color: #ffffff;'
-                  : currentTheme === 'emerald'
-                    ? 'background: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%); color: #ffffff;'
-                  : 'background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%); color: #ffffff;'"
-          >
-            Telekom Hizmetleri
-          </router-link>
-          
-          <router-link 
-            to="/login"
-            class="card px-8 py-4 text-lg font-bold border-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            :class="currentTheme === 'monochrome' ? 'border-black hover:bg-black/20 text-black bg-white' : (darkMode ? 'border-blue-700 hover:bg-blue-800/20 text-white bg-gradient-to-r from-blue-950/20 to-blue-900/20' : 'border-blue-700 hover:bg-blue-600/20 text-blue-900 bg-gradient-to-r from-blue-100 to-blue-200')"
-            :style="currentTheme === 'monochrome' 
-              ? 'border-color: #000000;' 
-              : currentTheme === 'burgundy'
-                ? 'border-color: #7f1d1d;'
-                : currentTheme === 'purple'
-                  ? 'border-color: #5b21b6;'
-                  : currentTheme === 'emerald'
-                    ? 'border-color: #065f46;'
-                    : 'border-color: #1e3a8a;'"
-          >
-            Giriş Yap
-          </router-link>
+                                                                                       <router-link 
+               to="/login"
+               class="card px-8 py-4 text-lg font-bold border-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+               :class="currentTheme === 'monochrome' ? 'border-black hover:bg-black/20 text-black bg-white' : (darkMode ? 'border-blue-700 hover:bg-blue-800/20 text-white bg-gradient-to-r from-blue-950/20 to-blue-900/20' : 'border-blue-700 hover:bg-blue-600/20 text-blue-900 bg-gradient-to-r from-blue-100 to-blue-200')"
+               :style="currentTheme === 'monochrome' 
+                 ? 'border-color: #000000;' 
+                 : currentTheme === 'burgundy'
+                   ? 'border-color: #7f1d1d;'
+                   : currentTheme === 'purple'
+                     ? 'border-color: #5b21b6;'
+                     : currentTheme === 'emerald'
+                       ? 'border-color: #065f46;'
+                       : 'border-color: #1e3a8a;'"
+             >
+               Giriş Yap
+             </router-link>
         </div>
       </div>
     </section>
@@ -216,7 +194,7 @@ const darkMode = ref(false) // Default to light mode
 const currentTheme = ref('blue') // Default theme
 const showThemeMenu = ref(false) // Theme menu visibility
 
-// Available themes - Updated with user's requested colors
+// Available themes with dynamic background colors
 const themes = [
   { 
     name: 'blue', 
@@ -225,7 +203,9 @@ const themes = [
       primary: '#1e3a8a', 
       secondary: '#1e40af', 
       accent: '#1d4ed8' 
-    } 
+    },
+    darkBackground: 'from-black via-blue-950 via-blue-900 to-blue-800',
+    lightBackground: 'from-blue-50 via-blue-100 to-blue-200'
   },
   { 
     name: 'burgundy', 
@@ -234,7 +214,9 @@ const themes = [
       primary: '#7f1d1d', 
       secondary: '#991b1b', 
       accent: '#b91c1c' 
-    } 
+    },
+    darkBackground: 'from-black via-red-950 via-red-900 to-red-800',
+    lightBackground: 'from-red-50 via-red-100 to-red-200'
   },
   { 
     name: 'purple', 
@@ -243,7 +225,9 @@ const themes = [
       primary: '#5b21b6', 
       secondary: '#6d28d9', 
       accent: '#7c3aed' 
-    } 
+    },
+    darkBackground: 'from-black via-purple-950 via-purple-900 to-purple-800',
+    lightBackground: 'from-purple-50 via-purple-100 to-purple-200'
   },
   { 
     name: 'emerald', 
@@ -252,7 +236,9 @@ const themes = [
       primary: '#065f46', 
       secondary: '#047857', 
       accent: '#059669' 
-    } 
+    },
+    darkBackground: 'from-black via-emerald-950 via-emerald-900 to-emerald-800',
+    lightBackground: 'from-emerald-50 via-emerald-100 to-emerald-200'
   },
   { 
     name: 'monochrome', 
@@ -261,13 +247,22 @@ const themes = [
       primary: '#000000', 
       secondary: '#000000', 
       accent: '#000000' 
-    } 
+    },
+    darkBackground: 'from-black via-gray-900 via-gray-800 to-gray-700',
+    lightBackground: 'from-gray-50 via-gray-100 to-gray-200'
   }
 ]
 
 const currentThemeIcon = computed(() => {
   const theme = themes.find(t => t.name === currentTheme.value)
   return theme ? theme.icon : '🔵'
+})
+
+const currentBackground = computed(() => {
+  const theme = themes.find(t => t.name === currentTheme.value)
+  if (!theme) return darkMode.value ? 'from-black via-gray-900 to-blue-950' : 'from-blue-50 via-gray-50 to-slate-50'
+  
+  return darkMode.value ? theme.darkBackground : theme.lightBackground
 })
 
 const toggleDarkMode = () => {

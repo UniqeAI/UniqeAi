@@ -3,6 +3,7 @@ fastapi
 uvicorn
 pytest
 httpx
+sqlalchemy>=2.0.0
 
 # AI/ML paketleri (opsiyonel - gerçek AI için)
 transformers>=4.35.0
@@ -53,4 +54,5 @@ seaborn>=0.12.0
 faker>=19.0.0  # Veri üretimi
 
 # GGUF Model Support
-ctransformers>=0.2.27 
+ctransformers>=0.2.27
+llama-cpp-python>=0.2.90 

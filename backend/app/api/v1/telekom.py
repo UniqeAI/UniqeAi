@@ -361,6 +361,459 @@ LINE_SUSPENSION_DATA = {
     5: {"suspended": False, "reason": None, "suspension_date": None}
 }
 
+# ============================================================================
+# YENİ MOCK VERİLER - EKSİK ENDPOINT'LER İÇİN
+# ============================================================================
+
+# Fatura Ödeme İşlemleri
+BILL_PAYMENT_RESULTS = {
+    0: {
+        "payment_id": "PAY-2024-0000-NEW",
+        "bill_id": "F-2024-0000",
+        "amount": 89.90,
+        "method": "credit_card",
+        "card_last4": "1234",
+        "status": "completed",
+        "transaction_date": "2024-03-15T14:30:00Z",
+        "confirmation_code": "CC123456789",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0000-NEW"
+    },
+    1: {
+        "payment_id": "PAY-2024-0001-NEW", 
+        "bill_id": "F-2024-0001",
+        "amount": 49.90,
+        "method": "bank_transfer",
+        "account_last4": "5678",
+        "status": "completed",
+        "transaction_date": "2024-03-15T14:35:00Z",
+        "confirmation_code": "BT987654321",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0001-NEW"
+    },
+    2: {
+        "payment_id": "PAY-2024-0002-NEW",
+        "bill_id": "F-2024-0002", 
+        "amount": 59.90,
+        "method": "mobile_payment",
+        "status": "completed",
+        "transaction_date": "2024-03-15T14:40:00Z",
+        "confirmation_code": "MP456789123",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0002-NEW"
+    },
+    3: {
+        "payment_id": "PAY-2024-0003-NEW",
+        "bill_id": "F-2024-0003",
+        "amount": 89.90, 
+        "method": "credit_card",
+        "card_last4": "9012",
+        "status": "completed",
+        "transaction_date": "2024-03-15T14:45:00Z",
+        "confirmation_code": "CC789123456",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0003-NEW"
+    },
+    4: {
+        "payment_id": "PAY-2024-0004-NEW",
+        "bill_id": "F-2024-0004",
+        "amount": 69.90,
+        "method": "bank_transfer",
+        "account_last4": "3456",
+        "status": "completed", 
+        "transaction_date": "2024-03-15T14:50:00Z",
+        "confirmation_code": "BT321654987",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0004-NEW"
+    },
+    5: {
+        "payment_id": "PAY-2024-0005-NEW",
+        "bill_id": "F-2024-0005",
+        "amount": 49.90,
+        "method": "credit_card",
+        "card_last4": "7890",
+        "status": "completed",
+        "transaction_date": "2024-03-15T14:55:00Z", 
+        "confirmation_code": "CC654987321",
+        "receipt_url": "https://receipt.telekom.com/PAY-2024-0005-NEW"
+    }
+}
+
+# Paket Değişikliği Detaylı Sonuçları
+PACKAGE_CHANGE_RESULTS = {
+    0: {
+        "change_id": "PKG-2024-0000-CHANGE",
+        "old_package": "Premium Paket",
+        "new_package": "Mega İnternet", 
+        "status": "completed",
+        "effective_date": "2024-04-01",
+        "prorated_amount": 15.50,
+        "monthly_difference": -20.00,
+        "reason": "Maliyet tasarrufu",
+        "change_date": "2024-03-15T15:00:00Z"
+    },
+    1: {
+        "change_id": "PKG-2024-0001-CHANGE",
+        "old_package": "Öğrenci Dostu",
+        "new_package": "Süper Konuşma",
+        "status": "pending",
+        "effective_date": "2024-04-01", 
+        "prorated_amount": 8.33,
+        "monthly_difference": 10.00,
+        "reason": "Daha fazla konuşma ihtiyacı",
+        "change_date": "2024-03-15T15:05:00Z"
+    },
+    2: {
+        "change_id": "PKG-2024-0002-CHANGE", 
+        "old_package": "Süper Konuşma",
+        "new_package": "Premium Paket",
+        "status": "completed",
+        "effective_date": "2024-04-01",
+        "prorated_amount": 25.00,
+        "monthly_difference": 30.00,
+        "reason": "Premium hizmetler istendi",
+        "change_date": "2024-03-15T15:10:00Z"
+    },
+    3: {
+        "change_id": "PKG-2024-0003-CHANGE",
+        "old_package": "Premium Paket", 
+        "new_package": "Mega İnternet",
+        "status": "cancelled",
+        "effective_date": None,
+        "prorated_amount": 0,
+        "monthly_difference": -20.00,
+        "reason": "Müşteri değiştirdi", 
+        "change_date": "2024-03-15T15:15:00Z"
+    },
+    4: {
+        "change_id": "PKG-2024-0004-CHANGE",
+        "old_package": "Mega İnternet",
+        "new_package": "Premium Paket",
+        "status": "completed",
+        "effective_date": "2024-04-01",
+        "prorated_amount": 16.67,
+        "monthly_difference": 20.00,
+        "reason": "Upgrade talep edildi",
+        "change_date": "2024-03-15T15:20:00Z"
+    },
+    5: {
+        "change_id": "PKG-2024-0005-CHANGE", 
+        "old_package": "Öğrenci Dostu",
+        "new_package": "Mega İnternet",
+        "status": "processing",
+        "effective_date": "2024-04-01",
+        "prorated_amount": 12.50,
+        "monthly_difference": 20.00,
+        "reason": "İnternet ihtiyacı artışı",
+        "change_date": "2024-03-15T15:25:00Z"
+    }
+}
+
+# Destek Talebi Kapatma/Durum Sonuçları
+TICKET_OPERATIONS = {
+    0: {
+        "last_ticket": "TICKET-0003",
+        "close_result": {
+            "ticket_id": "TICKET-0003",
+            "status": "closed",
+            "resolution": "Paket değişikliği tamamlandı",
+            "closed_by": "Sistem Uzmanı Mehmet A.",
+            "close_date": "2024-03-15T16:00:00Z",
+            "satisfaction_rating": 5,
+            "resolution_time": "2 gün"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0003", 
+            "current_status": "resolved",
+            "priority": "medium",
+            "assigned_to": "Sistem Uzmanı Mehmet A.",
+            "estimated_resolution": "2024-03-16T10:00:00Z",
+            "last_update": "2024-03-15T16:00:00Z",
+            "updates": [
+                {"date": "2024-03-10T09:00:00Z", "status": "open", "note": "Talep alındı"},
+                {"date": "2024-03-12T14:00:00Z", "status": "in_progress", "note": "İnceleme başlatıldı"}, 
+                {"date": "2024-03-15T16:00:00Z", "status": "resolved", "note": "Çözüm uygulandı"}
+            ]
+        }
+    },
+    1: {
+        "last_ticket": "TICKET-0005",
+        "close_result": {
+            "ticket_id": "TICKET-0005",
+            "status": "closed",
+            "resolution": "Roaming hizmeti aktifleştirildi",
+            "closed_by": "Müşteri Hizmetleri Ayşe K.",
+            "close_date": "2024-03-15T16:10:00Z",
+            "satisfaction_rating": 4,
+            "resolution_time": "1 gün"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0005",
+            "current_status": "in_progress", 
+            "priority": "medium",
+            "assigned_to": "Müşteri Hizmetleri Ayşe K.",
+            "estimated_resolution": "2024-03-16T12:00:00Z",
+            "last_update": "2024-03-15T14:30:00Z",
+            "updates": [
+                {"date": "2024-02-25T10:00:00Z", "status": "open", "note": "Roaming aktivasyon talebi"},
+                {"date": "2024-03-15T14:30:00Z", "status": "in_progress", "note": "Belge kontrolü yapılıyor"}
+            ]
+        }
+    },
+    2: {
+        "last_ticket": "TICKET-0007",
+        "close_result": {
+            "ticket_id": "TICKET-0007",
+            "status": "closed", 
+            "resolution": "Paket bilgileri detaylı olarak açıklandı",
+            "closed_by": "Teknik Uzman Fatma S.",
+            "close_date": "2024-03-15T16:20:00Z",
+            "satisfaction_rating": 5,
+            "resolution_time": "4 saat"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0007",
+            "current_status": "resolved",
+            "priority": "low",
+            "assigned_to": "Teknik Uzman Fatma S.",
+            "estimated_resolution": "2024-03-15T18:00:00Z",
+            "last_update": "2024-03-15T16:20:00Z",
+            "updates": [
+                {"date": "2024-02-15T13:00:00Z", "status": "open", "note": "Paket bilgisi sorgusu"},
+                {"date": "2024-03-15T16:20:00Z", "status": "resolved", "note": "Detaylı bilgi verildi"}
+            ]
+        }
+    },
+    3: {
+        "last_ticket": "TICKET-0008", 
+        "close_result": {
+            "ticket_id": "TICKET-0008",
+            "status": "closed",
+            "resolution": "İnternet bağlantı sorunu çözüldü",
+            "closed_by": "Teknik Uzman Ahmet D.",
+            "close_date": "2024-03-15T16:30:00Z",
+            "satisfaction_rating": 4,
+            "resolution_time": "10 gün"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0008",
+            "current_status": "open",
+            "priority": "medium", 
+            "assigned_to": "Teknik Uzman Ahmet D.",
+            "estimated_resolution": "2024-03-17T10:00:00Z",
+            "last_update": "2024-03-15T10:00:00Z",
+            "updates": [
+                {"date": "2024-03-05T11:00:00Z", "status": "open", "note": "Bağlantı sorunu bildirildi"},
+                {"date": "2024-03-15T10:00:00Z", "status": "in_progress", "note": "Teknik ekip müdahale ediyor"}
+            ]
+        }
+    },
+    4: {
+        "last_ticket": "TICKET-0010",
+        "close_result": {
+            "ticket_id": "TICKET-0010",
+            "status": "closed",
+            "resolution": "Premium hizmetler aktifleştirildi",
+            "closed_by": "Müşteri Hizmetleri Zeynep Y.",
+            "close_date": "2024-03-15T16:40:00Z", 
+            "satisfaction_rating": 5,
+            "resolution_time": "15 gün"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0010",
+            "current_status": "open",
+            "priority": "medium",
+            "assigned_to": "Müşteri Hizmetleri Zeynep Y.",
+            "estimated_resolution": "2024-03-18T15:00:00Z",
+            "last_update": "2024-03-14T16:00:00Z",
+            "updates": [
+                {"date": "2024-02-28T14:00:00Z", "status": "open", "note": "Premium aktivasyon talebi"},
+                {"date": "2024-03-14T16:00:00Z", "status": "in_progress", "note": "Aktivasyon işlemi başlatıldı"}
+            ]
+        }
+    },
+    5: {
+        "last_ticket": "TICKET-0012",
+        "close_result": {
+            "ticket_id": "TICKET-0012",
+            "status": "closed",
+            "resolution": "Roaming kullanım rehberi gönderildi",
+            "closed_by": "Müşteri Hizmetleri Can T.",
+            "close_date": "2024-03-15T16:50:00Z",
+            "satisfaction_rating": 4,
+            "resolution_time": "14 gün"
+        },
+        "status_info": {
+            "ticket_id": "TICKET-0012",
+            "current_status": "open",
+            "priority": "medium",
+            "assigned_to": "Müşteri Hizmetleri Can T.",
+            "estimated_resolution": "2024-03-16T14:00:00Z",
+            "last_update": "2024-03-15T12:00:00Z",
+            "updates": [
+                {"date": "2024-03-01T15:00:00Z", "status": "open", "note": "Roaming kullanım sorgusu"},
+                {"date": "2024-03-15T12:00:00Z", "status": "in_progress", "note": "Detaylı rehber hazırlanıyor"}
+            ]
+        }
+    }
+}
+
+# Müşteri İletişim Güncelleme Sonuçları
+CONTACT_UPDATE_RESULTS = {
+    0: {
+        "update_id": "CONTACT-2024-0000-UPD",
+        "updated_fields": ["email", "address"],
+        "old_email": "enes.faruk.aydin@email.com",
+        "new_email": "enes.faruk.aydin@yeniadres.com",
+        "old_address": "Ankara, Çankaya",
+        "new_address": "Ankara, Kızılay Mah. Yeni Sok. No:15",
+        "update_date": "2024-03-15T17:00:00Z",
+        "verified": True,
+        "verification_method": "SMS"
+    },
+    1: {
+        "update_id": "CONTACT-2024-0001-UPD",
+        "updated_fields": ["phone_number"],
+        "old_phone": "+905559876543",
+        "new_phone": "+905551234567",
+        "update_date": "2024-03-15T17:10:00Z",
+        "verified": True,
+        "verification_method": "Phone Call"
+    },
+    2: {
+        "update_id": "CONTACT-2024-0002-UPD", 
+        "updated_fields": ["email", "phone_number"],
+        "old_email": "sedat.kilicoglu@email.com",
+        "new_email": "sedat.kilicoglu@yenimail.com",
+        "old_phone": "+905551112223",
+        "new_phone": "+905559998887",
+        "update_date": "2024-03-15T17:20:00Z",
+        "verified": False,
+        "verification_method": "Pending SMS"
+    },
+    3: {
+        "update_id": "CONTACT-2024-0003-UPD",
+        "updated_fields": ["address"],
+        "old_address": "Bursa, Nilüfer",
+        "new_address": "Bursa, Osmangazi Mah. Güven Sok. No:7",
+        "update_date": "2024-03-15T17:30:00Z",
+        "verified": True,
+        "verification_method": "Document Upload"
+    },
+    4: {
+        "update_id": "CONTACT-2024-0004-UPD",
+        "updated_fields": ["email"],
+        "old_email": "ahmet.nazif.gemalmaz@email.com", 
+        "new_email": "ahmet.nazif.gemalmaz@premium.com",
+        "update_date": "2024-03-15T17:40:00Z",
+        "verified": True,
+        "verification_method": "Email Verification"
+    },
+    5: {
+        "update_id": "CONTACT-2024-0005-UPD",
+        "updated_fields": ["phone_number", "address"],
+        "old_phone": "+905557771234",
+        "new_phone": "+905556664433",
+        "old_address": "istanbul, eminönü",
+        "new_address": "İstanbul, Beyoğlu Mah. Istiklal Cad. No:123",
+        "update_date": "2024-03-15T17:50:00Z",
+        "verified": True,
+        "verification_method": "Branch Visit"
+    }
+}
+
+# Paket Detayları - Paket adına göre
+PACKAGE_DETAILS = {
+    "Premium Paket": {
+        "package_name": "Premium Paket",
+        "monthly_fee": 89.90,
+        "features": {
+            "internet_gb": 100,
+            "voice_minutes": 3000,
+            "sms_count": 1000,
+            "roaming_enabled": True
+        },
+        "description": "Premium hizmetler ile sınırsız deneyim",
+        "contract_duration": "24 ay",
+        "early_termination_fee": 300.00,
+        "activation_fee": 0.00,
+        "extra_benefits": [
+            "7/24 Premium Destek",
+            "Ücretsiz Roaming (25 ülke)",
+            "Premium İçerik Platformu",
+            "Öncelikli Ağ Erişimi"
+        ],
+        "data_speeds": {
+            "4G": "150 Mbps",
+            "5G": "1 Gbps"
+        }
+    },
+    "Öğrenci Dostu": {
+        "package_name": "Öğrenci Dostu",
+        "monthly_fee": 49.90,
+        "features": {
+            "internet_gb": 30,
+            "voice_minutes": 500,
+            "sms_count": 250,
+            "roaming_enabled": False
+        },
+        "description": "Öğrenciler için özel indirimli tarife",
+        "contract_duration": "12 ay",
+        "early_termination_fee": 100.00,
+        "activation_fee": 0.00,
+        "extra_benefits": [
+            "Öğrenci Doğrulama Gerekli",
+            "Eğitim Platformu Erişimi",
+            "Gece Sınırsız İnternet (00:00-06:00)"
+        ],
+        "data_speeds": {
+            "4G": "50 Mbps",
+            "5G": "Yok"
+        }
+    },
+    "Süper Konuşma": {
+        "package_name": "Süper Konuşma",
+        "monthly_fee": 59.90,
+        "features": {
+            "internet_gb": 25,
+            "voice_minutes": 2000,
+            "sms_count": 1000,
+            "roaming_enabled": True
+        },
+        "description": "Konuşmayı sevenler için ideal paket",
+        "contract_duration": "12 ay",
+        "early_termination_fee": 150.00,
+        "activation_fee": 0.00,
+        "extra_benefits": [
+            "Sesli Arama Önceliği",
+            "Sesli Mesaj Servisi",
+            "Konferans Arama (5 kişi)"
+        ],
+        "data_speeds": {
+            "4G": "75 Mbps",
+            "5G": "200 Mbps"
+        }
+    },
+    "Mega İnternet": {
+        "package_name": "Mega İnternet",
+        "monthly_fee": 69.90,
+        "features": {
+            "internet_gb": 50,
+            "voice_minutes": 1000,
+            "sms_count": 500,
+            "roaming_enabled": False
+        },
+        "description": "Yüksek hızlı internet deneyimi",
+        "contract_duration": "12 ay",
+        "early_termination_fee": 200.00,
+        "activation_fee": 0.00,
+        "extra_benefits": [
+            "Hız Garantisi",
+            "Video Streaming Optimizasyonu",
+            "Gaming Paketi (Düşük Ping)"
+        ],
+        "data_speeds": {
+            "4G": "100 Mbps",
+            "5G": "500 Mbps"
+        }
+    }
+}
+
 def get_mock_customer_data(user_id: int):
     """User ID'ye göre mock müşteri verisi döner"""
     return CUSTOMERS.get(user_id, CUSTOMERS[0])
@@ -770,16 +1223,12 @@ async def pay_bill(request: PaymentRequest):
         user_id = get_current_user_from_token(request.session_token)
         logger.info(f"Fatura ödemesi yapılıyor: User ID {user_id}, Bill ID {request.bill_id}, Method: {request.method}")
         
-        payment_data = {
-            "payment_id": f"PAY-{request.bill_id}",
-            "bill_id": request.bill_id,
-            "user_id": user_id,
-            "amount": 75.50,
-            "method": request.method,
-            "status": "completed",
-            "transaction_date": "2024-03-01T14:30:00Z",
-            "confirmation_code": f"CONF-{request.bill_id}"
-        }
+        # Kişiselleştirilmiş ödeme verisi
+        payment_data = BILL_PAYMENT_RESULTS.get(user_id, BILL_PAYMENT_RESULTS[0])
+        
+        # İsteğe göre güncelle
+        payment_data["bill_id"] = request.bill_id
+        payment_data["method"] = request.method
         
         return {
             "success": True,
@@ -903,15 +1352,12 @@ async def change_package(request: PackageChangeRequest):
         user_id = get_current_user_from_token(request.session_token)
         logger.info(f"Paket değişikliği başlatılıyor: User ID {user_id}, New Package: {request.new_package_name}")
         
-        change_data = {
-            "change_id": f"CHG-{user_id:04d}",
-            "user_id": user_id,
-            "current_package": "Mega İnternet",
-            "new_package": request.new_package_name,
-            "status": "pending",
-            "effective_date": "2024-04-01T00:00:00Z",
-            "estimated_cost": 89.90
-        }
+        # Kişiselleştirilmiş paket değişiklik verisi
+        change_data = PACKAGE_CHANGE_RESULTS.get(user_id, PACKAGE_CHANGE_RESULTS[0]).copy()
+        
+        # İsteğe göre güncelle
+        change_data["new_package"] = request.new_package_name
+        change_data["user_id"] = user_id
         
         return {
             "success": True,
@@ -973,20 +1419,13 @@ async def get_package_details(request: PackageDetailsRequest):
     try:
         logger.info(f"Paket detayları sorgulanıyor: Package {request.package_name}")
         
-        package_details = {
-            "package_name": request.package_name,
-            "monthly_fee": 69.50,
-            "features": {
-                "internet_gb": 50,
-                "voice_minutes": 1000,
-                "sms_count": 500,
-                "roaming_enabled": False
-            },
-            "description": "Hızlı internet ve bol dakika",
-            "contract_duration": "12 ay",
-            "early_termination_fee": 200.00,
-            "activation_fee": 0.00
-        }
+        # Paket adına göre detaylı bilgi getir
+        package_details = PACKAGE_DETAILS.get(request.package_name)
+        
+        if not package_details:
+            # Eğer spesifik paket bulunamazsa, default Mega İnternet döndür
+            package_details = PACKAGE_DETAILS["Mega İnternet"].copy()
+            package_details["package_name"] = request.package_name
         
         return {
             "success": True,
@@ -1094,36 +1533,23 @@ async def create_fault_ticket(request: FaultTicketRequest):
 async def close_fault_ticket(request: TicketStatusRequest):
     """Destek talebini kapat"""
     try:
-        logger.info(f"Destek talebi kapatılıyor: Ticket ID {request.ticket_id}")
+        # Session doğrulaması (eğer session_token varsa)
+        user_id = 0  # Default
+        try:
+            if hasattr(request, 'session_token') and request.session_token:
+                user_id = get_current_user_from_token(request.session_token)
+        except:
+            pass
+            
+        logger.info(f"Destek talebi kapatılıyor: Ticket ID {request.ticket_id}, User ID {user_id}")
         
-        def normalize_ticket_id(ticket_id):
-            # Sondaki rakamları al
-            import re
-            digits = re.findall(r'\d+', ticket_id)
-            return '-'.join(digits) if digits else ticket_id
-
-        req_norm = normalize_ticket_id(request.ticket_id)
-        found_ticket = None
-        found_user_id = None
-        for user_id, tickets in SUPPORT_TICKETS.items():
-            for ticket in tickets:
-                t_norm = normalize_ticket_id(ticket["ticket_id"])
-                if req_norm == t_norm:
-                    found_ticket = ticket
-                    found_user_id = user_id
-                    break
-            if found_ticket:
-                break
-
-        close_data = {
-            "ticket_id": request.ticket_id,
-            "status": "closed",
-            "closed_date": "2024-03-01T15:30:00Z",
-            "resolution": "Sorun çözüldü",
-            "satisfaction_rating": 5,
-            "user_id": found_user_id if found_user_id is not None else "N/A",
-            "issue_description": found_ticket["issue"] if found_ticket else "Açıklama bulunamadı"
-        }
+        # Kişiselleştirilmiş ticket işlemi verisi
+        ticket_ops = TICKET_OPERATIONS.get(user_id, TICKET_OPERATIONS[0])
+        close_data = ticket_ops["close_result"].copy()
+        
+        # İsteğe göre güncelle
+        close_data["ticket_id"] = request.ticket_id
+        close_data["user_id"] = user_id
         
         return {
             "success": True,
@@ -1138,17 +1564,22 @@ async def close_fault_ticket(request: TicketStatusRequest):
 async def get_fault_ticket_status(request: TicketStatusRequest):
     """Destek talebi durumunu getir"""
     try:
-        logger.info(f"Destek talebi durumu sorgulanıyor: Ticket ID {request.ticket_id}")
+        # Session doğrulaması (eğer session_token varsa)
+        user_id = 0  # Default
+        try:
+            if hasattr(request, 'session_token') and request.session_token:
+                user_id = get_current_user_from_token(request.session_token)
+        except:
+            pass
+            
+        logger.info(f"Destek talebi durumu sorgulanıyor: Ticket ID {request.ticket_id}, User ID {user_id}")
         
-        status_data = {
-            "ticket_id": request.ticket_id,
-            "status": "in_progress",
-            "last_updated": "2024-03-01T16:30:00Z",
-            "progress": 75,
-            "estimated_completion": "2024-03-02T14:30:00Z",
-            "assigned_technician": "Ahmet Yılmaz",
-            "notes": "Teknik ekip sorunu inceliyor"
-        }
+        # Kişiselleştirilmiş ticket durum verisi
+        ticket_ops = TICKET_OPERATIONS.get(user_id, TICKET_OPERATIONS[0])
+        status_data = ticket_ops["status_info"].copy()
+        
+        # İsteğe göre güncelle
+        status_data["ticket_id"] = request.ticket_id
         
         return {
             "success": True,
@@ -1228,14 +1659,13 @@ async def update_customer_contact(request: ContactUpdateRequest):
         user_id = get_current_user_from_token(request.session_token)
         logger.info(f"İletişim bilgisi güncelleniyor: User ID {user_id}, Type: {request.contact_type}")
         
-        update_data = {
-            "user_id": user_id,
-            "contact_type": request.contact_type,
-            "old_value": "eski_değer",
-            "new_value": request.new_value,
-            "updated_date": "2024-03-01T14:30:00Z",
-            "status": "updated"
-        }
+        # Kişiselleştirilmiş iletişim güncelleme verisi
+        update_data = CONTACT_UPDATE_RESULTS.get(user_id, CONTACT_UPDATE_RESULTS[0]).copy()
+        
+        # İsteğe göre güncelle
+        update_data["user_id"] = user_id
+        update_data["contact_type"] = request.contact_type
+        update_data["new_value"] = request.new_value
         
         return {
             "success": True,

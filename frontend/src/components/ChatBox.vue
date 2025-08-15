@@ -82,13 +82,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const messages = ref([
-  {
-    text: 'Merhaba! Ben Choyrens AI, size nasıl yardımcı olabilirim?',
-    time: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }),
-    isUser: false
-  }
-])
+const messages = ref([])
 
 const addMessage = (text, isUser = false, toolResults = null) => {
   messages.value.push({
@@ -101,40 +95,12 @@ const addMessage = (text, isUser = false, toolResults = null) => {
 
 const getToolDisplayName = (toolName) => {
   const toolNames = {
-    // Fatura İşlemleri
-    'get_current_bill': '📄 Mevcut Fatura',
     'get_past_bills': '📋 Geçmiş Faturalar',
-    'pay_bill': '💳 Fatura Ödeme',
-    'get_payment_history': '📊 Ödeme Geçmişi',
-    'setup_autopay': '🔄 Otomatik Ödeme',
-    
-    // Paket İşlemleri
-    'get_current_package': '📦 Mevcut Paket',
-    'get_available_packages': '📦 Kullanılabilir Paketler',
-    'change_package': '🔄 Paket Değiştirme',
-    'get_package_details': '📋 Paket Detayları',
+    'get_current_bill': '📄 Mevcut Fatura',
+    'get_available_packages': '📦 Paketler',
     'get_remaining_quotas': '📊 Kalan Kota',
-    
-    // Müşteri İşlemleri
-    'get_customer_profile': '👤 Müşteri Profili',
-    'update_customer_contact': '📞 İletişim Güncelleme',
-    'enable_roaming': '🌍 Yurtdışı Hizmetleri',
-    
-    // Ağ ve Teknik İşlemler
     'check_network_status': '📡 Ağ Durumu',
-    'test_internet_speed': '⚡ Hız Testi',
-    'suspend_line': '⏸️ Hat Askıya Alma',
-    'reactivate_line': '▶️ Hat Aktifleştirme',
-    
-    // Destek İşlemleri
-    'create_support_ticket': '🆘 Destek Talebi',
-    'close_support_ticket': '✅ Destek Talebi Kapatma',
-    'get_support_ticket_status': '📋 Destek Talebi Durumu',
-    'get_user_support_tickets': '📋 Destek Talepleri',
-    
-    // Kimlik Doğrulama
-    'auth_register': '📝 Kayıt Olma',
-    'auth_login': '🔑 Giriş Yapma'
+    'test_internet_speed': '⚡ Hız Testi'
   }
   return toolNames[toolName] || toolName
 }

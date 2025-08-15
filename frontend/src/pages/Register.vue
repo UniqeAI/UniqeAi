@@ -1,7 +1,19 @@
 <template>
   <div class="min-h-screen flex items-center justify-center relative overflow-hidden" :class="{ 'dark-mode': darkMode }">
-    <!-- Static Background -->
-    <div class="absolute inset-0" :class="darkMode ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' : 'bg-gradient-to-br from-blue-50 via-gray-50 to-slate-50'"></div>
+    <!-- Dynamic Background based on Theme -->
+    <div class="absolute inset-0" :class="`bg-gradient-to-br ${currentBackground}`"></div>
+
+    <!-- Back to Home Button - Fixed Position Left Top -->
+    <div class="fixed top-4 left-4 z-30">
+      <router-link 
+        to="/" 
+        class="btn p-3 rounded-full backdrop-blur-sm border border-blue-500/30 hover:bg-blue-600/20 transition-all duration-300 shadow-lg"
+        :class="darkMode ? 'text-white' : 'text-gray-900'"
+      >
+        <span class="text-lg">🏠</span>
+        <span class="text-sm font-medium">Ana Sayfa</span>
+      </router-link>
+    </div>
 
     <!-- Theme Controls - Fixed Position -->
     <div class="fixed top-4 right-4 z-30 flex items-center gap-3">
@@ -94,8 +106,8 @@
               type="text"
               required
               placeholder="Adınız Soyadınız"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -110,8 +122,8 @@
               type="email"
               required
               placeholder="ornek@email.com"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -126,8 +138,8 @@
               type="tel"
               required
               placeholder="+90 5XX XXX XX XX"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -142,8 +154,8 @@
               type="password"
               required
               placeholder="••••••••"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -158,8 +170,8 @@
               type="password"
               required
               placeholder="••••••••"
-              class="input w-full p-3 text-base"
-              :class="darkMode ? 'text-white placeholder-white/50 bg-gray-900/50 border-gray-700' : 'text-gray-900 placeholder-gray-700/50'"
+              class="input w-full p-3 text-base transition-all duration-300"
+              :class="getInputClasses"
             />
           </div>
 
@@ -227,7 +239,7 @@ const password = ref('')
 const confirmPassword = ref('')
 const acceptTerms = ref(false)
 
-// Available themes
+// Available themes with dynamic dark mode background colors
 const themes = [
   { 
     name: 'blue', 
@@ -236,7 +248,9 @@ const themes = [
       primary: '#1e3a8a', 
       secondary: '#1e40af', 
       accent: '#1d4ed8' 
-    } 
+    },
+    darkBackground: 'from-black via-blue-950 via-blue-900 to-blue-800',
+    lightBackground: 'from-blue-50 via-blue-100 to-blue-200'
   },
   { 
     name: 'burgundy', 
@@ -245,7 +259,9 @@ const themes = [
       primary: '#7f1d1d', 
       secondary: '#991b1b', 
       accent: '#b91c1c' 
-    } 
+    },
+    darkBackground: 'from-black via-red-950 via-red-900 to-red-800',
+    lightBackground: 'from-red-50 via-red-100 to-red-200'
   },
   { 
     name: 'purple', 
@@ -254,7 +270,9 @@ const themes = [
       primary: '#5b21b6', 
       secondary: '#6d28d9', 
       accent: '#7c3aed' 
-    } 
+    },
+    darkBackground: 'from-black via-purple-950 via-purple-900 to-purple-800',
+    lightBackground: 'from-purple-50 via-purple-100 to-purple-200'
   },
   { 
     name: 'emerald', 
@@ -263,7 +281,9 @@ const themes = [
       primary: '#065f46', 
       secondary: '#047857', 
       accent: '#059669' 
-    } 
+    },
+    darkBackground: 'from-black via-emerald-950 via-emerald-900 to-emerald-800',
+    lightBackground: 'from-emerald-50 via-emerald-100 to-emerald-200'
   },
   { 
     name: 'monochrome', 
@@ -272,13 +292,56 @@ const themes = [
       primary: '#000000', 
       secondary: '#000000', 
       accent: '#000000' 
-    } 
+    },
+    darkBackground: 'from-black via-gray-900 via-gray-800 to-gray-700',
+    lightBackground: 'from-gray-50 via-gray-100 to-gray-200'
   }
 ]
 
 const currentThemeIcon = computed(() => {
   const theme = themes.find(t => t.name === currentTheme.value)
   return theme ? theme.icon : '🔵'
+})
+
+const currentBackground = computed(() => {
+  const theme = themes.find(t => t.name === currentTheme.value)
+  if (!theme) return darkMode.value ? 'from-black via-gray-900 to-blue-950' : 'from-blue-50 via-gray-50 to-slate-50'
+  
+  return darkMode.value ? theme.darkBackground : theme.lightBackground
+})
+
+const getInputClasses = computed(() => {
+  const theme = themes.find(t => t.name === currentTheme.value)
+  
+  if (currentTheme.value === 'monochrome') {
+    return darkMode.value 
+      ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600 focus:border-gray-500' 
+      : 'bg-white text-black placeholder-gray-500 border-gray-300 focus:border-gray-400'
+  }
+  
+  if (!theme) return darkMode.value 
+    ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600' 
+    : 'bg-white text-gray-900 placeholder-gray-500 border-gray-300'
+  
+  // Tema rengine göre input stilleri
+  const themeInputs = {
+    'blue': darkMode.value 
+      ? 'bg-blue-900/50 text-white placeholder-blue-200/60 border-blue-700 focus:border-blue-500' 
+      : 'bg-white text-blue-900 placeholder-blue-600/60 border-blue-300 focus:border-blue-500',
+    'burgundy': darkMode.value 
+      ? 'bg-red-900/50 text-white placeholder-red-200/60 border-red-700 focus:border-red-500' 
+      : 'bg-white text-red-900 placeholder-red-600/60 border-red-300 focus:border-red-500',
+    'purple': darkMode.value 
+      ? 'bg-purple-900/50 text-white placeholder-purple-200/60 border-purple-700 focus:border-purple-500' 
+      : 'bg-white text-purple-900 placeholder-purple-600/60 border-purple-300 focus:border-purple-500',
+    'emerald': darkMode.value 
+      ? 'bg-emerald-900/50 text-white placeholder-emerald-200/60 border-emerald-700 focus:border-emerald-500' 
+      : 'bg-white text-emerald-900 placeholder-emerald-600/60 border-emerald-300 focus:border-emerald-500'
+  }
+  
+  return themeInputs[currentTheme.value] || (darkMode.value 
+    ? 'bg-gray-800 text-white placeholder-white/60 border-gray-600' 
+    : 'bg-white text-gray-900 placeholder-gray-500 border-gray-300')
 })
 
 const toggleDarkMode = () => {
@@ -368,24 +431,94 @@ const showThemeNotification = () => {
   }, 3000)
 }
 
-const handleRegister = () => {
+import { userAPI, telekomAPI } from '../services/api.js'
+
+const handleRegister = async () => {
   // Validate passwords match
   if (password.value !== confirmPassword.value) {
-    alert('Şifreler eşleşmiyor!')
+    showNotification('Şifreler eşleşmiyor!', 'error')
     return
   }
   
-  // Simulate register process
-  console.log('Register attempt:', { 
-    fullName: fullName.value, 
-    email: email.value, 
-    phone: phone.value, 
-    password: password.value,
-    acceptTerms: acceptTerms.value 
-  })
+  if (!acceptTerms.value) {
+    showNotification('Lütfen kullanım şartlarını kabul edin.', 'error')
+    return
+  }
   
-  // For demo purposes, redirect to chat
-  router.push('/chat')
+  try {
+    const userData = {
+      name: fullName.value,
+      email: email.value,
+      password: password.value,
+      phone: phone.value
+    }
+    
+    // Try to register with User API first
+    const userResult = await userAPI.register(userData)
+    
+    if (userResult?.success) {
+      // Store session data
+      if (userResult.data?.session_token) {
+        localStorage.setItem('session_token', userResult.data.session_token)
+        localStorage.setItem('user_id', String(userResult.data.user_id || ''))
+        localStorage.setItem('user_name', userResult.data.name || fullName.value)
+      }
+      
+      showNotification('Kayıt başarılı! Giriş yapılıyor...', 'success')
+      setTimeout(() => {
+        router.push('/chat')
+      }, 1500)
+    } else {
+      // If User API fails, try Telekom API
+      try {
+        const telekomResult = await telekomAPI.register(userData)
+        if (telekomResult?.success) {
+          if (telekomResult.session_token) {
+            localStorage.setItem('session_token', telekomResult.session_token)
+            localStorage.setItem('user_id', String(telekomResult.user_id || ''))
+            localStorage.setItem('user_name', telekomResult.user_name || fullName.value)
+          }
+          
+          showNotification('Kayıt başarılı! Giriş yapılıyor...', 'success')
+          setTimeout(() => {
+            router.push('/chat')
+          }, 1500)
+        } else {
+          throw new Error(telekomResult?.message || 'Kayıt başarısız')
+        }
+      } catch (telekomError) {
+        throw new Error('Her iki kayıt sistemi de başarısız oldu')
+      }
+    }
+    
+  } catch (error) {
+    console.error('Register failed:', error)
+    showNotification('Kayıt başarısız: ' + (error.message || 'Bilinmeyen hata'), 'error')
+  }
+}
+
+const showNotification = (message, type = 'info') => {
+  const notification = document.createElement('div')
+  const bgColor = type === 'success' ? 'bg-green-600' : type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+  notification.className = `fixed top-4 right-4 ${bgColor} text-white px-6 py-3 rounded-xl shadow-2xl z-50 transform transition-all duration-300 font-semibold text-sm`
+  notification.textContent = message
+  notification.style.transform = 'translateY(-100%)'
+  notification.style.opacity = '0'
+  
+  document.body.appendChild(notification)
+  
+  setTimeout(() => {
+    notification.style.transform = 'translateY(0)'
+    notification.style.opacity = '1'
+  }, 10)
+  
+  setTimeout(() => {
+    notification.style.transform = 'translateY(-100%)'
+    notification.style.opacity = '0'
+    setTimeout(() => {
+      notification.remove()
+    }, 300)
+  }, 3000)
 }
 
 onMounted(() => {
