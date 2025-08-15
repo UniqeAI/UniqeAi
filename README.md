@@ -1,4 +1,4 @@
-## UniqeAi – Telekom Akıllı Asistan (ChoyrensAi)
+## ChoyrensAi – Telekom Akıllı Asistan 
 
 ChoyrensAi takımı tarafından geliştirilen, uçtan uca veri üretimi → model eğitimi → servis (backend) → arayüz (frontend) → değerlendirme (benchmark) akışını tek depoda sunan referans uygulama.
 
