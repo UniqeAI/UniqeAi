@@ -1,0 +1,3846 @@
+[
+  {
+    "id": "negotiation_scenario_63eb7a84_41aab0e7",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_93cf2ed2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e3f814dc_82cd7a72",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Rakip firma aynı içeriği daha ucuza veriyor. Eşleştirir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri listeliyorum; eşdeğer içeriğe özel teklif yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Eşleştir-Plus\",\"monthly_fee\":99.9,\"features\":{\"internet_gb\":40,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Eşleştir-Pro\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":60,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Eşdeğer paketi eşleştirdim; ayrıca ilk 3 ay %10 ek indirim sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e3f814dc_cc5b098c",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Rakip firma aynı içeriği daha ucuza veriyor. Eşleştirir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri listeliyorum; eşdeğer içeriğe özel teklif yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Eşleştir-Plus\",\"monthly_fee\":99.9,\"features\":{\"internet_gb\":40,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Eşleştir-Pro\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":60,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Eşdeğer paketi eşleştirdim; ayrıca ilk 3 ay %10 ek indirim sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_f6dd2e78",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_fa6b19dc",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_2641c3f4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_a3af2a90",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_a463843a",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_2a5d5657",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_a05c0e6f",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_2c9198d5",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_d4fc9aa2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_3d19adbf",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_59f7f05e",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_dc2a2e63",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_233f44e4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_5254017a",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_122e1ba2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_6b333ba8",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_aa3dc606",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_633c8c29",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_4c9671a2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_f3dab30d",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_7ad539c8",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_fd345e61",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_bf0668fc",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_145d6ef0",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_be6ed5e0",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_e06c6ebc",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_dab46226",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_d1697af0",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_d3d01095",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_123298c9",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_fddf0867",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_e5abbc37",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_586b0df7",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_f312ae55",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_3ffe2b93",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e3f814dc_e9a121d4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Rakip firma aynı içeriği daha ucuza veriyor. Eşleştirir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri listeliyorum; eşdeğer içeriğe özel teklif yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Eşleştir-Plus\",\"monthly_fee\":99.9,\"features\":{\"internet_gb\":40,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Eşleştir-Pro\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":60,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Eşdeğer paketi eşleştirdim; ayrıca ilk 3 ay %10 ek indirim sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_f8f9fda6",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_aaada5bf",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_5e121aeb",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_16163897",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_ac9268d8",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_c34901e2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_edd43e51",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_696c855b",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_19c7586c",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_6697ec81",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_2b390d4f",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_d50d1ce6",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_2eb1921f",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_b032d2ed",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_94dc778f",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_2a985cc8",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_d7312cf4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_2b5392b6",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_1bc085ba",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_cbbbfc8a",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_b438c956",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_c88c1be4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_56673ac5",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_7ba50b50",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_e393cd93",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_22b78b57",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e3f814dc_350dd89c",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "bargain_hunter",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Rakip firma aynı içeriği daha ucuza veriyor. Eşleştirir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri listeliyorum; eşdeğer içeriğe özel teklif yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Eşleştir-Plus\",\"monthly_fee\":99.9,\"features\":{\"internet_gb\":40,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Eşleştir-Pro\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":60,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Eşdeğer paketi eşleştirdim; ayrıca ilk 3 ay %10 ek indirim sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_5e076698",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_9d2ea4d5",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_615b9883",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_f77f6d78",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_3da5716f_c9971eff",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Otomatik ödeme talimatı verirsem indirim olur mu?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hem faturayı kontrol ediyorum hem de talimatı aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30438
+            }
+          },
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 30438,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-274343\",\"user_id\":30438,\"amount\":104.16,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-23T17:08:59.118902\",\"bill_date\":\"2025-07-24T17:08:59.118902\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":318.56},{\"service_name\":\"Ayşe Kaya\",\"amount\":507.07},{\"service_name\":\"Mehmet Demir\",\"amount\":818.92}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":30438,\"autopay_enabled\":true,\"payment_method\":\"5G teknolojisi\",\"next_payment_date\":\"2025-08-07T17:08:59.118902\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Talimat aktif. Otomatik ödeme indirimi +1 ay ek data kampanyası sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_403004fd",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_5e8a4262",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_a1390514",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_e6896574",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_92f55ac5",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_2e120ac6",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_5e799450_8cb3a690",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "anxious_traveler",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yurt dışına çıkıyorum; roaming fiyatı yüksek. Avantajlı teklifiniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif edip uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 38406,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":38406,\"roaming_enabled\":true,\"activation_time\":\"2025-08-07T17:08:59.119902\",\"daily_fee\":711.02,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Günlük ücrette indirim + hediye data içeren teklif sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_e283f88f",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_1e8d0fd7_bf367e05",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "innovative",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Upload ağırlıklı lansman haftası için uygun içerik isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını kontrol edip upload odaklı öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Launch Pro"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Launch Pro\",\"monthly_fee\":172.62,\"setup_fee\":358.63,\"features\":{\"internet_gb\":150,\"voice_minutes\":2000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":14,\"cancellation_fee\":301.56}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Launch Pro için lansmana özel %15 indirimle ilerleyebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_1a1f45ee",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_2c28644b",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_9fbf9eac",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_f900f562",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_f473bdbb",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_1b457afc",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_8eb0d5fb",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_cf435d10",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_efc675f6",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_7232a51e",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_72d695d2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_79c0cf8a",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_5a5102f4",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_43ae5179_71bf50c2",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefon yerine e-postadan iletişim kurarsanız kalmayı düşünebilirim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi kaydediyorum; iletişim kanalınızı güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 14881,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":14881,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-07-23T17:08:59.119902\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta iletişimi aktif. Sadakat indirimi + hediye 5 GB ile devam edelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_800f77b2_71699a73",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "competitive_sales_professional",
+    "cognitive_state": "negotiative",
+    "emotional_context": "competitive",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 yıldır müşterinizim, 109.44 TL ödüyorum. Sadakat indirimi alabilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket ve kullanımınızı inceleyip size özel teklif çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 47571
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 47571
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Gençlik Özel\",\"monthly_fee\":109.44,\"features\":{\"internet_gb\":5,\"voice_minutes\":2000,\"sms_count\":1000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-11T17:08:59.117885\",\"renewal_date\":\"2025-08-03T17:08:59.117885\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":86.04,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":75,\"voice\":30,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sadakat indirimi + düşük ses/SMS kullanımına göre uygun paketle toplam maliyeti düşürebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_f0bc02b3_ef0c0bf5",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık faturamı 20 TL düşürmek istiyorum; ne yapabiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi ile aylık ücretinizi düşürebiliriz. Uygun değişikliği planlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "change_package",
+            "parametreler": {
+              "user_id": 63160,
+              "new_package_name": "Akıllı İnternet"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"change_id\":\"CHANGE_ID-4ECC8B06\",\"from_package\":\"Fiber altyapı\",\"to_package\":\"Akıllı İnternet\",\"effective_date\":\"2025-07-20T17:08:59.118902\",\"fee_difference\":-20.0,\"status\":\"scheduled\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket değişimi sonraki fatura döneminde geçerli olacak; yaklaşık 20 TL tasarruf sağlanır.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_63eb7a84_85a83b9b",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping yüksek; oyun oynayamıyorum. Fiyatı düşürmezseniz taşınırım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini yapıp, performans iyileştirmesi + ücret önerisi sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 71429
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":71429,\"download_speed_mbps\":27.3,\"upload_speed_mbps\":190.39,\"ping_ms\":57,\"test_timestamp\":\"2025-07-19T17:08:59.119902\",\"test_server\":\"Hızlı ve güvenilir hizmet\",\"quality_rating\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Rota optimizasyonu + kablolu öneri ile ping'i düşürelim; ayrıca 3 ay %20 indirim sunuyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_e03b0eee_bd3ec02d",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "content_creator",
+    "cognitive_state": "innovative",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Video ağırlıklı çalışıyorum; upload ve uluslararası dakika önemli.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paket detaylarını getirip ihtiyaca göre özelleştireceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Creators+"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Creators+\",\"monthly_fee\":690.34,\"setup_fee\":695.85,\"features\":{\"internet_gb\":100,\"voice_minutes\":1500,\"sms_count\":1000,\"international_minutes\":200},\"contract_duration\":32,\"cancellation_fee\":458.91}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Creators+ üzerinde upload avantajı ve uluslararası dakika artışı için özel fiyat sunabilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "negotiation_scenario_bfe11b0a_d110a095",
+    "scenario_type": "negotiation_skills",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ayda birkaç gün aşırı kullanıyorum; fiyatı artırmadan nasıl çözebiliriz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları kontrol edip yoğun günler için esnek kota önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 38451
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":8.0,\"voice_remaining_minutes\":500,\"sms_remaining\":2000,\"period_end\":\"5G teknolojisi\",\"usage_percentage\":{\"internet\":60,\"voice\":20,\"sms\":10}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aşırı kullanım günlerine özel esnek kota + düşük ücretli add-on ile fiyat artmadan yönetebiliriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

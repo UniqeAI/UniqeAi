@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "teaching_scenario_2c73fa57_655deaa9",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ebbc9aec",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_70d91455",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ef25a1b8",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ce096363",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_8e590208",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_f251380a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_87e76c39",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ebeecf6a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_5cd09849",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_49671e24",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_65fc1aff",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4ea7b2b3",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_76eec812",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_1c9feb19",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_529dffa6",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_7c181784",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_33f68546",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_7bb608b2",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_610d781f",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_dc9e65ad",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_15a6c4ef",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_05615f3d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_d2b1354c",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_de0d8bed",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4835c586",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_390489fa",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_512f612e",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_906d302b",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_e1fd7550",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_11dd0e2c",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_bae1ec7d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_eab92eb9",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_9b8e98d9",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_bf8cf4ed",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_bebc5335",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_cedce2bc",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_91ab5008",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_e97bc5b5",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_d215916d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_e00ea7e8",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_a33d5a94",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_3b3ee004",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_b2b167fc",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_1ce955f0",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_f62c1c3c",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ad7d518d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_6dde619a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_c9b59086",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_6c54603d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4e103b1c",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_061daae8",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_9b8beb9b",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_981c6c07",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4d3678e9",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_e8c15dfb",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_d1217db0",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_c3590765",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_6f7f2762",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_c7e02709",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_27429d57",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_5a6d6845",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_f9977573",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_099888a3",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_49f2ddb8",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_abfffa27",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_02c93bb5",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_7eb9755d",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_40df1cdf",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_f6dfabd0",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_c7679ae2",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_c416ac1a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4238efe6",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_f095d2a7",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_bbc9555e",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_8a928d3a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_37a31be9",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_8e3e4f6b",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_29b06d89",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_30cf08aa",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4d9015a8",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_ee869a34",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_8336fc2c",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_0b6b431e",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_cfc625b2",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_74be286b",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_cc6ff37b",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_d6c811b3",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_18f5f90a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_3a37a93a",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_7efe0625",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_45fd28fb",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_0025b2d6",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_2ab514de",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_e28c8c79",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_31470714",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_483e7620",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_efa5e318",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_4e17f1f7",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "teaching_scenario_2c73fa57_39a79e3e",
+    "scenario_type": "teaching_mentoring",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "educational",
+    "emotional_context": "curious",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "'İnternet kotası' nedir? Nasıl kontrol ederim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kota, belirli dönemde kullanabileceğiniz veri hakkıdır. Kalan haklarınıza bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 64912
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":67.01,\"voice_remaining_minutes\":5000,\"sms_remaining\":1000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":75,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Video en çok veri harcar; metin ve ses daha az. Günlük hedef belirleyelim (ör. 1.2 GB).",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

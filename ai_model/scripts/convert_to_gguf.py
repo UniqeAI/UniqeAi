@@ -37,7 +37,9 @@ except NameError:
     PROJECT_ROOT = Path.cwd()
 
 # Dönüştürülecek modelin Hugging Face Hub adresi
-MODEL_ID = "Choyrens/ChoyrensAI-Telekom-Agent-v5-merged"
+MODEL_ID = "Choyrens/ChoyrensAI-Telekom-Agent-v5-gguf"
+LOCAL_MODEL_PATH = PROJECT_ROOT / "UniqeAi" / "ai_model" / "merged_model_fp16_v5"
+
 
 # llama.cpp'nin klonlanacağı dizin
 LLAMA_CPP_DIR = PROJECT_ROOT / "UniqeAi" / "llama.cpp"
@@ -110,7 +112,7 @@ def convert_model():
     """Modeli GGUF formatına dönüştürür."""
     print("\n" + "="*50)
     print("🚀 Model GGUF formatına dönüştürülüyor...")
-    print(f"Model: {MODEL_ID}")
+    print(f"Model: {LOCAL_MODEL_PATH}")
     print(f"Niceleme: {QUANTIZATION_TYPE}")
     print("="*50 + "\n")
 
@@ -126,8 +128,7 @@ def convert_model():
     command = [
         sys.executable,
         str(convert_script),
-        MODEL_ID,
-        "--remote",
+        LOCAL_MODEL_PATH,
         "--outfile",
         str(output_filepath),
         "--outtype",

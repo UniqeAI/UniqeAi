@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3 - MODULAR EDITION
 =============================================================
@@ -228,9 +227,20 @@ class SupremeHumanLevelDatasetGenerator:
   
         """
         return {
-            ScenarioType.CHANGE_PACKAGE.value: generate_change_package_scenario,
-
-
+            ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
+            #ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
+            #ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
+            ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
+            #ScenarioType.TEACHING_MENTORING.value: generate_teaching_mentoring_scenario,
+            ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
+            ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
+            ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
+            ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
+            ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
+            ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
+            ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
+            ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
+            ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
         }
 
     # ==============================================================================
@@ -303,31 +313,64 @@ class SupremeHumanLevelDatasetGenerator:
         skipped_scenarios = 0
         pydantic_validations = 0
 
+        # YENİ MANTIK: Tüm senaryoları önce topla, sonra istenilen miktarda üret
+        all_available_scenarios = []
+        
+        # Her senaryo türü için tüm senaryoları topla
+        for scenario_type in scenario_types:
+            try:
+                scenarios = scenario_generators[scenario_type]()
+                if isinstance(scenarios, list):
+                    # Eğer liste döndürüyorsa (yeni mantık)
+                    all_available_scenarios.extend(scenarios)
+                    print(f"📦 {scenario_type}: {len(scenarios)} senaryo eklendi")
+                else:
+                    # Eğer tek senaryo döndürüyorsa (eski mantık - geriye uyumluluk)
+                    all_available_scenarios.append(scenarios)
+                    print(f"📦 {scenario_type}: 1 senaryo eklendi")
+            except Exception as e:
+                import traceback
+                print(f"❌ {scenario_type} senaryoları alınırken KRİTİK HATA:")
+                print(f"   Hata türü: {type(e).__name__}")
+                print(f"   Hata mesajı: {str(e)}")
+                print(f"   Tam traceback:")
+                traceback.print_exc()
+                print(f"   Senaryo türü: {scenario_type}")
+                print(f"   Generator fonksiyonu: {scenario_generators[scenario_type].__name__}")
+                continue
+        
+        print(f"🎯 Toplam {len(all_available_scenarios)} senaryo hazırlandı")
+        
+        if not all_available_scenarios:
+            raise ValueError("❌ Hiçbir senaryo bulunamadı!")
+        
+        # İstenilen miktarda senaryo üret
         for i in range(num_samples):
-            # UZMAN SEVİYESİ İYİLEŞTİRME: Ağırlıklı rastgele seçim
-            scenario_type = random.choices(scenario_types, weights=weights, k=1)[0]
+            # Mevcut senaryolardan rastgele seç
+            selected_scenario = random.choice(all_available_scenarios).copy()
+            
+            # Her senaryo için benzersiz ID oluştur
+            selected_scenario["id"] = f"{selected_scenario.get('id', 'scenario')}_{uuid.uuid4().hex[:8]}"
             
             try:
-                # Uygun generator metodunu çağır
-                scenario = scenario_generators[scenario_type]()
-                
                 # UZMAN SEVİYE KALİTE KONTROL: Her senaryo için detaylı doğrulama
-                validation_result = validate_scenario_quality(scenario)
+                validation_result = validate_scenario_quality(selected_scenario)
                 if not validation_result["valid"]:
-                    print(f"⚠️ Kalite kontrolü başarısız: {scenario_type} - {validation_result['error']}")
+                    print(f"⚠️ Kalite kontrolü başarısız: {selected_scenario.get('scenario_type', 'unknown')} - {validation_result['error']}")
                     validation_errors += 1
                     continue
                 
                 # UZMAN SEVİYE KALİTE KONTROL: API yanıtlarının Pydantic uyumluluğunu kontrol et
-                pydantic_check = verify_pydantic_compliance(scenario)
+                pydantic_check = verify_pydantic_compliance(selected_scenario)
                 if not pydantic_check["valid"]:
-                    print(f"❌ Pydantic uyumsuzluğu: {scenario_type} - {pydantic_check['error']}")
+                    print(f"❌ Pydantic uyumsuzluğu: {selected_scenario.get('scenario_type', 'unknown')} - {pydantic_check['error']}")
                     validation_errors += 1
                     continue
                 
                 pydantic_validations += pydantic_check["validated_count"]
-                dataset.append(scenario)
+                dataset.append(selected_scenario)
                 
+                scenario_type = selected_scenario.get('scenario_type', 'unknown')
                 self.generated_scenarios[scenario_type] += 1
                 self.total_generated += 1
                 
@@ -342,7 +385,7 @@ class SupremeHumanLevelDatasetGenerator:
                 import traceback
                 print(f"❌ Beklenmeyen hata: {e}")
                 print(f"🔍 Hata türü: {type(e).__name__}")
-                print(f"🔍 Senaryo türü: {scenario_type}")
+                print(f"🔍 Senaryo türü: {selected_scenario.get('scenario_type', 'unknown')}")
                 print(f"🔍 Detaylı traceback:")
                 traceback.print_exc()
                 print("="*50)

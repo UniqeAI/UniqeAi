@@ -1,0 +1,4141 @@
+[
+  {
+    "id": "strategic_planning_scenario_e0c175ae_7d934646",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_ae80ba34",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_590f93df",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_3f6e5621",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_881ee765",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_1753cd91",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_6c08a96a",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_a71c1617",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_9d02899d",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_ad340ed7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_140dd028",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_a759d323",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_ef95bed5",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_2b892434",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_8ddfa161",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_ec796a12",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_0e2cd296",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_8ee7ae22",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_acd680b7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_b36d3bae",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_9fd8e787",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_f205bc4a",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_317ae7cb",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_c7ee5af0",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_e37f450d",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_9eda9890",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_445d4143",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_608c4c24",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_427e0c20",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_ca01cba7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_4a973988",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_dd208472",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_e2f83236",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_82ac0bba",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_f80a29d7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_fcecb631",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_60335654",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_513c82f7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_68f75ce5",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_6a25faec",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_76362099",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_9d551593",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_c60ae261",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_2dc577fd",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_8b2c1853",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_9ee5139d",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_15533207",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_c79b6009",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_ed456014",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_869b117b",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_a72282db",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_a0cadb63",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_c8153f59",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_954766f3",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_145c69c0",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_cf8ce024",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_1f0525ac",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_88c221f4",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_9fa55cb4",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_c4a1022f",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_dea2d4b9",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_b4f36e61",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_68016544",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_593a1b69",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_9a7ccbc7",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_d296962b",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_6ca24aa5",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_9b375ddf",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_11a1fb06",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_9b69fb38",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_644fd3a4",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_b8740620",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_7c8a5af6",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_312dbed8",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_90194345",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_68d9583d",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_a259a8c1",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_1073e062",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_b9ea5438",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_40e4d41a",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_e60f61d8",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_d5833af9",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c7e007e3_600107a5",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "finance_controller",
+    "cognitive_state": "systematic",
+    "emotional_context": "contemplative",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Önümüzdeki yıl için telecom bütçe tahmini çıkaralım.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturaya bakıp trend oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 30526
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 30526,
+              "limit": 12
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-280665\",\"user_id\":30526,\"amount\":286.03,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-25T19:37:45.886038\",\"bill_date\":\"2025-07-22T19:37:45.886038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ayşe Kaya\",\"amount\":234.72},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":75.48}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-597706\",\"amount\":133.53,\"bill_date\":\"2025-07-16T19:37:45.886038\",\"status\":\"cancelled\",\"paid_date\":null}],\"total_count\":279,\"total_amount_paid\":876.58}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aylık ortalama + mevsimsellik ile yıllık bütçe; %10 güvenlik payı önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_4a368dd0",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_6a78ef77_2500bdc4",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "operations_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kota kullanımını ay bazında optimize edelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan hakları kontrol edip çerçeve plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 53323
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":79.97,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":45,\"voice\":20,\"sms\":15}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Haftalık hedefler + yoğunluk saatleri için esnek politika öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_eeaed52a",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_19141741",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_d97eb715",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_bd1b2476_e3a83188",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "strategic_procurement",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekipler için paket sepeti nasıl olmalı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketi ve alternatifleri kıyaslıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 95078
+            }
+          },
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Mobil Avantaj Plus\",\"monthly_fee\":576.18,\"features\":{\"internet_gb\":20,\"voice_minutes\":500,\"sms_count\":2000,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-07-27T19:37:45.885018\",\"renewal_date\":\"2025-07-15T19:37:45.885018\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Ayşe Kaya\",\"monthly_fee\":201.5,\"features\":{\"internet_gb\":250,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":586.41,\"features\":{\"internet_gb\":5,\"voice_minutes\":500,\"sms_count\":100},\"target_audience\":\"İsteğe bağlı metin\"},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":162.08,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":2000},\"target_audience\":\"İsteğe bağlı metin\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çekirdek + modüler eklenti yaklaşımı ile esnek sepet öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_73c9ef14_f9a4a7e3",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "sustainability_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sürdürülebilirlik ile maliyet verimliliğini dengeleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalar ve geçmiş faturaya bakarak plan çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 26640
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 26640,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":28.67,\"voice_remaining_minutes\":1000,\"sms_remaining\":100,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":18,\"sms\":10}}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-283405\",\"amount\":597.42,\"bill_date\":\"2025-08-13T19:37:45.888039\",\"status\":\"overdue\",\"paid_date\":null}],\"total_count\":562,\"total_amount_paid\":347.48}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yıllık %15 tasarruf hedefi gerçekçi; kaliteyi koruyarak optimizasyon yapılabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_7f745604",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_05777b66",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_96240849_f6c4568f",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "technology_lead",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "5G/FTTH geçişi için uygun paket detayı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ileri seviye paket detayını getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Enterprise Fiber 5G"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Enterprise Fiber 5G\",\"monthly_fee\":249.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":200,\"voice_minutes\":3000,\"sms_count\":2000,\"international_minutes\":300},\"contract_duration\":24,\"cancellation_fee\":150.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Geçişte köprü çözümü; kurumsal SLA uyumlu.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_d78b9b1a_9a866571",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "enterprise_it_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote+ofis modelde SLA hedeflerini belirleyelim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ölçüm ve bölgesel ağı kontrol ederek politika tasarlayacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 20920
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Maslak"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20920,\"download_speed_mbps\":122.3,\"upload_speed_mbps\":832.52,\"ping_ms\":10,\"test_timestamp\":\"2025-08-10T19:37:45.885018\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Uygun fiyat\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Maslak\",\"status\":\"operational\",\"coverage_percentage\":56,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-05T19:37:45.885018\",\"estimated_end\":\"Hızlı ve güvenilir hizmet\"}],\"last_updated\":\"2025-08-14T19:37:45.885018\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri SLA: down>100 Mbps, ping<20 ms; yoğun saatlerde QoS ve rota yedekleme.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_4357d332",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e0c175ae_bdb64ef8",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "data_driven_analyst",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ekibimiz 2 yılda 3→25 kişi olacak; hybrid çalışma. Uzun vadeli telecom stratejisi?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strateji motoru devrede. Öğrenme adaptasyonunuzu güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_learning_adaptation",
+            "parametreler": {
+              "user_id": 69400
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":69400,\"learned_preferences\":{\"key\":\"value\",\"example\":40},\"interaction_patterns\":{\"daily_interactions\":33,\"response_time\":4,\"satisfaction_score\":1},\"success_strategies\":[\"7/24 müşteri desteği\",\"7/24 müşteri desteği\",\"7/24 müşteri desteği\"],\"personalization_level\":\"Fiber altyapı\",\"adaptation_confidence\":0.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Foundation→Growth→Optimization fazlarıyla ölçeklenebilir, hibrit dostu plan öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_b7f863bc_123260b2",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "product_owner",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yıl ortası paket revizyonu için öneriniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Paketleri ve örnek detayını paylaşıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          },
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Strategic Plus"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Fatma Şahin\",\"monthly_fee\":198.74,\"features\":{\"internet_gb\":250,\"voice_minutes\":5000,\"sms_count\":1000},\"target_audience\":null},{\"name\":\"Ahmet Yılmaz\",\"monthly_fee\":268.53,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":1000},\"target_audience\":null}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Strategic Plus\",\"monthly_fee\":179.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":100,\"voice_minutes\":2000,\"sms_count\":1000,\"international_minutes\":100},\"contract_duration\":12,\"cancellation_fee\":90.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Strategic Plus büyüyen ekipler için dengeli bir seçim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_71e28465",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_c1ea4000_b3bbf474",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "people_ops",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Remote çalışanlar için minimum hız/ping hedefleri?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Örnek ölçüm alıp eşik belirliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 52766
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52766,\"download_speed_mbps\":48.1,\"upload_speed_mbps\":30.55,\"ping_ms\":34,\"test_timestamp\":\"2025-07-31T19:37:45.887039\",\"test_server\":\"5G teknolojisi\",\"quality_rating\":\"7/24 müşteri desteği\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Öneri: down≥50 Mbps, ping≤25 ms; altı otomatik eskalasyon.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "strategic_planning_scenario_e49a4121_52bb9f22",
+    "scenario_type": "strategic_planning",
+    "personality_profile": "regional_manager",
+    "cognitive_state": "strategic",
+    "emotional_context": "contemplative",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 bölgede yeni ofis açacağız, kapasite planı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumunu kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Ankara"
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "İzmir"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Ankara\",\"status\":\"degraded\",\"coverage_percentage\":98,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-04T19:37:45.887039\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-07-26T19:37:45.887039\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"İzmir\",\"status\":\"degraded\",\"coverage_percentage\":90,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-30T19:37:45.887039\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-31T19:37:45.887039\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-08-14T19:37:45.887039\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ankara: sabit fiber; İzmir: hibrit çözüm öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

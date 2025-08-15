@@ -1,0 +1,3141 @@
+[
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_673cdcd9",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_95a96900",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_0353f3c0",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_2ddeb9de",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_fa5dbb11",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_2fc5a532",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_e56991d7",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_5177ed26",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_7c3e26db",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_b05e7cf2",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_61e54c61",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_48427987",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_8c87a81a",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_66d26903",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_b6a1b301",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4908637d_7abd3796",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Online terapi görüşmelerimde bağlantı kopuyor, çok kaygılanıyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Hemen hız testini başlatıp durumu birlikte çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 23830
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":23830,\"download_speed_mbps\":17.2,\"upload_speed_mbps\":413.07,\"ping_ms\":130,\"test_timestamp\":\"2025-07-29T02:26:01.660038\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Görüşme saatlerinizi daha stabil saatlere kaydırmanızı ve mümkünse kablolu bağlantı kullanmanızı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_755286b5",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_f80e4369",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_94c6c1f4",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_2e6594f2",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_66192b0f",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_81fc3417",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_d72999c5",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_be42c387",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_eb23aac5",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_edc01a52",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_804eeab2",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_944bfedd",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4908637d_a26e561e",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Online terapi görüşmelerimde bağlantı kopuyor, çok kaygılanıyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Hemen hız testini başlatıp durumu birlikte çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 23830
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":23830,\"download_speed_mbps\":17.2,\"upload_speed_mbps\":413.07,\"ping_ms\":130,\"test_timestamp\":\"2025-07-29T02:26:01.660038\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Görüşme saatlerinizi daha stabil saatlere kaydırmanızı ve mümkünse kablolu bağlantı kullanmanızı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_65dd28ff",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_93de858d",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_1307f39c",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_f56d5c84",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4908637d_74110192",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Online terapi görüşmelerimde bağlantı kopuyor, çok kaygılanıyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Hemen hız testini başlatıp durumu birlikte çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 23830
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":23830,\"download_speed_mbps\":17.2,\"upload_speed_mbps\":413.07,\"ping_ms\":130,\"test_timestamp\":\"2025-07-29T02:26:01.660038\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Görüşme saatlerinizi daha stabil saatlere kaydırmanızı ve mümkünse kablolu bağlantı kullanmanızı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_99fc3d11",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_c391bd44",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_344b682e",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_23004474",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_2cfd7d71",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_81a96685",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_0b4d8abb",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_af3ddf25",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_b002f2d8",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4908637d_bd438bb1",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Online terapi görüşmelerimde bağlantı kopuyor, çok kaygılanıyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Hemen hız testini başlatıp durumu birlikte çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 23830
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":23830,\"download_speed_mbps\":17.2,\"upload_speed_mbps\":413.07,\"ping_ms\":130,\"test_timestamp\":\"2025-07-29T02:26:01.660038\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Görüşme saatlerinizi daha stabil saatlere kaydırmanızı ve mümkünse kablolu bağlantı kullanmanızı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_c38f8c63",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_974c5633",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_bf9d7e71",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_cfda2105",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_5bc769be",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_269dd2f6",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_8faa303e",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_378c6b21",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_3f77ee01",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_9aa2c338",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_61afe4cd",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_3b009eef",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_7b2c1c14",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_a5b34aa2",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_299f55ba",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4908637d_e0837b70",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Online terapi görüşmelerimde bağlantı kopuyor, çok kaygılanıyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Hemen hız testini başlatıp durumu birlikte çözelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 23830
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":23830,\"download_speed_mbps\":17.2,\"upload_speed_mbps\":413.07,\"ping_ms\":130,\"test_timestamp\":\"2025-07-29T02:26:01.660038\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Görüşme saatlerinizi daha stabil saatlere kaydırmanızı ve mümkünse kablolu bağlantı kullanmanızı öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_70898f67",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_2912dd14",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_0c1752a1",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_530549ce",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_7e317652",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_7a73d3d8_22af3c12",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallede herkes bağlantıdan şikayetçi, endişelendim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi rahatlatmak için bölge durumunu kontrol edip açıkça anlatacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Üsküdar"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Üsküdar\",\"status\":\"operational\",\"coverage_percentage\":93,\"active_outages\":[{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"5G teknolojisi\",\"start_time\":\"2025-08-07T02:26:01.661016\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-23T02:26:01.661016\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Altyapı çalışıyor. Her şeyi anlaşılır bir dille adım adım anlatacağım; dilediğinizde arayabilirsiniz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_b2fb6cd7",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_db066aa8",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_07702689",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_424b8626",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_147e67c6",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_c2455b21",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_0f1d2e87",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_eaeedcbe",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_52071e70",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_2f60a423_572cba13",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "overwhelmed",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemeleri hep unutuyorum, stres oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Stresinizi azaltmak için otomatik ödeme talimatı oluşturuyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 85061,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":85061,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-07-15T02:26:01.660038\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tamamdır. Artık son ödeme tarihi kaygısı olmadan içiniz rahat olabilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_a31ff17a",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_1ef940d5",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_41949645_a52aba31",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "grief",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Babamı kaybettim, abonelik işlemlerini nasıl halledeceğimi bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Başınız sağ olsun. Süreci sizin temponuzda, en hassas biçimde yöneteceğim. Önce profil bilgilerini kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_profile",
+            "parametreler": {
+              "user_id": 52153
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":52153,\"name\":\"Ahmet Yılmaz\",\"phone_numbers\":[{\"number\":\"0546-516-18-76\",\"type\":\"Hızlı ve güvenilir hizmet\",\"status\":\"pending\"}],\"email\":\"ayse.kaya754@hotmail.com\",\"address\":\"Beşiktaş, İzmir\",\"registration_date\":\"2025-07-27T02:26:01.660038\",\"customer_tier\":\"5G teknolojisi\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturalandırmayı durdurabilir, hattı anı olarak bir süre saklayabiliriz. Hazır olduğunuzda ilerleriz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_3dba4f27_b84b5213",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "empathetic",
+    "emotional_context": "excited",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Döndüm, hattımı sorunsuz açmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hoş geldiniz! Hemen aktifleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "reactivate_line",
+            "parametreler": {
+              "user_id": 37984
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":37984,\"line_number\":\"0559-211-47-57\",\"reactivated_at\":\"Hızlı ve güvenilir hizmet\",\"suspension_duration_days\":36,\"reactivation_fee\":0.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız ek ücret olmadan aktifleştirildi. İyi dönüşler!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_96869371",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_1af940dd",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4856465e_c98d7063",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "planning",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "3 ay yurt dışındayım; masrafları azaltmak için hattı dondurmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Elbette, dönüşünüze kadar güvenle donduralım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "suspend_line",
+            "parametreler": {
+              "user_id": 84215,
+              "reason": "Geçici yurt dışı"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":84215,\"line_number\":\"0557-666-67-32\",\"suspension_reason\":\"Geçici yurt dışı\",\"suspended_at\":\"5G teknolojisi\",\"reactivation_fee\":236.53,\"max_suspension_days\":886}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hattınız güvenle donduruldu. Döndüğünüzde tek dokunuşla aktifleştiririz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_bc0b50bc_f87721d1",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "empathetic_healthcare_worker",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Annem hasta, faturam kabarık geldi. Onu üzmeden çözmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi ve annenizi önemsiyorum. Önce faturayı kontrol edip, sonra uygun bir çözüm bulalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 82991
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-702516\",\"user_id\":82991,\"amount\":155.18,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-28T02:26:01.660038\",\"bill_date\":\"2025-08-03T02:26:01.660038\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":657.92},{\"service_name\":\"Ahmet Yılmaz\",\"amount\":877.64}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Faturanızı birlikte sade bir dille gözden geçirelim ve uygun taksit/indirim seçeneklerine bakalım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_4539ea1a_e896960c",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Telefonla aranmak beni geriyor; e-postayı tercih ediyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tercihinizi saygıyla kaydediyorum; e-posta iletişimini etkinleştiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 96612,
+              "contact_type": "email",
+              "new_value": "kullanici@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":96612,\"contact_type\":\"email\",\"old_value\":\"7/24 müşteri desteği\",\"new_value\":\"kullanici@example.com\",\"updated_at\":\"2025-08-09T02:26:01.661016\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Artık sizi yalnızca e-posta üzerinden bilgilendireceğiz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "empathetic_reasoning_scenario_637182df_761e0ef1",
+    "scenario_type": "empathetic_reasoning",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödemelerim birikti, ne kadar borcum kaldığını bilemiyorum ve panik oluyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Sizi anlıyorum. Önce geçmiş ödemelerinizi kontrol edip net bir tablo çıkarıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 85633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[],\"total_payments\":820,\"total_amount\":492.86}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Tüm rakamları açıkça paylaşacağım ve size en düşük stresli ödeme planını önereceğim.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

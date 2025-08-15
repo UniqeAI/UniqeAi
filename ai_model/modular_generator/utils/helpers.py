@@ -158,6 +158,9 @@ def generate_basic_type_data(field_type: Any, field_name: str = "") -> Any:
         elif "duration" in field_lower:
             return random.randint(12, 60)   # Contract duration max 60 months
         else:
+            # Eğer percentage alanındaysak, 100'den küçük değer üret
+            if "percentage" in field_name.lower():
+                return random.randint(0, 100)
             return random.randint(1, 1000)
     elif field_type == float:
         field_lower = field_name.lower()
@@ -284,6 +287,13 @@ def create_validated_response(model_class, override_data=None):
         json.loads(json_result)
         return json_result
     except Exception as e:
-        print(f"❌ KRİTİK HATA - Beklenmeyen: {model_class.__name__}")
-        print(f"   Hata: {e}")
+        import traceback
+        print(f"❌ KRİTİK HATA - create_validated_response: {model_class.__name__}")
+        print(f"   Hata türü: {type(e).__name__}")
+        print(f"   Hata mesajı: {str(e)}")
+        print(f"   Model sınıfı: {model_class}")
+        print(f"   Override data: {override_data}")
+        print(f"   Mock data: {mock_data}")
+        print(f"   Tam traceback:")
+        traceback.print_exc()
         raise 
