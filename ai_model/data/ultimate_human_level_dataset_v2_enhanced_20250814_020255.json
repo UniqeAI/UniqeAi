@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "cross_cultural_scenario_200ce169_b5abafcd",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_587690ed",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_4ce908a6",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_cbe755f6",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_4b046edf",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_a56e9ef6",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_62f70205",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_137fc7df",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_037040f7",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_44368cae",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_4fd96825",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_843c1ec3",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_8d22f765",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_4305cc99",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_0895a926",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_e326744f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_5634421e",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_0d04c718",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_787a2ede",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_4baa70c4",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_a05f4d41",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_8efdb185",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_8f785aa1",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_7f544a10",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_ec4c502f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_065914ee",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_5a262694",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_91fdfe35",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_4f2298c7",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_fbba5766",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_866f4f51",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_b6f0f0c4",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_f9e38595",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_470bc9c3",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_75f894bb",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_45cb3704",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_fcc8ff82",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_a4059083",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_9759a78a",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_c0a43276",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_0e684457",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_1670a781",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_20a1ec69",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_e389ad6f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_491dd21b",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_1f15da0f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_13720686",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_5901af5e",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_f81a9490",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_ccabbce9",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_bf733112",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_25883048",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_559cdff2",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_8afc527c",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_0358d540",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_19f4349f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_1356b112",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_d3f5df5e",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_d7f192d8",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_9789bead",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_61a0bca4",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_7cd27d3d",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_a4ecf6f0",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_db5ceb49",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_0256a70e",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_b93a36fc",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_adaa8d96",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_2b1e3a24_b792a6e1",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "strategic",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Erasmus için İspanya'ya gidiyorum. Roaming ve en uygun paket nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming'i aktif ediyorum, ardından paket seçeneklerine bakacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "enable_roaming",
+            "parametreler": {
+              "user_id": 54922,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":54922,\"roaming_enabled\":true,\"activation_time\":\"2025-07-18T02:02:55.785561\",\"daily_fee\":374.32,\"data_package\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Roaming aktif. Şimdi kültürünüze uygun uygun fiyatlı paketleri öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_3a136c60",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_3e9310fa",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_98387d00",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_13593ad0",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_229e7204",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_f47c320f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_5174b8a9",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_b56315bf",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_4632740f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_21a4e71d_25bb156e",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "happy_satisfied",
+    "cognitive_state": "strategic",
+    "emotional_context": "excited",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dernek etkinlikleri için uygun paket arıyoruz (yurt dışı aramalar da olacak).",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketleri kültürel ihtiyaçlarınıza göre listeleyeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kültür Köprüsü\",\"monthly_fee\":199.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":3000,\"sms_count\":2000},\"target_audience\":\"diaspora_communities\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültür Köprüsü paketi diaspora iletişimi için optimize edilmiştir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_bcc02af0",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_200ce169_c5c8ee90",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "elderly_non_tech",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yeni geldik, faturaları anlamakta zorlanıyorum. Basitçe anlatır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Basit anlatım moduna geçiyorum. Önce güncel faturayı getiriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 20487
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-330989\",\"user_id\":20487,\"amount\":820.99,\"currency\":\"7/24 müşteri desteği\",\"due_date\":\"2025-08-21T02:02:55.785561\",\"bill_date\":\"2025-08-04T02:02:55.785561\",\"status\":\"processing\",\"services\":[{\"service_name\":\"Ahmet Yılmaz\",\"amount\":564.3},{\"service_name\":\"Mehmet Demir\",\"amount\":861.57}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Fatura kalemlerini sade ve çok dilli örneklerle açıklayacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_c08aeb19",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_00ca8c98",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_b6fa9032",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_c01a5c7f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_9dad4fdb",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_6044996a",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_459842a8",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_f9beec66",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_fd07103f",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_ef550501",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_6d9cc6a9",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_8230586f_535e38e7",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde çok sayıda göçmen var; ağ güvenilirliği ve kriz anında iletişim nasıl?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ durumunu kontrol edip kültürel hassasiyetle bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Zeytinburnu"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Zeytinburnu\",\"status\":\"operational\",\"coverage_percentage\":96,\"active_outages\":[{\"area\":\"5G teknolojisi\",\"issue\":\"Hızlı ve güvenilir hizmet\",\"start_time\":\"2025-07-21T02:02:55.785561\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-15T02:02:55.785561\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-30T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ağ güçlü durumda. Kriz anlarında çok dilli acil durum yönergeleri paylaşıyoruz.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_0168d3bd",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_fcbdb586_952addb5",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "security_conscious",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "traditional_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ailem Almanya'da. Türkçe konuşuyoruz ama çocuklar Almanca. İki dile de uygun öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol edip iki dilli iletişim tercihlerinizi kaydediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 88828
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":88828,\"cultural_profile\":\"Fiber altyapı\",\"communication_preferences\":{\"key\":\"value\",\"example\":2},\"service_adaptations\":[\"Hızlı ve güvenilir hizmet\",\"Fiber altyapı\",\"5G teknolojisi\"],\"language_preference\":\"tr-de\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "TR/DE karışık aileler için hem WhatsApp hem geleneksel aramalar dengeli bir plan öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99fab07a_ed0cce62",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "curious",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Çevrim içi derslerde ping sorun oluyor. Hızımı kontrol eder misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testini başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 31526
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":31526,\"download_speed_mbps\":31.7,\"upload_speed_mbps\":671.78,\"ping_ms\":19,\"test_timestamp\":\"2025-08-07T02:02:55.785561\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Ping odaklı optimizasyonlar için sunucu seçimi ve saat önerileri paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_8ee38511",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_99b0813c_f1a379f1",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "analytical",
+    "emotional_context": "skeptical",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mahallemizde yabancı öğrenciler çok. Çekim zayıf diyorlar, durum nedir?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağı kontrol ediyorum; kültürel çeşitliliğe uygun bilgilendirme yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"degraded\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Uygun fiyat\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-08-01T02:02:55.785561\",\"estimated_end\":\"7/24 müşteri desteği\"}],\"last_updated\":\"2025-07-18T02:02:55.785561\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğunluk kaynaklı geçici düşüş var; çok dilli kılavuz da paylaşacağım.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_d5433cf4_847604fd",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "philosophical_academic",
+    "cognitive_state": "empathetic",
+    "emotional_context": "contemplative",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Türkiye'de çalışan uluslararası bir araştırmacıyım. Ailem farklı ülkelerde, en doğru planı istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kültürel bağlamınızı kontrol ediyorum ve öneri hazırlıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_cultural_context",
+            "parametreler": {
+              "user_id": 20790
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":20790,\"cultural_profile\":\"global_expat\",\"communication_preferences\":{\"key\":\"value\",\"example\":17},\"service_adaptations\":[\"Uygun fiyat\"],\"language_preference\":\"Hızlı ve güvenilir hizmet\",\"accessibility_needs\":[\"5G teknolojisi\",\"Uygun fiyat\",\"Uygun fiyat\"]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Global expat profilinize göre uluslararası dakika + WhatsApp ağırlıklı bir paket öneriyorum.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_a1f8d6d5_cac6834d",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "planning",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "global_expat",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Kanada ve Japonya ile sık görüşüyorum; uygun saat ve paket önerir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Saat dilimleri için öneri çıkaracağım, ayrıca paketleri de listeleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Kıtalararası\",\"monthly_fee\":179.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":2500,\"sms_count\":1500},\"target_audience\":\"global_families\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kanada için akşam, Japonya için sabah saatleri idealdir. Kıtalararası paketi öneririm.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "cross_cultural_scenario_e65b191b_01f021d2",
+    "scenario_type": "cross_cultural_communication",
+    "personality_profile": "skeptical_detail_oriented",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Yabancı dilde e-posta almak istiyorum. Mailimi günceller misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresinizi güncelliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "update_customer_contact",
+            "parametreler": {
+              "user_id": 66828,
+              "contact_type": "email",
+              "new_value": "user@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":66828,\"contact_type\":\"email\",\"old_value\":\"eski@example.com\",\"new_value\":\"user@example.com\",\"updated_at\":\"2025-07-24T02:02:55.785561\",\"verification_required\":true}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "E-posta adresiniz güncellendi. Çok dilli bilgilendirme aktif edilecek.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

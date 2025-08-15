@@ -1,0 +1,182 @@
+[
+  {
+    "id": "collaborative_scenario_fa645279_c4ae4308",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "family_oriented",
+    "cognitive_state": "empathetic",
+    "emotional_context": "worried",
+    "cultural_context": "traditional_family",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "4 kişilik ailem var, çocuklar sürekli internette. Benzer ailelerin hangi çözümleri tercih ettiğini öğrenmek istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Aile ihtiyaçlarını çok iyi anlıyorum! Benzer büyüklükteki ailelerin tercihlerini analiz edeyim. Önce aile paketlerini göstereyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Aile Paketi"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Aile Paketi\",\"monthly_fee\":89.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":75,\"voice_minutes\":3000,\"sms_count\":1500,\"international_minutes\":200},\"contract_duration\":24,\"cancellation_fee\":50.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "👨‍👩‍👧‍👦 **4 Kişilik Aile Analizi:**\n\n📊 **Benzer Ailelerin Tercihleri:**\n• %78'i Aile Paketi ile başlıyor\n• %45'i ek internet paketi alıyor (çocuklar için)\n• %67'si ebeveyn kontrol özelliklerini aktif ediyor\n\n💡 **Popüler Eklentiler:**\n• Çocuk güvenlik paketi (%89 memnuniyet)\n• Sınırsız sosyal medya (%76 kullanım)\n\nAile paketinizi bu önerilere göre özelleştirelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "collaborative_scenario_6917be0e_b56b549e",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "social_media_influencer",
+    "cognitive_state": "creative",
+    "emotional_context": "competitive",
+    "cultural_context": "digital_native",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Sosyal medyada çok aktifim, içerik üretiyorum. Benimle aynı alanda çalışan influencerlar hangi paketleri kullanıyor?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "İçerik üreticileri için özel analizlerimiz var! Sosyal medya odaklı müşterilerimizin tercihlerini inceleyelim. Önce mevcut kullanımınızı görelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 10009
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":12.8,\"voice_remaining_minutes\":1200,\"sms_remaining\":150,\"period_end\":\"2024-03-31\",\"usage_percentage\":{\"internet\":76,\"voice\":40,\"sms\":70}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "📱 **İnfluencer Profili Analizi:**\n\n🎥 **İçerik Üreticisi Tercihleri:**\n• %89'u **Sınırsız Sosyal Medya** paketini kullanıyor\n• %76'sı **yüksek upload hızını** tercih ediyor\n• %92'si **canlı yayın optimizasyonu** istiyor\n\n📊 **Popüler Özellikler:**\n• Instagram/TikTok sınırsız (%96 memnuniyet)\n• Yüksek kalite video upload (%88 kullanım)\n• Analitik raporlama araçları\n\nİçerik üretici paketinizi özelleştirelim!",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "collaborative_scenario_82f79a9f_92e61630",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "senior_citizen",
+    "cognitive_state": "empathetic",
+    "emotional_context": "confused",
+    "cultural_context": "traditional_elder",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "65 yaşındayım, çok karmaşık paketler istemiyorum. Benim yaştaki insanlar genellikle ne kullanıyor?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Çok haklısınız, basitlik önemli! Sizin yaş grubundaki değerli müşterilerimizin tercihlerini inceleyeyim. Önce mevcut paketinizi kontrol edelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 10006
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Basit Paket\",\"monthly_fee\":39.9,\"features\":{\"internet_gb\":10,\"voice_minutes\":1500,\"sms_count\":200,\"roaming_enabled\":false,\"international_minutes\":50},\"activation_date\":\"2024-01-01\",\"renewal_date\":\"2024-04-01\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "👴👵 **65+ Yaş Grubu Analizi:**\n\n📞 **Benzer Yaştaki Müşteri Tercihleri:**\n• %82'si **konuşma ağırlıklı** paketleri seçiyor\n• %91'i **karmaşık özelliklerden** kaçınıyor\n• %76'sı **sabit aylık ücret** istiyor\n\n🎯 **Popüler Özellikler:**\n• Büyük yazılı faturalar (%95 memnuniyet)\n• 7/24 insan operatör hattı\n• Basit menü yapısı\n\nSize özel basitleştirilmiş paket önerelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "collaborative_scenario_fadaae50_45900d6a",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "retired_professional",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "retirement_community",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Emekli olduktan sonra ihtiyaçlarım değişti. Benimle aynı durumda olan emekli müşteriler genellikle hangi paketleri tercih ediyor?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Emeklilik dönemi farklı ihtiyaçlar getirir, çok doğru düşünüyorsunuz. Emekli müşterilerimizin tercihlerini analiz edelim. Önce mevcut faturanızı kontrol edelim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 10005
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-698300\",\"user_id\":10005,\"amount\":45.5,\"currency\":\"Hızlı ve güvenilir hizmet\",\"due_date\":\"2025-08-28\",\"bill_date\":\"2025-08-13\",\"status\":\"unpaid\",\"services\":[{\"service_name\":\"Emekli Paketi\",\"amount\":45.5}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "👴 **Emekli Müşteri Analizi:**\n\n📞 **Emekli Profil Tercihleri:**\n• %88'i **konuşma odaklı** paketleri tercih ediyor\n• %79'u **sabit ve düşük aylık ücret** istiyor\n• %94'ü **karmaşık özelliklerden** kaçınıyor\n\n🏡 **Emeklilik Özel Hizmetleri:**\n• Emekli indirimi %25 (%97 memnuniyet)\n• Sağlık acil durum hattı (%89 kullanım)\n• Büyük yazılı faturalar\n\nSize özel emekli paketi düzenleyelim mi?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "collaborative_scenario_726e460d_7838f4f8",
+    "scenario_type": "collaborative_filtering",
+    "personality_profile": "financial_analyst",
+    "cognitive_state": "analytical",
+    "emotional_context": "contemplative",
+    "cultural_context": "budget_conscious",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Benimle aynı harcama alışkanlığına sahip müşteriler hangi ödeme yöntemlerini tercih ediyor? Geçmiş ödemelerime bakarak analiz yapabilir misiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Finansal analiz yapmak harika bir yaklaşım! Benzer harcama profiline sahip müşterilerimizin tercihlerini inceleyelim. Önce ödeme geçmişinizi kontrol edeyim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_payment_history",
+            "parametreler": {
+              "user_id": 10010
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"payments\":[{\"transaction_id\":\"TXN-001\",\"amount\":89.5,\"method\":\"credit_card\",\"date\":\"2024-02-05T10:15:00Z\",\"bill_id\":\"F-2024-001\"}],\"total_payments\":5,\"total_amount\":447.5}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "💳 **Ödeme Profili Analizi:**\n\n📊 **Benzer Müşteri Tercihleri:**\n• %76'sı **kredi kartı** ile ödeme yapıyor\n• %68'i **otomatik ödeme** sistemini kullanıyor\n• Ortalama aylık harcama: 89.50 TL\n\n🎯 **Tasarruf Önerileri:**\n• Otomatik ödeme ile %5 indirim\n• Yıllık ödeme ile %10 tasarruf\n\nSize özel ödeme planı hazırlayalım mı?",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

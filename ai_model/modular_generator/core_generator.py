@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 🚀 SUPREME HUMAN-LEVEL DATASET GENERATOR V3 - MODULAR EDITION
 =============================================================
@@ -229,8 +228,19 @@ class SupremeHumanLevelDatasetGenerator:
         """
         return {
             ScenarioType.ADAPTIVE_COMMUNICATION.value: generate_adaptive_communication_scenario,
-
-
+            #ScenarioType.TOOL_CHAINING.value: generate_tool_chaining_scenario,
+            #ScenarioType.TEMPORAL_REASONING.value: generate_temporal_reasoning_scenario,
+            ScenarioType.COLLABORATIVE_FILTERING.value: generate_collaborative_filtering_scenario,
+            #ScenarioType.TEACHING_MENTORING.value: generate_teaching_mentoring_scenario,
+            ScenarioType.STRATEGIC_PLANNING.value: generate_strategic_planning_scenario,
+            ScenarioType.SOCIAL_DYNAMICS.value: generate_social_dynamics_scenario,
+            ScenarioType.RESOURCE_OPTIMIZATION.value: generate_resource_optimization_scenario,
+            ScenarioType.PREDICTIVE_ANALYTICS.value: generate_predictive_analytics_scenario,
+            ScenarioType.NEGOTIATION_SKILLS.value: generate_negotiation_skills_scenario,
+            ScenarioType.INNOVATION_THINKING.value: generate_innovation_thinking_scenario,
+            ScenarioType.EMPATHETIC_REASONING.value: generate_empathetic_reasoning_scenario,
+            ScenarioType.CROSS_CULTURAL_COMMUNICATION.value: generate_cross_cultural_communication_scenario,
+            ScenarioType.CONFLICTING_INFORMATION.value: generate_conflicting_information_scenario,
         }
 
     # ==============================================================================
@@ -354,10 +364,8 @@ class SupremeHumanLevelDatasetGenerator:
                 pydantic_check = verify_pydantic_compliance(selected_scenario)
                 if not pydantic_check["valid"]:
                     print(f"❌ Pydantic uyumsuzluğu: {selected_scenario.get('scenario_type', 'unknown')} - {pydantic_check['error']}")
-                pydantic_check = verify_pydantic_compliance(scenario)
-                if not pydantic_check["valid"]:
-                    print(f"❌ Pydantic uyumsuzluğu: {scenario_type} - {pydantic_check['error']}")
-
+                    validation_errors += 1
+                    continue
                 
                 pydantic_validations += pydantic_check["validated_count"]
                 dataset.append(selected_scenario)
@@ -378,7 +386,11 @@ class SupremeHumanLevelDatasetGenerator:
                 print(f"❌ Beklenmeyen hata: {e}")
                 print(f"🔍 Hata türü: {type(e).__name__}")
                 print(f"🔍 Senaryo türü: {selected_scenario.get('scenario_type', 'unknown')}")
-                print(f"🔍 Senaryo türü: {scenario_type}")
+                print(f"🔍 Detaylı traceback:")
+                traceback.print_exc()
+                print("="*50)
+                skipped_scenarios += 1
+                continue
         
         print("\n🎊 DATASET GENERATİON TAMAMLANDI!")
         print("="*60)

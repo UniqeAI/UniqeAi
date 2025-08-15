@@ -1,0 +1,3502 @@
+[
+  {
+    "id": "adaptive_comm_scenario_ba94c400_9503da4a",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_34b1457a",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_3d74b30f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f36b0a5b",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_be6b3fdb",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_4c4155c1",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_92797b94",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f43f21ec",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_762c9d16",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_68cb3722",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_c43011a6",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_ec02719f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_1d83fb8d",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_d3fc8ac8",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_e9d7ed97",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_21a85d92",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_896e04d4",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_19377beb",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_00ee1d77",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_017b7908",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_0d254300",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f086a79e",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_9786f39d",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_43819c56",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_4fbd63c6",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_9dd8e190",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_19f83a11",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_3f648836",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_964e2c64",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_ca8f8871",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_c04e085e",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_64c1adbc",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_d84e4945",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_d4742008",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_69f1716b",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f2c039e8",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_876766c3",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_86eace98",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_3cf6e674",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_b2ffa545",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_adb7d1db",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_aa32563a",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_2f56559f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_010e7fa7",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_55cf0076",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_71c5bbe5",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_0611ae5a",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_07cb51a1",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_94d50d91",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_298832cf",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_cd525aae",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_5e86a19a",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_3bd7dbb0",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_5912f06f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f1889cc4",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_9ac09e33",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_72e5a12c",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_b88f7bfd",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f0b3c482",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f4327cc3",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_3c755be4",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_ca289a79",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_7dc9f20e",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_8442cf1c",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_965eb522",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_69f291f1",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_ef9fe26c",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_a08e0e30",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_dd4614e3",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_12b23c45",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_6c18aa19",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_abe5d8a8",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_bbd713f6",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_49dd9750",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_bb9ae619",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_94134950",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_eba57342",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_74baf3d8",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_6fa7bc4c",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_d1433a94",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_cb76ade1",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_567568a6",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_aba677e2",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_15699ef6",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_58fbbe48",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_fc211afa",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_f1aeb0f3",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_9a6d7c01",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_c67ed328",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_8cd6a6f7",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_0c26c370",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_db1f850f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_2dba6516",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_bbbc5ced",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_5549ec8f",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_17bf237c",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_4b4bbabf",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_606f02b2",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_ad8fa1a5",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_ba94c400_c63f6da1",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Saatlerdir internet yok! Beceremediniz bir türlü şu işi!",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Kriz Yönetimi Modu Aktif!* 🚨 Yaşadığınız mağduriyetin farkındayım ve üzgünüm. Bölgenizde genel bir çalışma olup olmadığını kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"5G teknolojisi\",\"status\":\"outage\",\"coverage_percentage\":62,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"Uygun fiyat\",\"start_time\":\"2025-07-24T19:13:38.807523\",\"estimated_end\":\"5G teknolojisi\"},{\"area\":\"Hızlı ve güvenilir hizmet\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-10T19:13:38.807523\",\"estimated_end\":\"Fiber altyapı\"}],\"last_updated\":\"2025-07-22T19:13:38.807523\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Evet, bölgenizde genel bir arıza var. Ekiplerimiz çalışıyor ve sorunun 2 saat içinde çözülmesi bekleniyor.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

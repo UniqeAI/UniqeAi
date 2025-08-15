@@ -1,0 +1,21 @@
+[
+  {
+    "id": "adaptive_comm_scenario_6ebc07c7_ed5809ab",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Şey, benim internetim var ama... galiba paketimi mi yükseltsem? Ya da... bilmiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Yönlendirme Modu Aktif!* 🧭 Hiç sorun değil, en doğru kararı birlikte verelim. Ne sıklıkla internet kullanıyorsunuz? Bu bilgilere göre size en uygun paketi önerebilirim.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

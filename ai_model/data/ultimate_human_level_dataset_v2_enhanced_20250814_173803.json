@@ -1,0 +1,4265 @@
+[
+  {
+    "id": "resource_optimization_scenario_4ff05298_eba7d814",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_86fa74a3",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_ad64efd2",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_87f4e8fa",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_758bc12f",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_9e6746c0",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_32f8ec60",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_57597814",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_ab719ce3",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_b0a81894",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_899e3b2d",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_390494b1",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_ccc78a09",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_6a03403a",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_f1b44802",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_fd7476fe",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_aaea7ef9",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_1b0b3743",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_bc2bca70",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_c3ddcf16",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_cd82636d",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_861f2045",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_424ac1d1",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_21847c61",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_65d388ca",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_40db9802",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_8014babc",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_8dbfdbb4",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_3d3c756c",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_14947471",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_970fc279",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_0a3e0a18",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_07b144e8",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_64c16b0c",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_63cb099f",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_52cea2ff",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_8b62f9c6",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_fc844661",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_b0be8b32",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_90321b20",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_af1f9bc1",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_09dd7fa7",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_b7e6e921",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_422b3d6b",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_4be91641",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_b4dd615a",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_9622a064",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_e8ab3793",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_ec29f9cb",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_351fc467",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_238cfb2b",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_90ae7cab",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_d6613447",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_8f412c87",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_596d9f83",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_ed01b6d1",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_25e53fe3",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_030e85f9",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_fbb5668f",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_b5197202",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_67638c9f",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_740649e5",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_f35283ae",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_10b9bd72",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_512cd17f",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_72519eaf",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_6b43b603",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_04d7d3b8",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_fadde16c",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_4fd65623",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_ef226129",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_2f1d31c4",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_35a46e8b",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_7745ea2c",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_2af7d1ec",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_2f1535f9",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_66eefa08",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_7c899397",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_8d90b87a",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_87615cc6",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_1de9f012_6de11ff2",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Mobil veri ve Wi‑Fi arasında en verimli strateji ne olur?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hız testi ile tespite bakıp eşik bazlı öneri sunacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 73493
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":73493,\"download_speed_mbps\":48.8,\"upload_speed_mbps\":456.03,\"ping_ms\":44,\"test_timestamp\":\"2025-07-15T17:38:03.872335\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Fiber altyapı\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Wi‑Fi 25 Mbps üzeri ise mobil veriyi yedek tutun; ping yükselirse video kalitesini düşürün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_1f63f377",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b2b96e3_73a4ef03",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "efficiency_conscious_manager",
+    "cognitive_state": "systematic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Dakika ve SMS’leri neredeyse kullanmıyorum. Daha uygun pakete geçebilir miyim?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotalarınızı kontrol ediyorum, ardından uygun paketleri önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 15621
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":73.75,\"voice_remaining_minutes\":5000,\"sms_remaining\":2000,\"period_end\":\"Hızlı ve güvenilir hizmet\",\"usage_percentage\":{\"internet\":60,\"voice\":5,\"sms\":3}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Dakika/SMS kullanımınız çok düşük. Daha internet ağırlıklı paketlere bakalım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Data Focus 50GB\",\"monthly_fee\":129.9,\"features\":{\"internet_gb\":50,\"voice_minutes\":250,\"sms_count\":100},\"target_audience\":\"data_heavy_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Data Focus 50GB ile maliyet düşer, israf azalır. İster misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_5fdb2727",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_2bb482b5",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_08ec7337",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_b48d2987",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_03bcc557",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_f0122205",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_863cc3e2",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_97667dea",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_96a35d20_20e9e8b4",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uluslararası dakika kullanmıyorum. Daha uygun bir kombinasyon var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kalan haklarınızı kontrol ediyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 34824
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 34824
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Sınırsız İnternet\",\"monthly_fee\":413.72,\"features\":{\"internet_gb\":20,\"voice_minutes\":2000,\"sms_count\":500,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-02T17:38:03.871335\",\"renewal_date\":\"2025-07-15T17:38:03.871335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":36.75,\"voice_remaining_minutes\":500,\"sms_remaining\":1000,\"period_end\":\"7/24 müşteri desteği\",\"usage_percentage\":{\"internet\":35,\"voice\":8,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uluslararası dakika içeriği düşük bir pakete geçişle tasarruf edersiniz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_available_packages",
+            "parametreler": {}
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"packages\":[{\"name\":\"Local Focus 30GB\",\"monthly_fee\":109.9,\"features\":{\"internet_gb\":30,\"voice_minutes\":500,\"sms_count\":200},\"target_audience\":\"local_users\"}]}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Local Focus 30GB uygun görünüyor. Geçiş yapmak ister misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e164f2b0_5bf148b2",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "busy_multitasking",
+    "cognitive_state": "systematic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ödeme unutunca hat kesiliyor. Bunu optimize edebilir miyiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme tanımlayarak kesinti riskini sıfıra yaklaştırabiliriz.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "setup_autopay",
+            "parametreler": {
+              "user_id": 45814,
+              "status": true
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":45814,\"autopay_enabled\":true,\"payment_method\":\"Uygun fiyat\",\"next_payment_date\":\"2025-08-07T17:38:03.871335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Otomatik ödeme aktif. Operasyonel verimlilik ve memnuniyet artacak.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_3b4c594f_265e73e3",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "confused_indecisive",
+    "cognitive_state": "analytical",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Paketim bana uygun mu emin değilim. Ne önerirsiniz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Mevcut paketinizi ve kullanımınızı karşılaştıracağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_customer_package",
+            "parametreler": {
+              "user_id": 13616
+            }
+          },
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 13616
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"package_name\":\"Süper Paket\",\"monthly_fee\":624.79,\"features\":{\"internet_gb\":10,\"voice_minutes\":2000,\"sms_count\":100,\"roaming_enabled\":null,\"international_minutes\":null},\"activation_date\":\"2025-08-14T17:38:03.870335\",\"renewal_date\":\"2025-07-20T17:38:03.870335\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":43.91,\"voice_remaining_minutes\":2000,\"sms_remaining\":2000,\"period_end\":\"Fiber altyapı\",\"usage_percentage\":{\"internet\":40,\"voice\":10,\"sms\":5}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük dakikalı, yüksek verili pakete geçiş tasarruf sağlar.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_f47fa748_e54a3b9e",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "strategic",
+    "emotional_context": "hopeful",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Uzaktan eğitim için en verimli paket hangisi? Detaylarıyla karşılaştırır mısınız?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Uygun bir paket örneğinin detaylarını gösteriyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_package_details",
+            "parametreler": {
+              "package_name": "Edu Max"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"name\":\"Edu Max\",\"monthly_fee\":139.9,\"setup_fee\":0.0,\"features\":{\"internet_gb\":50,\"voice_minutes\":1000,\"sms_count\":500,\"international_minutes\":0},\"contract_duration\":12,\"cancellation_fee\":25.0}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Edu Max uzaktan eğitim için yeterli bant genişliği sunar; maliyet/verim dengesi iyidir.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_33525008",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_4ff05298_9e908d0d",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "planning",
+    "cognitive_state": "analytical",
+    "emotional_context": "worried",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ay bitmeden internetim bitecek gibi. Optimizasyon öneriniz var mı?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Kalan kotaları inceliyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_remaining_quotas",
+            "parametreler": {
+              "user_id": 39979
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"internet_remaining_gb\":38.73,\"voice_remaining_minutes\":500,\"sms_remaining\":100,\"period_end\":\"Uygun fiyat\",\"usage_percentage\":{\"internet\":85,\"voice\":30,\"sms\":20}}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Yoğun günler için 10 GB ek paket öneririm; video kaliteyi ‘otomatik’ yapın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_aa69fb35_2575737c",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "strategic_planner",
+    "cognitive_state": "strategic",
+    "emotional_context": "calm",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Planlı bakım dönemlerinde işimi aksatmamak için öneri isterim.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bölgesel ağ durumuna göre saatlik planlama önereceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Kadıköy"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Kadıköy\",\"status\":\"maintenance\",\"coverage_percentage\":85,\"active_outages\":[{\"area\":\"Fiber altyapı\",\"issue\":\"7/24 müşteri desteği\",\"start_time\":\"2025-07-28T17:38:03.871335\",\"estimated_end\":\"Uygun fiyat\"},{\"area\":\"Uygun fiyat\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-07-21T17:38:03.871335\",\"estimated_end\":\"5G teknolojisi\"}],\"last_updated\":\"2025-07-31T17:38:03.872335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Bakım pencere saatlerinde büyük yüklemelerden kaçının; işlemleri sabah erken saate alın.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_fa3e2c59_e5dd9e2d",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "innovative_entrepreneur",
+    "cognitive_state": "systematic",
+    "emotional_context": "ambitious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Aylık toplam maliyeti %20 azaltmak istiyorum.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Güncel ve geçmiş faturanızı analiz ederek tasarruf fırsatlarını belirleyeceğim.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "get_current_bill",
+            "parametreler": {
+              "user_id": 53717
+            }
+          },
+          {
+            "fonksiyon": "get_past_bills",
+            "parametreler": {
+              "user_id": 53717,
+              "limit": 6
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bill_id\":\"F-2024-715850\",\"user_id\":53717,\"amount\":114.39,\"currency\":\"Fiber altyapı\",\"due_date\":\"2025-08-26T17:38:03.869315\",\"bill_date\":\"2025-07-31T17:38:03.869315\",\"status\":\"paid\",\"services\":[{\"service_name\":\"Mehmet Demir\",\"amount\":547.05}]}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"bills\":[{\"bill_id\":\"F-2024-660296\",\"amount\":281.17,\"bill_date\":\"2025-07-22T17:38:03.869315\",\"status\":\"paid\",\"paid_date\":\"İsteğe bağlı metin\"}],\"total_count\":740,\"total_amount_paid\":425.54}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Daha düşük ücretli, benzer içerikte paket ile %18-25 arası tasarruf mümkün.",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "resource_optimization_scenario_e0f6e304_168f43ac",
+    "scenario_type": "resource_optimization",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "strategic",
+    "emotional_context": "curious",
+    "cultural_context": "modern_urban_turkish",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Akşam video toplantılarında kalite düşüyor; nasıl optimize ederiz?",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Anlık hız testi ve bölge ağ durumuna bakıp zamanlama önerisi yapacağım.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 68013
+            }
+          },
+          {
+            "fonksiyon": "check_network_status",
+            "parametreler": {
+              "region": "Beşiktaş"
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":68013,\"download_speed_mbps\":78.6,\"upload_speed_mbps\":324.05,\"ping_ms\":26,\"test_timestamp\":\"2025-07-28T17:38:03.870335\",\"test_server\":\"7/24 müşteri desteği\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"region\":\"Beşiktaş\",\"status\":\"operational\",\"coverage_percentage\":68,\"active_outages\":[{\"area\":\"7/24 müşteri desteği\",\"issue\":\"Fiber altyapı\",\"start_time\":\"2025-08-13T17:38:03.870335\",\"estimated_end\":\"Uygun fiyat\"}],\"last_updated\":\"2025-08-03T17:38:03.870335\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "18:30-20:00 arası yoğun. Toplantıları 20:30 sonrası planlayın; HD yerine 720p önerilir.",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]

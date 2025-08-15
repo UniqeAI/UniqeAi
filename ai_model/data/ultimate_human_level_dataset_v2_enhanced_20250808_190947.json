@@ -1,0 +1,107 @@
+[
+  {
+    "id": "adaptive_comm_scenario_76ae6c0c_7104214d",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping'im çok yüksek, oyun oynanmıyor. Buna bir çözüm bulun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Oyuncu Modu Aktif!* 🎮 Anlıyorum, yüksek ping oyun keyfini kaçırabilir. Detaylı bir test başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 99633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":58737,\"download_speed_mbps\":222.77,\"upload_speed_mbps\":93.06,\"ping_ms\":131,\"test_timestamp\":\"2025-07-12T19:09:47.843613\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hızınız iyi görünse de ping değeriniz 131ms ile gerçekten yüksek. Bu genellikle hat yoğunluğundan kaynaklanır. Sizi daha az yoğun bir sunucuya yönlendirecek bir ayar yapıyorum, 5 dakika içinde tekrar dener misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_76ae6c0c_9f80358d",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping'im çok yüksek, oyun oynanmıyor. Buna bir çözüm bulun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Oyuncu Modu Aktif!* 🎮 Anlıyorum, yüksek ping oyun keyfini kaçırabilir. Detaylı bir test başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 99633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":58737,\"download_speed_mbps\":222.77,\"upload_speed_mbps\":93.06,\"ping_ms\":131,\"test_timestamp\":\"2025-07-12T19:09:47.843613\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hızınız iyi görünse de ping değeriniz 131ms ile gerçekten yüksek. Bu genellikle hat yoğunluğundan kaynaklanır. Sizi daha az yoğun bir sunucuya yönlendirecek bir ayar yapıyorum, 5 dakika içinde tekrar dener misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  },
+  {
+    "id": "adaptive_comm_scenario_76ae6c0c_ba45ae6d",
+    "scenario_type": "adaptive_communication",
+    "personality_profile": "impatient_tech_savvy",
+    "cognitive_state": "focused",
+    "emotional_context": "frustrated",
+    "donguler": [
+      {
+        "rol": "kullanici",
+        "icerik": "Ping'im çok yüksek, oyun oynanmıyor. Buna bir çözüm bulun.",
+        "arac_cagrilari": null
+      },
+      {
+        "rol": "asistan",
+        "icerik": "*Oyuncu Modu Aktif!* 🎮 Anlıyorum, yüksek ping oyun keyfini kaçırabilir. Detaylı bir test başlatıyorum.",
+        "arac_cagrilari": [
+          {
+            "fonksiyon": "test_internet_speed",
+            "parametreler": {
+              "user_id": 99633
+            }
+          }
+        ]
+      },
+      {
+        "rol": "arac",
+        "icerik": "{\"user_id\":58737,\"download_speed_mbps\":222.77,\"upload_speed_mbps\":93.06,\"ping_ms\":131,\"test_timestamp\":\"2025-07-12T19:09:47.843613\",\"test_server\":\"Fiber altyapı\",\"quality_rating\":\"Hızlı ve güvenilir hizmet\"}"
+      },
+      {
+        "rol": "asistan",
+        "icerik": "Hızınız iyi görünse de ping değeriniz 131ms ile gerçekten yüksek. Bu genellikle hat yoğunluğundan kaynaklanır. Sizi daha az yoğun bir sunucuya yönlendirecek bir ayar yapıyorum, 5 dakika içinde tekrar dener misiniz?",
+        "arac_cagrilari": null
+      }
+    ]
+  }
+]
